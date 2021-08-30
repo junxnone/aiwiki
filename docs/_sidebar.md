@@ -1,5 +1,5 @@
 - Introduction
-  - [hello]()
+  - [Brief]()
   - [Term 1](/t1)
   - [Term 2](/t2)
 
