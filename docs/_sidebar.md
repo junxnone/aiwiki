@@ -6,7 +6,7 @@
 - [经典方法](/classic)
 - [前沿研究方向](/research)
 - Tools
-  - [Training Tools](/training)
+  - [Training&Inference Tools](/training)
   - [Label Tools](/label)
 - [About](/about.md)
 
