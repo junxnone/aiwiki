@@ -6,7 +6,7 @@
 - [Tasks](/tasks_brief)
   - [2D Images Tasks](/2dimage)
   - [3D](/3d)
- - Tools
+- Tools
   - [Training Tools](/training)
   - [Label Tools](/label)
 - [About](/about.md)
