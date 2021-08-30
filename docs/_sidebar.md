@@ -1,5 +1,5 @@
 - [Introduction]()
-  - [基础知识](/basic)
+- [基础知识](/basic)
 - [Tasks](/tasks_brief)
   - [2D Images Tasks](/2dimage)
   - [3D](/3d)
