@@ -1,5 +1,4 @@
-- Introduction
-  - [简介]()
+- [Introduction]()
   - [基础知识](/basic)
   - [经典方法](/classic)
   - [前沿研究方向](/research)
