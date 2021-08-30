@@ -1,1 +1,1 @@
-# template_wiki
+# template-wiki
