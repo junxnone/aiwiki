@@ -1,13 +1,14 @@
 - Introduction
-  - [Brief]()
-  - [Term 1](/t1)
-  - [Term 2](/t2)
-- Arch
-  - [Term 3](/t3)
-  - [Term 4](/t4)
-- Terms
-  - [Term 5](/t5)
-  - [Term 6](/t6)
+  - [简介]()
+  - [基础知识](/basic)
+  - [经典方法](/classic)
+  - [前沿研究方向](/research)
+- [Tasks](/tasks_brief)
+  - [2D Images Tasks](/2dimage)
+  - [3D](/3d)
+ - Tools
+  - [Training Tools](/training)
+  - [Label Tools](/label)
 - [About](/about.md)
 
 
