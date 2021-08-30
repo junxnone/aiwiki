@@ -1,6 +1,6 @@
 - Header 11
  - [hello]()
- - [About](/about)
+ - [About](/about.md)
  - [Term 1](/t1)
  - [Term 2](/t2)
 
