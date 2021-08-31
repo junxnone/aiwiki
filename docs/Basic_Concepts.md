@@ -1,0 +1,14 @@
+---
+Title | Basic Concepts
+-- | --
+Create Date | `2021-08-31T07:36:54Z`
+Update Date | `2021-08-31T08:54:38Z`
+---
+AI  基础知识
+
+- Matrix
+  - [Convolution - 卷积](https://github.com/junxnone/tech-io/issues/153)
+  - [Gradient Descent](https://github.com/junxnone/ml/issues/89)
+  - CNN
+  - RNN
+  - [Metric Learning](https://github.com/junxnone/tech-io/issues/610)
