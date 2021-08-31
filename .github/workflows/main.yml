@@ -1,0 +1,20 @@
+name: generate ai wiki
+on:
+  issues:
+    types: [opened, edited, labeled]
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: junxnone/wiki_issue2md@main
+        with:
+          branch: "main" # default to main
+          dir: "docs" # default to _posts
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          created_at: ${{ github.event.issue.created_at }}
+          updated_at: ${{ github.event.issue.updated_at }}
+          label_name: ${{ github.event.label.name }}
+          title: ${{ github.event.issue.title }}
+          body: ${{ github.event.issue.body }}
+          actor: ${{ github.actor }}
