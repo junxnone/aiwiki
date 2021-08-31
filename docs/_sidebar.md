@@ -1,8 +1,8 @@
 ---
-layout: post
-title: "_sidebar"
-date: 2021-08-31T07:37:57Z
-update: 2021-08-31T07:42:03Z
+Title | _sidebar
+-- | --
+Create Date | `2021-08-31T07:37:57Z`
+Update Date | `2021-08-31T07:56:03Z`
 ---
 - [Introduction]()
 - [基础知识](/基础知识)
