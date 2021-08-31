@@ -1,11 +1,10 @@
 ---
-Title: "Tasks Summary"
+Title | Tasks Summary
 -- | --
 Create Date | 2021-08-31T07:41:22Z
-Update Date | 2021-08-31T07:49:14Z
+Update Date | 2021-08-31T07:50:58Z
 ---
 
-----
 AI 任务方面包括很多任务：CV/Audio/NLP/RL/Sequential/Graphs...
 
 
