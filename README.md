@@ -1,1 +1,1 @@
-# template-wiki
+# AI Wiki
