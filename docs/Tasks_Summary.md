@@ -1,10 +1,11 @@
 ---
-layout: post
-title: "Tasks Summary"
-date: 2021-08-31T07:41:22Z
-update: 2021-08-31T07:41:22Z
+Title: "Tasks Summary"
+-- | --
+Create Date | 2021-08-31T07:41:22Z
+Update Date | 2021-08-31T07:49:14Z
 ---
 
+----
 AI 任务方面包括很多任务：CV/Audio/NLP/RL/Sequential/Graphs...
 
 
