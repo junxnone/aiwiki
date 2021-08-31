@@ -1,3 +1,9 @@
+---
+layout: post
+title: "_sidebar"
+date: 2021-08-31T07:37:57Z
+update: 2021-08-31T07:37:57Z
+---
 - [Introduction]()
 - [基础知识](/basic)
 - [Tasks](/tasks_brief)
@@ -9,5 +15,6 @@
   - [Training&Inference Tools](/training)
   - [Label Tools](/label)
 - [About](/about.md)
+
 
 
