@@ -2,12 +2,12 @@
 Title | Convolution-Mathematics
 -- | --
 Create Date | `2019-06-09T07:26:18Z`
-Update Date | `2021-09-01T04:07:35Z`
+Update Date | `2021-09-01T04:08:19Z`
 ---
 # Reference
 - [Convolution - Wikipedia](https://en.wikipedia.org/wiki/Convolution)
 - [Spatial convolution](https://graphics.stanford.edu/courses/cs178/applets/convolution.html)
-
+- [如何通俗易懂地解释卷积？](https://www.zhihu.com/question/22298352)
 # Brief
 - 两个函数 `f(x)` & `g(x)` 之间的数学操作产生一个新的函数: `f(x)*g(x)`
 - f & g 翻转平移后重叠部分乘积的积分
