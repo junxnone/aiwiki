@@ -2,7 +2,7 @@
 Title | Convolution-Mathematics
 -- | --
 Create Date | `2019-06-09T07:26:18Z`
-Update Date | `2021-09-01T04:04:42Z`
+Update Date | `2021-09-01T04:07:35Z`
 ---
 # Reference
 - [Convolution - Wikipedia](https://en.wikipedia.org/wiki/Convolution)
@@ -31,6 +31,7 @@ Update Date | `2021-09-01T04:04:42Z`
 ## 系统理解
 - f 为输入随时间 t 的变化
 - g 为输入随时间 t 的衰减
+- 输出 O 为 f & g 的综合结果
 
 Steps | f & g
 -- | --
