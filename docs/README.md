@@ -2,12 +2,16 @@
 
 系统的整理 AI 相关的知识
 
-- [基础知识](/basic)
-- [Tasks](/tasks_brief)
+
+- [基础知识](/Basic_Concepts)
+- [Tasks](/Tasks_Summary)
   - [2D Images Tasks](/2dimage)
   - [3D](/3d)
-- [经典方法](/classic)
-- [前沿研究方向](/research)
+- [经典方法](/Classic_Algos)
+- [其他研究方向](/Others_Research)
 - Tools
-  - [Training Tools](/training)
-  - [Label Tools](/label)
+  - [Training Inference Tools](/Training_Inference_Tools)
+  - [Label Tools](/Data_Label_Tools)
+- [About](/about.md)
+
+
