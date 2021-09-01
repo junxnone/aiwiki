@@ -2,7 +2,7 @@
 Title | Convolution-Mathematics
 -- | --
 Create Date | `2019-06-09T07:26:18Z`
-Update Date | `2021-09-01T04:03:53Z`
+Update Date | `2021-09-01T04:04:42Z`
 ---
 # Reference
 - [Convolution - Wikipedia](https://en.wikipedia.org/wiki/Convolution)
@@ -32,9 +32,12 @@ Update Date | `2021-09-01T04:03:53Z`
 - f 为输入随时间 t 的变化
 - g 为输入随时间 t 的衰减
 
-![image](https://user-images.githubusercontent.com/2216970/131609844-347f9791-27db-4ffa-8842-5930c0360239.png) | ![image](https://user-images.githubusercontent.com/2216970/131609851-f09a7f92-15c5-4adc-9d54-41deccb7e868.png)
+Steps | f & g
 -- | --
-![image](https://user-images.githubusercontent.com/2216970/131609866-41ec394b-f17e-40fa-9112-ef8286b33f78.png) | ![image](https://user-images.githubusercontent.com/2216970/131609873-b7b50362-def4-4c80-a980-ffbf8300c410.png)
+1 | ![image](https://user-images.githubusercontent.com/2216970/131609844-347f9791-27db-4ffa-8842-5930c0360239.png) 
+2 | ![image](https://user-images.githubusercontent.com/2216970/131609851-f09a7f92-15c5-4adc-9d54-41deccb7e868.png)
+3 | ![image](https://user-images.githubusercontent.com/2216970/131609866-41ec394b-f17e-40fa-9112-ef8286b33f78.png) 
+4 | ![image](https://user-images.githubusercontent.com/2216970/131609873-b7b50362-def4-4c80-a980-ffbf8300c410.png)
 
 
 ## Convolution & Cross-correlation & Autocorrelation
