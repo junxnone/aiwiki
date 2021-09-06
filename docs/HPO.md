@@ -2,7 +2,7 @@
 Title | HPO
 -- | --
 Create Date | `2021-09-06T09:24:08Z`
-Update Date | `2021-09-06T09:49:23Z`
+Update Date | `2021-09-06T09:55:41Z`
 ---
 # Reference
 - 2020 [On Hyperparameter Optimization of Machine Learning Algorithms: Theory and Practice](https://arxiv.org/pdf/2007.15745.pdf) 
@@ -12,9 +12,13 @@ Update Date | `2021-09-06T09:49:23Z`
 - HPO - `Hyperparameter Optimization`
 - 用于评估超参对 `metrics` 的影响, 选取出一组合适超参
 - 超参类型
-  - 连续型超参
-  - 类别超参
-  - 
+  - 连续超参 - `[0, 1]`
+  - 离散超参 - `[0, 10, 1]`
+  - 类别超参- `["SGD", "Adam"]`
+  - 条件超参
+- 单目标超参数优化算法
+- 多目标超参数优化算法 
+
 ## 按方式分类
 
 分类 | 举例
