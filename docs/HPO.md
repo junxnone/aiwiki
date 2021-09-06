@@ -2,7 +2,7 @@
 Title | HPO
 -- | --
 Create Date | `2021-09-06T09:24:08Z`
-Update Date | `2021-09-06T09:41:35Z`
+Update Date | `2021-09-06T09:43:57Z`
 ---
 # Reference
 - 2020 [On Hyperparameter Optimization of Machine Learning Algorithms: Theory and Practice](https://arxiv.org/pdf/2007.15745.pdf) 
@@ -20,15 +20,15 @@ Update Date | `2021-09-06T09:41:35Z`
 
 ## 常用方法
 
-Name | Time Complexity | Description
--- | -- | --
-GS | O(n<sup>k</sup>) | 时间消耗多
-RS | O(n) | 
+Name | Time Complexity | 局限 | 优点
+-- | -- | -- | --
+GS | O(n<sup>k</sup>) | 时间消耗多 | 简单
+RS | O(n) | 相比 GS 有效
 Gradient-based models | O(n<sup>k</sup>) | 只支持连续超参
 BO-GP | O(n<sup>3</sup>)
-SMAC | O(nlogn) | 并行化能力较差
-TPE | O(nlogn) | 并行化能力较差
+SMAC | O(nlogn) | 并行化能力较差 | 对所有类型超参有效
+TPE | O(nlogn) | 并行化能力较差 | 对所有类型超参有效
 Hyperband | O(nlogn)
-BOHB | O(nlogn)
-GA | O(n<sup>2</sup>) | 并行化能力较差
-PSO | O(nlogn)
+BOHB | O(nlogn) | 对所有类型超参有效
+GA | O(n<sup>2</sup>) | 并行化能力较差 | 对所有类型超参有效
+PSO | O(nlogn) | 对所有类型超参有效
