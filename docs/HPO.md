@@ -2,7 +2,7 @@
 Title | HPO
 -- | --
 Create Date | `2021-09-06T09:24:08Z`
-Update Date | `2021-09-06T09:45:12Z`
+Update Date | `2021-09-06T09:49:23Z`
 ---
 # Reference
 - 2020 [On Hyperparameter Optimization of Machine Learning Algorithms: Theory and Practice](https://arxiv.org/pdf/2007.15745.pdf) 
@@ -10,7 +10,12 @@ Update Date | `2021-09-06T09:45:12Z`
 
 # Brief
 - HPO - `Hyperparameter Optimization`
-
+- 用于评估超参对 `metrics` 的影响, 选取出一组合适超参
+- 超参类型
+  - 连续型超参
+  - 类别超参
+  - 
+## 按方式分类
 
 分类 | 举例
 -- | --
