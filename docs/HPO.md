@@ -2,7 +2,7 @@
 Title | HPO
 -- | --
 Create Date | `2021-09-06T09:24:08Z`
-Update Date | `2021-09-06T09:37:11Z`
+Update Date | `2021-09-06T09:41:35Z`
 ---
 # Reference
 - 2020 [On Hyperparameter Optimization of Machine Learning Algorithms: Theory and Practice](https://arxiv.org/pdf/2007.15745.pdf) 
@@ -20,15 +20,15 @@ Update Date | `2021-09-06T09:37:11Z`
 
 ## 常用方法
 
-Name | Time Complexity | 
--- | --
-GS | O(n<sup>k</sup>)
-RS | O(n)
-Gradient-based models | O(n<sup>k</sup>)
+Name | Time Complexity | Description
+-- | -- | --
+GS | O(n<sup>k</sup>) | 时间消耗多
+RS | O(n) | 
+Gradient-based models | O(n<sup>k</sup>) | 只支持连续超参
 BO-GP | O(n<sup>3</sup>)
-SMAC | O(nlogn)
-TPE | O(nlogn)
+SMAC | O(nlogn) | 并行化能力较差
+TPE | O(nlogn) | 并行化能力较差
 Hyperband | O(nlogn)
 BOHB | O(nlogn)
-GA | O(n<sup>2</sup>)
+GA | O(n<sup>2</sup>) | 并行化能力较差
 PSO | O(nlogn)
