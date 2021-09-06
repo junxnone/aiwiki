@@ -2,13 +2,15 @@
 Title | HPO
 -- | --
 Create Date | `2021-09-06T09:24:08Z`
-Update Date | `2021-09-06T09:43:57Z`
+Update Date | `2021-09-06T09:45:12Z`
 ---
 # Reference
 - 2020 [On Hyperparameter Optimization of Machine Learning Algorithms: Theory and Practice](https://arxiv.org/pdf/2007.15745.pdf) 
 - [vega - HPO Alogs](http://www.noahlab.com.hk/opensource/vega/docs/algorithms/hpo.html)
 
 # Brief
+- HPO - `Hyperparameter Optimization`
+
 
 分类 | 举例
 -- | --
