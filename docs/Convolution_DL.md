@@ -1,19 +1,19 @@
 ---
 Title | Convolution-DL
 -- | --
-Create Date | `2021-09-01T10:03:21Z`
-Update Date | `2021-09-01T10:03:21Z`
+Create Date | `2018-11-21T03:03:53Z`
+Update Date | `2021-09-07T03:16:45Z`
 ---
 # Reference
 - 2016 A guide to convolution arithmetic for deep learning [[paper](https://arxiv.org/abs/1603.07285)] [[Code](https://github.com/vdumoulin/conv_arithmetic)]
-- [ ] [直观理解深度学习卷积部分](https://www.leiphone.com/news/201807/RQ4sBWYqLkGV4ZAW.html)
-- [ ] [如何理解深度学习中的卷积？](https://blog.csdn.net/jzrita/article/details/79242004)
-- [ ] [理解图像卷积操作的意义](https://blog.csdn.net/chaipp0607/article/details/72236892?locationNum=9&fps=1)
-- [ ] [paper - Multi-scale context aggregation by dilated convolutions](https://arxiv.org/pdf/1511.07122.pdf)
-- [ ] [【译】Multi-Scale Context Aggregation by Dilation Convolutions(空洞卷积)](https://blog.csdn.net/qq_21167623/article/details/80923537)
-- [ ] [对深度可分离卷积、分组卷积、扩张卷积、转置卷积（反卷积）的理解](https://www.cnblogs.com/marsggbo/p/9737991.html)
-- [ ] [卷积感受野计算](https://www.cnblogs.com/makefile/p/receptive-field.html)
-- [ ] [关于感受野的理解与计算](https://www.jianshu.com/p/9997c6f5c01e)
+- [直观理解深度学习卷积部分](https://www.leiphone.com/news/201807/RQ4sBWYqLkGV4ZAW.html)
+- [如何理解深度学习中的卷积？](https://blog.csdn.net/jzrita/article/details/79242004)
+- [理解图像卷积操作的意义](https://blog.csdn.net/chaipp0607/article/details/72236892?locationNum=9&fps=1)
+- [paper - Multi-scale context aggregation by dilated convolutions](https://arxiv.org/pdf/1511.07122.pdf)
+- [Multi-Scale Context Aggregation by Dilation Convolutions](https://blog.csdn.net/qq_21167623/article/details/80923537)
+- [对深度可分离卷积、分组卷积、扩张卷积、转置卷积（反卷积）的理解](https://www.cnblogs.com/marsggbo/p/9737991.html)
+- [卷积感受野计算](https://www.cnblogs.com/makefile/p/receptive-field.html)
+- [关于感受野的理解与计算](https://www.jianshu.com/p/9997c6f5c01e)
 
 # Brief
 - 深度学习领域的卷积本质上是`互相关 Cross-correlation`, 过滤器不反转, 逐元素乘法和加法
