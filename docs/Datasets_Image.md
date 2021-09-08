@@ -2,7 +2,7 @@
 Title | Datasets Image
 -- | --
 Create Date | `2021-09-08T06:25:00Z`
-Update Date | `2021-09-08T06:35:07Z`
+Update Date | `2021-09-08T14:50:12Z`
 ---
 # Classification
 - mnist
@@ -21,6 +21,10 @@ Update Date | `2021-09-08T06:35:07Z`
 # Segmentation
 
 ## Object Counting/Crowd Counting
+
+## KeyPoint
+
+## Retrieval
 
 # MultiTask
 
