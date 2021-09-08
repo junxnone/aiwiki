@@ -2,14 +2,15 @@
 Title | Datasets Image
 -- | --
 Create Date | `2021-09-08T06:25:00Z`
-Update Date | `2021-09-08T06:33:32Z`
+Update Date | `2021-09-08T06:34:38Z`
 ---
-
 # Classification
 - mnist
 - cifar10/100
 - Oxford-IIIT Pets
 - ImageNet
+
+
 # Detection
 
 ## Face
