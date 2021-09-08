@@ -17,6 +17,7 @@
 - [Datasets](Datasets)
   - [Datasets Image]
   - [Datasets Video]
+  - [Datasets Audio]
   - [Datasets NLP]
   - [Datasets AutoML]
 - [About](/about.md)
