@@ -14,6 +14,11 @@
 - Tools
   - [Training Inference Tools](/Training_Inference_Tools)
   - [Label Tools](/Data_Label_Tools)
+- [Datasets](Datasets)
+  - [Datasets Image]
+  - [Datasets Video]
+  - [Datasets NLP]
+  - [Datasets AutoML]
 - [About](/about.md)
 
 
