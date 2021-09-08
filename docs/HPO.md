@@ -2,7 +2,7 @@
 Title | HPO
 -- | --
 Create Date | `2021-09-06T09:24:08Z`
-Update Date | `2021-09-07T03:15:22Z`
+Update Date | `2021-09-08T01:49:10Z`
 ---
 # Reference
 - 2020 [On Hyperparameter Optimization of Machine Learning Algorithms: Theory and Practice](https://arxiv.org/pdf/2007.15745.pdf) 
@@ -34,8 +34,8 @@ Update Date | `2021-09-07T03:15:22Z`
 
 Name | Time Complexity | 局限 | 优点
 -- | -- | -- | --
-GS | O(n<sup>k</sup>) | 时间消耗多 | 简单
-RS | O(n) | 相比 GS 有效
+GS (`Grid Search`)| O(n<sup>k</sup>) | 时间消耗多 | 简单
+RS (`Random Search`)| O(n) | 相比 GS 有效
 Gradient-based models | O(n<sup>k</sup>) | 只支持连续超参
 BO-GP | O(n<sup>3</sup>)
 SMAC | O(nlogn) | 并行化能力较差 | 对所有类型超参有效
