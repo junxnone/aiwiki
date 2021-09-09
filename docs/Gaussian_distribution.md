@@ -2,14 +2,23 @@
 Title | Gaussian distribution
 -- | --
 Create Date | `2021-03-22T08:23:37Z`
-Update Date | `2021-09-09T03:09:01Z`
+Update Date | `2021-09-09T03:19:25Z`
 ---
 # Reference
 - [多元高斯分布（The Multivariate normal distribution）](https://www.cnblogs.com/bingjianing/p/9117330.html)
 
 # Brief
-- 高斯分布 - 正态分布 - `X ~ (μ，σ^2)`
-- **N(0, 1)** - `μ=0 σ=1` 时为 **标准正态分布**
+- 高斯分布 - 正态分布 - **X ~ (μ，σ<sup>2</sup>)**
+- **X ~ (0, 1) - N(0, 1)** - `μ=0 σ=1` 时为 **标准正态分布**
+
+##  定义
+若随机变量 X 密度函数为:
+
+ ![image](https://user-images.githubusercontent.com/2216970/111960596-e746db80-8b2a-11eb-9b37-a4bd720f191f.png) 
+
+则称随机变量 X 服从正态分布 X ~ (μ，σ<sup>2</sup>)
+
+## 多维高斯分布
 
 分布 | 公式/概率密度函数 | 曲线
 -- | -- | --
