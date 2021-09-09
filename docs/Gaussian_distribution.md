@@ -1,15 +1,15 @@
 ---
 Title | Gaussian distribution
 -- | --
-Create Date | `2021-09-09T02:47:11Z`
-Update Date | `2021-09-09T02:47:11Z`
+Create Date | `2021-03-22T08:23:37Z`
+Update Date | `2021-09-09T03:08:35Z`
 ---
 # Reference
 - [多元高斯分布（The Multivariate normal distribution）](https://www.cnblogs.com/bingjianing/p/9117330.html)
 
 # Brief
 - 高斯分布 - 正态分布 - `X ~ (μ，σ^2)`
-- `μ=0 σ=1` 时为 `标准正态分布`
+- **N(0, 1)** - `μ=0 σ=1` 时为 `标准正态分布`
 
 分布 | 公式/概率密度函数 | 曲线
 -- | -- | --
