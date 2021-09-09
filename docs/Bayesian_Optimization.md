@@ -2,8 +2,13 @@
 Title | Bayesian Optimization
 -- | --
 Create Date | `2021-09-09T02:22:17Z`
-Update Date | `2021-09-09T02:40:00Z`
+Update Date | `2021-09-09T02:48:23Z`
 ---
+
+# 基础知识
+- [高斯分布](/Gaussian_distribution)
+- [高斯过程]
+
 # Brief
 - Bayesian Optimization - 贝叶斯优化
 - 用于非凸函数(不可求导)优化
