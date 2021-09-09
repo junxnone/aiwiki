@@ -2,9 +2,8 @@
 Title | Bayesian Optimization
 -- | --
 Create Date | `2021-09-09T02:22:17Z`
-Update Date | `2021-09-09T02:22:17Z`
+Update Date | `2021-09-09T02:38:16Z`
 ---
-
 
 # Brief
 - Bayesian Optimization - 贝叶斯优化
@@ -18,4 +17,5 @@ Update Date | `2021-09-09T02:22:17Z`
 **X = x1, x2, x3...xn** - 超参数
 **f(x)**  - 黑盒函数
 **Acquisition Function**: 查询函数 选择 超参数
+`argmin` - loss / `argmax` accuracy...
 
