@@ -2,9 +2,10 @@
 Title | Classic Algos
 -- | --
 Create Date | `2021-08-31T08:57:58Z`
-Update Date | `2021-09-10T15:08:31Z`
+Update Date | `2021-09-10T15:45:34Z`
 ---
 # Classification
+- [LeNet]
 - [AlexNet](/AlexNet)
 - [VGGNet](/VGGNet)
 - [MobileNet](/MobileNet)
