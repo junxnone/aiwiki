@@ -2,12 +2,21 @@
 Title | Classic Algos
 -- | --
 Create Date | `2021-08-31T08:57:58Z`
-Update Date | `2021-09-10T15:00:06Z`
+Update Date | `2021-09-10T15:08:31Z`
 ---
 # Classification
 - [AlexNet](/AlexNet)
 - [VGGNet](/VGGNet)
 - [MobileNet](/MobileNet)
+  - [MobileNetv1]
+  - [MobileNetv2]
+  - [MobileNetv3]
+- Inception
+  - Inceptionv1
+  - Inceptionv2v3
+  - Inceptionv4
+- Xception
+- EfficientNet
 - [ResNet]
 # Detection
 - [R-CNN]
