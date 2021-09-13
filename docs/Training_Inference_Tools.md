@@ -2,7 +2,7 @@
 Title | Training Inference Tools
 -- | --
 Create Date | `2021-08-31T08:43:50Z`
-Update Date | `2021-09-13T08:03:36Z`
+Update Date | `2021-09-13T08:21:55Z`
 ---
 ## Training&Inference Tools
 
@@ -35,8 +35,5 @@ Microsoft 主导，多家支持开发的开源训练工具
 
 Intel 主导开发的Inference工具
 
-## 模型参数量计算量计算
-- thop
-- torchsummary
-- torchscan
+
 
