@@ -2,7 +2,7 @@
 Title | HPO
 -- | --
 Create Date | `2021-09-06T09:24:08Z`
-Update Date | `2021-09-08T02:26:39Z`
+Update Date | `2021-09-13T03:53:40Z`
 ---
 # Reference
 - 2020 [On Hyperparameter Optimization of Machine Learning Algorithms: Theory and Practice](https://arxiv.org/pdf/2007.15745.pdf) 
@@ -49,3 +49,7 @@ PSO | O(nlogn) | 对所有类型超参有效
 ## Tools
 - [SIGOPT](/HPO_SIGOPT)
 - [AutoML NNI](/AutoML_NNI)
+
+# Test
+
+https://github.com/junxnone/aiwiki/blob/6f98199c542d3b8fb6d9afbe05bcb3da13522287/docs/index.html#L6-L10
