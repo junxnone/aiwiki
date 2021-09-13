@@ -11,9 +11,7 @@
     - [NAS](/NAS)
   - Attention
   - Knowledge Distillation
-- Tools
-  - [Training Inference Tools](/Training_Inference_Tools)
-  - [Label Tools](/Data_Label_Tools)
+- [Tools](/Tools)
 - [Datasets](Datasets)
 - [About](/about.md)
 
