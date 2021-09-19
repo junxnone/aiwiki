@@ -17,4 +17,5 @@ jobs:
           label_name: ${{ github.event.label.name }}
           title: ${{ github.event.issue.title }}
           body: ${{ github.event.issue.body }}
+          number: ${{ github.event.issue.number }}
           actor: ${{ github.actor }}
