@@ -1,13 +1,13 @@
 ---
 Title | MobileNetV1
 -- | --
-Create Date | `2021-09-23T09:19:45Z`
-Update Date | `2021-09-23T09:19:45Z`
+Create Date | `2020-02-25T10:14:26Z`
+Update Date | `2021-09-23T12:47:03Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/42)
 
 ---
 # Reference
-- 2017 **MobileNetv1** MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications [[paper](https://arxiv.org/pdf/1704.04861.pdf)]
+- 2017 **MobileNet V1** MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications [[paper](https://arxiv.org/pdf/1704.04861.pdf)]
 - [MobileNets 论文笔记](https://blog.csdn.net/Jesse_Mx/article/details/70766871)
 - [深度解读谷歌MobileNet](https://blog.csdn.net/T800GHB/article/details/78879612)
 - [Caffe Mobilenet](https://github.com/01org/caffe/wiki/Mobilenet)
