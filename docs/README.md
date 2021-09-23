@@ -1,17 +1,20 @@
-## AI Wiki
+---
+Title | README
+-- | --
+Create Date | `2021-09-23T07:01:46Z`
+Update Date | `2021-09-23T07:01:46Z`
+Edit link | [here](https://github.com/junxnone/aiwiki/issues/33)
 
-系统的整理 AI 相关的知识
+---
 
+`Le vent se lève, ‌‍‍‌‍​‌‌‍​‍‌‌‌‌​‌‌‍‍‍​‌‍‍‍‍​‌‍‍‍‍​‌‍‍‌‍​‌‌‍​‍‍‌‌‌​‌‌‍‍‍​‌‌‌‍‍​‌‍‍‍‍​‌‍‍‌‍​‌‌‍​‌‌‌‌‍​‌‌‍‌​‍‌‌‌‌​‍‍‍‍‍​‍‍‍​‍‌​‌​‌‌‌​‌‌‌‌​‌‌‍il faut tenter de vivre.`
 
-- [基础知识](/Basic_Concepts)
-- [Tasks](/Tasks_Summary)
-  - [2D Images Tasks](/2dimage)
-  - [3D](/3d)
-- [经典方法](/Classic_Algos)
-- [其他研究方向](/Others_Research)
-- Tools
-  - [Training Inference Tools](/Training_Inference_Tools)
-  - [Label Tools](/Data_Label_Tools)
-- [About](/about.md)
+This is a AI Wiki.
 
+- 使用 Github Issue 创建维护词条 
+- 使用 Github action 自动转换 Issue commit 到 docs markdown 文档
+
+----
+
+[![](https://img.shields.io/badge/%2B-Create%20New%20Item-brightgreen)](https://github.com/junxnone/aiwiki/issues/new)
 
