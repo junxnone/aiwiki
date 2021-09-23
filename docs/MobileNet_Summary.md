@@ -1,15 +1,14 @@
 ---
 Title | MobileNet Summary
 -- | --
-Create Date | `2021-09-23T12:03:19Z`
-Update Date | `2021-09-23T12:03:19Z`
+Create Date | `2018-09-27T06:12:31Z`
+Update Date | `2021-09-23T12:46:43Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/45)
 
 ---
-
 # Reference
-- 2017 **MobileNetv1** MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications [[paper](https://arxiv.org/pdf/1704.04861.pdf)]
-- 2018 **MobileNetV2** MobileNetV2: Inverted Residuals and Linear Bottlenecks [[paper](https://arxiv.org/pdf/1801.04381.pdf)]
+- 2017 **MobileNet V1** MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications [[paper](https://arxiv.org/pdf/1704.04861.pdf)]
+- 2018 **MobileNet V2** MobileNetV2: Inverted Residuals and Linear Bottlenecks [[paper](https://arxiv.org/pdf/1801.04381.pdf)]
 - 2019 **MobileNet V3** Searching for MobileNetV3 [[paper](https://arxiv.org/pdf/1905.02244.pdf)]
 - [MobileNets 论文笔记](https://blog.csdn.net/Jesse_Mx/article/details/70766871)
 - [深度解读谷歌MobileNet](https://blog.csdn.net/T800GHB/article/details/78879612)
