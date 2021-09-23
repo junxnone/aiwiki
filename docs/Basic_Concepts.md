@@ -2,7 +2,7 @@
 Title | Basic Concepts
 -- | --
 Create Date | `2021-08-31T07:36:54Z`
-Update Date | `2021-09-23T07:12:46Z`
+Update Date | `2021-09-23T07:30:44Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/1)
 
 ---
@@ -13,6 +13,7 @@ AI  基础知识
   - [2D 图像](./2D_Images)
   - 3D 图像
   - 颜色空间
+- [Video]
 - Matrix
   - [Convolution - 卷积](/Convolution_Summary.md)
   - [Gradient Descent](https://github.com/junxnone/ml/issues/89)
