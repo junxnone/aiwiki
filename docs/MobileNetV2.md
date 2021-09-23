@@ -1,13 +1,13 @@
 ---
 Title | MobileNetV2
 -- | --
-Create Date | `2021-09-23T11:56:27Z`
-Update Date | `2021-09-23T11:56:27Z`
+Create Date | `2020-02-25T10:15:57Z`
+Update Date | `2021-09-23T12:47:09Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/43)
 
 ---
 # Reference
-- 2018 **MobileNetV2** MobileNetV2: Inverted Residuals and Linear Bottlenecks [[paper](https://arxiv.org/pdf/1801.04381.pdf)]
+- 2018 **MobileNet V2** MobileNetV2: Inverted Residuals and Linear Bottlenecks [[paper](https://arxiv.org/pdf/1801.04381.pdf)]
 - [MobileNet V2 论文初读](https://zhuanlan.zhihu.com/p/33075914)
 - [轻量化网络：MobileNet-V2](https://blog.csdn.net/u011995719/article/details/79135818)
 - [tensorflow/models - Mobilenet v2](https://github.com/tensorflow/models/tree/master/research/slim/nets/mobilenet)
