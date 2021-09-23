@@ -1,8 +1,8 @@
 ---
 Title | Datasets Image Classification mnist
 -- | --
-Create Date | `2021-09-23T06:05:36Z`
-Update Date | `2021-09-23T06:05:36Z`
+Create Date | `2019-01-18T18:36:57Z`
+Update Date | `2021-09-23T06:07:15Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/30)
 
 ---
@@ -13,7 +13,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/30)
 
 MNIST 数据集来自美国国家标准与技术研究所, National Institute of Standards and Technology (NIST). 训练集 (training set) 由来自 250 个不同人手写的数字构成, 其中 50% 是高中学生, 50% 来自人口普查局 (the Census Bureau) 的工作人员. 测试集(test set) 也是同样比例的手写数字数据.
 
-![image](https://user-images.githubusercontent.com/2216970/51413058-95037c00-1ba8-11e9-9153-c5f0764f8e42.png)
+
+<img width="300px" src="https://user-images.githubusercontent.com/2216970/51413058-95037c00-1ba8-11e9-9153-c5f0764f8e42.png">
 
 
 - [train-images-idx3-ubyte.gz](https://github.com/junxnone/junxnone.github.io/files/2774597/train-images-idx3-ubyte.gz) - Training set images (9.9 MB, 解压后 47 MB, 包含 60,000 个样本)
