@@ -2,7 +2,7 @@
 Title | Basic Concepts
 -- | --
 Create Date | `2021-08-31T07:36:54Z`
-Update Date | `2021-09-23T05:20:15Z`
+Update Date | `2021-09-23T07:12:46Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/1)
 
 ---
@@ -10,7 +10,7 @@ AI  基础知识
 
 - Image
   - 图像成像原理
-  - 2D 图像
+  - [2D 图像](./2D_Images)
   - 3D 图像
   - 颜色空间
 - Matrix
