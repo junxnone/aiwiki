@@ -2,7 +2,7 @@
 Title | Datasets Image Classification mnist
 -- | --
 Create Date | `2019-01-18T18:36:57Z`
-Update Date | `2021-09-23T06:11:00Z`
+Update Date | `2021-09-23T06:12:42Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/30)
 
 ---
@@ -24,11 +24,13 @@ Datasets | Description | Images
 [train-images-idx3-ubyte.gz](https://github.com/junxnone/junxnone.github.io/files/2774597/train-images-idx3-ubyte.gz) | Training images (9.9 MB, 解压后 47 MB) | 60000
 [train-labels-idx1-ubyte.gz](https://github.com/junxnone/junxnone.github.io/files/2774598/train-labels-idx1-ubyte.gz) | Training labels(29 KB, 解压后 60 KB) |  60000
 [train-images-idx3-ubyte.gz](https://github.com/junxnone/junxnone.github.io/files/2774599/train-images-idx3-ubyte.gz) | Test images (1.6 MB, 解压后 7.8 MB) | 10000
-[t10k-labels-idx1-ubyte.gz](https://github.com/junxnone/junxnone.github.io/files/2774601/t10k-labels-idx1-ubyte.gz) | Test labels(5KB, 解压后 10 KB) 10000
+[t10k-labels-idx1-ubyte.gz](https://github.com/junxnone/junxnone.github.io/files/2774601/t10k-labels-idx1-ubyte.gz) | Test labels(5KB, 解压后 10 KB) | 10000
 
 ## Format
 
-MNIST中的图像数据都保存在二进制文件中。每个样本图像的宽高为28*28。MSB First.
+- 图像数据保存在二进制文件中
+- 图像的宽高为28*28
+- MSB First.
 
 TRAINING SET LABEL FILE (train-labels-idx1-ubyte):
 ```
