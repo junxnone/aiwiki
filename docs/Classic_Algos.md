@@ -2,7 +2,7 @@
 Title | Classic Algos
 -- | --
 Create Date | `2021-08-31T08:57:58Z`
-Update Date | `2021-09-23T12:45:23Z`
+Update Date | `2021-09-23T12:48:16Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/7)
 
 ---
@@ -11,15 +11,15 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/7)
 - [LeNet](/LeNet)
 - [AlexNet](/AlexNet)
 - [VGGNet](/VGGNet)
-- [MobileNet](/MobileNet_Summary)
-  - [MobileNet V1](/MobileNetV1)
-  - [MobileNet V2](/MobileNetV2)
-  - [MobileNet V3](/MobileNetV3)
 - [Inception](/Inception_Summary)
   - [Inception V1](/InceptionV1)
   - [Inception V2 & V3](/InceptionV2V3)
   - [Inception V4](/InceptionV4)
 - [Xception](./Xception)
+- [MobileNet](/MobileNet_Summary)
+  - [MobileNet V1](/MobileNetV1)
+  - [MobileNet V2](/MobileNetV2)
+  - [MobileNet V3](/MobileNetV3)
 - EfficientNet
 - [ResNet]
 
