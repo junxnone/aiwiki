@@ -1,8 +1,10 @@
 ---
 Title | HPO SIGOPT
 -- | --
-Create Date | `2021-09-07T03:14:35Z`
-Update Date | `2021-09-07T03:14:35Z`
+Create Date | `2021-09-01T09:01:43Z`
+Update Date | `2021-09-23T06:45:51Z`
+Edit link | [here](https://github.com/junxnone/aiwiki/issues/15)
+
 ---
 # Reference
 - [SigOpt docs](https://app.sigopt.com/docs)
@@ -105,12 +107,14 @@ experiment:
 ```
 
 ## Metrics
+
 - 常用 Metrics
   - Accuracy
   - Precision
   - Recall
   - Inference Time
- 
+
+
 Name | Description
 -- | --
 name |  metrics 名字 
