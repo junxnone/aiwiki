@@ -2,15 +2,37 @@
 Title | Tasks Summary
 -- | --
 Create Date | `2021-08-31T07:41:22Z`
-Update Date | `2021-08-31T07:54:38Z`
+Update Date | `2021-09-23T05:28:50Z`
+Edit link | [here](https://github.com/junxnone/aiwiki/issues/3)
+
 ---
-AI 任务方面包括很多任务：CV/Audio/NLP/RL/Sequential/Graphs...
+**AI 任务来源于生活，包括我们身边的方方面面：**
+CV/Audio/NLP/RL/Sequential/Graphs...
 
 
 ## CV - 视觉任务
-- 按数据分类 **2D/3D**
-- 按结果分类 **Classification/Object Detection/Object Tracking/Semantic Segmentation/Instance Segmentation/Pose Estimation/异常检测/GAN/CBIR...**
-- 常用 **人脸检测识别/人脸关键点/表情识别/人体骨骼关键点/**
+
+- 随着传感器的发展, 逐渐由 2D Image Task --> 3D Image Task 推进
+- **按 `Inference` 结果分类** 
+  - Classification
+  - Object Detection
+  - Object Tracking
+  - Semantic Segmentation
+  - Instance Segmentation
+  - Pose Estimation
+  - 异常检测
+  - GAN
+  - Image Retrival
+- 一些精细的研究领域取得了比较好的成果
+  - 人脸检测识别
+  - 人脸关键点
+  - 表情识别
+  - 人体骨骼关键点
+
+## Auido
+
+- 语音识别
+- 实时翻译
 
 ## NLP - 自然语言
 
