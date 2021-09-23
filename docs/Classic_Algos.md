@@ -2,7 +2,7 @@
 Title | Classic Algos
 -- | --
 Create Date | `2021-08-31T08:57:58Z`
-Update Date | `2021-09-23T11:57:14Z`
+Update Date | `2021-09-23T11:59:39Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/7)
 
 ---
@@ -11,7 +11,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/7)
 - [LeNet](/LeNet)
 - [AlexNet](/AlexNet)
 - [VGGNet](/VGGNet)
-- [MobileNet](/MobileNet)
+- [MobileNet](/MobileNet_Summary)
   - [MobileNet V1](/MobileNetV1)
   - [MobileNet V2](/MobileNetV2)
   - [MobileNet V3](/MobileNetV3)
