@@ -2,7 +2,7 @@
 Title | Datasets Image Classification mnist
 -- | --
 Create Date | `2019-01-18T18:36:57Z`
-Update Date | `2021-09-23T06:09:09Z`
+Update Date | `2021-09-23T06:11:00Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/30)
 
 ---
@@ -19,12 +19,12 @@ MNIST 数据集来自美国国家标准与技术研究所, National Institute of
 
 ## Download
 
-Datasets | Description
--- | --
-[train-images-idx3-ubyte.gz](https://github.com/junxnone/junxnone.github.io/files/2774597/train-images-idx3-ubyte.gz) | Training set images (9.9 MB, 解压后 47 MB, 包含 60,000 个样本)
-[train-labels-idx1-ubyte.gz](https://github.com/junxnone/junxnone.github.io/files/2774598/train-labels-idx1-ubyte.gz) | Training set labels(29 KB, 解压后 60 KB, 包含 60,000 个标签)
-[train-images-idx3-ubyte.gz](https://github.com/junxnone/junxnone.github.io/files/2774599/train-images-idx3-ubyte.gz) | Test set images (1.6 MB, 解压后 7.8 MB, 包含 10,000 个样本)
-[t10k-labels-idx1-ubyte.gz](https://github.com/junxnone/junxnone.github.io/files/2774601/t10k-labels-idx1-ubyte.gz) | Test set labels(5KB, 解压后 10 KB, 包含 10,000 个标签)
+Datasets | Description | Images
+-- | -- | --
+[train-images-idx3-ubyte.gz](https://github.com/junxnone/junxnone.github.io/files/2774597/train-images-idx3-ubyte.gz) | Training images (9.9 MB, 解压后 47 MB) | 60000
+[train-labels-idx1-ubyte.gz](https://github.com/junxnone/junxnone.github.io/files/2774598/train-labels-idx1-ubyte.gz) | Training labels(29 KB, 解压后 60 KB) |  60000
+[train-images-idx3-ubyte.gz](https://github.com/junxnone/junxnone.github.io/files/2774599/train-images-idx3-ubyte.gz) | Test images (1.6 MB, 解压后 7.8 MB) | 10000
+[t10k-labels-idx1-ubyte.gz](https://github.com/junxnone/junxnone.github.io/files/2774601/t10k-labels-idx1-ubyte.gz) | Test labels(5KB, 解压后 10 KB) 10000
 
 ## Format
 
