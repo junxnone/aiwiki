@@ -2,9 +2,12 @@
 Title | Classic Algos
 -- | --
 Create Date | `2021-08-31T08:57:58Z`
-Update Date | `2021-09-13T06:58:16Z`
+Update Date | `2021-09-23T09:02:35Z`
+Edit link | [here](https://github.com/junxnone/aiwiki/issues/7)
+
 ---
 # Classification
+
 - [LeNet](/LeNet)
 - [AlexNet](/AlexNet)
 - [VGGNet](/VGGNet)
@@ -19,7 +22,10 @@ Update Date | `2021-09-13T06:58:16Z`
 - Xception
 - EfficientNet
 - [ResNet]
+
+
 # Detection
+
 - [R-CNN]
 - [Fast R-CNN]
 - [Faster R-CNN]
@@ -32,7 +38,10 @@ Update Date | `2021-09-13T06:58:16Z`
   - [YOLOv4]
   - [YOLOv5]
 - [SSD]
+
 # Segmentation
+
 - [FCN]
+
 # OCR
 
