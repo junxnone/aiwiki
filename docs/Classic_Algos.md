@@ -2,7 +2,7 @@
 Title | Classic Algos
 -- | --
 Create Date | `2021-08-31T08:57:58Z`
-Update Date | `2021-09-27T04:35:20Z`
+Update Date | `2021-09-27T07:34:41Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/7)
 
 ---
@@ -30,13 +30,13 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/7)
 - [Fast R-CNN]
 - [Faster R-CNN]
 - [YOLO]
-  - [YOLOv1]
-  - [YOLOv2]
-  - [YOLOv3]
-  - [YOLOtiny]
+  - [YOLO V1]
+  - [YOLO V2]
+  - [YOLO V3]
+  - [YOLO tiny](/YOLO_tiny)
   - [YOLO-SPP]
-  - [YOLOv4]
-  - [YOLOv5]
+  - [YOLO V4]
+  - [YOLO V5]
   - [YOLOX]
 - [SSD]
 
