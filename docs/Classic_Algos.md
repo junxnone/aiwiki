@@ -2,7 +2,7 @@
 Title | Classic Algos
 -- | --
 Create Date | `2021-08-31T08:57:58Z`
-Update Date | `2021-09-27T03:12:42Z`
+Update Date | `2021-09-27T04:35:20Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/7)
 
 ---
@@ -21,7 +21,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/7)
   - [MobileNet V2](/MobileNetV2)
   - [MobileNet V3](/MobileNetV3)
 - EfficientNet
-- [ResNet]
+- [ResNet](/ResNet)
 
 
 # Detection
