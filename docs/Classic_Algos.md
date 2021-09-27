@@ -2,7 +2,7 @@
 Title | Classic Algos
 -- | --
 Create Date | `2021-08-31T08:57:58Z`
-Update Date | `2021-09-27T08:30:33Z`
+Update Date | `2021-09-27T09:44:20Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/7)
 
 ---
@@ -28,7 +28,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/7)
 
 - [R-CNN](/RCNN)
 - [Fast R-CNN](Fast_RCNN)
-- [Faster R-CNN](Faster RCNN)
+- [Faster R-CNN](Faster_RCNN)
 - [YOLO](/YOLO_Summary)
   - [YOLO V1](/YOLO_V1)
   - [YOLO V2](/YOLO_V2)
