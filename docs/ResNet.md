@@ -1,8 +1,8 @@
 ---
 Title | ResNet
 -- | --
-Create Date | `2021-09-27T04:35:30Z`
-Update Date | `2021-09-27T04:35:30Z`
+Create Date | `2019-02-12T01:59:44Z`
+Update Date | `2021-09-27T04:47:07Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/51)
 
 ---
@@ -28,7 +28,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/51)
   - 精度下降并不是由过拟合导致的
 - 网络中增加直连通道 - shortcut connection
   - 让深度网络实现和浅层网络一样的性能，即让深度网络后面的层至少实现恒等映射的作用
-- Alpha zero也使用了ResNet
+- 很多其他网络借鉴了 ResNet: Alpha zero/MobileNetv2
 
 
 
