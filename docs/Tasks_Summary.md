@@ -2,7 +2,7 @@
 Title | Tasks Summary
 -- | --
 Create Date | `2021-08-31T07:41:22Z`
-Update Date | `2021-09-23T05:28:50Z`
+Update Date | `2021-09-27T10:40:46Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/3)
 
 ---
@@ -14,7 +14,7 @@ CV/Audio/NLP/RL/Sequential/Graphs...
 
 - 随着传感器的发展, 逐渐由 2D Image Task --> 3D Image Task 推进
 - **按 `Inference` 结果分类** 
-  - Classification
+  - [Classification](/Image_Classification)
   - Object Detection
   - Object Tracking
   - Semantic Segmentation
