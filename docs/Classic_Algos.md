@@ -2,7 +2,7 @@
 Title | Classic Algos
 -- | --
 Create Date | `2021-08-31T08:57:58Z`
-Update Date | `2021-09-23T12:48:16Z`
+Update Date | `2021-09-27T03:12:42Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/7)
 
 ---
@@ -37,6 +37,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/7)
   - [YOLO-SPP]
   - [YOLOv4]
   - [YOLOv5]
+  - [YOLOX]
 - [SSD]
 
 # Segmentation
