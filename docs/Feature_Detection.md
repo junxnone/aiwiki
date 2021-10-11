@@ -2,7 +2,7 @@
 Title | Feature Detection
 -- | --
 Create Date | `2019-07-20T11:57:13Z`
-Update Date | `2021-10-11T07:35:50Z`
+Update Date | `2021-10-11T07:36:50Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/64)
 
 ---
@@ -24,7 +24,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/64)
   - **Corner Detection** - Interest points
     - [Moravec Corner](/Feature_Detection_Moravec_Corner)
     - [Harris Corner](/Feature_Detection_Harris_Corner)
-  - **Blob Detection** - Regions of interest points
+  - [**Blob Detection**](/Feature_Detection_Blob_Detection) - Regions of interest points
   - **Ridge Detection**
   - **Hough Transform** - Line/Circle/Ellipse
   - Structure Tensor
