@@ -2,7 +2,7 @@
 Title | Feature Detection
 -- | --
 Create Date | `2019-07-20T11:57:13Z`
-Update Date | `2021-10-11T07:36:50Z`
+Update Date | `2021-10-11T07:40:43Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/64)
 
 ---
@@ -26,11 +26,11 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/64)
     - [Harris Corner](/Feature_Detection_Harris_Corner)
   - [**Blob Detection**](/Feature_Detection_Blob_Detection) - Regions of interest points
   - **Ridge Detection**
-  - **Hough Transform** - Line/Circle/Ellipse
-  - Structure Tensor
+  - [**Hough Transform**](Feature_Detection_Hough_Transform) - Line/Circle/Ellipse
+  - [Structure Tensor](Feature_Detection_Structure_Tensor)
   - Affine Invariant Feature Detection
   - Feature Description
-    - SIFT
+    - [SIFT](Feature_Detection_SIFT)
     - SURF
     - GLOH
     - HOG
