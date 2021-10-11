@@ -2,7 +2,7 @@
 Title | Feature Detection
 -- | --
 Create Date | `2019-07-20T11:57:13Z`
-Update Date | `2021-10-11T07:32:49Z`
+Update Date | `2021-10-11T07:35:50Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/64)
 
 ---
@@ -16,12 +16,14 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/64)
 
 -  Feature Detection - 特征检测
 - **分类** 
-  - **Edge Detection**
+  - [**Edge Detection**](/Feature_Detection_Edge_Operator)
     - Prewitt
     - Sobel
     - Laplacian
     - Canny
   - **Corner Detection** - Interest points
+    - [Moravec Corner](/Feature_Detection_Moravec_Corner)
+    - [Harris Corner](/Feature_Detection_Harris_Corner)
   - **Blob Detection** - Regions of interest points
   - **Ridge Detection**
   - **Hough Transform** - Line/Circle/Ellipse
