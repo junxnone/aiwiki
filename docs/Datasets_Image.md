@@ -2,11 +2,10 @@
 Title | Datasets Image
 -- | --
 Create Date | `2021-09-08T06:25:00Z`
-Update Date | `2021-09-23T05:46:06Z`
+Update Date | `2021-10-13T16:08:24Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/18)
 
 ---
-
 # 2D Images Datasets
 
 - [Classification](./Datasets_Image_Classification)
@@ -35,4 +34,4 @@ MSCOCO | ✅ | ✅ | ✅ |
 Pascal VOC |  ✅ | ✅ | ✅ |
 
 
-# 3D Images Datasets
+# [3D Images Datasets](/Datasets_Image_3D)
