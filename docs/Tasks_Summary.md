@@ -2,7 +2,7 @@
 Title | Tasks Summary
 -- | --
 Create Date | `2021-08-31T07:41:22Z`
-Update Date | `2021-09-27T10:40:46Z`
+Update Date | `2021-10-13T01:08:14Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/3)
 
 ---
@@ -28,6 +28,12 @@ CV/Audio/NLP/RL/Sequential/Graphs...
   - 人脸关键点
   - 表情识别
   - 人体骨骼关键点
+- 3D Task
+  - 点云配准
+  - 点云识别
+  - Semantic Segmentation
+  - Object Detection
+
 
 ## Auido
 
