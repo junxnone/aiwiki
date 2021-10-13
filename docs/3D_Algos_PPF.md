@@ -1,8 +1,8 @@
 ---
 Title | 3D Algos PPF
 -- | --
-Create Date | `2021-10-13T01:21:27Z`
-Update Date | `2021-10-13T01:21:27Z`
+Create Date | `2021-04-29T02:09:42Z`
+Update Date | `2021-10-13T01:21:50Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/85)
 
 ---
@@ -14,7 +14,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/85)
 
 
 # Brief
-- PPF
+- PPF - `Point Pair Feature`
 - Global Model Description (F-PP Hash Table)
 
 
