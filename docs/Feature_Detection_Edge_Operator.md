@@ -2,7 +2,7 @@
 Title | Feature Detection Edge Operator
 -- | --
 Create Date | `2020-11-12T07:09:54Z`
-Update Date | `2021-10-16T04:04:33Z`
+Update Date | `2021-10-16T04:05:54Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/65)
 
 ---
@@ -21,6 +21,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/65)
 - Scharr
 - Canny
 - Marr-Hildreth
+
+> DL 中一般使用 `Object Contour Detection` & `Semantic Segmentation` 检测边缘
 
 ## Roberts 
 - 用于图像锐化
