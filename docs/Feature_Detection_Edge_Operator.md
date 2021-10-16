@@ -2,7 +2,7 @@
 Title | Feature Detection Edge Operator
 -- | --
 Create Date | `2020-11-12T07:09:54Z`
-Update Date | `2021-10-16T04:05:54Z`
+Update Date | `2021-10-16T04:07:12Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/65)
 
 ---
@@ -19,7 +19,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/65)
 - Prewitt
 - Sobel
 - Scharr
-- Canny
+- [Canny](/Edge_Detection_Canny)
 - Marr-Hildreth
 
 > DL 中一般使用 `Object Contour Detection` & `Semantic Segmentation` 检测边缘
