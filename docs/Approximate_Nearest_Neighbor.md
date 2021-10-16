@@ -1,8 +1,8 @@
 ---
 Title | Approximate Nearest Neighbor
 -- | --
-Create Date | `2021-10-16T04:16:31Z`
-Update Date | `2021-10-16T04:16:31Z`
+Create Date | `2021-08-18T03:39:23Z`
+Update Date | `2021-10-16T04:17:23Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/103)
 
 ---
@@ -15,7 +15,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/103)
 - **近似最近邻算法** - 通过牺牲精度来换取时间和空间的方式从大量样本中获取最近邻
 - 
 ## Algos
-- [KDTree](https://github.com/junxnone/tech-io/issues/987 )
+- [KDTree](/KDTree)
 - LSH - `Locality Sensitive Hashing`
   - QALSH - `Query-Aware LSH`
   - SRS
