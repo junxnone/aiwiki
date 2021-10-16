@@ -1,8 +1,8 @@
 ---
 Title | Feature Detection Edge Operator
 -- | --
-Create Date | `2021-10-11T07:33:08Z`
-Update Date | `2021-10-11T07:33:08Z`
+Create Date | `2020-11-12T07:09:54Z`
+Update Date | `2021-10-16T04:04:33Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/65)
 
 ---
@@ -10,11 +10,17 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/65)
 - [Prewitt operator](https://en.wikipedia.org/wiki/Prewitt_operator)
 - [梯度与Roberts、Prewitt、Sobel、Lapacian算子](https://blog.csdn.net/swj110119/article/details/51777422)
 - 1970 [Object enhancement and extraction](http://web.eecs.utk.edu/~hqi/ece472-572/reference/edge-Prewitt70.pdf)
+- [数字图像处理:边缘检测(Edge detection)](https://zhuanlan.zhihu.com/p/59640437)
+- [Awesome-Edge-Detection-Papers](https://github.com/MarkMoHR/Awesome-Edge-Detection-Papers)
+- [传统实现 - prewitt/laplace/sobel/scharr/Canny ](https://github.com/butub1/Edge-detection)
+
 # Brief
 - Roberts
 - Prewitt
 - Sobel
 - Scharr
+- Canny
+- Marr-Hildreth
 
 ## Roberts 
 - 用于图像锐化
