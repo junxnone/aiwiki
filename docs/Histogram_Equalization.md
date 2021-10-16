@@ -1,0 +1,83 @@
+---
+Title | Histogram Equalization
+-- | --
+Create Date | `2021-10-16T04:01:06Z`
+Update Date | `2021-10-16T04:01:06Z`
+Edit link | [here](https://github.com/junxnone/aiwiki/issues/100)
+
+---
+# Reference
+- [直方图均衡化](https://zhuanlan.zhihu.com/p/44918476)
+- 1974 [Image enhancement techniques for cockpit displays](https://apps.dtic.mil/dtic/tr/fulltext/u2/a014928.pdf)
+- 1987 [Adaptive Histogram Equalization and Its Variations]()
+- [Histogram Equalization - opencv](https://docs.opencv.org/3.4/d4/d1b/tutorial_histogram_equalization.html)
+- [Histogram equalization - wikipedia](https://en.wikipedia.org/wiki/Histogram_equalization)
+- [直方图均衡化原理](https://www.cnblogs.com/tianyalu/p/5687782.html)
+- [原理公式推导](https://blog.csdn.net/qq_15971883/article/details/88699218)
+- [Contrast Stretching](http://homepages.inf.ed.ac.uk/rbf/HIPR2/stretch.htm)
+- [Histogram Equalization](http://homepages.inf.ed.ac.uk/rbf/HIPR2/histeq.htm)
+- [Local Histogram Equalization - scikit-image](https://scikit-image.org/docs/dev/auto_examples/color_exposure/plot_local_equalize.html)
+
+# Brief
+- 图像直方图均匀分布
+- 增强图像 - 更好的对比度
+- CDF -  [cumulative distribution function](https://en.wikipedia.org/wiki/Cumulative_distribution_function)  - 累积分布函数
+ - HE - `Histogram Equalization`
+ - AHE - `Adaptive Hisogram Equalization`
+ - CLAHE - `Contrast Limited Adaptive Hitogram Equalization`
+
+----
+
+![image](https://user-images.githubusercontent.com/2216970/100454643-4b670f00-30f8-11eb-816f-8a9a73591ea7.png)
+
+
+
+## Contrast Stretching
+- 8 bit image 最小值 `Vmin = 0` `Vmax = 255`
+- image 中 Pixel 最小值 `Pmin`, 最大值 `Pmax`
+- `cutoff fraction` - 小于 `Pmin = histogram_peak * cutoff_fraction` 的值忽略掉
+
+Process | Image | Histogram
+-- | -- | --
+Original | ![image](https://user-images.githubusercontent.com/2216970/100560157-ea099080-32ef-11eb-813c-035784099874.png) | ![image](https://user-images.githubusercontent.com/2216970/100560160-ed048100-32ef-11eb-96a4-e105d761badb.png)
+Contrast Stretching<br>`Pmin=79`<br>`Pmax=136`|  ![image](https://user-images.githubusercontent.com/2216970/100560198-11f8f400-32f0-11eb-8ca3-a9ae79c41b39.png) | ![image](https://user-images.githubusercontent.com/2216970/100560206-19b89880-32f0-11eb-951b-f0d1b2351d52.png)
+Histogram Equalizing | ![image](https://user-images.githubusercontent.com/2216970/100560729-b465a700-32f1-11eb-8250-7a3fe4e3dac5.png)
+Histogram Equalizing<br>+ Contrast Stretching <br>cutoff_fraction = 0.03| ![image](https://user-images.githubusercontent.com/2216970/100560733-ba5b8800-32f1-11eb-84b4-2b1eb0275232.png) | ![image](https://user-images.githubusercontent.com/2216970/100560737-bdef0f00-32f1-11eb-9de2-bab9a367ae34.png)
+Histogram Equalizing<br>+ Contrast Stretching <br>cutoff_fraction = 0.125| ![image](https://user-images.githubusercontent.com/2216970/100560751-ca736780-32f1-11eb-88b7-8d8a7ad4c9b0.png)| ![image](https://user-images.githubusercontent.com/2216970/100560755-d0694880-32f1-11eb-814d-dd12d438964d.png)
+
+
+
+`Pout = (Pin - Pmin)(Vmax-Vmin)/(Pmax-Pmin) + Vmin`
+
+## HE - Histogram Equalization
+- 单调非线性
+
+公式 | Description
+-- | --
+![image](https://user-images.githubusercontent.com/2216970/100561547-2ccd6780-32f4-11eb-87b1-c2024f5f8b9e.png) | Image `A(x,y)` => Image `B(x,y)`
+![image](https://user-images.githubusercontent.com/2216970/100561602-4d95bd00-32f4-11eb-873d-b68f6f3c5e44.png)
+![image](https://user-images.githubusercontent.com/2216970/100562305-3d7edd00-32f6-11eb-9857-92d72e5725f2.png)
+![image](https://user-images.githubusercontent.com/2216970/100562281-2809b300-32f6-11eb-9a1b-d44a3a913bdc.png) | 对应区间内像素点总数不变
+![image](https://user-images.githubusercontent.com/2216970/100562323-512a4380-32f6-11eb-8c24-b52d29a980bf.png)
+![image](https://user-images.githubusercontent.com/2216970/100562359-7919a700-32f6-11eb-930c-d04886e2adf0.png) | A0 像素点个数 L 灰度阶数
+
+
+Input Image `DA` => Output Image `DB` 映射图 | 
+-- |
+![image](https://user-images.githubusercontent.com/2216970/100562033-65ba0c00-32f5-11eb-8774-88dfaf3e6a7e.png)
+
+
+
+## AHE - Adaptive Hisogram Equalization
+- 自适应直方图均衡化
+- 考虑到局部图像区域 - `WxW` 窗口
+- LAHE - Local Area HE
+
+![image](https://user-images.githubusercontent.com/2216970/100970111-3f070a00-356f-11eb-9384-a5183b07278a.png)
+
+## CLAHE - Contrast Limited Adaptive Hitogram Equalization
+- 限制对比度自适应直方图均衡化
+- 将直方图中超过阈值的部分平均分配到各灰度级
+
+![image](https://user-images.githubusercontent.com/2216970/100969603-4843a700-356e-11eb-961d-40725328c002.png)
+
