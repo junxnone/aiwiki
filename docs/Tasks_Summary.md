@@ -2,7 +2,7 @@
 Title | Tasks Summary
 -- | --
 Create Date | `2021-08-31T07:41:22Z`
-Update Date | `2021-10-19T15:31:24Z`
+Update Date | `2021-10-19T15:31:48Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/3)
 
 ---
@@ -15,7 +15,7 @@ CV/Audio/NLP/RL/Sequential/Graphs...
 - **研究趋势** 
   - `2D Image` --> `3D Image`
   - `Image` --> `Video`
-- **按 `Inference` 结果分类** 
+- **Image** 
   - [Classification - 图像分类](/Image_Classification)
   - [Object Detection - 目标检测]
   - [Semantic Segmentation - 语义分割]
@@ -25,14 +25,14 @@ CV/Audio/NLP/RL/Sequential/Graphs...
   - 异常检测
   - GAN
   - [Image Retrival - 图像检索]
-- Video
+- **Video**
   - [Object Tracking - 目标跟踪]
 - 一些精细的研究领域取得了比较好的成果
   - 人脸检测识别
   - 人脸关键点
   - 表情识别
   - 人体骨骼关键点
-- [3D](/3D_Summary)
+- **[3D](/3D_Summary)**
   - 点云配准
   - 点云识别
   - Semantic Segmentation
