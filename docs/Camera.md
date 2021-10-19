@@ -2,11 +2,10 @@
 Title | Camera
 -- | --
 Create Date | `2021-10-19T15:14:46Z`
-Update Date | `2021-10-19T15:17:46Z`
+Update Date | `2021-10-19T15:33:20Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/107)
 
 ---
-
 # Brief
 
 - Camera 类型
@@ -17,6 +16,10 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/107)
 # 相关标准
 
 - [GenICam](/GenICam)
+- [rtsp]
+- [GigE]
+- [v4l2]
+
 
 # 相关 Camera 厂商
 
