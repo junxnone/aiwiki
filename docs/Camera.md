@@ -2,7 +2,7 @@
 Title | Camera
 -- | --
 Create Date | `2021-10-19T15:14:46Z`
-Update Date | `2021-10-19T16:33:14Z`
+Update Date | `2021-10-19T16:40:09Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/107)
 
 ---
@@ -15,7 +15,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/107)
 
 # Tools
 - [Aravis](/Aravis)
-- [Gstreamer]
+- [Gstreamer](/Gstreamer)
 
 # 相关标准
 
