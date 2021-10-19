@@ -1,8 +1,8 @@
 ---
 Title | SVM
 -- | --
-Create Date | `2021-10-19T18:43:39Z`
-Update Date | `2021-10-19T18:43:39Z`
+Create Date | `2019-05-11T13:48:41Z`
+Update Date | `2021-10-19T18:44:15Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/115)
 
 ---
@@ -17,6 +17,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/115)
 
 # Brief
 - SVM - Support Vector Machine - 支持向量机
+- [SVM 原理推导](/SVM_原理推导)
 - 监督式学习
   - 统计分类
   - 回归分析
