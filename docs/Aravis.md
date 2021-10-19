@@ -2,10 +2,13 @@
 Title | Aravis
 -- | --
 Create Date | `2021-10-19T16:32:03Z`
-Update Date | `2021-10-19T16:50:08Z`
+Update Date | `2021-10-19T16:54:22Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/108)
 
 ---
+# Reference
+- [Using GigE cam as webcam for Zoom/Skype/Teams](https://gist.github.com/nitheeshkl/5cbf1a0777801a7e9b8e12f8252d465e)
+
 # Brief
 - Genicam cameras Tools
 
