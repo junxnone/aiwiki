@@ -2,7 +2,7 @@
 Title | Tasks Summary
 -- | --
 Create Date | `2021-08-31T07:41:22Z`
-Update Date | `2021-10-13T01:10:03Z`
+Update Date | `2021-10-19T15:31:24Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/3)
 
 ---
@@ -12,17 +12,21 @@ CV/Audio/NLP/RL/Sequential/Graphs...
 
 ## CV - 视觉任务
 
-- 随着传感器的发展, 逐渐由 2D Image Task --> 3D Image Task 推进
+- **研究趋势** 
+  - `2D Image` --> `3D Image`
+  - `Image` --> `Video`
 - **按 `Inference` 结果分类** 
-  - [Classification](/Image_Classification)
-  - Object Detection
-  - Object Tracking
-  - Semantic Segmentation
-  - Instance Segmentation
-  - Pose Estimation
+  - [Classification - 图像分类](/Image_Classification)
+  - [Object Detection - 目标检测]
+  - [Semantic Segmentation - 语义分割]
+  - [Instance Segmentation - 实例分割]
+  - [全景分割]
+  - [Pose Estimation - 姿态估计]
   - 异常检测
   - GAN
-  - Image Retrival
+  - [Image Retrival - 图像检索]
+- Video
+  - [Object Tracking - 目标跟踪]
 - 一些精细的研究领域取得了比较好的成果
   - 人脸检测识别
   - 人脸关键点
