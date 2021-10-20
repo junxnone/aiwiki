@@ -1,8 +1,8 @@
 ---
 Title | Gstreamer
 -- | --
-Create Date | `2021-10-19T16:41:11Z`
-Update Date | `2021-10-19T16:41:11Z`
+Create Date | `2018-11-27T15:44:49Z`
+Update Date | `2021-10-20T14:19:53Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/109)
 
 ---
@@ -15,10 +15,21 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/109)
 
 
 # Brief
+- Gstreamer 是一个通用跨平台的流媒体应用框架
+  - 可以处理 Audio/Video/其他数据流
 - element
 - pad
 - bin
 - pipeline
+
+
+Tools | Description
+-- | --
+[gst-inspect-1.0](gstreamer_tools_gst_inspect)
+[gst-launch-1.0](/gstreamer_tools_gst_launch)
+[gst-device-monitor-1.0] | 查看当前设备上的 `Device`
+[gst-discoverer-1.0](gstreamer_tools_gst_discoverer)
+
 
 ## Install
 ### Install with Ubuntu
@@ -27,16 +38,12 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/109)
 
 ```
 
-## Command Line Tools
-
-Name  | Description
--- | --
-[gst-inspect-1.0](gstreamer_tools_gst_inspect)
-[gst-launch-1.0](/gstreamer_tools_gst_launch)
-[gst-device-monitor-1.0] | 查看当前设备上的 `Device`
-[gst-discoverer-1.0](gstreamer_tools_gst_discoverer)
-
-## build
+### build from source
 ```
 sudo apt install autopoint gtk-doc-tools
 ```
+
+
+
+
+
