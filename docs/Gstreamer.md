@@ -2,7 +2,7 @@
 Title | Gstreamer
 -- | --
 Create Date | `2018-11-27T15:44:49Z`
-Update Date | `2021-10-20T14:19:53Z`
+Update Date | `2021-10-20T14:22:28Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/109)
 
 ---
@@ -42,6 +42,16 @@ Tools | Description
 ```
 sudo apt install autopoint gtk-doc-tools
 ```
+
+
+
+## Pipeline
+- source - file/http/rtp/...
+- demux - 分离数据 audio/video/...
+- decoder - `xxx format -> yuv/pcm`
+- sink - 数据输出
+
+![image](https://user-images.githubusercontent.com/2216970/138111410-65ed98b9-82a7-4097-91da-cbaa2c8a47da.png)
 
 
 
