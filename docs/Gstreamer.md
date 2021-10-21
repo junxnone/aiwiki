@@ -2,7 +2,7 @@
 Title | Gstreamer
 -- | --
 Create Date | `2018-11-27T15:44:49Z`
-Update Date | `2021-10-21T03:13:46Z`
+Update Date | `2021-10-21T03:21:05Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/109)
 
 ---
@@ -29,7 +29,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/109)
   - [gst-inspect-1.0](gstreamer_tools_gst_inspect)
   - [gst-launch-1.0](/gstreamer_tools_gst_launch)
   - [gst-device-monitor-1.0]  -  查看当前设备上的 `Device`
-  - [gst-discoverer-1.0](gstreamer_tools_gst_discoverer)
+  - [gst-discoverer-1.0](gstreamer_tools_gst_discoverer) - 查看 media 相关信息 - codec/Channels/Sample rate/Bitrate/...
   - ges-launch-1.0
 - [Gstreamer Install](/Gstreamer_Install)
 
