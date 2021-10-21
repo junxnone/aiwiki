@@ -2,11 +2,12 @@
 Title | Image Color Spaces
 -- | --
 Create Date | `2020-11-11T06:09:50Z`
-Update Date | `2021-10-21T18:22:36Z`
+Update Date | `2021-10-21T18:25:20Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
 
 ---
 # Reference
+- [Color model - wikipedia](https://en.wikipedia.org/wiki/Color_model)
 - [Color conversions](https://docs.opencv.org/master/de/d25/imgproc_color_conversions.html)
 - [cv.cvtColor() - OpenCV](https://github.com/junxnone/examples/issues/26)
 - [Hue - wikipedia](https://en.wikipedia.org/wiki/Hue)
@@ -18,10 +19,12 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
   - RGB - 用于计算机图形学
   - YIQ/YUV/YCbCr - 用于视频
   - CMYK - 用于彩色打印
+- Color model
 - Others Color Spaces
   - CIE 1931 color space - `CIE 1931 RGB color space`/`CIE 1931 XYZ color space`
   - CIEUVW
   - CIELUV
+  - CIELAB
 
 Modes | Description
 -- | --
