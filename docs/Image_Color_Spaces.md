@@ -2,7 +2,7 @@
 Title | Image Color Spaces
 -- | --
 Create Date | `2020-11-11T06:09:50Z`
-Update Date | `2021-10-21T17:53:28Z`
+Update Date | `2021-10-21T18:13:47Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
 
 ---
@@ -39,3 +39,7 @@ Bayer | ![image](https://user-images.githubusercontent.com/2216970/98776539-14bb
 -- | -- | --
  ![image](https://user-images.githubusercontent.com/2216970/101111902-25b99880-3617-11eb-9239-c1201c8c423b.png) | ![image](https://user-images.githubusercontent.com/2216970/101111876-15a1b900-3617-11eb-9b4b-433e812701e8.png) | ![image](https://user-images.githubusercontent.com/2216970/101112317-f9524c00-3617-11eb-8546-311d747d3007.png)
 
+
+## RGB
+- 人眼对于 `RGB` 三种颜色分量的敏感程度不同 `R<G<B`
+- 均匀性较差, 使用 `欧氏距离` 度量相似性结果会合人眼视觉有较大偏差
