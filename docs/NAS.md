@@ -2,7 +2,7 @@
 Title | NAS
 -- | --
 Create Date | `2021-09-06T09:24:10Z`
-Update Date | `2021-10-21T16:41:44Z`
+Update Date | `2021-10-21T16:42:29Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/14)
 
 ---
@@ -57,7 +57,7 @@ PPO | Proximal Policy Optimization Algorithms
 
 
 
-# History - [Timeline](https://junxnone.github.io/ht/NAS)
+# History - [Timeline](https://junxnone.github.io/wht/tech/nas/)
 
 
 - 11/2016 - NAS & RL - [Neural Architecture Search with Reinforcement Learning](https://arxiv.org/abs/1611.01578)
