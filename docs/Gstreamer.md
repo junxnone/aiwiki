@@ -2,7 +2,7 @@
 Title | Gstreamer
 -- | --
 Create Date | `2018-11-27T15:44:49Z`
-Update Date | `2021-10-20T14:22:28Z`
+Update Date | `2021-10-21T02:41:31Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/109)
 
 ---
@@ -21,6 +21,11 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/109)
 - pad
 - bin
 - pipeline
+
+## Arch
+
+![image](https://user-images.githubusercontent.com/2216970/138202047-986a28dc-ede5-4c42-b8c7-f0d802b7512e.png)
+
 
 
 Tools | Description
