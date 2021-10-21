@@ -2,7 +2,7 @@
 Title | PixelFormat
 -- | --
 Create Date | `2021-10-21T17:44:24Z`
-Update Date | `2021-10-21T17:44:24Z`
+Update Date | `2021-10-21T18:38:43Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/119)
 
 ---
@@ -12,6 +12,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/119)
 
 # Brief
 - PixelFormat
+  - Monochromatic Formats- 单色
+  - Color Formats
 
 ## 常见相关格式
 
