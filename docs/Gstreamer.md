@@ -2,7 +2,7 @@
 Title | Gstreamer
 -- | --
 Create Date | `2018-11-27T15:44:49Z`
-Update Date | `2021-10-21T02:48:23Z`
+Update Date | `2021-10-21T02:52:20Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/109)
 
 ---
@@ -64,6 +64,7 @@ sudo apt install autopoint gtk-doc-tools
 
 ![image](https://user-images.githubusercontent.com/2216970/138111410-65ed98b9-82a7-4097-91da-cbaa2c8a47da.png)
 
+![image](https://user-images.githubusercontent.com/2216970/138203169-3e1ebef5-fb7f-4c08-a5d8-5a41159f3be9.png)
 
 
 
