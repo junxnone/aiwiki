@@ -2,7 +2,7 @@
 Title | Gstreamer
 -- | --
 Create Date | `2018-11-27T15:44:49Z`
-Update Date | `2021-10-21T02:56:19Z`
+Update Date | `2021-10-21T03:13:46Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/109)
 
 ---
@@ -31,18 +31,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/109)
   - [gst-device-monitor-1.0]  -  查看当前设备上的 `Device`
   - [gst-discoverer-1.0](gstreamer_tools_gst_discoverer)
   - ges-launch-1.0
+- [Gstreamer Install](/Gstreamer_Install)
 
-## Install
-### Install with Ubuntu
-```
-
-
-```
-
-### build from source
-```
-sudo apt install autopoint gtk-doc-tools
-```
 
 
 ## Arch
