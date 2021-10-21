@@ -2,7 +2,7 @@
 Title | Gstreamer
 -- | --
 Create Date | `2018-11-27T15:44:49Z`
-Update Date | `2021-10-21T02:47:58Z`
+Update Date | `2021-10-21T02:48:23Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/109)
 
 ---
@@ -22,13 +22,6 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/109)
 - bin
 - pipeline
 
-## Arch
-
-![image](https://user-images.githubusercontent.com/2216970/138202047-986a28dc-ede5-4c42-b8c7-f0d802b7512e.png)
-
----
-
-![image](https://user-images.githubusercontent.com/2216970/138202714-cef78876-0d68-4811-9f57-a5a583e552a7.png)
 
 
 
@@ -51,6 +44,15 @@ ges-launch-1.0
 ```
 sudo apt install autopoint gtk-doc-tools
 ```
+
+
+## Arch
+
+![image](https://user-images.githubusercontent.com/2216970/138202047-986a28dc-ede5-4c42-b8c7-f0d802b7512e.png)
+
+---
+
+![image](https://user-images.githubusercontent.com/2216970/138202714-cef78876-0d68-4811-9f57-a5a583e552a7.png)
 
 
 
