@@ -2,7 +2,7 @@
 Title | NAS
 -- | --
 Create Date | `2021-09-06T09:24:10Z`
-Update Date | `2021-10-21T16:40:57Z`
+Update Date | `2021-10-21T16:41:44Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/14)
 
 ---
@@ -23,7 +23,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/14)
 
 
 # Brief
-- `One Stage`/`Two Stage`/`OneShot`
+- **按搜索 Pipeline 分类:** `One Stage`/`Two Stage`/`OneShot`
 - `Search Space` - > `Search Strategy`( `Architecture Optimization`) -> `Performance Estimation Strategy`
 - RL/EA ->  Blocks -> GD -> One-Shot
 
