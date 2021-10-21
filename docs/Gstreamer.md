@@ -2,7 +2,7 @@
 Title | Gstreamer
 -- | --
 Create Date | `2018-11-27T15:44:49Z`
-Update Date | `2021-10-21T02:55:22Z`
+Update Date | `2021-10-21T02:56:19Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/109)
 
 ---
@@ -25,16 +25,12 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/109)
   - source plugin
   - transform plugin
   - sink plugin
-
-
-
-Tools | Description
--- | --
-[gst-inspect-1.0](gstreamer_tools_gst_inspect)
-[gst-launch-1.0](/gstreamer_tools_gst_launch)
-[gst-device-monitor-1.0] | 查看当前设备上的 `Device`
-[gst-discoverer-1.0](gstreamer_tools_gst_discoverer)
-ges-launch-1.0
+- Command Line Tools
+  - [gst-inspect-1.0](gstreamer_tools_gst_inspect)
+  - [gst-launch-1.0](/gstreamer_tools_gst_launch)
+  - [gst-device-monitor-1.0]  -  查看当前设备上的 `Device`
+  - [gst-discoverer-1.0](gstreamer_tools_gst_discoverer)
+  - ges-launch-1.0
 
 ## Install
 ### Install with Ubuntu
