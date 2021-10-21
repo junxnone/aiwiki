@@ -2,11 +2,10 @@
 Title | README
 -- | --
 Create Date | `2021-09-23T07:01:46Z`
-Update Date | `2021-09-23T07:01:46Z`
+Update Date | `2021-10-21T16:47:53Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/33)
 
 ---
-
 `Le vent se lève, ‌‍‍‌‍​‌‌‍​‍‌‌‌‌​‌‌‍‍‍​‌‍‍‍‍​‌‍‍‍‍​‌‍‍‌‍​‌‌‍​‍‍‌‌‌​‌‌‍‍‍​‌‌‌‍‍​‌‍‍‍‍​‌‍‍‌‍​‌‌‍​‌‌‌‌‍​‌‌‍‌​‍‌‌‌‌​‍‍‍‍‍​‍‍‍​‍‌​‌​‌‌‌​‌‌‌‌​‌‌‍il faut tenter de vivre.`
 
 This is a AI Wiki.
@@ -17,4 +16,5 @@ This is a AI Wiki.
 ----
 
 [![](https://img.shields.io/badge/%2B-Create%20New%20Item-brightgreen)](https://github.com/junxnone/aiwiki/issues/new)
+[![](https://img.shields.io/badge/%2B-Edit%20Sidebar-brightgreen)](https://github.com/junxnone/aiwiki/issues/2)
 
