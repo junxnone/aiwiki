@@ -2,7 +2,7 @@
 Title | PixelFormat
 -- | --
 Create Date | `2021-10-21T17:44:24Z`
-Update Date | `2021-10-21T18:38:43Z`
+Update Date | `2021-10-21T19:11:20Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/119)
 
 ---
@@ -26,4 +26,6 @@ YUV | 422/411 - 8/
 YCbcr | 422/411 - 8
 
 - **YUV vs YCbCr ?**
+  -  YUV - 用于模拟信号
+  - YCbCr - 用于数字信号 - 方便压缩？？
 
