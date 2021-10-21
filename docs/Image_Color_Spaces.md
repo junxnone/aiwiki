@@ -2,7 +2,7 @@
 Title | Image Color Spaces
 -- | --
 Create Date | `2020-11-11T06:09:50Z`
-Update Date | `2021-10-21T18:14:50Z`
+Update Date | `2021-10-21T18:22:36Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
 
 ---
@@ -18,8 +18,10 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
   - RGB - 用于计算机图形学
   - YIQ/YUV/YCbCr - 用于视频
   - CMYK - 用于彩色打印
-
-
+- Others Color Spaces
+  - CIE 1931 color space - `CIE 1931 RGB color space`/`CIE 1931 XYZ color space`
+  - CIEUVW
+  - CIELUV
 
 Modes | Description
 -- | --
