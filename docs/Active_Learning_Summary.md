@@ -1,0 +1,74 @@
+---
+Title | Active Learning Summary
+-- | --
+Create Date | `2021-10-21T16:48:44Z`
+Update Date | `2021-10-21T16:48:44Z`
+Edit link | [here](https://github.com/junxnone/aiwiki/issues/118)
+
+---
+# Reference
+- [Active Learning: 一个降低深度学习时间，空间，经济成本的解决方案](https://www.jianshu.com/p/42801f031cfa)
+- [主动学习年度进展|VALSE2018](https://zhuanlan.zhihu.com/p/38029108)
+- [主动学习系列博文](https://blog.csdn.net/Houchaoqun_XMU/article/details/80146710)
+- [awesome-active-learning](https://github.com/yongjin-shin/awesome-active-learning)
+- [Active learning 主动学习的来世今生](https://blog.csdn.net/Jinpeijie217/article/details/80707978)
+- [Active Learning Literature Survey(论文解读)](https://zhuanlan.zhihu.com/p/88722184) -- 
+- [modAL: A modular active learning framework for Python3](https://modal-python.readthedocs.io/en/latest/) -- [Github](https://github.com/modAL-python/modAL)
+- [2019 年主动学习有哪些进展？答案在这三篇论文里](https://www.chainnews.com/articles/149848536232.htm)
+- [ACTIVE LEARNING WITH RICH FEEDBACK](http://mypages.iit.edu/~msharm11/publications/sharma-phdthesis17.pdf)
+- [公开课 - 主动学习（active learning）在深度学习中的应用与思考](https://mooc.yanxishe.com/open/course/487) -- [PPT](https://github.com/junxnone/tech-io/files/4877650/0418.-.active.learning.pdf) -- [original PPT](https://www.yanxishe.com/resourceDetail/404)
+- [主动学习入门篇：如何能够显著地减少标注代价](https://blog.csdn.net/Taobaojishu/article/details/108765109)
+- [深度主动学习综述2020](https://blog.csdn.net/qq_21872981/article/details/108429810)  -- [paper](https://arxiv.org/pdf/2009.00236.pdf)
+- [Human-in-the-Loop Machine Learning](https://livebook.manning.com/book/human-in-the-loop-machine-learning/welcome/v-9/)
+- [active learning: theory and applications](http://www.robotics.stanford.edu/~stong/papers/tong_thesis.pdf)
+
+# Brief
+- 通过相关信息选择有价值样本标注，以尽量少的标注样本训练达到目标模型预期性能的过程
+  - 也被称为 `查询学习 - Query Learning` & `最优实验设计 - Optimal Experimental Design`
+- **研究方向**
+  - 选择策略
+    - 混合选择策略
+  - 训练方法优化
+    - 增量训练
+    - 弱监督训练 - Oracle 提供的信息包含噪声
+    - 半监督训练
+  - 代价敏感性
+    - 不同专家标注的代价是不同的
+    - 标注本身代价 - 多标签任务中标注信息的详细程度
+  - 深度学习模型产生的新要求
+  - 任务无关性架构 - `Task-independent architecture` - `目前的抽样策略一般根据任务设计`
+
+## Pipeline
+
+![image](https://user-images.githubusercontent.com/2216970/86319136-59f2ec80-bc66-11ea-9467-d53fe444c1e8.png) | ![image](https://user-images.githubusercontent.com/2216970/86572687-d9a1f380-bfa5-11ea-8472-06c940db3c12.png) 
+-- | --
+
+- `Oracle` - 专家
+
+## 根据 `Scenarios - 使用场景` 分类
+
+分类 | Description | Comment
+-- | -- | --
+Membership Query Synthesis<br>`Query-Synthesizing` |  利用部分样本生成新样本 | 研究应用比较少，大部分是早期研究<br>有可能产生不能识别的样本 - image/NLP<br>有望应用于自动化科学研究
+Stream-based Selective Sampling | 数据流，`one instance` Input | 针输入样本逐个做条件筛选
+Pool-based Sampling | 从数据池中分批次取数据 | 对所有样本做条件筛选
+
+
+![image](https://user-images.githubusercontent.com/2216970/86716131-7bcbe500-c053-11ea-9861-d7f63b37a397.png)
+
+
+
+# History
+
+- 2010 - [Active Learning Literature Survey](https://github.com/junxnone/tech-io/files/4863032/Active.Learning.Literature.Survey.pdf)
+- 2013 - CVPR - [Adaptive Active Learning for Image Classification](https://www.cv-foundation.org/openaccess/content_cvpr_2013/papers/Li_Adaptive_Active_Learning_2013_CVPR_paper.pdf)
+- 2017.2 - [Generative Adversarial Active Learning](https://arxiv.org/pdf/1702.07956v5.pdf)
+- 2017 - CVPR - [Fine-tuning Convolutional Neural Networks for Biomedical Image Analysis: Actively and Incrementally.](https://openaccess.thecvf.com/content_cvpr_2017/papers/Zhou_Fine-Tuning_Convolutional_Neural_CVPR_2017_paper.pdf)
+- 2019.4 - [Bayesian Generative Active Deep Learning](https://arxiv.org/pdf/1904.11643.pdf)
+- 2019.5 - [Learning Loss for Active Learning](https://arxiv.org/pdf/1905.03677.pdf)  
+
+
+---
+
+![image](https://user-images.githubusercontent.com/2216970/95950707-a59d6080-0e27-11eb-8117-25b8b5ce7de4.png)
+
