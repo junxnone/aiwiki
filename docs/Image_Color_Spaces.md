@@ -1,8 +1,8 @@
 ---
 Title | Image Color Spaces
 -- | --
-Create Date | `2021-09-23T08:04:39Z`
-Update Date | `2021-09-23T08:04:39Z`
+Create Date | `2020-11-11T06:09:50Z`
+Update Date | `2021-10-21T17:53:28Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
 
 ---
@@ -15,6 +15,11 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
 
 # Brief
 - Image Color Spaces - 颜色空间
+  - RGB - 用于计算机图形学
+  - YIQ/YUV/YCbCr - 用于视频
+  - CMYK - 用于彩色打印
+
+
 
 Modes | Description
 -- | --
