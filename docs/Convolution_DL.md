@@ -2,7 +2,9 @@
 Title | Convolution-DL
 -- | --
 Create Date | `2018-11-21T03:03:53Z`
-Update Date | `2021-09-07T03:16:45Z`
+Update Date | `2021-10-22T03:01:40Z`
+Edit link | [here](https://github.com/junxnone/aiwiki/issues/11)
+
 ---
 # Reference
 - 2016 A guide to convolution arithmetic for deep learning [[paper](https://arxiv.org/abs/1603.07285)] [[Code](https://github.com/vdumoulin/conv_arithmetic)]
@@ -22,7 +24,8 @@ Update Date | `2021-09-07T03:16:45Z`
   - 转置卷积 - Transposed convolution
   - 扩张卷积 - Dilated Convolutions
   - 可分卷积
-  - 
+- 卷积核
+
 ##  2D 卷积 
 - **用途**
   - 提取 2D 图像 feature
