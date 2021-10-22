@@ -1,8 +1,8 @@
 ---
 Title | KDTree
 -- | --
-Create Date | `2021-10-16T04:16:58Z`
-Update Date | `2021-10-16T04:16:58Z`
+Create Date | `2021-05-24T06:32:35Z`
+Update Date | `2021-10-22T16:06:21Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/104)
 
 ---
@@ -39,8 +39,8 @@ Steps | 复杂度
 
 
 ## Libraries
-- [FLANN](https://github.com/junxnone/tech-io/issues/991)
-- [nanoflann](https://github.com/junxnone/tech-io/issues/1026)
+- [FLANN](/FLANN)
+- [nanoflann](/nanoflann)
 - [libkdtree++](https://github.com/nvmd/libkdtree)
 - [OpenCV - FLANN](https://docs.opencv.org/4.0.0/dc/de2/classcv_1_1FlannBasedMatcher.html)
 - [ANN ~2010](http://www.cs.umd.edu/~mount/ANN/)
