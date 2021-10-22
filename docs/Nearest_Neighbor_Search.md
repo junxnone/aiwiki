@@ -1,8 +1,8 @@
 ---
 Title | Nearest Neighbor Search
 -- | --
-Create Date | `2021-10-16T04:15:34Z`
-Update Date | `2021-10-16T04:15:34Z`
+Create Date | `2021-08-20T02:38:42Z`
+Update Date | `2021-10-22T16:03:06Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/102)
 
 ---
@@ -23,7 +23,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/102)
 
 ## 延伸问题
 - KNN - 预测数据分类
-- [ANN](https://github.com/junxnone/tech-io/issues/1035) - 近似最近邻
+- [ANN](/Approximate_Nearest_Neighbor) - 近似最近邻
 
 
 # Trend
