@@ -2,14 +2,15 @@
 Title | Image Color Spaces
 -- | --
 Create Date | `2020-11-11T06:09:50Z`
-Update Date | `2021-10-21T18:41:15Z`
+Update Date | `2021-10-22T02:21:57Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
 
 ---
 # Reference
 - [Color model - wikipedia](https://en.wikipedia.org/wiki/Color_model)
 - [Hue - wikipedia](https://en.wikipedia.org/wiki/Hue)
-- [色彩](http://vr.theatre.ntu.edu.tw/fineart/chap04/chap04-02.htm)
+- [Color FAQ - Frequently Asked Questions Color](http://poynton.ca/notes/colour_and_gamma/ColorFAQ.html)
+- [Gamma FAQ - Frequently Asked Questions about Gamma](http://poynton.ca/notes/colour_and_gamma/GammaFAQ.html)
 
 
 # Brief
