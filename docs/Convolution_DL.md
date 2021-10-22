@@ -2,7 +2,7 @@
 Title | Convolution-DL
 -- | --
 Create Date | `2018-11-21T03:03:53Z`
-Update Date | `2021-10-22T03:01:40Z`
+Update Date | `2021-10-22T03:02:20Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/11)
 
 ---
@@ -27,8 +27,10 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/11)
 - 卷积核
 
 ##  2D 卷积 
-- **用途**
+- **用途** 
   - 提取 2D 图像 feature
+  - UpSample/DownSample 
+
 
 <table style="width:100%; table-layout:fixed;">
   <tr>
