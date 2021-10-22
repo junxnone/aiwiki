@@ -2,14 +2,13 @@
 Title | FLANN
 -- | --
 Create Date | `2021-05-25T02:53:26Z`
-Update Date | `2021-10-22T16:11:29Z`
+Update Date | `2021-10-22T16:12:02Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/122)
 
 ---
 # Reference
 - [Github code](https://github.com/flann-lib/flann)
-- [Docs - manual.tex(可以用在线 tex 浏览器转 pdf)](https://github.com/flann-lib/flann/blob/master/doc/manual.tex)
-  - [在线 tex 浏览器](http://texviewer.herokuapp.com/)
+- [Docs - manual.tex](https://github.com/flann-lib/flann/blob/master/doc/manual.tex) [[在线 tex 浏览器](http://texviewer.herokuapp.com/)]
 - 2009 [Fast Approximate Nearest Neighbors with Automatic Algorithm Configuration](https://www.cs.ubc.ca/~lowe/papers/09muja.pdf)
 
 # Brief
