@@ -2,7 +2,7 @@
 Title | PixelFormat
 -- | --
 Create Date | `2021-10-21T17:44:24Z`
-Update Date | `2021-10-21T19:11:20Z`
+Update Date | `2021-10-22T02:32:58Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/119)
 
 ---
@@ -14,6 +14,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/119)
 - PixelFormat
   - Monochromatic Formats- 单色
   - Color Formats
+- [YUV](/YUV_Format)
+
 
 ## 常见相关格式
 
