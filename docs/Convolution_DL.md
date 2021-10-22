@@ -2,7 +2,7 @@
 Title | Convolution-DL
 -- | --
 Create Date | `2018-11-21T03:03:53Z`
-Update Date | `2021-10-22T03:02:20Z`
+Update Date | `2021-10-22T03:03:37Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/11)
 
 ---
@@ -25,11 +25,12 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/11)
   - 扩张卷积 - Dilated Convolutions
   - 可分卷积
 - 卷积核
+- 卷积的用途
+  - 提取图像 feature
+  - UpSample/DownSample 
 
 ##  2D 卷积 
-- **用途** 
-  - 提取 2D 图像 feature
-  - UpSample/DownSample 
+
 
 
 <table style="width:100%; table-layout:fixed;">
@@ -60,8 +61,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/11)
 </table>
 
 ## 3D 卷积
-- **用途**
-  - 提取 3D 数据 feature
+
 
 ![conv3d](https://user-images.githubusercontent.com/2216970/131626307-c5619328-7718-4eab-aa68-d0db5ec69ab7.gif)
 
