@@ -2,7 +2,7 @@
 Title | Nearest Neighbor Search
 -- | --
 Create Date | `2021-08-20T02:38:42Z`
-Update Date | `2021-10-22T16:03:06Z`
+Update Date | `2021-10-22T16:04:33Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/102)
 
 ---
@@ -18,7 +18,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/102)
   - 1973 **post-office problem** `分配一个地址到最近的邮局`
 - 精确搜索
   - 线性搜索 - 遍历数据集
-  - 空间分割 - [KDTree](https://github.com/junxnone/tech-io/issues/1036)
+  - 空间分割 - [KDTree](/KDTree)
 - 近似搜索
 
 ## 延伸问题
