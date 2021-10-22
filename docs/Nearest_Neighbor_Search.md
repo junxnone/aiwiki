@@ -2,7 +2,7 @@
 Title | Nearest Neighbor Search
 -- | --
 Create Date | `2021-08-20T02:38:42Z`
-Update Date | `2021-10-22T16:04:33Z`
+Update Date | `2021-10-22T16:22:07Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/102)
 
 ---
@@ -11,6 +11,9 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/102)
 - [A Survey on Nearest Neighbor Search Methods](https://github.com/junxnone/tech-io/files/7065577/10.1.1.673.6266.pdf)
 - [Survey of Nearest Neighbor Techniques](https://arxiv.org/abs/1007.0085)
 - [NNS Benchmark](https://github.com/DBAIWangGroup/nns_benchmark)
+- [最近邻搜索 (Nearest Neighbor Search)](https://leovan.me/cn/2020/08/nearest-neighbor-search/)
+- [最近邻检索（Nearest Neighbor Search）的简单综述](https://blog.csdn.net/lovego123/article/details/67638789)
+
 
 # Brief
 - NNS - `Nearest Neighbor Search`
@@ -25,6 +28,11 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/102)
 - KNN - 预测数据分类
 - [ANN](/Approximate_Nearest_Neighbor) - 近似最近邻
 
+
+## 应用
+- 文档/网页 检索
+- 位置检索
+- CBIR
 
 # Trend
 
