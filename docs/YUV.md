@@ -2,7 +2,7 @@
 Title | YUV
 -- | --
 Create Date | `2021-02-07T03:28:00Z`
-Update Date | `2021-10-23T15:11:58Z`
+Update Date | `2021-10-23T15:12:30Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/121)
 
 ---
@@ -12,6 +12,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/121)
 - [YUV pixel formats](https://www.fourcc.org/yuv.php)
 - [YUV - videolan-wiki](https://wiki.videolan.org/YUV#Semi-planar)
 - [Recommended 8-Bit YUV Formats for Video Rendering](https://docs.microsoft.com/en-us/windows/win32/medfound/recommended-8-bit-yuv-formats-for-video-rendering)
+- [一文理解 YUV](https://zhuanlan.zhihu.com/p/75735751)
+
 
 # Brief
 - YUV Color Space - 用于模拟信号彩色电视广播
