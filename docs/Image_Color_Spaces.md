@@ -2,7 +2,7 @@
 Title | Image Color Spaces
 -- | --
 Create Date | `2020-11-11T06:09:50Z`
-Update Date | `2021-10-23T13:49:16Z`
+Update Date | `2021-10-23T13:55:56Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
 
 ---
@@ -33,6 +33,12 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
 
 ![image](https://user-images.githubusercontent.com/2216970/138558889-6f82126e-d09f-4843-a451-f90cb7c41b65.png)
 
+
+## 三原色
+- 光三原色 - 红/绿/蓝 - Red/Green/Blue
+- 颜料三原色 - 青/洋红/黄 -Cyan/Magenta/Yellow
+
+![image](https://user-images.githubusercontent.com/2216970/138559417-5dd75777-baf3-4f12-b24f-abcb4a1dac89.png)
 
 
 ## RGB & CMYK
