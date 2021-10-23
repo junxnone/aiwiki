@@ -2,7 +2,7 @@
 Title | YUV
 -- | --
 Create Date | `2021-02-07T03:28:00Z`
-Update Date | `2021-10-23T06:58:25Z`
+Update Date | `2021-10-23T07:00:29Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/121)
 
 ---
@@ -27,20 +27,12 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/121)
 
 ## Downsampling 
 - 4:4:4 / 4:2:2 /4:2:0
-- YUV 
-  - 420
-    - I420/YU12
-    - YV12
-    - NV12
-    - NV21
-  - 422
-    - I422
-    - J422
-    - UYVY
-    - YUYV
-  - 444
-    - AYUV
-  - 411
+
+Sub Sampling ratio | Format
+-- | --
+444 | AYUV
+422 | I422/J422/UYVY/YUYV
+420 | I420/YU12/YV12/NV12/NV21
 
 ![chrome_MTeacI7PMZ](https://user-images.githubusercontent.com/2216970/138546210-0a8b1aff-1feb-40c3-a7d0-dd6fbbcaddb0.png)
 
