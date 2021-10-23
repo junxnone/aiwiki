@@ -2,7 +2,7 @@
 Title | YUV
 -- | --
 Create Date | `2021-02-07T03:28:00Z`
-Update Date | `2021-10-23T07:50:36Z`
+Update Date | `2021-10-23T14:38:21Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/121)
 
 ---
@@ -33,8 +33,18 @@ YUV | YCbCr
 
 
 ## Downsampling 
-- `4:4:4` / `4:2:2` / `4:2:0`
+- `4:4:4` / `4:2:2` / `4:2:0` /`4:1:1`
 - 几个 Y 共享 UV - 节约带宽
+
+
+
+Pattern | 码流 | 像素点
+-- | -- | --
+444 | `Y0 U0 V0 Y1 U1 V1 Y2 U2 V2 Y3 U3 V3` | `[Y0 U0 V0] [Y1 U1 V1] [Y2 U2 V2] [Y3 U3 V3]`
+422 | `Y0 U0 Y1 V1 Y2 U2 Y3 V3` | `[Y0 U0 V1] [Y1 U0 V1] [Y2 U2 V3] [Y3 U2 V3]`
+411 | `Y0 U0 Y1 Y2 V2 Y3` | `[Y0 U0 V2] [Y1 U0 V2] [Y2 U0 V2] [Y3 U0 V2]`
+420 | `Y0 U0 Y1 Y2 U2 Y3`<br>`Y5 V5 Y6 Y7 V7 Y8` | `[Y0 U0 V5] [Y1 U0 V5] [Y2 U2 V7] [Y3 U2 V7]`<br>`[Y5 U0 V5] [Y6 U0 V5] [Y7U2 V7] [Y8 U2 V7]`
+
 
 
 ![chrome_MTeacI7PMZ](https://user-images.githubusercontent.com/2216970/138546210-0a8b1aff-1feb-40c3-a7d0-dd6fbbcaddb0.png)
