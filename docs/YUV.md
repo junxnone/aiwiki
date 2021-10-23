@@ -2,7 +2,7 @@
 Title | YUV
 -- | --
 Create Date | `2021-02-07T03:28:00Z`
-Update Date | `2021-10-23T15:11:09Z`
+Update Date | `2021-10-23T15:11:58Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/121)
 
 ---
@@ -18,14 +18,13 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/121)
   - Y - Luminance/Luma - 明亮度/灰度 - `[0,1] [0,255]`
   - UV - Chrominance/Chroma  - 色度 - `[-0.5, 0.5] [-128, 127]`
   - Y 与 UV 分开 解决 彩色电视 和 黑白电视 兼容问题
-- Packed YUV Formats - YUV 打包在一起
-- Planar YUV Formats - YUV 分离
 - YCbCr 来源于 YUV, 用于处理数字视频(一些编码标准中提到的 `YUV` 其实是指 `YCbCr`)
   - Cb - 蓝色分量
   - Cr - 红色分量
-- 采样格式
+- 采样格式 - 444/422/411/420
 - 存储格式
-
+  - Packed  - YUV 打包在一起
+  - Planar  - YUV 分离
 
 ## 采样格式 - Downsampling 
 - `4:4:4` / `4:2:2` / `4:2:0` /`4:1:1`
