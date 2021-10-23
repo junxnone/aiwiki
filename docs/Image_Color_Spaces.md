@@ -2,7 +2,7 @@
 Title | Image Color Spaces
 -- | --
 Create Date | `2020-11-11T06:09:50Z`
-Update Date | `2021-10-23T13:42:56Z`
+Update Date | `2021-10-23T13:49:16Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
 
 ---
@@ -15,21 +15,21 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
 
 # Brief
 - Color Model  - 色彩模型 - 抽象数学模型分解色彩分量, 描述颜色
-  - RGB - 用于计算机图形学
+  - RGB - 用于计算机图形学 - 基于人眼感光细胞
   - CMYK - 用于彩色打印
   - [YUV](/YUV) - 用于视频
+  - LAB - 基于人眼视觉神经
 - Gamut - 色域 - 对颜色进行编码的方法
 - Color Spaces - 色彩空间 - `色彩模型 + 色域`
   - Adobe RGB
-  - sRGB
+  - sRGB - `standard RedGreenBlue`
 - Others Color Spaces
   - CIE 1931 color space - `CIE 1931 RGB color space`/`CIE 1931 XYZ color space`
   - CIEUVW
   - CIELUV
   - CIELAB
 - [颜色空间变换](/Image_Color_Spaces_Transforms)
-- RGB 基于人眼感光细胞
-- LAB 基于人眼视觉神经
+
 
 ![image](https://user-images.githubusercontent.com/2216970/138558889-6f82126e-d09f-4843-a451-f90cb7c41b65.png)
 
