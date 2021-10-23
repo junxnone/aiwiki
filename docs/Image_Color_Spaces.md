@@ -2,7 +2,7 @@
 Title | Image Color Spaces
 -- | --
 Create Date | `2020-11-11T06:09:50Z`
-Update Date | `2021-10-23T14:16:35Z`
+Update Date | `2021-10-23T14:21:21Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
 
 ---
@@ -32,19 +32,21 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
 - [颜色空间变换](/Image_Color_Spaces_Transforms)
 
 
-![image](https://user-images.githubusercontent.com/2216970/138558889-6f82126e-d09f-4843-a451-f90cb7c41b65.png)
 
 
 ## 三原色
+
+
+## RGB & CMYK
+- 人眼对于 `RGB` 三种颜色分量的敏感程度不同 `R<G<B`
+- 均匀性较差, 使用 `欧氏距离` 度量相似性结果会合人眼视觉有较大偏差
 - 光三原色 - 红/绿/蓝 - Red/Green/Blue
 - 颜料三原色 - 青/洋红/黄 -Cyan/Magenta/Yellow
 
 > 通过混合颜料无法得出纯粹的黑色，因此在印刷品中又加入了黑色（Black）得到 `CMYK`
 
-![image](https://user-images.githubusercontent.com/2216970/138559417-5dd75777-baf3-4f12-b24f-abcb4a1dac89.png)
+![image](https://user-images.githubusercontent.com/2216970/138558889-6f82126e-d09f-4843-a451-f90cb7c41b65.png)
 
-
-## RGB & CMYK
 
 ![chrome_VZC8n9V9VZ](https://user-images.githubusercontent.com/2216970/138545560-c90a757a-866e-483f-9647-c3e906ddb450.png)
 ![chrome_BFsF54nopB](https://user-images.githubusercontent.com/2216970/138545570-af06d4d5-c327-4f1b-b119-479a48c9c416.png)
@@ -68,6 +70,4 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
  ![image](https://user-images.githubusercontent.com/2216970/101111902-25b99880-3617-11eb-9239-c1201c8c423b.png) | ![image](https://user-images.githubusercontent.com/2216970/101111876-15a1b900-3617-11eb-9b4b-433e812701e8.png) | ![image](https://user-images.githubusercontent.com/2216970/101112317-f9524c00-3617-11eb-8546-311d747d3007.png)
 
 
-## RGB
-- 人眼对于 `RGB` 三种颜色分量的敏感程度不同 `R<G<B`
-- 均匀性较差, 使用 `欧氏距离` 度量相似性结果会合人眼视觉有较大偏差
+
