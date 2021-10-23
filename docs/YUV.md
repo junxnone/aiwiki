@@ -2,7 +2,7 @@
 Title | YUV
 -- | --
 Create Date | `2021-02-07T03:28:00Z`
-Update Date | `2021-10-23T07:09:00Z`
+Update Date | `2021-10-23T07:23:22Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/121)
 
 ---
@@ -15,8 +15,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/121)
 
 # Brief
 - YUV Color Space - 用于模拟信号彩色电视广播
-  - Y - Luminance - 明亮度/灰度 - `[0,1] [0,255]`
-  - UV - chrominance  - 色度 - `[-0.5, 0.5] [-128, 127]`
+  - Y - Luminance/Luma - 明亮度/灰度 - `[0,1] [0,255]`
+  - UV - Chrominance/Chroma  - 色度 - `[-0.5, 0.5] [-128, 127]`
 - Packed YUV Formats - YUV 打包在一起
 - Planar YUV Formats - YUV 分离
 
