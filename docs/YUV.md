@@ -2,7 +2,7 @@
 Title | YUV
 -- | --
 Create Date | `2021-02-07T03:28:00Z`
-Update Date | `2021-10-23T07:31:09Z`
+Update Date | `2021-10-23T07:34:04Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/121)
 
 ---
@@ -23,7 +23,10 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/121)
 
 
 
-![chrome_HiVy2oZ2fZ](https://user-images.githubusercontent.com/2216970/138545817-45e24d1c-852f-4d07-ab61-28b37ba86c9a.png)
+YUV | YCbCr
+-- | --
+![chrome_HiVy2oZ2fZ](https://user-images.githubusercontent.com/2216970/138545817-45e24d1c-852f-4d07-ab61-28b37ba86c9a.png) | ![image](https://user-images.githubusercontent.com/2216970/138547293-a7617dbb-448b-4814-b3d8-d8a71cdcde77.png)
+
 
 
 
