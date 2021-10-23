@@ -2,7 +2,7 @@
 Title | Image Color Spaces
 -- | --
 Create Date | `2020-11-11T06:09:50Z`
-Update Date | `2021-10-23T07:32:32Z`
+Update Date | `2021-10-23T07:58:34Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
 
 ---
@@ -14,11 +14,12 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
 - [Color Models - Intel IPP](https://www.intel.com/content/www/us/en/develop/documentation/ipp-dev-reference/top/volume-2-image-processing/image-color-conversion/color-models.html)
 
 # Brief
-- Image Color Spaces - 颜色空间
+- Color Model  - 色彩模型 - 抽象数学模型分解色彩分量
+- Gamut - 色域
+- Color Spaces - 色彩空间 - `色彩模型 + 色域`
   - RGB - 用于计算机图形学
   - CMYK - 用于彩色打印
   - YIQ/[YUV](/YUV)/YCbCr - 用于视频
-- Color model
 - Others Color Spaces
   - CIE 1931 color space - `CIE 1931 RGB color space`/`CIE 1931 XYZ color space`
   - CIEUVW
