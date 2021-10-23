@@ -2,7 +2,7 @@
 Title | YUV
 -- | --
 Create Date | `2021-02-07T03:28:00Z`
-Update Date | `2021-10-23T14:38:21Z`
+Update Date | `2021-10-23T15:11:09Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/121)
 
 ---
@@ -23,16 +23,11 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/121)
 - YCbCr 来源于 YUV, 用于处理数字视频(一些编码标准中提到的 `YUV` 其实是指 `YCbCr`)
   - Cb - 蓝色分量
   - Cr - 红色分量
-
-YUV | YCbCr
--- | --
-![chrome_bgGeKE4sTE](https://user-images.githubusercontent.com/2216970/138547312-e9b4ba37-b027-4f72-b7e4-30e64ad9db57.png) | ![image](https://user-images.githubusercontent.com/2216970/138547293-a7617dbb-448b-4814-b3d8-d8a71cdcde77.png)
+- 采样格式
+- 存储格式
 
 
-
-
-
-## Downsampling 
+## 采样格式 - Downsampling 
 - `4:4:4` / `4:2:2` / `4:2:0` /`4:1:1`
 - 几个 Y 共享 UV - 节约带宽
 
@@ -90,3 +85,8 @@ R' = Y' + 1.140*V'
 G' = Y' - 0.394*U' - 0.581*V'
 B' = Y' + 2.032*U'
 ```
+
+
+YUV | YCbCr
+-- | --
+![chrome_bgGeKE4sTE](https://user-images.githubusercontent.com/2216970/138547312-e9b4ba37-b027-4f72-b7e4-30e64ad9db57.png) | ![image](https://user-images.githubusercontent.com/2216970/138547293-a7617dbb-448b-4814-b3d8-d8a71cdcde77.png)
