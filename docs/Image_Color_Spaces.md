@@ -2,7 +2,7 @@
 Title | Image Color Spaces
 -- | --
 Create Date | `2020-11-11T06:09:50Z`
-Update Date | `2021-10-23T14:13:27Z`
+Update Date | `2021-10-23T14:16:35Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
 
 ---
@@ -55,6 +55,12 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
 - Hue - 色调/色相
 - Saturation - 色彩纯度
 - Brightness - 明亮度  --> 黑色
+
+
+![image](https://user-images.githubusercontent.com/2216970/138560166-34abfb71-63c4-4507-9751-835a700a4321.png) | ![image](https://user-images.githubusercontent.com/2216970/138560178-283f4163-43b4-4c2a-b0d3-355b69bf1ab6.png) 
+-- | --
+![image](https://user-images.githubusercontent.com/2216970/138560183-c81aa5f1-27f2-4847-9517-86a61794df80.png) | ![image](https://user-images.githubusercontent.com/2216970/138560185-704c7249-7fff-4a3b-a4c3-6eb811ecd039.png)
+
 
 
 ![image](https://user-images.githubusercontent.com/2216970/101112203-c1e39f80-3617-11eb-9c6b-62a5e9d387c9.png) | ![HSV_cone](https://user-images.githubusercontent.com/2216970/101111758-d6736800-3616-11eb-9695-de186dbb872e.jpg) | ![Hsv-hues-cf-lch-hues](https://user-images.githubusercontent.com/2216970/101111776-dd9a7600-3616-11eb-8d07-4d4587c762ab.png) 
