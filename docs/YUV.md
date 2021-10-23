@@ -2,7 +2,7 @@
 Title | YUV
 -- | --
 Create Date | `2021-02-07T03:28:00Z`
-Update Date | `2021-10-23T07:23:22Z`
+Update Date | `2021-10-23T07:31:09Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/121)
 
 ---
@@ -17,6 +17,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/121)
 - YUV Color Space - 用于模拟信号彩色电视广播
   - Y - Luminance/Luma - 明亮度/灰度 - `[0,1] [0,255]`
   - UV - Chrominance/Chroma  - 色度 - `[-0.5, 0.5] [-128, 127]`
+  - Y 与 UV 分开 解决 彩色电视 和 黑白电视 兼容问题
 - Packed YUV Formats - YUV 打包在一起
 - Planar YUV Formats - YUV 分离
 
@@ -25,9 +26,11 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/121)
 ![chrome_HiVy2oZ2fZ](https://user-images.githubusercontent.com/2216970/138545817-45e24d1c-852f-4d07-ab61-28b37ba86c9a.png)
 
 
+
+
 ## Downsampling 
 - `4:4:4` / `4:2:2` / `4:2:0`
-
+- 几个 Y 共享 UV - 节约带宽
 
 
 ![chrome_MTeacI7PMZ](https://user-images.githubusercontent.com/2216970/138546210-0a8b1aff-1feb-40c3-a7d0-dd6fbbcaddb0.png)
@@ -63,5 +66,13 @@ IMC4 | ![image](https://user-images.githubusercontent.com/2216970/107135882-68f6
 YV12 | ![image](https://user-images.githubusercontent.com/2216970/107135890-81671180-6939-11eb-8f5b-475f76a5db9f.png)
 NV12 | ![image](https://user-images.githubusercontent.com/2216970/107135891-83c96b80-6939-11eb-98c8-c121813f0d9c.png)
 
+## YUV <--> RGB
 
-
+```
+Y'= 0.299*R' + 0.587*G' + 0.114*B'
+U'= -0.147*R' - 0.289*G' + 0.436*B' = 0.492*(B'- Y')
+V'= 0.615*R' - 0.515*G' - 0.100*B' = 0.877*(R'- Y')
+R' = Y' + 1.140*V'
+G' = Y' - 0.394*U' - 0.581*V'
+B' = Y' + 2.032*U'
+```
