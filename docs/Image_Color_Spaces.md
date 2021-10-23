@@ -2,7 +2,7 @@
 Title | Image Color Spaces
 -- | --
 Create Date | `2020-11-11T06:09:50Z`
-Update Date | `2021-10-23T08:28:00Z`
+Update Date | `2021-10-23T13:42:56Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
 
 ---
@@ -28,6 +28,12 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
   - CIELUV
   - CIELAB
 - [颜色空间变换](/Image_Color_Spaces_Transforms)
+- RGB 基于人眼感光细胞
+- LAB 基于人眼视觉神经
+
+![image](https://user-images.githubusercontent.com/2216970/138558889-6f82126e-d09f-4843-a451-f90cb7c41b65.png)
+
+
 
 ## RGB & CMYK
 
