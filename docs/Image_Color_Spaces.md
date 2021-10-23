@@ -2,7 +2,7 @@
 Title | Image Color Spaces
 -- | --
 Create Date | `2020-11-11T06:09:50Z`
-Update Date | `2021-10-23T13:55:56Z`
+Update Date | `2021-10-23T13:56:54Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
 
 ---
@@ -37,6 +37,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
 ## 三原色
 - 光三原色 - 红/绿/蓝 - Red/Green/Blue
 - 颜料三原色 - 青/洋红/黄 -Cyan/Magenta/Yellow
+
+> 通过混合颜料无法得出纯粹的黑色，因此在印刷品中又加入了黑色（Black）得到 `CMYK`
 
 ![image](https://user-images.githubusercontent.com/2216970/138559417-5dd75777-baf3-4f12-b24f-abcb4a1dac89.png)
 
