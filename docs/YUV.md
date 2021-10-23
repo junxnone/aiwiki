@@ -2,7 +2,7 @@
 Title | YUV
 -- | --
 Create Date | `2021-02-07T03:28:00Z`
-Update Date | `2021-10-23T07:34:50Z`
+Update Date | `2021-10-23T07:39:09Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/121)
 
 ---
@@ -20,7 +20,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/121)
   - Y 与 UV 分开 解决 彩色电视 和 黑白电视 兼容问题
 - Packed YUV Formats - YUV 打包在一起
 - Planar YUV Formats - YUV 分离
-
+- YCbCr 来源于 YUV, 用于处理数字视频(一些编码标准中提到的 `YUV` 其实是指 YCbCr`)
 
 
 YUV | YCbCr
