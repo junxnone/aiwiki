@@ -2,7 +2,7 @@
 Title | Image Color Spaces
 -- | --
 Create Date | `2020-11-11T06:09:50Z`
-Update Date | `2021-10-23T14:21:38Z`
+Update Date | `2021-10-23T14:22:49Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
 
 ---
@@ -45,8 +45,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
 ![image](https://user-images.githubusercontent.com/2216970/138558889-6f82126e-d09f-4843-a451-f90cb7c41b65.png)
 
 
-![chrome_VZC8n9V9VZ](https://user-images.githubusercontent.com/2216970/138545560-c90a757a-866e-483f-9647-c3e906ddb450.png)
 ![chrome_BFsF54nopB](https://user-images.githubusercontent.com/2216970/138545570-af06d4d5-c327-4f1b-b119-479a48c9c416.png)
+![chrome_VZC8n9V9VZ](https://user-images.githubusercontent.com/2216970/138545560-c90a757a-866e-483f-9647-c3e906ddb450.png)
 
 
 ## HSV/HSB
