@@ -2,7 +2,7 @@
 Title | YUV
 -- | --
 Create Date | `2021-02-07T03:28:00Z`
-Update Date | `2021-10-23T07:01:08Z`
+Update Date | `2021-10-23T07:09:00Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/121)
 
 ---
@@ -26,7 +26,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/121)
 
 
 ## Downsampling 
-- 4:4:4 / 4:2:2 /4:2:0
+- `4:4:4` / `4:2:2` / `4:2:0`
 
 
 
@@ -41,9 +41,9 @@ Sub Sampling ratio | Format
 
 Format | Description | 
 -- | --
-I420 | YU12/IYUV 属于 YUV420P - 4:2:0 12 Bit/Pixel 3 Planars(Y/U/V)
+I420 | YU12/IYUV 属于 YUV420P - `4:2:0` 12 Bit/Pixel 3 Planars(Y/U/V)
 YV12 | 同 YU12 仅改变UV顺序
-NV12 | 属于 YUV420P - 4:2:0 12 Bit/Pixel 2 Planars(Y/UV)
+NV12 | 属于 YUV420P - `4:2:0` 12 Bit/Pixel 2 Planars(Y/UV)
 NV21 | 同 NV21 仅 UV 排序改变
 YUV 422 |
 
