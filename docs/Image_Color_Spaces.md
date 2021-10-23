@@ -2,7 +2,7 @@
 Title | Image Color Spaces
 -- | --
 Create Date | `2020-11-11T06:09:50Z`
-Update Date | `2021-10-23T13:56:54Z`
+Update Date | `2021-10-23T14:10:19Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
 
 ---
@@ -19,6 +19,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
   - CMYK - 用于彩色打印
   - [YUV](/YUV) - 用于视频
   - LAB - 基于人眼视觉神经
+  - HSV/HSB
 - Gamut - 色域 - 对颜色进行编码的方法
 - Color Spaces - 色彩空间 - `色彩模型 + 色域`
   - Adobe RGB
@@ -49,8 +50,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
 ![chrome_BFsF54nopB](https://user-images.githubusercontent.com/2216970/138545570-af06d4d5-c327-4f1b-b119-479a48c9c416.png)
 
 
-## HSV
-- HSV -  Hue/Saturation/Value
+## HSV/HSB
+- HSV -  Hue/Saturation/Value(Brightness)
 
 ![image](https://user-images.githubusercontent.com/2216970/101112203-c1e39f80-3617-11eb-9c6b-62a5e9d387c9.png) | ![HSV_cone](https://user-images.githubusercontent.com/2216970/101111758-d6736800-3616-11eb-9695-de186dbb872e.jpg) | ![Hsv-hues-cf-lch-hues](https://user-images.githubusercontent.com/2216970/101111776-dd9a7600-3616-11eb-8d07-4d4587c762ab.png) 
 -- | -- | --
