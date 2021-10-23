@@ -2,7 +2,7 @@
 Title | PixelFormat
 -- | --
 Create Date | `2021-10-21T17:44:24Z`
-Update Date | `2021-10-23T06:28:12Z`
+Update Date | `2021-10-23T06:38:17Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/119)
 
 ---
@@ -16,7 +16,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/119)
 - Pixel Format - Camera 输出图像的格式
   - Packed(Pixel-Order)/Planar
   - `Monochromatic Formats` - 单色灰度/`Color Formats` - 彩色
-- [YUV](/YUV_Format)
+- [YUV](/YUV)
 
 
 ## Packed
