@@ -2,7 +2,7 @@
 Title | PixelFormat
 -- | --
 Create Date | `2021-10-21T17:44:24Z`
-Update Date | `2021-10-23T06:05:19Z`
+Update Date | `2021-10-23T06:12:24Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/119)
 
 ---
@@ -17,12 +17,18 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/119)
 - [YUV](/YUV_Format)
 
 
-## Plane 
+## Planar
+- 按平面排列像素, 几个平面合成一个 `Pixel`
+
+
+![image](https://user-images.githubusercontent.com/2216970/138544801-3eefb0b2-e8a8-4abe-a1df-74a622320b9f.png)
+
 
 Images | Plane size & Layout
 -- | --
 3-palnes Images | ![image](https://user-images.githubusercontent.com/2216970/138544560-9817dbeb-6a7d-48c3-a3b7-09c556c96e2e.png)
 2-palnes Images | ![image](https://user-images.githubusercontent.com/2216970/138544563-f6750eb4-7b0d-46d5-84b1-c90f1c17c3b6.png)
+
 
 
 ## 常见相关格式
