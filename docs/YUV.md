@@ -2,7 +2,7 @@
 Title | YUV
 -- | --
 Create Date | `2021-02-07T03:28:00Z`
-Update Date | `2021-10-23T06:38:01Z`
+Update Date | `2021-10-23T06:44:54Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/121)
 
 ---
@@ -14,8 +14,18 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/121)
 - [Recommended 8-Bit YUV Formats for Video Rendering](https://docs.microsoft.com/en-us/windows/win32/medfound/recommended-8-bit-yuv-formats-for-video-rendering)
 
 # Brief
+- YUV Color Space - 用于模拟信号彩色电视广播
+  - Y - Luminance / U - 
 - Packed YUV Formats - YUV 打包在一起
 - Planar YUV Formats - YUV 分离
+
+
+
+![chrome_HiVy2oZ2fZ](https://user-images.githubusercontent.com/2216970/138545817-45e24d1c-852f-4d07-ab61-28b37ba86c9a.png)
+
+
+## Downsampling
+- 4:4:4 / 4:2:2 /4:2:0
 - YUV 
   - 420
     - I420/YU12
@@ -31,10 +41,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/121)
     - AYUV
   - 411
 
-----
-![image](https://user-images.githubusercontent.com/2216970/107135823-fdad2500-6938-11eb-83a2-447f4006bf42.png)
 
----
+![image](https://user-images.githubusercontent.com/2216970/107135823-fdad2500-6938-11eb-83a2-447f4006bf42.png)
 
 
 Format | Description | 
