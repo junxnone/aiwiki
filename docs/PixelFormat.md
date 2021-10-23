@@ -2,7 +2,7 @@
 Title | PixelFormat
 -- | --
 Create Date | `2021-10-21T17:44:24Z`
-Update Date | `2021-10-23T06:16:28Z`
+Update Date | `2021-10-23T06:28:12Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/119)
 
 ---
@@ -14,9 +14,23 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/119)
 
 # Brief
 - Pixel Format - Camera 输出图像的格式
-  - Packed/Planar
+  - Packed(Pixel-Order)/Planar
   - `Monochromatic Formats` - 单色灰度/`Color Formats` - 彩色
 - [YUV](/YUV_Format)
+
+
+## Packed
+- Packed - Pixel-Order
+
+Format | Channel Values Order
+-- | --
+RGB | `R0 G0 B0 R1 G1 B1 R2 G2 B2`
+RGBA | `R0 G0 B0 A0 R1 G1 B1 A1`
+BGR | `B0 G0 R0 A0 B1 G1 R1 A1`
+YUV | `Y0 U0 V0 Y1 U1 V1 Y2 U2 V2`
+YUV 422 | `Y0 U0 V0 A0 Y1 U1 V1 A1`
+YCbCr | `Y0 Cb0 Cr0 Y1 Cb1 Cr1`
+YCbCr 422 | `Y0 Cb0 Y1 Cr0 Y2 Cb1 Y3 Cr1`
 
 
 ## Planar
