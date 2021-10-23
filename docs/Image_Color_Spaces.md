@@ -2,7 +2,7 @@
 Title | Image Color Spaces
 -- | --
 Create Date | `2020-11-11T06:09:50Z`
-Update Date | `2021-10-23T14:49:52Z`
+Update Date | `2021-10-23T14:52:48Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
 
 ---
@@ -12,6 +12,9 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
 - [Color FAQ - Frequently Asked Questions Color](http://poynton.ca/notes/colour_and_gamma/ColorFAQ.html)
 - [Gamma FAQ - Frequently Asked Questions about Gamma](http://poynton.ca/notes/colour_and_gamma/GammaFAQ.html)
 - [Color Models - Intel IPP](https://www.intel.com/content/www/us/en/develop/documentation/ipp-dev-reference/top/volume-2-image-processing/image-color-conversion/color-models.html)
+- [ColorSpace颜色空间简介](https://blog.csdn.net/zb1165048017/article/details/109003125)
+
+
 
 # Brief
 - Color Model  - 色彩模型 - 抽象数学模型分解色彩分量, 描述颜色
