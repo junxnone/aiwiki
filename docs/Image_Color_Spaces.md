@@ -2,7 +2,7 @@
 Title | Image Color Spaces
 -- | --
 Create Date | `2020-11-11T06:09:50Z`
-Update Date | `2021-10-23T14:21:21Z`
+Update Date | `2021-10-23T14:21:38Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
 
 ---
@@ -32,9 +32,6 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
 - [颜色空间变换](/Image_Color_Spaces_Transforms)
 
 
-
-
-## 三原色
 
 
 ## RGB & CMYK
