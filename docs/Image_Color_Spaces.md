@@ -2,7 +2,7 @@
 Title | Image Color Spaces
 -- | --
 Create Date | `2020-11-11T06:09:50Z`
-Update Date | `2021-10-23T14:22:49Z`
+Update Date | `2021-10-23T14:49:52Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
 
 ---
@@ -20,6 +20,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
   - [YUV](/YUV) - 用于视频
   - LAB - 基于人眼视觉神经
   - HSV/HSB
+  - HSL
+  - RYB
 - Gamut - 色域 - 对颜色进行编码的方法
 - Color Spaces - 色彩空间 - `色彩模型 + 色域`
   - Adobe RGB
@@ -66,5 +68,11 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
 -- | -- | --
  ![image](https://user-images.githubusercontent.com/2216970/101111902-25b99880-3617-11eb-9239-c1201c8c423b.png) | ![image](https://user-images.githubusercontent.com/2216970/101111876-15a1b900-3617-11eb-9b4b-433e812701e8.png) | ![image](https://user-images.githubusercontent.com/2216970/101112317-f9524c00-3617-11eb-8546-311d747d3007.png)
 
+
+## HSL
+- HSL - Hue/Saturation/Lightness
+
+
+![image](https://user-images.githubusercontent.com/2216970/138561236-0caa4c51-94f5-4a08-8c25-fc909ad44477.png)
 
 
