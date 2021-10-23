@@ -2,7 +2,7 @@
 Title | Image Color Spaces
 -- | --
 Create Date | `2020-11-11T06:09:50Z`
-Update Date | `2021-10-22T02:21:57Z`
+Update Date | `2021-10-23T06:35:23Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
 
 ---
@@ -11,7 +11,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
 - [Hue - wikipedia](https://en.wikipedia.org/wiki/Hue)
 - [Color FAQ - Frequently Asked Questions Color](http://poynton.ca/notes/colour_and_gamma/ColorFAQ.html)
 - [Gamma FAQ - Frequently Asked Questions about Gamma](http://poynton.ca/notes/colour_and_gamma/GammaFAQ.html)
-
+- [Color Models - Intel IPP](https://www.intel.com/content/www/us/en/develop/documentation/ipp-dev-reference/top/volume-2-image-processing/image-color-conversion/color-models.html)
 
 # Brief
 - Image Color Spaces - 颜色空间
@@ -25,6 +25,11 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
   - CIELUV
   - CIELAB
 - [颜色空间变换](/Image_Color_Spaces_Transforms)
+
+## RGB & CMYK
+
+![chrome_VZC8n9V9VZ](https://user-images.githubusercontent.com/2216970/138545560-c90a757a-866e-483f-9647-c3e906ddb450.png)
+![chrome_BFsF54nopB](https://user-images.githubusercontent.com/2216970/138545570-af06d4d5-c327-4f1b-b119-479a48c9c416.png)
 
 
 ## HSV
