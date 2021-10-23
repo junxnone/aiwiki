@@ -2,7 +2,7 @@
 Title | YUV
 -- | --
 Create Date | `2021-02-07T03:28:00Z`
-Update Date | `2021-10-23T06:53:48Z`
+Update Date | `2021-10-23T06:58:25Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/121)
 
 ---
@@ -42,8 +42,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/121)
     - AYUV
   - 411
 
-
-![image](https://user-images.githubusercontent.com/2216970/107135823-fdad2500-6938-11eb-83a2-447f4006bf42.png)
+![chrome_MTeacI7PMZ](https://user-images.githubusercontent.com/2216970/138546210-0a8b1aff-1feb-40c3-a7d0-dd6fbbcaddb0.png)
 
 
 Format | Description | 
