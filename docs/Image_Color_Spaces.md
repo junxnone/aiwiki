@@ -2,7 +2,7 @@
 Title | Image Color Spaces
 -- | --
 Create Date | `2020-11-11T06:09:50Z`
-Update Date | `2021-10-25T02:36:19Z`
+Update Date | `2021-10-25T02:39:50Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
 
 ---
@@ -25,7 +25,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
   - HSV/HSB
   - HSL
   - RYB
-- Gamut - 色域 - 对颜色进行编码的方法
+- [Gamut](/Image_Color_Gamut) - 色域 - 对颜色进行编码的方法
 - Color Spaces - 色彩空间 - `色彩模型 + 色域`
   - Adobe RGB
   - sRGB - `standard RedGreenBlue`
