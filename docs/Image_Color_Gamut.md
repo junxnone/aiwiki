@@ -2,7 +2,7 @@
 Title | Image Color Gamut
 -- | --
 Create Date | `2021-10-25T02:39:07Z`
-Update Date | `2021-10-25T02:44:29Z`
+Update Date | `2021-10-25T02:46:33Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/124)
 
 ---
@@ -12,8 +12,10 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/124)
 # Brief
 - Gamut
 - D65 white point
+-  CIE 1931 chromaticity diagram
 
 
+##  CIE 1931 chromaticity diagram
 
 ![image](https://user-images.githubusercontent.com/2216970/138626907-aae12d3e-1f00-4717-b35d-08b0b8c139ce.png)
 
