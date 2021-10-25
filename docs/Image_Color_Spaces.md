@@ -2,7 +2,7 @@
 Title | Image Color Spaces
 -- | --
 Create Date | `2020-11-11T06:09:50Z`
-Update Date | `2021-10-25T02:28:52Z`
+Update Date | `2021-10-25T02:36:19Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
 
 ---
@@ -56,7 +56,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
 
 ## HSV/HSB
 - HSV -  Hue/Saturation/Value(Brightness)
-- Hue - 色调/色相 - 是什么颜色
+- Hue - 色调/色相 - 是什么颜色 - 取决于主波长
 - Saturation - 饱和度 - 色彩浓淡/纯度 `颜色+白色` `饱和=纯色` 
   - 饱和度越高(低), 颜色越纯正(淡)
 - Brightness - 明亮度  --> 黑色
