@@ -2,7 +2,7 @@
 Title | Image Color Gamut
 -- | --
 Create Date | `2021-10-25T02:39:07Z`
-Update Date | `2021-10-25T03:04:39Z`
+Update Date | `2021-10-25T03:06:14Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/124)
 
 ---
@@ -17,7 +17,9 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/124)
 ##  CIE 1931 chromaticity diagram
 - x - 红色色系
 - y - 绿色色系
-- 曲线边沿都是纯色, 饱和色，内部点是混合色
+- 曲线边沿都是纯色(饱和色)
+  - 从 380 --> 710 nm 
+  - 内部点是混合色
 - D65 white point 
   - 等能量点 
   - 饱和度为0
