@@ -2,7 +2,7 @@
 Title | FLANN
 -- | --
 Create Date | `2021-05-25T02:53:26Z`
-Update Date | `2021-10-25T06:46:55Z`
+Update Date | `2021-10-25T06:48:05Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/122)
 
 ---
@@ -21,6 +21,10 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/122)
 
 ### Install on Ubuntu
 
+```
+sudo apt install libflann-dev
+```
+
 ### Build from source
 
 ```
@@ -31,7 +35,9 @@ cd build
 cmake ..
 make
 ```
+
 - **build issue**
+
 ```
 CMake Error at src/cpp/CMakeLists.txt:32 (add_library):
   No SOURCES given to target: flann_cpp
@@ -40,9 +46,11 @@ CMake Error at src/cpp/CMakeLists.txt:32 (add_library):
 CMake Error at src/cpp/CMakeLists.txt:86 (add_library):
   No SOURCES given to target: flann
 ```
+
 ```
 touch src/cpp/empty.cpp
 ```
+
 - `src/cpp/CMakeLists.txt`
 
 ```
