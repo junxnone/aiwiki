@@ -2,7 +2,7 @@
 Title | FLANN
 -- | --
 Create Date | `2021-05-25T02:53:26Z`
-Update Date | `2021-10-22T16:14:44Z`
+Update Date | `2021-10-25T06:46:55Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/122)
 
 ---
@@ -16,7 +16,44 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/122)
 - 用于在高维空间中搜索最近邻
   - **最近邻搜索问题**: `在度量空间X给定一组点P=p1,p2,…,pn,  查询点q属于X, 在P中找到距离q最近的点的问题`
 
-# UseCase
+
+## Install
+
+### Install on Ubuntu
+
+### Build from source
+
+```
+git clone https://github.com/flann-lib/flann
+cd flann
+mkdir build
+cd build
+cmake ..
+make
+```
+- **build issue**
+```
+CMake Error at src/cpp/CMakeLists.txt:32 (add_library):
+  No SOURCES given to target: flann_cpp
+
+
+CMake Error at src/cpp/CMakeLists.txt:86 (add_library):
+  No SOURCES given to target: flann
+```
+```
+touch src/cpp/empty.cpp
+```
+- `src/cpp/CMakeLists.txt`
+
+```
+-    add_library(flann_cpp SHARED "")
++    add_library(flann_cpp SHARED empty.cpp)
+-        add_library(flann SHARED "")
++        add_library(flann SHARED empty.cpp)
+```
+
+
+## UseCase
 
 ```
 namespace flann
