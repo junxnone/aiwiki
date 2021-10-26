@@ -2,7 +2,7 @@
 Title | Image Color Spaces
 -- | --
 Create Date | `2020-11-11T06:09:50Z`
-Update Date | `2021-10-25T03:16:45Z`
+Update Date | `2021-10-26T01:57:56Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
 
 ---
@@ -22,7 +22,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/41)
   - CIELUV
   - CIELAB
 - [颜色空间变换](/Image_Color_Spaces_Transforms)
-
+- [RGB 色表](/RGB_色表)
 
 
 
