@@ -1,83 +1,96 @@
 ---
 Title | Flann Source Code
 -- | --
-Create Date | `2021-10-27T08:25:57Z`
-Update Date | `2021-10-27T08:25:57Z`
-Edit link | [here](https://github.com/junxnone/aiwiki/issues/130)
+Create Date | `2021-10-27T08:25:28Z`
+Update Date | `2021-10-27T08:53:54Z`
+Edit link | [here](https://github.com/junxnone/aiwiki/issues/129)
 
 ---
-
-## UseCase
+## Source 结构
 
 ```
-namespace flann
-{
-    template<typename Distance>
-    class Index 
-    {
-	typedef typename Distance::ElementType ElementType;
-	typedef typename Distance::ResultType DistanceType;
-    public:
-        Index(const IndexParams& params, Distance distance = Distance() );
-        
-        Index(const Matrix<ElementType>& points, const IndexParams& params,
-                Distance distance = Distance() );
-	~Index();
-	void buildIndex();        
-        
-        void buildIndex(const Matrix<ElementType>& points);
-        
-        void addPoints(const Matrix<ElementType>& points, 
-                       float rebuild_threshold = 2);
-        
-        void removePoint(size_t point_id);
-        
-        ElementType* getPoint(size_t point_id);
-	int knnSearch(const Matrix<ElementType>& queries, 
-		       Matrix<int>& indices, 
-		       Matrix<DistanceType>& dists, 
-		       size_t knn, 
-		       const SearchParams& params);
-        int knnSearch(const Matrix<ElementType>& queries,
-                       std::vector< std::vector<int> >& indices,
-                       std::vector<std::vector<DistanceType> >& dists,
-                       size_t knn,
-                       const SearchParams& params);
-	int radiusSearch(const Matrix<ElementType>& queries, 
-			 Matrix<int>& indices, 
-			 Matrix<DistanceType>& dists, 
-			 float radius, 
-			 const SearchParams& params);
-        int radiusSearch(const Matrix<ElementType>& queries,
-                          std::vector< std::vector<int> >& indices,
-                          std::vector<std::vector<DistanceType> >& dists,
-                          float radius,
-                          const SearchParams& params);
-	void save(std::string filename);
-	int veclen() const;
-	int size() const;
-	IndexParams getParameters() const;
-        flann_algorithm_t getType() const;
-    };
-}
+flann/
+├── bin - 一些脚本工具
+├── cmake
+├── doc - 文档
+├── examples - 用例
+├── src - 源码
+│   ├── cpp
+│   │   └── flann
+│   │       ├── algorithms
+│   │       ├── io - hdf5 读写 API
+│   │       ├── mpi - Server/Client 远程 search 实现
+│   │       ├── nn - evaluate 相关 ？？
+│   │       └── util - 功能函数
+│   │           └── cuda - cuda 相关实现
+│   ├── matlab - matlab API
+│   ├── python - python API
+│   └── ruby - ruby API
+└── test - unit tests
 ```
 
-## Index()
+## 功能实现
+
 ```
-        Index(const IndexParams& params, Distance distance = Distance() );
-        
-        Index(const Matrix<ElementType>& points, const IndexParams& params,
-                Distance distance = Distance() );
+.
+├── algorithms
+│   ├── all_indices.h
+│   ├── autotuned_index.h
+│   ├── center_chooser.h
+│   ├── composite_index.h
+│   ├── dist.h
+│   ├── hierarchical_clustering_index.h
+│   ├── kdtree_cuda_3d_index.cu
+│   ├── kdtree_cuda_3d_index.h
+│   ├── kdtree_cuda_builder.h
+│   ├── kdtree_index.h
+│   ├── kdtree_single_index.h
+│   ├── kmeans_index.h
+│   ├── linear_index.h
+│   ├── lsh_index.h
+│   └── nn_index.h
+├── config.h
+├── config.h.in
+├── defines.h
+├── flann.cpp
+├── flann_cpp.cpp
+├── flann.h
+├── flann.hpp
+├── general.h
+├── io
+│   └── hdf5.h
+├── mpi
+│   ├── client.h
+│   ├── flann_mpi_client.cpp
+│   ├── flann_mpi_server.cpp
+│   ├── index.h
+│   ├── matrix.h
+│   ├── queries.h
+│   └── server.h
+├── nn
+│   ├── ground_truth.h
+│   ├── index_testing.h
+│   └── simplex_downhill.h
+└── util
+    ├── allocator.h
+    ├── any.h
+    ├── cuda
+    │   ├── heap.h
+    │   └── result_set.h
+    ├── cutil_math.h
+    ├── dynamic_bitset.h
+    ├── heap.h
+    ├── logger.h
+    ├── lsh_table.h
+    ├── matrix.h
+    ├── object_factory.h
+    ├── params.h
+    ├── random.h
+    ├── result_set.h
+    ├── sampling.h
+    ├── saving.h
+    ├── serialization.h
+    └── timer.h
+
 ```
 
-- **points**: `num features × dimensionality` features points
-- **params**: Index 参数
-  - LinearIndexParams
-  - KDTreeIndexParams
-  - KMeansIndexParams
-  - CompositeIndexParams
-  - KDTreeSingleIndexParams
-  - KDTreeCuda3dIndexParams
-  - LshIndexParams
-  - AutotunedIndexParams
-  - SavedIndexParams
