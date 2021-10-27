@@ -2,7 +2,7 @@
 Title | FLANN
 -- | --
 Create Date | `2021-05-25T02:53:26Z`
-Update Date | `2021-10-25T06:48:05Z`
+Update Date | `2021-10-27T05:53:35Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/122)
 
 ---
@@ -15,6 +15,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/122)
 - FLANN - Fast Library for Approximate Nearest Neighbors
 - 用于在高维空间中搜索最近邻
   - **最近邻搜索问题**: `在度量空间X给定一组点P=p1,p2,…,pn,  查询点q属于X, 在P中找到距离q最近的点的问题`
+- Support Languages - C++/C/MATLAB/Python/Ruby
 
 
 ## Install
@@ -58,6 +59,29 @@ touch src/cpp/empty.cpp
 +    add_library(flann_cpp SHARED empty.cpp)
 -        add_library(flann SHARED "")
 +        add_library(flann SHARED empty.cpp)
+```
+
+## Source
+
+```
+flann/
+├── bin - 一些脚本工具
+├── cmake
+├── doc - 文档
+├── examples - 用例
+├── src - 源码
+│   ├── cpp
+│   │   └── flann
+│   │       ├── algorithms
+│   │       ├── io - hdf5 读写 API
+│   │       ├── mpi - Server/Client 远程 search 实现
+│   │       ├── nn
+│   │       └── util
+│   │           └── cuda
+│   ├── matlab - matlab API
+│   ├── python - python API
+│   └── ruby - ruby API
+└── test - unit tests
 ```
 
 
