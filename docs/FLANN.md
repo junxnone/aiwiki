@@ -2,7 +2,7 @@
 Title | FLANN
 -- | --
 Create Date | `2021-05-25T02:53:26Z`
-Update Date | `2021-10-27T05:53:35Z`
+Update Date | `2021-10-27T05:55:37Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/122)
 
 ---
@@ -16,7 +16,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/122)
 - 用于在高维空间中搜索最近邻
   - **最近邻搜索问题**: `在度量空间X给定一组点P=p1,p2,…,pn,  查询点q属于X, 在P中找到距离q最近的点的问题`
 - Support Languages - C++/C/MATLAB/Python/Ruby
-
+- OpenMP support
 
 ## Install
 
