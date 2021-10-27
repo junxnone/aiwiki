@@ -2,7 +2,7 @@
 Title | FLANN
 -- | --
 Create Date | `2021-05-25T02:53:26Z`
-Update Date | `2021-10-27T05:55:37Z`
+Update Date | `2021-10-27T06:04:00Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/122)
 
 ---
@@ -75,9 +75,9 @@ flann/
 │   │       ├── algorithms
 │   │       ├── io - hdf5 读写 API
 │   │       ├── mpi - Server/Client 远程 search 实现
-│   │       ├── nn
-│   │       └── util
-│   │           └── cuda
+│   │       ├── nn - evaluate 相关 ？？
+│   │       └── util - 功能函数
+│   │           └── cuda - cuda 相关实现
 │   ├── matlab - matlab API
 │   ├── python - python API
 │   └── ruby - ruby API
