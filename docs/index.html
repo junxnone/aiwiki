@@ -7,6 +7,10 @@
   <link rel="shortcut icon" type="image/png" href="assets/logo_favicon.png"/>
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="assets/vue.css">
+  <link rel="stylesheet" href="assets/darklight.min.css">
+  <link rel="stylesheet" href="assets/docsify-sidebar-collapse.min.css">
+
+  
 </head>
 <body>
   <div id="app">Loading...</div>
@@ -15,11 +19,78 @@
   window.$docsify = {
     themeColor: '#007BE8',
     name: 'AI Wiki',
-    maxLevel: 5,
-    subMaxLevel: 5,
+    repo: 'junxnone/aiwiki',
     loadSidebar: true,
-    auto2top: true
+    auto2top: true,
+    copyCode: {
+      buttonText : '复制',
+      errorText  : 'Error',
+      successText: '已复制'
+    },
+    search: {
+      maxAge: 86400000,
+      paths: 'auto',
+      placeholder: '搜索',
+      noData: '啥也没找到',
+      depth: 6
+    },
+    count:{
+      countable:true,
+      position: 'top',
+      float: 'left',
+      fontsize:'0.9em',
+      color:'rgb(255,0,0)',
+      language:'chinese'
+    },
+    toc: {
+      tocMaxLevel: 6,
+      target: 'h2, h3, h4, h5, h6'
+    },
+    darklightTheme: {
+            siteFont : "PT Sans",
+            defaultTheme : 'dark',
+            codeFontFamily : 'Roboto Mono, Monaco, courier, monospace',
+            bodyFontSize : '17px',
+            dark: {
+                accent: '#3427cd',
+                toogleBackground : '#ffffff',
+                background: '#091a28',
+                textColor: '#b4b4b4',
+                codeTextColor : '#ffffff',
+                codeBackgroundColor : '#0e2233',
+                borderColor : '#0d2538',
+                blockQuoteColor : '#858585',
+                highlightColor : '#d22778',
+                sidebarSublink : '#b4b4b4',
+                codeTypeColor : '#ffffff',
+                coverBackground : 'linear-gradient(to left bottom, hsl(118, 100%, 85%) 0%,hsl(181, 100%, 85%) 100%)',
+                toogleImage : 'url(https://cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/icons/sun.svg)'
+            },
+            light: {
+                accent: '#1401f3',
+                toogleBackground : '#091a28',
+                background: '#ffffff',
+                textColor: '#34495e',
+                codeTextColor : '#525252',
+                codeBackgroundColor : '#f8f8f8',
+                borderColor : 'rgba(0, 0, 0, 0.07)',
+                blockQuoteColor : '#858585',
+                highlightColor : '#d22778',
+                sidebarSublink : '#b4b4b4',
+                codeTypeColor : '#091a28',
+                coverBackground : 'linear-gradient(to left bottom, hsl(118, 100%, 85%) 0%,hsl(181, 100%, 85%) 100%)',
+                toogleImage : 'url(https://cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/icons/moon.svg)'
+            }
+        }
   }
   </script>
   <script src="assets/docsify.min.js"></script>
+  <script src="assets/docsify-copy-code.min.js"></script>
+  <script src="assets/search.min.js"></script>
+  <script src="assets/countable.js"></script>
+  <script src="assets/docsify-plugin-toc.min.js"></script>
+  <script src="assets/darklight.min.js"></script>
+  <script src="assets/docsify-sidebar-collapse.min.js"></script>
+  <script src="assets/wikilink.min.js"></script>
+
 </html>
