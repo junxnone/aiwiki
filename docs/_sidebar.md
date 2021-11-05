@@ -10,6 +10,9 @@
     - [ONNX 可视化](/ONNX_Visualizing)
     - [netron](netron)
     - [Quiver](/Quiver)
+    - [netscope](http://ethereon.github.io/netscope/quickstart.html)
+    - [MMdnn](https://github.com/microsoft/MMdnn)
+    - [VisualDL - Paddle](https://github.com/PaddlePaddle/VisualDL)
   - [论文阅读相关工具](/papers)
   - Others
     - [Gstreamer](/Gstreamer)
