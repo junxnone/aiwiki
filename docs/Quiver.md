@@ -1,12 +1,11 @@
 ---
 Title | Quiver
 -- | --
-Create Date | `2021-11-05T17:32:08Z`
-Update Date | `2021-11-05T17:32:08Z`
+Create Date | `2018-12-12T08:00:41Z`
+Update Date | `2021-11-06T02:14:37Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/136)
 
 ---
-
 ## Reference
 
 - [Docs](https://keplr-io.github.io/quiver/) 
@@ -75,6 +74,4 @@ images |
 
 
 
-### N.B.
-
-quiver_engine.server 中有个 `gevent.wsgi` 需要替换为 `gevent.pywsgi`
+> N.B.  quiver_engine.server 中有个 `gevent.wsgi` 需要替换为 `gevent.pywsgi`
