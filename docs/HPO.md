@@ -2,13 +2,15 @@
 Title | HPO
 -- | --
 Create Date | `2021-09-06T09:24:08Z`
-Update Date | `2021-09-13T03:55:45Z`
+Update Date | `2021-11-10T10:33:06Z`
+Edit link | [here](https://github.com/junxnone/aiwiki/issues/13)
+
 ---
-# Reference
+## Reference
 - 2020 [On Hyperparameter Optimization of Machine Learning Algorithms: Theory and Practice](https://arxiv.org/pdf/2007.15745.pdf) 
 - [vega - HPO Alogs](http://www.noahlab.com.hk/opensource/vega/docs/algorithms/hpo.html)
 
-# Brief
+## Brief
 - HPO - `Hyperparameter Optimization`
 - 用于评估超参对 `metrics` 的影响, 选取出一组合适超参
 - 超参类型
@@ -20,7 +22,7 @@ Update Date | `2021-09-13T03:55:45Z`
 - 多目标超参数优化算法 
 
 
-## 按方式分类
+### 按方式分类
 
 分类 | 举例
 -- | --
@@ -30,7 +32,7 @@ Update Date | `2021-09-13T03:55:45Z`
 `RL Based` - 强化学习 | `PPO Tuner`
 `Dynamic Resource Allocation` - 动态资源分配 |
 
-## 常用方法
+### 常用方法
 
 Name | Time Complexity | 局限 | 优点
 -- | -- | -- | --
