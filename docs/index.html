@@ -104,9 +104,14 @@
     repo: 'gitalk_comment',
     owner: 'junxnone',
     admin: ['junxnone'],
+    id: location.href.split('/')[3] + '-' + location.href.split('/')[5],
     // facebook-like distraction free mode
     distractionFreeMode: true
   })
-  
+  window.onhashchange = function(event){
+    if(event.newURL.split('?')[0] !== event.oldURL .split('?')[0]) {
+      location.reload()
+    }
+  }
   </script>
 </html>
