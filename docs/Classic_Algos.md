@@ -2,7 +2,7 @@
 Title | Classic Algos
 -- | --
 Create Date | `2021-08-31T08:57:58Z`
-Update Date | `2021-09-27T09:44:20Z`
+Update Date | `2021-11-10T10:32:03Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/7)
 
 ---
@@ -15,7 +15,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/7)
   - [Inception V1](/InceptionV1)
   - [Inception V2 & V3](/InceptionV2V3)
   - [Inception V4](/InceptionV4)
-- [Xception](./Xception)
+- [Xception](/Xception)
 - [MobileNet](/MobileNet_Summary)
   - [MobileNet V1](/MobileNetV1)
   - [MobileNet V2](/MobileNetV2)
