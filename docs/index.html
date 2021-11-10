@@ -104,7 +104,7 @@
     repo: 'gitalk_comment',
     owner: 'junxnone',
     admin: ['junxnone'],
-    id: location.href.split('/')[3] + '-' + location.href.split('/')[5],
+    id: location.href.split(/\/|\?/)[3] + '-' + location.href.split(/\/|\?/)[5],
     // facebook-like distraction free mode
     distractionFreeMode: true
   })
