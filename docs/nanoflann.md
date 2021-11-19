@@ -1,8 +1,8 @@
 ---
 Title | nanoflann
 -- | --
-Create Date | `2021-10-22T16:05:39Z`
-Update Date | `2021-10-22T16:05:39Z`
+Create Date | `2021-08-05T16:16:46Z`
+Update Date | `2021-11-19T03:46:11Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/123)
 
 ---
@@ -33,6 +33,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/123)
   - 3.3 distance
 
 ## Distance Metrics
+
+![image](https://user-images.githubusercontent.com/2216970/142561441-8baab9c9-5bc2-4460-a5a8-896528c03d8f.png)
 
 Type | Distance | Description
 -- | -- | --
