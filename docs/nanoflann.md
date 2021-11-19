@@ -2,15 +2,15 @@
 Title | nanoflann
 -- | --
 Create Date | `2021-08-05T16:16:46Z`
-Update Date | `2021-11-19T03:46:11Z`
+Update Date | `2021-11-19T03:48:32Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/123)
 
 ---
-# Reference
+## Reference
 - [nanoflann - Github](https://github.com/jlblancoc/nanoflann)
 - [Docs](http://jlblancoc.github.io/nanoflann/)
 
-# Brief
+## Brief
 - 基于 FLANN
 - 相对 [Original FLANN](https://github.com/junxnone/tech-io/issues/991) 50% 性能提升
 - C++11
@@ -21,8 +21,9 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/123)
     - KnnSearch() - **最近的 N 个点**
     - RadiusSearch() - **半径 R 内的点**
     - radiusSearchCustomCallback()
-## Pipeline
-- 1 Define kd-tree
+
+### Pipeline
+- 1 Define kd-tree Adaptor
   - 1.1 Set Input
 - 2 Search
   - 2.1 knnSearch()
@@ -32,7 +33,13 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/123)
   - 3.2 index
   - 3.3 distance
 
-## Distance Metrics
+### Adaptors
+- KDTreeSingleIndexAdaptor
+- KDTreeSingleIndexDynamicAdaptor_
+- KDTreeSingleIndexDynamicAdaptor
+- KDTreeEigenMatrixAdaptor
+
+### Distance Metrics
 
 ![image](https://user-images.githubusercontent.com/2216970/142561441-8baab9c9-5bc2-4460-a5a8-896528c03d8f.png)
 
@@ -44,5 +51,5 @@ x+ | L2_Simple | squared Euclidean norm, for low-dimensionality data sets like p
 SO(2) 2D rotational group | metric_SO2 | Absolute angular diference
 SO(3) 3D rotational group | metric_SO3 | Inner product between quaternions
 
-# UseCase
+## UseCase
 
