@@ -2,7 +2,7 @@
 Title | Image Classification Metrics
 -- | --
 Create Date | `2021-11-21T04:55:43Z`
-Update Date | `2021-11-21T11:25:22Z`
+Update Date | `2021-11-21T11:28:59Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/137)
 
 ---
@@ -32,6 +32,12 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/137)
 - `Fx`: 表示分类错误：
   - FP - false positive：输入实际类别为负例，模型识别为正例，通常叫误报
   - FN - false negative：输入实际类别为正例，模型识别为负例，通常叫漏报
+
+`Predict Label ↓` `Actual Label →` | 1 | 0
+-- | -- | --
+1 | TP | FP
+0 | FN | TN
+
 
 ![image](https://user-images.githubusercontent.com/2216970/51228367-3dd88e00-1993-11e9-8d28-7ab43b834354.png)
 
