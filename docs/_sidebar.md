@@ -3,6 +3,7 @@
   - [Image Classification - 图像分类](/Image_Classification)
 - [Metrics](/Metrics)
   - [Image Classification Metrics](/Image_Classification_Metrics)
+  - [Pairwise Metrics](/Pairwise_Metrics)
 - **Tools**
   - [Image Processing Tools](/Image_Processing_Tools)
   - [Training Inference Tools](/Training_Inference_Tools) 
