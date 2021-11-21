@@ -2,12 +2,13 @@
 Title | Image Classification Metrics
 -- | --
 Create Date | `2021-11-21T04:55:43Z`
-Update Date | `2021-11-21T11:28:59Z`
+Update Date | `2021-11-21T16:05:17Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/137)
 
 ---
 ## Reference
 - [Metrics and scoring - scikit-learn](https://scikit-learn.org/stable/modules/model_evaluation.html#metrics-and-scoring-quantifying-the-quality-of-predictions)
+- [sklearn.metrics.confusion_matrix](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.confusion_matrix.html)
 
 
 ## Brief
@@ -68,7 +69,10 @@ F1-Score | ![image](https://user-images.githubusercontent.com/2216970/60110790-3
 
 
 
-## Confusion matrix
+## Confusion Matrix
+- **Confusion Matrix** - 混淆矩阵 - 误差矩阵
+- nxn 矩阵 n 为 类别
+
 
 Confusion matrix without normalization| Confusion matrix with normalization
 -- | --
