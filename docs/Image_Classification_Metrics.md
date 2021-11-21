@@ -2,7 +2,7 @@
 Title | Image Classification Metrics
 -- | --
 Create Date | `2021-11-21T04:55:43Z`
-Update Date | `2021-11-21T06:23:50Z`
+Update Date | `2021-11-21T07:10:57Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/137)
 
 ---
@@ -36,6 +36,7 @@ F1-Score | ![image](https://user-images.githubusercontent.com/2216970/60110790-3
 Confusion matrix without normalization| Confusion matrix with normalization
 -- | --
 ![image](https://user-images.githubusercontent.com/2216970/54807154-49a83f80-4cb7-11e9-9704-696ad5a13047.png) | ![image](https://user-images.githubusercontent.com/2216970/54807161-4f9e2080-4cb7-11e9-9501-7f464858fb79.png)
+
 ```
 Confusion matrix, without normalization
 [[13  0  0]
@@ -45,7 +46,7 @@ Normalized confusion matrix
 [[1.   0.   0.  ]
  [0.   0.62 0.38]
  [0.   0.   1.  ]]
-
+```
 
 ### ROC - Receiver Operating Characteristic Curve
 受试者工作特征曲线
