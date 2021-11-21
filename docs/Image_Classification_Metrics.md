@@ -2,11 +2,13 @@
 Title | Image Classification Metrics
 -- | --
 Create Date | `2021-11-21T04:55:43Z`
-Update Date | `2021-11-21T11:08:55Z`
+Update Date | `2021-11-21T11:09:39Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/137)
 
 ---
 ## Reference
+- [Metrics and scoring - scikit-learn](https://scikit-learn.org/stable/modules/model_evaluation.html#metrics-and-scoring-quantifying-the-quality-of-predictions)
+
 
 ## Brief
 - Accuracy
