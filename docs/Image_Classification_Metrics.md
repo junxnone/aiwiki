@@ -2,7 +2,7 @@
 Title | Image Classification Metrics
 -- | --
 Create Date | `2021-11-21T04:55:43Z`
-Update Date | `2021-11-21T11:03:01Z`
+Update Date | `2021-11-21T11:04:30Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/137)
 
 ---
@@ -23,9 +23,9 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/137)
 
 ## Binary Classification
 
-Name | Definition
--- | --
-Accuracy | Accuracy = N<sub>correct</sub> / N<sub>Total</sub> <br> $\texttt{accuracy}(y, \hat{y}) = \frac{1}
+Name | Formula | Description
+-- | -- | --
+Accuracy | Accuracy = N<sub>correct</sub> / N<sub>Total</sub> <br> $\texttt{accuracy}(y, \hat{y}) = \frac{1} | 预测正确的占总数的比例
 Precision | $\text{precision} = \frac{tp}{tp + fp}$
 Recall | $\text{recall} = \frac{tp}{tp + fn}$
 F<sub>β</sub> | $F_\beta = (1 + \beta^2) \frac{\text{precision} \times \text{recall}}{\beta^2 \text{precision} + \text{recall}}$
