@@ -2,7 +2,7 @@
 Title | Image Classification Metrics
 -- | --
 Create Date | `2021-11-21T04:55:43Z`
-Update Date | `2021-11-21T04:55:43Z`
+Update Date | `2021-11-21T05:01:48Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/137)
 
 ---
@@ -21,9 +21,10 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/137)
 - Error Rate
 
 
+
 Name | Definition
 -- | --
-Accuracy | ![image](https://user-images.githubusercontent.com/2216970/60104281-b68a1480-9793-11e9-99b8-8e473eee0eec.png)
+Accuracy | Accuracy = N<sub>correct</sub> / N<sub>Total</sub>
 Precision | 正确分类的正样本个数占分类器判定为正样本的样本个数的比例
 Recall | 正确分类的正样本个数占真正的正样本数的比例
 F1-Score | ![image](https://user-images.githubusercontent.com/2216970/60110790-3ff31400-979f-11e9-9349-15c9b84d7099.png)
