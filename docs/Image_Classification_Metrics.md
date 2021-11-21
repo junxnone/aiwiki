@@ -1,0 +1,47 @@
+---
+Title | Image Classification Metrics
+-- | --
+Create Date | `2021-11-21T04:55:43Z`
+Update Date | `2021-11-21T04:55:43Z`
+Edit link | [here](https://github.com/junxnone/aiwiki/issues/137)
+
+---
+## Reference
+
+## Brief
+- Accuracy
+  - 当样本不均衡时，Accuracy 不能很好的区分模型
+- Precision
+- Recall
+- F1 score
+- ROC
+- PR
+- AUC
+- Confusion Matrix
+- Error Rate
+
+
+Name | Definition
+-- | --
+Accuracy | ![image](https://user-images.githubusercontent.com/2216970/60104281-b68a1480-9793-11e9-99b8-8e473eee0eec.png)
+Precision | 正确分类的正样本个数占分类器判定为正样本的样本个数的比例
+Recall | 正确分类的正样本个数占真正的正样本数的比例
+F1-Score | ![image](https://user-images.githubusercontent.com/2216970/60110790-3ff31400-979f-11e9-9349-15c9b84d7099.png)
+
+
+
+
+### ROC - Receiver Operating Characteristic Curve
+受试者工作特征曲线
+- 横坐标为假阳性率(FPR)
+![image](https://user-images.githubusercontent.com/2216970/60111139-f9ea8000-979f-11e9-9832-ec36e1592a74.png)
+- 纵坐标为真阳性率(TPR)
+![image](https://user-images.githubusercontent.com/2216970/60111167-07076f00-97a0-11e9-91e2-45a834874a2b.png)
+
+### AUC - Area Under the Curve
+
+- AUC常常用来评估二分类模型的性能。
+- 曲线下的面积通常指的是ROC曲线。
+- 相比于准确率、召回率、F1值等依赖于判决阈值的评估指标，AUC则没有这个问题。
+
+
