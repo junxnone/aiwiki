@@ -2,7 +2,7 @@
 Title | Image Classification Metrics
 -- | --
 Create Date | `2021-11-21T04:55:43Z`
-Update Date | `2021-11-21T11:05:30Z`
+Update Date | `2021-11-21T11:08:55Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/137)
 
 ---
@@ -28,7 +28,10 @@ Name | Formula | Description
 Accuracy | Accuracy = N<sub>correct</sub> / N<sub>Total</sub> <br>  $\texttt{accuracy}(y, \hat{y}) = \frac{1}{n_\text{samples}} \sum_{i=0}^{n_\text{samples}-1} 1(\hat{y}_i = y_i)$ | 预测正确的占总数的比例
 Precision | $\text{precision} = \frac{tp}{tp + fp}$
 Recall | $\text{recall} = \frac{tp}{tp + fn}$
-F<sub>β</sub> | $F_\beta = (1 + \beta^2) \frac{\text{precision} \times \text{recall}}{\beta^2 \text{precision} + \text{recall}}$
+F<sub>β</sub> | $F_\beta = (1 + \beta^2) \frac{\text{precision} \times \text{recall}}{\beta^2 \text{precision} + \text{recall}}$ <br>F1: 当 β = 1 时的 F<sub>β</sub>
+
+
+## Multiclass and Multilabel Classification
 
 
 
