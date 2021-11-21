@@ -2,7 +2,7 @@
 Title | Image Classification Metrics
 -- | --
 Create Date | `2021-11-21T04:55:43Z`
-Update Date | `2021-11-21T07:10:57Z`
+Update Date | `2021-11-21T09:05:46Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/137)
 
 ---
@@ -20,7 +20,11 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/137)
 - Confusion Matrix
 - Error Rate
 
+---
 
+\texttt{accuracy}(y, \hat{y}) = \frac{1}{n_\text{samples}} \sum_{i=0}^{n_\text{samples}-1} 1(\hat{y}_i = y_i)
+
+---
 
 Name | Definition
 -- | --
