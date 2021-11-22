@@ -2,7 +2,7 @@
 Title | Image Classification Metrics
 -- | --
 Create Date | `2021-11-21T04:55:43Z`
-Update Date | `2021-11-22T02:24:57Z`
+Update Date | `2021-11-22T02:25:24Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/137)
 
 ---
@@ -73,7 +73,7 @@ Accuracy | Math Formula
 -- | --
 Accuracy | Accuracy = N<sub>correct</sub> / N<sub>Total</sub> <br> $\texttt{accuracy}(y, \hat{y}) = \frac{1}{n_\text{samples}} \sum_{i=0}^{n_\text{samples}-1} 1(\hat{y}_i = y_i)$
 Top-k Accuracy | $\texttt{top-k accuracy}(y, \hat{f}) = \frac{1}{n_\text{samples}} \sum_{i=0}^{n_\text{samples}-1} \sum_{j=1}^{k} 1(\hat{f}_{i,j} = y_i)$ 
-Balanced Accuracy |$ \texttt{balanced-accuracy} = \frac{1}{2}\left( \frac{TP}{TP + FN} + \frac{TN}{TN + FP}\right )$ <br> $\texttt{balanced-accuracy}(y, \hat{y}, w) = \frac{1}{\sum{\hat{w}_i}} \sum_i 1(\hat{y}_i = y_i) \hat{w}_i$
+Balanced Accuracy |$\texttt{balanced-accuracy} = \frac{1}{2}\left( \frac{TP}{TP + FN} + \frac{TN}{TN + FP}\right )$ <br> $\texttt{balanced-accuracy}(y, \hat{y}, w) = \frac{1}{\sum{\hat{w}_i}} \sum_i 1(\hat{y}_i = y_i) \hat{w}_i$
 
 
 
