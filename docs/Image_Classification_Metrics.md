@@ -2,7 +2,7 @@
 Title | Image Classification Metrics
 -- | --
 Create Date | `2021-11-21T04:55:43Z`
-Update Date | `2021-11-22T02:15:31Z`
+Update Date | `2021-11-22T02:24:57Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/137)
 
 ---
@@ -69,12 +69,12 @@ average | Precision | Recall |F<sub>β</sub>
 - $R(A, B) := \frac{\left| A \cap B \right|}{\left|B\right|}$
 - $F_\beta(A, B) := \left(1 + \beta^2\right) \frac{P(A, B) \times R(A, B)}{\beta^2 P(A, B) + R(A, B)}$
 
-Name | Definition
+Accuracy | Math Formula
 -- | --
 Accuracy | Accuracy = N<sub>correct</sub> / N<sub>Total</sub> <br> $\texttt{accuracy}(y, \hat{y}) = \frac{1}{n_\text{samples}} \sum_{i=0}^{n_\text{samples}-1} 1(\hat{y}_i = y_i)$
-Precision | 正确分类的正样本个数占分类器判定为正样本的样本个数的比例
-Recall | 正确分类的正样本个数占真正的正样本数的比例
-F1-Score | ![image](https://user-images.githubusercontent.com/2216970/60110790-3ff31400-979f-11e9-9349-15c9b84d7099.png)
+Top-k Accuracy | $\texttt{top-k accuracy}(y, \hat{f}) = \frac{1}{n_\text{samples}} \sum_{i=0}^{n_\text{samples}-1} \sum_{j=1}^{k} 1(\hat{f}_{i,j} = y_i)$ 
+Balanced Accuracy |$ \texttt{balanced-accuracy} = \frac{1}{2}\left( \frac{TP}{TP + FN} + \frac{TN}{TN + FP}\right )$ <br> $\texttt{balanced-accuracy}(y, \hat{y}, w) = \frac{1}{\sum{\hat{w}_i}} \sum_i 1(\hat{y}_i = y_i) \hat{w}_i$
+
 
 
 
