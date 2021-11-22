@@ -2,7 +2,7 @@
 Title | Image Classification Metrics
 -- | --
 Create Date | `2021-11-21T04:55:43Z`
-Update Date | `2021-11-22T01:56:48Z`
+Update Date | `2021-11-22T02:15:31Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/137)
 
 ---
@@ -61,9 +61,9 @@ F<sub>β</sub> | $F_\beta = (1 + \beta^2) \frac{\text{precision} \times \text{re
 average | Precision | Recall |F<sub>β</sub>
 -- | -- | -- | --
 **micro** | $P(y, \hat{y})$ | $R(y, \hat{y})$ | $F_\beta(y, \hat{y})$
-**samples** | $\frac{1}{\left|S\right|} \sum_{s \in S} P(y_s, \hat{y}_s)$ | $\frac{1}{\left|S\right|} \sum_{s \in S} R(y_s, \hat{y}_s)$ | $\frac{1}{\left|S\right|} \sum_{s \in S} F_\beta(y_s, \hat{y}_s)$
-**macro** | $\frac{1}{\left|L\right|} \sum_{l \in L} P(y_l, \hat{y}_l)$ | $\frac{1}{\left|L\right|} \sum_{l \in L} R(y_l, \hat{y}_l)$ | $\frac{1}{\left|L\right|} \sum_{l \in L} F_\beta(y_l, \hat{y}_l)$
-**weighted** | $\frac{1}{\sum_{l \in L} \left|\hat{y}_l\right|} \sum_{l \in L} \left|\hat{y}_l\right| P(y_l, \hat{y}_l)$ | $\frac{1}{\sum_{l \in L} \left|\hat{y}_l\right|} \sum_{l \in L} \left|\hat{y}_l\right| R(y_l, \hat{y}_l)$ | $\frac{1}{\sum_{l \in L} \left|\hat{y}_l\right|} \sum_{l \in L} \left|\hat{y}_l\right| F_\beta(y_l, \hat{y}_l)$
+**samples** | $\frac{1}{\left\|S\right\|} \sum_{s \in S} P(y_s, \hat{y}_s)$ | $\frac{1}{\left\|S\right\|} \sum_{s \in S} R(y_s, \hat{y}_s)$ | $\frac{1}{\left\|S\right\|} \sum_{s \in S} F_\beta(y_s, \hat{y}_s)$
+**macro** | $\frac{1}{\left\|L\right\|} \sum_{l \in L} P(y_l, \hat{y}_l)$ | $\frac{1}{\left\|L\right\|} \sum_{l \in L} R(y_l, \hat{y}_l)$ | $\frac{1}{\left\|L\right\|} \sum_{l \in L} F_\beta(y_l, \hat{y}_l)$
+**weighted** | $\frac{1}{\sum_{l \in L} \left\|\hat{y}_l\right\|} \sum_{l \in L} \left\|\hat{y}_l\right\| P(y_l, \hat{y}_l)$ | $\frac{1}{\sum_{l \in L} \left\|\hat{y}_l\right\|} \sum_{l \in L} \left\|\hat{y}_l\right\| R(y_l, \hat{y}_l)$ | $\frac{1}{\sum_{l \in L} \left\|\hat{y}_l\right\|} \sum_{l \in L} \left\|\hat{y}_l\right\| F_\beta(y_l, \hat{y}_l)$
 
 - $P(A, B) := \frac{\left| A \cap B \right|}{\left|A\right|}$
 - $R(A, B) := \frac{\left| A \cap B \right|}{\left|B\right|}$
