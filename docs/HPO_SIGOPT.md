@@ -2,18 +2,18 @@
 Title | HPO SIGOPT
 -- | --
 Create Date | `2021-09-01T09:01:43Z`
-Update Date | `2021-09-23T06:45:51Z`
+Update Date | `2021-11-22T05:50:19Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/15)
 
 ---
-# Reference
+## Reference
 - [SigOpt docs](https://app.sigopt.com/docs)
 - 2016 A Stratified Analysis of Bayesian Optimization Methods [[paper](https://arxiv.org/pdf/1603.09441.pdf)] [[code](https://github.com/sigopt)]
 - [sigopt_experiment_and_optimization_demo.ipynb](https://colab.research.google.com/github/sigopt/sigopt-examples/blob/master/get-started/sigopt_experiment_and_optimization_demo.ipynb)
 - [Intro to Multicriteria Optimization](https://sigopt.com/blog/intro-to-multicriteria-optimization/)
 
 
-# Brief
+## Brief
 - 跟踪/分析/微调 AI Model
 - Metrics Result --> Bayesian Optimization  --> New Parameters
 - Online 超参优化工具
@@ -39,8 +39,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/15)
 
 ![image](https://user-images.githubusercontent.com/2216970/132183671-21794822-2014-42f3-be9c-4685a0f422d6.png)
 
-# UseCase
-## Some API
+## UseCase
+### Some API
 
 API | Description
 -- | --
@@ -53,7 +53,7 @@ sigopt.log_metric() | 上传 `Observations` 结果
 
 
 
-## notebook (colab)
+### notebook (colab)
 - 需要注册获取连接 `Token`
 - 安装 `sigopt` - `pip install sigopt`
 - 使用 `Token` 连接到 `Server`
@@ -62,14 +62,14 @@ sigopt.log_metric() | 上传 `Observations` 结果
 - `%%optimize My_First_Optimization` run sigopt 优化
 - `sigopt.log_****` push log 到 Server
 
-## python script code
+### python script code
 
-### API
+#### API
 - Connection API
 - Create Experiment API
 - Optimization loop get Suggestions 
 
-### YML
+#### YML
 
 - `sigopt config` set the token
 - Create yml config file `sigopt.yml`
