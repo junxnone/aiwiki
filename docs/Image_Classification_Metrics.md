@@ -2,7 +2,7 @@
 Title | Image Classification Metrics
 -- | --
 Create Date | `2021-11-21T04:55:43Z`
-Update Date | `2021-11-22T01:45:34Z`
+Update Date | `2021-11-22T01:56:48Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/137)
 
 ---
@@ -52,6 +52,10 @@ F<sub>β</sub> | $F_\beta = (1 + \beta^2) \frac{\text{precision} \times \text{re
 
 
 ## Multiclass and Multilabel Classification
+- **micro**: 取全部样例
+- **macro**:  按类别取均值
+- **weighted**: 对类别按比例给予权重计算
+- **samples**: 应用于 multilabel 问题
 
 
 average | Precision | Recall |F<sub>β</sub>
@@ -61,8 +65,9 @@ average | Precision | Recall |F<sub>β</sub>
 **macro** | $\frac{1}{\left|L\right|} \sum_{l \in L} P(y_l, \hat{y}_l)$ | $\frac{1}{\left|L\right|} \sum_{l \in L} R(y_l, \hat{y}_l)$ | $\frac{1}{\left|L\right|} \sum_{l \in L} F_\beta(y_l, \hat{y}_l)$
 **weighted** | $\frac{1}{\sum_{l \in L} \left|\hat{y}_l\right|} \sum_{l \in L} \left|\hat{y}_l\right| P(y_l, \hat{y}_l)$ | $\frac{1}{\sum_{l \in L} \left|\hat{y}_l\right|} \sum_{l \in L} \left|\hat{y}_l\right| R(y_l, \hat{y}_l)$ | $\frac{1}{\sum_{l \in L} \left|\hat{y}_l\right|} \sum_{l \in L} \left|\hat{y}_l\right| F_\beta(y_l, \hat{y}_l)$
 
-
-
+- $P(A, B) := \frac{\left| A \cap B \right|}{\left|A\right|}$
+- $R(A, B) := \frac{\left| A \cap B \right|}{\left|B\right|}$
+- $F_\beta(A, B) := \left(1 + \beta^2\right) \frac{P(A, B) \times R(A, B)}{\beta^2 P(A, B) + R(A, B)}$
 
 Name | Definition
 -- | --
