@@ -2,14 +2,14 @@
 Title | Image Classification Metrics
 -- | --
 Create Date | `2021-11-21T04:55:43Z`
-Update Date | `2021-11-22T02:31:13Z`
+Update Date | `2021-11-22T02:32:55Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/137)
 
 ---
 ## Reference
 - [Metrics and scoring - scikit-learn](https://scikit-learn.org/stable/modules/model_evaluation.html#metrics-and-scoring-quantifying-the-quality-of-predictions)
 - [sklearn.metrics.confusion_matrix](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.confusion_matrix.html)
-
+- [The Relationship Between Precision-Recall and ROC Curves](https://www.biostat.wisc.edu/~page/rocpr.pdf)
 
 ## Brief
 - Accuracy
