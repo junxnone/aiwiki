@@ -2,7 +2,7 @@
 Title | Image Classification Metrics
 -- | --
 Create Date | `2021-11-21T04:55:43Z`
-Update Date | `2021-11-22T02:25:24Z`
+Update Date | `2021-11-22T02:31:13Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/137)
 
 ---
@@ -71,7 +71,7 @@ average | Precision | Recall |F<sub>β</sub>
 
 Accuracy | Math Formula
 -- | --
-Accuracy | Accuracy = N<sub>correct</sub> / N<sub>Total</sub> <br> $\texttt{accuracy}(y, \hat{y}) = \frac{1}{n_\text{samples}} \sum_{i=0}^{n_\text{samples}-1} 1(\hat{y}_i = y_i)$
+Accuracy |  $\texttt{accuracy}(y, \hat{y}) = \frac{1}{n_\text{samples}} \sum_{i=0}^{n_\text{samples}-1} 1(\hat{y}_i = y_i)$
 Top-k Accuracy | $\texttt{top-k accuracy}(y, \hat{f}) = \frac{1}{n_\text{samples}} \sum_{i=0}^{n_\text{samples}-1} \sum_{j=1}^{k} 1(\hat{f}_{i,j} = y_i)$ 
 Balanced Accuracy |$\texttt{balanced-accuracy} = \frac{1}{2}\left( \frac{TP}{TP + FN} + \frac{TN}{TN + FP}\right )$ <br> $\texttt{balanced-accuracy}(y, \hat{y}, w) = \frac{1}{\sum{\hat{w}_i}} \sum_i 1(\hat{y}_i = y_i) \hat{w}_i$
 
@@ -98,17 +98,17 @@ Normalized confusion matrix
  [0.   0.   1.  ]]
 ```
 
-### ROC - Receiver Operating Characteristic Curve
-受试者工作特征曲线
-- 横坐标为假阳性率(FPR)
-![image](https://user-images.githubusercontent.com/2216970/60111139-f9ea8000-979f-11e9-9832-ec36e1592a74.png)
-- 纵坐标为真阳性率(TPR)
-![image](https://user-images.githubusercontent.com/2216970/60111167-07076f00-97a0-11e9-91e2-45a834874a2b.png)
-
 ### AUC - Area Under the Curve
 
 - AUC常常用来评估二分类模型的性能。
 - 曲线下的面积通常指的是ROC曲线。
 - 相比于准确率、召回率、F1值等依赖于判决阈值的评估指标，AUC则没有这个问题。
 
+#### ROC-AUC
+- ROC - `Receiver Operating Characteristic Curve` - 受试者工作特征曲线
+- 横坐标为假阳性率(FPR)
+![image](https://user-images.githubusercontent.com/2216970/60111139-f9ea8000-979f-11e9-9832-ec36e1592a74.png)
+- 纵坐标为真阳性率(TPR)
+![image](https://user-images.githubusercontent.com/2216970/60111167-07076f00-97a0-11e9-91e2-45a834874a2b.png)
 
+#### PR-AUC
