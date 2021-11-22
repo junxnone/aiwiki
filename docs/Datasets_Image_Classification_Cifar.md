@@ -2,7 +2,7 @@
 Title | Datasets Image Classification Cifar
 -- | --
 Create Date | `2018-08-29T09:54:48Z`
-Update Date | `2021-11-22T06:58:25Z`
+Update Date | `2021-11-22T06:58:42Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/32)
 
 ---
@@ -59,5 +59,5 @@ vehicles 2 | lawn-mower, rocket, streetcar, tank, tractor
 
 
 ## Issues
-### 使用 tensorflow keras api `tensorflow.keras.datasets.cifar10.load_data()` 下载数据集时特别慢
+#### 使用 tensorflow keras api `tensorflow.keras.datasets.cifar10.load_data()` 下载数据集时特别慢
 - 手动下载数据集，并复制为 `~/.keras/datasets/cifar-10-batches-py.tar.gz`
