@@ -1,12 +1,12 @@
 ---
 Title | Datasets Image Classification Cifar
 -- | --
-Create Date | `2021-09-23T06:05:52Z`
-Update Date | `2021-09-23T06:05:52Z`
+Create Date | `2018-08-29T09:54:48Z`
+Update Date | `2021-11-22T06:58:25Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/32)
 
 ---
-# Reference
+## Reference
 - [CIFAR Dataset](http://www.cs.toronto.edu/~kriz/cifar.html)
   - [cifar10 in github - YoongiKim](https://github.com/YoongiKim/CIFAR-10-images)
 - keras classification sample code
@@ -15,7 +15,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/32)
 - [pytorch tutorial cifar10 classification](https://pytorch.apachecn.org/docs/1.2/beginner/blitz/cifar10_tutorial.html)
   - [pytorch colab notebook](https://colab.research.google.com/github/pytorch/tutorials/blob/gh-pages/_downloads/cifar10_tutorial.ipynb)
 
-# Brief
+## Brief
 - [Cifar10](##Cifar10)
 - [Cifar100](##Cifar100)
 
@@ -57,3 +57,7 @@ trees | maple, oak, palm, pine, willow
 vehicles 1 | bicycle, bus, motorcycle, pickup truck, train
 vehicles 2 | lawn-mower, rocket, streetcar, tank, tractor
 
+
+## Issues
+### 使用 tensorflow keras api `tensorflow.keras.datasets.cifar10.load_data()` 下载数据集时特别慢
+- 手动下载数据集，并复制为 `~/.keras/datasets/cifar-10-batches-py.tar.gz`
