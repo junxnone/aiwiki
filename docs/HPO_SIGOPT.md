@@ -2,7 +2,7 @@
 Title | HPO SIGOPT
 -- | --
 Create Date | `2021-09-01T09:01:43Z`
-Update Date | `2021-11-22T05:50:19Z`
+Update Date | `2021-11-23T03:00:02Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/15)
 
 ---
@@ -28,16 +28,21 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/15)
 - Multimetric 
   - Accuracy & Inference Time
   - Precision & Recall
-- Custom Optimizer
-  - Random
-  - Grid
-  - Manual
-  - [Hyperopt](https://hyperopt.github.io/hyperopt/)
-  - [Optuna](https://optuna.org/)
+- **Support Optimization**
+  - Random Search
+  - Grid Search
+  - **SigOpt Search**: Bayesian Optimizer
+  - All Constraint Search: sigopt Bayesian Optimizer & Metrics Constraints
+  - Custom Optimizer
+    - [Hyperopt](https://hyperopt.github.io/hyperopt/)
+    - [Optuna](https://optuna.org/)
 - Parallel
 
 
 ![image](https://user-images.githubusercontent.com/2216970/132183671-21794822-2014-42f3-be9c-4685a0f422d6.png)
+
+
+
 
 ## UseCase
 ### Some API
