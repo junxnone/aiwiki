@@ -2,7 +2,7 @@
 Title | HPO SIGOPT
 -- | --
 Create Date | `2021-09-01T09:01:43Z`
-Update Date | `2021-11-25T06:29:13Z`
+Update Date | `2021-11-25T06:31:11Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/15)
 
 ---
@@ -49,8 +49,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/15)
 
 API | Description
 -- | --
-sigopt.get_parameter() | 获取 `Suggestion` 的参数
-sigopt.log_model() | 声明 Model
+`sigopt.params.your_params` | 获取 `Suggestion` 的参数
+`sigopt.log_model("your_metrics", metrics)` | 声明 Model
 sigopt.log_dataset() | 声明 Dataset
 sigopt.log_metadata() | 声明自定义 metadata
 sigopt.log_metric() | 上传 `Observations` 结果
@@ -76,7 +76,7 @@ sigopt.log_metric() | 上传 `Observations` 结果
 
 #### YML
 
-- `sigopt config` set the token
+- `sigopt config your_API_token` set the token
 - Create yml config file `sigopt.yml`
 - Get parameters API `sigopt.get_parameter('batch_size', default=xxx)`
 - upload metrics `sigopt.log_metric(name='accuracy', value=metrics)`
