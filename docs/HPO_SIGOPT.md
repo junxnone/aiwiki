@@ -2,7 +2,7 @@
 Title | HPO SIGOPT
 -- | --
 Create Date | `2021-09-01T09:01:43Z`
-Update Date | `2021-11-25T07:31:20Z`
+Update Date | `2021-11-25T07:37:30Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/15)
 
 ---
@@ -78,7 +78,7 @@ sigopt.log_metric("your_metrics", metrics) | 上传 `Observations` 结果
 
 - `sigopt config your_API_token` set the token
 - Create yml config file `sigopt.yml`
-- Get parameters API `sigopt.get_parameter('batch_size', default=xxx)`
+- Get parameters API `sigopt.params.your_params`
 - upload metrics `sigopt.log_metric(name='accuracy', value=metrics)`
 - **Training**: `sigopt optimize train.py --sigopt-file sigopt.yml`
 
