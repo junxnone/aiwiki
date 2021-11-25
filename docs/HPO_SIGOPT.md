@@ -2,13 +2,13 @@
 Title | HPO SIGOPT
 -- | --
 Create Date | `2021-09-01T09:01:43Z`
-Update Date | `2021-11-25T06:31:11Z`
+Update Date | `2021-11-25T07:25:20Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/15)
 
 ---
 ## Reference
-- [SigOpt docs](https://app.sigopt.com/docs)
-- 2016 A Stratified Analysis of Bayesian Optimization Methods [[paper](https://arxiv.org/pdf/1603.09441.pdf)] [[code](https://github.com/sigopt)]
+- [SigOpt docs](https://app.sigopt.com/docs)  [[code](https://github.com/sigopt)]
+- 2016 A Stratified Analysis of Bayesian Optimization Methods [[paper](https://arxiv.org/pdf/1603.09441.pdf)]
 - [sigopt_experiment_and_optimization_demo.ipynb](https://colab.research.google.com/github/sigopt/sigopt-examples/blob/master/get-started/sigopt_experiment_and_optimization_demo.ipynb)
 - [Intro to Multicriteria Optimization](https://sigopt.com/blog/intro-to-multicriteria-optimization/)
 
