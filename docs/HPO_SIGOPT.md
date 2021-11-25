@@ -2,7 +2,7 @@
 Title | HPO SIGOPT
 -- | --
 Create Date | `2021-09-01T09:01:43Z`
-Update Date | `2021-11-25T07:25:20Z`
+Update Date | `2021-11-25T07:31:20Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/15)
 
 ---
@@ -50,10 +50,10 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/15)
 API | Description
 -- | --
 `sigopt.params.your_params` | 获取 `Suggestion` 的参数
-`sigopt.log_model("your_metrics", metrics)` | 声明 Model
+`sigopt.log_model()` | 声明 Model
 sigopt.log_dataset() | 声明 Dataset
 sigopt.log_metadata() | 声明自定义 metadata
-sigopt.log_metric() | 上传 `Observations` 结果
+sigopt.log_metric("your_metrics", metrics) | 上传 `Observations` 结果
 
 
 
