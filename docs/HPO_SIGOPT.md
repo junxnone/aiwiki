@@ -2,7 +2,7 @@
 Title | HPO SIGOPT
 -- | --
 Create Date | `2021-09-01T09:01:43Z`
-Update Date | `2021-11-25T08:06:26Z`
+Update Date | `2021-11-25T08:09:27Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/15)
 
 ---
@@ -20,10 +20,10 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/15)
   - 2. 把跑出来的 **metrics** 提交到 **sigopt**
   - 3. 获取新的**超参**
   - 4. 重复以上步骤获取最好的参数
+- [sigopt UseCase](/HPO_SIGOPT_Usecase)
+- [sigopt Options - parameters/metrics](/HPO_SIGOPT_Options)
 - **参数类型支持** `浮点型/整型/Grid/Categorical`
-- Multimetric 
-  - Accuracy & Inference Time
-  - Precision & Recall
+- **Multimetric**: 优化 `accuracy` 的同时, 优化 `inference_time`
 - **Support Optimization**
   - Random Search
   - Grid Search
@@ -34,8 +34,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/15)
     - [Optuna](https://optuna.org/)
 - **Parallel**
   - 多机器训练
-- [UseCase](/HPO_SIGOPT_Usecase)
-- [Options](/HPO_SIGOPT_Options)
+
 
 ![image](https://user-images.githubusercontent.com/2216970/132183671-21794822-2014-42f3-be9c-4685a0f422d6.png)
 
