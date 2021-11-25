@@ -2,7 +2,7 @@
 Title | HPO SIGOPT
 -- | --
 Create Date | `2021-09-01T09:01:43Z`
-Update Date | `2021-11-25T07:37:30Z`
+Update Date | `2021-11-25T08:06:26Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/15)
 
 ---
@@ -20,10 +20,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/15)
   - 2. 把跑出来的 **metrics** 提交到 **sigopt**
   - 3. 获取新的**超参**
   - 4. 重复以上步骤获取最好的参数
-- **参数类型支持**
-  - Double Parameter - `lr/lr_drop/dropout_rate`
-  - Integer Parameter - `batch_size/epochs_lr_drop/epochs`
-  - Categorical Parameter - `depths/optimizer`
+- **参数类型支持** `浮点型/整型/Grid/Categorical`
 - Multimetric 
   - Accuracy & Inference Time
   - Precision & Recall
@@ -37,95 +34,11 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/15)
     - [Optuna](https://optuna.org/)
 - **Parallel**
   - 多机器训练
-
+- [UseCase](/HPO_SIGOPT_Usecase)
+- [Options](/HPO_SIGOPT_Options)
 
 ![image](https://user-images.githubusercontent.com/2216970/132183671-21794822-2014-42f3-be9c-4685a0f422d6.png)
 
-
-
-
-## UseCase
-### Some API
-
-API | Description
--- | --
-`sigopt.params.your_params` | 获取 `Suggestion` 的参数
-`sigopt.log_model()` | 声明 Model
-sigopt.log_dataset() | 声明 Dataset
-sigopt.log_metadata() | 声明自定义 metadata
-sigopt.log_metric("your_metrics", metrics) | 上传 `Observations` 结果
-
-
-
-
-### notebook (colab)
-- 需要注册获取连接 `Token`
-- 安装 `sigopt` - `pip install sigopt`
-- 使用 `Token` 连接到 `Server`
-- `%load_ext sigopt` 加载插件
-- `%%experiment` 设置 `experiment`
-- `%%optimize My_First_Optimization` run sigopt 优化
-- `sigopt.log_****` push log 到 Server
-
-### python script code
-
-#### API
-- Connection API
-- Create Experiment API
-- Optimization loop get Suggestions 
-
-#### YML
-
-- `sigopt config your_API_token` set the token
-- Create yml config file `sigopt.yml`
-- Get parameters API `sigopt.params.your_params`
-- upload metrics `sigopt.log_metric(name='accuracy', value=metrics)`
-- **Training**: `sigopt optimize train.py --sigopt-file sigopt.yml`
-
-```yaml
-name: MC Test_2
-parameters:
-- name: batch_size
-  type: int
-  bounds:
-    min: 8
-    max: 32
-- name: lr
-  bounds:
-  type: double
-    min: 0.00001
-    max: 0.1
-- name: optimizer
-  type: categorical
-  categorical_values: ["Adam", "SGD"]
-- name: depth
-  type: int
-  grid: [3,5,7,9]
-- name: l2_regularization
-  type: double
-  grid: [1e-5, 1e-3, 0.33, 0.999]
-  transformation: log
-metrics:
-- name: accuracy
-  objective: maximize
-budget: 50
-```
-
-## Metrics
-
-- 常用 Metrics
-  - Accuracy
-  - Precision
-  - Recall
-  - Inference Time
-
-
-Name | Description
--- | --
-name |  metrics 名字 
-objective | `maximize(default)/minimize` 指定优化方向 
-strategy | `optimize(default)/store/constraint` 指定是 `优化/存储/限制`
-threshold | `上限/下限` 对应于 `constraint - maximize/minimize` 限制值
 
 ## Parallel
 - 方式
