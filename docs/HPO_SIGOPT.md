@@ -2,7 +2,7 @@
 Title | HPO SIGOPT
 -- | --
 Create Date | `2021-09-01T09:01:43Z`
-Update Date | `2021-11-25T08:34:59Z`
+Update Date | `2021-11-25T08:35:23Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/15)
 
 ---
@@ -18,7 +18,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/15)
 - [sigopt UseCase](/HPO_SIGOPT_Usecase)
 - [sigopt Options - parameters/metrics](/HPO_SIGOPT_Options)
 - **参数类型支持** `浮点型/整型/Grid/Categorical`
-- **Multimetric**: 优化 `accuracy` 的同时, 优化 `inference_time`
+- **Multimetric** (用例: 优化 `accuracy` 的同时, 优化 `inference_time`)
 - **Support Optimization**: `Random/Grid/Bayesian/Constraint/Custom`
   - Custom Optimizer
     - [Hyperopt](https://hyperopt.github.io/hyperopt/)
