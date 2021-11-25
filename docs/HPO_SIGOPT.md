@@ -2,7 +2,7 @@
 Title | HPO SIGOPT
 -- | --
 Create Date | `2021-09-01T09:01:43Z`
-Update Date | `2021-11-23T03:00:02Z`
+Update Date | `2021-11-25T06:29:13Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/15)
 
 ---
@@ -14,14 +14,13 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/15)
 
 
 ## Brief
-- 跟踪/分析/微调 AI Model
-- Metrics Result --> Bayesian Optimization  --> New Parameters
-- Online 超参优化工具
-  - 获取随机**超参**
-  - 把跑出来的 **metrics** 发到 **sigopt**
-  - 获取新的**超参**
-  - 重复以上步骤获取最好的参数
-- 参数类型支持
+- Online Tools - 跟踪/分析/微调 `AI Model`
+- **超参优化步骤**
+  - 1. 获取随机**超参**
+  - 2. 把跑出来的 **metrics** 提交到 **sigopt**
+  - 3. 获取新的**超参**
+  - 4. 重复以上步骤获取最好的参数
+- **参数类型支持**
   - Double Parameter - `lr/lr_drop/dropout_rate`
   - Integer Parameter - `batch_size/epochs_lr_drop/epochs`
   - Categorical Parameter - `depths/optimizer`
@@ -36,7 +35,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/15)
   - Custom Optimizer
     - [Hyperopt](https://hyperopt.github.io/hyperopt/)
     - [Optuna](https://optuna.org/)
-- Parallel
+- **Parallel**
+  - 多机器训练
 
 
 ![image](https://user-images.githubusercontent.com/2216970/132183671-21794822-2014-42f3-be9c-4685a0f422d6.png)
@@ -81,34 +81,34 @@ sigopt.log_metric() | 上传 `Observations` 结果
 - Get parameters API `sigopt.get_parameter('batch_size', default=xxx)`
 - upload metrics `sigopt.log_metric(name='accuracy', value=metrics)`
 - **Training**: `sigopt optimize train.py --sigopt-file sigopt.yml`
+
 ```yaml
-experiment:
-  name: MC Test_2
-  parameters:
-    - name: batch_size
-      type: int
-      bounds:
-        min: 8
-        max: 32
-    - name: lr
-      bounds:
-      type: double
-        min: 0.00001
-        max: 0.1
-    - name: optimizer
-      type: categorical
-      categorical_values: ["Adam", "SGD"]
-    - name: depth
-      type: int
-      grid: [3,5,7,9]
-    - name: l2_regularization
-      type: double
-      grid: [1e-5, 1e-3, 0.33, 0.999]
-      transformation: log
-  metrics:
-    - name: accuracy
-      objective: maximize
-  observation_budget: 50
+name: MC Test_2
+parameters:
+- name: batch_size
+  type: int
+  bounds:
+    min: 8
+    max: 32
+- name: lr
+  bounds:
+  type: double
+    min: 0.00001
+    max: 0.1
+- name: optimizer
+  type: categorical
+  categorical_values: ["Adam", "SGD"]
+- name: depth
+  type: int
+  grid: [3,5,7,9]
+- name: l2_regularization
+  type: double
+  grid: [1e-5, 1e-3, 0.33, 0.999]
+  transformation: log
+metrics:
+- name: accuracy
+  objective: maximize
+budget: 50
 ```
 
 ## Metrics
