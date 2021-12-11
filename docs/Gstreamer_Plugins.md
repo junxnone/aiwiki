@@ -2,7 +2,7 @@
 Title | Gstreamer Plugins
 -- | --
 Create Date | `2021-12-11T04:02:35Z`
-Update Date | `2021-12-11T04:43:11Z`
+Update Date | `2021-12-11T04:45:18Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/143)
 
 ---
@@ -59,7 +59,7 @@ queue |
 ffmpeg | 
 opencv | 
 appsink |
-
+ximagesrc/ximagesink | Capture X Display/ Renders video frames to X Window
 
 ### Network
 
