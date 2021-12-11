@@ -2,7 +2,7 @@
 Title | Gstreamer
 -- | --
 Create Date | `2018-11-27T15:44:49Z`
-Update Date | `2021-12-11T04:16:59Z`
+Update Date | `2021-12-11T04:17:14Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/109)
 
 ---
@@ -15,8 +15,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/109)
 
 
 ## Brief
-- Gstreamer 是一个通用跨平台的流媒体应用框架
-  - 可以处理 Audio/Video/其他数据流
+- Gstreamer 是一个通用跨平台的流媒体应用框架, 可以处理 Audio/Video/其他数据流
 - [Gstreamer Install](/Gstreamer_Install)
 - [Command Line Tools](#Command-Line-Tools)
 - [Gstreamer Concepts](/Gstreamer_Concepts)
