@@ -2,7 +2,7 @@
 Title | Gstreamer
 -- | --
 Create Date | `2018-11-27T15:44:49Z`
-Update Date | `2021-12-11T03:50:49Z`
+Update Date | `2021-12-11T03:53:54Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/109)
 
 ---
@@ -46,6 +46,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/109)
 
 
 ## Pipeline
+- 数据流通的定义(定义组件的顺序)
 - source - file/http/rtp/...
 - demux - 分离数据 audio/video/...
 - decoder - `xxx format -> yuv/pcm`
