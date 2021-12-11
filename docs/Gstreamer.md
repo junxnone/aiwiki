@@ -2,7 +2,7 @@
 Title | Gstreamer
 -- | --
 Create Date | `2018-11-27T15:44:49Z`
-Update Date | `2021-12-11T04:14:13Z`
+Update Date | `2021-12-11T04:15:08Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/109)
 
 ---
@@ -21,17 +21,6 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/109)
 - [Command Line Tools](#CommandLineTools)
 - [Gstreamer Concepts](/Gstreamer_Concepts)
 - [Gstreamer Plugins](/Gstreamer_Plugins)
-
-
-### Command Line Tools
-
-Tools | Description
--- | --
-[gst-inspect-1.0](gstreamer_tools_gst_inspect) | 查看 elements 信息 - src/sink/pad/Capabilities/...
-[gst-launch-1.0](/gstreamer_tools_gst_launch) | 创建 pipeline
-[gst-device-monitor-1.0]  |  查看当前设备上的 `Device`
-[gst-discoverer-1.0](gstreamer_tools_gst_discoverer) | 查看 media 相关信息 - codec/Channels/Sample rate/Bitrate/...
-ges-launch-1.0 | 控制 timeline 开始时间/间隔/...
 
 
 ## Arch
@@ -54,6 +43,19 @@ ges-launch-1.0 | 控制 timeline 开始时间/间隔/...
 ![image](https://user-images.githubusercontent.com/2216970/138111410-65ed98b9-82a7-4097-91da-cbaa2c8a47da.png)
 
 ![image](https://user-images.githubusercontent.com/2216970/138203169-3e1ebef5-fb7f-4c08-a5d8-5a41159f3be9.png)
+
+
+
+
+## Command Line Tools
+
+Tools | Description
+-- | --
+[gst-inspect-1.0](gstreamer_tools_gst_inspect) | 查看 elements 信息 - src/sink/pad/Capabilities/...
+[gst-launch-1.0](/gstreamer_tools_gst_launch) | 创建 pipeline
+[gst-device-monitor-1.0]  |  查看当前设备上的 `Device`
+[gst-discoverer-1.0](gstreamer_tools_gst_discoverer) | 查看 media 相关信息 - codec/Channels/Sample rate/Bitrate/...
+ges-launch-1.0 | 控制 timeline 开始时间/间隔/...
 
 
 
