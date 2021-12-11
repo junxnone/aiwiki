@@ -2,11 +2,11 @@
 Title | Gstreamer
 -- | --
 Create Date | `2018-11-27T15:44:49Z`
-Update Date | `2021-10-21T03:33:12Z`
+Update Date | `2021-12-11T03:50:49Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/109)
 
 ---
-# Reference
+## Reference
 - [gstreamer blog](https://blog.csdn.net/knowledgebao/article/category/8053683)
 - [Gstreamer的安装](https://blog.csdn.net/knowledgebao/article/details/83993255)
 - [Docs](https://thiblahute.github.io/GStreamer-doc/index.html?gi-language=c)
@@ -14,7 +14,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/109)
 
 
 
-# Brief
+## Brief
 - Gstreamer 是一个通用跨平台的流媒体应用框架
   - 可以处理 Audio/Video/其他数据流
 - element
