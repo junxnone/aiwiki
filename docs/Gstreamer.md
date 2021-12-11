@@ -2,7 +2,7 @@
 Title | Gstreamer
 -- | --
 Create Date | `2018-11-27T15:44:49Z`
-Update Date | `2021-12-11T04:10:05Z`
+Update Date | `2021-12-11T04:12:03Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/109)
 
 ---
@@ -18,14 +18,20 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/109)
 - Gstreamer 是一个通用跨平台的流媒体应用框架
   - 可以处理 Audio/Video/其他数据流
 - [Gstreamer Install](/Gstreamer_Install)
-- Command Line Tools
-  - [gst-inspect-1.0](gstreamer_tools_gst_inspect) - 查看 elements - src/sink/pad/Capabilities/...
-  - [gst-launch-1.0](/gstreamer_tools_gst_launch) - 创建 pipeline
-  - [gst-device-monitor-1.0]  -  查看当前设备上的 `Device`
-  - [gst-discoverer-1.0](gstreamer_tools_gst_discoverer) - 查看 media 相关信息 - codec/Channels/Sample rate/Bitrate/...
-  - ges-launch-1.0 - 控制 timeline 开始时间/间隔/...
+- [Command Line Tools](###Command Line Tools)
 - [Gstreamer Concepts](/Gstreamer_Concepts)
 - [Gstreamer Plugins](/Gstreamer_Plugins)
+
+
+### Command Line Tools
+
+Tools | Description
+-- | --
+[gst-inspect-1.0](gstreamer_tools_gst_inspect) | 查看 elements 信息 - src/sink/pad/Capabilities/...
+[gst-launch-1.0](/gstreamer_tools_gst_launch) | 创建 pipeline
+[gst-device-monitor-1.0]  |  查看当前设备上的 `Device`
+[gst-discoverer-1.0](gstreamer_tools_gst_discoverer) | 查看 media 相关信息 - codec/Channels/Sample rate/Bitrate/...
+ges-launch-1.0 | 控制 timeline 开始时间/间隔/...
 
 
 ## Arch
