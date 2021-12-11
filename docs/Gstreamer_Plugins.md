@@ -2,7 +2,7 @@
 Title | Gstreamer Plugins
 -- | --
 Create Date | `2021-12-11T04:02:35Z`
-Update Date | `2021-12-11T04:45:18Z`
+Update Date | `2021-12-11T04:46:24Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/143)
 
 ---
@@ -31,7 +31,7 @@ Plugins Name | Description
 -- | --
 bayer2rgb/rgb2bayer | rgb & bayer 转换
 videoconvert | 
-
+x264enc/x265enc | 编码器
 
 ### Image
 
