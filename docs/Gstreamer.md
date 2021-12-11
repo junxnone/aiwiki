@@ -2,7 +2,7 @@
 Title | Gstreamer
 -- | --
 Create Date | `2018-11-27T15:44:49Z`
-Update Date | `2021-12-11T03:53:54Z`
+Update Date | `2021-12-11T04:03:39Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/109)
 
 ---
@@ -21,10 +21,6 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/109)
 - pad
 - bin
 - pipeline
-- plugins
-  - source plugin
-  - transform plugin
-  - sink plugin
 - Command Line Tools
   - [gst-inspect-1.0](gstreamer_tools_gst_inspect) - 查看 elements - src/sink/pad/Capabilities/...
   - [gst-launch-1.0](/gstreamer_tools_gst_launch) - 创建 pipeline
@@ -32,7 +28,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/109)
   - [gst-discoverer-1.0](gstreamer_tools_gst_discoverer) - 查看 media 相关信息 - codec/Channels/Sample rate/Bitrate/...
   - ges-launch-1.0 - 控制 timeline 开始时间/间隔/...
 - [Gstreamer Install](/Gstreamer_Install)
-
+- [Gstreamer Plugins](/Gstreamer_Plugins)
 
 
 ## Arch
