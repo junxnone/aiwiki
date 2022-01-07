@@ -2,7 +2,7 @@
 Title | Flann Source Code
 -- | --
 Create Date | `2021-10-27T08:25:28Z`
-Update Date | `2021-12-17T05:11:52Z`
+Update Date | `2022-01-07T06:56:21Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/129)
 
 ---
@@ -19,7 +19,7 @@ flann/
 ├── src ##源码
 │   ├── cpp
 │   │   └── flann
-│   │       ├── algorithms
+│   │       ├── algorithms ## Index 不同算法的实现
 │   │       ├── io ##hdf5 读写 API
 │   │       ├── mpi ##Server/Client 远程 search 实现
 │   │       ├── nn ##evaluate 相关 ？？
