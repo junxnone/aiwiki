@@ -1,27 +1,29 @@
 ---
 Title | CVAT
 -- | --
-Create Date | `2021-10-12T15:17:14Z`
-Update Date | `2021-10-12T15:17:14Z`
+Create Date | `2018-12-13T13:39:06Z`
+Update Date | `2022-01-11T05:19:22Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/73)
 
 ---
-# Reference
+## Reference
 
 - [Github repo](https://github.com/opencv/cvat)
 - [User's guide](https://github.com/opencv/cvat/blob/develop/cvat/apps/documentation/user_guide.md)
 
 # Brief
+
 - CVAT - Computer Vision Annotation Tool
   - `CVAT is completely re-designed and re-implemented version of Video Annotation Tool`
 
-## 标注模式
+### 标注模式
+
 - 标注图片
 - 标注视频中的物体轨迹
 - 标注物体属性
 - 标注分界
 
-## Types of Shapes
+### Types of Shapes
 
 - box
 - polygon
@@ -29,7 +31,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/73)
 - points
 
 
-# Build
+## Build
+
 ```
 git clone https://github.com/opencv/cvat.git
 cd cvat
@@ -37,7 +40,9 @@ docker-compose build
 docker-compose up -d
 ```
 http://localhost:8080
-## 如果想从其他机器访问,并共享目录：
+
+### 如果想从其他机器访问,并共享目录：
+
 ```
 touch docker-compose.override.yml
 vi docker-compose.override.yml
@@ -59,19 +64,25 @@ services:
 ```
 docker-compose -f docker-compose.yml -f docker-compose.override.yml build
 ```
-## 创建管理员用户
+
+### 创建管理员用户
+
 ```
 docker exec -it cvat bash -ic '/usr/bin/python3 ~/manage.py createsuperuser'
 ```
 ```
 docker exec -it cvat bash -ic '/usr/bin/python3 ~/manage.py changepassword xxx'
 ```
-# [Components](https://github.com/opencv/cvat#additional-optional-components)
+
+## [Components](https://github.com/opencv/cvat#additional-optional-components)
+
 - [OpenVINO](https://github.com/opencv/cvat/tree/develop/components/openvino#intel-openvino-toolkit)
 - Tensorflow
 - CUDA
 - Analytics
-## Build all components
+
+### Build all components
+
 ```
 docker-compose -f docker-compose.yml \
   -f components/tf_annotation/docker-compose.tf_annotation.yml \
@@ -80,7 +91,9 @@ docker-compose -f docker-compose.yml \
   -f components/openvino/docker-compose.openvino.yml  \
   -f docker-compose.override.yml build
 ```
-## Run the docker container
+
+### Run the docker container
+
 ```
 docker-compose -f docker-compose.yml \
   -f components/tf_annotation/docker-compose.tf_annotation.yml \
@@ -89,7 +102,8 @@ docker-compose -f docker-compose.yml \
   -f components/openvino/docker-compose.openvino.yml \
   -f docker-compose.override.yml  up -d
 ```
-# [Auto annotation](https://github.com/opencv/cvat/blob/a967fe1eaba9ef4b6d3cc626c0bda1afa48038cd/cvat/apps/auto_annotation/README.md)
+
+## [Auto annotation](https://github.com/opencv/cvat/blob/a967fe1eaba9ef4b6d3cc626c0bda1afa48038cd/cvat/apps/auto_annotation/README.md)
 
 - [Person-vehicle-bike-detection](https://github.com/opencv/cvat/blob/a967fe1eaba9ef4b6d3cc626c0bda1afa48038cd/cvat/apps/auto_annotation/README.md#person-vehicle-bike-detection-crossroad-0078-openvino-toolkit)
 - [Landmarks-regression](https://github.com/opencv/cvat/blob/a967fe1eaba9ef4b6d3cc626c0bda1afa48038cd/cvat/apps/auto_annotation/README.md#landmarks-regression-retail-0009-openvino-toolkit)
@@ -103,8 +117,8 @@ docker-compose -f docker-compose.yml \
 ![image](https://user-images.githubusercontent.com/2216970/51508027-8d550900-1e2e-11e9-9b6b-bdd461f8788e.png)
 
 
-# Tips
-# 1 CVAT 创建任务时可选 Image quality
+## Tips
+### 1 CVAT 创建任务时可选 Image quality
 - 默认 quality 50 ，最大值 95
 - 最大值95 是由 `pillow` [决定的](https://pillow.readthedocs.io/en/5.1.x/handbook/image-file-formats.html#jpeg), pillow open jpeg 时只能设置 `1 - 95` 的quality, 默认是75
 
