@@ -2,7 +2,7 @@
 Title | CVAT
 -- | --
 Create Date | `2018-12-13T13:39:06Z`
-Update Date | `2022-01-11T05:19:22Z`
+Update Date | `2022-01-11T05:21:03Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/73)
 
 ---
@@ -15,20 +15,16 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/73)
 
 - CVAT - Computer Vision Annotation Tool
   - `CVAT is completely re-designed and re-implemented version of Video Annotation Tool`
-
-### 标注模式
-
-- 标注图片
-- 标注视频中的物体轨迹
-- 标注物体属性
-- 标注分界
-
-### Types of Shapes
-
-- box
-- polygon
-- polyline
-- points
+- **标注模式**
+  - 标注图片
+  - 标注视频中的物体轨迹
+  - 标注物体属性
+  - 标注分界
+- **Types of Shapes**
+  - box
+  - polygon
+  - polyline
+  - points
 
 
 ## Build
