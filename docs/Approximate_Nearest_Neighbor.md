@@ -2,19 +2,23 @@
 Title | Approximate Nearest Neighbor
 -- | --
 Create Date | `2021-08-18T03:39:23Z`
-Update Date | `2021-10-16T04:17:23Z`
+Update Date | `2022-01-12T05:17:15Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/103)
 
 ---
-# Reference
+## Reference
+
 - [ann-benchmarks](https://github.com/erikbern/ann-benchmarks)
 - 2018 [Approximate Nearest Neighbor Search in High Dimensions](https://arxiv.org/pdf/1806.09823.pdf) [[ppt](http://people.csail.mit.edu/indyk/icm18.pdf)]
 
-# Brief
+## Brief
+
 - ANN - `Approximate Nearest Neighbor`
 - **近似最近邻算法** - 通过牺牲精度来换取时间和空间的方式从大量样本中获取最近邻
-- 
+
+
 ## Algos
+
 - [KDTree](/KDTree)
 - LSH - `Locality Sensitive Hashing`
   - QALSH - `Query-Aware LSH`
@@ -40,13 +44,14 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/103)
 - IVFPQ
 
 ## Distance
+
 - Angular
 - Euclidean
 - Jaccard
 
 ## Metrics
 
-# Trend
+## Trend
 
-# History
+## History
 
