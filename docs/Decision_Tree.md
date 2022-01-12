@@ -1,15 +1,16 @@
 ---
 Title | Decision Tree
 -- | --
-Create Date | `2021-10-19T18:27:19Z`
-Update Date | `2021-10-19T18:27:19Z`
+Create Date | `2021-03-30T07:53:56Z`
+Update Date | `2022-01-12T05:17:53Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/113)
 
 ---
-# Reference
+## Reference
 - [决策树 – Decision tree](https://easyai.tech/ai-definition/decision-tree/)
 
-# Brief
+## Brief
+
 - Decision Tree - 决策树
 - 决策树组成
   - **根节点**：包含样本的全集
@@ -31,7 +32,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/113)
   - 过拟合
   - 忽略数据相关性
 
-# UseCase
+## UseCase
 
 ![image](https://user-images.githubusercontent.com/2216970/112953384-061f2080-9170-11eb-8b38-4ae0f447c89b.png)
 
