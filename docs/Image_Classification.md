@@ -1,15 +1,17 @@
 ---
 Title | Image Classification
 -- | --
-Create Date | `2021-09-27T10:40:07Z`
-Update Date | `2021-09-27T10:40:07Z`
+Create Date | `2019-05-12T14:38:40Z`
+Update Date | `2022-01-12T05:19:10Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/61)
 
 ---
-#  Reference
+##  Reference
+
 - [Multitask-Learning](https://github.com/mbs0221/Multitask-Learning)
 
-# Brief
+## Brief
+
 - 图像分类任务
   - **二分类**
   - **多分类**
@@ -25,7 +27,7 @@ Labels > 1 | Multi-Label/sigmoid | Multi-Output/task
 
 
 
-# 常见的挑战
+## 常见的挑战
 
 - viewpoint variation 图一个物体,只是拍摄的角度不同,对不同图片,要能够正确识别.
 - scale variation 同一个物品,只是形状不同,对不同图片,要能够正确识别.
