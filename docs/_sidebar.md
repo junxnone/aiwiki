@@ -67,6 +67,8 @@
 - Transformer
 - Knowledge Distillation
 - [3D 应用](3D_Summary)
+  - [3D ICP](/3D_Algos_ICP)
+  - [3D PPF](/3D_Algos_PPF)
 - Tools
   - [Image Processing Tools](/Image_Processing_Tools)
   - [Training Inference Tools](/Training_Inference_Tools) 
