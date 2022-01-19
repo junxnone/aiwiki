@@ -2,7 +2,7 @@
 Title | Camera
 -- | --
 Create Date | `2021-10-19T15:14:46Z`
-Update Date | `2022-01-19T08:51:06Z`
+Update Date | `2022-01-19T08:52:54Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/107)
 
 ---
@@ -16,6 +16,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/107)
   - 面阵相机/Area Scan Camera
   - 线阵相机/Line Scan Camera
   - 3D Camera
+  - CCD & CMOS
 
 ## Tools
 - [Aravis](/Aravis)
