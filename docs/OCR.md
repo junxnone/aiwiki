@@ -2,7 +2,7 @@
 Title | OCR
 -- | --
 Create Date | `2020-05-07T06:49:15Z`
-Update Date | `2022-01-19T09:36:57Z`
+Update Date | `2022-01-19T10:24:13Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/200)
 
 ---
@@ -42,6 +42,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/200)
 - **Tools**
   - [TextRecognitionDataGenerator](/TextRecognitionDataGenerator)
   - [Calamari](/Calamari)
+- [OCR Augmentation](/OCR_Augmentation)
+
 
 ## Methods
 - Detection
