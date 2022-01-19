@@ -1,17 +1,18 @@
 ---
 Title | YOLO tiny
 -- | --
-Create Date | `2021-09-27T07:33:46Z`
-Update Date | `2021-09-27T07:33:46Z`
+Create Date | `2020-02-20T06:02:54Z`
+Update Date | `2022-01-19T02:13:25Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/52)
 
 ---
-# Reference
+## Reference
 
 - [tiny darknet](https://pjreddie.com/darknet/tiny-darknet/)
 - [YOLOv3-tiny cfg](https://github.com/AlexeyAB/darknet/blob/master/cfg/yolov3-tiny.cfg)
 
-# Model
+## Model
+
 ```
    layer   filters  size/strd(dil)      input                output
    0 conv     16       3 x 3/ 1    608 x 608 x   3 ->  608 x 608 x  16 0.319 BF
