@@ -2,7 +2,7 @@
 Title | 3D Summary
 -- | --
 Create Date | `2021-05-10T06:55:43Z`
-Update Date | `2022-01-19T07:30:29Z`
+Update Date | `2022-01-19T07:31:31Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/76)
 
 ---
@@ -25,14 +25,17 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/76)
 
 ## Algos
 
-- Traditional
-  - 点云配准
-    - [ICP](3D_Algos_ICP)
-    - [PPF](/3D_Algos_PPF)
-  - 点云识别
-- ML
-  - Semantic Segmentation
-  - Object Detection
+### 传统算法/Traditional
+
+- 点云配准
+  - [ICP](3D_Algos_ICP)
+  - [PPF](/3D_Algos_PPF)
+- 点云识别
+
+### 机器学习/深度学习 - ML/DL
+
+- Semantic Segmentation
+- Object Detection
 
 ## 应用
 - 三维重建
