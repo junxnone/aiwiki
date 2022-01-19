@@ -2,11 +2,12 @@
 Title | OpenVINO MO
 -- | --
 Create Date | `2018-11-11T15:06:52Z`
-Update Date | `2022-01-19T08:34:30Z`
+Update Date | `2022-01-19T08:45:15Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/181)
 
 ---
 ## Brief
+- MO - `Model Optimizer` 把各种框架训练的模型文件转换成 OpenVINO 可以识别的文件并优化模型
 - **Support Framework :** Tensorflow/MXNet/Kaldi/ONNX
   - `Pytorch` ==> `ONNX` ==> `IR`
 
