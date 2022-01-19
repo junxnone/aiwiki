@@ -2,7 +2,7 @@
 Title | Image Object Detection
 -- | --
 Create Date | `2018-12-09T09:27:47Z`
-Update Date | `2022-01-19T03:11:50Z`
+Update Date | `2022-01-19T03:16:27Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/152)
 
 ---
@@ -29,6 +29,10 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/152)
   - [Object Detection for Dummies Part 3: R-CNN Family](https://lilianweng.github.io/lil-log/2017/12/31/object-recognition-for-dummies-part-3.html)
   - [Object Detection Part 4: Fast Detection Models](https://lilianweng.github.io/lil-log/2018/12/27/object-detection-part-4.html)
 
+## Brief
+- 通过算法获取待检测物体的 BBox
+
+
 ## Algos
 
 - **传统方法**
@@ -37,17 +41,17 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/152)
   - SVM + HOG
   - DPM
 - **Two Stage**
-  - [RCNN](https://github.com/junxnone/ml/issues/73)
-  - [Fast R-CNN](https://github.com/junxnone/ml/issues/75)
-  - [Faster R-CNN](https://github.com/junxnone/ml/issues/74)
+  - [R-CNN](/RCNN)
+  - [Fast R-CNN](Fast_RCNN)
+  - [Faster R-CNN](Faster_RCNN)
   - SPP-net
   - R-FCN
 - **One Stage**
-  - [YOLO](https://github.com/junxnone/ml/issues/69)
-    - [YOLOv1](https://github.com/junxnone/ml/issues/71)
-    - [YOLOv2](https://github.com/junxnone/ml/issues/67)
-    - [YOLOv3](https://github.com/junxnone/ml/issues/68)
-    - [YOLO-tiny](https://github.com/junxnone/ml/issues/82)
+  - [YOLO](/YOLO_Summary)
+    - [YOLO V1](/YOLO_V1)
+    - [YOLO V2](/YOLO_V2)
+    - [YOLO V3](/YOLO_V3)
+    - [YOLO tiny](/YOLO_tiny)
     - [YOLO SPP](https://github.com/junxnone/tech-io/issues/664)
     - [YOLOv4](https://github.com/junxnone/ml/issues/99)
     - [YOLOv5]()
