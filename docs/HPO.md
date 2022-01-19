@@ -2,7 +2,7 @@
 Title | HPO
 -- | --
 Create Date | `2021-09-06T09:24:08Z`
-Update Date | `2021-11-10T10:33:06Z`
+Update Date | `2022-01-19T10:50:03Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/13)
 
 ---
@@ -36,8 +36,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/13)
 
 Name | Time Complexity | 局限 | 优点
 -- | -- | -- | --
-GS (`Grid Search`)| O(n<sup>k</sup>) | 时间消耗多 | 简单
-RS (`Random Search`)| O(n) | 相比 GS 有效
+GS ([Grid Search](/Grid_Search))| O(n<sup>k</sup>) | 时间消耗多 | 简单
+RS ([Random Search](/Random_Search))| O(n) | 相比 GS 有效
 Gradient-based models | O(n<sup>k</sup>) | 只支持连续超参
 BO-GP | O(n<sup>3</sup>)
 SMAC | O(nlogn) | 并行化能力较差 | 对所有类型超参有效
