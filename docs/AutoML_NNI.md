@@ -1,13 +1,15 @@
 ---
 Title | AutoML NNI
 -- | --
-Create Date | `2021-09-08T02:25:24Z`
-Update Date | `2021-09-08T02:25:24Z`
+Create Date | `2019-03-10T11:35:45Z`
+Update Date | `2022-01-19T10:58:02Z`
+Edit link | [here](https://github.com/junxnone/aiwiki/issues/16)
+
 ---
-# Reference
+## Reference
 - [[Docs - zh](https://nni.readthedocs.io/zh/latest/)] [[Code - Microsoft ](https://github.com/Microsoft/nni)]
 
-# Brief
+## Brief
 - NNI - Neural Network Intelligence
   - FE
   - HPO
@@ -20,14 +22,18 @@ Update Date | `2021-09-08T02:25:24Z`
 ![image](https://user-images.githubusercontent.com/2216970/132436063-9e270555-616a-4c5a-be11-a6776752e6f0.png)
 
 
-# Install
+## Install
+
 ```
 python3 -m pip install --upgrade nni
 ```
+
 **mnist example**
+
 ```
 nnictl create --config examples/trials/mnist/config.yml
 ```
+
 ```
 You can use these commands to get more information about the experiment
 -----------------------------------------------------------------------
@@ -41,5 +47,6 @@ You can use these commands to get more information about the experiment
 7. nnictl trial kill             kill a trial job by id
 8. nnictl --help                 get help information about nnictl
 ```
+
 ![image](https://user-images.githubusercontent.com/2216970/54084656-7468ce80-436e-11e9-887e-7ad29537d4ec.png)
 
