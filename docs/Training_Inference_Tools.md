@@ -2,7 +2,7 @@
 Title | Training Inference Tools
 -- | --
 Create Date | `2021-08-31T08:43:50Z`
-Update Date | `2022-01-19T08:17:34Z`
+Update Date | `2022-01-19T08:42:30Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/5)
 
 ---
@@ -19,5 +19,5 @@ ONNX  | Microsoft 主导，多家支持开发的开源训练工具
 ## Inference Only Tools
 Name | Description
 -- | --
-OpenVINO(OpenCV) | Intel 主导开发的Inference工具
+[OpenVINO](/OpenVINO) | Intel 主导开发的Inference工具
 
