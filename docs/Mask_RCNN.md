@@ -2,11 +2,11 @@
 Title | Mask RCNN
 -- | --
 Create Date | `2019-06-22T08:06:11Z`
-Update Date | `2022-01-19T07:55:40Z`
+Update Date | `2022-01-19T07:56:43Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/163)
 
 ---
-# Reference
+## Reference
 
 - [paper - Mask R-CNN](https://arxiv.org/abs/1703.06870)
 - [paper - R-CNN](https://arxiv.org/abs/1311.2524)
@@ -19,7 +19,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/163)
 - [Detectron2 - pytorch - facebookresearch](https://github.com/facebookresearch/detectron2)
 - [some other implementation](https://detectron2.readthedocs.io/notes/benchmarks.html)
 
-# Brief
+## Brief
 - 基于 Faster R-CNN 结构构建
 - 使用 ROIAlign 模块替换 ROIPooling 模块
 - 在ROI Align 模块的输出端新增一个分支. 该分支的输入为 ROI Align 的输出，该分支的输出送入到两个 Conv 层. Conv 层的输出即为 mask.
@@ -51,7 +51,7 @@ FPN | ![image](https://user-images.githubusercontent.com/2216970/70237878-0b01d9
 ![image](https://user-images.githubusercontent.com/2216970/70972836-483d6380-20df-11ea-8e49-6ddc296ade1e.png)
 
 ---
-**Test Result - ROIPool vs ROIAlign**
+### Test Result - ROIPool vs ROIAlign
 
 ![image](https://user-images.githubusercontent.com/2216970/70973076-e16c7a00-20df-11ea-83d1-f05d43d95bb4.png)
 
