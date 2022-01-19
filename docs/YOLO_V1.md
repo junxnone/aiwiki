@@ -1,12 +1,12 @@
 ---
 Title | YOLO V1
 -- | --
-Create Date | `2021-09-27T07:35:49Z`
-Update Date | `2021-09-27T07:35:49Z`
+Create Date | `2020-01-13T06:31:10Z`
+Update Date | `2022-01-19T02:12:32Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/54)
 
 ---
-# Reference
+## Reference
 - 2015 **YOLO V1** You Only Look Once: Unified, Real-Time Object Detection [[paper](https://arxiv.org/pdf/1506.02640.pdf)] [[netscope](http://ethereon.github.io/netscope/#/gist/96209c6940e02b17c34009f6c3fee75e)] [[Code](https://pjreddie.com/darknet/yolo/)] [[Code2 - AlexeyAB](https://github.com/AlexeyAB/darknet)]
 - [目标检测（九）--YOLO v1,v2,v3](https://blog.csdn.net/App_12062011/article/details/77554288)
 - [pjreddie Publications](https://pjreddie.com/publications/)
@@ -18,7 +18,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/54)
 - [YOLO - PPT - deepsystems.io](https://docs.google.com/presentation/d/14H2c8UuUN0L5l9cDeG-M96UPE6U0CrZN0ChAUr-gN7o/edit#slide=id.p)
 - [图解YOLO](https://zhuanlan.zhihu.com/p/24916786)
 
-# Brief
+## Brief
 - One-Stage / Single-Stage
   - 转化为回归问题 - 拟合函数，从特征映射到(x,y,w,h)
 - **Pipeline**
@@ -97,7 +97,7 @@ Name | Weight | Comment
 - 含 Object : 位置误差 + 置信度误差 + 分类误差
 - 不含 Object : 置信度误差
 
-# Limitations
+## Limitations
 - 对重叠物体或相邻物体检测能力较差
   - 每个格子只能 Predict 2 个 BBox 和一个类别
 
