@@ -2,7 +2,7 @@
 Title | Image Segmentation
 -- | --
 Create Date | `2019-03-28T03:26:31Z`
-Update Date | `2022-01-19T07:51:38Z`
+Update Date | `2022-01-19T08:07:44Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/159)
 
 ---
@@ -29,6 +29,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/159)
 
 ## Brief
 - [Traditional Segmentation](/Traditional_Image_Segmentation)
+- [Instance Segmentation](/Instance_Segmentation)
 
 ## Algos
 
