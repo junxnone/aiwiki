@@ -1,16 +1,18 @@
 ---
 Title | LeNet
 -- | --
-Create Date | `2021-09-13T06:57:41Z`
-Update Date | `2021-09-13T06:57:41Z`
+Create Date | `2019-06-11T12:59:17Z`
+Update Date | `2022-01-19T03:22:27Z`
+Edit link | [here](https://github.com/junxnone/aiwiki/issues/24)
+
 ---
-# Reference
+## Reference
 - 1998 **LeNet** Gradient-Based Learning Applied to Document Recognition [[paper](http://yann.lecun.com/exdb/publis/pdf/lecun-01a.pdf)] [[code](https://github.com/junxnone/LeNet-5/blob/master/lenet.py#L5-L74)]
 - [卷积神经网络之LeNet](https://www.cnblogs.com/wangguchangqing/p/10329402.html)
 - [卷积神经网络-进化史-从LeNet到AlexNet](https://zhuanlan.zhihu.com/p/21562756)
 - [神经网络的发展历史](https://blog.csdn.net/qq_30460949/article/details/100101983)
 
-# Brief
+## Brief
 - LeNet诞生于1998年, 第一个卷积神经网络
 - 包含卷积/池化/全连接等Layers
   - 卷积核用 5x5
