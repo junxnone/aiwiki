@@ -2,7 +2,7 @@
 Title | Knowledge Distillation
 -- | --
 Create Date | `2021-04-12T02:03:32Z`
-Update Date | `2022-01-19T11:08:11Z`
+Update Date | `2022-01-19T11:09:36Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/207)
 
 ---
@@ -19,6 +19,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/207)
 - 用途
   - 模型压缩(小模型学习大模型的泛化能力)
 - [History](https://github.com/junxnone/tech-io/issues/961)
+- [Distilling the Knowledge in a Neural Network](/Distilling_the_Knowledge_in_a_Neural_Network)
 ---
 
 ![image](https://user-images.githubusercontent.com/2216970/114331485-a9ac0000-9b76-11eb-8d73-58a586283fef.png)
