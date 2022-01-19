@@ -1,17 +1,17 @@
 ---
 Title | Fast RCNN
 -- | --
-Create Date | `2021-09-27T08:30:45Z`
-Update Date | `2021-09-27T08:30:45Z`
+Create Date | `2019-12-11T05:18:12Z`
+Update Date | `2022-01-19T02:11:45Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/58)
 
 ---
-# Reference
+## Reference
 - 2014 **R-CNN** Rich feature hierarchies for accurate object detection and semantic segmentation [[paper](https://arxiv.org/pdf/1311.2524.pdf)] [[Code](https://github.com/rbgirshick/rcnn)]
 - 2015 **Fast RCNN** [[paper](https://arxiv.org/pdf/1504.08083.pdf)]
 
 
-# Brief
+## Brief
 - 共享卷积层
   - 提取候选框 --> CNN --> 每个候选框的特征 --> 分类+回归
   - 输入图片 --> CNN --> 每张候选框的特征 --> 分类+回归
