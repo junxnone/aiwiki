@@ -2,11 +2,11 @@
 Title | Convolution-DL
 -- | --
 Create Date | `2018-11-21T03:03:53Z`
-Update Date | `2021-10-22T03:03:37Z`
+Update Date | `2022-01-19T01:45:23Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/11)
 
 ---
-# Reference
+## Reference
 - 2016 A guide to convolution arithmetic for deep learning [[paper](https://arxiv.org/abs/1603.07285)] [[Code](https://github.com/vdumoulin/conv_arithmetic)]
 - [直观理解深度学习卷积部分](https://www.leiphone.com/news/201807/RQ4sBWYqLkGV4ZAW.html)
 - [如何理解深度学习中的卷积？](https://blog.csdn.net/jzrita/article/details/79242004)
@@ -17,7 +17,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/11)
 - [卷积感受野计算](https://www.cnblogs.com/makefile/p/receptive-field.html)
 - [关于感受野的理解与计算](https://www.jianshu.com/p/9997c6f5c01e)
 
-# Brief
+## Brief
 - 深度学习领域的卷积本质上是`互相关 Cross-correlation`, 过滤器不反转, 逐元素乘法和加法
 - 卷积类型
   - 2D/3D 卷积
@@ -112,11 +112,12 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/11)
   </tr>
 </table>
 
-# 可分卷积
+## 可分卷积
 - 空间可分卷积
 - 深度可分卷积
 
-# depthwise convolution & pointwise convolution 
+## depthwise convolution & pointwise convolution 
+
 > 使用典型例子见 MobileNet
 
 - standard convolution
@@ -128,13 +129,13 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/11)
 
 >> depthwise convolution 和 pointwise convolution 拼接起来，就是一个 depthwise separable convolution
 
-# 分组卷积
+## 分组卷积
 
 
 
-# 不同的卷积核的意义
+## 不同的卷积核的意义
 
-## 为什么大部分基于卷积的深层网络都在用小卷积核？
+### 为什么大部分基于卷积的深层网络都在用小卷积核？
 
 ImageNet ILSVRC 2014 上，VGGNet paper 中提出：
 > This (stack of three 3 × 3 conv layers) can be seen as imposing a regularisation on the 7 × 7 conv. filters, forcing them to have a decomposition through the 3 × 3 filters (with non-linearity injected in between).
@@ -144,7 +145,7 @@ ImageNet ILSVRC 2014 上，VGGNet paper 中提出：
 - 大幅度的减少参数
 - 引入更多非线性，提高决策函数判决力
 
-## 为什么CNN需要固定输入大小？
+### 为什么CNN需要固定输入大小？
 - 卷积层和池化层的输出尺寸都是和输入尺寸相关的，它们的输入是不需要固定图片尺寸的，真正需要固定尺寸的是最后的全连接层。
 - 由于FC层的存在，普通的CNN通过固定输入图片的大小来使得全连接层输入固定。
 
