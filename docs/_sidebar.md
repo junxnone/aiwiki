@@ -64,7 +64,7 @@
 - [AutoML](/AutoML)
   - [HPO](/HPO)
   - [NAS](/NAS)
-- 注意力/Attention
+- [注意力/Attention](/Attention)
 - Transformer
 - [Knowledge Distillation](/Knowledge_Distillation)
 - [AutoEncoder](/AutoEncoder)
