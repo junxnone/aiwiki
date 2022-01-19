@@ -1,18 +1,17 @@
 ---
 Title | RCNN
 -- | --
-Create Date | `2021-09-27T08:30:40Z`
-Update Date | `2021-09-27T08:30:40Z`
+Create Date | `2019-12-11T05:17:38Z`
+Update Date | `2022-01-19T02:11:35Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/57)
 
 ---
-
-# Reference
+## Reference
 
 - 2014 **R-CNN** Rich feature hierarchies for accurate object detection and semantic segmentation [[paper](https://arxiv.org/pdf/1311.2524.pdf)] [[Code](https://github.com/rbgirshick/rcnn)]
 - [Ross Girshick blog -  一作](http://www.rossgirshick.info/)
 
-# Brief
+## Brief
 - **RCNN** - `Region-based Convolutional Neural Networks`
   - Object Detection
   - Semantic Segmentation
@@ -49,8 +48,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/57)
 - CPMC regions
 - full + fg
 
-# Test Result
+## Test Result
 
 
-# Tips
+## Tips
 - UVA System - UVA 指 `University of Amsterdam` , 整体指论文 `Selective Search for Object Recognition` 中的的实现
