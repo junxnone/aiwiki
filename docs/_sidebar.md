@@ -5,7 +5,7 @@
 - 图像基础
   - 相机模型
   - [Camera](/Camera)
-  - [Image Color - 颜色模型/色域/空间](./Image_Color)
+  - [颜色模型/色域/空间/Image Color](./Image_Color)
   - [PixelFomat](/PixelFormat)
   - [2D 图像](./2D_Images)
   - [3D 图像](./3D_Images)
@@ -15,8 +15,7 @@
   - [Feature Detection](/Feature_Detection)
   - 图像滤波器
   - 采样
-  - [Convolution - 卷积](/Convolution_Summary.md)
-  - 反卷积
+  - [卷积/Convolution](/Convolution_Summary.md)
   - 池化
   - 坐标变换
     - 四元数
