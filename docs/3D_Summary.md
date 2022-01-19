@@ -1,8 +1,8 @@
 ---
 Title | 3D Summary
 -- | --
-Create Date | `2021-10-13T01:13:43Z`
-Update Date | `2021-10-13T01:13:43Z`
+Create Date | `2021-05-10T06:55:43Z`
+Update Date | `2022-01-19T07:30:29Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/76)
 
 ---
@@ -23,9 +23,12 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/76)
   - [Semantic Segmentation Editor](https://github.com/MR-520DAI/semantic-segmentation-editor)
   - [PCAT](https://github.com/halostorm/PCAT_open_source)
 
-## Tasks
+## Algos
+
 - Traditional
   - 点云配准
+    - [ICP](3D_Algos_ICP)
+    - [PPF](/3D_Algos_PPF)
   - 点云识别
 - ML
   - Semantic Segmentation
