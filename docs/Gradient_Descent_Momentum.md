@@ -2,15 +2,15 @@
 Title | Gradient Descent Momentum
 -- | --
 Create Date | `2019-03-12T01:50:50Z`
-Update Date | `2022-01-19T02:06:19Z`
+Update Date | `2022-01-19T02:08:36Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/150)
 
 ---
-# Reference
+## Reference
 
 - [神经网络优化算法：梯度下降法、Momentum、RMSprop和Adam](https://www.cnblogs.com/jiaxblog/p/9695042.html)
 
-# Brief
+## Brief
 - SGD --> Momentum
 - **Momentum** - 对 SGD 进行指数加权平均平滑
 - **Nesterov’s Accelerated Momentum** - 比 标准 Momentum 收敛更好
