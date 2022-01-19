@@ -2,11 +2,10 @@
 Title | Mask RCNN
 -- | --
 Create Date | `2019-06-22T08:06:11Z`
-Update Date | `2022-01-19T07:54:07Z`
+Update Date | `2022-01-19T07:55:40Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/163)
 
 ---
-
 # Reference
 
 - [paper - Mask R-CNN](https://arxiv.org/abs/1703.06870)
@@ -29,6 +28,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/163)
 -- | --
 
 Mask R-CNN 可以自动对图片中每个目标的进行分割，并构建像素级的 masks.
+
 ![image](https://user-images.githubusercontent.com/2216970/59961247-cee5ff00-9507-11e9-9b1c-f023cb5ed489.png)
 
 
