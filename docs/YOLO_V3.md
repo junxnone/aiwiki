@@ -1,12 +1,12 @@
 ---
 Title | YOLO V3
 -- | --
-Create Date | `2021-09-27T07:36:37Z`
-Update Date | `2021-09-27T07:36:37Z`
+Create Date | `2020-01-16T05:08:20Z`
+Update Date | `2022-01-19T02:13:12Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/56)
 
 ---
-# Reference
+## Reference
 - 2015 **YOLO V1** You Only Look Once: Unified, Real-Time Object Detection [[paper](https://arxiv.org/pdf/1506.02640.pdf)] [[netscope](http://ethereon.github.io/netscope/#/gist/96209c6940e02b17c34009f6c3fee75e)] [[Code](https://pjreddie.com/darknet/yolo/)] [[Code2 - AlexeyAB](https://github.com/AlexeyAB/darknet)]
 - 2016 **YOLO V2** YOLO9000: Better, Faster, Stronger [[paper](https://arxiv.org/pdf/1612.08242.pdf)] [[netscope](http://ethereon.github.io/netscope/#/gist/8826fef24ed0b5086affdb6e65db26b7)]  [[Code](https://pjreddie.com/darknet/yolo/)] 
 - 2018 **YOLOv3**  An Incremental Improvement [[paper](https://pjreddie.com/media/files/papers/YOLOv3.pdf)] **[[YOLOv3 netscope](http://ethereon.github.io/netscope/#/gist/a9badc1fd4eefb7463c99e33d046af9e)]** [[Code](https://pjreddie.com/darknet/yolo/)] 
@@ -31,7 +31,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/56)
 - [YOLO V3](https://pjreddie.com/darknet/yolo/)
 - [Tiny Darknet](https://pjreddie.com/darknet/tiny-darknet/)
 
-# Brief
+## Brief
 - darknet53
   - 引入残差结构
 - 引入 FPN - 多尺度检测
