@@ -54,6 +54,7 @@
   - [图像分类/Image Classification](/Image_Classification)
   - [目标检测/Object Detection](/Image_Object_Detection)
   - 图像分割/Image Segmentation
+  - [度量学习/Metric Learning](/Metric_Learning)
   - 图像检索/Image Retrieval
     - [CBIR](/CBIR)
 - [Metrics](/Metrics)
