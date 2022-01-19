@@ -2,12 +2,11 @@
 Title | YOLO V2
 -- | --
 Create Date | `2020-01-14T06:37:42Z`
-Update Date | `2021-09-27T07:36:03Z`
+Update Date | `2022-01-19T02:12:57Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/55)
 
 ---
-
-# Reference
+## Reference
 - 2015 **YOLO V1** You Only Look Once: Unified, Real-Time Object Detection [[paper](https://arxiv.org/pdf/1506.02640.pdf)] [[netscope](http://ethereon.github.io/netscope/#/gist/96209c6940e02b17c34009f6c3fee75e)] [[Code](https://pjreddie.com/darknet/yolo/)] [[Code2 - AlexeyAB](https://github.com/AlexeyAB/darknet)]
 - 2016 **YOLO V2** YOLO9000: Better, Faster, Stronger [[paper](https://arxiv.org/pdf/1612.08242.pdf)] [[netscope](http://ethereon.github.io/netscope/#/gist/8826fef24ed0b5086affdb6e65db26b7)]  [[Code](https://pjreddie.com/darknet/yolo/)]  [[Code2 - AlexeyAB](https://github.com/AlexeyAB/darknet)]
 - [kmeans-anchor-boxes](https://github.com/lars76/kmeans-anchor-boxes) 
@@ -24,7 +23,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/55)
 - [YOLOv1，YOLOv2，YOLOv3解读](https://blog.csdn.net/hancoder/article/details/87994678)
 - [YOLO900 Slides](https://docs.google.com/presentation/d/14qBAiyhMOFl_wZW4dA1CkixgXwf0zKGbpw_0oHK8yEM/edit#slide=id.p)
 
-# Brief
+## Brief
 - YOLO v2 Better Faster - 各种 `Tricks` 集合
 - YOLO 9000 Stronger - 联合训练 
 - 分类和检测的联合训练策略
@@ -90,6 +89,7 @@ Multi-Scale Training | 每 10 batches 更换 输入大小 [320, 352...608]
 - 反向传播
   - COCO 检测数据样本 - 正常传播
   - ImageNet 分类数据样本 - 只反向传播类别损失
+
 ### WordTree - multi-label model
 - COCO数据集的所有类别之间是互不包含的
 - ImageNet 包含从属关系的 Labels
