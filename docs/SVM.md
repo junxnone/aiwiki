@@ -2,11 +2,11 @@
 Title | SVM
 -- | --
 Create Date | `2019-05-11T13:48:41Z`
-Update Date | `2021-10-19T18:44:15Z`
+Update Date | `2022-01-19T03:41:50Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/115)
 
 ---
-# Reference
+## Reference
 - [SVM 简介](https://blog.csdn.net/liugan528/article/details/79448379)
 - [我所理解的 SVM（支持向量机）- 1](https://zhuanlan.zhihu.com/p/22400898)
 - [SVM教程：支持向量机的直观理解](https://zhuanlan.zhihu.com/p/40857202)
@@ -15,7 +15,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/115)
   - [libsvm](https://www.csie.ntu.edu.tw/~cjlin/libsvm/)
   - [sklearn.svm](http://scikit-learn.sourceforge.net/stable/modules/classes.html#module-sklearn.svm)
 
-# Brief
+## Brief
 - SVM - Support Vector Machine - 支持向量机
 - [SVM 原理推导](/SVM_原理推导)
 - 监督式学习
@@ -51,23 +51,23 @@ SVM Kernel | 用于处理非线性问题, k() = 特征变换函数的点乘
 
 
 
-# SVM 分类
+## SVM 分类
 - 线性可分 SVM
 - 线性 SVM
 - 非线性 SVM
 
 
-## 线性可分 SVM
+### 线性可分 SVM
 - 训练数据线性可分
 - 通过硬间隔(hard margin)最大化可以学习得到一个线性分类器
 
 
-## 线性 SVM
+### 线性 SVM
 - 训练数据线性不可分，但近似线性可分
 - 通过软间隔(soft margin)最大化可以学习得到一个线性分类器
 - 使用 hinge 损失来优化使不可分的数据尽可能少
 
-## 非线性 SVM
+### 非线性 SVM
 
 线性不可分二维数据 | ![image](https://user-images.githubusercontent.com/2216970/72697200-08541b00-3b7a-11ea-80d0-3defc81af899.png)
 -- | --
@@ -77,7 +77,7 @@ SVM Kernel | 用于处理非线性问题, k() = 特征变换函数的点乘
 ### Kernel trick 核技巧
 
 
-# SVM 优缺点
+## SVM 优缺点
 **优点**
 - SVM是一个凸优化问题，所以求得的解一定是全局最优而不是局部最优
 - 不仅适用于线性线性问题还适用于非线性问题
@@ -87,16 +87,16 @@ SVM Kernel | 用于处理非线性问题, k() = 特征变换函数的点乘
 **缺点**
 - 不适用于超大数据集
 
-# 其他
+## 其他
 
 
-## ProbSVM
+### ProbSVM
 
-## 多分类支持向量机
+### 多分类支持向量机
 
-## SVR
+### SVR
 
-# History
+## History
 
 - 1963 年原始 SVM
 - 1992 年 `kernel trick` 应用于最大限度的超平面上创建非线性分类器
