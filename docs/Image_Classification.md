@@ -2,7 +2,7 @@
 Title | Image Classification
 -- | --
 Create Date | `2019-05-12T14:38:40Z`
-Update Date | `2022-01-12T05:19:10Z`
+Update Date | `2022-01-19T03:14:28Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/61)
 
 ---
@@ -17,7 +17,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/61)
   - **多分类**
   - **多标签分类**: 一张图像多个标签(标签为二分类)
   - **Multi-Ouput&Multi-Task**: 一张图片多个标签(标签为多分类)
-- [经典分类方法](https://junxnone.github.io/aiwiki/#/Classic_Algos?id=classification)
+- [经典分类方法](#经典分类方法)
 
 
 Labels per Image / Label Value | K = 2 | K > 2
@@ -25,6 +25,23 @@ Labels per Image / Label Value | K = 2 | K > 2
 Labels = 1 | Binary/sigmoid | Multi-Class/softmax
 Labels > 1 | Multi-Label/sigmoid | Multi-Output/task
 
+
+## 经典分类方法
+
+- [LeNet](/LeNet)
+- [AlexNet](/AlexNet)
+- [VGGNet](/VGGNet)
+- [Inception](/Inception_Summary)
+  - [Inception V1](/InceptionV1)
+  - [Inception V2 & V3](/InceptionV2V3)
+  - [Inception V4](/InceptionV4)
+- [Xception](/Xception)
+- [MobileNet](/MobileNet_Summary)
+  - [MobileNet V1](/MobileNetV1)
+  - [MobileNet V2](/MobileNetV2)
+  - [MobileNet V3](/MobileNetV3)
+- EfficientNet
+- [ResNet](/ResNet)
 
 
 ## 常见的挑战
