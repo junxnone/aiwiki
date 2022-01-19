@@ -2,7 +2,7 @@
 Title | AutoML
 -- | --
 Create Date | `2021-09-06T09:22:58Z`
-Update Date | `2021-10-21T16:38:04Z`
+Update Date | `2022-01-19T10:40:27Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/12)
 
 ---
@@ -26,6 +26,9 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/12)
   - Better performance
   - No human assistance
   - Lower computation budgets
+- HAO - `Joint Hyper-parameter and Architecture Optimization` - 参数和架构联合优化
+- [HPO](/HPO)
+- [NAS](/NAS)
 
 ## Pipelines
 
