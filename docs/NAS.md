@@ -2,11 +2,11 @@
 Title | NAS
 -- | --
 Create Date | `2021-09-06T09:24:10Z`
-Update Date | `2021-10-21T16:42:29Z`
+Update Date | `2022-01-19T03:20:30Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/14)
 
 ---
-# Reference
+## Reference
 
 - [paper - 2017 - Learning Transferable Architectures for Scalable Image Recognition](https://arxiv.org/abs/1707.07012)
 - [paper - 2017 - Progressive Neural Architecture Search](https://arxiv.org/abs/1712.00559)
@@ -22,7 +22,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/14)
 - [NAS Paper and Survey](https://www.cnblogs.com/chenbong/p/13380689.html)
 
 
-# Brief
+## Brief
 - **按搜索 Pipeline 分类:** `One Stage`/`Two Stage`/`OneShot`
 - `Search Space` - > `Search Strategy`( `Architecture Optimization`) -> `Performance Estimation Strategy`
 - RL/EA ->  Blocks -> GD -> One-Shot
@@ -57,7 +57,7 @@ PPO | Proximal Policy Optimization Algorithms
 
 
 
-# History - [Timeline](https://junxnone.github.io/wht/tech/nas/)
+## History - [Timeline](https://junxnone.github.io/wht/tech/nas/)
 
 
 - 11/2016 - NAS & RL - [Neural Architecture Search with Reinforcement Learning](https://arxiv.org/abs/1611.01578)
