@@ -66,7 +66,7 @@
   - [NAS](/NAS)
 - 注意力/Attention
 - Transformer
-- Knowledge Distillation
+- [Knowledge Distillation](/Knowledge_Distillation)
 - [3D 应用](3D_Summary)
   - [3D ICP](/3D_Algos_ICP)
   - [3D PPF](/3D_Algos_PPF)
