@@ -54,7 +54,8 @@
   - [图像分类/Image Classification](/Image_Classification)
   - [目标检测/Object Detection](/Image_Object_Detection)
   - 图像分割/Image Segmentation
-  - 图像检索/Image Retrieval 
+  - 图像检索/Image Retrieval
+    - [CBIR](/CBIR)
 - [Metrics](/Metrics)
   - [Image Classification Metrics](/Image_Classification_Metrics)
   - [Pairwise Metrics](/Pairwise_Metrics)
