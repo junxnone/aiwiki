@@ -2,7 +2,7 @@
 Title | Image Classification
 -- | --
 Create Date | `2019-05-12T14:38:40Z`
-Update Date | `2022-01-19T03:14:28Z`
+Update Date | `2022-01-19T08:05:51Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/61)
 
 ---
@@ -18,7 +18,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/61)
   - **多标签分类**: 一张图像多个标签(标签为二分类)
   - **Multi-Ouput&Multi-Task**: 一张图片多个标签(标签为多分类)
 - [经典分类方法](#经典分类方法)
-
+- [Image Classification History](/Image_Classification_History)
 
 Labels per Image / Label Value | K = 2 | K > 2
 -- | -- | --
