@@ -2,7 +2,7 @@
 Title | AutoML
 -- | --
 Create Date | `2021-09-06T09:22:58Z`
-Update Date | `2022-01-19T10:40:27Z`
+Update Date | `2022-01-19T10:54:29Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/12)
 
 ---
@@ -35,7 +35,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/12)
 AutoML Steps | Description
 -- | --
 DP | Data Preparation = `Data Cleaning` + `AutoAugment` + `...`
-Feature Engineering | `DL` 中常用于时间或者结构数据
+[Feature Engineering](/Feature_Engineering) | `DL` 中常用于时间或者结构数据
 HPO | HyperParameter Optimization
 NAS | Neural Architecture Search
 Model Compression | 
