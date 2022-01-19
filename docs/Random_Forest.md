@@ -1,15 +1,15 @@
 ---
 Title | Random Forest
 -- | --
-Create Date | `2021-10-19T18:30:31Z`
-Update Date | `2021-10-19T18:30:31Z`
+Create Date | `2021-03-30T07:49:58Z`
+Update Date | `2022-01-19T03:41:00Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/114)
 
 ---
-# Reference
+## Reference
 - [随机森林 – Random forest](https://easyai.tech/ai-definition/random-forest/)
 
-# Brief
+## Brief
 - Random Forest - 随机森林
 - 由很多决策树构成，不同决策树之间没有关联
   - 属于 集成学习 中的 Bagging
@@ -22,7 +22,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/114)
 
 ![image](https://user-images.githubusercontent.com/2216970/112955448-03bdc600-9172-11eb-9794-463f0768b79e.png)
 
-# UseCase
+## UseCase
 
 - 对离散值的**分类**
 - 对连续值的**回归**
