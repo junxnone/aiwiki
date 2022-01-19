@@ -2,7 +2,7 @@
 Title | AutoML
 -- | --
 Create Date | `2021-09-06T09:22:58Z`
-Update Date | `2022-01-19T10:54:29Z`
+Update Date | `2022-01-19T10:58:26Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/12)
 
 ---
@@ -50,7 +50,7 @@ Model Compression |
 Projects | Author | DP | FE | HPO | NAS
 -- | -- | -- | -- | -- | -- 
 [vega](https://github.com/huawei-noah/vega) | HuaWei
-[NNI](https://github.com/Microsoft/nni) |  Microsoft 
+[NNI](/AutoML_NNI) |  Microsoft 
 [AutoGluon](https://github.com/awslabs/autogluon) | Amazon AWS
 [autokeras](https://github.com/keras-team/autokeras) | keras-team
 [auto-sklearn](https://github.com/automl/auto-sklearn) | AutoML -xxx
