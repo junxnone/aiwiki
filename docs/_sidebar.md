@@ -66,6 +66,7 @@
 - 注意力/Attention
 - Transformer
 - Knowledge Distillation
+- [3D 应用](3D_Summary)
 - Tools
   - [Image Processing Tools](/Image_Processing_Tools)
   - [Training Inference Tools](/Training_Inference_Tools) 
