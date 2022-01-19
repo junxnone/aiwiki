@@ -1,12 +1,12 @@
 ---
 Title | Active Learning Summary
 -- | --
-Create Date | `2021-10-21T16:48:44Z`
-Update Date | `2021-10-21T16:48:44Z`
+Create Date | `2020-07-02T03:27:36Z`
+Update Date | `2022-01-19T07:57:49Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/118)
 
 ---
-# Reference
+## Reference
 - [Active Learning: 一个降低深度学习时间，空间，经济成本的解决方案](https://www.jianshu.com/p/42801f031cfa)
 - [主动学习年度进展|VALSE2018](https://zhuanlan.zhihu.com/p/38029108)
 - [主动学习系列博文](https://blog.csdn.net/Houchaoqun_XMU/article/details/80146710)
@@ -22,7 +22,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/118)
 - [Human-in-the-Loop Machine Learning](https://livebook.manning.com/book/human-in-the-loop-machine-learning/welcome/v-9/)
 - [active learning: theory and applications](http://www.robotics.stanford.edu/~stong/papers/tong_thesis.pdf)
 
-# Brief
+## Brief
 - 通过相关信息选择有价值样本标注，以尽量少的标注样本训练达到目标模型预期性能的过程
   - 也被称为 `查询学习 - Query Learning` & `最优实验设计 - Optimal Experimental Design`
 - **研究方向**
@@ -58,7 +58,7 @@ Pool-based Sampling | 从数据池中分批次取数据 | 对所有样本做条�
 
 
 
-# History
+## History
 
 - 2010 - [Active Learning Literature Survey](https://github.com/junxnone/tech-io/files/4863032/Active.Learning.Literature.Survey.pdf)
 - 2013 - CVPR - [Adaptive Active Learning for Image Classification](https://www.cv-foundation.org/openaccess/content_cvpr_2013/papers/Li_Adaptive_Active_Learning_2013_CVPR_paper.pdf)
