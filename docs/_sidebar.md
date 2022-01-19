@@ -59,6 +59,7 @@
 - [度量学习/Metric Learning](/Metric_Learning)
 - 图像检索/Image Retrieval
   - [CBIR](/CBIR)
+- [字符识别/OCR](/OCR)
 - [Active Learning](/Active_Learning_Summary)
 - [AutoML](/AutoML)
   - [HPO](/HPO)
