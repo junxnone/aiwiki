@@ -2,7 +2,7 @@
 Title | Metrics
 -- | --
 Create Date | `2021-11-21T06:01:17Z`
-Update Date | `2022-01-20T05:22:19Z`
+Update Date | `2022-01-20T05:26:27Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/138)
 
 ---
@@ -44,7 +44,8 @@ Name | Formula | Description
 Accuracy | Accuracy = N<sub>correct</sub> / N<sub>Total</sub> <br>  $\texttt{accuracy}(y, \hat{y}) = \frac{1}{n_\text{samples}} \sum_{i=0}^{n_\text{samples}-1} 1(\hat{y}_i = y_i)$ | 预测正确的占总数的比例
 Precision | $\text{precision} = \frac{tp}{tp + fp}$ | 识别为正例的样例中，识别正确的比例
 Recall | $\text{recall} = \frac{tp}{tp + fn}$ |  样本所有正例中，识别正确的比例
-F<sub>β</sub> | $F_\beta = (1 + \beta^2) \frac{\text{precision} \times \text{recall}}{\beta^2 \text{precision} + \text{recall}}$ <br>F1: 当 β = 1 时的 F<sub>β</sub>
+F<sub>β</sub> | $F_\beta = (1 + \beta^2) \frac{\text{precision} \times \text{recall}}{\beta^2 \text{precision} + \text{recall}}$ 
+F<sub>1</sub> |  当 β = 1 时的 F<sub>β</sub> | 
 
 ### PR Curve
 - 以precision和recall作为纵、横轴坐标的二维曲线，通过选取不同`confidence 阈值` 时对应的精度和召回率画出
