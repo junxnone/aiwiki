@@ -2,7 +2,7 @@
 Title | 3D Summary
 -- | --
 Create Date | `2021-05-10T06:55:43Z`
-Update Date | `2022-01-20T06:22:57Z`
+Update Date | `2022-01-20T06:24:08Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/76)
 
 ---
@@ -29,7 +29,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/76)
 
 ### 传统算法/Traditional
 
-- 点云配准
+- [点云配准/Point Cloud Registration](/Point_Cloud_Registration)
   - [ICP](3D_Algos_ICP)
   - [PPF](/3D_Algos_PPF)
 - 点云识别
