@@ -2,7 +2,7 @@
 Title | Image Object Detection Metrics
 -- | --
 Create Date | `2019-01-16T03:46:56Z`
-Update Date | `2022-01-20T05:42:14Z`
+Update Date | `2022-01-20T05:58:03Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/230)
 
 ---
@@ -37,6 +37,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/230)
 - Recall
   - AR - `Average Recall`
 - IoU - `Intersection over Union`
+- [GIoU](/GIoU)
 - By Image/BBox
 
 ## Precision
