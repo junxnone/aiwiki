@@ -28,7 +28,7 @@
   - 损失函数/Loss
   - [梯度下降/Gradient Descent](/Gradient_Descent)
   - 反向传播
-  - 交叉验证
+  - [交叉验证/Cross Validation](/Cross_Validation)
   - 正则化/Regularization
   - 聚类
   - 降维
