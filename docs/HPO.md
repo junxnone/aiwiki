@@ -2,7 +2,7 @@
 Title | HPO
 -- | --
 Create Date | `2021-09-06T09:24:08Z`
-Update Date | `2022-01-19T10:51:18Z`
+Update Date | `2022-01-20T02:08:08Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/13)
 
 ---
@@ -28,7 +28,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/13)
 -- | --
 `Exhaustive search` -  穷举 | `Random Search`/`Grid Search`/`Batch`
 `Heuristic search` - 启发式 | `Naïve Evolution`/`Anneal `/`Hyperband `/`PBT`/
-`Bayesian Optimization` - 贝叶斯优化 | `BO`/`SMBO`/`BOHB`/`BOSS`/`TPE`/`SMAC`/`Metis Tuner`/`GP Tuner`
+[Bayesian Optimization](/Bayesian_Optimization) - 贝叶斯优化 | `BO`/`SMBO`/`BOHB`/`BOSS`/`TPE`/`SMAC`/`Metis Tuner`/`GP Tuner`
 `RL Based` - 强化学习 | `PPO Tuner`
 `Dynamic Resource Allocation` - 动态资源分配 |
 
