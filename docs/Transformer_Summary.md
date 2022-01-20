@@ -2,7 +2,7 @@
 Title | Transformer Summary
 -- | --
 Create Date | `2021-02-23T07:18:26Z`
-Update Date | `2022-01-20T02:39:54Z`
+Update Date | `2022-01-20T07:31:54Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/229)
 
 ---
@@ -22,7 +22,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/229)
   - Classification
     - [ViT](/ViT)
     - [T2T-ViT](/T2T_ViT)
-    - [DeiT]
+    - [DeiT](/DeiT)
     - [Bottleneck Transformers](/Bottleneck_Transformers)
   - Detection
     - [DETR]()
