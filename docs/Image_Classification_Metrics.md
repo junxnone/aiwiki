@@ -2,7 +2,7 @@
 Title | Image Classification Metrics
 -- | --
 Create Date | `2021-11-21T04:55:43Z`
-Update Date | `2021-11-22T02:32:55Z`
+Update Date | `2022-01-20T03:10:46Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/137)
 
 ---
@@ -12,11 +12,11 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/137)
 - [The Relationship Between Precision-Recall and ROC Curves](https://www.biostat.wisc.edu/~page/rocpr.pdf)
 
 ## Brief
-- Accuracy
-  - 当样本不均衡时，Accuracy 不能很好的区分模型
+- 图像分类任务中根据二分类/多分类/多标签等有不同的 Metrics
+- **Accuracy** `当样本不均衡时，Accuracy 不能很好的区分模型`
 - Precision
 - Recall
-- F1 score
+- F<sub>β</sub>/`F1`
 - ROC
 - PR
 - AUC
@@ -25,22 +25,13 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/137)
 
 
 ## Binary Classification Metrics
-- True/False - 代表识别正确与否
-- Positive/Negative - 代表正负例(Binary Classification)
-- `Tx`:  表示分类正确：
-  - TP - true positive：输入实际类别正例，模型识别为正例
-  - TN - true negative：输入实际类别为负例，模型识别为负例
-- `Fx`: 表示分类错误：
-  - FP - false positive：输入实际类别为负例，模型识别为正例，通常叫误报
-  - FN - false negative：输入实际类别为正例，模型识别为负例，通常叫漏报
+
+### TP/TN/FP/FN
 
 `Predict Label ↓` `Actual Label →` | 1 | 0
 -- | -- | --
 1 | TP | FP
 0 | FN | TN
-
-
-![image](https://user-images.githubusercontent.com/2216970/51228367-3dd88e00-1993-11e9-8d28-7ab43b834354.png)
 
 
 Name | Formula | Description
@@ -81,7 +72,7 @@ Balanced Accuracy |$\texttt{balanced-accuracy} = \frac{1}{2}\left( \frac{TP}{TP 
 ## Confusion Matrix
 - **Confusion Matrix** - 混淆矩阵 - 误差矩阵
 - nxn 矩阵 n 为 类别
-
+- Normalization
 
 Confusion matrix without normalization| Confusion matrix with normalization
 -- | --
