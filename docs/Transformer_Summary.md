@@ -2,7 +2,7 @@
 Title | Transformer Summary
 -- | --
 Create Date | `2021-02-23T07:18:26Z`
-Update Date | `2022-01-20T02:36:00Z`
+Update Date | `2022-01-20T02:39:54Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/229)
 
 ---
@@ -26,8 +26,9 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/229)
     - [Bottleneck Transformers](/Bottleneck_Transformers)
   - Detection
     - [DETR]()
-    
+
 ## Trend
+
 - 优化复杂度
 - 扩展 Tasks
 - 可视化
