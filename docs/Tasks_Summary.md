@@ -2,7 +2,7 @@
 Title | Tasks Summary
 -- | --
 Create Date | `2021-08-31T07:41:22Z`
-Update Date | `2021-10-19T15:31:48Z`
+Update Date | `2022-01-20T06:57:07Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/3)
 
 ---
@@ -27,6 +27,7 @@ CV/Audio/NLP/RL/Sequential/Graphs...
   - [Image Retrival - 图像检索]
 - **Video**
   - [Object Tracking - 目标跟踪]
+  - [Motion Detection](/Motion_Detection)
 - 一些精细的研究领域取得了比较好的成果
   - 人脸检测识别
   - 人脸关键点
