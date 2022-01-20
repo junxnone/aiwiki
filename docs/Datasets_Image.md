@@ -2,7 +2,7 @@
 Title | Datasets Image
 -- | --
 Create Date | `2021-09-08T06:25:00Z`
-Update Date | `2022-01-20T06:49:28Z`
+Update Date | `2022-01-20T06:52:44Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/18)
 
 ---
@@ -18,7 +18,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/18)
   - [Instance Segmentation]
 - [Object Counting/Crowd Counting](/Datasets_Image_Object_Counting)
 - [KeyPoint]
-- [Retrieval]
+- [Retrieval](/Datasets_Image_Retrieval)
 
 ## Format
 - COCO
