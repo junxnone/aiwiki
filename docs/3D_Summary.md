@@ -2,7 +2,7 @@
 Title | 3D Summary
 -- | --
 Create Date | `2021-05-10T06:55:43Z`
-Update Date | `2022-01-19T11:02:51Z`
+Update Date | `2022-01-20T06:19:44Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/76)
 
 ---
@@ -33,9 +33,11 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/76)
 - 点云识别
 
 ### 机器学习/深度学习 - ML/DL
-
+- [Deep Learning for 3D Point Clouds](/Deep_Learning_for_3D_Point_Clouds)
 - Semantic Segmentation
 - Object Detection
+
+
 
 ## 应用
 - 三维重建
