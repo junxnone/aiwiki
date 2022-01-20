@@ -47,6 +47,7 @@
   - 优化算法/Optimization
   - 参数量
   - 计算量
+  - [学习率/Learning Rate](/Learning_Rate)
   - [Dropout](/Dropout)
     - [Multi-Sample Dropout](/Multi_Sample_Dropout)
   - [归一化标准化/Data Normalization](/Data_Normalization)
