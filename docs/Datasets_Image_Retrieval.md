@@ -2,13 +2,15 @@
 Title | Datasets Image Retrieval
 -- | --
 Create Date | `2019-03-10T14:21:50Z`
-Update Date | `2022-01-20T06:52:51Z`
+Update Date | `2022-01-20T06:55:04Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/241)
 
 ---
-
 ## Image Retrieval
 
+- [DeepFashion](/Datasets_Image_Retrieval_DeepFashion)
+
+---
 - INRIA Holidays
 - Oxford Buildings
 - Oxford Paris
