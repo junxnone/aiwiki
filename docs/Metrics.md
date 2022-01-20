@@ -2,7 +2,7 @@
 Title | Metrics
 -- | --
 Create Date | `2021-11-21T06:01:17Z`
-Update Date | `2022-01-20T05:40:32Z`
+Update Date | `2022-01-20T05:45:24Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/138)
 
 ---
@@ -21,6 +21,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/138)
 - 按 Task 分类
   - [(Image)Classification Metrics](/Image_Classification_Metrics)
   - [Image Object Detection Metrics](/Image_Object_Detection_Metrics)
+  - [Image Segmentation Metrics](/Image_Segmentation_Metrics)
   - [Pairwise Metrics](/Pairwise_Metrics)
   - Regression Metrics
   - Multilabel Ranking Metrics
