@@ -2,7 +2,7 @@
 Title | Datasets Image
 -- | --
 Create Date | `2021-09-08T06:25:00Z`
-Update Date | `2022-01-20T06:58:26Z`
+Update Date | `2022-01-20T06:59:39Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/18)
 
 ---
@@ -20,7 +20,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/18)
 - [KeyPoint]
 - [Retrieval](/Datasets_Image_Retrieval)
 - [AutoML](/Datasets_Image_AutoML)
-
+- [Defect](/Datasets_Image_Defect)
 
 ## Format
 - COCO
