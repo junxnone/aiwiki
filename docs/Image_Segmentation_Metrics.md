@@ -2,7 +2,7 @@
 Title | Image Segmentation Metrics
 -- | --
 Create Date | `2020-03-03T02:31:43Z`
-Update Date | `2022-01-20T05:45:31Z`
+Update Date | `2022-01-20T05:47:03Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/231)
 
 ---
@@ -20,14 +20,16 @@ Panoptic Segmentation | √ | | | | | √ | √ | √
 
 
 ## Accuracy
-### PA - Pixel Accuracy 像素准确率
 
-![image](https://user-images.githubusercontent.com/2216970/69928565-044f3980-14f7-11ea-8700-7cd7ce646fa3.png)
+
+
+Accuracy | Formula
+-- | --
+PA<br>Pixel Accuracy<br>像素准确率 | ![image](https://user-images.githubusercontent.com/2216970/69928565-044f3980-14f7-11ea-8700-7cd7ce646fa3.png)
+MPA<br>Mean Pixel Accuracy<br>平均像素准确率 | ![image](https://user-images.githubusercontent.com/2216970/69928574-0913ed80-14f7-11ea-8c94-16c3536a189b.png)
+
+
 - `pij` 表示本属于类 `i` 但被预测为类 `j` 的像素数量
-
-### MPA - Mean Pixel Accuracy - 平均像素准确率
-
-![image](https://user-images.githubusercontent.com/2216970/69928574-0913ed80-14f7-11ea-8c94-16c3536a189b.png)
 
 ## IOU
 ### MIOU -  平均 IOU
