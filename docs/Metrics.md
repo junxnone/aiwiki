@@ -2,7 +2,7 @@
 Title | Metrics
 -- | --
 Create Date | `2021-11-21T06:01:17Z`
-Update Date | `2022-01-20T03:01:05Z`
+Update Date | `2022-01-20T03:01:43Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/138)
 
 ---
@@ -26,14 +26,14 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/138)
 
 Name | Description
 -- | --
-T(True) | 模型识别正确
-F(False) | 模型识别错误
-P(Positive) | 对象本来为正例
-N(Negative) | 对象本来为负例
-TP(True Positive) | 对象本来为正例，网络识别为正例
-TN(True Negative) | 对象本来为负例，网络识别为负例
-FP(False Positive) | 对象本来为负例，网络识别为正例
-FN(False Negative) | 对象本来为正例，网络识别为负例
+**T**(True) | 模型识别正确
+**F**(False) | 模型识别错误
+**P**(Positive) | 对象本来为正例
+**N**(Negative) | 对象本来为负例
+**TP**(True Positive) | 对象本来为正例，网络识别为正例
+**TN**(True Negative) | 对象本来为负例，网络识别为负例
+**FP**(False Positive) | 对象本来为负例，网络识别为正例
+**FN**(False Negative) | 对象本来为正例，网络识别为负例
 
 ![image](https://user-images.githubusercontent.com/2216970/51228367-3dd88e00-1993-11e9-8d28-7ab43b834354.png)
 
