@@ -62,7 +62,8 @@
 - [字符识别/OCR](/OCR)
 - [Active Learning](/Active_Learning_Summary)
 - [AutoML](/AutoML)
-  - [HPO](/HPO)
+  - [超参优化/HPO](/HPO)
+    - [贝叶斯优化/Bayesian Optimization](/Bayesian_Optimization)
   - [NAS](/NAS)
 - [注意力/Attention](/Attention)
 - Transformer
