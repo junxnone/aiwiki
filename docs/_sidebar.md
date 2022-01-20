@@ -93,6 +93,7 @@
     - PCL
 - [Datasets](Datasets)
   - [Image](/Datasets_Image)
+    - [Image Classification Datasets](Datasets_Image_Classification)
   - [Video](/Datasets_Video)
   - [Audio](/Datasets_Audio)
   - [NLP](/Datasets_NLP)
