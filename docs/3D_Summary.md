@@ -2,7 +2,7 @@
 Title | 3D Summary
 -- | --
 Create Date | `2021-05-10T06:55:43Z`
-Update Date | `2022-01-20T06:24:08Z`
+Update Date | `2022-01-20T06:25:50Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/76)
 
 ---
@@ -32,6 +32,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/76)
 - [点云配准/Point Cloud Registration](/Point_Cloud_Registration)
   - [ICP](3D_Algos_ICP)
   - [PPF](/3D_Algos_PPF)
+  - [Point Cloud Registration Metrics](/Point_Cloud_Registration_Metrics)
 - 点云识别
 
 ### 机器学习/深度学习 - ML/DL
