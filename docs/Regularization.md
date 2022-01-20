@@ -2,16 +2,16 @@
 Title | Regularization
 -- | --
 Create Date | `2019-09-11T01:11:11Z`
-Update Date | `2022-01-20T07:30:14Z`
+Update Date | `2022-01-20T07:59:18Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/252)
 
 ---
-
 ## Reference
 - [权重衰减（weight decay）与学习率衰减（learning rate decay）](https://blog.csdn.net/program_developer/article/details/80867468)
 - [正则化方法：L1和L2 regularization、数据集扩增、dropout](https://blog.csdn.net/u012162613/article/details/44261657)
 
 ## Brief
+- [norm](/norm)
 - 更小的权值w，从某种意义上说，表示网络的复杂度更低
 
 
