@@ -49,6 +49,7 @@
   - 计算量
   - Dropout
   - [归一化标准化/Data Normalization](/Data_Normalization)
+- [Data Augmentation](/Data_Augmentation) 
 - [Metrics](/Metrics)
   - [Image Classification Metrics](/Image_Classification_Metrics)
   - [Pairwise Metrics](/Pairwise_Metrics)
