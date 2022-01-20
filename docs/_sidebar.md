@@ -47,7 +47,8 @@
   - 优化算法/Optimization
   - 参数量
   - 计算量
-  - Dropout
+  - [Dropout](/Dropout)
+    - [Multi-Sample Dropout](/Multi_Sample_Dropout)
   - [归一化标准化/Data Normalization](/Data_Normalization)
 - [Data Augmentation](/Data_Augmentation) 
 - [Metrics](/Metrics)
