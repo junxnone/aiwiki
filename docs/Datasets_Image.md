@@ -2,7 +2,7 @@
 Title | Datasets Image
 -- | --
 Create Date | `2021-09-08T06:25:00Z`
-Update Date | `2022-01-20T06:46:12Z`
+Update Date | `2022-01-20T06:47:53Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/18)
 
 ---
@@ -16,7 +16,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/18)
 - [Segmentation](/Datasets_Image_Segmentation)
   - [Semantic Segmentation]
   - [Instance Segmentation]
-- [Object Counting/Crowd Counting]
+- [Object Counting/Crowd Counting](/Datasets_Image_Object_Counting)
 - [KeyPoint]
 - [Retrieval]
 
