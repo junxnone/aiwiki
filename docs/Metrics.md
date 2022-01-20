@@ -2,11 +2,18 @@
 Title | Metrics
 -- | --
 Create Date | `2021-11-21T06:01:17Z`
-Update Date | `2022-01-20T05:26:27Z`
+Update Date | `2022-01-20T05:37:00Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/138)
 
 ---
 ## Reference
+- [机器学模型评价与优化（学习笔记）](https://blog.csdn.net/xx19901314/article/details/52168260) 
+- [深入理解AUC](https://tracholar.github.io/machine-learning/2018/01/26/auc.html)
+- [精确率、召回率、F1 值、ROC、AUC 各自的优缺点是什么？](https://www.zhihu.com/question/30643044/answer/562062736)
+- [【机器学习笔记】：一文让你彻底理解准确率，精准率，召回率，真正率，假正率，ROC/AUC](https://zhuanlan.zhihu.com/p/46714763)
+- [Tensorflow Models Supported object detection evaluation protocols](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/evaluation_protocols.md)
+- [VOC2010 DEVKIT doc](http://host.robots.ox.ac.uk/pascal/VOC/voc2010/devkit_doc_08-May-2010.pdf)
+
 
 ## Brief
 - 每种 Task/Challenger 都会定义各自的 Metrics 用来评估模型的性能
