@@ -2,7 +2,7 @@
 Title | Bayesian Optimization
 -- | --
 Create Date | `2021-09-09T02:22:17Z`
-Update Date | `2022-01-20T02:05:25Z`
+Update Date | `2022-01-20T02:06:24Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/22)
 
 ---
@@ -32,7 +32,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/22)
 - 基于 [Gaussian Processes - 高斯过程]
 - 不适用于高维空间
 - 基于随机性和概率分布
-
+- [采集函数](/BO_Acquisition_Function)
 
 ![image](https://user-images.githubusercontent.com/2216970/111953074-16f0e600-8b21-11eb-80e5-412e41960269.png) | 
 -- | 
