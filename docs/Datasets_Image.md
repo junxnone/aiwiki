@@ -2,14 +2,14 @@
 Title | Datasets Image
 -- | --
 Create Date | `2021-09-08T06:25:00Z`
-Update Date | `2021-10-16T03:53:52Z`
+Update Date | `2022-01-20T06:44:06Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/18)
 
 ---
 # 2D Images Datasets
 
 - [Classification](./Datasets_Image_Classification)
-- [Detection/Recognition]
+- [Object Detection/Recognition](/Datasets_Image_Object_Detection)
   - [Edge Detection](/Datasets_Image_Edge_Detection)
   - [Face Detection/Recognition]
   - [Text Detection/Recognition]
