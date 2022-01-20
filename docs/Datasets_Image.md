@@ -2,7 +2,7 @@
 Title | Datasets Image
 -- | --
 Create Date | `2021-09-08T06:25:00Z`
-Update Date | `2022-01-20T06:47:53Z`
+Update Date | `2022-01-20T06:49:28Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/18)
 
 ---
@@ -12,7 +12,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/18)
 - [Object Detection/Recognition](/Datasets_Image_Object_Detection)
   - [Edge Detection](/Datasets_Image_Edge_Detection)
   - [Face Detection/Recognition](/Datasets_Image_Face)
-  - [Text Detection/Recognition]
+  - [Text Detection/Recognition](/Datasets_Image_OCR)
 - [Segmentation](/Datasets_Image_Segmentation)
   - [Semantic Segmentation]
   - [Instance Segmentation]
