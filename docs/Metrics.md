@@ -2,7 +2,7 @@
 Title | Metrics
 -- | --
 Create Date | `2021-11-21T06:01:17Z`
-Update Date | `2022-01-20T05:37:00Z`
+Update Date | `2022-01-20T05:40:32Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/138)
 
 ---
@@ -20,7 +20,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/138)
 - 每种 Metrics 想要衡量的东西不同, 通过不同 Metrics 的比较可以评价一个模型不同方面的特性
 - 按 Task 分类
   - [(Image)Classification Metrics](/Image_Classification_Metrics)
-  - [Image Object Detection Metrics](/)
+  - [Image Object Detection Metrics](/Image_Object_Detection_Metrics)
   - [Pairwise Metrics](/Pairwise_Metrics)
   - Regression Metrics
   - Multilabel Ranking Metrics
