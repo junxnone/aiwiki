@@ -2,7 +2,7 @@
 Title | Metrics
 -- | --
 Create Date | `2021-11-21T06:01:17Z`
-Update Date | `2022-01-20T03:01:43Z`
+Update Date | `2022-01-20T03:04:48Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/138)
 
 ---
@@ -37,7 +37,14 @@ Name | Description
 
 ![image](https://user-images.githubusercontent.com/2216970/51228367-3dd88e00-1993-11e9-8d28-7ab43b834354.png)
 
+### Accuracy/Precision/Recall/F<sub>β</sub>
 
+Name | Formula | Description
+-- | -- | --
+Accuracy | Accuracy = N<sub>correct</sub> / N<sub>Total</sub> <br>  $\texttt{accuracy}(y, \hat{y}) = \frac{1}{n_\text{samples}} \sum_{i=0}^{n_\text{samples}-1} 1(\hat{y}_i = y_i)$ | 预测正确的占总数的比例
+Precision | $\text{precision} = \frac{tp}{tp + fp}$ | 所有识别为正例的情况中，识别正确的比例
+Recall | $\text{recall} = \frac{tp}{tp + fn}$ |  所有实际类别为正例的情况中，识别正确的比例
+F<sub>β</sub> | $F_\beta = (1 + \beta^2) \frac{\text{precision} \times \text{recall}}{\beta^2 \text{precision} + \text{recall}}$ <br>F1: 当 β = 1 时的 F<sub>β</sub>
 
 ## Image Task Metrics
 
