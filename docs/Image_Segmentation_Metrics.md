@@ -2,7 +2,7 @@
 Title | Image Segmentation Metrics
 -- | --
 Create Date | `2020-03-03T02:31:43Z`
-Update Date | `2022-01-20T05:49:58Z`
+Update Date | `2022-01-20T05:51:24Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/231)
 
 ---
@@ -41,7 +41,7 @@ MPA<br>Mean Pixel Accuracy<br>平均像素准确率 | ![image](https://user-imag
 IoU | Formula
 -- | --
 MIoU | ![image](https://user-images.githubusercontent.com/2216970/69928583-103afb80-14f7-11ea-9eb5-a628af1f3f9b.png)
-FWIoU | ![image](https://user-images.githubusercontent.com/2216970/70517389-7ff25b80-1b73-11ea-82da-3723ff537c64.png)
+FWIoU | <img height="100px" src="https://user-images.githubusercontent.com/2216970/70517389-7ff25b80-1b73-11ea-82da-3723ff537c64.png">
 
 
 
