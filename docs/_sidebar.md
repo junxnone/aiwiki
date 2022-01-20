@@ -29,7 +29,7 @@
   - [梯度下降/Gradient Descent](/Gradient_Descent)
   - 反向传播
   - [交叉验证/Cross Validation](/Cross_Validation)
-  - 正则化/Regularization
+  - [正则化/Regularization](/Regularization)
   - 聚类
   - 降维
   - [Decision Tree - 决策树](/Decision_Tree)
@@ -48,7 +48,7 @@
   - 参数量
   - 计算量
   - Dropout
-  - [Data Normalization](/Data_Normalization)
+  - [归一化标准化/Data Normalization](/Data_Normalization)
 - [Metrics](/Metrics)
   - [Image Classification Metrics](/Image_Classification_Metrics)
   - [Pairwise Metrics](/Pairwise_Metrics)
