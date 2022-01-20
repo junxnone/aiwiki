@@ -2,7 +2,7 @@
 Title | Data Normalization
 -- | --
 Create Date | `2018-09-12T04:02:02Z`
-Update Date | `2022-01-20T07:29:20Z`
+Update Date | `2022-01-20T07:58:51Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/251)
 
 ---
@@ -20,7 +20,6 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/251)
 - [机器学习中的范数规则化之（一）L0、L1与L2范数](https://blog.csdn.net/zouxy09/article/details/24971995)
 
 ## Brief
-- [norm](/norm)
 
 数据的标准化（normalization）是将数据按比例缩放，使之落入一个小的特定区间。
 
