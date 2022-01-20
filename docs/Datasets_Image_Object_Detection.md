@@ -2,12 +2,14 @@
 Title | Datasets Image Object Detection
 -- | --
 Create Date | `2019-12-18T02:28:41Z`
-Update Date | `2022-01-20T07:03:52Z`
+Update Date | `2022-01-20T07:06:40Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/237)
 
 ---
 ## Image Object Detection Datasets
 - [BIT Vehicle](/Datasets_Image_Detection_BIT_Vehicle)
+- [COCO](/Datasets_Image_COCO)
+
 
 ---
 - [Dataset —— Department of Engineering Science, University of Oxford](http://www.robots.ox.ac.uk/~vgg/data/)
