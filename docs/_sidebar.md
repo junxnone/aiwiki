@@ -48,7 +48,7 @@
   - 参数量
   - 计算量
   - Dropout
-  - Batch Normalization
+  - [Data Normalization](/Data_Normalization)
 - [Metrics](/Metrics)
   - [Image Classification Metrics](/Image_Classification_Metrics)
   - [Pairwise Metrics](/Pairwise_Metrics)
