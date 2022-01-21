@@ -2,11 +2,10 @@
 Title | Data Augmentation
 -- | --
 Create Date | `2019-04-10T07:37:36Z`
-Update Date | `2022-01-20T07:37:43Z`
+Update Date | `2022-01-21T06:35:03Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/255)
 
 ---
-
 ## Reference
 
 - [imgaug](https://github.com/aleju/imgaug)
@@ -31,6 +30,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/255)
 ## CV 
 - [Cutout](/Data_Augmentation_Cutout)
 - [AutoAugment](/AutoAugment)
+- [Copy-Pasting](/Copy_Pasting)
+
 
 ### 基于图像处理
 
