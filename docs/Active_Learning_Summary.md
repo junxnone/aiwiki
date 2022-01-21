@@ -2,7 +2,7 @@
 Title | Active Learning Summary
 -- | --
 Create Date | `2020-07-02T03:27:36Z`
-Update Date | `2022-01-19T08:24:25Z`
+Update Date | `2022-01-21T06:54:28Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/118)
 
 ---
@@ -38,6 +38,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/118)
   - 深度学习模型产生的新要求
   - 任务无关性架构 - `Task-independent architecture` - `目前的抽样策略一般根据任务设计`
 - [Active Learning Tools](/Active_Learning_Tools)
+- [Query Strategy](/AL_Query_Strategy)
 
 
 ## Pipeline
