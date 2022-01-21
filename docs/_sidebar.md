@@ -54,6 +54,8 @@
 - [Data Augmentation](/Data_Augmentation) 
 - [Metrics](/Metrics)
   - [Image Classification Metrics](/Image_Classification_Metrics)
+  - [Image Object Detection Metrics](/Image_Object_Detection_Metrics)
+  - [Image Segmentation Metrics](/Image_Segmentation_Metrics)
   - [Pairwise Metrics](/Pairwise_Metrics)
 - [AI Tasks](/Tasks_Summary)
 - [图像分类/Image Classification](/Image_Classification)
