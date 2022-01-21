@@ -16,7 +16,7 @@
   - 图像滤波器
   - 采样
   - [卷积/Convolution](/Convolution_Summary.md)
-  - 池化
+  - [池化/Pooling](/Pooling)
   - 坐标变换
     - 四元数
   - 相似性度量
