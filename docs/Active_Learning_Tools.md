@@ -2,15 +2,14 @@
 Title | Active Learning Tools
 -- | --
 Create Date | `2019-01-28T05:58:27Z`
-Update Date | `2022-01-19T08:24:32Z`
+Update Date | `2022-01-21T06:38:37Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/175)
 
 ---
 
-
 Name | From | UI | Open Source
 -- | -- | -- | --
-[AIDE](https://github.com/microsoft/aerial_wildlife_detection) | Microsoft | √ | √
+[AIDE](/AL_AIDE) | Microsoft | √ | √
 [VOTT](https://github.com/microsoft/VoTT) | Microsoft | √ | √
 [label-studio](https://github.com/heartexlabs/label-studio) | Heartex | √ | √
 [modAL](https://github.com/modAL-python/modAL/)  | modAL | Jupyter notebook | √
