@@ -63,6 +63,7 @@
 - 图像检索/Image Retrieval
   - [CBIR](/CBIR)
 - [字符识别/OCR](/OCR)
+- [异常检测/Anomaly Detection](/Anomaly_Detection)
 - [Active Learning](/Active_Learning_Summary)
 - [半监督学习/Semi-Supervised Learning](/Semi_Supervised_Learning)
 - [AutoML](/AutoML)
