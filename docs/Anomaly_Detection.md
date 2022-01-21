@@ -2,7 +2,7 @@
 Title | Anomaly Detection
 -- | --
 Create Date | `2019-04-08T07:06:13Z`
-Update Date | `2022-01-21T08:36:55Z`
+Update Date | `2022-01-21T09:58:28Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/277)
 
 ---
@@ -17,8 +17,13 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/277)
 - [半监督”异常检测方法GANomaly](https://zhuanlan.zhihu.com/p/47832951) 
 
 ## Brief
-
-
+- 异常值检测/产品缺陷检测/不正常行为检测
+  - 结构化数据/时间序列数据
+  - 图像/视频
+- Algos
+  - 无监督学习
+  - AutoEncoder
+  - GAN
 ## Tools
 - [anomalib](https://github.com/openvinotoolkit/anomalib)
 
