@@ -64,6 +64,7 @@
   - [CBIR](/CBIR)
 - [字符识别/OCR](/OCR)
 - [Active Learning](/Active_Learning_Summary)
+- [半监督学习/Semi-Supervised Learning](/Semi_Supervised_Learning)
 - [AutoML](/AutoML)
   - [超参优化/HPO](/HPO)
     - [贝叶斯优化/Bayesian Optimization](/Bayesian_Optimization)
