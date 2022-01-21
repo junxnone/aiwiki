@@ -2,7 +2,7 @@
 Title | Anomaly Detection
 -- | --
 Create Date | `2019-04-08T07:06:13Z`
-Update Date | `2022-01-21T08:27:55Z`
+Update Date | `2022-01-21T08:32:11Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/277)
 
 ---
@@ -17,5 +17,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/277)
 - [半监督”异常检测方法GANomaly](https://zhuanlan.zhihu.com/p/47832951) 
 
 ## Brief
+
+## Datasets
+- [MVTecAD (MVTEC Anomaly Detection Datasets)](https://www.mvtec.com/company/research/datasets/mvtec-ad/)
 
 
