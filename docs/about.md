@@ -1,3 +1,0 @@
-# About
-
-A Template Wiki
