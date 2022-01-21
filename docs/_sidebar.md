@@ -60,7 +60,7 @@
 - [目标检测/Object Detection](/Image_Object_Detection)
 - [图像分割/Image Segmentation](/Image_Segmentation)
 - [度量学习/Metric Learning](/Metric_Learning)
-- 图像检索/Image Retrieval
+- [图像检索/Image Retrieval](/Image_Retrieval)
   - [CBIR](/CBIR)
 - [字符识别/OCR](/OCR)
 - [异常检测/Anomaly Detection](/Anomaly_Detection)
