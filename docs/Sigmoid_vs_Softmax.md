@@ -2,7 +2,7 @@
 Title | Sigmoid vs Softmax
 -- | --
 Create Date | `2019-11-19T03:01:04Z`
-Update Date | `2022-01-22T15:01:27Z`
+Update Date | `2022-01-22T15:04:22Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/280)
 
 ---
@@ -60,7 +60,7 @@ sigmoid | $sigmoid(x)= \frac{1}{1 + e^{-x}}$ | <img width="500px" src="https://u
 
 Name | Formula
 -- | --
-sigmoid | $sigmoid(x)= \frac{1}{1 + e^{-x}} = \frac{e^{x}}{e^{x} + 1} = 1 - sigmoid(-x)$
+sigmoid | $sigmoid(x)= \frac{1}{1 + e^{-x}}$
 softmax | $softmax(\vec{z})_{i}=\frac{e^{z_{i}}}{\sum_{j=1}^{K}e^{z_{i}}}$
 
 - 当 二分类时 Vector = [x, 0]
