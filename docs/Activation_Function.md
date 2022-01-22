@@ -2,7 +2,7 @@
 Title | Activation Function
 -- | --
 Create Date | `2019-03-13T05:26:53Z`
-Update Date | `2022-01-22T15:07:14Z`
+Update Date | `2022-01-22T15:12:22Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/279)
 
 ---
@@ -36,7 +36,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/279)
 Name | Formula | Figure | Comments
 -- | -- | -- | --
 Sigmoid |$sigmoid(x)= \frac{1}{1 + e^{-x}}$ | <img width="100px" src="https://user-images.githubusercontent.com/2216970/150641254-016e40a7-5f30-4f7a-af24-bc4e50749d6b.png">| 导数最大值为0.25, 各层梯度相乘容易梯度为0 ==> 梯度消失
-Tanh |  ![image](https://user-images.githubusercontent.com/2216970/106373618-62570580-63b6-11eb-9f07-f31886ea6004.png)| ![image](https://user-images.githubusercontent.com/2216970/106373622-6aaf4080-63b6-11eb-9235-17c320e785df.png) | 导数最大值为 1 
+Tanh |  $TanH(x)=\frac{e^{x}-e^{-x}}{e^{x}+e^{-x}}$| <img width="100px" src="https://user-images.githubusercontent.com/2216970/150644171-1fad01e1-cccf-4baf-9298-fd5aec6abac5.png">| 导数最大值为 1 
 ReLU<br>Rectified Linear Unit | ![image](https://user-images.githubusercontent.com/2216970/106373634-89153c00-63b6-11eb-8268-f33bad22f76d.png) ![image](https://user-images.githubusercontent.com/2216970/113401331-ca859000-93d5-11eb-86dd-fc9b60ffe3a9.png) | ![image](https://user-images.githubusercontent.com/2216970/106373636-8c102c80-63b6-11eb-84b9-817057c21ddd.png)
 ELU | 
 GELU | 
