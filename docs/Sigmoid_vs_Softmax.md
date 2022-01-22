@@ -2,7 +2,7 @@
 Title | Sigmoid vs Softmax
 -- | --
 Create Date | `2019-11-19T03:01:04Z`
-Update Date | `2022-01-22T14:39:53Z`
+Update Date | `2022-01-22T14:43:21Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/280)
 
 ---
@@ -46,6 +46,7 @@ sigmoid | $sigmoid(x)= \frac{1}{1 + e^{-x}}$ | <img width="500px" src="https://u
   - $e^{z_{i}}$: Vector Value 指数函数值
   - $\sum_{j=1}^{K}e^{z_{i}}$: 确保所有值加起来等于 1
   - $K$: 类别数量
+- 添加指数函数使输出的概率距离更大
 
 ### Examples
 
