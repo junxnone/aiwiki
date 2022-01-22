@@ -2,7 +2,7 @@
 Title | Activation Function
 -- | --
 Create Date | `2019-03-13T05:26:53Z`
-Update Date | `2022-01-22T15:12:22Z`
+Update Date | `2022-01-22T15:16:04Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/279)
 
 ---
@@ -30,6 +30,14 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/279)
 ## 各种激活函数
  
 ![activationfunctions 2019-08-01-16_58_53](https://user-images.githubusercontent.com/2216970/108931660-f305c600-7682-11eb-980a-b239c9fcddad.gif)
+
+
+### Sigmoid
+
+Name | Formula | Figure 
+-- | -- | -- 
+Sigmoid |$sigmoid(x)= \frac{1}{1 + e^{-x}}$ | <img width="100px" src="https://user-images.githubusercontent.com/2216970/150641254-016e40a7-5f30-4f7a-af24-bc4e50749d6b.png">
+
 
 ### Details
 
