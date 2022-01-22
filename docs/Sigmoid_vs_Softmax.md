@@ -1,0 +1,51 @@
+---
+Title | Sigmoid vs Softmax
+-- | --
+Create Date | `2019-11-19T03:01:04Z`
+Update Date | `2022-01-22T13:33:08Z`
+Edit link | [here](https://github.com/junxnone/aiwiki/issues/280)
+
+---
+## Reference
+- http://neuralnetworksanddeeplearning.com/chap3.html#softmax 
+- [logistic函数和softmax函数](http://www.cnblogs.com/maybe2030/p/5678387.html)
+- [详解sigmoid与softmax， 多分类及多标签分类](https://blog.csdn.net/uncle_ll/article/details/82778750)
+- [Keras - Softmax 与 Sigmoid 二分类问题分析](https://www.aiuai.cn/aifarm679.html)
+- [Keras深度学习笔记(三)：神经网络入门](https://xiaosheng.me/2018/11/24/article154/)
+- [sigmoid_and_softmax.ipynb](https://gist.github.com/ypwhs/6905ebbda99d04621f9fc00417657ae2)
+
+## Brief
+- `Sigmoid Function` == `Logistic Function`
+- **二分类时** `sigmoid` 和 `softmax` 等价
+
+
+Name | 应用 | 输出
+-- | -- | --
+sigmoid | - 二分类<br>- 多标签分类/Multi-Label | 一个或多个 0∼1 范围内的概率值
+softmax | - 多分类 | 在 classes_num 个不同输出类别上的概率分布
+
+
+## Sigmoid
+- 输出: [0, 1]
+- 二分类中, 将输入的 `feature` 映射到 [0,1] 
+- $sigmoid(x)= \frac{1}{1 + e^{-x}} = \frac{e^{x}}{e^{x} + 1} = 1 - sigmoid(-x)$
+
+Name | 公式 | Figure
+-- | -- | --
+sigmoid |  ![image](https://user-images.githubusercontent.com/2216970/69112835-4078a800-0abc-11ea-81e4-6e7b0c1833b9.png) | ![image](https://user-images.githubusercontent.com/2216970/53677618-c7e37880-3ced-11e9-8daa-5f3a5a16aa2f.png)
+
+## Softmax
+
+
+##  二分类时 `sigmoid` 和 `softmax` 等价
+
+Name | 公式
+-- | --
+sigmoid |  ![image](https://user-images.githubusercontent.com/2216970/69112835-4078a800-0abc-11ea-81e4-6e7b0c1833b9.png)
+softmax | ![image](https://user-images.githubusercontent.com/2216970/69112891-669e4800-0abc-11ea-9068-25724edc9e15.png)
+当 ![image](https://user-images.githubusercontent.com/2216970/69113402-dcef7a00-0abd-11ea-91bb-343c52144deb.png) |  ![image](https://user-images.githubusercontent.com/2216970/69113422-ea0c6900-0abd-11ea-9090-4e2e28364478.png)
+
+## 对比
+- Sigmoid 与 Softmax 完全等价
+- Sigmoid 与 Softmax 分类器的权值可以相互转换
+- Softmax 会比 Sigmoid 浪费 2 倍的权值空间
