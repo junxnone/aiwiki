@@ -2,7 +2,7 @@
 Title | Activation Function
 -- | --
 Create Date | `2019-03-13T05:26:53Z`
-Update Date | `2022-01-22T15:16:45Z`
+Update Date | `2022-01-22T15:17:28Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/279)
 
 ---
@@ -39,6 +39,12 @@ Name | Formula | Figure
 -- | -- | -- 
 Sigmoid |$sigmoid(x)= \frac{1}{1 + e^{-x}}$ | <img width="300px" src="https://user-images.githubusercontent.com/2216970/150641254-016e40a7-5f30-4f7a-af24-bc4e50749d6b.png">
 
+### TanH
+- 导数最大值为 1 
+
+Name | Formula | Figure 
+-- | -- | -- 
+Tanh |  $TanH(x)=\frac{e^{x}-e^{-x}}{e^{x}+e^{-x}}$| <img width="300px" src="https://user-images.githubusercontent.com/2216970/150644171-1fad01e1-cccf-4baf-9298-fd5aec6abac5.png">
 
 ### Details
 
