@@ -2,7 +2,7 @@
 Title | Activation Function
 -- | --
 Create Date | `2019-03-13T05:26:53Z`
-Update Date | `2022-01-22T15:16:04Z`
+Update Date | `2022-01-22T15:16:45Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/279)
 
 ---
@@ -33,10 +33,11 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/279)
 
 
 ### Sigmoid
+- 导数最大值为0.25, 各层梯度相乘容易梯度为0 ==> 梯度消失
 
 Name | Formula | Figure 
 -- | -- | -- 
-Sigmoid |$sigmoid(x)= \frac{1}{1 + e^{-x}}$ | <img width="100px" src="https://user-images.githubusercontent.com/2216970/150641254-016e40a7-5f30-4f7a-af24-bc4e50749d6b.png">
+Sigmoid |$sigmoid(x)= \frac{1}{1 + e^{-x}}$ | <img width="300px" src="https://user-images.githubusercontent.com/2216970/150641254-016e40a7-5f30-4f7a-af24-bc4e50749d6b.png">
 
 
 ### Details
