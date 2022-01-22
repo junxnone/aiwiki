@@ -2,7 +2,7 @@
 Title | Sigmoid vs Softmax
 -- | --
 Create Date | `2019-11-19T03:01:04Z`
-Update Date | `2022-01-22T13:57:51Z`
+Update Date | `2022-01-22T13:58:30Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/280)
 
 ---
@@ -32,7 +32,7 @@ softmax | - 多分类 | 在 classes_num 个不同输出类别上的概率分布
 
 Name | 公式 | Figure
 -- | -- | --
-sigmoid |  ![image](https://user-images.githubusercontent.com/2216970/69112835-4078a800-0abc-11ea-81e4-6e7b0c1833b9.png) | <img width="500px" src="https://user-images.githubusercontent.com/2216970/150641254-016e40a7-5f30-4f7a-af24-bc4e50749d6b.png">
+sigmoid | $sigmoid(x)= \frac{1}{1 + e^{-x}}$ | <img width="500px" src="https://user-images.githubusercontent.com/2216970/150641254-016e40a7-5f30-4f7a-af24-bc4e50749d6b.png">
 
 ## Softmax
 
