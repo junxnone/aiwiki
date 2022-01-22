@@ -2,7 +2,7 @@
 Title | Sigmoid vs Softmax
 -- | --
 Create Date | `2019-11-19T03:01:04Z`
-Update Date | `2022-01-22T14:43:21Z`
+Update Date | `2022-01-22T15:01:27Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/280)
 
 ---
@@ -58,11 +58,14 @@ sigmoid | $sigmoid(x)= \frac{1}{1 + e^{-x}}$ | <img width="500px" src="https://u
 
 ##  二分类时 `sigmoid` 和 `softmax` 等价
 
-Name | 公式
+Name | Formula
 -- | --
-sigmoid |  ![image](https://user-images.githubusercontent.com/2216970/69112835-4078a800-0abc-11ea-81e4-6e7b0c1833b9.png)
-softmax | ![image](https://user-images.githubusercontent.com/2216970/69112891-669e4800-0abc-11ea-9068-25724edc9e15.png)
-当 ![image](https://user-images.githubusercontent.com/2216970/69113402-dcef7a00-0abd-11ea-91bb-343c52144deb.png) |  ![image](https://user-images.githubusercontent.com/2216970/69113422-ea0c6900-0abd-11ea-9090-4e2e28364478.png)
+sigmoid | $sigmoid(x)= \frac{1}{1 + e^{-x}} = \frac{e^{x}}{e^{x} + 1} = 1 - sigmoid(-x)$
+softmax | $softmax(\vec{z})_{i}=\frac{e^{z_{i}}}{\sum_{j=1}^{K}e^{z_{i}}}$
+
+- 当 二分类时 Vector = [x, 0]
+
+$softmax(\vec{z})_{1}=\frac{e^{z_{1}}}{e^{z_{1}} + e^{z_{2}}}=\frac{e^{x}}{e^{x} + e^{0}}=\frac{e^{x}}{e^{x} + 1}=\frac{1}{1+e^{-x} }$
 
 ## 对比
 - Sigmoid 与 Softmax 完全等价
