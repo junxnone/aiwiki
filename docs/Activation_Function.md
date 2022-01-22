@@ -2,7 +2,7 @@
 Title | Activation Function
 -- | --
 Create Date | `2019-03-13T05:26:53Z`
-Update Date | `2022-01-22T13:32:57Z`
+Update Date | `2022-01-22T13:42:09Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/279)
 
 ---
@@ -29,8 +29,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/279)
 
 ## 各种激活函数
 
-Overview
--- |
+Overview  
+-- |  
 ![activationfunctions 2019-08-01-16_58_53](https://user-images.githubusercontent.com/2216970/108931660-f305c600-7682-11eb-980a-b239c9fcddad.gif)
 
 ### Details
