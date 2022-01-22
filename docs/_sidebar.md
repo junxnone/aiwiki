@@ -43,7 +43,7 @@
     - 密度聚类
     - 谱聚类
 - 深度学习基础
-  - 激活函数/Activation
+  - [激活函数/Activation Function](/Activation_Function)
   - 优化算法/Optimization
   - 参数量
   - 计算量
