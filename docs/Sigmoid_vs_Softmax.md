@@ -2,7 +2,7 @@
 Title | Sigmoid vs Softmax
 -- | --
 Create Date | `2019-11-19T03:01:04Z`
-Update Date | `2022-01-22T13:58:30Z`
+Update Date | `2022-01-22T14:38:41Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/280)
 
 ---
@@ -13,6 +13,9 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/280)
 - [Keras - Softmax 与 Sigmoid 二分类问题分析](https://www.aiuai.cn/aifarm679.html)
 - [Keras深度学习笔记(三)：神经网络入门](https://xiaosheng.me/2018/11/24/article154/)
 - [sigmoid_and_softmax.ipynb](https://gist.github.com/ypwhs/6905ebbda99d04621f9fc00417657ae2)
+- [一文详解Softmax函数](https://zhuanlan.zhihu.com/p/105722023)
+- [Softmax Function - deepai.org](https://deepai.org/machine-learning-glossary-and-terms/softmax-layer)
+
 
 ## Brief
 - `Sigmoid Function` == `Logistic Function`
@@ -35,7 +38,14 @@ Name | 公式 | Figure
 sigmoid | $sigmoid(x)= \frac{1}{1 + e^{-x}}$ | <img width="500px" src="https://user-images.githubusercontent.com/2216970/150641254-016e40a7-5f30-4f7a-af24-bc4e50749d6b.png">
 
 ## Softmax
-
+- `Softmax` = `Soft` + `max`
+ - hardmax  相对就是求最大值
+- $softmax(\vec{z})_{i}=\frac{e^{z_{i}}}{\sum_{j=1}^{K}e^{z_{i}}}$
+  - $\vec{z}$ : Input Vector
+  - $z_{i}$: Vector Value
+  - $e^{z_{i}}$: Vector Value 指数函数值
+  - $\sum_{j=1}^{K}e^{z_{i}}$: 确保所有值加起来等于 1
+  - $K$: 类别数量
 
 ##  二分类时 `sigmoid` 和 `softmax` 等价
 
