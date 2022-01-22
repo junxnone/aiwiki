@@ -2,7 +2,7 @@
 Title | Sigmoid vs Softmax
 -- | --
 Create Date | `2019-11-19T03:01:04Z`
-Update Date | `2022-01-22T14:38:41Z`
+Update Date | `2022-01-22T14:39:53Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/280)
 
 ---
@@ -47,6 +47,14 @@ sigmoid | $sigmoid(x)= \frac{1}{1 + e^{-x}}$ | <img width="500px" src="https://u
   - $\sum_{j=1}^{K}e^{z_{i}}$: 确保所有值加起来等于 1
   - $K$: 类别数量
 
+### Examples
+
+![image](https://user-images.githubusercontent.com/2216970/150642984-52b92b2e-aab0-437f-847f-40d3192e7dfe.png) | ![image](https://user-images.githubusercontent.com/2216970/150642988-c506db62-2f63-41cf-8de8-9be3ec281d34.png) | ![image](https://user-images.githubusercontent.com/2216970/150642992-c312daa2-87ac-4580-a386-258d484839ed.png) | ![image](https://user-images.githubusercontent.com/2216970/150642996-cc86ea00-2083-4493-a49e-50996bfea93b.png)
+-- | -- | -- | --
+
+
+
+
 ##  二分类时 `sigmoid` 和 `softmax` 等价
 
 Name | 公式
@@ -59,3 +67,5 @@ softmax | ![image](https://user-images.githubusercontent.com/2216970/69112891-66
 - Sigmoid 与 Softmax 完全等价
 - Sigmoid 与 Softmax 分类器的权值可以相互转换
 - Softmax 会比 Sigmoid 浪费 2 倍的权值空间
+
+
