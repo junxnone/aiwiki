@@ -21,7 +21,7 @@
   - 图像特征
 - 机器学习
   - 回归
-  - 代价函数/Cost Function
+  - [代价函数/Cost Function](Cost_Function)
   - [损失函数/Loss](/Loss_Function)
   - [梯度下降/Gradient Descent](/Gradient_Descent)
   - 反向传播
