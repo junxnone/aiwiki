@@ -2,7 +2,7 @@
 Title | Loss Function
 -- | --
 Create Date | `2019-04-08T06:11:14Z`
-Update Date | `2022-01-24T16:07:13Z`
+Update Date | `2022-01-24T16:17:20Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/281)
 
 ---
@@ -61,14 +61,14 @@ Name | Formula
 > 预测值与真实值之间距离的平方和
 ![image](https://user-images.githubusercontent.com/2216970/67662910-47ba0380-f99f-11e9-814f-68150cb83430.png)
 
-### 平均绝对值误差（MAE）- L1损失
-> Least absolute deviations - L1 
-
+### MAE
+- Mean Absolute Error/平均绝对值误差/L1 Loss
 - MAE对异常点有更好的鲁棒性
 
-![image](https://user-images.githubusercontent.com/2216970/67662862-33760680-f99f-11e9-9aab-7ba4c88c029d.png)
-> 目标值和预测值之差的绝对值之和
-![image](https://user-images.githubusercontent.com/2216970/67662920-4be62100-f99f-11e9-9716-766e23de5f58.png)
+Name | Formula
+-- | --
+MAE | $\text{MAE}(y, \hat{y}) = \frac{1}{n_{\text{samples}}} \sum_{i=0}^{n_{\text{samples}}-1} \left| y_i - \hat{y}_i \right|.$
+
 
 ### MAPE
 ![image](https://user-images.githubusercontent.com/2216970/67673503-34199780-f9b5-11e9-892d-c0e7d37b69b8.png)
