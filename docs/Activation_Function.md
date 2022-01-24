@@ -2,7 +2,7 @@
 Title | Activation Function
 -- | --
 Create Date | `2019-03-13T05:26:53Z`
-Update Date | `2022-01-24T01:59:13Z`
+Update Date | `2022-01-24T02:12:52Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/279)
 
 ---
@@ -57,7 +57,12 @@ Name | Formula | Figure
 -- | -- | -- 
 ReLU |  $ReLU(x)=Max(0,x)$<br>$ReLU(x)=Max(0,w^{T}x+b)$<br>$ReLU(x)=\begin{cases}  & \text{0 if } x\leq 0 \\  & \text{x if } x> 0 \end{cases}$ | <img width="300px" src="https://user-images.githubusercontent.com/2216970/150707916-ea8a695f-892e-4ef7-b351-cd572d65f2ce.png">
 
+### Leaky ReLU
 
+
+Name | Formula | Figure 
+-- | -- | -- 
+Leaky ReLU | $LeakyReLU(x)=\begin{cases}  & \text{x if } x\leq 0  \\  & \lambda \text{x if } x> 0 \end{cases}$ <br>λ 取值:  固定值| <img width="300px" src="https://user-images.githubusercontent.com/2216970/150710850-9043a6cb-cad6-4704-846d-20e4d748b692.png">
 
 ### Details
 
