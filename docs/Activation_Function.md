@@ -2,7 +2,7 @@
 Title | Activation Function
 -- | --
 Create Date | `2019-03-13T05:26:53Z`
-Update Date | `2022-01-24T01:56:36Z`
+Update Date | `2022-01-24T01:59:13Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/279)
 
 ---
@@ -55,7 +55,7 @@ Tanh |  $TanH(x)=\frac{e^{x}-e^{-x}}{e^{x}+e^{-x}}$| <img width="300px" src="htt
 
 Name | Formula | Figure 
 -- | -- | -- 
-ReLU |  $ReLU(x)=Max(0,x)$<br>$ReLU(x)=Max(0,w^{T}x+b)$<br>$ReLU(x)=\begin{cases}  & \text{0 if } x\leq 0 <br>  & \text{x if } x> 0 \end{cases}$ | <img width="300px" src="https://user-images.githubusercontent.com/2216970/150707916-ea8a695f-892e-4ef7-b351-cd572d65f2ce.png">
+ReLU |  $ReLU(x)=Max(0,x)$<br>$ReLU(x)=Max(0,w^{T}x+b)$<br>$ReLU(x)=\begin{cases}  & \text{0 if } x\leq 0 \\  & \text{x if } x> 0 \end{cases}$ | <img width="300px" src="https://user-images.githubusercontent.com/2216970/150707916-ea8a695f-892e-4ef7-b351-cd572d65f2ce.png">
 
 
 
