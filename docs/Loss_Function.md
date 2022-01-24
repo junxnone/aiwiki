@@ -2,7 +2,7 @@
 Title | Loss Function
 -- | --
 Create Date | `2019-04-08T06:11:14Z`
-Update Date | `2022-01-24T16:49:42Z`
+Update Date | `2022-01-24T16:57:23Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/281)
 
 ---
@@ -33,7 +33,12 @@ Name | Formula
 -- | --
 0-1 Loss | $L_{0-1}(y_i, \hat{y}_i) = 1(\hat{y}_i \not= y_i)$
 
+### Hamming Loss
 
+
+Name | Formula
+-- | --
+Hamming Loss | $L_{Hamming}(y, \hat{y}) = \frac{1}{n_\text{labels}} \sum_{j=0}^{n_\text{labels} - 1} 1(\hat{y}_j \not= y_j)$
 
 ### Log Loss
 - `Logistic Regression Loss`/`Cross-Entropy Loss`
@@ -83,11 +88,23 @@ MAE | $\text{MAE}(y, \hat{y}) = \frac{1}{n_{\text{samples}}} \sum_{i=0}^{n_{\tex
 
 
 ### MAPE
-![image](https://user-images.githubusercontent.com/2216970/67673503-34199780-f9b5-11e9-892d-c0e7d37b69b8.png)
+- Mean Absolute Percentage Error
+- MAPD - `Mean Absolute Percentage Deviation`
+- 相对误差敏感
+
+Name | Formula
+-- | --
+MAPE | $\text{MAPE}(y, \hat{y}) = \frac{1}{n_{\text{samples}}} \sum_{i=0}^{n_{\text{samples}}-1} \frac{{}\left\| y_i - \hat{y}_i \right\|}{max(\epsilon, \left\| y_i \right\|)}$
+
 
 ### MSLE
+- Mean Squared Logarithmic Error
 
-![image](https://user-images.githubusercontent.com/2216970/67673579-5d3a2800-f9b5-11e9-858b-ecf59df75a3b.png)
+Name | Formula
+-- | --
+MSLE | $\text{MSLE}(y, \hat{y}) = \frac{1}{n_\text{samples}} \sum_{i=0}^{n_\text{samples} - 1} (\log_e (1 + y_i) - \log_e (1 + \hat{y}_i) )^2.$
+
+
 
 ### Huber损失
 
