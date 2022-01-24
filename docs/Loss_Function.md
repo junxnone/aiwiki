@@ -2,7 +2,7 @@
 Title | Loss Function
 -- | --
 Create Date | `2019-04-08T06:11:14Z`
-Update Date | `2022-01-24T16:17:53Z`
+Update Date | `2022-01-24T16:22:18Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/281)
 
 ---
@@ -54,15 +54,17 @@ Name | Formula
 
 ## 回归损失函数
 
-### 均方误差(MSE) - L2 loss
-> Least square errors - L2
+### MSE
+- Mean Squared Error/均方误差
+- L2 Loss - `Least Square errors`
 
-![image](https://user-images.githubusercontent.com/2216970/67662719-ee51d480-f99e-11e9-8c87-24fc96fceefe.png)
-> 预测值与真实值之间距离的平方和
-![image](https://user-images.githubusercontent.com/2216970/67662910-47ba0380-f99f-11e9-814f-68150cb83430.png)
+Name | Formula
+-- | --
+MSE | $\text{MSE}(y, \hat{y}) = \frac{1}{n_\text{samples}} \sum_{i=0}^{n_\text{samples} - 1} (y_i - \hat{y}_i)^2$
 
 ### MAE
-- Mean Absolute Error/平均绝对值误差/L1 Loss
+- Mean Absolute Error/平均绝对值误差
+- L1 Loss - `Least absolute deviations`
 - MAE对异常点有更好的鲁棒性
 
 Name | Formula
