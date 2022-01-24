@@ -2,7 +2,7 @@
 Title | Loss Function
 -- | --
 Create Date | `2019-04-08T06:11:14Z`
-Update Date | `2022-01-24T16:31:15Z`
+Update Date | `2022-01-24T16:31:54Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/281)
 
 ---
@@ -40,8 +40,8 @@ Name | Formula
 
 Name | Formula
 -- | --
-Binary Classification | $L_{\log}(y, p) = -\log \operatorname{Pr}(y|p) = -(y \log (p) + (1 - y) \log (1 - p))$
-Multiclass Classification | $L_{\log}(Y, P) = -\log \operatorname{Pr}(Y|P) = - \frac{1}{N} \sum_{i=0}^{N-1} \sum_{k=0}^{K-1} y_{i,k} \log p_{i,k}$
+Binary Classification | $L_{\log}(y, p) = -\log \operatorname{Pr}(y\|p) = -(y \log (p) + (1 - y) \log (1 - p))$
+Multiclass Classification | $L_{\log}(Y, P) = -\log \operatorname{Pr}(Y\|P) = - \frac{1}{N} \sum_{i=0}^{N-1} \sum_{k=0}^{K-1} y_{i,k} \log p_{i,k}$
 
 ### Hinge loss - 合页损失
 - 用于 `maximum-margin` 的分类器
