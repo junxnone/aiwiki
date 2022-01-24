@@ -2,7 +2,7 @@
 Title | Loss Function
 -- | --
 Create Date | `2019-04-08T06:11:14Z`
-Update Date | `2022-01-24T16:22:18Z`
+Update Date | `2022-01-24T16:24:11Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/281)
 
 ---
@@ -69,7 +69,7 @@ MSE | $\text{MSE}(y, \hat{y}) = \frac{1}{n_\text{samples}} \sum_{i=0}^{n_\text{s
 
 Name | Formula
 -- | --
-MAE | $\text{MAE}(y, \hat{y}) = \frac{1}{n_{\text{samples}}} \sum_{i=0}^{n_{\text{samples}}-1} \left| y_i - \hat{y}_i \right|$
+MAE | $\text{MAE}(y, \hat{y}) = \frac{1}{n_{\text{samples}}} \sum_{i=0}^{n_{\text{samples}}-1} \left\| y_i - \hat{y}_i \right\|$
 
 
 ### MAPE
