@@ -2,7 +2,7 @@
 Title | Loss Function
 -- | --
 Create Date | `2019-04-08T06:11:14Z`
-Update Date | `2022-01-24T16:30:30Z`
+Update Date | `2022-01-24T16:31:15Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/281)
 
 ---
@@ -24,7 +24,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/281)
 
 ![image](https://user-images.githubusercontent.com/2216970/67662190-e04f8400-f99d-11e9-9279-f78628ab1ea5.png)
 
-### Zero one loss/0-1损失
+### 0-1 Loss 
+- Zero one loss/0-1损失
 - 对每个错分类点都施以相同的惩罚，
 - 0-1损失不连续、非凸，优化困难
 
