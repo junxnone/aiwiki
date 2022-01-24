@@ -2,7 +2,7 @@
 Title | Activation Function
 -- | --
 Create Date | `2019-03-13T05:26:53Z`
-Update Date | `2022-01-22T15:23:52Z`
+Update Date | `2022-01-24T01:37:48Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/279)
 
 ---
@@ -46,6 +46,18 @@ Sigmoid |$Sigmoid(x)= \frac{1}{1 + e^{-x}}$ | <img width="300px" src="https://us
 Name | Formula | Figure 
 -- | -- | -- 
 Tanh |  $TanH(x)=\frac{e^{x}-e^{-x}}{e^{x}+e^{-x}}$| <img width="300px" src="https://user-images.githubusercontent.com/2216970/150644171-1fad01e1-cccf-4baf-9298-fd5aec6abac5.png">
+
+
+
+### ReLU
+- ReLU - `Rectified Linear Unit`
+
+
+Name | Formula | Figure 
+-- | -- | -- 
+ReLU |  $ReLU(x)=Max(0,x)$<br>$ReLU(x)=Max(0,w^{T}x+b)$<br>$ReLU(x)==\begin{cases}  & \text{0 if } x\leq 0   & \text{x if } x> 0 \end{cases}$ | <img width="300px" src="https://user-images.githubusercontent.com/2216970/150707916-ea8a695f-892e-4ef7-b351-cd572d65f2ce.png">
+
+
 
 ### Details
 
