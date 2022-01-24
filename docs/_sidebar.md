@@ -15,13 +15,10 @@
   - [Feature Detection](/Feature_Detection)
   - 图像滤波器
   - 采样
-  - [卷积/Convolution](/Convolution_Summary.md)
-  - [池化/Pooling](/Pooling)
   - 坐标变换
     - 四元数
   - 相似性度量
   - 图像特征
-  - [基础知识](/基础知识)
 - 机器学习
   - 回归
   - 代价函数/Cost Function
@@ -43,6 +40,8 @@
     - 密度聚类
     - 谱聚类
 - 深度学习基础
+  - [卷积/Convolution](/Convolution_Summary.md)
+  - [池化/Pooling](/Pooling)
   - [激活函数/Activation Function](/Activation_Function)
   - 优化算法/Optimization
   - 参数量
