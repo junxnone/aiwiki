@@ -2,7 +2,7 @@
 Title | Loss Function
 -- | --
 Create Date | `2019-04-08T06:11:14Z`
-Update Date | `2022-01-24T16:31:54Z`
+Update Date | `2022-01-24T16:49:42Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/281)
 
 ---
@@ -47,7 +47,11 @@ Multiclass Classification | $L_{\log}(Y, P) = -\log \operatorname{Pr}(Y\|P) = - 
 - 用于 `maximum-margin` 的分类器
 - 用于 SVM
 
-![image](https://user-images.githubusercontent.com/2216970/67666957-d6cb1980-f9a7-11e9-83a2-dca97923955d.png)
+Name | Formula
+-- | --
+Label[-1, +1] | $L_\text{Hinge}(y, w) = \max\left\{1 - wy, 0\right\} = \left\|1 - wy\right\|_+$
+Multi-Label |  $L_\text{Hinge}(y_w, y_t) = \max\left\{1 + y_t - y_w, 0\right\}$
+
 ![image](https://user-images.githubusercontent.com/2216970/67666992-e3e80880-f9a7-11e9-8189-fb900e2c09ab.png)
 
 ### 指数损失(Exponential loss)
