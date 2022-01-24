@@ -2,7 +2,7 @@
 Title | Activation Function
 -- | --
 Create Date | `2019-03-13T05:26:53Z`
-Update Date | `2022-01-24T02:12:52Z`
+Update Date | `2022-01-24T14:55:47Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/279)
 
 ---
@@ -58,24 +58,41 @@ Name | Formula | Figure
 ReLU |  $ReLU(x)=Max(0,x)$<br>$ReLU(x)=Max(0,w^{T}x+b)$<br>$ReLU(x)=\begin{cases}  & \text{0 if } x\leq 0 \\  & \text{x if } x> 0 \end{cases}$ | <img width="300px" src="https://user-images.githubusercontent.com/2216970/150707916-ea8a695f-892e-4ef7-b351-cd572d65f2ce.png">
 
 ### Leaky ReLU
+- λ 取值:  固定值
+
+Name | Formula | Figure 
+-- | -- | -- 
+Leaky ReLU | $LReLU(x)=\begin{cases}  & \text{x if } x\leq 0  \\  & \lambda \text{x if } x> 0 \end{cases}$ | <img width="300px" src="https://user-images.githubusercontent.com/2216970/150710850-9043a6cb-cad6-4704-846d-20e4d748b692.png">
+
+
+### Parametric ReLU
+- λ 取值:  根据 BP 学习的变量
+
+Name | Formula | Figure 
+-- | -- | -- 
+Parametric ReLU | $PReLU(x)=\begin{cases}  & \text{x if } x\leq 0  \\  & \lambda \text{x if } x> 0 \end{cases}$ | <img width="300px" src="https://user-images.githubusercontent.com/2216970/150710850-9043a6cb-cad6-4704-846d-20e4d748b692.png">
+
+### Randomized ReLU
+- λ 取值: 取随机值, 服从连续性均匀分布
+- $\lambda \sim  U(l,u), l,u \in [0,1),l < u $
 
 
 Name | Formula | Figure 
 -- | -- | -- 
-Leaky ReLU | $LeakyReLU(x)=\begin{cases}  & \text{x if } x\leq 0  \\  & \lambda \text{x if } x> 0 \end{cases}$ <br>λ 取值:  固定值| <img width="300px" src="https://user-images.githubusercontent.com/2216970/150710850-9043a6cb-cad6-4704-846d-20e4d748b692.png">
+Randomized ReLU | $RReLU(x)=\begin{cases}  & \text{x if } x\leq 0  \\  & \lambda \text{x if } x> 0 \end{cases}$ | <img width="300px" src="https://user-images.githubusercontent.com/2216970/150710850-9043a6cb-cad6-4704-846d-20e4d748b692.png">
 
-### Details
+### Noisy ReLU
+
+Name | Formula | Figure 
+-- | -- | -- 
+Noisy ReLU | $NReLU(x)=max(0,x+Y),Y\sim  N(0,\sigma(x))$ | <img width="300px" src="https://user-images.githubusercontent.com/2216970/150707916-ea8a695f-892e-4ef7-b351-cd572d65f2ce.png">
+
+### Others
 
 Name | Formula | Figure | Comments
 -- | -- | -- | --
-Sigmoid |$sigmoid(x)= \frac{1}{1 + e^{-x}}$ | <img width="100px" src="https://user-images.githubusercontent.com/2216970/150641254-016e40a7-5f30-4f7a-af24-bc4e50749d6b.png">| 导数最大值为0.25, 各层梯度相乘容易梯度为0 ==> 梯度消失
-Tanh |  $TanH(x)=\frac{e^{x}-e^{-x}}{e^{x}+e^{-x}}$| <img width="100px" src="https://user-images.githubusercontent.com/2216970/150644171-1fad01e1-cccf-4baf-9298-fd5aec6abac5.png">| 导数最大值为 1 
-ReLU<br>Rectified Linear Unit | ![image](https://user-images.githubusercontent.com/2216970/106373634-89153c00-63b6-11eb-8268-f33bad22f76d.png) ![image](https://user-images.githubusercontent.com/2216970/113401331-ca859000-93d5-11eb-86dd-fc9b60ffe3a9.png) | ![image](https://user-images.githubusercontent.com/2216970/106373636-8c102c80-63b6-11eb-84b9-817057c21ddd.png)
 ELU | 
 GELU | 
-Leaky ReLU | ![image](https://user-images.githubusercontent.com/2216970/72238418-9d09c680-3618-11ea-9f66-6aaa0f799628.png)<br>λ 取值:  固定值| | 
-PReLU - Parametric ReLUs | ![image](https://user-images.githubusercontent.com/2216970/72238418-9d09c680-3618-11ea-9f66-6aaa0f799628.png) <br>λ 取值:  根据 BP 学习的变量| | 
-RReLU - Randomized Leaky ReLU | ![image](https://user-images.githubusercontent.com/2216970/72238418-9d09c680-3618-11ea-9f66-6aaa0f799628.png) <br>- λ 取值: 取随机值, 服从连续性均匀分布<br>  - ![image](https://user-images.githubusercontent.com/2216970/72239086-c6c3ed00-361a-11ea-9927-e1a827df7cad.png)<br>  - ![image](https://user-images.githubusercontent.com/2216970/72239101-d3484580-361a-11ea-9faa-db854ffb3b4e.png)| | 
-Noisy ReLU | ![image](https://user-images.githubusercontent.com/2216970/72239128-ec50f680-361a-11ea-81d0-4ca8a7243df5.png) ![image](https://user-images.githubusercontent.com/2216970/72239134-f07d1400-361a-11ea-9da3-b69d0f017b37.png) |
+
 
 
