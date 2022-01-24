@@ -2,7 +2,7 @@
 Title | Loss Function
 -- | --
 Create Date | `2019-04-08T06:11:14Z`
-Update Date | `2022-01-24T16:57:23Z`
+Update Date | `2022-01-24T17:01:59Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/281)
 
 ---
@@ -18,7 +18,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/281)
 - Loss Function/损失函数 - 用于计算 `Predict Result` 与 `Ground Truth` 误差
 - 分类问题
 - 回归问题
-
+- [Focal Loss](/Focal_Loss)
+- [Dice Loss](/Dice_Loss)
 
 ## 分类损失函数
 
