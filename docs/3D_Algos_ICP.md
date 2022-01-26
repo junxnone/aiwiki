@@ -1,16 +1,17 @@
 ---
 Title | 3D Algos ICP
 -- | --
-Create Date | `2021-10-13T01:21:32Z`
-Update Date | `2021-10-13T01:21:32Z`
+Create Date | `2021-04-29T03:20:49Z`
+Update Date | `2022-01-26T06:20:32Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/86)
 
 ---
-# Reference
+## Reference
 - [迭代最近点（Iterative Closest Point, ICP）算法介绍](https://zhuanlan.zhihu.com/p/35893884)
 - [【点云精配准】Iterative Closest Point（ICP）](https://zhuanlan.zhihu.com/p/107218828)
+- [pcl-learning](https://github.com/HuangCongQing/pcl-learning)
 
-# Brief
+## Brief
 - ICP - `Iterative Closest Point`
 - 最近邻法估计 Scene 中点对应的Model 点
 - 通过最小二乘法构建目标函数，进行迭代优化
@@ -28,7 +29,7 @@ NICP | Normal Iterative Closest Point
 point-to-line
 MBICP
 
-# 问题推导
+## 问题推导
 
 Name | 公式
 -- | --
@@ -39,7 +40,7 @@ Scene 点 | ![image](https://user-images.githubusercontent.com/2216970/117235277
 
 
 
-# UseCase
+## UseCase
 
 ![upvoglEXX2](https://user-images.githubusercontent.com/2216970/117272623-f4771a00-ae8d-11eb-9808-28699cf10014.gif)
 
