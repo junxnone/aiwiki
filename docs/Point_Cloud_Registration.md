@@ -2,7 +2,7 @@
 Title | Point Cloud Registration
 -- | --
 Create Date | `2021-04-29T07:34:54Z`
-Update Date | `2022-01-20T06:24:59Z`
+Update Date | `2022-02-09T02:22:30Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/235)
 
 ---
@@ -15,9 +15,17 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/235)
 - [Registration Blogs - xiaoxiong](https://littlebearsama.github.io/categories/Registration/)
 
 ## Brief
-- `Coarse Global Registeration` ==> `Fine Local Registeration`
 - [Metrics](https://github.com/junxnone/tech-io/issues/983)
-
+- 问题分类
+  - 不同重叠度 (Full Overlap & Partial Overlap)
+    - 完全重叠: 仿品与原品对比/建造件与模型对比
+    - 部分重叠: 不同视角扫描对象进行三维重建
+  - 全局 & 局部 (Global & Local)
+    - 全局: 位姿差别较大 (`Coarse Global Registeration`)
+    - 局部: 位姿相近 (`Fine Local Registeration`)
+  - 成对 & 多对 (Pairwise & Multiple)
+    - 配准两片点云
+    - 配准多片点云 (三维重建)
 
 ## Algos
 - **Coarse Global Registeration**
