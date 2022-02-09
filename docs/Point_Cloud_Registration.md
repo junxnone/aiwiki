@@ -2,7 +2,7 @@
 Title | Point Cloud Registration
 -- | --
 Create Date | `2021-04-29T07:34:54Z`
-Update Date | `2022-02-09T04:03:52Z`
+Update Date | `2022-02-09T07:30:09Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/235)
 
 ---
@@ -14,6 +14,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/235)
   - [最新点云配准综述：A comprehensive survey on point cloud registration](https://zhuanlan.zhihu.com/p/355578871)
 - [Registration Blogs - xiaoxiong](https://littlebearsama.github.io/categories/Registration/)
 - [《GAMES203：三维重建和理解》2 配准（Registration）](https://zhuanlan.zhihu.com/p/462813029)
+- [点云配准各种方法总结[不定时更新]](https://blog.csdn.net/Ha_ku/article/details/79755623)
 
 
 
