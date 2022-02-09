@@ -2,7 +2,7 @@
 Title | 3D Camera 成像原理
 -- | --
 Create Date | `2021-07-27T03:09:10Z`
-Update Date | `2022-02-09T05:39:16Z`
+Update Date | `2022-02-09T05:40:57Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/40)
 
 ---
@@ -34,12 +34,14 @@ Name | 原理
 
 
 ### 激光
+- 激光扫描的原理也是 TOF
 
 Name | 原理 
 -- | -- 
 激光 | ![image](https://user-images.githubusercontent.com/2216970/126762825-28bca7cb-40c2-4055-ba75-cd54946f57bd.png)
 
 ### TOF
+- IR 红外 TOF 相机
 
 Name | 原理 
 -- | -- 
