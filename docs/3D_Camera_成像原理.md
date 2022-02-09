@@ -2,7 +2,7 @@
 Title | 3D Camera 成像原理
 -- | --
 Create Date | `2021-07-27T03:09:10Z`
-Update Date | `2022-02-09T05:47:14Z`
+Update Date | `2022-02-09T05:54:59Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/40)
 
 ---
@@ -39,6 +39,17 @@ Name | 原理
 Name | 原理 
 -- | -- 
 激光 | <img width=400px src="https://user-images.githubusercontent.com/2216970/126762825-28bca7cb-40c2-4055-ba75-cd54946f57bd.png">
+
+分类 | 精度 | 距离 | 应用 | Image
+-- | -- | -- | -- | --
+星载激光雷达 | 
+机载激光雷达 | 10cm | 大尺度 | 大尺度测绘 | <img width=300px src="https://user-images.githubusercontent.com/2216970/153130097-ddeb196e-6002-4d3e-b9bc-edc0e9bff32c.png">
+地面激光雷达 | mm | 400+m | 地形测量/物体扫描 | 
+<img width=300px src="https://user-images.githubusercontent.com/2216970/153130320-3ffd527e-189f-41e7-86eb-ddae8678f04f.png">
+移动激光雷达 | cm | 200+m | 无人车/机器人 | <img width=300px src="https://user-images.githubusercontent.com/2216970/153130442-bd91f796-438d-485a-aa95-f793772fcb53.png">
+
+
+
 
 ### TOF
 - IR 红外 TOF 相机
