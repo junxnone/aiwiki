@@ -1,13 +1,13 @@
 ---
 Title | 3D Camera 成像原理
 -- | --
-Create Date | `2021-09-23T08:01:53Z`
-Update Date | `2021-09-23T08:01:53Z`
+Create Date | `2021-07-27T03:09:10Z`
+Update Date | `2022-02-09T05:34:58Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/40)
 
 ---
-# Reference
-- []()
+## Reference
+- [三维扫描系列 点云绪论](https://blog.csdn.net/qq_32171789/article/details/114818081)
 
 
 ## 3D 采集技术
