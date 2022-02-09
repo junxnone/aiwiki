@@ -2,7 +2,7 @@
 Title | Point Cloud Registration
 -- | --
 Create Date | `2021-04-29T07:34:54Z`
-Update Date | `2022-02-09T03:57:33Z`
+Update Date | `2022-02-09T04:03:52Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/235)
 
 ---
@@ -24,8 +24,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/235)
     - 完全重叠: 仿品与原品对比/建造件与模型对比
     - 部分重叠: 不同视角扫描对象进行三维重建
   - 全局 & 局部 (Global & Local)
-    - 全局: 位姿差别较大 (`Coarse Global Registeration`)
-    - 局部: 位姿相近 (`Fine Local Registeration`)
+    - 全局: 位姿差别较大 (`Coarse Global Registeration`) - 粗配准
+    - 局部: 位姿相近 (`Fine Local Registeration`) - 精配准
   - 成对 & 多对 (Pairwise & Multiple)
     - 配准两片点云
     - 配准多片点云 (三维重建)
