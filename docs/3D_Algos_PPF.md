@@ -2,7 +2,7 @@
 Title | 3D Algos PPF
 -- | --
 Create Date | `2021-04-29T02:09:42Z`
-Update Date | `2022-02-10T07:52:41Z`
+Update Date | `2022-02-10T07:57:01Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/85)
 
 ---
@@ -37,7 +37,7 @@ $\angle (n_{x},d/n_{y})$ | `法向量` 和 `两点连线`的夹角/ 法向量的
 图解 (F1, F2, F3, F4)  | <img width=700px src="https://user-images.githubusercontent.com/2216970/116506313-96778f00-a8ef-11eb-8f18-ccad36ebc7bf.png">
 -- | --
 
-### PPF 在 Scene & Model 中的对应
+### 通过 PPF 计算转换矩阵
 
 - Sence 中存在点 $(s_{i}, s_{r})$ 与 Model 中点 $(m_{i}, m_{r})$ 存在相似的 PPF
 - 将 $m_{r}$ 经过矩阵 $T_{m \to g}$ 平移到原点, 并旋转法向量 $n_{r}^{m}$ 到 x 轴
