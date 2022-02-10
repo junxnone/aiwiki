@@ -2,7 +2,7 @@
 Title | 3D Algos PPF
 -- | --
 Create Date | `2021-04-29T02:09:42Z`
-Update Date | `2022-02-10T06:32:46Z`
+Update Date | `2022-02-10T07:31:20Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/85)
 
 ---
@@ -30,7 +30,8 @@ PPF | $F(m_{1},m_{2})=(F_{1}, F_{2}, F_{3}, F_{4})=(\left\|\left\| d \right\| \r
 -- | --
 m1/m2 | 两个点
 n1/n2 | 法向量
-d = m2-m1 | 
+d = m2-m1 | m1 到 m2 的距离
+$\angle (n_{x},d/n_{y})$ | `法向量` 和 `两点连线`的夹角/ 法向量的夹角
 
 
 F(m1, m2)= (F1, F2, F3, F4)    &   **Global Model Description(`F-PP Hash Table`)** | 
