@@ -2,7 +2,7 @@
 Title | 3D Summary
 -- | --
 Create Date | `2021-05-10T06:55:43Z`
-Update Date | `2022-02-09T02:45:44Z`
+Update Date | `2022-02-10T01:20:54Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/76)
 
 ---
@@ -19,6 +19,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/76)
 - [标定]
 - [点云网格化]
 - [离群点移除]
+- [点云拼接](/点云拼接)
 - [点云平滑/曲面重建]
 - [点云三角化]
 
