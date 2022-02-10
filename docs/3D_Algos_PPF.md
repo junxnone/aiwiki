@@ -2,18 +2,18 @@
 Title | 3D Algos PPF
 -- | --
 Create Date | `2021-04-29T02:09:42Z`
-Update Date | `2021-10-13T01:21:50Z`
+Update Date | `2022-02-10T06:05:27Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/85)
 
 ---
-# Reference
+## Reference
 - 2010 **[xxx]** Model Globally, Match Locally: Efficient and Robust 3D Object Recognition[[Paper](http://campar.in.tum.de/pub/drost2010CVPR/drost2010CVPR.pdf)] [[Code]()]
 - [【6D位姿估计】Point Pair Feature (PPF)](https://zhuanlan.zhihu.com/p/94952276)
 - [Surface Matching Algorithm Through 3D Features - OpenCV](https://docs.opencv.org/3.0-beta/modules/surface_matching/doc/surface_matching.html)
 - [刚性物体6D位姿估计方法简述](https://www.hanchine.com/newInfo_131.html)
 
 
-# Brief
+## Brief
 - PPF - `Point Pair Feature`
 - Global Model Description (F-PP Hash Table)
 
