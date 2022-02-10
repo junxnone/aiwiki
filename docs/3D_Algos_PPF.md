@@ -2,7 +2,7 @@
 Title | 3D Algos PPF
 -- | --
 Create Date | `2021-04-29T02:09:42Z`
-Update Date | `2022-02-10T07:34:36Z`
+Update Date | `2022-02-10T07:50:23Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/85)
 
 ---
@@ -37,19 +37,17 @@ $\angle (n_{x},d/n_{y})$ | `法向量` 和 `两点连线`的夹角/ 法向量的
 图解 (F1, F2, F3, F4)  | <img width=700px src="https://user-images.githubusercontent.com/2216970/116506313-96778f00-a8ef-11eb-8f18-ccad36ebc7bf.png">
 -- | --
 
+### PPF 在 Scene & Model 中的对应
 
-Local Coordinates | (mr, α) `@sr`
+- Sence 中存在点 $(s_{i}, s_{r})$ 与 Model 中点 $(m_{i}, m_{r})$ 存在相通的 PPF
+- 将 $m_{r}$ 经过矩阵 $T_{m \to g}$ 平移到原点, 并旋转法向量 $n_{r}^{m}$ 到 x 轴
+- 将 $s_{r}$ 经过矩阵 $T_{s \to g}$ 平移到原点, 并旋转法向量 $n_{r}^{s}$ 到 x 轴 
+- 另 $\alpha$ 为 $s_{i}$ 围绕  x 轴旋转到 $m_{i}$ 的角度
+- $s_{i} = T_{s \to g}^{-1}R_{x}(\alpha)T_{m \to g}m_{i}$
+
+
+图解 | ![image](https://user-images.githubusercontent.com/2216970/116509077-3f74b880-a8f5-11eb-8ea8-64d2c1ceba19.png)
 -- | --
-mr | Model 上一点  和 Scene 上的 sr 对应
-α | mr 法向量 到 sr 法向量的角度
-
-Model & Scene Transformation | ![image](https://user-images.githubusercontent.com/2216970/116509056-35eb5080-a8f5-11eb-9a68-81a3c636fd15.png)
--- | --
-Tm->g | mr 移动到原点，法向量与x轴对齐 
-Ts->g |  sr 移动到原点，法向量与x轴对齐
-
-![image](https://user-images.githubusercontent.com/2216970/116509077-3f74b880-a8f5-11eb-8ea8-64d2c1ceba19.png)
--- |
 
 ## Pipeline
 - 选取 3D 模型中的参考点
