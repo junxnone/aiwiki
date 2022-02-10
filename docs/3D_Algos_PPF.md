@@ -2,7 +2,7 @@
 Title | 3D Algos PPF
 -- | --
 Create Date | `2021-04-29T02:09:42Z`
-Update Date | `2022-02-10T07:32:04Z`
+Update Date | `2022-02-10T07:34:36Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/85)
 
 ---
@@ -34,9 +34,9 @@ d = m2-m1 | m1 到 m2 的距离
 $\angle (n_{x},d/n_{y})$ | `法向量` 和 `两点连线`的夹角/ 法向量的夹角
 
 
-图解 (F1, F2, F3, F4)    &   **Global Model Description(`F-PP Hash Table`)** | 
--- | 
-![image](https://user-images.githubusercontent.com/2216970/116506313-96778f00-a8ef-11eb-8f18-ccad36ebc7bf.png)
+图解 (F1, F2, F3, F4)  | <img width=700px src="https://user-images.githubusercontent.com/2216970/116506313-96778f00-a8ef-11eb-8f18-ccad36ebc7bf.png">
+-- | --
+
 
 Local Coordinates | (mr, α) `@sr`
 -- | --
