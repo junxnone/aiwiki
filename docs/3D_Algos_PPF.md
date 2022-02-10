@@ -2,7 +2,7 @@
 Title | 3D Algos PPF
 -- | --
 Create Date | `2021-04-29T02:09:42Z`
-Update Date | `2022-02-10T06:30:31Z`
+Update Date | `2022-02-10T06:30:58Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/85)
 
 ---
@@ -26,7 +26,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/85)
 
 ## PPF
 
-PPF | $F(m_{1},m_{2})=(F_{1}, F_{2}, F_{3}, F_{4})=(\left|\left| d \right| \right|_{2}, \angle (n_{1},d), \angle (n_{2},d), \angle (n_{1},n_{2})$
+PPF | $F(m_{1},m_{2})=(F_{1}, F_{2}, F_{3}, F_{4})=(\left\|\left\| d \right\| \right\|_{2}, \angle (n_{1},d), \angle (n_{2},d), \angle (n_{1},n_{2})$
 -- | --
 m1/m2 | 两个点
 n1/n2 | 法向量
