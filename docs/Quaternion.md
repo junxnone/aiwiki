@@ -2,7 +2,7 @@
 Title | Quaternion
 -- | --
 Create Date | `2022-02-11T03:01:33Z`
-Update Date | `2022-02-11T03:01:33Z`
+Update Date | `2022-02-11T03:12:16Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/289)
 
 ---
@@ -14,4 +14,4 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/289)
 
 ## Brief
 - Quaternion - 四元数
-
+- **应用:** 三维旋转/量子力学
