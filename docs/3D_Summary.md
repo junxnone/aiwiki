@@ -2,7 +2,7 @@
 Title | 3D Summary
 -- | --
 Create Date | `2021-05-10T06:55:43Z`
-Update Date | `2022-02-10T01:22:13Z`
+Update Date | `2022-02-11T03:27:17Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/76)
 
 ---
@@ -14,7 +14,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/76)
 
 - [3D Camera 成像原理](/3D_Camera_成像原理)
 - [3D Images](/3D_Images)
-- [矩阵变换](/Point_Cloud_Rotation_Matrix)
+- [矩阵变换/旋转平移矩阵](/Point_Cloud_Rotation_Matrix)
 - [点云采样](/Point_Cloud_Sampling)
 - [标定]
 - [点云网格化]
