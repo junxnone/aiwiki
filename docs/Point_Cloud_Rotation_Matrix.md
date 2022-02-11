@@ -2,7 +2,7 @@
 Title | Point Cloud Rotation Matrix
 -- | --
 Create Date | `2021-05-11T03:41:25Z`
-Update Date | `2022-02-11T03:31:25Z`
+Update Date | `2022-02-11T03:35:16Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/234)
 
 ---
@@ -25,6 +25,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/234)
     | 0 0 0 1 |    -> We do not use this line (and it has to stay 0,0,0,1)
 
 ```
+- (x, y z) 为点云平移参数
 
 ![image](https://user-images.githubusercontent.com/2216970/118071034-912f3f80-b3d9-11eb-84c2-c64f753886fe.png)
 
