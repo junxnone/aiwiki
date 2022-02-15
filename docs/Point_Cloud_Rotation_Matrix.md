@@ -2,7 +2,7 @@
 Title | Point Cloud Rotation Matrix
 -- | --
 Create Date | `2021-05-11T03:41:25Z`
-Update Date | `2022-02-15T05:53:12Z`
+Update Date | `2022-02-15T05:58:03Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/234)
 
 ---
@@ -35,8 +35,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/234)
 
 ### 旋转
 
-
-
+- 沿 x/y/z 轴旋转参数由矩阵中左上角的 `3x3` 子矩阵表示
+- α/β/γ 分别表示沿 x/y/z 轴旋转的角度
 
 
 ![image](https://user-images.githubusercontent.com/2216970/117754817-b000cb00-b24d-11eb-82e6-e2bce98daa38.png) 
