@@ -2,7 +2,7 @@
 Title | Point Cloud Rotation Matrix
 -- | --
 Create Date | `2021-05-11T03:41:25Z`
-Update Date | `2022-02-11T04:00:32Z`
+Update Date | `2022-02-15T05:52:05Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/234)
 
 ---
@@ -17,15 +17,24 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/234)
 
 - **pcl 旋转平移矩阵 (4x4)**
 
+
+
 ```
             ↓-------> This column is the translation
     | 1 0 0 x |  \
     | 0 1 0 y |   }-> The identity 3x3 matrix (no rotation) on the left
     | 0 0 1 z |  /
     | 0 0 0 1 |    -> We do not use this line (and it has to stay 0,0,0,1)
-
 ```
+- 最后的 `|0 0 0 1|` 不使用
+
+### 平移
 - (x, y z) 为点云平移参数
+- 沿某轴平移量
+
+### 旋转
+
+
 
 ![image](https://user-images.githubusercontent.com/2216970/118071034-912f3f80-b3d9-11eb-84c2-c64f753886fe.png)
 
