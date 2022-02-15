@@ -2,7 +2,7 @@
 Title | Point Cloud Rotation Matrix
 -- | --
 Create Date | `2021-05-11T03:41:25Z`
-Update Date | `2022-02-15T05:52:38Z`
+Update Date | `2022-02-15T05:52:49Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/234)
 
 ---
@@ -30,7 +30,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/234)
 
 ### 平移
 - (x, y z) 为平移参数
-- 每个值表示沿某轴平移量
+- 每个值表示沿对应轴的平移量
 
 ### 旋转
 
