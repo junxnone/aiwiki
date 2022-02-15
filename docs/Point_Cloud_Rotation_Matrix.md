@@ -2,7 +2,7 @@
 Title | Point Cloud Rotation Matrix
 -- | --
 Create Date | `2021-05-11T03:41:25Z`
-Update Date | `2022-02-15T05:52:49Z`
+Update Date | `2022-02-15T05:53:12Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/234)
 
 ---
@@ -17,6 +17,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/234)
 
 - **pcl 旋转平移矩阵 (4x4)**
 
+![image](https://user-images.githubusercontent.com/2216970/118071034-912f3f80-b3d9-11eb-84c2-c64f753886fe.png)
 
 
 ```
@@ -36,7 +37,6 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/234)
 
 
 
-![image](https://user-images.githubusercontent.com/2216970/118071034-912f3f80-b3d9-11eb-84c2-c64f753886fe.png)
 
 
 ![image](https://user-images.githubusercontent.com/2216970/117754817-b000cb00-b24d-11eb-82e6-e2bce98daa38.png) 
