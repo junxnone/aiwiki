@@ -2,7 +2,7 @@
 Title | 3D Summary
 -- | --
 Create Date | `2021-05-10T06:55:43Z`
-Update Date | `2022-02-22T05:53:24Z`
+Update Date | `2022-02-22T06:02:29Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/76)
 
 ---
@@ -27,7 +27,7 @@ Name | Formula
 -- | --
 分辨率 | $Resolution =  \frac{\sum_{0}^{N} D_{p}^{q}}{N}$
 邻域平均点数 | $N_Neighs = \frac{\sum_{0}^{N}N_p}{N}$
-质心点 | 
+质心点 | $Centroid = (\frac{\sum_{0}^{N}xi}{N}, \frac{\sum_{0}^{N}yi}{N}, \frac{\sum_{0}^{N}zi}{N})$
 
 
 ## Tools & Library
