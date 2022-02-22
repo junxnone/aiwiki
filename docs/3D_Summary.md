@@ -2,7 +2,7 @@
 Title | 3D Summary
 -- | --
 Create Date | `2021-05-10T06:55:43Z`
-Update Date | `2022-02-22T05:42:16Z`
+Update Date | `2022-02-22T05:53:24Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/76)
 
 ---
@@ -26,6 +26,9 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/76)
 Name | Formula
 -- | --
 分辨率 | $Resolution =  \frac{\sum_{0}^{N} D_{p}^{q}}{N}$
+邻域平均点数 | $N_Neighs = \frac{\sum_{0}^{N}N_p}{N}$
+质心点 | 
+
 
 ## Tools & Library
 - [PCL](/PCL_Summary)
