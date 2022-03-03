@@ -2,13 +2,16 @@
 Title | 3D Summary
 -- | --
 Create Date | `2021-05-10T06:55:43Z`
-Update Date | `2022-02-22T06:02:29Z`
+Update Date | `2022-03-03T02:39:11Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/76)
 
 ---
 ## Reference
 - [awesome-point-cloud-analysis](https://github.com/Yochengliu/awesome-point-cloud-analysis)
 - [Awesome 3D reconstruction list](https://github.com/openMVG/awesome_3DReconstruction_list)
+- [三维重建开源项目汇总](https://zhuanlan.zhihu.com/p/141946874)
+
+
 
 ## Brief
 
