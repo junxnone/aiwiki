@@ -2,14 +2,14 @@
 Title | PCL Downsampling
 -- | --
 Create Date | `2021-05-11T03:54:21Z`
-Update Date | `2021-10-13T01:24:24Z`
+Update Date | `2022-03-03T02:45:21Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/82)
 
 ---
-# Reference
+## Reference
 - [Downsampling a PointCloud using a VoxelGrid filter](https://pcl.readthedocs.io/projects/tutorials/en/latest/voxel_grid.html#voxelgrid) [[code](https://github.com/PointCloudLibrary/pcl/blob/master/doc/tutorials/content/sources/voxel_grid/voxel_grid.cpp)]
 
-# Brief
+## Brief
 - Voxel Grid Downsampling
 - Farthest Point Sampling
 - Normal Space Sampling
@@ -22,8 +22,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/82)
 - 每个栅格内的所有点的重心作为采样点
 - 栅格越大，下采样倍率越大
 
-# UseCase
-## Voxel Grid Downsampling
+## UseCase
+### Voxel Grid Downsampling
 
 - a pcl::VoxelGrid filter is created with a leaf size of 1cm
 ```
