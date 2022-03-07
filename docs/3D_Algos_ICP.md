@@ -2,7 +2,7 @@
 Title | 3D Algos ICP
 -- | --
 Create Date | `2021-04-29T03:20:49Z`
-Update Date | `2022-01-26T06:20:32Z`
+Update Date | `2022-03-07T02:44:29Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/86)
 
 ---
@@ -17,7 +17,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/86)
 - 通过最小二乘法构建目标函数，进行迭代优化
 - ANN - Approximate Nearest Neighbor
 - SVD
-
+- [RANSAC](/RANSAC)
 
 分类 | Description
 -- | --
