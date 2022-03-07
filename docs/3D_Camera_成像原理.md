@@ -2,7 +2,7 @@
 Title | 3D Camera 成像原理
 -- | --
 Create Date | `2021-07-27T03:09:10Z`
-Update Date | `2022-03-07T07:28:27Z`
+Update Date | `2022-03-07T07:30:38Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/40)
 
 ---
@@ -25,6 +25,10 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/40)
 
 
 ### 双目相机
+- **主动双目** 红外激光光源
+- **被动双目** 无光源, 可见光成像
+- 使用视差原理, 计算对应点位置差计算深度信息
+
 
 Name | 原理 
 -- | -- 
