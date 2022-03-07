@@ -2,7 +2,7 @@
 Title | 3D Camera
 -- | --
 Create Date | `2021-07-27T03:09:10Z`
-Update Date | `2022-03-07T09:30:05Z`
+Update Date | `2022-03-07T09:31:37Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/40)
 
 ---
@@ -78,10 +78,5 @@ Name | 原理
 ![image](https://user-images.githubusercontent.com/2216970/126923107-0ac52d58-6405-44b5-8148-d7ebaf923699.png)
 
 
-相机 | 原理
--- | --
-Intel RealSense | 红外条纹结构光
-Microsoft Kinect 1 | 红外散斑结构光
-Microsoft Kinect 2 | TOF
-IphoneX | 散斑结构光
-Sick 线阵3D Camera | 激光 TOF
+![image](https://user-images.githubusercontent.com/2216970/157004689-d95131c0-99d8-48f0-a10e-9c053d6c63c8.png)
+
