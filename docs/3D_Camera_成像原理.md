@@ -2,7 +2,7 @@
 Title | 3D Camera 成像原理
 -- | --
 Create Date | `2021-07-27T03:09:10Z`
-Update Date | `2022-03-07T07:19:23Z`
+Update Date | `2022-03-07T07:20:29Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/40)
 
 ---
@@ -65,7 +65,9 @@ TOF | <img width=400px src="https://user-images.githubusercontent.com/2216970/12
 
 
 ### 结构光
- 
+- 激光条纹/格雷码/正弦条纹 
+
+
 Name | 原理 
 -- | -- 
 结构光 | <img width=400px src="https://user-images.githubusercontent.com/2216970/126762766-dd7d82bb-1b4e-4604-9b11-b7414df36de4.png">
