@@ -2,7 +2,7 @@
 Title | 3D Camera
 -- | --
 Create Date | `2021-07-27T03:09:10Z`
-Update Date | `2022-03-07T08:10:55Z`
+Update Date | `2022-03-07T08:13:03Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/40)
 
 ---
@@ -11,7 +11,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/40)
 
 ## Brief
 - 线阵相机/面阵相机
-- 结构光/TOF/双目
+- TOF/结构光/双目/Radar/Sonar/...
 - 激光扫描
 - 深度相机(Depth Camera)
 - 双目相机(Stereo Camera)
