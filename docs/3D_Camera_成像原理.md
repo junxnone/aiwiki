@@ -2,7 +2,7 @@
 Title | 3D Camera 成像原理
 -- | --
 Create Date | `2021-07-27T03:09:10Z`
-Update Date | `2022-03-07T07:22:47Z`
+Update Date | `2022-03-07T07:23:48Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/40)
 
 ---
@@ -65,6 +65,7 @@ TOF | <img width=400px src="https://user-images.githubusercontent.com/2216970/12
 
 
 ### 结构光
+- 条纹结构光/编码结构光/散斑结构光
 - 激光条纹/格雷码/正弦条纹 
 - 计算编码畸变得到深度信息
 
