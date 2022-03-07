@@ -2,12 +2,14 @@
 Title | 3D Camera
 -- | --
 Create Date | `2021-07-27T03:09:10Z`
-Update Date | `2022-03-07T09:10:45Z`
+Update Date | `2022-03-07T09:14:21Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/40)
 
 ---
 ## Reference
 - [三维扫描系列 点云绪论](https://blog.csdn.net/qq_32171789/article/details/114818081)
+- [ROS 3D Camera Survey](https://rosindustrial.org/3d-camera-survey)
+
 
 ## Brief
 - 线阵相机/面阵相机
