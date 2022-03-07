@@ -2,7 +2,7 @@
 Title | 3D Camera
 -- | --
 Create Date | `2021-07-27T03:09:10Z`
-Update Date | `2022-03-07T08:59:41Z`
+Update Date | `2022-03-07T09:09:32Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/40)
 
 ---
@@ -11,7 +11,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/40)
 
 ## Brief
 - 线阵相机/面阵相机
-- TOF/结构光/双目/Radar/Sonar/...
+- 光学: TOF/结构光/双目
+- 非光学: Radar/Sonar/...
 - 主动/被动
 - 光学相机多视角重建
 
