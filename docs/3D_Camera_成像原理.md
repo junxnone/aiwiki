@@ -2,7 +2,7 @@
 Title | 3D Camera 成像原理
 -- | --
 Create Date | `2021-07-27T03:09:10Z`
-Update Date | `2022-02-09T07:25:20Z`
+Update Date | `2022-03-07T07:19:23Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/40)
 
 ---
@@ -10,10 +10,14 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/40)
 - [三维扫描系列 点云绪论](https://blog.csdn.net/qq_32171789/article/details/114818081)
 
 ## Brief
+- 线阵相机/面阵相机
+- 结构光/TOF/双目
 - 激光扫描
 - 深度相机(Depth Camera)
 - 双目相机(Stereo Camera)
 - 光学相机多视角重建
+
+
 
 ## 3D 采集技术
 
