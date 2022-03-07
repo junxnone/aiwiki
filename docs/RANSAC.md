@@ -2,12 +2,14 @@
 Title | RANSAC
 -- | --
 Create Date | `2022-03-07T02:43:11Z`
-Update Date | `2022-03-07T03:48:33Z`
+Update Date | `2022-03-07T03:50:30Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/293)
 
 ---
 ## Reference
 - [Random Sample consensus](http://www.ai.sri.com/pubs/files/836.pdf)
+- [demo](http://www.visual-experiments.com/demo/ransac.js/)
+
 
 ## Brief
 - RANSAC - `RANdom SAmple Consensus` - 随机抽样一致
