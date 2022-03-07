@@ -2,7 +2,7 @@
 Title | 3D Camera
 -- | --
 Create Date | `2021-07-27T03:09:10Z`
-Update Date | `2022-03-07T08:36:13Z`
+Update Date | `2022-03-07T08:38:28Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/40)
 
 ---
@@ -32,6 +32,7 @@ TOF | <img width=400px src="https://user-images.githubusercontent.com/2216970/12
 
 #### 激光相机/雷达
 - 原理也是 TOF
+- 三角测量法(光源/被测点/相机)
 
 Name | 原理 
 -- | -- 
