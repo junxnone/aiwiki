@@ -2,7 +2,7 @@
 Title | 3D Camera
 -- | --
 Create Date | `2021-07-27T03:09:10Z`
-Update Date | `2022-03-07T09:09:32Z`
+Update Date | `2022-03-07T09:10:45Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/40)
 
 ---
@@ -22,7 +22,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/40)
   - 脉冲调制 : 直接测量时间差, 需要高精度时钟
   - 连续波调制 : 正弦波...
 - Cameras
-  - Kinect - Microsoft
+  - Kinect 2 - Microsoft
   - Sick 线阵 3D Camera(每次一个截面, 多次采集拼接成一幅图像)
 
 Name | 原理 
