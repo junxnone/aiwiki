@@ -2,7 +2,7 @@
 Title | RANSAC
 -- | --
 Create Date | `2022-03-07T02:43:11Z`
-Update Date | `2022-03-07T03:50:30Z`
+Update Date | `2022-03-07T03:51:16Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/293)
 
 ---
@@ -36,7 +36,6 @@ Steps | Figure
 ② Solve |  <img width=300px src="https://user-images.githubusercontent.com/2216970/156963619-1d37b2eb-354e-4a81-bcd4-d09f02ba94ad.png">
 ③ Score | <img width=300px src="https://user-images.githubusercontent.com/2216970/156963659-8ffee866-4b94-45eb-b575-82f8f0acca59.png">
 Repeat ①②③ | <img width=300px src="https://user-images.githubusercontent.com/2216970/156963699-643baaa2-130b-4f8f-908c-04ae52df6a45.png">
-
-
+demo | ![GZ52mkH5n7](https://user-images.githubusercontent.com/2216970/156964811-b9a3bcc0-d75a-44f0-934b-46b14234b780.gif)
 
 
