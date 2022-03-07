@@ -2,7 +2,7 @@
 Title | 3D Camera
 -- | --
 Create Date | `2021-07-27T03:09:10Z`
-Update Date | `2022-03-07T08:38:28Z`
+Update Date | `2022-03-07T08:56:15Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/40)
 
 ---
@@ -13,7 +13,6 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/40)
 - 线阵相机/面阵相机
 - TOF/结构光/双目/Radar/Sonar/...
 - 激光扫描
-- 深度相机(Depth Camera)
 - 双目相机(Stereo Camera)
 - 光学相机多视角重建
 
@@ -47,29 +46,6 @@ Name | 原理
 
 
 
-
-
-
-### 双目相机
-- **主动双目** 红外激光光源
-- **被动双目** 无光源, 可见光成像
-- 使用视差原理, 计算对应点位置差计算深度信息
-
-
-Name | 原理 
--- | -- 
-双目视机(Stereo Camera) | <img width=400px src="https://user-images.githubusercontent.com/2216970/126762729-a2e2d481-0e32-4f74-9923-d873c03518ff.png">
-
-### 深度相机
-
-Name | 原理 
--- | -- 
-深度相机(Depth Camera) | 
-
-
-
-
-
 ### 结构光
 - 条纹结构光/编码结构光/
 - 激光条纹/格雷码/正弦条纹 
@@ -82,6 +58,18 @@ Name | 原理
 Name | 原理 
 -- | -- 
 结构光 | <img width=400px src="https://user-images.githubusercontent.com/2216970/126762766-dd7d82bb-1b4e-4604-9b11-b7414df36de4.png">
+
+### 双目相机
+- **主动双目** 红外激光光源
+- **被动双目** 无光源, 可见光成像
+- 使用视差原理, 计算对应点位置差计算深度信息
+
+
+Name | 原理 
+-- | -- 
+双目视机(Stereo Camera) | <img width=400px src="https://user-images.githubusercontent.com/2216970/126762729-a2e2d481-0e32-4f74-9923-d873c03518ff.png">
+
+
 
 ## Summary
 
