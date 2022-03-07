@@ -2,7 +2,7 @@
 Title | 3D Camera 成像原理
 -- | --
 Create Date | `2021-07-27T03:09:10Z`
-Update Date | `2022-03-07T07:27:52Z`
+Update Date | `2022-03-07T07:28:27Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/40)
 
 ---
@@ -71,7 +71,7 @@ TOF | <img width=400px src="https://user-images.githubusercontent.com/2216970/12
 - **散斑结构光** : 激光照射到粗糙物体后随机形成的衍射斑点。 
   - 这些散斑具有高度的随机性, 而且距离不同, 图案不同
   - 标定时记录标定平面光斑分布
-
+  - 应用: IphoneX
 
 Name | 原理 
 -- | -- 
