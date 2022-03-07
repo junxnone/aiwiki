@@ -2,7 +2,7 @@
 Title | 3D Camera 成像原理
 -- | --
 Create Date | `2021-07-27T03:09:10Z`
-Update Date | `2022-03-07T07:30:38Z`
+Update Date | `2022-03-07T08:08:11Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/40)
 
 ---
@@ -17,11 +17,18 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/40)
 - 双目相机(Stereo Camera)
 - 光学相机多视角重建
 
+### TOF
+- **光源:** IR 红外/ 激光
+- Cameras
+  - Kinect - Microsoft
+  - Sick 线阵 3D Camera(每次一个截面, 拼接成一幅图像)
+
+Name | 原理 
+-- | -- 
+TOF | <img width=400px src="https://user-images.githubusercontent.com/2216970/126762752-632f00f3-dae2-4779-a8fe-8c9ffe6dcefb.png"> 
 
 
-## 3D 采集技术
 
-![image](https://user-images.githubusercontent.com/2216970/126923107-0ac52d58-6405-44b5-8148-d7ebaf923699.png)
 
 
 ### 双目相机
@@ -58,15 +65,6 @@ Name | 原理
 
 
 
-### TOF
-- IR 红外 TOF 相机
-- Cameras
-  - Kinect - Microsoft
-
-Name | 原理 
--- | -- 
-TOF | <img width=400px src="https://user-images.githubusercontent.com/2216970/126762752-632f00f3-dae2-4779-a8fe-8c9ffe6dcefb.png"> 
-
 
 ### 结构光
 - 条纹结构光/编码结构光/
@@ -81,5 +79,8 @@ Name | 原理
 -- | -- 
 结构光 | <img width=400px src="https://user-images.githubusercontent.com/2216970/126762766-dd7d82bb-1b4e-4604-9b11-b7414df36de4.png">
 
+## Summary
+
+![image](https://user-images.githubusercontent.com/2216970/126923107-0ac52d58-6405-44b5-8148-d7ebaf923699.png)
 
 
