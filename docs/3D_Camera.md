@@ -2,7 +2,7 @@
 Title | 3D Camera
 -- | --
 Create Date | `2021-07-27T03:09:10Z`
-Update Date | `2022-03-07T08:13:03Z`
+Update Date | `2022-03-07T08:15:41Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/40)
 
 ---
@@ -19,6 +19,9 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/40)
 
 ### TOF
 - **光源:** IR 红外/ 激光
+- 光源
+  - 脉冲调制 : 需要高精度时钟
+  - 连续波调制
 - Cameras
   - Kinect - Microsoft
   - Sick 线阵 3D Camera(每次一个截面, 多次采集拼接成一幅图像)
