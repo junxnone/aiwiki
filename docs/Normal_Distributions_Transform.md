@@ -2,13 +2,15 @@
 Title | Normal Distributions Transform
 -- | --
 Create Date | `2022-03-09T07:44:46Z`
-Update Date | `2022-03-09T08:49:50Z`
+Update Date | `2022-03-09T08:50:52Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/295)
 
 ---
 ## Reference
 - [The Normal Distributions Transform: A New Approach to Laser Scan Matching](https://www.researchgate.net/publication/4045903_The_Normal_Distributions_Transform_A_New_Approach_to_Laser_Scan_Matching)
 - [NDT（Normal Distributions Transform）算法原理与公式推导 ](https://www.cnblogs.com/21207-iHome/p/8039741.html)
+- [NDT方法在SLAM中的应用 ](https://www.cnblogs.com/yhlx125/p/5749770.html)
+
 
 ## Brief
 - NDT - `Normal Distributions Transform` 正态分布变换
