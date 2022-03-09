@@ -2,7 +2,7 @@
 Title | Point Cloud Registration
 -- | --
 Create Date | `2021-04-29T07:34:54Z`
-Update Date | `2022-02-09T07:30:09Z`
+Update Date | `2022-03-09T07:45:36Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/235)
 
 ---
@@ -34,8 +34,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/235)
 ## Algos
 - **Coarse Global Registeration**
   - [PPF](/3D_Algos_PPF)
-  - SAC
-  - NDT - `Normal Distribution Transform` 
+  - [SAC]()
+  - [NDT](/Normal_Distributions_Transform) - `Normal Distribution Transform` 
   - **基于穷举搜索**
     - RANSAC
     - 4PCS - `4-Point Congruent Set`
