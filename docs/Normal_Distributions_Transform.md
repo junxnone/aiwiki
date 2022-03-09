@@ -2,7 +2,7 @@
 Title | Normal Distributions Transform
 -- | --
 Create Date | `2022-03-09T07:44:46Z`
-Update Date | `2022-03-09T08:52:33Z`
+Update Date | `2022-03-09T09:09:59Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/295)
 
 ---
@@ -21,5 +21,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/295)
 - 划分空间网格，并计算每个网格的多维正态分布参数(均值/协方差矩阵)
 - 根据参考数据构建多维变量正态分布
 -
-![image](https://user-images.githubusercontent.com/2216970/157405744-ca8eb880-dd76-4db9-8a51-cfc247a0f9f2.png)
+
+2D | 3D
+-- | --
+![image](https://user-images.githubusercontent.com/2216970/157405744-ca8eb880-dd76-4db9-8a51-cfc247a0f9f2.png) | ![image](https://user-images.githubusercontent.com/2216970/157409574-d14dafff-ce5f-4c47-b113-5a7e967680a9.png)
 
