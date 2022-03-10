@@ -2,11 +2,12 @@
 Title | 3D Algos ICP
 -- | --
 Create Date | `2021-04-29T03:20:49Z`
-Update Date | `2022-03-07T02:44:29Z`
+Update Date | `2022-03-10T09:07:18Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/86)
 
 ---
 ## Reference
+- 1992 **ICP** A method for registration of 3-D shapes [[paper](https://graphics.stanford.edu/courses/cs164-09-spring/Handouts/paper_icp.pdf)]
 - [迭代最近点（Iterative Closest Point, ICP）算法介绍](https://zhuanlan.zhihu.com/p/35893884)
 - [【点云精配准】Iterative Closest Point（ICP）](https://zhuanlan.zhihu.com/p/107218828)
 - [pcl-learning](https://github.com/HuangCongQing/pcl-learning)
