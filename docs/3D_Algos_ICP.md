@@ -2,7 +2,7 @@
 Title | 3D Algos ICP
 -- | --
 Create Date | `2021-04-29T03:20:49Z`
-Update Date | `2022-03-10T09:07:18Z`
+Update Date | `2022-03-10T09:14:04Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/86)
 
 ---
@@ -34,9 +34,9 @@ MBICP
 
 Name | 公式
 -- | --
-Model 点 | ![image](https://user-images.githubusercontent.com/2216970/117235265-fc689700-ae58-11eb-9031-f877eebde05c.png)
-Scene 点 | ![image](https://user-images.githubusercontent.com/2216970/117235277-025e7800-ae59-11eb-9ea8-8f684caa12d4.png)
-两组点可以通过旋转平移变换 | ![image](https://user-images.githubusercontent.com/2216970/117235297-0d190d00-ae59-11eb-9cd4-81ecfcaaf8a0.png)
+Source 点云 | $P_{s} = \left\{ p_{s}^{1},p_{s}^{2},...,p_{s}^{n}\right\}$
+Target 点云 | $P_{t} = \left\{ p_{t}^{1},p_{t}^{2},...,p_{t}^{n}\right\}$
+两组点可以通过旋转平移变换 | $P_{t} = RP_{s} + T$
 最小化目标函数 | ![image](https://user-images.githubusercontent.com/2216970/117235439-481b4080-ae59-11eb-9a7d-c358d25d3eb4.png)
 
 
