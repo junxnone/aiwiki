@@ -2,7 +2,7 @@
 Title | Point Cloud Registration
 -- | --
 Create Date | `2021-04-29T07:34:54Z`
-Update Date | `2022-03-09T07:45:36Z`
+Update Date | `2022-03-10T08:59:18Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/235)
 
 ---
@@ -50,7 +50,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/235)
   - point to plane ICP
   - Point to line ICP
   - MBICP
-  - GICP
+  - [GICP](/GICP)
   - NICP
 
 ## History
