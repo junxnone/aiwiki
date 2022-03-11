@@ -2,7 +2,7 @@
 Title | 3D Algos ICP
 -- | --
 Create Date | `2021-04-29T03:20:49Z`
-Update Date | `2022-03-11T03:37:12Z`
+Update Date | `2022-03-11T03:37:39Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/86)
 
 ---
@@ -56,7 +56,7 @@ Target 点云 | $P_{t} = \left\{ p_{t}^{1},p_{t}^{2},...,p_{t}^{n}\right\}$
 - 令 $\hat p_s^i = p_s^i - \bar p_s$, $\hat p_t^i = p_t^i - \bar p_t$
 - 令 $H = \sum_{i=1}^{|P_s|} {\hat p_s^i} {\hat p_t^i}^T$
 - 则 $\begin{equation} R^{\ast} = V U^T \end{equation}$
-
+- $\begin{equation} t^{\ast} = \bar p_t - R^{\ast} \bar p_s \end{equation}$
 
 ## UseCase
 
