@@ -2,7 +2,7 @@
 Title | 3D Algos ICP
 -- | --
 Create Date | `2021-04-29T03:20:49Z`
-Update Date | `2022-03-10T09:43:55Z`
+Update Date | `2022-03-11T02:25:07Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/86)
 
 ---
@@ -25,8 +25,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/86)
 point-to-point | 原始 ICP 算法
 point-to-plane | 计算源点到目标点所在面的距离
 plane-to-plane | 计算面到面的距离
-GICP | Generalized ICP 
-NICP | Normal Iterative Closest Point
+GICP | Generalized ICP (Point-to-Point/Point-to-Plane/Plane-to-Plane)
+NICP | Normal Iterative Closest Point(法向量&局部曲率), 论文中效果比 GICP 好
 point-to-line
 MBICP
 
