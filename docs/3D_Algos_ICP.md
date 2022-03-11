@@ -2,7 +2,7 @@
 Title | 3D Algos ICP
 -- | --
 Create Date | `2021-04-29T03:20:49Z`
-Update Date | `2022-03-11T02:33:25Z`
+Update Date | `2022-03-11T03:29:12Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/86)
 
 ---
@@ -49,6 +49,11 @@ Target 点云 | $P_{t} = \left\{ p_{t}^{1},p_{t}^{2},...,p_{t}^{n}\right\}$
 - 5 加权求 Loss
 - 6 最小化 Loss, 求最优变换$R_{k}/T_{k}$
 - 重复 `3-6`
+
+### 求解最优变换
+- SVD
+- $\bar p_{s}, \bar p_{t}$ : 源点云 与目标点元 质心
+
 
 ## UseCase
 
