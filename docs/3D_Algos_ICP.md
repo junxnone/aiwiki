@@ -2,7 +2,7 @@
 Title | 3D Algos ICP
 -- | --
 Create Date | `2021-04-29T03:20:49Z`
-Update Date | `2022-03-11T03:37:39Z`
+Update Date | `2022-03-11T03:38:31Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/86)
 
 ---
@@ -39,7 +39,7 @@ Name | 公式
 Source 点云 | $P_{s} = \left\{ p_{s}^{1},p_{s}^{2},...,p_{s}^{n}\right\}$
 Target 点云 | $P_{t} = \left\{ p_{t}^{1},p_{t}^{2},...,p_{t}^{n}\right\}$
 两组点可以通过旋转平移变换 | $P_{t} = RP_{s} + T$
-最小化目标函数 | $R^*, T^* = \underset{R,T}{argmin} \frac{1}{\left| P_{s}\right|}\sum_{i=1}^{\left| P_{s}\right|} \left\| p_{t}^i - (R\cdot p_{s}^i + T)\right\|^2$
+最小化目标函数 | $R^*, T^* = \underset{R,T}{argmin} \frac{1}{\left\| P_{s}\right\|}\sum_{i=1}^{\left\| P_{s}\right\|} \left\| p_{t}^i - (R\cdot p_{s}^i + T)\right\|^2$
 
 ## Pipeline
 - 1 滤波移除离群点
