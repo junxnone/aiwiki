@@ -2,7 +2,7 @@
 Title | 3D Algos ICP
 -- | --
 Create Date | `2021-04-29T03:20:49Z`
-Update Date | `2022-03-11T03:35:14Z`
+Update Date | `2022-03-11T03:37:12Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/86)
 
 ---
@@ -44,7 +44,7 @@ Target 点云 | $P_{t} = \left\{ p_{t}^{1},p_{t}^{2},...,p_{t}^{n}\right\}$
 ## Pipeline
 - 1 滤波移除离群点
 - 2 初始化变换 $R_{0}/T_{0}$
-- 3 应用变换[$R_{0}/T_{0}$ 或 $R_{k}/T_{k}$]，求最近点
+- 3 应用变换[$R_{0}/T_{0}$ 或 $R_{k-1}/T_{k-1}$]，求最近点
 - 4 剔除不合理点对
 - 5 加权求 Loss
 - 6 最小化 Loss, 求最优变换$R_{k}/T_{k}$
@@ -52,9 +52,11 @@ Target 点云 | $P_{t} = \left\{ p_{t}^{1},p_{t}^{2},...,p_{t}^{n}\right\}$
 
 ### 求解最优变换
 - SVD
-- $\bar p_{s}, \bar p_{t}$ : 源点云 与目标点元 质心
+- $\bar p_{s}, \bar p_{t}$ : 源点云 与目标点云 质心
 - 令 $\hat p_s^i = p_s^i - \bar p_s$, $\hat p_t^i = p_t^i - \bar p_t$
 - 令 $H = \sum_{i=1}^{|P_s|} {\hat p_s^i} {\hat p_t^i}^T$
+- 则 $\begin{equation} R^{\ast} = V U^T \end{equation}$
+
 
 ## UseCase
 
