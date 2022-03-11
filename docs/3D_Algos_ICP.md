@@ -2,7 +2,7 @@
 Title | 3D Algos ICP
 -- | --
 Create Date | `2021-04-29T03:20:49Z`
-Update Date | `2022-03-11T02:29:24Z`
+Update Date | `2022-03-11T02:29:57Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/86)
 
 ---
@@ -11,6 +11,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/86)
 - [迭代最近点（Iterative Closest Point, ICP）算法介绍](https://zhuanlan.zhihu.com/p/35893884)
 - [【点云精配准】Iterative Closest Point（ICP）](https://zhuanlan.zhihu.com/p/107218828)
 - [pcl-learning](https://github.com/HuangCongQing/pcl-learning)
+- [三维点云配准 -- ICP 算法](https://yilingui.xyz/2019/11/20/191120_point_cloud_registration_icp/)
+
 
 ## Brief
 - ICP - `Iterative Closest Point`
