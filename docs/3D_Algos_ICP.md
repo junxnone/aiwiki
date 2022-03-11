@@ -2,7 +2,7 @@
 Title | 3D Algos ICP
 -- | --
 Create Date | `2021-04-29T03:20:49Z`
-Update Date | `2022-03-11T02:29:57Z`
+Update Date | `2022-03-11T02:33:25Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/86)
 
 ---
@@ -43,11 +43,11 @@ Target 点云 | $P_{t} = \left\{ p_{t}^{1},p_{t}^{2},...,p_{t}^{n}\right\}$
 
 ## Pipeline
 - 1 滤波移除离群点
-- 2 初始化变换
-- 3 应用变换，求最近点
+- 2 初始化变换 $R_{0}/T_{0}$
+- 3 应用变换[$R_{0}/T_{0}$ 或 $R_{k}/T_{k}$]，求最近点
 - 4 剔除不合理点对
 - 5 加权求 Loss
-- 6 最小化 Loss, 求最优变换
+- 6 最小化 Loss, 求最优变换$R_{k}/T_{k}$
 - 重复 `3-6`
 
 ## UseCase
