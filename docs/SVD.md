@@ -2,7 +2,7 @@
 Title | SVD
 -- | --
 Create Date | `2018-09-03T22:49:40Z`
-Update Date | `2022-03-14T05:27:42Z`
+Update Date | `2022-03-14T05:31:19Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/297)
 
 ---
@@ -62,6 +62,6 @@ Steps | Calc
 A 的定义，计算 $A^T$ |  $A = \begin{bmatrix}  0 & 1 \\  1 & 1 \\  1 & 0 \\ \end{bmatrix}$    $A^T = \begin{bmatrix} 0 & 1 & 1 \\ 1 & 1 & 0 \\ \end{bmatrix}$
 计算 $A^TA$ 与 $AA^T$ | $A^TA=\begin{bmatrix} 2 & 1 \\ 1 & 2 \\ \end{bmatrix} $  $AA^T= \begin{bmatrix} 1 & 1 & 0 \\ 1 & 2 & 1 \\ 0 & 1 & 1 \\ \end{bmatrix}$
 计算特征值$A^TA$ $\lambda$ | $(A-\lambda I)x=0 \Rightarrow \begin{vmatrix} 2-\lambda & 1 \\ 1 & 2-\lambda \\ \end{vmatrix} = 0 \Rightarrow (2-\lambda)^2 - 1=0 \Rightarrow \lambda_{1}=3, \lambda_{2}=1$ 
-计算$A^TA$ 特征向量 |$\lambda_{1}=3$, $\begin{bmatrix}  2 & 1 \\  1 & 2 \\ \end{bmatrix}x=3x$ $\Rightarrow \begin{bmatrix}  2 & 1 \\  1 & 2 \end{bmatrix}\begin{bmatrix} 3a_{1} \\ 3a_{2} \end{bmatrix}=\begin{bmatrix} a_{1} \\ a_{2} \end{bmatrix}$  <br>$\Rightarrow 2a_{1} + a_{2} = 3a_{1}, a_{1} + 2a_{2} = 3a_{2}$ <br>$\Rightarrow a_{1} - a_{2}=0$  
-+ | $\lambda_{2}=1$, $\begin{bmatrix}  2 & 1 \\  1 & 2 \\ \end{bmatrix}x=1x$ $\Rightarrow \begin{bmatrix}  2 & 1 \\  1 & 2 \end{bmatrix}\begin{bmatrix} a_{1} \\ a_{2} \end{bmatrix}=\begin{bmatrix} a_{1} \\ a_{2} \end{bmatrix}$  <br>$\Rightarrow 2a_{1} + a_{2} = a_{1}, a_{1} + 2a_{2} = a_{2}$ <br>$\Rightarrow a_{1} + a_{2}=0$  
+计算$A^TA$ 特征向量 |$\lambda_{1}=3$, $\begin{bmatrix}  2 & 1 \\  1 & 2 \\ \end{bmatrix}x=3x$ $\Rightarrow \begin{bmatrix}  2 & 1 \\  1 & 2 \end{bmatrix}\begin{bmatrix} a_{1} \\ a_{2} \end{bmatrix}=\begin{bmatrix} 3a_{1} \\ 3a_{2} \end{bmatrix}$  <br>$\Rightarrow 2a_{1} + a_{2} = 3a_{1}, a_{1} + 2a_{2} = 3a_{2}$ <br>$\Rightarrow a_{1} - a_{2}=0$  
+↑ | $\lambda_{2}=1$, $\begin{bmatrix}  2 & 1 \\  1 & 2 \\ \end{bmatrix}x=1x$ $\Rightarrow \begin{bmatrix}  2 & 1 \\  1 & 2 \end{bmatrix}\begin{bmatrix} a_{1} \\ a_{2} \end{bmatrix}=\begin{bmatrix} a_{1} \\ a_{2} \end{bmatrix}$  <br>$\Rightarrow 2a_{1} + a_{2} = a_{1}, a_{1} + 2a_{2} = a_{2}$ <br>$\Rightarrow a_{1} + a_{2}=0$  
 特征向量  | $\lambda_{2}=1, v_{1} = \begin{bmatrix} -\frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \end{bmatrix}$ <br>$\lambda_{1}=3, v_{2} = \begin{bmatrix} \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \end{bmatrix}$
