@@ -2,7 +2,7 @@
 Title | SVD
 -- | --
 Create Date | `2018-09-03T22:49:40Z`
-Update Date | `2022-03-14T03:08:16Z`
+Update Date | `2022-03-14T03:11:35Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/297)
 
 ---
@@ -48,11 +48,14 @@ $\Sigma$ | $A=U\Sigma V^T  \Rightarrow  AV=U\Sigma V^TV \Rightarrow  AV=U\Sigma 
 
 
 
-$A=U\Sigma V^T \Rightarrow A^T=V\Sigma U^T$
-$\Rightarrow A^TA = V\Sigma U^T U \Sigma V^T = V\Sigma^2V^T$
-$\Rightarrow AA^T= U\Sigma V^T V\Sigma U^T = U\Sigma^2 U^T$
-$\Rightarrow \sigma_{i} = \sqrt{\lambda_{i}} $
+$A=U\Sigma V^T \Rightarrow A^T=V\Sigma U^T$  
+$\Rightarrow A^TA = V\Sigma U^T U \Sigma V^T = V\Sigma^2V^T$  
+$\Rightarrow AA^T= U\Sigma V^T V\Sigma U^T = U\Sigma^2 U^T$  
+$\Rightarrow \sigma_{i} = \sqrt{\lambda_{i}} $  
 
 ## Examples
 
-$A = \begin{bmatrix}  0 & 1 \\  1 & 1 \\  1 & 0 \\ \end{bmatrix}$
+$A = \begin{bmatrix}  0 & 1 \\  1 & 1 \\  1 & 0 \\ \end{bmatrix}$  
+$A^T = \begin{bmatrix} 0 & 1 & 1 \\ 1 & 1 & 0 \\ \end{bmatrix}$
+$A^TA=\begin{bmatrix} 2 & 1 \\ 1 & 2 \\ \end{bmatrix} $
+$AA^T= \begin{bmatrix} 1 & 1 & 0 \\ 1 & 2 & 1 \\ 0 & 1 & 1 \\ \end{bmatrix}$
