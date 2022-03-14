@@ -2,7 +2,7 @@
 Title | 3D Summary
 -- | --
 Create Date | `2021-05-10T06:55:43Z`
-Update Date | `2022-03-07T08:11:12Z`
+Update Date | `2022-03-14T06:26:11Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/76)
 
 ---
@@ -25,6 +25,10 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/76)
 - [点云拼接](/点云拼接)
 - [点云平滑/曲面重建]
 - [点云三角化]
+- 特征点
+  - [Harris 特征点]
+  - [ISS 特征点]
+  - [FPFH 特征点]
 
 Name | Formula
 -- | --
