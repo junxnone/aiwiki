@@ -2,7 +2,7 @@
 Title | SVD
 -- | --
 Create Date | `2018-09-03T22:49:40Z`
-Update Date | `2022-03-14T02:13:11Z`
+Update Date | `2022-03-14T02:21:32Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/297)
 
 ---
@@ -39,5 +39,6 @@ $A = W\sumW^{T}$ | W 的 n 个特征向量标准化 $\omega_{i}^T\omega_{i}=1$, 
 -- | --
 $A$ | m x n 矩阵
 $A=U\sumV^T$ | A 的 SVD 分解
-
-
+$U$ |  m x m 矩阵 $U^TU=I$
+$\sum$ | m x n 矩阵 除主对角线外全是 0, 主对角线上的每个元素都称为奇异值
+$V$ | n x n 矩阵 $V^TV=I$
