@@ -2,7 +2,7 @@
 Title | SVD
 -- | --
 Create Date | `2018-09-03T22:49:40Z`
-Update Date | `2022-03-14T02:54:32Z`
+Update Date | `2022-03-14T03:04:49Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/297)
 
 ---
@@ -45,4 +45,10 @@ $V$ | n x n 矩阵 $V^TV=I$
 $(A^TA)v_{i}=\lambda_{i}v_{i}$ | n x n 矩阵 $A^TA$ 的特征分解, 特征向量组成 V
 $(AA^T)u_{i}=\lambda_{i}u_{i}$ | m x m 矩阵 $AA^T$ 的特征分解, 特征向量组成 U
 $\Sigma$ | $A=U\Sigma V^T  \Rightarrow  AV=U\Sigma V^TV \Rightarrow  AV=U\Sigma \Rightarrow  Av_{i} = \sigma_{i}u_{i} \Rightarrow  \sigma_{i} = Av_{i}/u_{i}$
+
+
+
+$A=U\Sigma V^T \Rightarrow A^T=V\Sigma U^T$
+$\Rightarrow A^TA = V\Sigma U^T U \Sigma V^T = V\Sigma^2V^T$
+$\Rightarrow AA^T= U\Sigma V^T V\Sigma U^T = U\Sigma^2 U^T$
 
