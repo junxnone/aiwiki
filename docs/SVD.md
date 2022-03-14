@@ -2,7 +2,7 @@
 Title | SVD
 -- | --
 Create Date | `2018-09-03T22:49:40Z`
-Update Date | `2022-03-14T05:38:24Z`
+Update Date | `2022-03-14T05:40:43Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/297)
 
 ---
@@ -65,6 +65,7 @@ A 的定义，计算 $A^T$ |  $A = \begin{bmatrix}  0 & 1 \\  1 & 1 \\  1 & 0 \\
 计算$A^TA$ 特征向量 |$\lambda_{1}=3$, $\begin{bmatrix}  2 & 1 \\  1 & 2 \\ \end{bmatrix}x=3x$ $\Rightarrow \begin{bmatrix}  2 & 1 \\  1 & 2 \end{bmatrix}\begin{bmatrix} a_{1} \\ a_{2} \end{bmatrix}=\begin{bmatrix} 3a_{1} \\ 3a_{2} \end{bmatrix}$  <br>$\Rightarrow 2a_{1} + a_{2} = 3a_{1}, a_{1} + 2a_{2} = 3a_{2}$ <br>$\Rightarrow a_{1} - a_{2}=0$  <br> $\Rightarrow v_{2} = \begin{bmatrix} \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \end{bmatrix}$
 ↑ | $\lambda_{2}=1$, $\begin{bmatrix}  2 & 1 \\  1 & 2 \\ \end{bmatrix}x=1x$ $\Rightarrow \begin{bmatrix}  2 & 1 \\  1 & 2 \end{bmatrix}\begin{bmatrix} a_{1} \\ a_{2} \end{bmatrix}=\begin{bmatrix} a_{1} \\ a_{2} \end{bmatrix}$  <br>$\Rightarrow 2a_{1} + a_{2} = a_{1}, a_{1} + 2a_{2} = a_{2}$ <br>$\Rightarrow a_{1} + a_{2}=0$  <br> $\Rightarrow v_{1} = \begin{bmatrix} -\frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \end{bmatrix}$ 
 
-> $w^Tw=1 \Rightarrow $
-> $\Rightarrow \begin{bmatrix} a_{1} & a_{2} \\ \end{bmatrix} \begin{bmatrix} a_{1} \\ a_{2} \end{bmatrix} = 1$
->  $\Rightarrow a_{1}^2 + a_{2}^2 = 1$
+> 特征向量标准化
+> $w^Tw=1 $    
+> $\Rightarrow \begin{bmatrix} a_{1} & a_{2} \\ \end{bmatrix} \begin{bmatrix} a_{1} \\ a_{2} \end{bmatrix} = 1$    
+>  $\Rightarrow a_{1}^2 + a_{2}^2 = 1$    
