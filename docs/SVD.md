@@ -2,7 +2,7 @@
 Title | SVD
 -- | --
 Create Date | `2018-09-03T22:49:40Z`
-Update Date | `2022-03-14T04:21:31Z`
+Update Date | `2022-03-14T04:26:05Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/297)
 
 ---
@@ -63,5 +63,8 @@ $\Sigma$ | $A=U\Sigma V^T  \Rightarrow  AV=U\Sigma V^TV \Rightarrow  AV=U\Sigma 
 - $(A-\lambda I)x=0$
 - $\begin{vmatrix} 2-\lambda & 1 \\ 1 & 2-\lambda \\ \end{vmatrix} = 0$
 - $(2-\lambda)^2 - 1=0$ , $\lambda_{1}=1$, $\lambda_{2}=3$
-- $\lambda_{1}=1$, $v_{1} = \begin{bmatrix} -\frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \end{bmatrix}$
+- $\lambda_{1}=1$, $\begin{bmatrix}  0 & 1 \\  1 & 1 \\  1 & 0 \\ \end{bmatrix}x=1x$
+- $\begin{bmatrix}  0 & 1 \\  1 & 1 \\  1 & 0 \\ \end{bmatrix}\begin{bmatrix} a_{1} \\ a_{2} \end{bmatrix}=\begin{bmatrix} a_{1} \\ a_{2} \end{bmatrix}$
+- $2a_{1} + a_{2} = a_{1}$, $a_{1} + 2a_{2} = a_{2}$
+- $v_{1} = \begin{bmatrix} -\frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \end{bmatrix}$
 - $\lambda_{2}=3$, $v_{2} = \begin{bmatrix} \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \end{bmatrix}$
