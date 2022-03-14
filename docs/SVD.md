@@ -2,7 +2,7 @@
 Title | SVD
 -- | --
 Create Date | `2018-09-03T22:49:40Z`
-Update Date | `2022-03-14T04:36:19Z`
+Update Date | `2022-03-14T04:37:10Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/297)
 
 ---
@@ -61,7 +61,7 @@ Steps | Calc
 -- | --
 0 |  $A = \begin{bmatrix}  0 & 1 \\  1 & 1 \\  1 & 0 \\ \end{bmatrix}$    $A^T = \begin{bmatrix} 0 & 1 & 1 \\ 1 & 1 & 0 \\ \end{bmatrix}$
 1 | $A^TA=\begin{bmatrix} 2 & 1 \\ 1 & 2 \\ \end{bmatrix} $  $AA^T= \begin{bmatrix} 1 & 1 & 0 \\ 1 & 2 & 1 \\ 0 & 1 & 1 \\ \end{bmatrix}$
-2 | $(A-\lambda I)x=0 $\Rightarrow \begin{vmatrix} 2-\lambda & 1 \\ 1 & 2-\lambda \\ \end{vmatrix} = 0$
-3 |  $(2-\lambda)^2 - 1=0$ , $\Rightarrow \lambda_{1}=1, \lambda_{2}=3$ 
+2 | $(A-\lambda I)x=0 \Rightarrow \begin{vmatrix} 2-\lambda & 1 \\ 1 & 2-\lambda \\ \end{vmatrix} = 0$
+3 |  $(2-\lambda)^2 - 1=0 \Rightarrow \lambda_{1}=1, \lambda_{2}=3$ 
 4 | $\lambda_{1}=1$, $\begin{bmatrix}  0 & 1 \\  1 & 1 \\  1 & 0 \\ \end{bmatrix}x=1x$ $\Rightarrow \begin{bmatrix}  0 & 1 \\  1 & 1 \\  1 & 0 \\ \end{bmatrix}\begin{bmatrix} a_{1} \\ a_{2} \end{bmatrix}=\begin{bmatrix} a_{1} \\ a_{2} \end{bmatrix}$  $\Rightarrow 2a_{1} + a_{2} = a_{1}, a_{1} + 2a_{2} = a_{2}$ $\Rightarrow a_{1} + a_{2}=0$  $v_{1} = \begin{bmatrix} -\frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \end{bmatrix}$
 - $\lambda_{2}=3$, $v_{2} = \begin{bmatrix} \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \end{bmatrix}$
