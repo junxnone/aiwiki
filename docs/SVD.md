@@ -2,7 +2,7 @@
 Title | SVD
 -- | --
 Create Date | `2018-09-03T22:49:40Z`
-Update Date | `2022-03-14T03:17:53Z`
+Update Date | `2022-03-14T03:25:49Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/297)
 
 ---
@@ -60,3 +60,5 @@ $\Sigma$ | $A=U\Sigma V^T  \Rightarrow  AV=U\Sigma V^TV \Rightarrow  AV=U\Sigma 
 - $A^T = \begin{bmatrix} 0 & 1 & 1 \\ 1 & 1 & 0 \\ \end{bmatrix}$
 - $A^TA=\begin{bmatrix} 2 & 1 \\ 1 & 2 \\ \end{bmatrix} $
 - $AA^T= \begin{bmatrix} 1 & 1 & 0 \\ 1 & 2 & 1 \\ 0 & 1 & 1 \\ \end{bmatrix}$
+- $(A-\lambda I)x=0$
+- $\begin{vmatrix} 2-\lambda & 1 \\ 1 & 2-\lambda \\ \end{vmatrix} = 0$
