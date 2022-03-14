@@ -2,11 +2,11 @@
 Title | SVD
 -- | --
 Create Date | `2018-09-03T22:49:40Z`
-Update Date | `2022-03-14T03:14:58Z`
+Update Date | `2022-03-14T03:17:53Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/297)
 
 ---
-# Reference
+## Reference
 - [奇异值分解（SVD）](https://zhuanlan.zhihu.com/p/29846048)
 - [线性代数之——SVD 分解](https://zhuanlan.zhihu.com/p/93474729)
 
