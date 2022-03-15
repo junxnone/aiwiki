@@ -2,7 +2,7 @@
 Title | PFH
 -- | --
 Create Date | `2021-05-08T03:11:56Z`
-Update Date | `2022-03-15T06:37:52Z`
+Update Date | `2022-03-15T06:39:52Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/298)
 
 ---
@@ -10,6 +10,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/298)
 - [几何特征系列：Point Feature Histogram（点特征直方图）](http://lemonc.me/point-feature-histogram.html)
 - [PCL计算PFH源码computePairFeatures](https://blog.csdn.net/m0_49291417/article/details/110198763)
 - [【点云局部特征描述子】PFH & FPFH](https://zhuanlan.zhihu.com/p/192343758)
+- [Aligning point cloud views using persistent feature histograms](https://ias.in.tum.de/_media/spezial/bib/rusu08iros-1.pdf)
+
 
 ## Brief
 - PFH - `Point Feature Histogram` - 点特征直方图
@@ -27,8 +29,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/298)
   - 计算复杂度 $O(k^2)$
 
 ### 计算 PFH
-  - 建立局部坐标系 (u, v, w)
-  - 计算点对特征
+- 建立局部坐标系 (u, v, w)
+- 计算点对特征
 
 ![image](https://user-images.githubusercontent.com/2216970/117524062-68c8cf00-afee-11eb-81ed-bc3bc5cb60fa.png) | ![image](https://user-images.githubusercontent.com/2216970/117524162-f1476f80-afee-11eb-8bef-0e1d7fa87e19.png)
 -- | --
