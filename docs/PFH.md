@@ -2,7 +2,7 @@
 Title | PFH
 -- | --
 Create Date | `2021-05-08T03:11:56Z`
-Update Date | `2022-03-15T07:28:16Z`
+Update Date | `2022-03-15T07:38:53Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/298)
 
 ---
@@ -45,6 +45,9 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/298)
   - $\phi = u \cdot \frac{{p_2} - {p_1}}{{\parallel}{{p_2} - {p_1}}{\parallel}_2}$
   - ${\theta} = {\arctan (w \cdot {n_2},u \cdot {n_2})}$
 - 邻域内 k 个点 计算 $C_{k}^2$  个所有四元组  $(\alpha, \phi, \theta, d)$
+  - $d={{\parallel}{p_2} - {p_1}{\parallel}}_2$
+- $(\alpha, \phi, \theta)$ 每个值分为 b 份, 即 $b^3$ 个区间, 统计特征值出现在每一个区间的频率
+  - b=5 ==> `pcl::PFHSignature125`
 
 
 > 压缩信息 $(x_1, y_1, z_1, n_1^x, n_1^y, n_1^z, x_2, y_2, z_2, n_2^x, n_2^y, n_2^z)$ 为 $(\alpha, \phi, \theta, d)$
