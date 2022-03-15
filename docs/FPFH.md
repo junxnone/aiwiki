@@ -2,7 +2,7 @@
 Title | FPFH
 -- | --
 Create Date | `2022-03-14T06:33:33Z`
-Update Date | `2022-03-15T09:34:29Z`
+Update Date | `2022-03-15T09:35:31Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/299)
 
 ---
@@ -32,7 +32,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/299)
 ### PFH vs FPFH
 
 
-PFH | FPFH
+PFH 点对特征值计算 | FPFH 加权计算
 -- | --
 ![image](https://user-images.githubusercontent.com/2216970/158348645-881ebbf6-b31d-4d48-9da8-4ef6cf33e713.png) | ![image](https://user-images.githubusercontent.com/2216970/158348708-7bccf4ea-2579-4613-a04f-917c5667b67c.png)
 
