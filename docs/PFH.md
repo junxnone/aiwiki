@@ -2,7 +2,7 @@
 Title | PFH
 -- | --
 Create Date | `2021-05-08T03:11:56Z`
-Update Date | `2022-03-15T07:54:22Z`
+Update Date | `2022-03-15T07:56:20Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/298)
 
 ---
@@ -34,7 +34,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/298)
 <img width="400px" src="https://user-images.githubusercontent.com/2216970/117524062-68c8cf00-afee-11eb-81ed-bc3bc5cb60fa.png">
 
 
-### 计算两点间相对差异
+### 计算 PFH
+
 - 点 $p_1$ $p_2$ 各自法向量 $n_1$ $n_2$
 - 在 $p_2$ 上定义局部坐标系:
   -  $u=n_1$
@@ -56,11 +57,6 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/298)
 
 <img width=300px src="https://user-images.githubusercontent.com/2216970/158331260-618fb1e5-fb67-420b-b76e-af7118dd6f96.png">
 
-### 计算 PFH
-
-
-![image](https://user-images.githubusercontent.com/2216970/120412760-b0dad780-c389-11eb-8fce-d837f3e1843b.png) | ![image](https://user-images.githubusercontent.com/2216970/120412790-bafcd600-c389-11eb-800f-e905d9ba8c2e.png)
--- | --
 
 ## UseCase
 
