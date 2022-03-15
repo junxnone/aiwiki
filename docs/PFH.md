@@ -2,7 +2,7 @@
 Title | PFH
 -- | --
 Create Date | `2021-05-08T03:11:56Z`
-Update Date | `2022-03-15T06:39:52Z`
+Update Date | `2022-03-15T06:43:23Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/298)
 
 ---
@@ -16,6 +16,11 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/298)
 ## Brief
 - PFH - `Point Feature Histogram` - 点特征直方图
 - 通过数理统计的方法获得一个用于描述中心点邻域几何信息的直方图
+
+
+![image](https://user-images.githubusercontent.com/2216970/158321656-336f6bf0-457d-443e-adcf-2fd5711d25e2.png)
+
+
 
 ## Algos
 
