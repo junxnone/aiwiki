@@ -2,12 +2,14 @@
 Title | FPFH
 -- | --
 Create Date | `2022-03-14T06:33:33Z`
-Update Date | `2022-03-15T08:34:12Z`
+Update Date | `2022-03-15T08:37:04Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/299)
 
 ---
 ## Reference
 - [三维点云课程---FPFH特征点描述](https://blog.csdn.net/qq_45369294/article/details/121125386)
+- [[Fast Point Feature Histograms (FPFH) for 3D registration](https://www.cvl.iis.u-tokyo.ac.jp/class2016/2016w/papers/6.3DdataProcessing/Rusu_FPFH_ICRA2009.pdf)
+
 
 ## Brief
 - FPFH  - `Fast Point Feature Histogram` - 快速 PFH
