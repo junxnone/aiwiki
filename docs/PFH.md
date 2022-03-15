@@ -2,7 +2,7 @@
 Title | PFH
 -- | --
 Create Date | `2021-05-08T03:11:56Z`
-Update Date | `2022-03-15T07:03:33Z`
+Update Date | `2022-03-15T07:05:21Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/298)
 
 ---
@@ -18,8 +18,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/298)
 - 通过数理统计的方法获得一个用于描述中心点邻域几何信息的直方图
 
 
-![image](https://user-images.githubusercontent.com/2216970/158321656-336f6bf0-457d-443e-adcf-2fd5711d25e2.png)
-
+<img width="600px" src="https://user-images.githubusercontent.com/2216970/158321656-336f6bf0-457d-443e-adcf-2fd5711d25e2.png">
 
 
 ## Algos
@@ -32,7 +31,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/298)
 - 计算每个点的 PFH 复杂度: $O(k^2)$
 
 
-<img width="300px" src="https://user-images.githubusercontent.com/2216970/117524062-68c8cf00-afee-11eb-81ed-bc3bc5cb60fa.png">
+<img width="400px" src="https://user-images.githubusercontent.com/2216970/117524062-68c8cf00-afee-11eb-81ed-bc3bc5cb60fa.png">
 
 
 ### 计算两点间相对差异
