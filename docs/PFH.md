@@ -2,7 +2,7 @@
 Title | PFH
 -- | --
 Create Date | `2021-05-08T03:11:56Z`
-Update Date | `2022-03-15T06:57:04Z`
+Update Date | `2022-03-15T07:01:26Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/298)
 
 ---
@@ -35,12 +35,18 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/298)
 ![image](https://user-images.githubusercontent.com/2216970/117524062-68c8cf00-afee-11eb-81ed-bc3bc5cb60fa.png) 
 
 
+### 计算两点间相对差异
+- 点 $p_1$ $p_2$ 各自法向量 $n_1$ $n_2$
+- 在 $p_2$ 上定义局部坐标系:
+  -  $u=n_1$
+  - $v = u \times \frac{{p_2} - {p_1}}{{\parallel}{p_2} - {p_1}{\parallel}}_2$
+  - $w = u \times v$
+
 ### 计算 PFH
 - 建立局部坐标系 (u, v, w)
 - 计算点对特征
 
-![image](https://user-images.githubusercontent.com/2216970/117524062-68c8cf00-afee-11eb-81ed-bc3bc5cb60fa.png) | ![image](https://user-images.githubusercontent.com/2216970/117524162-f1476f80-afee-11eb-8bef-0e1d7fa87e19.png)
--- | --
+ ![image](https://user-images.githubusercontent.com/2216970/117524162-f1476f80-afee-11eb-8bef-0e1d7fa87e19.png)
 
 PFH Features | ![image](https://user-images.githubusercontent.com/2216970/120412955-09aa7000-c38a-11eb-8eea-bbe08f920745.png)
 -- | --
