@@ -2,7 +2,7 @@
 Title | FPFH
 -- | --
 Create Date | `2022-03-14T06:33:33Z`
-Update Date | `2022-03-15T09:16:49Z`
+Update Date | `2022-03-15T09:21:14Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/299)
 
 ---
@@ -20,7 +20,11 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/299)
 - 角度区间分割默认分割 11 份, 不进行穷举[$33 = 11 + 11 + 11$] ==> `pcl::FPFHSignature33`
 
 ## FPFH
-- 加权重计算 SPFH ==> $FPFH(p) = SPF(p)+\frac{1}{k}\sum_{i=1}^{k}\frac{1}{w_k}SPF(p_k)$
+- 加权重计算 ==>    $FPFH(p) = SPFH(p)+\frac{1}{k}\sum_{i=1}^{k}\frac{1}{w_k}SPFH(p_k)$
+- $SPFH(p)$ : 查询点 $p$ 的 SPFH
+- $SPFH(p_k)$ : 查询点 $p_k$ 的 SPFH
+- $k$: 查询点 $p$ 有 k 个近邻点
+- $\frac{1}{w_k}$: 查询点 $p$ 与近邻点 $p_k$ 的距离
 
 ![image](https://user-images.githubusercontent.com/2216970/158344329-9eb7b5fd-4938-4923-bd82-3adebeddb352.png)
 
