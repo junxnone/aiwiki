@@ -2,7 +2,7 @@
 Title | FPFH
 -- | --
 Create Date | `2022-03-14T06:33:33Z`
-Update Date | `2022-03-15T09:26:48Z`
+Update Date | `2022-03-15T09:34:29Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/299)
 
 ---
@@ -29,4 +29,10 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/299)
 ![image](https://user-images.githubusercontent.com/2216970/158344329-9eb7b5fd-4938-4923-bd82-3adebeddb352.png)
 
 
+### PFH vs FPFH
+
+
+PFH | FPFH
+-- | --
+![image](https://user-images.githubusercontent.com/2216970/158348645-881ebbf6-b31d-4d48-9da8-4ef6cf33e713.png) | ![image](https://user-images.githubusercontent.com/2216970/158348708-7bccf4ea-2579-4613-a04f-917c5667b67c.png)
 
