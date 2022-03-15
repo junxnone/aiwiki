@@ -2,7 +2,7 @@
 Title | PFH
 -- | --
 Create Date | `2021-05-08T03:11:56Z`
-Update Date | `2022-03-15T07:12:37Z`
+Update Date | `2022-03-15T07:14:08Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/298)
 
 ---
@@ -41,8 +41,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/298)
   - $v = u \times \frac{{p_2} - {p_1}}{{\parallel}{p_2} - {p_1}{\parallel}}_2$
   - $w = u \times v$
 - $n_1$ $n_2$ 差异表示: $(\alpha, \phi, \theta)$
-  - $a = v \cdot {n_2}$
-  - $u \cdot \frac{{p_2} - {p_1}}{{\parallel}{{p_2} - {p_1}}{\parallel}_2}$
+  - $\alpha = v \cdot {n_2}$
+  - $\phi = u \cdot \frac{{p_2} - {p_1}}{{\parallel}{{p_2} - {p_1}}{\parallel}_2}$
   - ${\theta} = {\arctan (w \cdot {n_2},u \cdot {n_2})}$
 
  ![image](https://user-images.githubusercontent.com/2216970/117524162-f1476f80-afee-11eb-8bef-0e1d7fa87e19.png)
