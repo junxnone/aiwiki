@@ -2,7 +2,7 @@
 Title | FPFH
 -- | --
 Create Date | `2022-03-14T06:33:33Z`
-Update Date | `2022-03-15T09:25:35Z`
+Update Date | `2022-03-15T09:26:48Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/299)
 
 ---
@@ -17,7 +17,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/299)
 - SPFH - `Simplified Point Feature Histogram` - 简化 PFH 
   - 只计算查询点与邻域点特征 (不计算邻域间点间特征)
 - 算法复杂度 $O(nk)$
-- 角度区间分割默认分割 11 份, 不进行穷举[$33 = 11 + 11 + 11$] ==> `pcl::FPFHSignature33`
+- 角度区间分割默认分割 11 份, 不进行穷举[$33 = 11 + 11 + 11$] ==> `pcl::FPFHSignature33` ==> `(float[33])`
 
 ## FPFH
 - 加权重计算 ==>    $FPFH(p) = SPFH(p)+\frac{1}{k}\sum_{i=1}^{k}\frac{1}{w_k}SPFH(p_k)$
