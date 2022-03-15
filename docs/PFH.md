@@ -2,7 +2,7 @@
 Title | PFH
 -- | --
 Create Date | `2021-05-08T03:11:56Z`
-Update Date | `2022-03-15T07:03:18Z`
+Update Date | `2022-03-15T07:03:33Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/298)
 
 ---
@@ -32,7 +32,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/298)
 - 计算每个点的 PFH 复杂度: $O(k^2)$
 
 
-<img width=300px src="https://user-images.githubusercontent.com/2216970/117524062-68c8cf00-afee-11eb-81ed-bc3bc5cb60fa.png">
+<img width="300px" src="https://user-images.githubusercontent.com/2216970/117524062-68c8cf00-afee-11eb-81ed-bc3bc5cb60fa.png">
 
 
 ### 计算两点间相对差异
