@@ -2,7 +2,7 @@
 Title | PFH
 -- | --
 Create Date | `2021-05-08T03:11:56Z`
-Update Date | `2022-03-15T06:32:56Z`
+Update Date | `2022-03-15T06:37:52Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/298)
 
 ---
@@ -16,11 +16,17 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/298)
 - 通过数理统计的方法获得一个用于描述中心点邻域几何信息的直方图
 
 ## Algos
-- **Query Point** - $P_{q}$ 为中心点
-- **Search Radius** - 半径为 r
-- **Point Pair** - 以 $P_{q}$  为 中心点 r 为半径的球体内 k 个邻域点两两配对得到  `k(k+1)/2` 个点对
+
+### Point Pair(点对)
+
+![image](https://user-images.githubusercontent.com/2216970/117524062-68c8cf00-afee-11eb-81ed-bc3bc5cb60fa.png) 
+
+- 红色点  $P_{q}$ 为 **Query Point**
+- 以 $r$ 为半径搜索近邻点 
+- **Point Pair** - 以 $P_{q}$  为 中心,  $r$ 为半径的球体内 k 个邻域点两两配对得到  $k(k+1)/2$ 个点对
   - 计算复杂度 $O(k^2)$
-- **计算 PFH**
+
+### 计算 PFH
   - 建立局部坐标系 (u, v, w)
   - 计算点对特征
 
