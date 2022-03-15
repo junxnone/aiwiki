@@ -2,7 +2,7 @@
 Title | PFH
 -- | --
 Create Date | `2021-05-08T03:11:56Z`
-Update Date | `2022-03-15T07:14:08Z`
+Update Date | `2022-03-15T07:28:16Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/298)
 
 ---
@@ -44,14 +44,15 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/298)
   - $\alpha = v \cdot {n_2}$
   - $\phi = u \cdot \frac{{p_2} - {p_1}}{{\parallel}{{p_2} - {p_1}}{\parallel}_2}$
   - ${\theta} = {\arctan (w \cdot {n_2},u \cdot {n_2})}$
+- 邻域内 k 个点 计算 $C_{k}^2$  个所有四元组  $(\alpha, \phi, \theta, d)$
+
+
+> 压缩信息 $(x_1, y_1, z_1, n_1^x, n_1^y, n_1^z, x_2, y_2, z_2, n_2^x, n_2^y, n_2^z)$ 为 $(\alpha, \phi, \theta, d)$
 
  ![image](https://user-images.githubusercontent.com/2216970/117524162-f1476f80-afee-11eb-8bef-0e1d7fa87e19.png)
 
 ### 计算 PFH
 
-
-PFH Features | ![image](https://user-images.githubusercontent.com/2216970/120412955-09aa7000-c38a-11eb-8eea-bbe08f920745.png)
--- | --
 
 ![image](https://user-images.githubusercontent.com/2216970/120412760-b0dad780-c389-11eb-8fce-d837f3e1843b.png) | ![image](https://user-images.githubusercontent.com/2216970/120412790-bafcd600-c389-11eb-800f-e905d9ba8c2e.png)
 -- | --
