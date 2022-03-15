@@ -2,7 +2,7 @@
 Title | FPFH
 -- | --
 Create Date | `2022-03-14T06:33:33Z`
-Update Date | `2022-03-15T09:35:31Z`
+Update Date | `2022-03-15T09:38:57Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/299)
 
 ---
@@ -22,7 +22,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/299)
 ## FPFH
 - 加权重计算 ==>    $FPFH(p) = SPFH(p)+\frac{1}{k}\sum_{i=1}^{k}\frac{1}{w_k}SPFH(p_k)$
 - $SPFH(p)$ : 查询点 $p$ 的 SPFH
-- $SPFH(p_k)$ : 查询点 $p_k$ 的 SPFH
+- $SPFH(p_k)$ : 近邻点 $p_k$ 的 SPFH
 - $k$: 查询点 $p$ 有 k 个近邻点
 - $\frac{1}{w_k}$: 查询点 $p$ 与近邻点 $p_k$ 的距离
 
