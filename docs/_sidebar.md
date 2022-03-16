@@ -82,6 +82,7 @@
   - [3D PPF](/3D_Algos_PPF)
   - [PFH](/PFH)
   - [FPFH](/FPFH)
+  - [SAC-IA](/SAC_IA)
 - Tools
   - [Image Processing Tools](/Image_Processing_Tools)
   - [Training Inference Tools](/Training_Inference_Tools)
