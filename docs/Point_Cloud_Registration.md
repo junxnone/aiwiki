@@ -2,7 +2,7 @@
 Title | Point Cloud Registration
 -- | --
 Create Date | `2021-04-29T07:34:54Z`
-Update Date | `2022-03-10T08:59:18Z`
+Update Date | `2022-03-16T10:16:30Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/235)
 
 ---
@@ -41,7 +41,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/235)
     - 4PCS - `4-Point Congruent Set`
     - Super4PCS
   - **基于特征匹配**
-    - SAC-IA - `Sample Consensus Initial Aligment` - FPFH
+    - [SAC-IA](/SAC_IA) - `Sample Consensus Initial Aligment` - FPFH
     - FGR - FPFH
     - AO - SHOT
     - ICL - 线特征
