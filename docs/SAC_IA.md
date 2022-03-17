@@ -2,7 +2,7 @@
 Title | SAC IA
 -- | --
 Create Date | `2022-03-16T10:15:58Z`
-Update Date | `2022-03-16T10:15:58Z`
+Update Date | `2022-03-17T01:53:37Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/300)
 
 ---
@@ -12,7 +12,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/300)
 ## Brief
 - SAC-IA - `Sample Consensus Initial Aligment` - 采样一致性初始配准
 - 粗配准
--
+-使用 FPFH 
 
 ## Pipeline
 - 计算源点云 $P_s$ & 目标点云 $Q_t$ 的 [[FPFH]]
