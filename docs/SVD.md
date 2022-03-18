@@ -2,7 +2,7 @@
 Title | SVD
 -- | --
 Create Date | `2018-09-03T22:49:40Z`
-Update Date | `2022-03-18T02:38:34Z`
+Update Date | `2022-03-18T02:47:06Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/297)
 
 ---
@@ -58,6 +58,7 @@ $\Sigma$ | $A=U\Sigma V^T  \Rightarrow  AV=U\Sigma V^TV \Rightarrow  AV=U\Sigma 
 
 ## Examples
 
+### 特征值和特征向量计算
 
 Steps | Calc
 -- | --
@@ -71,3 +72,5 @@ A 的定义，计算 $A^T$ |  $A = \begin{bmatrix}  0 & 1 \\  1 & 1 \\  1 & 0 \\
 > $w^Tw=1 $    
 > $\Rightarrow \begin{bmatrix} a_{1} & a_{2} \\ \end{bmatrix} \begin{bmatrix} a_{1} \\ a_{2} \end{bmatrix} = 1$    
 >  $\Rightarrow a_{1}^2 + a_{2}^2 = 1$    
+
+
