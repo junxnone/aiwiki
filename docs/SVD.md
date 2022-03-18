@@ -2,7 +2,7 @@
 Title | SVD
 -- | --
 Create Date | `2018-09-03T22:49:40Z`
-Update Date | `2022-03-18T02:52:13Z`
+Update Date | `2022-03-18T03:11:34Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/297)
 
 ---
@@ -76,4 +76,13 @@ A 的定义，计算 $A^T$ |  $A = \begin{bmatrix}  0 & 1 \\  1 & 1 \\  1 & 0 \\
 > $\Rightarrow \begin{bmatrix} a_{1} & a_{2} \\ \end{bmatrix} \begin{bmatrix} a_{1} \\ a_{2} \end{bmatrix} = 1$    
 >  $\Rightarrow a_{1}^2 + a_{2}^2 = 1$    
 
+### 求解点云旋转矩阵
+- 点云 $P {p_i}$ 与 点云 $Q {q_i}$
+- 1 计算两个点云质心 $p = \frac{1}{n}\sum_{i=1}^{n}p_i$  $q = \frac{1}{n}\sum_{i=1}^{n}q_i$
+- 2 计算各点相对于质心的位移向量 $v_i^q =q_i -q$  $v_i^p =p_i -p$
+- 3 利用质心位移向量，计算H矩阵 $H=\sum_{i=1}^{n}$
+- 4 对H矩阵进行SVD分解 $H=UAV^T$
+- 5 基于矩阵 U 和 V ，计算旋转矩阵 $R=UV$
+- 6 验证结果: $det(R)=1$ 则 R 有效, $det(R)=-1$ 则 算法失效 ？？
+- 7 计算点云间的位移 $T=q-Rp$
 
