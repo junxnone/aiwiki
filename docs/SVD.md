@@ -2,7 +2,7 @@
 Title | SVD
 -- | --
 Create Date | `2018-09-03T22:49:40Z`
-Update Date | `2022-03-18T02:51:16Z`
+Update Date | `2022-03-18T02:52:13Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/297)
 
 ---
@@ -11,6 +11,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/297)
 - [线性代数之——SVD 分解](https://zhuanlan.zhihu.com/p/93474729)
 - [Least-Squares Rigid Motion Using SVD.pdf](https://github.com/junxnone/aiwiki/files/8299458/svd_rot.pdf)
 - [Singular Value Decomposition (SVD) tutorial](http://web.mit.edu/be.400/www/SVD/Singular_Value_Decomposition.htm)
+- [通过奇异值分解（SVD）求解透视变换单应性矩阵](https://blog.csdn.net/sinat_28309919/article/details/80134985)
 
 
 
