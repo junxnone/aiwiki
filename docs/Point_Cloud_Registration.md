@@ -2,7 +2,7 @@
 Title | Point Cloud Registration
 -- | --
 Create Date | `2021-04-29T07:34:54Z`
-Update Date | `2022-03-16T10:16:30Z`
+Update Date | `2022-03-21T07:47:19Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/235)
 
 ---
@@ -32,26 +32,30 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/235)
     - 配准多片点云 (三维重建)
 
 ## Algos
-- **Coarse Global Registeration**
-  - [PPF](/3D_Algos_PPF)
-  - [SAC]()
-  - [NDT](/Normal_Distributions_Transform) - `Normal Distribution Transform` 
-  - **基于穷举搜索**
-    - RANSAC
-    - 4PCS - `4-Point Congruent Set`
-    - Super4PCS
-  - **基于特征匹配**
-    - [SAC-IA](/SAC_IA) - `Sample Consensus Initial Aligment` - FPFH
-    - FGR - FPFH
-    - AO - SHOT
-    - ICL - 线特征
-- **Fine Local Registeration**
-  - [ICP](3D_Algos_ICP)
-  - point to plane ICP
-  - Point to line ICP
-  - MBICP
-  - [GICP](/GICP)
-  - NICP
+
+### Coarse Global Registeration
+
+- [PPF](/3D_Algos_PPF)
+- [SAC]()
+- [NDT](/Normal_Distributions_Transform) - `Normal Distribution Transform` 
+- **基于穷举搜索**
+  - RANSAC
+  - 4PCS - `4-Point Congruent Set`
+  - Super4PCS
+- **基于特征匹配**
+  - [SAC-IA](/SAC_IA) - `Sample Consensus Initial Aligment` - FPFH
+  - FGR - FPFH
+  - AO - SHOT
+  - ICL - 线特征
+
+### Fine Local Registeration
+
+- [ICP](3D_Algos_ICP)
+- point to plane ICP
+- Point to line ICP
+- MBICP
+- [GICP](/GICP)
+- NICP
 
 ## History
 
