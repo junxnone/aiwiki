@@ -2,7 +2,7 @@
 Title | SAC IA
 -- | --
 Create Date | `2022-03-16T10:15:58Z`
-Update Date | `2022-03-22T01:39:26Z`
+Update Date | `2022-03-22T01:41:51Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/300)
 
 ---
@@ -11,6 +11,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/300)
 
 ## Brief
 - SAC-IA - `Sample Consensus Initial Aligment` - 采样一致性初始配准
+- 使用 **采样一致性** 算法**剔除错误点对(错误的对应估计)** 
 - 粗配准
 - 使用 FPFH 
 
