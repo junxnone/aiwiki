@@ -2,7 +2,7 @@
 Title | 3D Summary
 -- | --
 Create Date | `2021-05-10T06:55:43Z`
-Update Date | `2022-03-23T01:38:46Z`
+Update Date | `2022-03-23T03:30:48Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/76)
 
 ---
@@ -27,7 +27,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/76)
 - [点云三角化]
 - 特征点
   - [Harris 特征点]
-  - [ISS 特征点]
+  - [ISS 特征点](/ISS_KeyPoint)
   - [[PFH]]
   - [[FPFH]]
   - 3DSC
