@@ -2,7 +2,7 @@
 Title | 3D Summary
 -- | --
 Create Date | `2021-05-10T06:55:43Z`
-Update Date | `2022-03-14T06:35:45Z`
+Update Date | `2022-03-23T01:38:46Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/76)
 
 ---
@@ -30,6 +30,19 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/76)
   - [ISS 特征点]
   - [[PFH]]
   - [[FPFH]]
+  - 3DSC
+- [点云配准/Point Cloud Registration](/Point_Cloud_Registration)
+  - [ICP](3D_Algos_ICP)
+  - [PPF](/3D_Algos_PPF)
+  - [Point Cloud Registration Metrics](/Point_Cloud_Registration_Metrics)
+- 3D 重建
+- 点云识别
+- [Deep Learning for 3D Point Clouds](/Deep_Learning_for_3D_Point_Clouds)
+- Semantic Segmentation
+- Object Detection
+
+## 点云特征
+
 
 Name | Formula
 -- | --
@@ -47,24 +60,6 @@ Name | Formula
   - [CVAT](https://github.com/openvinotoolkit/cvat) 
   - [Semantic Segmentation Editor](https://github.com/MR-520DAI/semantic-segmentation-editor)
   - [PCAT](https://github.com/halostorm/PCAT_open_source)
-
-## Algos
-
-### 传统算法/Traditional
-
-- [点云配准/Point Cloud Registration](/Point_Cloud_Registration)
-  - [ICP](3D_Algos_ICP)
-  - [PPF](/3D_Algos_PPF)
-  - [Point Cloud Registration Metrics](/Point_Cloud_Registration_Metrics)
-- 3D 重建
-- 点云识别
-
-
-
-### 机器学习/深度学习 - ML/DL
-- [Deep Learning for 3D Point Clouds](/Deep_Learning_for_3D_Point_Clouds)
-- Semantic Segmentation
-- Object Detection
 
 
 
