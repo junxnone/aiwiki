@@ -2,7 +2,7 @@
 Title | Datasets Image 3D
 -- | --
 Create Date | `2021-07-27T05:32:49Z`
-Update Date | `2022-03-24T10:11:26Z`
+Update Date | `2022-03-24T10:15:35Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/87)
 
 ---
@@ -14,7 +14,11 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/87)
 - [Pascal 3D+](https://cvgl.stanford.edu/projects/pascal3d.html)
 - [Large Geometric Models Archive at Georgia Tech](https://www.cc.gatech.edu/projects/large_models/)
 - [The Stanford 3D Scanning Repository](http://graphics.stanford.edu/data/3Dscanrep/)
-- 
+- [ObjectNet3D](https://cvgl.stanford.edu/projects/objectnet3d/)
+- [Pix3D](http://pix3d.csail.mit.edu/)
+- [3D Mnist](https://www.kaggle.com/daavoo/3d-mnist/Kernels)
+
+
 ## Brief
 
 Name | Description
