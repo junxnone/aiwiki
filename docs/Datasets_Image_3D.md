@@ -2,13 +2,17 @@
 Title | Datasets Image 3D
 -- | --
 Create Date | `2021-07-27T05:32:49Z`
-Update Date | `2022-03-24T09:57:29Z`
+Update Date | `2022-03-24T10:09:34Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/87)
 
 ---
 ## Reference
 - [Open3D-ML - datasets](https://github.com/intel-isl/Open3D-ML#datasets)
 - [工业3D 模型库](https://www.traceparts.cn/)
+- [Shapenet](https://shapenet.org/)
+- [Modelnet](http://modelnet.cs.princeton.edu/)
+- [Pascal 3D+](https://cvgl.stanford.edu/projects/pascal3d.html)
+
 
 ## Brief
 
