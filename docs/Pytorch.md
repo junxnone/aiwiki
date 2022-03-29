@@ -2,7 +2,7 @@
 Title | Pytorch
 -- | --
 Create Date | `2019-01-25T23:32:24Z`
-Update Date | `2022-01-19T08:21:25Z`
+Update Date | `2022-03-29T07:20:35Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/168)
 
 ---
@@ -31,6 +31,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/168)
 - [TorchMetrics](https://torchmetrics.readthedocs.io/en/latest/)
 - [Pytorch ignite](https://github.com/pytorch/ignite/)
 - [pytorch - 加速](/Pytorch_加速)
+- [Examples Analysis](https://github.com/junxnone/examples-1/issues/1)
+
 
 ## History
 
