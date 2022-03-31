@@ -2,17 +2,17 @@
 Title | PixelFormat
 -- | --
 Create Date | `2021-10-21T17:44:24Z`
-Update Date | `2021-10-23T06:38:17Z`
+Update Date | `2022-03-31T08:28:38Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/119)
 
 ---
-# Reference
+## Reference
 - [Pixel Format Naming Convention - GenICam](https://www.emva.org/wp-content/uploads/GenICam_PFNC_2_1.pdf)
 - [GenICam Pixel Format Names and Values](https://www.emva.org/wp-content/uploads/GenICamPixelFormatValues.pdf)
 - [Pixel and Planar Image Formats](https://www.intel.com/content/www/us/en/develop/documentation/ipp-dev-reference/top/volume-2-image-processing/image-color-conversion/pixel-and-planar-image-formats.html)
 
 
-# Brief
+## Brief
 - Pixel Format - Camera 输出图像的格式
   - Packed(Pixel-Order)/Planar
   - `Monochromatic Formats` - 单色灰度/`Color Formats` - 彩色
