@@ -2,7 +2,7 @@
 Title | 3D Images
 -- | --
 Create Date | `2021-07-30T06:51:51Z`
-Update Date | `2022-04-01T06:14:22Z`
+Update Date | `2022-04-01T06:19:34Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/39)
 
 ---
@@ -31,6 +31,12 @@ X3D | ISO standard XML-based file format
   - **有序点云** - 按照图方阵排列, 无效点使用 (0,0,0) 表示
   - **无序点云** - 点集合，点排列之间无关联
 
+## Depth Map/Image
+- 用一个通道来表示距离
 
+## Voxel
+- 立方体表示 ( 类比为2D Image 中的 Pixel)
+ 
+![image](https://user-images.githubusercontent.com/2216970/161205920-d619e497-d32c-4b51-b4ab-741fa546415a.png)
 
-
+## Mesh
