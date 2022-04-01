@@ -2,14 +2,21 @@
 Title | 3D Images
 -- | --
 Create Date | `2021-07-30T06:51:51Z`
-Update Date | `2021-10-13T01:04:09Z`
+Update Date | `2022-04-01T06:12:52Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/39)
 
 ---
-# Reference
+## Reference
 - []()
 
-# 3D Images Format
+## Brief
+- [成像原理](./3D_Camera_成像原理)
+- [Depth map/Image]
+- [Voxel]
+- [Point Cloud]
+- [Mesh]
+
+## 3D Images Format
 
 Name | Description
 -- | --
@@ -24,7 +31,6 @@ X3D | ISO standard XML-based file format
   - **有序点云** - 按照图方阵排列, 无效点使用 (0,0,0) 表示
   - **无序点云** - 点集合，点排列之间无关联
 
-# 3D Camera
-- [成像原理](./3D_Camera_成像原理)
+
 
 
