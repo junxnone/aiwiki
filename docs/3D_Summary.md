@@ -2,7 +2,7 @@
 Title | 3D Summary
 -- | --
 Create Date | `2021-05-10T06:55:43Z`
-Update Date | `2022-04-01T03:07:25Z`
+Update Date | `2022-04-01T03:08:34Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/76)
 
 ---
@@ -40,6 +40,11 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/76)
 - [ISS 特征点](/ISS_KeyPoint)
 - [[PFH]]
 - [[FPFH]]
+- VFH
+- CVFH
+- RIFT
+- RSD
+- NARF
 - 3DSC
 - [点云曲率](/点云曲率)
 
