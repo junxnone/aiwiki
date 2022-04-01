@@ -2,7 +2,7 @@
 Title | 3D Summary
 -- | --
 Create Date | `2021-05-10T06:55:43Z`
-Update Date | `2022-04-01T03:03:17Z`
+Update Date | `2022-04-01T03:07:25Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/76)
 
 ---
@@ -25,13 +25,6 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/76)
 - [点云拼接](/点云拼接)
 - [点云平滑/曲面重建]
 - [点云三角化]
-- 特征点
-  - [Harris 特征点]
-  - [ISS 特征点](/ISS_KeyPoint)
-  - [[PFH]]
-  - [[FPFH]]
-  - 3DSC
-  - [点云曲率](/点云曲率)
 - [点云配准/Point Cloud Registration](/Point_Cloud_Registration)
   - [ICP](3D_Algos_ICP)
   - [PPF](/3D_Algos_PPF)
@@ -43,7 +36,12 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/76)
 - Object Detection
 
 ## 点云特征
-
+- [Harris 特征点]
+- [ISS 特征点](/ISS_KeyPoint)
+- [[PFH]]
+- [[FPFH]]
+- 3DSC
+- [点云曲率](/点云曲率)
 
 Name | Formula
 -- | --
