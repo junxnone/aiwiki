@@ -2,7 +2,7 @@
 Title | 3D Images
 -- | --
 Create Date | `2021-07-30T06:51:51Z`
-Update Date | `2022-04-01T06:19:34Z`
+Update Date | `2022-04-01T06:21:47Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/39)
 
 ---
@@ -11,10 +11,13 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/39)
 
 ## Brief
 - [成像原理](./3D_Camera_成像原理)
-- [Depth map/Image]
-- [Voxel]
-- [Point Cloud]
-- [Mesh]
+- 3D 模型表示方式
+  - [Depth map/Image]
+  - [Voxel]
+  - [Point Cloud]
+  - [Mesh]
+
+
 
 ## 3D Images Format
 
@@ -37,6 +40,6 @@ X3D | ISO standard XML-based file format
 ## Voxel
 - 立方体表示 ( 类比为2D Image 中的 Pixel)
  
-![image](https://user-images.githubusercontent.com/2216970/161205920-d619e497-d32c-4b51-b4ab-741fa546415a.png)
+<img width= 200 src='https://user-images.githubusercontent.com/2216970/161205920-d619e497-d32c-4b51-b4ab-741fa546415a.png'>
 
 ## Mesh
