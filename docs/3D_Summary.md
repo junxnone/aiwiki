@@ -2,7 +2,7 @@
 Title | 3D Summary
 -- | --
 Create Date | `2021-05-10T06:55:43Z`
-Update Date | `2022-04-01T03:10:04Z`
+Update Date | `2022-04-01T06:29:13Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/76)
 
 ---
@@ -30,7 +30,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/76)
   - [ICP](3D_Algos_ICP)
   - [PPF](/3D_Algos_PPF)
   - [Point Cloud Registration Metrics](/Point_Cloud_Registration_Metrics)
-- 3D 重建
+- [3D Reconstruction/3D重建](/3D_Reconstruction)
 - 点云识别
 - [Deep Learning for 3D Point Clouds](/Deep_Learning_for_3D_Point_Clouds)
 - Semantic Segmentation
