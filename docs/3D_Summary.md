@@ -2,7 +2,7 @@
 Title | 3D Summary
 -- | --
 Create Date | `2021-05-10T06:55:43Z`
-Update Date | `2022-03-23T03:30:48Z`
+Update Date | `2022-04-01T02:28:39Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/76)
 
 ---
@@ -31,6 +31,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/76)
   - [[PFH]]
   - [[FPFH]]
   - 3DSC
+  - [点云曲率](/点云曲率)
 - [点云配准/Point Cloud Registration](/Point_Cloud_Registration)
   - [ICP](3D_Algos_ICP)
   - [PPF](/3D_Algos_PPF)
