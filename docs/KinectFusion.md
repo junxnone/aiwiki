@@ -2,7 +2,7 @@
 Title | KinectFusion
 -- | --
 Create Date | `2022-04-05T03:11:35Z`
-Update Date | `2022-04-05T03:21:51Z`
+Update Date | `2022-04-05T03:27:13Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/306)
 
 ---
@@ -17,5 +17,17 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/306)
 
 
 
+## Pipeline
+
+Pipeline | Description
+-- | --
+Depth Map Conversion (**Measurement**) | 深度图转点云
+Camera Tracking (**Pose Estimation**) | ICP 配准求相对位姿
+Volumetric Integration (**Update Reconstruction**) | 重建物体表面
+Raycasting (**Surface Prediction**) | 渲染
+
+
+![image](https://user-images.githubusercontent.com/2216970/161672621-53054631-c1c5-4801-9a34-6b631cb30018.png)
+![image](https://user-images.githubusercontent.com/2216970/161672727-157a9767-332f-4004-a47b-ce17f2e317ac.png)
 
 
