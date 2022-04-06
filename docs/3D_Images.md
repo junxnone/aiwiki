@@ -2,7 +2,7 @@
 Title | 3D Images
 -- | --
 Create Date | `2021-07-30T06:51:51Z`
-Update Date | `2022-04-01T06:21:47Z`
+Update Date | `2022-04-06T02:43:03Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/39)
 
 ---
@@ -10,7 +10,6 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/39)
 - [Voxel - Wikipedia](https://en.wikipedia.org/wiki/Voxel)
 
 ## Brief
-- [成像原理](./3D_Camera_成像原理)
 - 3D 模型表示方式
   - [Depth map/Image]
   - [Voxel]
