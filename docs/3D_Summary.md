@@ -2,7 +2,7 @@
 Title | 3D Summary
 -- | --
 Create Date | `2021-05-10T06:55:43Z`
-Update Date | `2022-04-01T06:29:13Z`
+Update Date | `2022-04-07T15:45:53Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/76)
 
 ---
@@ -11,7 +11,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/76)
 - [Awesome 3D reconstruction list](https://github.com/openMVG/awesome_3DReconstruction_list)
 - [三维重建开源项目汇总](https://zhuanlan.zhihu.com/p/141946874)
 - [3D 特征点概述](https://www.cnblogs.com/li-yao7758258/p/9350340.html)
-
+- [3D Computer Vision - CS6320 2015 UTAH](http://www.sci.utah.edu/~gerig/CS6320-S2015/CS6320_3D_Computer_Vision.html)
 
 ## Brief
 
