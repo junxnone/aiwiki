@@ -2,7 +2,7 @@
 Title | Dynamic Programming
 -- | --
 Create Date | `2022-04-15T08:46:32Z`
-Update Date | `2022-04-18T01:59:48Z`
+Update Date | `2022-04-18T02:00:50Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/310)
 
 ---
@@ -22,7 +22,9 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/310)
 - 线性模型
 - 区间模型
 - 背包模型
-- 
+- 树形模型
+
+
 ## UseCase
 ### 斐波拉契数列
 
