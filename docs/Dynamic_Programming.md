@@ -2,7 +2,7 @@
 Title | Dynamic Programming
 -- | --
 Create Date | `2022-04-15T08:46:32Z`
-Update Date | `2022-04-18T02:00:50Z`
+Update Date | `2022-04-18T03:31:11Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/310)
 
 ---
@@ -24,6 +24,10 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/310)
 - 背包模型
 - 树形模型
 
+## Pipeline
+- 初始值
+- 关系式
+- 历史计算记录
 
 ## UseCase
 ### 斐波拉契数列
