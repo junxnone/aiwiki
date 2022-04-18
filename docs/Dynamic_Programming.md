@@ -2,12 +2,15 @@
 Title | Dynamic Programming
 -- | --
 Create Date | `2022-04-15T08:46:32Z`
-Update Date | `2022-04-18T01:56:55Z`
+Update Date | `2022-04-18T01:59:48Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/310)
 
 ---
 ## Reference
 - [算法-动态规划 Dynamic Programming--从菜鸟到老鸟](https://blog.csdn.net/u013309870/article/details/75193592)
+- [动态规划详解](https://cloud.tencent.com/developer/article/1817113)
+
+
 
 ## Brief
 - Dynamic Programming - 动态规划
