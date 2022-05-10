@@ -2,7 +2,7 @@
 Title | PCL Summary
 -- | --
 Create Date | `2021-04-28T07:43:42Z`
-Update Date | `2022-03-03T02:47:07Z`
+Update Date | `2022-05-10T08:03:53Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/77)
 
 ---
@@ -13,6 +13,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/77)
 - [PCL(Point Cloud Library)学习指南&资料推荐](https://www.yuque.com/huangzhongqing/pcl/rdk5k8) [[Github](https://github.com/HuangCongQing/pcl-learning)]
 - [pclpy](https://github.com/davidcaron/pclpy)
 - [黑马机器人 | PCL-3D点云](http://robot.czxy.com/docs/pcl/)
+- [PCL点云处理算法汇总（C++长期更新版）](https://www.whcsrl.com/blog/8616#_PCLVTK_357)
+
 
 ## Brief
 
