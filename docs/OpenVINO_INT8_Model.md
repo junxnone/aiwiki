@@ -2,7 +2,7 @@
 Title | OpenVINO INT8 Model
 -- | --
 Create Date | `2020-03-18T08:44:15Z`
-Update Date | `2022-05-13T02:38:44Z`
+Update Date | `2022-05-13T02:40:27Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/182)
 
 ---
@@ -11,6 +11,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/182)
 - [calibration_tool](https://docs.openvinotoolkit.org/2019_R3.1/_inference_engine_tools_calibration_tool_README.html)
 - [NNCF](https://github.com/openvinotoolkit/nncf)
 - [Intel® Neural Compressor](https://github.com/intel/neural-compressor)
+- [Post-Training Quantization with TensorFlow Classification Model](https://github.com/openvinotoolkit/openvino_notebooks/blob/173645d14740b0ceba9d9785552823bf8330ce67/notebooks/301-tensorflow-training-openvino/301-tensorflow-training-openvino-pot.ipynb)
+
 
 ## Brief
 - OpenVINO INT8 Model - 增加性能/减少模型大小
