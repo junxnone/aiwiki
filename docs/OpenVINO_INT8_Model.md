@@ -2,13 +2,14 @@
 Title | OpenVINO INT8 Model
 -- | --
 Create Date | `2020-03-18T08:44:15Z`
-Update Date | `2022-05-13T01:51:00Z`
+Update Date | `2022-05-13T01:55:45Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/182)
 
 ---
 ## Reference
 
 - [calibration_tool](https://docs.openvinotoolkit.org/2019_R3.1/_inference_engine_tools_calibration_tool_README.html)
+- [NNCF](https://github.com/openvinotoolkit/nncf)
 - [Intel® Neural Compressor](https://github.com/intel/neural-compressor)
 
 ## Brief
