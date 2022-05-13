@@ -2,7 +2,7 @@
 Title | Quantization
 -- | --
 Create Date | `2018-10-16T02:57:36Z`
-Update Date | `2022-05-13T09:09:43Z`
+Update Date | `2022-05-13T09:13:20Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/312)
 
 ---
@@ -48,3 +48,10 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/312)
 
 ## 非线性量化
 
+
+## Pipeline
+- 统计输入数据 Max/Min
+- 选择量化方法 int8/uint8 ...
+- 计算 `Zero Point`/`Scale`
+- 根据Data对模型进行量化
+- 验证量化模型性能, 若模型性能不好，则尝试不同的 `Z/S` 重复量化
