@@ -2,7 +2,7 @@
 Title | OpenVINO INT8 Model
 -- | --
 Create Date | `2020-03-18T08:44:15Z`
-Update Date | `2022-05-13T02:13:04Z`
+Update Date | `2022-05-13T02:38:30Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/182)
 
 ---
@@ -17,8 +17,12 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/182)
 - POT - `Post-training Optimization Tool`
 - API/CMD/Workbench 三种方式量化
 - Quantization Methods
-  - Default Quantization (仅需要未注释的数据集)
-  - Accuracy-aware Quantization (需要标注的数据集以控制 `Accuracy Drop`)
+  - Default Quantization 
+    - 仅需要未注释的数据集
+    - `Accuracy Drop` 不可控
+  - Accuracy-aware Quantization 
+    - 需要标注的数据集
+    - `Accuracy Drop` 可控
 
 <img width=800 src="https://user-images.githubusercontent.com/2216970/168196362-17a40e1f-479e-48a8-9553-8681ed9faee3.png">
 
