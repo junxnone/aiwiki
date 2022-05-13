@@ -2,7 +2,7 @@
 Title | Quantization
 -- | --
 Create Date | `2018-10-16T02:57:36Z`
-Update Date | `2022-05-13T09:08:33Z`
+Update Date | `2022-05-13T09:09:43Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/312)
 
 ---
@@ -19,7 +19,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/312)
 - 逐层/组/通道量化
 - 在线/离线量化
 - 比特量化
--权重/权重激活量化
+- 权重/权重激活量化
 
 
 
