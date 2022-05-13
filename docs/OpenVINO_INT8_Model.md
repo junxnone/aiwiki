@@ -2,7 +2,7 @@
 Title | OpenVINO INT8 Model
 -- | --
 Create Date | `2020-03-18T08:44:15Z`
-Update Date | `2022-05-13T01:47:02Z`
+Update Date | `2022-05-13T01:48:56Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/182)
 
 ---
@@ -10,6 +10,9 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/182)
 
 - [calibration_tool](https://docs.openvinotoolkit.org/2019_R3.1/_inference_engine_tools_calibration_tool_README.html)
 - [Intel® Neural Compressor](https://github.com/intel/neural-compressor)
+
+## Brief
+- OpenVINO INT8 Model - 量化后减少计算量(精度降低换计算量减少)
 
 ## Create INT8 Model
 ![image](https://user-images.githubusercontent.com/2216970/76941945-dcfe6a00-6937-11ea-91db-553b2b6396cc.png)
