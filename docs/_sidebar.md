@@ -76,6 +76,7 @@
 - [Transformer](/Transformer_Summary)
 - [Knowledge Distillation](/Knowledge_Distillation)
 - [AutoEncoder](/AutoEncoder)
+- [量化/Quantization](/Quantization)
 - [3D](3D_Summary)
   - [3D Camera](/3D_Camera)
   - [3D ICP](/3D_Algos_ICP)
