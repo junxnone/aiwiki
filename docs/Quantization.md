@@ -2,7 +2,7 @@
 Title | Quantization
 -- | --
 Create Date | `2018-10-16T02:57:36Z`
-Update Date | `2022-05-13T09:13:20Z`
+Update Date | `2022-05-17T06:53:58Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/312)
 
 ---
@@ -20,7 +20,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/312)
 - 在线/离线量化
 - 比特量化
 - 权重/权重激活量化
-
+- [[OpenVINO INT8 Model]]
 
 
 ## 线性量化
