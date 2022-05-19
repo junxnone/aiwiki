@@ -2,7 +2,7 @@
 Title | 3D Images
 -- | --
 Created @ | `2021-07-30T06:51:51Z`
-Last Modify @| `2022-05-19T02:31:17Z`
+Last Modify @| `2022-05-19T02:35:52Z`
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/39)
 
 ---
@@ -56,5 +56,15 @@ X3D | ISO standard XML-based file format
 
 ```
 v x1 x2 x3 #顶点
+vn vn1 vn2 vn3 #法线坐标
 f v1/v2  v3/v4  v5/v6 #面 顶点索引/顶点索引
 ```
+
+Label | Description
+-- | --
+v | 顶点坐标
+vn | 法线坐标
+vt | 纹理坐标
+p | Point
+l | 线
+f | 面 `v1 v2 v3` / `v1/vt1 v2/vt2 v3/vt3` / `v1//vn1 v2//vn2 v3//vn3` / `v1/vt1/vn1 v2/vt2/vn2 v3/vt3/vn3`
