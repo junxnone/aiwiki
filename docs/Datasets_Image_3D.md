@@ -2,7 +2,7 @@
 Title | Datasets Image 3D
 -- | --
 Create Date | `2021-07-27T05:32:49Z`
-Update Date | `2022-03-24T10:15:35Z`
+Update Date | `2022-05-19T01:38:17Z`
 Edit link | [here](https://github.com/junxnone/aiwiki/issues/87)
 
 ---
@@ -34,7 +34,8 @@ Lyft ([project-page](https://self-driving.lyft.com/level5/data/))
 nuScenes ([project-page](https://www.nuscenes.org/))
 Waymo ([project-page](https://waymo.com/open/data/))
 ScanNet([project-page](http://www.scan-net.org/))
-
+GSO([project-page](https://goo.gle/scanned-objects))| [Google Scanned Objects:
+A High-Quality Dataset of 3D Scanned Household Items](https://arxiv.org/pdf/2204.11918.pdf)
 
 
 
