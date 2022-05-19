@@ -2,7 +2,7 @@
 Title | 3D Images
 -- | --
 Created @ | `2021-07-30T06:51:51Z`
-Last Modify @| `2022-05-19T02:16:52Z`
+Last Modify @| `2022-05-19T02:20:32Z`
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/39)
 
 ---
@@ -27,6 +27,9 @@ STL | CAD Software
 OBJ | developed by Wavefront Technologies
 X3D | ISO standard XML-based file format
 [Others](https://en.wikipedia.org/wiki/Category:Graphics_file_formats) | Wikipedia
+
+
+![image](https://user-images.githubusercontent.com/2216970/169189744-c6166d81-fcbd-47c1-96be-181e71b1d955.png)
 
 ## Point Cloud
 
