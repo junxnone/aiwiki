@@ -2,7 +2,7 @@
 Title | 3D Images
 -- | --
 Created @ | `2021-07-30T06:51:51Z`
-Last Modify @| `2022-05-19T02:20:32Z`
+Last Modify @| `2022-05-19T02:30:31Z`
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/39)
 
 ---
@@ -46,3 +46,14 @@ X3D | ISO standard XML-based file format
 <img width= 200 src='https://user-images.githubusercontent.com/2216970/161205920-d619e497-d32c-4b51-b4ab-741fa546415a.png'>
 
 ## Mesh
+- 三角形组成的多边形网格
+- obj/stl
+
+![image](https://user-images.githubusercontent.com/2216970/169191017-522b4aea-5c1b-4e9b-92a5-555f14a5ec3c.png)
+
+### obj Format
+
+```
+v x1 x2 x3 #顶点
+f v1/v2  v3/v4  v5/v6 #面 顶点索引/顶点索引
+```
