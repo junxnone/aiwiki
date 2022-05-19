@@ -2,7 +2,7 @@
 Title | 3D Images
 -- | --
 Created @ | `2021-07-30T06:51:51Z`
-Last Modify @| `2022-05-19T02:30:31Z`
+Last Modify @| `2022-05-19T02:31:17Z`
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/39)
 
 ---
@@ -49,7 +49,8 @@ X3D | ISO standard XML-based file format
 - 三角形组成的多边形网格
 - obj/stl
 
-![image](https://user-images.githubusercontent.com/2216970/169191017-522b4aea-5c1b-4e9b-92a5-555f14a5ec3c.png)
+![image](https://user-images.githubusercontent.com/2216970/169191017-522b4aea-5c1b-4e9b-92a5-555f14a5ec3c.png) | ![image](https://user-images.githubusercontent.com/2216970/169191663-835ff698-4871-470e-af1f-81ae8d8c8338.png) | ![image](https://user-images.githubusercontent.com/2216970/169191669-112ac286-8016-4842-a918-e10b91d65cbb.png)
+-- | -- | --
 
 ### obj Format
 
