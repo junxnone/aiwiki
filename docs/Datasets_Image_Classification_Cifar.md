@@ -1,9 +1,9 @@
 ---
 Title | Datasets Image Classification Cifar
 -- | --
-Create Date | `2018-08-29T09:54:48Z`
-Update Date | `2021-11-22T06:58:42Z`
-Edit link | [here](https://github.com/junxnone/aiwiki/issues/32)
+Created @ | `2018-08-29T09:54:48Z`
+Last Modify @| `2022-07-13T02:45:54Z`
+Edit @| [here](https://github.com/junxnone/aiwiki/issues/32)
 
 ---
 ## Reference
@@ -16,8 +16,8 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/32)
   - [pytorch colab notebook](https://colab.research.google.com/github/pytorch/tutorials/blob/gh-pages/_downloads/cifar10_tutorial.ipynb)
 
 ## Brief
-- [Cifar10](##Cifar10)
-- [Cifar100](##Cifar100)
+- [Cifar10](#Cifar10)
+- [Cifar100](#Cifar100)
 
 ## Cifar10
 
