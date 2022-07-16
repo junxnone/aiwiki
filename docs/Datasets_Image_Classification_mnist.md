@@ -2,12 +2,14 @@
 Title | Datasets Image Classification mnist
 -- | --
 Created @ | `2019-01-18T18:36:57Z`
-Last Modify @| `2022-07-16T09:22:24Z`
+Last Modify @| `2022-07-16T09:27:09Z`
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/30)
 
 ---
 ## Reference
 - [mnist dataset](http://yann.lecun.com/exdb/mnist/)
+- [Image Classification on MNIST - paperswithcode](https://paperswithcode.com/sota/image-classification-on-mnist?metric=Accuracy)
+
 
 ## Brief 
 
