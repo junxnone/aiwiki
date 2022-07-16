@@ -1,15 +1,15 @@
 ---
 Title | Datasets Image Classification mnist
 -- | --
-Create Date | `2019-01-18T18:36:57Z`
-Update Date | `2021-09-23T06:12:42Z`
-Edit link | [here](https://github.com/junxnone/aiwiki/issues/30)
+Created @ | `2019-01-18T18:36:57Z`
+Last Modify @| `2022-07-16T09:12:07Z`
+Edit @| [here](https://github.com/junxnone/aiwiki/issues/30)
 
 ---
-# Reference
+## Reference
 - [mnist dataset](http://yann.lecun.com/exdb/mnist/)
 
-# Brief 
+## Brief 
 
 MNIST 数据集来自美国国家标准与技术研究所, National Institute of Standards and Technology (NIST). 训练集 (training set) 由来自 250 个不同人手写的数字构成, 其中 50% 是高中学生, 50% 来自人口普查局 (the Census Bureau) 的工作人员. 测试集(test set) 也是同样比例的手写数字数据.
 
