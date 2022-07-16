@@ -2,7 +2,7 @@
 Title | Datasets Image Classification mnist
 -- | --
 Created @ | `2019-01-18T18:36:57Z`
-Last Modify @| `2022-07-16T09:12:07Z`
+Last Modify @| `2022-07-16T09:22:24Z`
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/30)
 
 ---
@@ -15,6 +15,7 @@ MNIST 数据集来自美国国家标准与技术研究所, National Institute of
 
 
 <img width="300px" src="https://user-images.githubusercontent.com/2216970/51413058-95037c00-1ba8-11e9-9153-c5f0764f8e42.png">
+<img width="300px" src="https://user-images.githubusercontent.com/2216970/179348954-f84fb28d-8784-4421-8e3a-f87481fdd1db.png">
 
 
 ## Download
