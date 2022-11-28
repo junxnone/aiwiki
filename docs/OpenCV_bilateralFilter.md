@@ -2,8 +2,8 @@
 Title | OpenCV bilateralFilter
 -- | --
 Created @ | `2022-11-28T06:40:30Z`
-Last Modify @| `2022-11-28T06:40:30Z`
-Labels | ``
+Last Modify @| `2022-11-28T06:41:40Z`
+Labels | `nohead`
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/317)
 
 ---
