@@ -19,3 +19,5 @@ jobs:
           body: ${{ github.event.issue.body }}
           number: ${{ github.event.issue.number }}
           actor: ${{ github.actor }}
+          nohead: ${{ contains(github.event.issue.labels.*.name, 'nohead') }}
+
