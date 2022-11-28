@@ -1,9 +1,6 @@
-
 ## Introduction
 
-Filtering is perhaps the most fundamental operation of image processing and computer vision. In the broadest sense of the term 
-"filtering", the value of the filtered image at a given location is a function of the values of the input image in a small neighborhood of the same location. For example, Gaussian low-pass filtering computes a weighted average of pixel values in the neighborhood, in which the weights decrease with distance from the neighborhood center. Although formal and quantitative explanations of this weight fall-off can be given, the intuition is that images typically vary slowly over space, so near pixels are likely to have similar values, and it is therefore appropriate to average them together. The noise values that corrupt these nearby pixels are mutually less correlated than the signal values, so noise is averaged away while signal is preserved.
-The assumption of slow spatial variations fails at edges, which are consequently blurred by linear low-pass filtering. How can we prevent averaging across edges, while still averaging within smooth regions? [Many efforts](https://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/MANDUCHI1/Bilateral_Filtering.html#References) have been devoted to reducing this undesired effect. [Bilateral filtering](https://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/MANDUCHI1/Bilateral_Filtering.html#[1]) is a simple, non-iterative scheme for edge-preserving smoothing.
+`Filtering` 可能是图像处理和计算机视觉中最基本的操作. `Filtering` 广义上是指在给定位置过滤图像的值, 是同一位置的小邻域中输入图像值的函数, 例如高斯低通滤波计算邻域内像素的加权均值(其中权重随着与邻域中心的距离而减小),  尽管可以给出这种权重减小的公式和量化解释，但是直觉上图像像素是缓慢变化的, 相邻的像素值是接近的，取平均值是合适的. 像素的噪声的相关性是小于信号的, 所以可以保留信号并消除噪声. 这种方法在边缘处失效, 线性低通滤波器会造成边缘模糊. 如何才能在平均平滑区域的情况下避免边缘处平均. [Many efforts](https://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/MANDUCHI1/Bilateral_Filtering.html#References) 一直致力于减少这种不良影响. [Bilateral filtering](https://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/MANDUCHI1/Bilateral_Filtering.html#[1])是一个简单的非迭代的保持边缘的滤波平滑.
 
 
 ## The Idea
