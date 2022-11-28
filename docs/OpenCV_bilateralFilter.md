@@ -1,12 +1,3 @@
----
-Title | OpenCV bilateralFilter
--- | --
-Created @ | `2022-11-28T06:40:30Z`
-Last Modify @| `2022-11-28T06:53:32Z`
-Labels | ``
-Edit @| [here](https://github.com/junxnone/aiwiki/issues/317)
-
----
 - [Bilateral Filtering for Gray and Color Images](https://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/MANDUCHI1/Bilateral_Filtering.html)
 
 ### Black-and-White Images
@@ -32,5 +23,27 @@ Org | Filter Images
 Org | Filter ① Images | Filter ⑤ Images
 -- | -- | --
 ![image](https://user-images.githubusercontent.com/2216970/204212776-8a80a331-e97e-4ac0-b15a-e3047147895b.png) | ![image](https://user-images.githubusercontent.com/2216970/204212809-d2e942e9-0225-4fef-a4d1-83220d74c243.png) | ![image](https://user-images.githubusercontent.com/2216970/204212822-d6d03b58-3b56-4445-a87b-faed5365c67c.png)
+
+
+### OpenCV API
+
+```
+void cv::bilateralFilter(InputArray 	src,
+                        OutputArray 	dst,
+                        int 	d,
+                        double 	sigmaColor,
+                        double 	sigmaSpace,
+                        int 	borderType = BORDER_DEFAULT 
+                        )	
+```
+
+- **d**: 过滤直径, 比较大时(>5) 会处理比较慢
+- **sigma** 比较小时(<10), 影响较小, 比较大时(>150), 卡通化
+  - **sigmaColor**:  颜色空间过滤参数
+  - **sigmaSpace** 坐标空间过滤参数, 值越大, 影响像素越远
+
+
+
+
 
 
