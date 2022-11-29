@@ -1,3 +1,17 @@
+---
+Title | OpenCV boxFilter
+-- | --
+Created @ | `2022-11-29T03:17:35Z`
+Last Modify @| `2022-11-29T06:57:26Z`
+Labels | ``
+Edit @| [here](https://github.com/junxnone/aiwiki/issues/319)
+
+---
+
+## 原理
+
+- 类似卷积过程
+
 ![原理](https://raw.githubusercontent.com/junxnone/conv_arithmetic/master/gif/same_padding_no_strides.gif)
 
 ## Kernel
