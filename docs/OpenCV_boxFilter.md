@@ -9,4 +9,5 @@ $\alpha = \begin{cases} \frac{1}{\texttt{ksize.width*ksize.height}} & \texttt{wh
 -- | -- | --
 ![image](https://user-images.githubusercontent.com/2216970/204438619-ca2cc5ad-838a-4c42-b1de-c2906a20d522.png) | ![image](https://user-images.githubusercontent.com/2216970/204438776-0460e846-f79e-4778-8b30-a0d2763e11bc.png) | ![image](https://user-images.githubusercontent.com/2216970/204438854-4168b0a0-4668-4a53-aabc-faf42a78170c.png)
 
+![download](https://user-images.githubusercontent.com/2216970/204441680-af4e4cc4-36d4-4cd4-be87-1eeee32cae99.png)
 
