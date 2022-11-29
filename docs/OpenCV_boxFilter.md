@@ -1,3 +1,6 @@
+
+![原理](https://raw.githubusercontent.com/junxnone/conv_arithmetic/master/gif/same_padding_no_strides.gif)
+
 ## Kernel
 
 $\texttt{K} = \alpha \begin{bmatrix} 1 & 1 & 1 & \cdots & 1 & 1 \\ 1 & 1 & 1 & \cdots & 1 & 1 \\ \vdots \\ 1 & 1 & 1 & \cdots & 1 & 1 \end{bmatrix}$
