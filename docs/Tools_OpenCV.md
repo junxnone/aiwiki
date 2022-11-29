@@ -1,12 +1,3 @@
----
-Title | Tools OpenCV
--- | --
-Created @ | `2021-10-16T04:31:07Z`
-Last Modify @| `2022-11-28T06:19:02Z`
-Labels | ``
-Edit @| [here](https://github.com/junxnone/aiwiki/issues/105)
-
----
 ## Reference
 - [[Github](https://github.com/opencv)] [[Docs](https://docs.opencv.org/4.x/)]
 - [OpenCV 中文文档 - apachecn](https://opencv.apachecn.org/#/)
@@ -17,6 +8,8 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/105)
 ## Brief
 - 支持 python/C/C++ API
 - [**思维导图**](https://naotu.baidu.com/file/19ece54999145c95f67e5f086f2a3583)
+- [Tools OpenCV Image Processing](/Tools_OpenCV_Image_Processing)
+
 
 ### OpenCV 架构
 
