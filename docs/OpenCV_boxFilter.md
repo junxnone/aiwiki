@@ -19,7 +19,7 @@ org image | 3x3 boxFilter |  5x5 boxFilter | 7x7 boxFilter
 ## OpenCV API
 
 
-```
+```COOL
 void cv::boxFilter(InputArray 	src,
                 OutputArray 	dst,
                 int 	ddepth,
