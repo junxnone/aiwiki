@@ -2,7 +2,7 @@
 Title | Tools OpenCV Image Processing
 -- | --
 Created @ | `2022-11-28T06:22:43Z`
-Last Modify @| `2022-11-29T07:36:45Z`
+Last Modify @| `2022-11-29T07:48:05Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/316)
 
@@ -39,4 +39,4 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/316)
   - [boxFilter](/OpenCV_boxFilter) - 方框滤波
   - `blur` - 均值滤波
     - `blur(src, dst, ksize, anchor, borderType)` 等同于 `boxFilter(src, dst, src.type(), ksize, anchor, true, borderType)`
-  - 
+  - `GaussianBlur` 采用高斯函数的权重计算
