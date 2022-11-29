@@ -1,3 +1,12 @@
+---
+Title | Tools OpenCV Image Processing
+-- | --
+Created @ | `2022-11-28T06:22:43Z`
+Last Modify @| `2022-11-29T07:36:45Z`
+Labels | ``
+Edit @| [here](https://github.com/junxnone/aiwiki/issues/316)
+
+---
 ## Brief
 
 - Image Filtering
@@ -27,7 +36,7 @@
 - 需要通过扩展边界像素(BorderTypes) 来计算边界像素值
 - **Func**
   - [bilateralFilter](/OpenCV_bilateralFilter) - 双边滤波器 - 减少不需要的噪音, 并保持边缘, 处理速度较慢
-  - [boxFilter](/OpenCV_boxFilter)
-  - `blur`
+  - [boxFilter](/OpenCV_boxFilter) - 方框滤波
+  - `blur` - 均值滤波
     - `blur(src, dst, ksize, anchor, borderType)` 等同于 `boxFilter(src, dst, src.type(), ksize, anchor, true, borderType)`
   - 
