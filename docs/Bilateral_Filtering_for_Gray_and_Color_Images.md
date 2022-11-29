@@ -1,3 +1,12 @@
+---
+Title | Bilateral Filtering for Gray and Color Images
+-- | --
+Created @ | `2022-11-28T07:25:47Z`
+Last Modify @| `2022-11-29T06:56:55Z`
+Labels | ``
+Edit @| [here](https://github.com/junxnone/aiwiki/issues/318)
+
+---
 ## Introduction
 
 `Filtering` 可能是图像处理和计算机视觉中最基本的操作. `Filtering` 广义上是指在给定位置过滤图像的值, 是同一位置的小邻域中输入图像值的函数, 例如高斯低通滤波计算邻域内像素的加权均值(其中权重随着与邻域中心的距离而减小),  尽管可以给出这种权重减小的公式和量化解释，但是直觉上图像像素是缓慢变化的, 相邻的像素值是接近的，取平均值是合适的. 像素的噪声的相关性是小于信号的, 所以可以保留信号并消除噪声. 这种方法在边缘处失效, 线性低通滤波器会造成边缘模糊. 如何才能在平均平滑区域的情况下避免边缘处平均. [Many efforts](https://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/MANDUCHI1/Bilateral_Filtering.html#References) 一直致力于减少这种不良影响. [Bilateral filtering](https://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/MANDUCHI1/Bilateral_Filtering.html#[1])是一个简单的非迭代的保持边缘的滤波平滑.
@@ -14,7 +23,7 @@ Consider a shift-invariant low-pass domain filter applied to an image:
 
 ## Experiments with Black-and-White Images
 
-Figure 2 (a) and (b) show the potential of bilateral filtering for the removal of texture. The picture "simplification" illustrated by figure 2 (b) can be useful for data reduction without loss of overall shape features in applications such as image transmission, picture editing and manipulation, image description for retrieval.
+图 2a & 2b 显示了双边滤波去除纹理的能力,  图 2b 所示的图片简化可以用于数据压缩而不丢失整体形状, 可以在图片传输/图片编辑和操作/图片检索等应用中使用
 
 2a | 2b
 -- | --
