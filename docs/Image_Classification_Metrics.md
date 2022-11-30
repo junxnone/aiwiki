@@ -1,9 +1,10 @@
 ---
 Title | Image Classification Metrics
 -- | --
-Create Date | `2021-11-21T04:55:43Z`
-Update Date | `2022-01-20T03:10:46Z`
-Edit link | [here](https://github.com/junxnone/aiwiki/issues/137)
+Created @ | `2021-11-21T04:55:43Z`
+Last Modify @| `2022-11-30T08:52:52Z`
+Labels | ``
+Edit @| [here](https://github.com/junxnone/aiwiki/issues/137)
 
 ---
 ## Reference
@@ -101,5 +102,7 @@ Normalized confusion matrix
 ![image](https://user-images.githubusercontent.com/2216970/60111139-f9ea8000-979f-11e9-9832-ec36e1592a74.png)
 - 纵坐标为真阳性率(TPR)
 ![image](https://user-images.githubusercontent.com/2216970/60111167-07076f00-97a0-11e9-91e2-45a834874a2b.png)
+
+![image](https://user-images.githubusercontent.com/2216970/204750904-e664abb7-5f1d-4491-86e0-93867ee7280e.png)
 
 #### PR-AUC
