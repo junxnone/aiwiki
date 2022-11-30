@@ -2,7 +2,7 @@
 Title | Image Classification Metrics
 -- | --
 Created @ | `2021-11-21T04:55:43Z`
-Last Modify @| `2022-11-30T08:52:52Z`
+Last Modify @| `2022-11-30T08:56:44Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/137)
 
@@ -90,8 +90,8 @@ Normalized confusion matrix
  [0.   0.   1.  ]]
 ```
 
-### AUC - Area Under the Curve
-
+### AUROC
+- `The Area Under the Receiver Operating Characteristic`
 - AUC常常用来评估二分类模型的性能。
 - 曲线下的面积通常指的是ROC曲线。
 - 相比于准确率、召回率、F1值等依赖于判决阈值的评估指标，AUC则没有这个问题。
