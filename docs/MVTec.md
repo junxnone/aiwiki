@@ -2,7 +2,7 @@
 Title | MVTec
 -- | --
 Created @ | `2022-12-05T08:08:10Z`
-Last Modify @| `2022-12-05T08:31:41Z`
+Last Modify @| `2022-12-05T08:32:34Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/323)
 
@@ -21,7 +21,6 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/323)
 - 包含不同领域中的五种纹理以及十种物体
 - 训练集中只包含正常样本，测试集中包含正常样本与缺陷样本
 
-![image](https://user-images.githubusercontent.com/2216970/205584978-bbffb341-70dd-4e84-bf7c-902cdadedd94.png)
 ![image](https://user-images.githubusercontent.com/2216970/205585319-c7795dcd-891d-4e86-b1f3-d3f3196997f3.png)
 
 ## Statistical overview
