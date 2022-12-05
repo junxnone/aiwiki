@@ -2,7 +2,7 @@
 Title | Anomaly Detection
 -- | --
 Created @ | `2019-04-08T07:06:13Z`
-Last Modify @| `2022-12-05T01:59:03Z`
+Last Modify @| `2022-12-05T08:08:34Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/277)
 
@@ -46,6 +46,6 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/277)
 - [anomalib](https://github.com/openvinotoolkit/anomalib)
 
 ## Datasets
-- [MVTecAD (MVTEC Anomaly Detection Datasets)](https://www.mvtec.com/company/research/datasets/mvtec-ad/)
+- [MVTecAD (MVTEC Anomaly Detection Datasets)](/MVTec)
 
 
