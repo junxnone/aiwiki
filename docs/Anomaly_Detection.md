@@ -1,9 +1,10 @@
 ---
 Title | Anomaly Detection
 -- | --
-Create Date | `2019-04-08T07:06:13Z`
-Update Date | `2022-01-21T10:19:56Z`
-Edit link | [here](https://github.com/junxnone/aiwiki/issues/277)
+Created @ | `2019-04-08T07:06:13Z`
+Last Modify @| `2022-12-05T01:55:52Z`
+Labels | ``
+Edit @| [here](https://github.com/junxnone/aiwiki/issues/277)
 
 ---
 ## Reference
@@ -20,10 +21,19 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/277)
 - 异常值检测/产品缺陷检测/不正常行为检测
   - 结构化数据/时间序列数据
   - 图像/视频
-- Algos
-  - 无监督学习
-  - AutoEncoder
-  - GAN
+
+## Algos
+
+- 无监督学习
+- AutoEncoder
+- GAN
+- Padim
+- STFPM
+- DFM
+- DFKDE
+- Draem
+
+
 
 ## 应用
 - 缺陷检测
