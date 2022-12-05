@@ -2,7 +2,7 @@
 Title | MVTec
 -- | --
 Created @ | `2022-12-05T08:08:10Z`
-Last Modify @| `2022-12-05T08:08:10Z`
+Last Modify @| `2022-12-05T08:31:41Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/323)
 
@@ -23,4 +23,10 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/323)
 
 ![image](https://user-images.githubusercontent.com/2216970/205584978-bbffb341-70dd-4e84-bf7c-902cdadedd94.png)
 ![image](https://user-images.githubusercontent.com/2216970/205585319-c7795dcd-891d-4e86-b1f3-d3f3196997f3.png)
+
+## Statistical overview
+
+![image](https://user-images.githubusercontent.com/2216970/205589876-dc4aabd8-8842-42aa-a9b2-f3fbcabe0a16.png)
+
+![image](https://user-images.githubusercontent.com/2216970/205590065-093a52ae-cf60-4486-a5a6-dd410ae5f2a4.png)
 
