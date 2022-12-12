@@ -22,6 +22,7 @@
     name: 'AI Wiki',
     repo: 'junxnone/aiwiki',
     loadSidebar: true,
+    loadNavbar: 'NAV.md',
     auto2top: true,
     copyCode: {
       buttonText : '复制',
@@ -99,7 +100,21 @@
   <script src="//cdn.jsdelivr.net/npm/docsify-katex@1.4.4/dist/docsify-katex.js"></script>
   <!-- or <script src="//cdn.jsdelivr.net/gh/upupming/docsify-katex@1.4.4/dist/docsify-katex.js"></script> -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"/>
+  <link rel="stylesheet" href="assets/docsify-quick-page.css">
+  <script src="assets/docsify-quick-page.js"></script>
+  <link rel="stylesheet" href="assets/dark-mode.css">
+  <script src="assets/dark-mode.js"></script>
+  <link rel="stylesheet" href="assets/back-to-top.css">
+  <script src="assets/back-to-top.js"></script>
+  <link rel="stylesheet" href="assets/edit.css">
+  <script src="assets/edit.js"></script>
 
+  <!pdf plugin>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js"></script> 
+  <script src="//unpkg.com/docsify-pdf-embed-plugin/src/docsify-pdf-embed.js"></script>
+  <script src="//unpkg.com/mermaid/dist/mermaid.js"></script>
+  <script src="//unpkg.com/docsify-mermaid@latest/dist/docsify-mermaid.js"></script>
+  <script>mermaid.initialize({ startOnLoad: true });</script>
   <script>
   
   const gitalk = new Gitalk({
