@@ -2,7 +2,7 @@
 Title | Anomaly Detection
 -- | --
 Created @ | `2019-04-08T07:06:13Z`
-Last Modify @| `2022-12-05T08:08:34Z`
+Last Modify @| `2022-12-12T03:43:25Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/277)
 
@@ -28,7 +28,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/277)
 - AutoEncoder
 - GAN
 - [PaDiM](/PaDiM)
-- STFPM
+- [STFPM](/STFPM)
 - DFM
 - DFKDE
 - Draem
