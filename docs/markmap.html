@@ -19,6 +19,7 @@
 </head>
 
 <body>
+     <div id="divMain"></div>
     <div class="markmap" id="MarkMap"></div>
     <!-- follow the instruction from https://github.com/gera2ld/markmap/tree/master/packages/markmap-autoloader#markmap-autoloader -->
     <script>
@@ -37,6 +38,16 @@
             }
             markmap.autoLoader.renderAll();
         };
+        function AppendLink(url) {
+            var div = document.getElementById("divMain");
+            const linkTmp = document.createElement("a");
+            let index = url.lastIndexOf("/");
+            let newUrl = url.substring(0, index) + "/#/" + url.substring(index+1, url.length)
+            linkTmp.href = newUrl;
+            console.log("add link:"+newUrl)
+            linkTmp.innerText = "Wiki Page"; 
+            div.appendChild(linkTmp);                                           
+        }
 
         //process searchparams and get string
         async function main() {
@@ -53,6 +64,7 @@
                     md = md + ".md";
                     console.log("render markdown:"+md)
                 }
+                AppendLink(md)
                 const reqUrl = md
                     ? new URL(md)
                     : new URL("README.md", document.location);
