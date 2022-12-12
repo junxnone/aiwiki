@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>MarkMap</title>
+    <link href="https://markmap.js.org/favicon.png" rel="icon" type="image/png" />
+    <style>
+        html,
+        body,
+        svg,
+        .markmap {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            background-color: RGB(227, 237, 205);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="markmap" id="MarkMap"></div>
+    <!-- follow the instruction from https://github.com/gera2ld/markmap/tree/master/packages/markmap-autoloader#markmap-autoloader -->
+    <script>
+        window.markmap = {
+            autoLoader: { manual: true },
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+    <script>
+        //render markmap in the div
+        const renderMap = function (str, prefix) {
+            const dst = document.getElementById("MarkMap");
+            dst.innerHTML = str;
+            if (prefix) {
+                dst.innerHTML = str.replace(/\]\(/g, "](" + prefix);
+            }
+            markmap.autoLoader.renderAll();
+        };
+
+        //process searchparams and get string
+        async function main() {
+            const url = new URL(document.location);
+            let text = "", mdLinkPrefix = url.searchParams.get("base");
+            if (url.searchParams.has("str")) {
+                text = url.searchParams.get("str");//the param str shouldn't be too long
+            } else {
+                const md = url.searchParams.get("md");
+                const reqUrl = md
+                    ? new URL(md)
+                    : new URL("README.md", document.location);
+                const req = new Request(reqUrl);
+                //need Help: support fetch resources from different site
+                const res = await fetch(req);
+                text = await res.text();
+                if (!mdLinkPrefix) {
+                    const mdFolder = reqUrl.pathname.substring(
+                        0,
+                        reqUrl.pathname.lastIndexOf("/") + 1
+                    );
+                    url.searchParams.set("md", reqUrl.origin + mdFolder);
+                    mdLinkPrefix = url.toString();
+                }
+            }
+            renderMap(text, mdLinkPrefix);
+        }
+        main().catch((e) => console.error(e));
+    </script>
+</body>
+
+</html>
