@@ -118,4 +118,19 @@
     }
   }
   </script>
+  
+  <script>
+    window.$docsify.plugins.push(
+      function (hook, vm) {
+        hook.beforeEach(
+          function (mdstr) {
+            const prefix = document.location.pathname.endsWith('/') ? '' : '..';
+            const markmapUrl = new URL(prefix + 'markmap.html', document.location);
+            const markdownUrl = new URL(prefix + vm.route.file, document.location);
+            return `[🔑 MarkMap](${markmapUrl}?md=${markdownUrl})\n\n` + mdstr;
+          }
+        );
+      }
+    );
+  </script>
 </html>
