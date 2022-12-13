@@ -2,14 +2,15 @@
 Title | Numpy
 -- | --
 Created @ | `2022-12-13T09:04:40Z`
-Last Modify @| `2022-12-13T09:15:55Z`
+Last Modify @| `2022-12-13T10:17:36Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/328)
 
 ---
-
 ## Visualization Tools
 
+- [array-visualizer](https://github.com/biraj21/array-visualizer) [[app](https://arrayvis.netlify.app/)]
+- [vedo](https://github.com/marcomusy/vedo)
 - [three.js voxel painter](https://threejs.org/examples/#webgl_interactive_voxelpainter) [[editor](https://nmcapule.github.io/voxel-editor/)]
 - [ndarray-visualizer](https://github.com/Pewww/ndarray-visualizer)
 - [seaborn heatmaps](https://seaborn.pydata.org/examples/spreadsheet_heatmap.html)
