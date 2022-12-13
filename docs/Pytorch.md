@@ -1,9 +1,10 @@
 ---
 Title | Pytorch
 -- | --
-Create Date | `2019-01-25T23:32:24Z`
-Update Date | `2022-03-29T07:20:35Z`
-Edit link | [here](https://github.com/junxnone/aiwiki/issues/168)
+Created @ | `2019-01-25T23:32:24Z`
+Last Modify @| `2022-12-13T06:24:37Z`
+Labels | ``
+Edit @| [here](https://github.com/junxnone/aiwiki/issues/168)
 
 ---
 ## Reference 
@@ -20,6 +21,7 @@ Edit link | [here](https://github.com/junxnone/aiwiki/issues/168)
 - **Videos**
   - [PyTorch深度学习(系列)教程 - bilibili Videos](https://www.bilibili.com/video/av31914351/)
   - [深度学习与PyTorch入门实战 - bilibili Videos](https://www.bilibili.com/video/av49008640/)
+- [深入浅出PyTorc](https://datawhalechina.github.io/thorough-pytorch/index.html)
 
 ## Brief
 - [Pytorch Optimizer](/Pytorch_Optimizer)
