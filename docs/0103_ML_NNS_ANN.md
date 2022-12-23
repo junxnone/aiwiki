@@ -2,7 +2,7 @@
 Title | ML NNS ANN
 -- | --
 Created @ | `2021-08-18T03:39:23Z`
-Last Modify @| `2022-12-23T15:11:58Z`
+Last Modify @| `2022-12-23T15:13:54Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/103)
 
@@ -36,7 +36,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/103)
   - NAPP - `Neighborhood APProximation index`
 - Tree-Based Space Partitioning Methods
   - FLANN
-  - [Annoy](https://github.com/junxnone/tech-io/issues/1034)
+  - [Annoy](https://github.com/junxnone/aiwiki/issues/333)
   - VP-Tree
 - Neighborhood-Based Methods
   - SW - `Small World Graph`
