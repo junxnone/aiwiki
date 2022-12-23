@@ -2,12 +2,14 @@
 Title | Image Color Model YUV
 -- | --
 Created @ | `2021-02-07T03:28:00Z`
-Last Modify @| `2022-12-23T13:21:05Z`
+Last Modify @| `2022-12-23T13:21:38Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/121)
 
 ---
-# Reference
+# YUV Color Model
+
+## Reference
 
 - [详解 YUV 格式（I420/YUV420/NV12/NV12/YUV422）](https://www.jianshu.com/p/358bf8b7eacc)
 - [YUV pixel formats](https://www.fourcc.org/yuv.php)
@@ -16,7 +18,8 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/121)
 - [一文理解 YUV](https://zhuanlan.zhihu.com/p/75735751)
 
 
-# Brief
+## Brief
+
 - YUV Color Space - 用于模拟信号彩色电视广播
   - Y - Luminance/Luma - 明亮度/灰度 - `[0,1] [0,255]`
   - UV - Chrominance/Chroma  - 色度 - `[-0.5, 0.5] [-128, 127]`
