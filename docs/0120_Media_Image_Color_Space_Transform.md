@@ -1,8 +1,8 @@
 ---
-Title | Image Color Space Transform
+Title | Media Image Color Space Transform
 -- | --
 Created @ | `2021-10-21T18:40:38Z`
-Last Modify @| `2022-12-23T13:23:54Z`
+Last Modify @| `2022-12-23T13:32:35Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/120)
 
