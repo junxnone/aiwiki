@@ -1,8 +1,8 @@
 ---
-Title | Image 3DImage
+Title | Media Image 3DImage
 -- | --
 Created @ | `2021-07-30T06:51:51Z`
-Last Modify @| `2022-12-23T13:29:59Z`
+Last Modify @| `2022-12-23T13:32:08Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/39)
 
