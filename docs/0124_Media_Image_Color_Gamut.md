@@ -1,8 +1,8 @@
 ---
-Title | Image Color Gamut
+Title | Media Image Color Gamut
 -- | --
 Created @ | `2021-10-25T02:39:07Z`
-Last Modify @| `2022-12-23T13:26:10Z`
+Last Modify @| `2022-12-23T13:32:30Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/124)
 
