@@ -2,7 +2,7 @@
 Title | CV BIN
 -- | --
 Created @ | `2020-11-11T04:02:36Z`
-Last Modify @| `2022-12-23T14:33:58Z`
+Last Modify @| `2022-12-23T14:35:18Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/99)
 
@@ -91,5 +91,5 @@ Original | Local OTSU | Original >= Local OTSU
 ## Some API
 
 - [scikit-image Thresholding](https://github.com/junxnone/examples/issues/224)
-- [OpenCV Threshold](https://github.com/junxnone/examples/issues/61)
+- [OpenCV Threshold](https://github.com/junxnone/aiwiki/issues/330)
 
