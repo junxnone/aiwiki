@@ -2,11 +2,14 @@
 Title | ML RandomForest
 -- | --
 Created @ | `2021-03-30T07:49:58Z`
-Last Modify @| `2022-12-23T15:03:22Z`
+Last Modify @| `2022-12-23T15:03:43Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/114)
 
 ---
+
+# Random Forest 随机森林
+
 ## Reference
 - [随机森林 – Random forest](https://easyai.tech/ai-definition/random-forest/)
 
