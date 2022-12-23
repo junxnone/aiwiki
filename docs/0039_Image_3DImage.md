@@ -2,11 +2,13 @@
 Title | Image 3DImage
 -- | --
 Created @ | `2021-07-30T06:51:51Z`
-Last Modify @| `2022-12-23T13:29:45Z`
+Last Modify @| `2022-12-23T13:29:59Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/39)
 
 ---
+# 3D 图像
+
 ## Reference
 - [Voxel - Wikipedia](https://en.wikipedia.org/wiki/Voxel)
 
