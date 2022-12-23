@@ -2,11 +2,14 @@
 Title | ML CostFunction
 -- | --
 Created @ | `2018-12-12T09:57:45Z`
-Last Modify @| `2022-12-23T14:49:51Z`
+Last Modify @| `2022-12-23T14:50:12Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/282)
 
 ---
+
+# Cost Function 代价函数
+
 ## Reference
 
 - [损失函数(Loss function)和代价函数(成本函数)(Cost function)的区别与联系](https://blog.csdn.net/uestc_c2_403/article/details/77387780)
