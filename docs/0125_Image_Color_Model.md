@@ -2,12 +2,12 @@
 Title | Image Color Model
 -- | --
 Created @ | `2021-10-25T03:08:34Z`
-Last Modify @| `2022-12-23T13:20:37Z`
+Last Modify @| `2022-12-23T13:27:08Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/125)
 
 ---
-# Color Model
+# Color Model 色彩模型
 
 ## Reference
 - [Color model - wikipedia](https://en.wikipedia.org/wiki/Color_model)
