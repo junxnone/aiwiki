@@ -2,11 +2,14 @@
 Title | ML GD xGD
 -- | --
 Created @ | `2020-04-04T13:09:55Z`
-Last Modify @| `2022-12-23T14:57:10Z`
+Last Modify @| `2022-12-23T14:57:39Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/148)
 
 ---
+
+# BGD SGD MBGD
+
 ## Reference
 
 - [随机梯度下降法，批量梯度下降法和小批量梯度下降法以及代码实现](https://blog.csdn.net/LoseInVain/article/details/78243051)
