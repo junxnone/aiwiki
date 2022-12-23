@@ -2,17 +2,19 @@
 Title | Image Color RGB
 -- | --
 Created @ | `2020-02-12T03:56:39Z`
-Last Modify @| `2022-12-23T13:25:02Z`
+Last Modify @| `2022-12-23T13:25:22Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/127)
 
 ---
-# Reference
+# RGB 色表
+
+## Reference
 
 - [常用RGB颜色表](https://blog.csdn.net/Artoria_QZH/article/details/100557872)
 - [placeholder 用法](https://placeholder.com/)
 
-# Table
+## Table
 
 
 
