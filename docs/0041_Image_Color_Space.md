@@ -2,18 +2,21 @@
 Title | Image Color Space
 -- | --
 Created @ | `2020-11-11T06:09:50Z`
-Last Modify @| `2022-12-23T13:22:51Z`
+Last Modify @| `2022-12-23T13:23:09Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/41)
 
 ---
-# Reference
+
+# Color Space
+
+## Reference
 - [Color FAQ - Frequently Asked Questions Color](http://poynton.ca/notes/colour_and_gamma/ColorFAQ.html)
 - [Gamma FAQ - Frequently Asked Questions about Gamma](http://poynton.ca/notes/colour_and_gamma/GammaFAQ.html)
 - [ColorSpace颜色空间简介](https://blog.csdn.net/zb1165048017/article/details/109003125)
 
 
-# Brief
+## Brief
 - Color Spaces - 色彩空间  = `色彩模型 + 色域`
   - Adobe RGB
   - sRGB - `standard RedGreenBlue`
