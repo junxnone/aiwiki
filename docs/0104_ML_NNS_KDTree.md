@@ -2,16 +2,19 @@
 Title | ML NNS KDTree
 -- | --
 Created @ | `2021-05-24T06:32:35Z`
-Last Modify @| `2022-12-23T15:07:20Z`
+Last Modify @| `2022-12-23T15:07:41Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/104)
 
 ---
-# Reference
+
+# KDTree
+
+## Reference
 - [详解KDTree](https://blog.csdn.net/silangquan/article/details/41483689)
 - [k-d tree - wikipedia](https://en.wikipedia.org/wiki/K-d_tree)
 
-# Brief
+## Brief
 - KD - `k-dimensional`
   - [BSTree](https://github.com/junxnone/tech-io/issues/989) - `Binary Sort Tree/Binary Search Tree`
   - 1970s 由 Jon Bentley 提出
@@ -47,7 +50,7 @@ Steps | 复杂度
 - [ANN ~2010](http://www.cs.umd.edu/~mount/ANN/)
 - [fastann ~2009](https://github.com/philbinj/fastann)
 
-# UseCase
+## UseCase
 - 三维点云中点的检索
 
 K = 2 | ![image](https://user-images.githubusercontent.com/2216970/119448597-24665e80-bd64-11eb-8a95-a91e750312fe.png) | ![image](https://user-images.githubusercontent.com/2216970/119445738-da7b7980-bd5f-11eb-86d9-375e9afe9e79.png) 
