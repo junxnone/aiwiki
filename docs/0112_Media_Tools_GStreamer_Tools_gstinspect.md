@@ -2,15 +2,17 @@
 Title | Media Tools GStreamer Tools gstinspect
 -- | --
 Created @ | `2021-02-05T03:20:38Z`
-Last Modify @| `2022-12-23T13:16:30Z`
+Last Modify @| `2022-12-23T13:16:55Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/112)
 
 ---
-# Reference
+# gst-inspect
+
+## Reference
 - [GStreamer基础教程12 - 常用命令工具](https://www.cnblogs.com/xleng/p/11791944.html)
 
-# UseCase
+## UseCase
 
 Num | UC | Command
 -- | -- | --
