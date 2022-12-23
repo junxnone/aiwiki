@@ -2,12 +2,13 @@
 Title | ML LossFunction FocalLoss
 -- | --
 Created @ | `2019-03-14T06:35:24Z`
-Last Modify @| `2022-12-23T14:58:27Z`
+Last Modify @| `2022-12-23T14:58:45Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/284)
 
 ---
 
+# Focal Loss
 
 ## Reference
 
