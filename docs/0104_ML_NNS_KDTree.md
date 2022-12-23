@@ -2,7 +2,7 @@
 Title | ML NNS KDTree
 -- | --
 Created @ | `2021-05-24T06:32:35Z`
-Last Modify @| `2022-12-23T15:07:41Z`
+Last Modify @| `2022-12-23T15:09:34Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/104)
 
@@ -16,7 +16,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/104)
 
 ## Brief
 - KD - `k-dimensional`
-  - [BSTree](https://github.com/junxnone/tech-io/issues/989) - `Binary Sort Tree/Binary Search Tree`
+  - [BSTree](https://github.com/junxnone/aiwiki/issues/332) - `Binary Sort Tree/Binary Search Tree`
   - 1970s 由 Jon Bentley 提出
 - 分割 K 维数据空间的数据结构
 - **用途**: 搜索感兴趣数据 
