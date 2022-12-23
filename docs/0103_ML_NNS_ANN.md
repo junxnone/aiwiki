@@ -2,7 +2,7 @@
 Title | ML NNS ANN
 -- | --
 Created @ | `2021-08-18T03:39:23Z`
-Last Modify @| `2022-12-23T15:13:54Z`
+Last Modify @| `2022-12-23T15:14:33Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/103)
 
@@ -40,7 +40,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/103)
   - VP-Tree
 - Neighborhood-Based Methods
   - SW - `Small World Graph`
-  - [HNSW](https://github.com/junxnone/tech-io/issues/1033)
+  - [HNSW](https://github.com/junxnone/aiwiki/issues/334)
   - RCT - `Rank Cover Tree`
   - KGraph
   - DPG - `Diversified Proximity Graph`
