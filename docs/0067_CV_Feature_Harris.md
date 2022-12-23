@@ -2,12 +2,15 @@
 Title | CV Feature Harris
 -- | --
 Created @ | `2020-11-06T10:24:21Z`
-Last Modify @| `2022-12-23T14:41:26Z`
+Last Modify @| `2022-12-23T14:42:02Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/67)
 
 ---
-# Reference
+
+# Harris Corner
+
+## Reference
 - 1988 [A COMBINED CORNER AND EDGE DETECTOR](https://web.stanford.edu/class/cs231m/references/harris-stephens.pdf)
 - [Harris Corner Detector - wikipedia](https://en.wikipedia.org/wiki/Harris_Corner_Detector)
 - [图像处理特征不变算子系列之Harris算子](https://blog.csdn.net/kezunhai/article/details/11265167)
@@ -22,7 +25,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/67)
 - [亚像素角点的求法](https://xueyayang.github.io/pdf_posts/%E4%BA%9A%E5%83%8F%E7%B4%A0%E8%A7%92%E7%82%B9%E7%9A%84%E6%B1%82%E6%B3%95.pdf)
 
 
-# Brief
+## Brief
 - 1988 Harris Corner Detector Harris&Stephens
 
 检测原理 |
@@ -60,8 +63,8 @@ window around each pixel
 5. Find local maxima of response function(NMS)
 
 
-# 扩展 
-## Shi-Tomasi
+## 扩展 
+### Shi-Tomasi
 - 减少计算量
 - ![image](https://user-images.githubusercontent.com/2216970/99205042-5e253e00-27f2-11eb-8a0a-940c924e355f.png)  ==> ![image](https://user-images.githubusercontent.com/2216970/99205032-59f92080-27f2-11eb-842e-4481529fc2b0.png)
 
@@ -73,7 +76,7 @@ window around each pixel
 **Harris vs Shi-Tomasi**
 ![1_wvTlz05svCeCPu3MvJgeBQ](https://user-images.githubusercontent.com/2216970/99205532-c32d6380-27f3-11eb-9310-bdd5b58f12c3.gif)
 
-## Subpixel Corners
+### Subpixel Corners
 - 增加精确度
 - Pixel - (56, 120)
   - Subpixel - (56.768, 120.1432)
