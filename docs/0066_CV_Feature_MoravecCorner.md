@@ -2,12 +2,14 @@
 Title | CV Feature MoravecCorner
 -- | --
 Created @ | `2020-11-07T08:12:25Z`
-Last Modify @| `2022-12-23T14:40:14Z`
+Last Modify @| `2022-12-23T14:40:45Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/66)
 
 ---
-# Reference
+
+# Moravec Corner
+## Reference
 - [手写计算机视觉算法：Moravec角点检测算子](http://zhaoxuhui.top/blog/2019/01/10/MoravecCornerDetection.html)
 - 1976 [Automatic Visual Obstacle Avoidance](https://frc.ri.cmu.edu/~hpm/project.archive/robot.papers/1977/aip.txt)
 - 1980 [Obstacle Avoidance and Navigation in the Real World by a Seeing Robot Rover](https://www.ri.cmu.edu/pub_files/pub4/moravec_hans_1980_1/moravec_hans_1980_1.pdf)
@@ -17,7 +19,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/66)
 - [图像处理特征不变算子系列之Moravec算子（一）](https://blog.csdn.net/kezunhai/article/details/11176065)
 
 
-# Brief
+## Brief
 - 将角点定义为自相似性较低的点
 > defines a corner to be a point with low self-similarity
 - 以像素为中心的窗口和八个方向偏移窗口(↑←→↓↖↙↗↘ )的相似度来衡量是否为角点
