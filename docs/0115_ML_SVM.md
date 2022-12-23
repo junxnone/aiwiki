@@ -2,11 +2,14 @@
 Title | ML SVM
 -- | --
 Created @ | `2019-05-11T13:48:41Z`
-Last Modify @| `2022-12-23T15:03:56Z`
+Last Modify @| `2022-12-23T15:04:18Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/115)
 
 ---
+
+# SVM 支持向量机
+
 ## Reference
 - [SVM 简介](https://blog.csdn.net/liugan528/article/details/79448379)
 - [我所理解的 SVM（支持向量机）- 1](https://zhuanlan.zhihu.com/p/22400898)
