@@ -2,16 +2,19 @@
 Title | CV StructureTensor
 -- | --
 Created @ | `2020-11-08T06:53:20Z`
-Last Modify @| `2022-12-23T14:45:01Z`
+Last Modify @| `2022-12-23T14:45:43Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/70)
 
 ---
-# Reference
+
+# Structure Tensor 结构张量
+
+## Reference
 - [Structure tensor - wikipedia](https://en.wikipedia.org/wiki/Structure_tensor)
 - [结构张量structure tensor](https://blog.csdn.net/u011596455/article/details/71809311)
 
-# Brief
+## Brief
 - 区分图像的`平坦区域/边缘区域/角点区域`
 - 矩阵
 
@@ -28,7 +31,8 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/70)
 
 
 
-# Others
+## Others
+
 矩阵的行列式 | ![image](https://user-images.githubusercontent.com/2216970/98459322-cc577880-21d4-11eb-8cef-c995086dd02b.png)
 -- | --
 **矩阵的迹(trace)** | 对角线元素的总和 <br>![image](https://user-images.githubusercontent.com/2216970/98459348-0d4f8d00-21d5-11eb-8678-4b64e2970f74.png)
