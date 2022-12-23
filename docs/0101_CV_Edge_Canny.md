@@ -2,16 +2,19 @@
 Title | CV Edge Canny
 -- | --
 Created @ | `2020-10-19T05:14:34Z`
-Last Modify @| `2022-12-23T14:47:18Z`
+Last Modify @| `2022-12-23T14:47:37Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/101)
 
 ---
-# Reference
+
+# Canny 边缘检测
+
+## Reference
 - [opencv实现图像的边缘提取](https://blog.csdn.net/weixin_43900597/article/details/104793553)
 
 
-# Brief
+## Brief
 - 边缘检测算法 - 由 John F. Canny 在 1986 年提出
 - **缺点**
   - **手动设置阈值** - 将下限和上限值设置为滞后阈值是一个手动过程，需要实验和视觉验证。
