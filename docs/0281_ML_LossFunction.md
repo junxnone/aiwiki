@@ -2,11 +2,14 @@
 Title | ML LossFunction
 -- | --
 Created @ | `2019-04-08T06:11:14Z`
-Last Modify @| `2022-12-23T14:50:25Z`
+Last Modify @| `2022-12-23T14:50:51Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/281)
 
 ---
+
+# Loss Function 损失函数
+
 ## Reference
 
 - [常见回归和分类损失函数比较](https://www.cnblogs.com/massquantity/p/8964029.html)
