@@ -2,12 +2,11 @@
 Title | ML LossFunction FocalLoss
 -- | --
 Created @ | `2019-03-14T06:35:24Z`
-Last Modify @| `2022-12-23T14:58:45Z`
+Last Modify @| `2022-12-23T14:59:22Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/284)
 
 ---
-
 # Focal Loss
 
 ## Reference
@@ -70,5 +69,6 @@ Focal Loss | ![image](https://user-images.githubusercontent.com/2216970/70677190
 
 ---
 不同 γ 和 αt 测试结果
+
 ![image](https://user-images.githubusercontent.com/2216970/70678399-f191ed00-1ccc-11ea-8f6b-b4f1b05f76ff.png)
 
