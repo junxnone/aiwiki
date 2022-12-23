@@ -1,8 +1,8 @@
 ---
-Title | CV Feature MoravecCorner
+Title | CV Feature Moravec
 -- | --
 Created @ | `2020-11-07T08:12:25Z`
-Last Modify @| `2022-12-23T14:40:45Z`
+Last Modify @| `2022-12-23T14:42:24Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/66)
 
