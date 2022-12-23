@@ -1,125 +1,324 @@
-- [数学基础](/数学基础)
-  - 微积分
-  - 线性代数
-  - 概率论
-- [图像基础](/图像基础)
-  - 相机模型
-  - [Camera](/Camera)
-  - [颜色模型/色域/空间/Image Color](/Image_Color)
-  - [PixelFomat](/PixelFormat)
-  - [2D 图像](/2D_Images)
-  - [3D 图像](/3D_Images)
-  - [Video](/Video)
-  - [直方图均衡](/Histogram_Equalization)
-  - [图像二值化](/Image_Thresholding)
-  - [Feature Detection](/Feature_Detection)
-  - 图像滤波器
-  - 采样
-  - 坐标变换
-    - 四元数
-  - 相似性度量
-  - 图像特征
-- 机器学习
-  - 回归
-  - [代价函数/Cost Function](Cost_Function)
-  - [损失函数/Loss Function](/Loss_Function)
-  - [梯度下降/Gradient Descent](/Gradient_Descent)
-  - 反向传播
-  - [交叉验证/Cross Validation](/Cross_Validation)
-  - [正则化/Regularization](/Regularization)
-  - 聚类
-  - 降维
-  - [Decision Tree - 决策树](/Decision_Tree)
-  - [Random Forest - 随机森林](/Random_Forest)
-  - [支持向量机/SVM](/SVM)
-  - [最近邻搜索](/Nearest_Neighbor_Search)
-    - [KNN]
-    - [ANN](/Approximate_Nearest_Neighbor)
-  - Kmeans
-    - 层次聚类
-    - 密度聚类
-    - 谱聚类
-- 深度学习基础
-  - [卷积/Convolution](/Convolution_Summary.md)
-  - [池化/Pooling](/Pooling)
-  - [激活函数/Activation Function](/Activation_Function)
-  - 优化算法/Optimization
-  - 参数量
-  - 计算量
-  - [学习率/Learning Rate](/Learning_Rate)
-  - [Dropout](/Dropout)
-    - [Multi-Sample Dropout](/Multi_Sample_Dropout)
-  - [归一化标准化/Data Normalization](/Data_Normalization)
-- [Data Augmentation](/Data_Augmentation) 
-- [Metrics](/Metrics)
-  - [Image Classification Metrics](/Image_Classification_Metrics)
-  - [Image Object Detection Metrics](/Image_Object_Detection_Metrics)
-  - [Image Segmentation Metrics](/Image_Segmentation_Metrics)
-  - [Pairwise Metrics](/Pairwise_Metrics)
-- [AI Tasks](/Tasks_Summary)
-  - [图像分类/Image Classification](/Image_Classification)
-  - [目标检测/Object Detection](/Image_Object_Detection)
-  - [图像分割/Image Segmentation](/Image_Segmentation)
-  - [度量学习/Metric Learning](/Metric_Learning)
-  - [图像检索/Image Retrieval](/Image_Retrieval)
-    - [CBIR](/CBIR)
-  - [字符识别/OCR](/OCR)
-  - [异常检测/Anomaly Detection](/Anomaly_Detection)
-- [Active Learning](/Active_Learning_Summary)
-- [半监督学习/Semi-Supervised Learning](/Semi_Supervised_Learning)
-- [强化学习/Reinforcement Learning](/Reinforcement_Learning)
-- [AutoML](/AutoML)
-  - [超参优化/HPO](/HPO)
-    - [贝叶斯优化/Bayesian Optimization](/Bayesian_Optimization)
-  - [NAS](/NAS)
-- [注意力/Attention](/Attention)
-- [Transformer](/Transformer_Summary)
-- [Knowledge Distillation](/Knowledge_Distillation)
-- [AutoEncoder](/AutoEncoder)
-- [量化/Quantization](/Quantization)
-- [3D](3D_Summary)
-  - [3D Camera](/3D_Camera)
-  - [3D ICP](/3D_Algos_ICP)
-  - [3D PPF](/3D_Algos_PPF)
-  - [PFH](/PFH)
-  - [FPFH](/FPFH)
-  - [SAC-IA](/SAC_IA)
-- Tools
-  - [Image Processing Tools](/Image_Processing_Tools)
-  - [Training Inference Tools](/Training_Inference_Tools)
-    - [Pytorch](/Pytorch)
-    - [OpenVINO](/OpenVINO)
-    - [Darknet](/Darknet)
-  - [Label Tools](Data_Label_Tools)
-  - [FLOPs Paramters Calculate Tools](/FLOPs_Parameters_Calculate_Tools)
-  - [Visualize Tools](/可视化)
-    - [ONNX 可视化](/ONNX_Visualizing)
-    - [netron](netron)
-    - [Quiver](/Quiver)
-    - [netscope](http://ethereon.github.io/netscope/quickstart.html)
-    - [MMdnn](https://github.com/microsoft/MMdnn)
-    - [VisualDL - Paddle](https://github.com/PaddlePaddle/VisualDL)
-  - [论文阅读相关工具](/papers)
-  - Others
-    - [Gstreamer](/Gstreamer)
-    - [FLANN](/FLANN)
-    - [PCL](/PCL_Summary)
-    - [Eigen](/Eigen)
-- [Datasets](Datasets)
-  - [Image](/Datasets_Image)
-    - [Classification](/Datasets_Image_Classification)
-    - [Object Detection/Recognition](/Datasets_Image_Object_Detection)
-      - [Edge Detection](/Datasets_Image_Edge_Detection)
-      - [Face Detection/Recognition](/Datasets_Image_Face)
-      - [Text Detection/Recognition](/Datasets_Image_OCR)
-    - [Segmentation](/Datasets_Image_Segmentation)
-    - [Object Counting/Crowd Counting](/Datasets_Image_Object_Counting)
-    - [KeyPoint](/Datasets_Image_KeyPoint)
-    - [Retrieval](/Datasets_Image_Retrieval)
-    - [AutoML](/Datasets_Image_AutoML)
-    - [Defect](/Datasets_Image_Defect)
-  - [Video](/Datasets_Video)
-  - [Audio](/Datasets_Audio)
-  - [NLP](/Datasets_NLP)
-
-
+- [2D Images Datasets](/Datasets_Image)
+  - [Segmentation](/Traditional_Image_Segmentation)
+  - [Segmentation](/Datasets_Image_Segmentation)
+    - [Reference](/Datasets_Image_Segmentation_CHAOS)
+    - [Reference](/Datasets_Image_Segmentation_Cityscapes)
+    - [Reference](/Datasets_Image_Segmentation_DAGM)
+    - [Reference](/Datasets_Image_Segmentation_LVIS)
+    - [Reference](/Datasets_Image_Segmentation_CamVid)
+    - [Reference](/Datasets_Image_Segmentation_Balloon)
+    - Mapping
+      - Challenge
+        - [Reference](/Datasets_Image_Segmentation_Mapping_Challenge_crowdAI)
+    - [Reference](/Datasets_Image_Segmentation_TACO)
+  - [Image Classification Datasets](/Datasets_Image_Classification)
+    - [mnist](/Datasets_Image_Classification_mnist)
+    - Oxford
+      - IIIT
+        - [Reference](/Datasets_Image_Classification_Oxford_IIIT_Pets)
+    - [Cifar](/Datasets_Image_Classification_Cifar)
+    - [Reference](/Datasets_Image_Classification_ImageNet)
+  - [Retrieval](/Datasets_Image_Retrieval)
+    - [DeepFashion](/Datasets_Image_Retrieval_DeepFashion)
+  - Object
+    - [Detection](/Datasets_Image_Object_Detection)
+    - [Counting](/Datasets_Image_Object_Counting)
+  - [Reference](/VGG_Image_Annotator)
+  - [OCR](/Datasets_Image_OCR)
+  - [AutoML](/Datasets_Image_AutoML)
+  - [COCO](/Datasets_Image_COCO)
+  - [Face](/Datasets_Image_Face)
+  - Edge
+    - [Detection](/Datasets_Image_Edge_Detection)
+  - [Reference](/Datasets_Image_PascalVOC)
+  - [KeyPoint](/Datasets_Image_KeyPoint)
+  - Detection
+    - BIT
+      - [Vehicle](/Datasets_Image_Detection_BIT_Vehicle)
+  - [Defect](/Datasets_Image_Defect)
+  - [3D](/Datasets_Image_3D)
+- Media
+  - [图像](/0325_Media_Image)
+    - [Color](/0126_Media_Image_Color)
+      - [Color Model 色彩模型](/0125_Media_Image_Color_Model)
+        - [YUV Color Model](/0121_Media_Image_Color_Model_YUV)
+      - [Color Space 色彩空间](/0041_Media_Image_Color_Space)
+        - [Color Space 转换](/0120_Media_Image_Color_Space_Transform)
+      - [RGB 色表](/0127_Media_Image_Color_RGB)
+      - [Gamut 色域](/0124_Media_Image_Color_Gamut)
+    - [Camera](/0107_Media_Image_Camera)
+      - [GenICam](/0106_Media_Image_Camera_GenICam)
+        - Tools
+      - [像素格式](/0119_Media_Image_Camera_PixelFormat)
+    - [2D 图像](/0035_Media_Image_2DImage)
+    - [3D 图像](/0039_Media_Image_3DImage)
+  - Tools
+    - [GStreamer](/0109_Media_Tools_GStreamer)
+      - Tools
+        - [gst-inspect](/0112_Media_Tools_GStreamer_Tools_gstinspect)
+        - [gst-discoverer](/0111_Media_Tools_GStreamer_Tools_gstdiscoverer)
+        - [gst-launch](/0110_Media_Tools_GStreamer_Tools_gstlaunch)
+      - [Concepts](/0144_Media_Tools_GStreamer_Concepts)
+      - [Plugins](/0143_Media_Tools_GStreamer_Plugins)
+      - [Install](/0117_Media_Tools_GStreamer_Install)
+  - [Video 视频](/0036_Media_Video)
+- [Detection](/Anomaly_Detection)
+- [Reference](/Feature_Detection)
+- [Detection](/Motion_Detection)
+  - Harris
+    - [Reference](/Feature_Detection_Harris_Corner)
+  - Moravec
+    - [Reference](/Feature_Detection_Moravec_Corner)
+  - Edge
+    - [Reference](/Feature_Detection_Edge_Operator)
+  - Hough
+    - [Reference](/Feature_Detection_Hough_Transform)
+  - [Reference](/Feature_Detection_SIFT)
+  - Blob
+    - [Reference](/Feature_Detection_Blob_Detection)
+  - Structure
+    - [Reference](/Feature_Detection_Structure_Tensor)
+  - [Reference](/Edge_Detection_Canny)
+- [Reference](/Inception_Summary)
+- [Summary](/YOLO_Summary)
+- [Summary](/PCL_Summary)
+- [Summary](/3D_Summary)
+- [Reference](/MobileNet_Summary)
+- [Summary](/Tasks_Summary)
+- [Summary](/Transformer_Summary)
+- [Summary](/Convolution_Summary)
+- [Learning](/Metric_Learning)
+- [Learning](/Reinforcement_Learning)
+  - [Rate](/Cyclical_Learning_Rate)
+  - [Tools](/Active_Learning_Tools)
+  - [Summary](/Active_Learning_Summary)
+  - for
+    - 3D
+      - Point
+        - [Clouds](/Deep_Learning_for_3D_Point_Clouds)
+- [Brief](/Image_Color)
+  - [Reference](/Image_Color_Spaces)
+    - [Reference](/Image_Color_Spaces_Transforms)
+  - [Reference](/Image_Color_Gamut)
+  - [Reference](/Image_Color_Model)
+- [Descent](/Gradient_Descent)
+  - [Momentum](/Gradient_Descent_Momentum)
+  - [原理推导](/Gradient_Descent_原理推导)
+  - [History](/Gradient_Descent_History)
+  - BGD
+    - SGD
+      - [MBGD](/Gradient_Descent_BGD_SGD_MBGD)
+- Cloud
+  - [Registration](/Point_Cloud_Registration)
+    - [Metrics](/Point_Cloud_Registration_Metrics)
+  - Rotation
+    - [Matrix](/Point_Cloud_Rotation_Matrix)
+  - [Sampling](/Point_Cloud_Sampling)
+- [Classification](/Image_Classification)
+  - [History](/Image_Classification_History)
+  - [Metrics](/Image_Classification_Metrics)
+- [SIGOPT](/HPO_SIGOPT)
+  - [Usecase](/HPO_SIGOPT_Usecase)
+  - [Options](/HPO_SIGOPT_Options)
+- [RCNN](/Faster_RCNN)
+- [RCNN](/Mask_RCNN)
+- [RCNN](/Fast_RCNN)
+- CV
+  - [Thresholding 二值化](/0099_CV_BIN)
+    - [scikit-image 二值化](/0331_CV_BIN_ScikitImage)
+  - [Histogram Equalization 直方图均衡](/0100_CV_HE)
+- [Augmentation](/OCR_Augmentation)
+- [Augmentation](/Data_Augmentation)
+  - [Cutout](/Data_Augmentation_Cutout)
+- [Function](/Cost_Function)
+- [Function](/Activation_Function)
+- [Function](/Loss_Function)
+- [Segmentation](/Image_Segmentation)
+- [Segmentation](/Instance_Segmentation)
+  - [Metrics](/Image_Segmentation_Metrics)
+- tools
+  - gst
+    - [Reference](/gstreamer_tools_gst_launch)
+    - [Brief](/gstreamer_tools_gst_discoverer)
+    - [Reference](/gstreamer_tools_gst_inspect)
+- [Loss](/Dice_Loss)
+- [Loss](/Focal_Loss)
+- [Metrics](/OCR_Metrics)
+- [Metrics](/Pairwise_Metrics)
+- [OpenCV](/Tools_OpenCV)
+  - Image
+    - [Processing](/Tools_OpenCV_Image_Processing)
+- Algos
+  - [ICP](/3D_Algos_ICP)
+  - [Evaluation](/3D_Algos_PPF)
+- [Images](/3D_Images)
+- [Pixel Format](/2D_Images)
+- [Bahdanau Attention  vs Luong Attention](/Luong_Attention)
+- [Attention](/Bahdanau_Attention)
+- [Install](/Flann_Install)
+- [Install](/Gstreamer_Install)
+- [Network](/Siamese_Network)
+- [Network](/Triplet_Network)
+- Building
+  - with
+    - [Reference](/PCL_Building_with_Windows)
+    - [Reference](/PCL_Building_with_Linux)
+- [Search](/Grid_Search)
+- [Search](/Random_Search)
+- Object
+  - [Detection](/Image_Object_Detection)
+    - [Metrics](/Image_Object_Detection_Metrics)
+- vs
+  - [Reference](/定拍_vs_飞拍)
+  - [Softmax](/Sigmoid_vs_Softmax)
+- [Tips](/Pytorch_Tips)
+- [Tips](/OpenVINO_Tips)
+- [Downsampling](/PCL_Downsampling)
+- Filtering
+  - for
+    - Gray
+      - and
+        - Color
+- [Reference](/RGB_色表)
+- Is
+  - All
+    - You
+      - [Need](/Attention_Is_All_You_Need)
+- [Normalization](/Data_Normalization)
+- [Video](/Datasets_Video)
+- [IA](/SAC_IA)
+- [Transformers](/Bottleneck_Transformers)
+- [Tips](/Darknet_AlexeyAB)
+- [Vision](/Transformer_Vision)
+- [GaussianBlur](/OpenCV_GaussianBlur)
+- [Programming](/Dynamic_Programming)
+- [Convolutional](/Sliding_Convolutional)
+- [Reconstruction](/3D_Reconstruction)
+- [SMBO](/BO_SMBO)
+- [TPE](/BO_TPE)
+- [NNI](/AutoML_NNI)
+- Sample
+  - [Dropout](/Multi_Sample_Dropout)
+- [Distillation](/Knowledge_Distillation)
+- [bilateralFilter](/OpenCV_bilateralFilter)
+- [PPF](/PCL_PPF)
+- [IE](/OpenVINO_IE)
+- [Tree](/Decision_Tree)
+- [SMAC](/BO_SMAC)
+- Average
+  - [Pooling](/Global_Average_Pooling)
+- [Workbench](/OpenVINO_Workbench)
+- INT8
+  - [Model](/OpenVINO_INT8_Model)
+- [V1](/YOLO_V1)
+- Query
+  - [Strategy](/AL_Query_Strategy)
+- [加速](/Pytorch_加速)
+- Compile
+  - [Tool](/OpenVINO_Compile_Tool)
+- [Plugins](/Gstreamer_Plugins)
+- [Process](/Gaussian_Process)
+- Nearest
+  - [Neighbor](/Approximate_Nearest_Neighbor)
+- Efficient
+  - [Attention](/Transformer_Efficient_Attention)
+- [Lexicon](/OCR_Lexicon)
+- Early
+  - [Stopping](/Pytorch_Early_Stopping)
+- Distributions
+  - [Transform](/Normal_Distributions_Transform)
+- [Visualizing](/ONNX_Visualizing)
+- VS
+  - Fast
+    - RCNN
+      - VS
+        - Faster
+- Supervised
+  - [Learning](/Semi_Supervised_Learning)
+- Label
+  - [NLP标注工具](/Data_Label_Tools)
+- [Forest](/Random_Forest)
+- the
+  - Knowledge
+    - in
+      - a
+        - Neural
+- [Engineering](/Feature_Engineering)
+- [Datasets](/Tensorflow_Datasets)
+- [Validation](/Cross_Validation)
+- [ViT](/T2T_ViT)
+- [FCN](/CA_FCN)
+- [KeyPoint](/ISS_KeyPoint)
+- [Security](/OpenVINO_Security)
+- [tiny](/YOLO_tiny)
+- [devcloud](/OpenVINO_devcloud)
+- [V3](/YOLO_V3)
+- [BOHB](/BO_BOHB)
+- cfg
+  - [files](/Darknet_cfg_files)
+- [Encoding](/Position_Encoding)
+- [Audio](/Datasets_Audio)
+- [Reference](/SVM_原理推导)
+- Parameters
+  - Calculate
+    - [Tools](/FLOPs_Parameters_Calculate_Tools)
+- [MO](/OpenVINO_MO)
+- [Camera](/3D_Camera)
+- [Concepts](/Gstreamer_Concepts)
+- Cycle
+  - [Policy](/One_Cycle_Policy)
+- Processing
+  - [Tools](/Image_Processing_Tools)
+- [QBC](/AL_QBC)
+- [Pasting](/Copy_Pasting)
+- [Reference](/PCL_IO)
+- [NLP](/Datasets_NLP)
+- Least
+  - [Squares](/Moving_Least_Squares)
+- Acquisition
+  - [Function](/BO_Acquisition_Function)
+- Scoring
+  - [RCNN](/Mask_Scoring_RCNN)
+- [Optimizer](/Pytorch_Optimizer)
+- [Reference](/Image_Thresholding)
+- [Visualization](/Pytorch_Visualization)
+- Range
+  - [Reference](/PCL_Range_Image)
+- [Optimization](/Bayesian_Optimization)
+- Stream
+  - based
+    - Selective
+      - [Sampling](/AL_Stream_based_Selective_Sampling)
+- [Pipeline](/Pytorch_Pipeline)
+- [Reference](/Gaussian_distribution)
+- [Voting](/Calamari_Voting)
+- [V2](/YOLO_V2)
+- [SAC](/PCL_SAC)
+- [Filter](/Gaussian_Filter)
+- Source
+  - [Code](/Flann_Source_Code)
+- [Reference](/Histogram_Equalization)
+- [OCR](/Traditional_OCR)
+- [Reference](/Convolution_Mathematics)
+- Neighbor
+  - [Reference](/Nearest_Neighbor_Search)
+- Pool
+  - Based
+    - [Sampling](/AL_Pool_Based_Sampling)
+- [DL](/Convolution_DL)
+- Uncertainty
+  - [Sampling](/AL_Uncertainty_Sampling)
+- [Rate](/Learning_Rate)
+- Latency
+  - [Reference](/Low_Latency_Camera)
+- [Tools](/PCL_Tools)
+- [UseCase](/Flann_UseCase)
+- [boxFilter](/OpenCV_boxFilter)
+- [POT](/OpenVINO_POT)
+- [Retrieval](/Image_Retrieval)
+- [AIDE](/AL_AIDE)
+- Inference
+  - [Tools](/Training_Inference_Tools)
+- AABB
+  - [OBB](/PCL_AABB_OBB)
+- [Wiki History](/hist)
