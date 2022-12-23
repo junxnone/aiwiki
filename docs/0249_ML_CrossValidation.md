@@ -2,12 +2,13 @@
 Title | ML CrossValidation
 -- | --
 Created @ | `2020-06-11T05:02:59Z`
-Last Modify @| `2022-12-23T14:52:45Z`
+Last Modify @| `2022-12-23T14:53:33Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/249)
 
 ---
 
+# CrossValidation 交叉验证
 
 ## Reference
 
@@ -38,7 +39,7 @@ Num | Cross Validation | Description
 
 ## Stratified k-fold cross validation - 分层交叉验证
 - 每一折中都保持着原始数据中各个类别的比例关系
--
+
 ![image](https://user-images.githubusercontent.com/2216970/84346873-97bea100-abe3-11ea-8672-9aa9ede0fc3d.png)
 
 
@@ -47,5 +48,6 @@ Num | Cross Validation | Description
 - 主要针对小样本数据
 
 ## Shuffle-split cross-validation
+
 ![image](https://user-images.githubusercontent.com/2216970/84347227-98a40280-abe4-11ea-9793-d5b76e343fc0.png)
 
