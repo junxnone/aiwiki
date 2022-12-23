@@ -1,8 +1,8 @@
 ---
-Title | Image Color Model
+Title | Media Image Color Model
 -- | --
 Created @ | `2021-10-25T03:08:34Z`
-Last Modify @| `2022-12-23T13:27:08Z`
+Last Modify @| `2022-12-23T13:32:22Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/125)
 
