@@ -1,8 +1,8 @@
 ---
-Title | Image Camera PixelFormat
+Title | Media Image Camera PixelFormat
 -- | --
 Created @ | `2021-10-21T17:44:24Z`
-Last Modify @| `2022-12-23T13:28:07Z`
+Last Modify @| `2022-12-23T13:32:17Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/119)
 
