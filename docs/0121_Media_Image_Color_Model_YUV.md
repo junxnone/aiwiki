@@ -1,8 +1,8 @@
 ---
-Title | Image Color Model YUV
+Title | Media Image Color Model YUV
 -- | --
 Created @ | `2021-02-07T03:28:00Z`
-Last Modify @| `2022-12-23T13:21:38Z`
+Last Modify @| `2022-12-23T13:32:38Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/121)
 
