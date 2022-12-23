@@ -2,12 +2,15 @@
 Title | CV BIN
 -- | --
 Created @ | `2020-11-11T04:02:36Z`
-Last Modify @| `2022-12-23T14:33:17Z`
+Last Modify @| `2022-12-23T14:33:58Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/99)
 
 ---
-# Reference
+
+# Thresholding 二值化
+
+## Reference
 - [Thresholding (image processing)](https://en.wikipedia.org/wiki/Thresholding_%28image_processing%29)
 - [auto threshold](https://imagej.net/Auto_Threshold.html)
 - [十三种基于直方图的图像全局二值化算法原理、实现、代码及效果](https://www.cnblogs.com/adas/p/5430793.html)
@@ -19,7 +22,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/99)
 - [Otsu Thresholding](http://www.labbookpages.co.uk/software/imgProc/otsuThreshold.html)  -- [CN](https://blog.csdn.net/felix86/article/details/38684465)
 - [图像二值化方法介绍](https://blog.csdn.net/JJBOOM425/article/details/100645594)
 
-# Brief
+## Brief
 - Image Thresholding - 图像二值化(非黑即白的简化问题)
 - Global thresholding - 使用同一阈值二值化
 - Local(dynamic ) thresholding - 动态阈值二值化
@@ -85,7 +88,7 @@ Original | Local OTSU | Original >= Local OTSU
 -- | -- | --
 ![image](https://user-images.githubusercontent.com/2216970/98890370-c9130400-24d6-11eb-94b8-37905e79fd57.png) | ![image](https://user-images.githubusercontent.com/2216970/98891165-979b3800-24d8-11eb-9237-e862bff5eb5d.png) | ![image](https://user-images.githubusercontent.com/2216970/98891176-9cf88280-24d8-11eb-801a-df7eafab295f.png)
 
-# Some API
+## Some API
 
 - [scikit-image Thresholding](https://github.com/junxnone/examples/issues/224)
 - [OpenCV Threshold](https://github.com/junxnone/examples/issues/61)
