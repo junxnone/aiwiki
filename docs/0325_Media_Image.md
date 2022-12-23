@@ -2,12 +2,12 @@
 Title | Media Image
 -- | --
 Created @ | `2022-12-12T03:17:29Z`
-Last Modify @| `2022-12-23T13:32:55Z`
+Last Modify @| `2022-12-23T13:33:08Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/325)
 
 ---
-# 图像基础
+# 图像
 
 - 生物界的视觉系统发展有的倾向于更广的视野，有的倾向于双目立体
 - 相较于人类的视觉系统而言,目前基于二维图像的AI更像是受限于硬件设备的基础研究
