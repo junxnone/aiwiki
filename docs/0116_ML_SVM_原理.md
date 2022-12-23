@@ -2,16 +2,19 @@
 Title | ML SVM 原理
 -- | --
 Created @ | `2021-03-29T05:16:05Z`
-Last Modify @| `2022-12-23T15:05:08Z`
+Last Modify @| `2022-12-23T15:05:26Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/116)
 
 ---
-# Reference
+
+# SVM 原理推导
+
+## Reference
 - [SVM公式推导](https://zhuanlan.zhihu.com/p/72971967)
 - [SVM推导](https://blog.csdn.net/weixin_43804251/article/details/107224506)
 
-#  SVM 推导
+##  SVM 推导
 
 Steps | Description
 -- | --
