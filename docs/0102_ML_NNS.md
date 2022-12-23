@@ -2,12 +2,15 @@
 Title | ML NNS
 -- | --
 Created @ | `2021-08-20T02:38:42Z`
-Last Modify @| `2022-12-23T15:05:59Z`
+Last Modify @| `2022-12-23T15:06:27Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/102)
 
 ---
-# Reference
+
+# Nearest Neighbor Search 最近邻搜索
+
+## Reference
 - [NNS - Wikipedia](https://en.wikipedia.org/wiki/Nearest_neighbor_search)
 - [A Survey on Nearest Neighbor Search Methods](https://github.com/junxnone/tech-io/files/7065577/10.1.1.673.6266.pdf)
 - [Survey of Nearest Neighbor Techniques](https://arxiv.org/abs/1007.0085)
@@ -16,7 +19,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/102)
 - [最近邻检索（Nearest Neighbor Search）的简单综述](https://blog.csdn.net/lovego123/article/details/67638789)
 
 
-# Brief
+## Brief
 - NNS - `Nearest Neighbor Search`
 - **问题** : `M` 空间内的点集 `S` 和点 `q`，查找 `S` 中离 `q` 最近的点
   - 1973 **post-office problem** `分配一个地址到最近的邮局`
@@ -40,7 +43,7 @@ Method | Description | Algos | 应用
 - 位置检索
 - CBIR
 
-# Trend
+## Trend
 
-# History
+## History
 
