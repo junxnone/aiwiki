@@ -2,11 +2,13 @@
 Title | ML DecisionTree
 -- | --
 Created @ | `2021-03-30T07:53:56Z`
-Last Modify @| `2022-12-23T15:02:42Z`
+Last Modify @| `2022-12-23T15:03:01Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/113)
 
 ---
+# Decision Tree 决策树
+
 ## Reference
 - [决策树 – Decision tree](https://easyai.tech/ai-definition/decision-tree/)
 
