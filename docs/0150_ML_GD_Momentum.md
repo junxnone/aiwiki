@@ -2,16 +2,20 @@
 Title | ML GD Momentum
 -- | --
 Created @ | `2019-03-12T01:50:50Z`
-Last Modify @| `2022-12-23T14:55:57Z`
+Last Modify @| `2022-12-23T14:56:26Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/150)
 
 ---
+
+# Momentum
+
 ## Reference
 
 - [神经网络优化算法：梯度下降法、Momentum、RMSprop和Adam](https://www.cnblogs.com/jiaxblog/p/9695042.html)
 
 ## Brief
+
 - SGD --> Momentum
 - **Momentum** - 对 SGD 进行指数加权平均平滑
 - **Nesterov’s Accelerated Momentum** - 比 标准 Momentum 收敛更好
@@ -28,6 +32,7 @@ Nesterov Momentum | ![image](https://user-images.githubusercontent.com/2216970/1
 > γ - 原来梯度的比例
 
 ## 代码实现
+
 Name | Code 
 -- | -- 
 SGD | `x += - learning_rate * dx`
