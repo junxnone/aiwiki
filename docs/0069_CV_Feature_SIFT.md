@@ -2,14 +2,14 @@
 Title | CV Feature SIFT
 -- | --
 Created @ | `2019-05-18T10:46:31Z`
-Last Modify @| `2022-12-23T14:46:01Z`
+Last Modify @| `2022-12-23T14:46:56Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/69)
 
 ---
+# SIFT 尺度不变特征变换
 
-
-# Reference
+## Reference
 
 - [自动化特征提取器：图像特征提取和深度学习](http://fe4ml.apachecn.org/#/docs/8.%E8%87%AA%E5%8A%A8%E5%8C%96%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96%E5%99%A8%EF%BC%9A%E5%9B%BE%E5%83%8F%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96%E5%92%8C%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0)
 - [SIFT特征详解](https://www.cnblogs.com/wangguchangqing/p/4853263.html)
@@ -21,7 +21,8 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/69)
 - [Laplacian of Gaussian (LOG) 高斯拉普拉斯算子](https://blog.csdn.net/qq_25638133/article/details/83276318)
 
 
-# Brief
+## Brief
+
 - SIFT - Scale Invariant Feature Transform
 - 尺度不变特征变换，由加拿大教授David G.Lowe提出的。SIFT特征对旋转、尺度缩放、亮度变化等保持不变性，是一种非常稳定的局部特征。
 - 图像的局部特征，对旋转、尺度缩放、亮度变化保持不变，对视角变化、仿射变换、噪声也保持一定程度的稳定性。
@@ -41,7 +42,8 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/69)
 3. **特征方向赋值** 基于图像局部的梯度方向，分配给每个关键点位置一个或多个方向，后续的所有操作都是对于关键点的方向、尺度和位置进行变换，从而提供这些特征的不变性。
 4. **特征点描述** 在每个特征点周围的邻域内，在选定的尺度上测量图像的局部梯度，这些梯度被变换成一种表示，这种表示允许比较大的局部形状的变形和光照变换。
 
-# 尺度空间
+## 尺度空间
+
 > 所谓尺度空间就相当于对一幅图片做一次高斯滤波，生成的图片就是一个尺度空间下的，再对这幅滤波后的图片循环往复的滤波，就会让图片变得越来越模糊，这样就形成了不同的“尺度。就是由清楚到模糊的一系列图片就是一系列的尺度，这些尺度放在一起就形成了一个尺度空间。
 
 ![image](https://user-images.githubusercontent.com/2216970/57970841-18977300-79b9-11e9-89b8-0a6d753ff1e6.png)
