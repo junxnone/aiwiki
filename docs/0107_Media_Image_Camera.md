@@ -1,12 +1,14 @@
 ---
-Title | Image Camera
+Title | Media Image Camera
 -- | --
 Created @ | `2021-10-19T15:14:46Z`
-Last Modify @| `2022-12-23T13:09:53Z`
+Last Modify @| `2022-12-23T13:32:51Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/107)
 
 ---
+# Camera
+
 ## Brief
 
 - 根据`连接类型`分类
