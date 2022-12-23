@@ -2,11 +2,14 @@
 Title | ML Regularization
 -- | --
 Created @ | `2019-09-11T01:11:11Z`
-Last Modify @| `2022-12-23T15:01:04Z`
+Last Modify @| `2022-12-23T15:01:26Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/252)
 
 ---
+
+# Regularization  正则化
+
 ## Reference
 - [权重衰减（weight decay）与学习率衰减（learning rate decay）](https://blog.csdn.net/program_developer/article/details/80867468)
 - [正则化方法：L1和L2 regularization、数据集扩增、dropout](https://blog.csdn.net/u012162613/article/details/44261657)
