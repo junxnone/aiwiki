@@ -2,18 +2,20 @@
 Title | CV Feature
 -- | --
 Created @ | `2019-07-20T11:57:13Z`
-Last Modify @| `2022-12-23T14:37:27Z`
+Last Modify @| `2022-12-23T14:38:40Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/64)
 
 ---
-# Reference
+# 图像特征
+
+## Reference
 - [Feature detection (computer vision) - wikipedia](https://en.wikipedia.org/wiki/Feature_detection_(computer_vision))
 - [图像的角点简介](https://www.cnblogs.com/Peit/p/6681365.html)
 - [图像处理--角点检测](https://blog.csdn.net/samkieth/article/details/49590995)
 - [skimage.feature](https://scikit-image.org/docs/dev/api/skimage.feature.html)
 
-# Brief
+## Brief
 
 -  Feature Detection - 特征检测
 - **分类** 
@@ -39,16 +41,17 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/64)
 ---
 [**思维脑图**](https://naotu.baidu.com/file/2c983b6342a35dd438241585414495e1)
 
----
-**应用**
-  - 运动检测
-  - 图像匹配
-  - 视频跟踪
-  - 三维建模
-  - 目标识别
+
+## 应用
+
+- 运动检测
+- 图像匹配
+- 视频跟踪
+- 三维建模
+- 目标识别
 
 
-# History
+## History
 
 检测算法 | Years |Description
 -- | -- | --
