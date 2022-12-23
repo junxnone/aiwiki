@@ -2,11 +2,13 @@
 Title | Image Camera PixelFormat
 -- | --
 Created @ | `2021-10-21T17:44:24Z`
-Last Modify @| `2022-12-23T13:27:47Z`
+Last Modify @| `2022-12-23T13:28:07Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/119)
 
 ---
+# 像素格式
+
 ## Reference
 - [Pixel Format Naming Convention - GenICam](https://www.emva.org/wp-content/uploads/GenICam_PFNC_2_1.pdf)
 - [GenICam Pixel Format Names and Values](https://www.emva.org/wp-content/uploads/GenICamPixelFormatValues.pdf)
