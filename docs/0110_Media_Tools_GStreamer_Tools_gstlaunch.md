@@ -2,15 +2,17 @@
 Title | Media Tools GStreamer Tools gstlaunch
 -- | --
 Created @ | `2018-11-27T15:45:35Z`
-Last Modify @| `2022-12-23T13:17:21Z`
+Last Modify @| `2022-12-23T13:17:41Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/110)
 
 ---
-# Reference
+# gst-launch
+
+## Reference
 - [gstreamer基础教程10-GStreamer tools](https://blog.csdn.net/knowledgebao/article/details/82789613)
 
-# Brief
+## Brief
 - 参数为 **pipeline**, 使用特定字符串描述
 
 
