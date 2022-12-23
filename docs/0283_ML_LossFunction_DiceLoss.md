@@ -2,11 +2,13 @@
 Title | ML LossFunction DiceLoss
 -- | --
 Created @ | `2019-12-09T03:27:35Z`
-Last Modify @| `2022-12-23T14:59:50Z`
+Last Modify @| `2022-12-23T15:00:15Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/283)
 
 ---
+
+# Dice Loss
 ## Reference
 
 - [paper - V-Net: Fully Convolutional Neural Networks for Volumetric Medical Image Segmentation](http://campar.in.tum.de/pub/milletari2016Vnet/milletari2016Vnet.pdf)
@@ -60,6 +62,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/283)
 ![image](https://user-images.githubusercontent.com/2216970/70410773-2ca4de00-1a8b-11ea-9dac-9d001c8a1436.png)
 
 ### Dice 系数和 F1-Score 的关系
+
 Metric | 公式
 -- | --
 F1-Score | ![image](https://user-images.githubusercontent.com/2216970/70413978-b658a980-1a93-11ea-8d0f-b59eaf363d8a.png)
