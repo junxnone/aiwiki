@@ -1,13 +1,13 @@
 ---
-Title | Image Color Space
+Title | Media Image Color Space
 -- | --
 Created @ | `2020-11-11T06:09:50Z`
-Last Modify @| `2022-12-23T13:26:49Z`
+Last Modify @| `2022-12-23T13:32:27Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/41)
 
 ---
-# Color Space 颜色空间
+# Color Space 色彩空间
 
 ## Reference
 - [Color FAQ - Frequently Asked Questions Color](http://poynton.ca/notes/colour_and_gamma/ColorFAQ.html)
