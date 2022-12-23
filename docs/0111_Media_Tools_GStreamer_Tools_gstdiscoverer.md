@@ -2,12 +2,14 @@
 Title | Media Tools GStreamer Tools gstdiscoverer
 -- | --
 Created @ | `2021-02-05T03:30:10Z`
-Last Modify @| `2022-12-23T13:17:58Z`
+Last Modify @| `2022-12-23T13:18:18Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/111)
 
 ---
-# Brief
+# gst-discoverer
+
+## Brief
 - 查看媒体文件信息
 
 ```
