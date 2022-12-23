@@ -2,12 +2,15 @@
 Title | CV Edge
 -- | --
 Created @ | `2020-11-12T07:09:54Z`
-Last Modify @| `2022-12-23T14:39:19Z`
+Last Modify @| `2022-12-23T14:39:44Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/65)
 
 ---
-# Reference
+
+# 边缘
+
+## Reference
 - [Prewitt operator](https://en.wikipedia.org/wiki/Prewitt_operator)
 - [梯度与Roberts、Prewitt、Sobel、Lapacian算子](https://blog.csdn.net/swj110119/article/details/51777422)
 - 1970 [Object enhancement and extraction](http://web.eecs.utk.edu/~hqi/ece472-572/reference/edge-Prewitt70.pdf)
@@ -15,7 +18,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/65)
 - [Awesome-Edge-Detection-Papers](https://github.com/MarkMoHR/Awesome-Edge-Detection-Papers)
 - [传统实现 - prewitt/laplace/sobel/scharr/Canny ](https://github.com/butub1/Edge-detection)
 
-# Brief
+## Brief
 - Roberts
 - Prewitt
 - Sobel
