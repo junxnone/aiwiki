@@ -1,8 +1,8 @@
 ---
-Title | Image Color RGB
+Title | Media Image Color RGB
 -- | --
 Created @ | `2020-02-12T03:56:39Z`
-Last Modify @| `2022-12-23T13:25:22Z`
+Last Modify @| `2022-12-23T13:32:33Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/127)
 
