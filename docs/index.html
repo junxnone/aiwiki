@@ -7,9 +7,10 @@
   <link rel="shortcut icon" type="image/png" href="assets/logo_favicon.png"/>
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="assets/vue.css">
-   <!--<link rel="stylesheet" href="assets/darklight.min.css">-->
+  <!--<link rel="stylesheet" href="assets/darklight.min.css">-->
   <link rel="stylesheet" href="assets/docsify-sidebar-collapse.min.css">
   <link rel="stylesheet" href="assets/gitalk.css">
+
 
   
 </head>
@@ -21,8 +22,9 @@
     themeColor: '#007BE8',
     name: 'AI Wiki',
     repo: 'junxnone/aiwiki',
-    loadSidebar: true,
+    loadSidebar: '_sidebar.md',
     loadNavbar: '../NAV.md',
+    mergeNavbar: false,
     auto2top: true,
     copyCode: {
       buttonText : '复制',
@@ -34,6 +36,7 @@
       paths: 'auto',
       placeholder: '搜索',
       noData: '啥也没找到',
+      namespace: 'aiwiki',
       depth: 6
     },
     count:{
@@ -85,13 +88,15 @@
             }
         }
   }
+
+
   </script>
   <script src="assets/docsify.min.js"></script>
   <script src="assets/docsify-copy-code.min.js"></script>
   <script src="assets/search.min.js"></script>
   <script src="assets/countable.js"></script>
   <script src="assets/docsify-plugin-toc.min.js"></script>
-   <!--<script src="assets/darklight.min.js"></script>-->
+  <!--<script src="assets/darklight.min.js"></script>-->
   <script src="assets/docsify-sidebar-collapse.min.js"></script>
   <script src="assets/wikilink.min.js"></script>
   <script src="assets/docsify.gitalk.min.js"></script>
@@ -115,6 +120,7 @@
   <script src="//unpkg.com/mermaid/dist/mermaid.js"></script>
   <script src="//unpkg.com/docsify-mermaid@latest/dist/docsify-mermaid.js"></script>
   <script>mermaid.initialize({ startOnLoad: true });</script>
+
   <script>
   
   const gitalk = new Gitalk({
@@ -134,7 +140,7 @@
   }
   </script>
   
-  <script>
+    <script>
     window.$docsify.plugins.push(
       function (hook, vm) {
         hook.beforeEach(
@@ -142,13 +148,13 @@
             const prefix = document.location.pathname.endsWith('/') ? '' : '..';
             const markmapUrl = new URL(prefix + 'markmap.html', document.location);
             const markdownUrl = new URL(prefix + vm.route.file, document.location);
-            const createIssueUrl="https://github.com/" + window.$docsify.repo + "/issues/new";
+            const createIssueUrl="https://github.com/" + window.$docsify.repo + "/issues/new/choose";
             
-            return `[🆕 NewPage](${createIssueUrl}) | [🔑 MarkMap](${markmapUrl}?md=${markdownUrl})\n --|--\n\n` + mdstr;
-
+            return `[🆕 NewPage](${createIssueUrl}) | [🔑 MarkMap](${markmapUrl}?md=${markdownUrl})\n --|--\n` + mdstr;
           }
         );
       }
     );
+
   </script>
 </html>

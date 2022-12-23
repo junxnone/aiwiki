@@ -8,8 +8,10 @@ document.addEventListener('DOMContentLoaded', function() {
 		if (!repo) return
 		if (!/https?:\/\//.exec(repo))
 			repo = 'https://github.com/' + repo
-		var url = repo + '/tree/master/docs/' + 
-			      location.hash.slice(1) + '.md'
+		var mdfile = 'README.md'
+		if (location.hash.slice(1) != '/')
+			mdfile = location.hash.slice(1) + '.md'
+		var url = repo + '/tree/main/docs/' + mdfile
 		window.open(url)
 	})
 })

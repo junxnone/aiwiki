@@ -40,13 +40,15 @@
         };
         function AppendLink(url) {
             var div = document.getElementById("divMain");
+            const texth1 = document.createElement("H1");
             const linkTmp = document.createElement("a");
             let index = url.lastIndexOf("/");
             let newUrl = url.substring(0, index) + "/#/" + url.substring(index+1, url.length)
             linkTmp.href = newUrl;
             console.log("add link:"+newUrl)
             linkTmp.innerText = "Wiki Page"; 
-            div.appendChild(linkTmp);                                           
+            texth1.appendChild(linkTmp)
+            div.appendChild(texth1);
         }
 
         //process searchparams and get string
