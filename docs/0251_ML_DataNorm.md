@@ -2,11 +2,12 @@
 Title | ML DataNorm
 -- | --
 Created @ | `2018-09-12T04:02:02Z`
-Last Modify @| `2022-12-24T12:28:38Z`
+Last Modify @| `2022-12-24T12:29:03Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/251)
 
 ---
+# Data Normalization 数据标准化
 ## Reference
 
 - [机器学习中的标准化/归一化](https://blog.csdn.net/index20001/article/details/78044971)
