@@ -1,8 +1,8 @@
 ---
-Title | Semi-Supervised Learning
+Title | ML SSL
 -- | --
 Created @ | `2019-01-28T02:29:12Z`
-Last Modify @| `2022-12-24T13:16:58Z`
+Last Modify @| `2022-12-24T13:17:13Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/271)
 
