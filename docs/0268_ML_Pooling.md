@@ -2,11 +2,14 @@
 Title | ML Pooling
 -- | --
 Created @ | `2019-03-02T04:16:50Z`
-Last Modify @| `2022-12-24T12:15:20Z`
+Last Modify @| `2022-12-24T12:15:37Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/268)
 
 ---
+
+# Pooling 池化
+
 ## Reference
 
 - [卷积神经网络中的各种池化操作](https://zhuanlan.zhihu.com/p/112216409)
