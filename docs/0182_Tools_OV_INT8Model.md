@@ -2,11 +2,13 @@
 Title | Tools OV INT8Model
 -- | --
 Created @ | `2020-03-18T08:44:15Z`
-Last Modify @| `2022-12-24T15:56:57Z`
+Last Modify @| `2022-12-24T15:57:12Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/182)
 
 ---
+# OpenVINO INT8 Model
+
 ## Reference
 - [Optimizing models post-training](https://docs.openvino.ai/latest/pot_introduction.html#doxid-pot-introduction)
 - [calibration_tool](https://docs.openvinotoolkit.org/2019_R3.1/_inference_engine_tools_calibration_tool_README.html)
