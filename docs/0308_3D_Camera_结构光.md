@@ -1,8 +1,8 @@
 ---
-Title | 结构光3D原理
+Title | 3D Camera 结构光
 -- | --
 Created @ | `2022-04-06T03:21:51Z`
-Last Modify @| `2022-12-24T16:23:20Z`
+Last Modify @| `2022-12-24T16:23:34Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/308)
 
