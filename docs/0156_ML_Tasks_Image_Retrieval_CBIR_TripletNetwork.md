@@ -2,11 +2,12 @@
 Title | ML Tasks Image Retrieval CBIR TripletNetwork
 -- | --
 Created @ | `2019-02-20T09:43:34Z`
-Last Modify @| `2022-12-24T12:56:40Z`
+Last Modify @| `2022-12-24T12:56:56Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/156)
 
 ---
+# Triplet Network
 ## Reference
 
 - [论文笔记：Triplet Network](https://blog.csdn.net/hongbin_xu/article/details/83064290)
