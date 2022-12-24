@@ -2,18 +2,18 @@
 Title | ML Tasks Image Classification AlexNet
 -- | --
 Created @ | `2019-06-20T02:42:36Z`
-Last Modify @| `2022-12-24T12:40:39Z`
+Last Modify @| `2022-12-24T12:40:59Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/27)
 
 ---
-# Reference
+## Reference
 - 2012 **AlexNet** ImageNet Classification with Deep Convolutional Neural Networks [[paper](http://www.cs.toronto.edu/~fritz/absps/imagenet.pdf)]
 - [5.6. 深度卷积神经网络AlexNet - 动手学深度学习](https://zh.d2l.ai/chapter_convolutional-neural-networks/alexnet.html)
 - [深入理解AlexNet网络](https://blog.csdn.net/luoluonuoyasuolong/article/details/81750190)
 - [卷积神经网络之AlexNet](https://www.cnblogs.com/wangguchangqing/p/10333370.html)
 
-# Brief
+## Brief
 - 2012 ImageNet 图像识别挑战赛冠军，以一作 `Alex Krizhevsky` 命名 `AlexNet`
 - `Conv Layer` x 8 + `FC Layer` x 2
 - +`Max Pooling`
@@ -38,7 +38,9 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/27)
 3 对5张图片水平翻转，获取 10 张测试图
 4 对测试结果的 softmax layer 输出取均值
 ```
-# Layers
+
+## Layers
+
 > AlexNet包含8层变换，其中有5层卷积和2层全连接隐藏层，以及1个全连接输出层。
 
 ![image](https://user-images.githubusercontent.com/2216970/59816202-cd70d700-934d-11e9-8973-c87c25bc8d69.png)
