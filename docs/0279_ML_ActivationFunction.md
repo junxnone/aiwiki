@@ -2,11 +2,13 @@
 Title | ML ActivationFunction
 -- | --
 Created @ | `2019-03-13T05:26:53Z`
-Last Modify @| `2022-12-24T12:15:56Z`
+Last Modify @| `2022-12-24T12:16:16Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/279)
 
 ---
+# Activation Function 激活函数
+
 ## Reference
 - [Activation function - Wikipedia](https://en.wikipedia.org/wiki/Activation_function)
 - [激活函数（Sigmoid, tanh, Relu）](https://blog.csdn.net/weixin_41417982/article/details/81437088)
