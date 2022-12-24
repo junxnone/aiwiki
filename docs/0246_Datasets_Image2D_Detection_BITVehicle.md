@@ -2,11 +2,12 @@
 Title | Datasets Image2D Detection BITVehicle
 -- | --
 Created @ | `2018-12-19T17:36:01Z`
-Last Modify @| `2022-12-24T16:11:05Z`
+Last Modify @| `2022-12-24T16:11:21Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/246)
 
 ---
+# BIT-Vehicle
 
 ## Reference
 - [ BitVehicle](http://iitlab.bit.edu.cn/mcislab/vehicledb/)
