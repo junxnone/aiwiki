@@ -1,8 +1,8 @@
 ---
-Title | AL Query Strategy
+Title | ML AL QS
 -- | --
 Created @ | `2020-07-06T08:44:35Z`
-Last Modify @| `2022-12-24T13:09:15Z`
+Last Modify @| `2022-12-24T13:09:38Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/276)
 
