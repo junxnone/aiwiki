@@ -1,8 +1,8 @@
 ---
-Title | Distilling the Knowledge in a Neural Network
+Title | ML KD s
 -- | --
 Created @ | `2021-04-25T05:42:37Z`
-Last Modify @| `2022-12-24T15:53:38Z`
+Last Modify @| `2022-12-24T15:53:55Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/208)
 
