@@ -2,17 +2,19 @@
 Title | ML Convolution Math
 -- | --
 Created @ | `2019-06-09T07:26:18Z`
-Last Modify @| `2022-12-24T12:13:09Z`
+Last Modify @| `2022-12-24T12:13:45Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/10)
 
 ---
-# Reference
+# 卷积 数学定义
+
+## Reference
 - [Convolution - Wikipedia](https://en.wikipedia.org/wiki/Convolution)
 - [Spatial convolution](https://graphics.stanford.edu/courses/cs178/applets/convolution.html)
 - [如何通俗易懂地解释卷积？](https://www.zhihu.com/question/22298352)
 
-# Brief
+## Brief
 - 两个函数 `f(x)` & `g(x)` 之间的数学操作产生一个新的函数: `f(x)*g(x)`
 - f & g 翻转平移后重叠部分乘积的积分
 
