@@ -2,12 +2,12 @@
 Title | ML Tasks Image Classification MobileNet V1
 -- | --
 Created @ | `2020-02-25T10:14:26Z`
-Last Modify @| `2022-12-24T12:42:00Z`
+Last Modify @| `2022-12-24T12:42:11Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/42)
 
 ---
-# Reference
+## Reference
 - 2017 **MobileNet V1** MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications [[paper](https://arxiv.org/pdf/1704.04861.pdf)]
 - [MobileNets 论文笔记](https://blog.csdn.net/Jesse_Mx/article/details/70766871)
 - [深度解读谷歌MobileNet](https://blog.csdn.net/T800GHB/article/details/78879612)
@@ -17,7 +17,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/42)
 - [MobileNet论文详解](https://blog.csdn.net/qq_38807688/article/details/84590717)
 - [tensorflow/models - Mobilenet v1](https://github.com/tensorflow/models/blob/master/research/slim/nets/mobilenet_v1.md)
 
-# Brief
+## Brief
 - 使用了 depthwise 和 pointwise 卷积分解 减少计算量，加快模型推理速度
 
 
