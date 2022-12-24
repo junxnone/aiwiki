@@ -1,8 +1,8 @@
 ---
-Title | AL Uncertainty Sampling
+Title | ML AL QS UncertaintySampling
 -- | --
 Created @ | `2020-07-06T07:16:16Z`
-Last Modify @| `2022-12-24T13:12:09Z`
+Last Modify @| `2022-12-24T13:12:20Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/275)
 
