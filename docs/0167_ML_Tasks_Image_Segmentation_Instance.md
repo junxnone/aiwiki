@@ -2,11 +2,13 @@
 Title | ML Tasks Image Segmentation Instance
 -- | --
 Created @ | `2019-01-24T22:01:24Z`
-Last Modify @| `2022-12-24T12:50:20Z`
+Last Modify @| `2022-12-24T12:50:55Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/167)
 
 ---
+# Instance Segmentation 实例分割
+
 ## Reference
 - [Instance Segmentation入门总结](https://www.cnblogs.com/Xiaoyan-Li/p/10156463.html)
 - [进展综述 - 单阶段实例分割（Single Shot Instance Segmentation）](https://zhuanlan.zhihu.com/p/102231853)
