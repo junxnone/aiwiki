@@ -2,11 +2,14 @@
 Title | ML LR LRFinder
 -- | --
 Created @ | `2019-09-03T09:29:52Z`
-Last Modify @| `2022-12-24T12:19:10Z`
+Last Modify @| `2022-12-24T12:19:34Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/263)
 
 ---
+
+# 学习率选择
+
 ## Reference
 - [调参如何为神经网络选择最合适的学习率lr-LRFinder-for-Keras](https://blog.csdn.net/m0_37477175/article/details/89395050)
 - [Github - keras_lr_finder](https://github.com/surmenok/keras_lr_finder)
