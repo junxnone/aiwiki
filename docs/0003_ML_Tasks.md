@@ -2,11 +2,13 @@
 Title | ML Tasks
 -- | --
 Created @ | `2021-08-31T07:41:22Z`
-Last Modify @| `2022-12-24T12:35:13Z`
+Last Modify @| `2022-12-24T12:36:11Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/3)
 
 ---
+# ML/DL 常见任务
+
 **AI 任务来源于生活，包括我们身边的方方面面：**
 CV/Audio/NLP/RL/Sequential/Graphs...
 
