@@ -1,8 +1,8 @@
 ---
-Title | AL Pool-Based Sampling
+Title | ML AL QS AL PoolBasedSampling
 -- | --
 Created @ | `2020-10-23T05:46:16Z`
-Last Modify @| `2022-12-24T13:10:10Z`
+Last Modify @| `2022-12-24T13:10:27Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/274)
 
