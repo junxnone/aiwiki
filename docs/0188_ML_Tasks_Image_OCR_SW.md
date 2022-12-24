@@ -2,11 +2,13 @@
 Title | ML Tasks Image OCR SW
 -- | --
 Created @ | `2020-05-08T06:06:40Z`
-Last Modify @| `2022-12-24T13:02:45Z`
+Last Modify @| `2022-12-24T13:03:10Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/188)
 
 ---
+# Sliding Windows CNN CTC
+
 ## Reference
 - [paper - 2017 - Scene Text Recognition with Sliding Convolutional Character Models](https://arxiv.org/pdf/1709.01727.pdf)
 - [场景文字识别Sliding Convolution笔记](https://blog.csdn.net/qq_14845119/article/details/79312860)
