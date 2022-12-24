@@ -2,11 +2,13 @@
 Title | ML Attention Bahdanau
 -- | --
 Created @ | `2020-07-01T03:51:29Z`
-Last Modify @| `2022-12-24T13:30:03Z`
+Last Modify @| `2022-12-24T13:30:22Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/214)
 
 ---
+# Bahdanau Attention
+
 ## Reference
 
 - [paper - 2014 - Neural Machine Translation by Jointly Learning to Align and Translate](https://arxiv.org/abs/1409.0473)
