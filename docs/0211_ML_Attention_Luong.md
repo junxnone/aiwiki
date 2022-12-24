@@ -2,11 +2,13 @@
 Title | ML Attention Luong
 -- | --
 Created @ | `2020-07-01T03:51:29Z`
-Last Modify @| `2022-12-24T13:30:44Z`
+Last Modify @| `2022-12-24T13:30:58Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/211)
 
 ---
+# Luong Attention
+
 ## Reference
 
 - [paper - 2014 - Neural Machine Translation by Jointly Learning to Align and Translate](https://arxiv.org/abs/1409.0473)
@@ -23,7 +25,7 @@ Local Attention | ![image](https://user-images.githubusercontent.com/2216970/862
 
 ## Alignment Model 
 
-# Bahdanau Attention  vs Luong Attention 
+## Bahdanau Attention  vs Luong Attention 
 
 Name | Description | score
 -- | --  | --
