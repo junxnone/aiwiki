@@ -2,11 +2,13 @@
 Title | ML Convolution DL
 -- | --
 Created @ | `2018-11-21T03:03:53Z`
-Last Modify @| `2022-12-24T12:14:09Z`
+Last Modify @| `2022-12-24T12:14:40Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/11)
 
 ---
+
+# 卷积在 DL 中的应用
 ## Reference
 - 2016 A guide to convolution arithmetic for deep learning [[paper](https://arxiv.org/abs/1603.07285)] [[Code](https://github.com/vdumoulin/conv_arithmetic)]
 - [直观理解深度学习卷积部分](https://www.leiphone.com/news/201807/RQ4sBWYqLkGV4ZAW.html)
