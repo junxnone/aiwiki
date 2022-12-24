@@ -2,12 +2,12 @@
 Title | ML AutoML
 -- | --
 Created @ | `2021-09-06T09:22:58Z`
-Last Modify @| `2022-12-24T13:18:02Z`
+Last Modify @| `2022-12-24T13:18:13Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/12)
 
 ---
-# Reference
+## Reference
 - 2018 [Taking Human out of Learning Applications: A Survey on Automated Machine Learning](https://arxiv.org/pdf/1810.13306.pdf)
 - 2019 [AutoML: A Survey of the State-of-the-Art](https://arxiv.org/pdf/1908.00709.pdf)  --  [update - website](https://marsggbo.github.io/automl_a_survey_of_state_of_the_art/)
 - [awesome-automl-papers](https://github.com/hibayesian/awesome-automl-papers)
@@ -20,7 +20,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/12)
 - [简述目前AutoML类型与模式](https://zhuanlan.zhihu.com/p/57896464)
 
 
-# Brief
+## Brief
 
 - AutoML 将特征、模型、优化、评价有关的步骤进行自动化地学习，使得机器学习模型无需人工干预。
 - AutoML 目标
