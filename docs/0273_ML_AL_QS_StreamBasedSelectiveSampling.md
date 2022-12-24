@@ -1,8 +1,8 @@
 ---
-Title | AL Stream-based Selective Sampling
+Title | ML AL QS StreamBasedSelectiveSampling
 -- | --
 Created @ | `2020-10-23T02:23:33Z`
-Last Modify @| `2022-12-24T13:10:51Z`
+Last Modify @| `2022-12-24T13:11:22Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/273)
 
