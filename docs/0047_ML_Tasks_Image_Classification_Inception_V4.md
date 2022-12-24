@@ -2,17 +2,16 @@
 Title | ML Tasks Image Classification Inception V4
 -- | --
 Created @ | `2019-12-04T10:51:56Z`
-Last Modify @| `2022-12-24T12:39:26Z`
+Last Modify @| `2022-12-24T12:39:43Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/47)
 
 ---
-
-# Reference
+## Reference
 - 2016 **Inception V4 & Inception-ResNet**  Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning [[paper](https://arxiv.org/pdf/1602.07261.pdf)]
 
 
-# Brief
+## Brief
 - Inception V4 和 Inception-ResNet 是同一篇 paper 提出
 - 修改了Inception的Stem
 - 添加了Reduction Block
@@ -75,6 +74,6 @@ Reduction-A |  同 Inception V4
 Reduction-B | ![image](https://user-images.githubusercontent.com/2216970/70206907-f7834d80-1763-11ea-890f-c6d66789c198.png)
 > Reduction-B 中的 `wider Inception-ResNet-v1` 应该就是指 `Inception-ResNet-v2`
 
-# Test Result
+## Test Result
 ![image](https://user-images.githubusercontent.com/2216970/70207200-05859e00-1765-11ea-9c53-a1e4057de850.png)
 
