@@ -2,11 +2,13 @@
 Title | Math Determinant
 -- | --
 Created @ | `2022-03-19T09:29:27Z`
-Last Modify @| `2022-12-25T03:38:14Z`
+Last Modify @| `2022-12-25T03:38:39Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/301)
 
 ---
+# Determinant  行列式
+
 ## Reference
 
 ## Brief
