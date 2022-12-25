@@ -2,17 +2,17 @@
 Title | Datasets Image2D Segmentation LVIS
 -- | --
 Created @ | `2020-04-22T09:05:35Z`
-Last Modify @| `2022-12-24T16:15:45Z`
+Last Modify @| `2022-12-25T17:24:33Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/94)
 
 ---
-# Reference
+## Reference
 
 - [LVIS Dataset](https://www.lvisdataset.org/dataset)
 - [paper - 2019 - LVIS: A Dataset for Large Vocabulary Instance Segmentation](https://arxiv.org/abs/1908.03195)
 
-# Brief
+## Brief
 - 1000+ categories
 - 164k images
 - LVIS 使用 COCO 2017 images, 只是使用了 LVIS 自己的 annotations.
@@ -21,4 +21,5 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/94)
   - 只使用 `polygons` 
 
 ![image](https://user-images.githubusercontent.com/2216970/79963172-9d3d1c00-84bb-11ea-827e-0bb44eaafde8.png)
+
 
