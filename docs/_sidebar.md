@@ -1,4 +1,66 @@
 - ML
+  - [ML/DL 常见任务](/0003_ML_Tasks)
+    - Image
+      - [Term](/0200_ML_Tasks_Image_OCR)
+        - [Calamari](/0201_ML_Tasks_Image_OCR_Calamari)
+        - [Install warp-ctc](/0189_ML_Tasks_Image_OCR_CTC)
+        - [CAFCN](/0186_ML_Tasks_Image_OCR_CAFCN)
+        - [Sliding Windows CNN CTC](/0188_ML_Tasks_Image_OCR_SW)
+        - [SCAN](/0191_ML_Tasks_Image_OCR_SCAN)
+        - [TextScanner](/0192_ML_Tasks_Image_OCR_TextScanner)
+        - Tools
+        - [CTPN](/0197_ML_Tasks_Image_OCR_CTPN)
+        - [Augmentation](/0203_ML_Tasks_Image_OCR_Augmentation)
+        - [EAST](/0193_ML_Tasks_Image_OCR_EAST)
+        - [Lexicon](/0198_ML_Tasks_Image_OCR_Lexicon)
+        - [Metrics](/0190_ML_Tasks_Image_OCR_Metrics)
+        - [FOTS](/0195_ML_Tasks_Image_OCR_FOTS)
+        - [CRNN](/0196_ML_Tasks_Image_OCR_CRNN)
+        - [TextField](/0194_ML_Tasks_Image_OCR_TextField)
+      - [Classification](/0061_ML_Tasks_Image_Classification)
+        - [Reference](/0049_ML_Tasks_Image_Classification_Inception)
+        - [Reference](/0045_ML_Tasks_Image_Classification_MobileNet)
+        - [History](/0166_ML_Tasks_Image_Classification_History)
+        - [ResNet](/0051_ML_Tasks_Image_Classification_ResNet)
+        - [LeNet](/0024_ML_Tasks_Image_Classification_LeNet)
+        - [AlexNet](/0027_ML_Tasks_Image_Classification_AlexNet)
+        - [Reference](/0050_ML_Tasks_Image_Classification_Xception)
+        - [VGGNet](/0146_ML_Tasks_Image_Classification_VGGNet)
+      - [Detection](/0152_ML_Tasks_Image_Detection)
+        - [YOLO](/0053_ML_Tasks_Image_Detection_YOLO)
+        - [RCNN](/0057_ML_Tasks_Image_Detection_RCNN)
+        - [FastRCNN](/0058_ML_Tasks_Image_Detection_FastRCNN)
+        - [FasterRCNN](/0059_ML_Tasks_Image_Detection_FasterRCNN)
+        - [Reference](/0060_ML_Tasks_Image_Detection_RCNNs)
+      - [Segmentation](/0159_ML_Tasks_Image_Segmentation)
+        - [Instance Segmentation 实例分割](/0167_ML_Tasks_Image_Segmentation_Instance)
+        - [UNet](/0161_ML_Tasks_Image_Segmentation_UNet)
+        - [Deeplab](/0162_ML_Tasks_Image_Segmentation_Deeplab)
+        - [MaskRCNN](/0163_ML_Tasks_Image_Segmentation_MaskRCNN)
+        - [FCN](/0160_ML_Tasks_Image_Segmentation_FCN)
+        - [MSRCNN](/0164_ML_Tasks_Image_Segmentation_MSRCNN)
+      - [Retrieval](/0278_ML_Tasks_Image_Retrieval)
+        - [CBIR](/0155_ML_Tasks_Image_Retrieval_CBIR)
+      - [Anomaly](/0277_ML_Tasks_Image_Anomaly)
+        - [STFPM](/0324_ML_Tasks_Image_Anomaly_STFPM)
+        - [PaDiM](/0322_ML_Tasks_Image_Anomaly_PaDiM)
+        - [MVTec](/0323_ML_Tasks_Image_Anomaly_MVTec)
+    - [MetricLearning](/0157_ML_Tasks_MetricLearning)
+  - [AutoML](/0012_ML_AutoML)
+    - [HPO](/0013_ML_AutoML_HPO)
+      - [Bayesian Optimization](/0022_ML_AutoML_HPO_BO)
+        - [BOHB](/0219_ML_AutoML_HPO_BO_BOHB)
+        - [SMAC](/0220_ML_AutoML_HPO_BO_SMAC)
+        - [SMBO](/0218_ML_AutoML_HPO_BO_SMBO)
+        - [AF](/0222_ML_AutoML_HPO_BO_AF)
+        - [TPE](/0221_ML_AutoML_HPO_BO_TPE)
+      - Tools
+        - [SIGOPT](/0015_ML_AutoML_HPO_Tools_SIGOPT)
+      - [GridSearch](/0205_ML_AutoML_HPO_GridSearch)
+      - [Random Search](/0204_ML_AutoML_HPO_RandomSearch)
+    - [NAS](/0014_ML_AutoML_NAS)
+    - Tools
+      - [NNI](/0016_ML_AutoML_Tools_NNI)
   - [Nearest Neighbor Search 最近邻搜索](/0102_ML_NNS)
     - [KDTree](/0104_ML_NNS_KDTree)
       - [FLANN](/0122_ML_NNS_KDTree_FLANN)
@@ -10,11 +72,45 @@
       - [Approximate Nearest Neighbors Oh Yeah](/0333_ML_NNS_ANN_Annoy)
       - [Hierarchical Navigable Small World](/0334_ML_NNS_ANN_HNSW)
     - [BSTree 二叉排序树](/0332_ML_NNS_BSTree)
+  - [Transformer](/0229_ML_Transformer)
+    - [DeiT](/0253_ML_Transformer_DeiT)
+    - [DETR](/0165_ML_Transformer_DETR)
+    - [ViT](/0223_ML_Transformer_ViT)
+    - [Bottleneck Transformers](/0228_ML_Transformer_BT)
+    - [Efficient Attention](/0225_ML_Transformer_EfficientAttention)
+    - [Transformer 在视觉方面的应用](/0226_ML_Transformer_Vision)
+    - T2T
+      - [ViT](/0227_ML_Transformer_T2T_ViT)
+    - [Linformer](/0224_ML_Transformer_Linformer)
+  - [Active Learning](/0118_ML_AL)
+    - [Query Strategy 查询/抽样 策略](/0276_ML_AL_QS)
+      - AL
+        - [Pool-Based Sampling](/0274_ML_AL_QS_AL_PoolBasedSampling)
+      - [Stream-based Selective Sampling](/0273_ML_AL_QS_StreamBasedSelectiveSampling)
+      - [Uncertainty Sampling](/0275_ML_AL_QS_UncertaintySampling)
+      - [QBC](/0272_ML_AL_QS_QBC)
+    - [Tools](/0175_ML_AL_Tools)
+      - [AIDE](/0270_ML_AL_Tools_AIDE)
+  - [Metrics 评价指标](/0138_ML_Metrics)
+    - [Detection](/0230_ML_Metrics_Detection)
+      - [GIoU](/0232_ML_Metrics_Detection_GIoU)
+    - [Classification](/0137_ML_Metrics_Classification)
+    - [Pairwise](/0139_ML_Metrics_Pairwise)
+    - [Segmentation](/0231_ML_Metrics_Segmentation)
+  - [Attention 注意力](/0210_ML_Attention)
+    - [S](/0212_ML_Attention_S)
+    - [Luong Attention](/0211_ML_Attention_Luong)
+    - [PE](/0213_ML_Attention_PE)
+    - [Bahdanau Attention](/0214_ML_Attention_Bahdanau)
   - [Gradient Descent 梯度下降](/0147_ML_GD)
     - [Momentum](/0150_ML_GD_Momentum)
     - [BGD SGD MBGD](/0148_ML_GD_xGD)
     - [原理](/0151_ML_GD_原理)
     - [History](/0149_ML_GD_History)
+  - [Data Augmentation 数据增强](/0255_ML_DataAug)
+    - [Cutout](/0257_ML_DataAug_Cutout)
+    - [CP](/0269_ML_DataAug_CP)
+    - [AutoAugment](/0256_ML_DataAug_AutoAugment)
   - [Learning Rate 学习率](/0265_ML_LR)
     - [学习率选择](/0263_ML_LR_LRFinder)
     - [Cyclical Learning Rate 周期学习率](/0266_ML_LR_CLR)
@@ -25,58 +121,142 @@
   - [Convolution](/0009_ML_Convolution)
     - [卷积在 DL 中的应用](/0011_ML_Convolution_DL)
     - [卷积 数学定义](/0010_ML_Convolution_Math)
+  - [Knowledge Distillation 知识蒸馏](/0207_ML_KD)
+    - [Distilling the Knowledge in a Neural Network](/0208_ML_KD_s)
+    - [Reference](/0336_ML_KD_History)
   - [Activation Function 激活函数](/0279_ML_AF)
     - [Sigmoid](/0280_ML_AF_Sigmoid)
     - [Softmax](/0335_ML_AF_Softmax)
+  - [Dropout](/0258_ML_Dropout)
+    - [MS](/0259_ML_Dropout_MS)
   - [SVM 支持向量机](/0115_ML_SVM)
     - [SVM 原理推导](/0116_ML_SVM_原理)
   - [Regularization  正则化](/0252_ML_Regularization)
     - [norm 范数](/0254_ML_Regularization_norm)
-  - [Random Forest 随机森林](/0114_ML_RandomForest)
   - [CrossValidation 交叉验证](/0249_ML_CrossValidation)
+  - [Quantization  量化](/0312_ML_Quantization)
   - [Pooling 池化](/0268_ML_Pooling)
+  - Task
+    - [Motion Detection 运动侦测](/0243_ML_Task_MD)
+  - [Semi-Supervised Learning 半监督学习](/0271_ML_SSL)
+  - [AE](/0209_ML_AE)
   - [Cost Function 代价函数](/0282_ML_CostFunction)
+  - [Random Forest 随机森林](/0114_ML_RandomForest)
   - [Decision Tree 决策树](/0113_ML_DecisionTree)
-  - [Dropout](/0258_ML_Dropout)
-- [2D Images Datasets](/Datasets_Image)
-  - [Segmentation](/Traditional_Image_Segmentation)
-  - [Segmentation](/Datasets_Image_Segmentation)
-    - [Reference](/Datasets_Image_Segmentation_CHAOS)
-    - [Reference](/Datasets_Image_Segmentation_Cityscapes)
-    - [Reference](/Datasets_Image_Segmentation_DAGM)
-    - [Reference](/Datasets_Image_Segmentation_LVIS)
-    - [Reference](/Datasets_Image_Segmentation_CamVid)
-    - [Reference](/Datasets_Image_Segmentation_Balloon)
-    - Mapping
-      - Challenge
-        - [Reference](/Datasets_Image_Segmentation_Mapping_Challenge_crowdAI)
-    - [Reference](/Datasets_Image_Segmentation_TACO)
-  - [Image Classification Datasets](/Datasets_Image_Classification)
-    - [mnist](/Datasets_Image_Classification_mnist)
-    - Oxford
-      - IIIT
-        - [Reference](/Datasets_Image_Classification_Oxford_IIIT_Pets)
-    - [Cifar](/Datasets_Image_Classification_Cifar)
-    - [Reference](/Datasets_Image_Classification_ImageNet)
-  - [Retrieval](/Datasets_Image_Retrieval)
-    - [DeepFashion](/Datasets_Image_Retrieval_DeepFashion)
-  - Object
-    - [Detection](/Datasets_Image_Object_Detection)
-    - [Counting](/Datasets_Image_Object_Counting)
-  - [Reference](/VGG_Image_Annotator)
-  - [OCR](/Datasets_Image_OCR)
-  - [AutoML](/Datasets_Image_AutoML)
-  - [COCO](/Datasets_Image_COCO)
-  - [Face](/Datasets_Image_Face)
-  - Edge
-    - [Detection](/Datasets_Image_Edge_Detection)
-  - [Reference](/Datasets_Image_PascalVOC)
-  - [KeyPoint](/Datasets_Image_KeyPoint)
-  - Detection
-    - BIT
-      - [Vehicle](/Datasets_Image_Detection_BIT_Vehicle)
-  - [Defect](/Datasets_Image_Defect)
-  - [3D](/Datasets_Image_3D)
+  - [Reinforcement Learning 强化学习](/0290_ML_RL)
+  - [Data Normalization 数据标准化](/0251_ML_DataNorm)
+- Tools
+  - [OV](/0185_Tools_OV)
+    - [POT](/0177_Tools_OV_POT)
+    - [Workbench](/0178_Tools_OV_Workbench)
+    - [Inference Engine](/0180_Tools_OV_IE)
+    - [Model Optimizer](/0181_Tools_OV_MO)
+    - [OpenVINO INT8 Model](/0182_Tools_OV_INT8Model)
+    - [Compile Tool](/0183_Tools_OV_CompileTool)
+    - [Tips](/0184_Tools_OV_Tips)
+    - [DevCloud](/0179_Tools_OV_DevCloud)
+    - [Security](/0176_Tools_OV_Security)
+  - [Pytorch](/0168_Tools_Pytorch)
+    - [加速](/0169_Tools_Pytorch_Speed)
+    - [Early Stopping](/0172_Tools_Pytorch_ES)
+    - [Pipeline](/0173_Tools_Pytorch_Pipeline)
+    - [Tips](/0170_Tools_Pytorch_Tips)
+    - [Visualization 可视化](/0171_Tools_Pytorch_VIS)
+    - [Optimizer](/0174_Tools_Pytorch_Optimizer)
+    - [多 GPUs](/0338_Tools_Pytorch_mGPUs)
+  - [标注工具](/0006_Tools_Label)
+    - [Labelme](/0074_Tools_Label_Labelme)
+    - [VIA VGG Image Annotator](/0075_Tools_Label_VGG)
+    - [CVAT](/0073_Tools_Label_CVAT)
+    - [LabelImg](/0250_Tools_Label_LabelImg)
+  - [可视化](/0133_Tools_VIS)
+    - [Quiver](/0136_Tools_VIS_Quiver)
+    - [ONNX 可视化工具](/0134_Tools_VIS_ONNX)
+    - [netron](/0135_Tools_VIS_netron)
+  - [Darknet](/0260_Tools_Darknet)
+    - [Tips](/0261_Tools_Darknet_AlexeyAB)
+    - [Config Files](/0262_Tools_Darknet_cfgFiles)
+  - [Tensorflow](/0140_Tools_TF)
+    - [Datasets](/0313_Tools_TF_Datasets)
+  - [Training&Inference Tools](/0005_Tools_TI)
+  - [Numpy](/0328_Tools_Numpy)
+  - [anomalib](/0321_Tools_anomalib)
+  - [论文阅读相关](/0072_Tools_ReadPapers)
+  - [UseCase](/0303_Tools_Eigen)
+  - [Pytorch](/0168_Tools_PT)
+- [3D](/0076_3D)
+  - Tools
+    - [PCL](/0077_3D_Tools_PCL)
+      - [Install PCL](/0337_3D_Tools_PCL_Install)
+        - [Build PCL with Windows](/0078_3D_Tools_PCL_Install_Windows)
+        - [Build PCL with Linux](/0079_3D_Tools_PCL_Install_Linux)
+      - [Reference](/0084_3D_Tools_PCL_RangeImage)
+      - [Tools](/0081_3D_Tools_PCL_Tools)
+      - [Read/Write](/0080_3D_Tools_PCL_IO)
+      - [PPF](/0083_3D_Tools_PCL_PPF)
+      - [Downsampling](/0082_3D_Tools_PCL_Downsampling)
+  - Cloud
+    - Features
+      - [3D Cloud Curvature 点云曲率](/0304_3D_Cloud_Features_Curvature)
+      - [FPFH](/0299_3D_Cloud_Features_FPFH)
+      - [PFH](/0298_3D_Cloud_Features_PFH)
+      - [ISS KeyPoint](/0302_3D_Cloud_Features_ISS)
+    - [Merge](/0286_3D_Cloud_Merge)
+    - [离群点移除](/0287_3D_Cloud_SOR)
+    - [降采样](/0285_3D_Cloud_Sampling)
+    - [Rotation Matrix 旋转矩阵](/0234_3D_Cloud_RM)
+  - Algos
+    - [Registration 配准](/0235_3D_Algos_Registration)
+      - [ICP 精配准](/0086_3D_Algos_Registration_ICP)
+        - [GICP](/0296_3D_Algos_Registration_ICP_GICP)
+      - [NDT Normal Distributions Transform](/0295_3D_Algos_Registration_NDT)
+      - [Metrics](/0236_3D_Algos_Registration_Metrics)
+      - [SAC-IA](/0300_3D_Algos_Registration_SACIA)
+      - [PPF 粗配准](/0085_3D_Algos_Registration_PPF)
+  - Camera
+    - [结构光3D Camera](/0308_3D_Camera_结构光)
+      - [相移法重建](/0309_3D_Camera_结构光_相移法重建)
+    - [双目](/0307_3D_Camera_双目)
+  - [3D Reconstruction 3D重建](/0305_3D_Reconstruction)
+    - [KinectFusion](/0306_3D_Reconstruction_KinectFusion)
+  - [DL](/0233_3D_DL)
+- [Datasets 数据集](/0017_Datasets)
+  - [2D Images](/0018_Datasets_Image2D)
+    - [Segmentation](/0097_Datasets_Image2D_Segmentation)
+      - [Reference](/0088_Datasets_Image2D_Segmentation_CamVid)
+      - [Reference](/0095_Datasets_Image2D_Segmentation_DAGM)
+      - [Reference](/0090_Datasets_Image2D_Segmentation_Balloon)
+      - [Reference](/0093_Datasets_Image2D_Segmentation_Cityscapes)
+      - [Reference](/0094_Datasets_Image2D_Segmentation_LVIS)
+      - [Reference](/0096_Datasets_Image2D_Segmentation_CHAOS)
+      - [Mapping Challenge crowdAI](/0091_Datasets_Image2D_Segmentation_MCC)
+      - [Reference](/0089_Datasets_Image2D_Segmentation_TACO)
+    - [Image Classification Datasets](/0028_Datasets_Image2D_Classification)
+      - [Oxford-IIIT Pets](/0029_Datasets_Image2D_Classification_Pets)
+      - [Reference](/0031_Datasets_Image2D_Classification_ImageNet)
+      - [Cifar](/0032_Datasets_Image2D_Classification_Cifar)
+      - [mnist](/0030_Datasets_Image2D_Classification_mnist)
+    - [Retrieval](/0241_Datasets_Image2D_Retrieval)
+      - [DeepFashion](/0242_Datasets_Image2D_Retrieval_DeepFashion)
+    - [OC](/0239_Datasets_Image2D_OC)
+    - [AutoML](/0244_Datasets_Image2D_AutoML)
+    - [Defect](/0245_Datasets_Image2D_Defect)
+    - [COCO](/0247_Datasets_Image2D_COCO)
+    - Detection
+      - [BIT-Vehicle](/0246_Datasets_Image2D_Detection_BITVehicle)
+    - [KeyPoint](/0248_Datasets_Image2D_KeyPoint)
+    - [Face](/0238_Datasets_Image2D_Face)
+    - [OCR](/0240_Datasets_Image2D_OCR)
+    - [Edge Detection](/0098_Datasets_Image2D_EdgeDetection)
+    - [Reference](/0092_Datasets_Image2D_PascalVOC)
+  - Image
+    - Segmentation
+      - Mapping
+        - Challenge
+    - Classification
+      - Oxford
+        - IIIT
+  - [Image3D](/0087_Datasets_Image3D)
 - Media
   - [图像](/0325_Media_Image)
     - [Color](/0126_Media_Image_Color)
@@ -90,6 +270,8 @@
       - [GenICam](/0106_Media_Image_Camera_GenICam)
         - Tools
       - [像素格式](/0119_Media_Image_Camera_PixelFormat)
+      - [低延迟](/0037_Media_Image_Camera_LowLatency)
+      - [定拍 vs 飞拍](/0038_Media_Image_Camera_定拍飞拍)
     - [2D 图像](/0035_Media_Image_2DImage)
     - [3D 图像](/0039_Media_Image_3DImage)
   - Tools
@@ -113,264 +295,46 @@
     - [Canny 边缘检测](/0101_CV_Edge_Canny)
   - [Blob Detection](/0068_CV_Blob)
   - [Structure Tensor 结构张量](/0070_CV_StructureTensor)
+  - [Traditional OCR 传统字符识别](/0199_CV_TOCR)
   - [Hough Transform 霍夫变换](/0071_CV_HoughTransform)
+  - [TIS](/0158_CV_TIS)
   - [Histogram Equalization 直方图均衡](/0100_CV_HE)
-- [Detection](/Anomaly_Detection)
-- [Reference](/Feature_Detection)
-- [Detection](/Motion_Detection)
-  - Harris
-    - [Reference](/Feature_Detection_Harris_Corner)
-  - Moravec
-    - [Reference](/Feature_Detection_Moravec_Corner)
-  - Edge
-    - [Reference](/Feature_Detection_Edge_Operator)
-  - Hough
-    - [Reference](/Feature_Detection_Hough_Transform)
-  - [Reference](/Feature_Detection_SIFT)
-  - Blob
-    - [Reference](/Feature_Detection_Blob_Detection)
-  - Structure
-    - [Reference](/Feature_Detection_Structure_Tensor)
-  - [Reference](/Edge_Detection_Canny)
-- [Reference](/Inception_Summary)
-- [Summary](/YOLO_Summary)
-- [Summary](/PCL_Summary)
-- [Summary](/3D_Summary)
-- [Reference](/MobileNet_Summary)
-- [Summary](/Tasks_Summary)
-- [Summary](/Transformer_Summary)
-- [Summary](/Convolution_Summary)
-- [Learning](/Metric_Learning)
-- [Learning](/Reinforcement_Learning)
-  - [Rate](/Cyclical_Learning_Rate)
-  - [Tools](/Active_Learning_Tools)
-  - [Summary](/Active_Learning_Summary)
-  - for
-    - 3D
-      - Point
-        - [Clouds](/Deep_Learning_for_3D_Point_Clouds)
-- [Brief](/Image_Color)
-  - [Reference](/Image_Color_Spaces)
-    - [Reference](/Image_Color_Spaces_Transforms)
-  - [Reference](/Image_Color_Gamut)
-  - [Reference](/Image_Color_Model)
-- [Descent](/Gradient_Descent)
-  - [Momentum](/Gradient_Descent_Momentum)
-  - [原理推导](/Gradient_Descent_原理推导)
-  - [History](/Gradient_Descent_History)
-  - BGD
-    - SGD
-      - [MBGD](/Gradient_Descent_BGD_SGD_MBGD)
-- Cloud
-  - [Registration](/Point_Cloud_Registration)
-    - [Metrics](/Point_Cloud_Registration_Metrics)
-  - Rotation
-    - [Matrix](/Point_Cloud_Rotation_Matrix)
-  - [Sampling](/Point_Cloud_Sampling)
-- [RCNN](/Faster_RCNN)
-- [RCNN](/Mask_RCNN)
-- [RCNN](/Fast_RCNN)
-- [Function](/Cost_Function)
-- [Function](/Activation_Function)
-- [Function](/Loss_Function)
-- [Classification](/Image_Classification)
-  - [History](/Image_Classification_History)
-  - [Metrics](/Image_Classification_Metrics)
-- tools
-  - gst
-    - [Reference](/gstreamer_tools_gst_launch)
-    - [Brief](/gstreamer_tools_gst_discoverer)
-    - [Reference](/gstreamer_tools_gst_inspect)
-- [Segmentation](/Image_Segmentation)
-- [Segmentation](/Instance_Segmentation)
-  - [Metrics](/Image_Segmentation_Metrics)
-- [Augmentation](/OCR_Augmentation)
-- [Augmentation](/Data_Augmentation)
-  - [Cutout](/Data_Augmentation_Cutout)
-- [SIGOPT](/HPO_SIGOPT)
-  - [Usecase](/HPO_SIGOPT_Usecase)
-  - [Options](/HPO_SIGOPT_Options)
-- [Images](/3D_Images)
-- [Pixel Format](/2D_Images)
-- [Install](/Flann_Install)
-- [Install](/Gstreamer_Install)
-- Object
-  - [Detection](/Image_Object_Detection)
-    - [Metrics](/Image_Object_Detection_Metrics)
-- [OpenCV](/Tools_OpenCV)
-  - Image
-    - [Processing](/Tools_OpenCV_Image_Processing)
-- vs
-  - [Reference](/定拍_vs_飞拍)
-  - [Softmax](/Sigmoid_vs_Softmax)
-- Building
-  - with
-    - [Reference](/PCL_Building_with_Windows)
-    - [Reference](/PCL_Building_with_Linux)
-- [Search](/Grid_Search)
-- [Search](/Random_Search)
-- [Metrics](/OCR_Metrics)
-- [Metrics](/Pairwise_Metrics)
-- [Bahdanau Attention  vs Luong Attention](/Luong_Attention)
-- [Attention](/Bahdanau_Attention)
-- [Network](/Siamese_Network)
-- [Network](/Triplet_Network)
-- [Loss](/Dice_Loss)
-- [Loss](/Focal_Loss)
-- Algos
-  - [ICP](/3D_Algos_ICP)
-  - [Evaluation](/3D_Algos_PPF)
-- [Tips](/Pytorch_Tips)
-- [Tips](/OpenVINO_Tips)
-- [Programming](/Dynamic_Programming)
-- [Video](/Datasets_Video)
-- Filtering
-  - for
-    - Gray
-      - and
-        - Color
-- [SMBO](/BO_SMBO)
-- [Validation](/Cross_Validation)
-- Is
-  - All
-    - You
-      - [Need](/Attention_Is_All_You_Need)
-- [Downsampling](/PCL_Downsampling)
-- [Reference](/RGB_色表)
-- [Normalization](/Data_Normalization)
-- [IA](/SAC_IA)
-- [Convolutional](/Sliding_Convolutional)
-- [Tips](/Darknet_AlexeyAB)
-- [TPE](/BO_TPE)
-- Sample
-  - [Dropout](/Multi_Sample_Dropout)
-- [Vision](/Transformer_Vision)
-- [NNI](/AutoML_NNI)
-- [GaussianBlur](/OpenCV_GaussianBlur)
-- [Transformers](/Bottleneck_Transformers)
-- [Reconstruction](/3D_Reconstruction)
-- VS
-  - Fast
-    - RCNN
-      - VS
-        - Faster
-- [bilateralFilter](/OpenCV_bilateralFilter)
-- [PPF](/PCL_PPF)
-- [IE](/OpenVINO_IE)
-- [Tree](/Decision_Tree)
-- [SMAC](/BO_SMAC)
-- Average
-  - [Pooling](/Global_Average_Pooling)
-- [Workbench](/OpenVINO_Workbench)
-- INT8
-  - [Model](/OpenVINO_INT8_Model)
-- [V1](/YOLO_V1)
-- Query
-  - [Strategy](/AL_Query_Strategy)
-- [加速](/Pytorch_加速)
-- Compile
-  - [Tool](/OpenVINO_Compile_Tool)
-- [Plugins](/Gstreamer_Plugins)
-- [Process](/Gaussian_Process)
-- Nearest
-  - [Neighbor](/Approximate_Nearest_Neighbor)
-- Efficient
-  - [Attention](/Transformer_Efficient_Attention)
-- [Lexicon](/OCR_Lexicon)
-- Early
-  - [Stopping](/Pytorch_Early_Stopping)
-- Distributions
-  - [Transform](/Normal_Distributions_Transform)
-- [Visualizing](/ONNX_Visualizing)
-- [FCN](/CA_FCN)
-- [Distillation](/Knowledge_Distillation)
-- Label
-  - [NLP标注工具](/Data_Label_Tools)
-- [Forest](/Random_Forest)
-- the
-  - Knowledge
-    - in
-      - a
-        - Neural
-- [Engineering](/Feature_Engineering)
-- [Datasets](/Tensorflow_Datasets)
-- Supervised
-  - [Learning](/Semi_Supervised_Learning)
-- [Reference](/Histogram_Equalization)
-- [Concepts](/Gstreamer_Concepts)
-- [Camera](/3D_Camera)
-- [tiny](/YOLO_tiny)
-- [devcloud](/OpenVINO_devcloud)
-- [V3](/YOLO_V3)
-- [BOHB](/BO_BOHB)
-- cfg
-  - [files](/Darknet_cfg_files)
-- [Encoding](/Position_Encoding)
-- [Audio](/Datasets_Audio)
-- [Reference](/SVM_原理推导)
-- Parameters
-  - Calculate
-    - [Tools](/FLOPs_Parameters_Calculate_Tools)
-- [MO](/OpenVINO_MO)
-- [KeyPoint](/ISS_KeyPoint)
-- Cycle
-  - [Policy](/One_Cycle_Policy)
-- [Pipeline](/Pytorch_Pipeline)
-- Processing
-  - [Tools](/Image_Processing_Tools)
-- [QBC](/AL_QBC)
-- [Pasting](/Copy_Pasting)
-- [Reference](/PCL_IO)
-- [NLP](/Datasets_NLP)
-- Least
-  - [Squares](/Moving_Least_Squares)
-- Acquisition
-  - [Function](/BO_Acquisition_Function)
+- [数学基础](/0288_Math)
+  - [Least Squares 最小二乘法](/0294_Math_LeastSquares)
+    - [Moving Least Squares 移动最小二乘法](/0291_Math_LeastSquares_Moving)
+  - [RANSAC](/0293_Math_RANSAC)
+  - [矩阵](/0311_Math_Matrix)
+  - [向量](/0292_Math_Vector)
+  - [Determinant  行列式](/0301_Math_Determinant)
+  - [贝叶斯定理](/0217_Math_BT)
+  - [SVD](/0297_Math_SVD)
+  - [Quaternion 四元数](/0289_Math_Quaternion)
+  - [Dynamic Programming 动态规划](/0310_Math_DynamicProgramming)
+- Pytorch
+  - Early
+    - [Early Stopping](/0172_Pytorch_Early_Stopping)
+  - [Visualization 可视化](/0171_Pytorch_Visualization)
 - One
   - Cycle
     - [One Cycle Policy](/0264_One_Cycle_Policy)
-- Scoring
-  - [RCNN](/Mask_Scoring_RCNN)
-- [Optimizer](/Pytorch_Optimizer)
-- [Reference](/Image_Thresholding)
-- [Security](/OpenVINO_Security)
-- [Visualization](/Pytorch_Visualization)
-- Range
-  - [Reference](/PCL_Range_Image)
-- [Optimization](/Bayesian_Optimization)
-- [Reference](/Gaussian_distribution)
-- [Voting](/Calamari_Voting)
-- [V2](/YOLO_V2)
-- [SAC](/PCL_SAC)
-- [Filter](/Gaussian_Filter)
-- [ViT](/T2T_ViT)
-- Source
-  - [Code](/Flann_Source_Code)
-- [OCR](/Traditional_OCR)
-- [Reference](/Convolution_Mathematics)
-- Neighbor
-  - [Reference](/Nearest_Neighbor_Search)
-- Pool
-  - Based
-    - [Sampling](/AL_Pool_Based_Sampling)
-- [DL](/Convolution_DL)
-- Uncertainty
-  - [Sampling](/AL_Uncertainty_Sampling)
-- [Rate](/Learning_Rate)
-- Latency
-  - [Reference](/Low_Latency_Camera)
-- [Tools](/PCL_Tools)
-- [UseCase](/Flann_UseCase)
-- [boxFilter](/OpenCV_boxFilter)
-- [POT](/OpenVINO_POT)
-- [Retrieval](/Image_Retrieval)
-- [AIDE](/AL_AIDE)
-- Inference
-  - [Tools](/Training_Inference_Tools)
-- Stream
-  - based
-    - Selective
-      - [Sampling](/AL_Stream_based_Selective_Sampling)
-- AABB
-  - [OBB](/PCL_AABB_OBB)
+- ISS
+  - [ISS KeyPoint](/0302_ISS_KeyPoint)
+- Bottleneck
+  - [Bottleneck Transformers](/0228_Bottleneck_Transformers)
+- Feature
+  - [Feature Engineering](/0206_Feature_Engineering)
+- Random
+  - [Random Search](/0204_Random_Search)
+- Traditional
+  - [Traditional OCR 传统字符识别](/0199_Traditional_OCR)
+- Point
+  - Cloud
+    - Rotation
+      - [Rotation Matrix 旋转矩阵](/0234_Point_Cloud_Rotation_Matrix)
+- Transformer
+  - Efficient
+    - [Efficient Attention](/0225_Transformer_Efficient_Attention)
+- Normal
+  - Distributions
+    - [NDT Normal Distributions Transform](/0295_Normal_Distributions_Transform)
 - [Wiki History](/hist)
