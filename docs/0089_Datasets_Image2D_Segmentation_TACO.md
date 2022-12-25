@@ -2,22 +2,22 @@
 Title | Datasets Image2D Segmentation TACO
 -- | --
 Created @ | `2020-04-15T08:05:46Z`
-Last Modify @| `2022-12-24T16:17:17Z`
+Last Modify @| `2022-12-25T17:25:59Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/89)
 
 ---
 - Trash Segmentation 
 
-# Reference
+## Reference
 
 - [Github repo](https://github.com/pedropro/TACO)
 - [online annootation tools](http://tacodataset.org/annotate)
 
-# Brief
+## Brief
 ![image](https://user-images.githubusercontent.com/2216970/79313522-0b6d6600-7f33-11ea-9bb5-052e3a33defe.png)
 
-# stats
+## stats
 > stas `@2020.04.15`
 
 - 1500 images 
@@ -28,5 +28,6 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/89)
 Scene proportion | super category | category 
 -- | -- | --
 ![image](https://user-images.githubusercontent.com/2216970/79313698-4ec7d480-7f33-11ea-89fc-04736587121e.png) | ![image](https://user-images.githubusercontent.com/2216970/79313678-440d3f80-7f33-11ea-8f16-36eee9e8599c.png) | ![image](https://user-images.githubusercontent.com/2216970/79313681-45d70300-7f33-11ea-87c2-4422fafee3e7.png)
+
 
 
