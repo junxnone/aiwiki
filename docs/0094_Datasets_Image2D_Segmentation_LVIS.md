@@ -2,7 +2,7 @@
 Title | Datasets Image2D Segmentation LVIS
 -- | --
 Created @ | `2020-04-22T09:05:35Z`
-Last Modify @| `2022-12-25T17:24:33Z`
+Last Modify @| `2022-12-25T17:25:09Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/94)
 
@@ -21,5 +21,6 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/94)
   - 只使用 `polygons` 
 
 ![image](https://user-images.githubusercontent.com/2216970/79963172-9d3d1c00-84bb-11ea-827e-0bb44eaafde8.png)
+
 
 
