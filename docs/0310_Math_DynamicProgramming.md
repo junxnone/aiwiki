@@ -2,11 +2,13 @@
 Title | Math DynamicProgramming
 -- | --
 Created @ | `2022-04-15T08:46:32Z`
-Last Modify @| `2022-12-25T03:40:55Z`
+Last Modify @| `2022-12-25T03:41:08Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/310)
 
 ---
+# Dynamic Programming 动态规划
+
 ## Reference
 - [算法-动态规划 Dynamic Programming--从菜鸟到老鸟](https://blog.csdn.net/u013309870/article/details/75193592)
 - [动态规划详解](https://cloud.tencent.com/developer/article/1817113)
