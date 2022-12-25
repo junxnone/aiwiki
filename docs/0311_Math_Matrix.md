@@ -1,12 +1,14 @@
 ---
-Title | Math Matric
+Title | Math Matrix
 -- | --
 Created @ | `2022-04-19T11:36:53Z`
-Last Modify @| `2022-12-25T03:34:36Z`
+Last Modify @| `2022-12-25T03:35:28Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/311)
 
 ---
+# 矩阵
+
 ## Reference
 - [矩阵的运算及其运算规则](http://www2.edu-edu.com.cn/lesson_crs78/self/j_0022/soft/ch0605.html)
 
