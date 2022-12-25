@@ -2,20 +2,21 @@
 Title | ML Tasks Image Classification Inception
 -- | --
 Created @ | `2018-10-31T21:54:28Z`
-Last Modify @| `2022-12-24T12:38:37Z`
+Last Modify @| `2022-12-25T17:13:27Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/49)
 
 ---
 
-# Reference
+# Inception
+## Reference
 -  2014 **Inception V1 / GoogleNet** Going deeper with convolutions [[paper](https://arxiv.org/pdf/1409.4842.pdf)]
 - 2015 **Inception V2 & V3** Rethinking the Inception Architecture for Computer Vision [[paper](https://arxiv.org/pdf/1512.00567.pdf)]
 - 2016 **Inception V4 & Inception-ResNet**  Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning [[paper](https://arxiv.org/pdf/1602.07261.pdf)]
 - [一文概览Inception家族的「奋斗史」](https://www.chainnews.com/articles/727946354364.htm)
 - [图像分类丨Inception家族进化史「GoogleNet、Inception、Xception」](https://www.cnblogs.com/vincent1997/p/10920036.html)
 
-# Brief
+## Brief
 
 - Inception V1 即 GoogLeNet  
   - `GoogLeNet` 是对 `Yann LeCuns` 的 `LeNet` 致敬
