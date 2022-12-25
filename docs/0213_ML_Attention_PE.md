@@ -2,11 +2,13 @@
 Title | ML Attention PE
 -- | --
 Created @ | `2021-01-29T09:56:40Z`
-Last Modify @| `2022-12-24T13:29:28Z`
-Labels | ``
+Last Modify @| `2022-12-25T05:05:06Z`
+Labels | `index`
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/213)
 
 ---
+# Position Encoding
+
 ## Reference
 - [教你直观理解 Position-Encoding](https://www.jianshu.com/p/d4ae714bd363)
 - [transformer的Position encoding的总结](https://zhuanlan.zhihu.com/p/95079337)
