@@ -2,8 +2,8 @@
 Title | CV TOCR
 -- | --
 Created @ | `2020-06-01T08:50:21Z`
-Last Modify @| `2022-12-24T12:59:47Z`
-Labels | ``
+Last Modify @| `2022-12-25T04:52:41Z`
+Labels | `index`
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/199)
 
 ---
