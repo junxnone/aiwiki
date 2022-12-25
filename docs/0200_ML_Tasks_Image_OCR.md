@@ -2,11 +2,13 @@
 Title | ML Tasks Image OCR
 -- | --
 Created @ | `2020-05-07T06:49:15Z`
-Last Modify @| `2022-12-24T12:58:11Z`
+Last Modify @| `2022-12-25T17:11:58Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/200)
 
 ---
+# OCR
+
 ## Reference
 
 - [传统OCR识别综述](https://blog.csdn.net/devcloud/article/details/103678688)
