@@ -2,11 +2,13 @@
 Title | 3D Cloud Curvature
 -- | --
 Created @ | `2022-04-01T02:04:36Z`
-Last Modify @| `2022-12-25T03:25:49Z`
+Last Modify @| `2022-12-25T03:26:05Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/304)
 
 ---
+# 3D Cloud Curvature 点云曲率
+
 ## Reference
 - [法曲率、主曲率、高斯曲率、平均曲率](https://zhuanlan.zhihu.com/p/149584374)
 - [Principal curvatures - MIT](http://web.mit.edu/hyperbook/Patrikalakis-Maekawa-Cho/node30.html)
