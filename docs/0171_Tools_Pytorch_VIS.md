@@ -2,8 +2,8 @@
 Title | Tools Pytorch VIS
 -- | --
 Created @ | `2020-01-06T01:54:50Z`
-Last Modify @| `2022-12-25T04:09:54Z`
-Labels | ``
+Last Modify @| `2022-12-25T04:52:06Z`
+Labels | `index`
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/171)
 
 ---
