@@ -2,11 +2,13 @@
 Title | 3D Algos Registration
 -- | --
 Created @ | `2021-04-29T07:34:54Z`
-Last Modify @| `2022-12-25T03:41:47Z`
+Last Modify @| `2022-12-25T03:41:59Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/235)
 
 ---
+# Registration 配准
+
 ## Reference
 - [A method for registration of 3-D shapes.pdf](https://github.com/junxnone/tech-io/files/6397002/A.method.for.registration.of.3-D.shapes.pdf)
 - [awesome-image-registration](https://github.com/Awesome-Image-Registration-Organization/awesome-image-registration)
