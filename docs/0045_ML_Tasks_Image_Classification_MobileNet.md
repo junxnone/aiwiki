@@ -2,12 +2,13 @@
 Title | ML Tasks Image Classification MobileNet
 -- | --
 Created @ | `2018-09-27T06:12:31Z`
-Last Modify @| `2022-12-24T12:41:36Z`
+Last Modify @| `2022-12-25T17:14:21Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/45)
 
 ---
-# Reference
+# MobileNet
+## Reference
 - 2017 **MobileNet V1** MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications [[paper](https://arxiv.org/pdf/1704.04861.pdf)]
 - 2018 **MobileNet V2** MobileNetV2: Inverted Residuals and Linear Bottlenecks [[paper](https://arxiv.org/pdf/1801.04381.pdf)]
 - 2019 **MobileNet V3** Searching for MobileNetV3 [[paper](https://arxiv.org/pdf/1905.02244.pdf)]
@@ -24,7 +25,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/45)
 
 
 
-# Brief
+## Brief
 
 Google针对手机等嵌入式设备提出的一系列轻量级的深层神经网络，取名为MobileNet. 
 目前有三个版本：v1/v2/v3
