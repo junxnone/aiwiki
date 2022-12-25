@@ -2,11 +2,13 @@
 Title | Math Vector
 -- | --
 Created @ | `2022-02-22T09:24:37Z`
-Last Modify @| `2022-12-25T03:33:21Z`
+Last Modify @| `2022-12-25T03:33:40Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/292)
 
 ---
+# 向量
+
 ## 向量点乘
 - 点乘 - Dot Product/Scalar Product
 - $a \cdot b = \sum_{i=1}^{n} a_{i}b_{i}$  - $a = [a_{1}, a_{2}, ..., a_{n}]$ - $b = [b_{1}, b_{2}, ..., b_{n}]$
