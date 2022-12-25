@@ -2,8 +2,8 @@
 Title | ML LR OCP
 -- | --
 Created @ | `2019-09-03T09:39:35Z`
-Last Modify @| `2022-12-24T12:18:49Z`
-Labels | ``
+Last Modify @| `2022-12-25T04:51:44Z`
+Labels | `index`
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/264)
 
 ---
