@@ -1,8 +1,8 @@
 ---
-Title | 离群点移除
+Title | 3D Cloud SOR
 -- | --
 Created @ | `2022-02-08T02:03:37Z`
-Last Modify @| `2022-12-25T03:46:23Z`
+Last Modify @| `2022-12-25T03:46:54Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/287)
 
