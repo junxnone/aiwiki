@@ -2,14 +2,14 @@
 Title | ML KD History
 -- | --
 Created @ | `2021-04-12T06:23:02Z`
-Last Modify @| `2022-12-24T15:54:57Z`
+Last Modify @| `2022-12-25T17:18:21Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/336)
 
 ---
-# Reference
+## Reference
 
-# History
+## History
 **Pattern**
 ```
 - 2020-05 **[Name]** paper_full_name [[Paper](paperlink)] [[Code](codelink)] [[Note](notelink)] #tags
