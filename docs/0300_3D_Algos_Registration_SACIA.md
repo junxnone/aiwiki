@@ -2,12 +2,12 @@
 Title | 3D Algos Registration SACIA
 -- | --
 Created @ | `2022-03-16T10:15:58Z`
-Last Modify @| `2022-12-25T03:44:16Z`
+Last Modify @| `2022-12-25T03:44:28Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/300)
 
 ---
-# SAC IA
+# SAC-IA
 
 ## Reference
 - [RANSAC & MLESAC & SAC-IA](https://littlebearsama.github.io/2020/04/11/Registration/0.SAC-IA/)
