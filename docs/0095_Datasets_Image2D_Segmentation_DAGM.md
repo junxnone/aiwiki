@@ -2,15 +2,15 @@
 Title | Datasets Image2D Segmentation DAGM
 -- | --
 Created @ | `2020-02-26T05:13:20Z`
-Last Modify @| `2022-12-24T16:15:23Z`
+Last Modify @| `2022-12-25T17:23:15Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/95)
 
 ---
-# Reference
+## Reference
 - [DAGM 2007](http://resources.mpi-inf.mpg.de/conference/dagm/2007/prizes.html)
 
-# Brief
+## Brief
 
 ![image](https://user-images.githubusercontent.com/2216970/75320798-73e08500-58aa-11ea-9c7f-9ce0cacdb0b5.png)
 
@@ -33,3 +33,4 @@ Class10 | 12669 | 959 | 3305.22 | 2719.0 | 7 | 292 | 1
 > Area is pixel level, calculate by cv2.countNonZero()
 > Large/Medium/Small as COCO defined
 > Small < 32\*32 < Medium < 96\*96 < Large
+
