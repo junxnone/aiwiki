@@ -2,8 +2,8 @@
 Title | ML Transformer EfficientAttention
 -- | --
 Created @ | `2021-02-23T02:47:17Z`
-Last Modify @| `2022-12-24T15:52:09Z`
-Labels | ``
+Last Modify @| `2022-12-25T04:51:06Z`
+Labels | `index`
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/225)
 
 ---
