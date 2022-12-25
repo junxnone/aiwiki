@@ -2,8 +2,8 @@
 Title | 3D Algos Registration NDT
 -- | --
 Created @ | `2022-03-09T07:44:46Z`
-Last Modify @| `2022-12-25T03:43:41Z`
-Labels | ``
+Last Modify @| `2022-12-25T04:52:21Z`
+Labels | `index`
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/295)
 
 ---
