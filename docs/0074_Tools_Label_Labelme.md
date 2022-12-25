@@ -2,17 +2,17 @@
 Title | Tools Label Labelme
 -- | --
 Created @ | `2020-04-15T05:50:14Z`
-Last Modify @| `2022-12-25T04:15:56Z`
+Last Modify @| `2022-12-25T04:16:35Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/74)
 
 ---
-# Reference
+## Reference
 
 - [Github repo](https://github.com/wkentaro/labelme)
 - [pylabelme - mpitid --> labelme_python](https://github.com/mpitid/pylabelme)
 
-# Brief
+## Brief
 - Label Classification/ObjectDetection/Segmentation/KeyPoint
 - Label Image/Video
 - Label Polygon/Rectange/Circle/Line/Point
@@ -29,20 +29,20 @@ point | ![47](https://user-images.githubusercontent.com/2216970/79302982-5205950
 - host - pip/brew
 - docker
 
-# UseCase
-## [Calssification](https://github.com/wkentaro/labelme/tree/master/examples/classification)
+## UseCase
+### [Calssification](https://github.com/wkentaro/labelme/tree/master/examples/classification)
 ```
 labelme data_annotated --flags flags.txt --nodata
 ```
 ![image](https://user-images.githubusercontent.com/2216970/79305440-fd651880-7f25-11ea-8712-9795699a0f16.png)
 
-## Detection BBox
+### Detection BBox
 ```
 labelme data_annotated --labels labels.txt --nodata --autosave
 ```
 ![image](https://user-images.githubusercontent.com/2216970/79305526-24234f00-7f26-11ea-8700-87e9fee07d9a.png)
 
-## Segmentation
+### Segmentation
 - Semantic
 ```
 labelme data_annotated --labels labels.txt --nodata --validatelabel exact --config '{shift_auto_shape_color: -2}'
@@ -54,19 +54,19 @@ labelme data_annotated --labels labels.txt --nodata --labelflags '{.*: [occluded
 ```
 ![image](https://user-images.githubusercontent.com/2216970/79305790-9f850080-7f26-11ea-9cc9-39d57c8a0f35.png)
 
-## [Video](https://github.com/wkentaro/labelme/tree/master/examples/video_annotation)
+### [Video](https://github.com/wkentaro/labelme/tree/master/examples/video_annotation)
 ```
 labelme data_annotated --labels labels.txt --nodata --keep-prev --config '{shift_auto_shape_color: -2}'
 ```
 ![data_annotated](https://user-images.githubusercontent.com/2216970/79305735-81b79b80-7f26-11ea-95a6-1eb5970ab840.gif)
 
-# Visualization
+## Visualization
 ```
 labelme_draw_json apc2016_obj3.json
 ```
 ![image](https://user-images.githubusercontent.com/2216970/79305881-c3e0dd00-7f26-11ea-913a-e737306e6844.png)
 
-# Convert VOC/COCO
+## Convert VOC/COCO
 - Instance Segmentation to VOC
 ```
 ./labelme2voc.py data_annotated data_dataset_voc --labels labels.txt
