@@ -2,7 +2,7 @@
 Title | Datasets Image2D Segmentation CamVid
 -- | --
 Created @ | `2020-03-03T03:42:09Z`
-Last Modify @| `2022-12-24T16:17:46Z`
+Last Modify @| `2022-12-25T17:22:20Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/88)
 
@@ -11,12 +11,12 @@ CamVid - Cambridge-driving Labeled Video Database
 
 ![image](https://user-images.githubusercontent.com/2216970/75741404-7416cf80-5d45-11ea-91fe-2eeb5eede5ea.png)
 
-# Reference
+## Reference
 
 - [Motion-based Segmentation and Recognition Dataset](http://mi.eng.cam.ac.uk/research/projects/VideoRec/CamVid/)
 - [some Github download](https://github.com/alexgkendall/SegNet-Tutorial/tree/master/CamVid)
 
-# Brief
+## Brief
 -  semantic labels
 - 32 semantic classes
 
@@ -57,3 +57,5 @@ Color | Classes
 192 192 0 | VegetationMisc
 0 0 0 | Void
 64 192 0 | Wall
+
+
