@@ -2,15 +2,18 @@
 Title | Media Image Camera 定拍飞拍
 -- | --
 Created @ | `2021-04-26T08:23:35Z`
-Last Modify @| `2022-12-25T04:33:23Z`
+Last Modify @| `2022-12-25T04:33:48Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/38)
 
 ---
-# Reference
+# 定拍 vs 飞拍
+
+
+## Reference
 - [CCD视觉飞拍技术](http://www.julivision.com/news/436.html)
 
-# Brief
+## Brief
 
 模式 | Description | 优缺点
 -- | -- | --
