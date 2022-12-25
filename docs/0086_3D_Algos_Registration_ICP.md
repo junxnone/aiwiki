@@ -1,8 +1,8 @@
 ---
-Title | 3D Algos ICP
+Title | 3D Algos Registration ICP
 -- | --
 Created @ | `2021-04-29T03:20:49Z`
-Last Modify @| `2022-12-25T03:30:51Z`
+Last Modify @| `2022-12-25T03:44:53Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/86)
 
