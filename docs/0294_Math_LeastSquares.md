@@ -1,8 +1,8 @@
 ---
-Title | 最小二乘法
+Title | Math LeastSquares
 -- | --
 Created @ | `2022-03-07T04:06:49Z`
-Last Modify @| `2022-12-25T03:37:32Z`
+Last Modify @| `2022-12-25T03:37:51Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/294)
 
