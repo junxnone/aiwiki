@@ -2,17 +2,18 @@
 Title | ML Tasks Image Classification Xception
 -- | --
 Created @ | `2019-12-04T05:29:11Z`
-Last Modify @| `2022-12-24T12:41:13Z`
+Last Modify @| `2022-12-25T17:15:10Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/50)
 
 ---
+# Xception
 
-# Reference
+## Reference
 - 2016 **Xception** Xception: Deep Learning with Depthwise Separable Convolutions [[paper](https://arxiv.org/abs/1610.02357)]
 - [Xception 分析](https://blog.csdn.net/lk3030/article/details/84847879)
 
-# Brief
+## Brief
 
 Xception 网络是 Inception v3 的改进, 由 `François Chollet` 于 2016 年发表，后用于MobileNet
 
