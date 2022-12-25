@@ -2,11 +2,13 @@
 Title | Math BT
 -- | --
 Created @ | `2020-07-14T06:08:46Z`
-Last Modify @| `2022-12-25T04:35:54Z`
+Last Modify @| `2022-12-25T04:36:08Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/217)
 
 ---
+# 贝叶斯定理
+
 ## Reference
 - [一个例子搞清楚（先验分布/后验分布/似然估计）](https://blog.csdn.net/qq_23947237/article/details/78265026)
 - [贝叶斯定理](https://blog.csdn.net/qq_41529692/article/details/84105315)
