@@ -1,8 +1,8 @@
 ---
-Title | Motion Detection
+Title | ML Task MD
 -- | --
 Created @ | `2019-08-21T01:55:30Z`
-Last Modify @| `2022-12-25T04:37:40Z`
+Last Modify @| `2022-12-25T04:38:06Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/243)
 
