@@ -2,11 +2,13 @@
 Title | ML Attention S
 -- | --
 Created @ | `2020-05-09T02:39:37Z`
-Last Modify @| `2022-12-24T13:28:01Z`
-Labels | ``
+Last Modify @| `2022-12-25T05:03:58Z`
+Labels | `index`
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/212)
 
 ---
+# Attention Is All You Need
+
 ## Reference
 - [paper - 2017 - Attention Is All You Need](https://arxiv.org/pdf/1706.03762.pdf)
 - [The Illustrated Transformer](http://jalammar.github.io/illustrated-transformer/)
