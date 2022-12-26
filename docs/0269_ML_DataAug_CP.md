@@ -2,11 +2,12 @@
 Title | ML DataAug CP
 -- | --
 Created @ | `2019-12-09T10:17:07Z`
-Last Modify @| `2022-12-24T12:30:28Z`
-Labels | ``
+Last Modify @| `2022-12-26T14:52:03Z`
+Labels | `index`
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/269)
 
 ---
+# Copy-Pasting
 ## Reference
 - [paper - Augmentation for small object detection](https://arxiv.org/pdf/1902.07296.pdf)
 - [增强小目标检测（Augmentation for small object detection）](https://blog.csdn.net/u011344545/article/details/91355839)
