@@ -2,11 +2,13 @@
 Title | ML AutoML HPO BO AF
 -- | --
 Created @ | `2021-03-30T02:28:50Z`
-Last Modify @| `2022-12-24T13:20:16Z`
-Labels | ``
+Last Modify @| `2022-12-26T14:51:34Z`
+Labels | `index`
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/222)
 
 ---
+# Acquisition Function
+
 ## Reference
 - [Exploring Bayesian Optimization](https://distill.pub/2020/bayesian-optimization/)
 - [ucb/ei/pi code 实现](https://github.com/fmfn/BayesianOptimization/blob/91441fe4002fb6ebdb4aa5e33826230d8df560d0/bayes_opt/util.py#L74)
