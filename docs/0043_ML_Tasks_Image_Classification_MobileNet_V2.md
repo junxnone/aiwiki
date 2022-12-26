@@ -2,18 +2,18 @@
 Title | ML Tasks Image Classification MobileNet V2
 -- | --
 Created @ | `2020-02-25T10:15:57Z`
-Last Modify @| `2022-12-24T12:42:23Z`
-Labels | ``
+Last Modify @| `2022-12-26T14:49:32Z`
+Labels | `index`
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/43)
 
 ---
-# Reference
+## Reference
 - 2018 **MobileNet V2** MobileNetV2: Inverted Residuals and Linear Bottlenecks [[paper](https://arxiv.org/pdf/1801.04381.pdf)]
 - [MobileNet V2 论文初读](https://zhuanlan.zhihu.com/p/33075914)
 - [轻量化网络：MobileNet-V2](https://blog.csdn.net/u011995719/article/details/79135818)
 - [tensorflow/models - Mobilenet v2](https://github.com/tensorflow/models/tree/master/research/slim/nets/mobilenet)
 
-# Brief
+## Brief
 
 - Inverted Residual Blocks
 - Linear Bottleneck 
