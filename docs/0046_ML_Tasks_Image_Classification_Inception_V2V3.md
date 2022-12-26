@@ -2,13 +2,12 @@
 Title | ML Tasks Image Classification Inception V2V3
 -- | --
 Created @ | `2019-12-04T09:37:22Z`
-Last Modify @| `2022-12-24T12:39:17Z`
+Last Modify @| `2022-12-26T14:50:25Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/46)
 
 ---
-
-# Reference
+## Reference
 - 2015 **Inception V2 & V3** Rethinking the Inception Architecture for Computer Vision [[paper](https://arxiv.org/pdf/1512.00567.pdf)]
 - [Inception结构](https://baike.baidu.com/item/Inception%E7%BB%93%E6%9E%84/22761220?fr=aladdin)
 - [一文概览Inception家族的「奋斗史」](https://www.chainnews.com/articles/727946354364.htm)
@@ -16,7 +15,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/46)
 - [图像分类丨Inception家族进化史「GoogleNet、Inception、Xception」](https://www.cnblogs.com/vincent1997/p/10920036.html)
 
 
-# Brief
+## Brief
 - Inception V2 和 V3 是同一篇 paper 提出，各种 Improve 最终版的 V2 即 V3
 - Inception Module 设计准则
   - 避免大kernel 导致的表达瓶颈
