@@ -2,8 +2,8 @@
 Title | Datasets Image2D Segmentation MCC
 -- | --
 Created @ | `2020-04-15T08:56:58Z`
-Last Modify @| `2022-12-24T16:16:48Z`
-Labels | ``
+Last Modify @| `2022-12-26T14:56:14Z`
+Labels | `index`
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/91)
 
 ---
