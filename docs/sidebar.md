@@ -41,6 +41,7 @@
   - Metrics
 - Tools 
   - Numpy
+  - TI
   - Pytorch
     - Pipeline
     - Optimizer
