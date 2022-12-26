@@ -147,7 +147,7 @@
   - [Reinforcement Learning 强化学习](/0290_ML_RL)
   - [Data Normalization 数据标准化](/0251_ML_DataNorm)
 - Tools
-  - [OV](/0185_Tools_OV)
+  - [OpenVINO](/0185_Tools_OV)
     - [POT](/0177_Tools_OV_POT)
     - [Workbench](/0178_Tools_OV_Workbench)
     - [Inference Engine](/0180_Tools_OV_IE)

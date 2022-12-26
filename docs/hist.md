@@ -306,4 +306,4 @@
 - 2018-09-06   [Darknet](/0260_Tools_Darknet)
 - 2018-09-03   [SVD](/0297_Math_SVD)
 - 2018-08-29   [Cifar](/0032_Datasets_Image2D_Classification_Cifar)
-- 2018-08-26   [OV](/0185_Tools_OV)
+- 2018-08-26   [OpenVINO](/0185_Tools_OV)
