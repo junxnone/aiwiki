@@ -2,12 +2,12 @@
 Title | ML Tasks Image Classification Inception V1
 -- | --
 Created @ | `2019-12-04T09:27:53Z`
-Last Modify @| `2022-12-24T12:39:05Z`
+Last Modify @| `2022-12-26T14:50:10Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/48)
 
 ---
-# Reference
+## Reference
 -  2014 **Inception V1 / GoogleNet** Going deeper with convolutions [[paper](https://arxiv.org/pdf/1409.4842.pdf)]
 - [深度学习---GoogLeNet](https://blog.csdn.net/qq_38906523/article/details/80061075)
 - [Going deeper with convolutions](https://arxiv.org/pdf/1409.4842v1.pdf)
@@ -18,7 +18,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/48)
 - [GoogLeNet系列解读](https://blog.csdn.net/shuzfan/article/details/50738394)
 - [Hebbian theory - 赫布理论](https://zh.wikipedia.org/wiki/%E8%B5%AB%E5%B8%83%E7%90%86%E8%AE%BA)
 
-# Brief
+## Brief
 - `GoogLeNet` 是对 `Yann LeCuns` 的 `LeNet` 致敬, 代号为Inception
 - 获得了 `ILSVRC14` 比赛的冠军, 刷新了**图像分类与检测**的性能记录
 - 用的参数比ILSVRC2012的冠军AlexNet少12倍，但准确率更高
