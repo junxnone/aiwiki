@@ -2,8 +2,8 @@
 Title | Datasets Image2D Classification Pets
 -- | --
 Created @ | `2019-01-24T20:39:23Z`
-Last Modify @| `2022-12-24T16:10:03Z`
-Labels | ``
+Last Modify @| `2022-12-26T14:54:56Z`
+Labels | `index`
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/29)
 
 ---
