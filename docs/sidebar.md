@@ -1,4 +1,8 @@
 - Math
+  - Vector
+  - Determinant
+  - Matrix
+  - LeastSquares
 - Media
   - Image
     - 2DImage
