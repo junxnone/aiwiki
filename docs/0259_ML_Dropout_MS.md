@@ -2,12 +2,13 @@
 Title | ML Dropout MS
 -- | --
 Created @ | `2020-03-23T01:35:35Z`
-Last Modify @| `2022-12-24T12:26:46Z`
-Labels | ``
+Last Modify @| `2022-12-26T14:52:23Z`
+Labels | `index`
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/259)
 
 ---
 
+# Multi-Sample Dropout
 
 ## Reference
 
