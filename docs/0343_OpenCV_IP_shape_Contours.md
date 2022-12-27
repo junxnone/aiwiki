@@ -1,8 +1,8 @@
 ---
-Title | Tools OpenCV Contours
+Title | OpenCV IP shape Contours
 -- | --
 Created @ | `2020-02-27T06:33:42Z`
-Last Modify @| `2022-12-27T02:44:39Z`
+Last Modify @| `2022-12-27T09:12:40Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/343)
 
