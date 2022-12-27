@@ -2,11 +2,13 @@
 Title | Math GaussianProcess
 -- | --
 Created @ | `2020-07-15T01:58:53Z`
-Last Modify @| `2022-12-27T03:38:25Z`
+Last Modify @| `2022-12-27T03:39:01Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/216)
 
 ---
+# Gaussian Process 高斯过程
+
 ## Reference
 - [1.7. 高斯过程 - apachecn/sklearn-doc-zh](https://github.com/apachecn/sklearn-doc-zh/blob/master/docs/master/8.md)
 - [The Gaussian Processes Web Site](http://www.gaussianprocess.org/)
