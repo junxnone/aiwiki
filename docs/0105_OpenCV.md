@@ -1,8 +1,8 @@
 ---
-Title | Tools OpenCV
+Title | OpenCV
 -- | --
 Created @ | `2021-10-16T04:31:07Z`
-Last Modify @| `2022-12-27T06:22:04Z`
+Last Modify @| `2022-12-27T09:07:38Z`
 Labels | `index`
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/105)
 
