@@ -1,8 +1,8 @@
 ---
-Title | Tools OpenCV brightness
+Title | OpenCV UC brightness
 -- | --
 Created @ | `2019-05-29T09:35:01Z`
-Last Modify @| `2022-12-27T03:13:38Z`
+Last Modify @| `2022-12-27T09:13:59Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/350)
 
