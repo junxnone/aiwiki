@@ -1,8 +1,8 @@
 ---
-Title | Tools OpenCV boxFilter
+Title | OpenCV IP Filter boxFilter
 -- | --
 Created @ | `2022-11-29T03:17:35Z`
-Last Modify @| `2022-12-27T02:36:16Z`
+Last Modify @| `2022-12-27T09:05:49Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/319)
 
