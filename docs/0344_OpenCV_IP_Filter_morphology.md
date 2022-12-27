@@ -1,8 +1,8 @@
 ---
-Title | Tools OpenCV morphology
+Title | OpenCV IP Filter morphology
 -- | --
 Created @ | `2018-12-20T08:46:04Z`
-Last Modify @| `2022-12-27T02:47:56Z`
+Last Modify @| `2022-12-27T09:16:18Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/344)
 
