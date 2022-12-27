@@ -1,8 +1,8 @@
 ---
-Title | Tools OpenCV Read Image
+Title | OpenCV IO Image
 -- | --
 Created @ | `2018-12-11T05:52:41Z`
-Last Modify @| `2022-12-27T06:57:49Z`
+Last Modify @| `2022-12-27T09:16:33Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/361)
 
