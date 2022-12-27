@@ -1,8 +1,8 @@
 ---
-Title | Tools OpenCV Hough
+Title | OpenCV IP Feature Hough
 -- | --
 Created @ | `2020-11-06T06:00:25Z`
-Last Modify @| `2022-12-27T02:37:28Z`
+Last Modify @| `2022-12-27T09:10:50Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/340)
 
