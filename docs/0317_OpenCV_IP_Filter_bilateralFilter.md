@@ -1,8 +1,8 @@
 ---
-Title | OpenCV IP FilterbilateralFilter
+Title | OpenCV IP Filter bilateralFilter
 -- | --
 Created @ | `2022-11-28T06:40:30Z`
-Last Modify @| `2022-12-27T09:06:40Z`
+Last Modify @| `2022-12-27T09:07:10Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/317)
 
