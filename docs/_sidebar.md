@@ -307,10 +307,6 @@
     - [VIA VGG Image Annotator](/0075_Tools_Label_VGG)
   - [Eigen](/0303_Tools_Eigen)
   - [FLOPs Parameters 计算](/0026_Tools_FPCalculate)
-  - OpenCV
-    - Read
-      - [读取 RTSP Camera](/0351_Tools_OpenCV_Read_RTSPCamera)
-    - [absdiff](/0353_Tools_OpenCV_absdiff)
   - [论文阅读相关](/0072_Tools_ReadPapers)
 - [Datasets 数据集](/0017_Datasets)
   - [2D Images](/0018_Datasets_Image2D)
@@ -351,12 +347,13 @@
   - [CLAHE](/0341_OpenCV_CLAHE)
   - IO
     - [Image](/0361_OpenCV_IO_Image)
+    - [读取 RTSP Camera](/0351_OpenCV_IO_RTSPCamera)
     - [Video](/0352_OpenCV_IO_Video)
   - [Image Processing](/0316_OpenCV_IP)
     - [Colormaps](/0349_OpenCV_IP_Colormaps)
     - Feature
       - [Hough  Line/Circle 霍夫线圆](/0340_OpenCV_IP_Feature_Hough)
-    - Filter
+    - [Image Filtering](/0363_OpenCV_IP_Filter)
       - [GaussianBlur](/0320_OpenCV_IP_Filter_GaussianBlur)
       - [bilateralFilter](/0317_OpenCV_IP_Filter_bilateralFilter)
         - [Bilateral Filtering for Gray and Color Images](/0318_OpenCV_IP_Filter_bilateralFilter_BF)
@@ -371,6 +368,9 @@
     - [Video](/0352_OpenCV_Read_Video)
   - [OpenCV UseCase](/0362_OpenCV_UC)
     - [计算图片 average brightness](/0350_OpenCV_UC_brightness)
+  - core
+    - arrays
+      - [absdiff](/0353_OpenCV_core_arrays_absdiff)
   - [js](/0339_OpenCV_js)
 - [Wiki History](/hist)
 
