@@ -1,8 +1,8 @@
 ---
-Title | Datasets Image Detection
+Title | Datasets Image2D Detection
 -- | --
 Created @ | `2019-12-18T02:28:41Z`
-Last Modify @| `2022-12-27T03:39:34Z`
+Last Modify @| `2022-12-27T06:16:58Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/237)
 
