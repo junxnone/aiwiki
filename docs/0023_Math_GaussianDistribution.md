@@ -1,8 +1,8 @@
 ---
-Title | Gaussian distribution
+Title | Math GaussianDistribution
 -- | --
 Created @ | `2021-03-22T08:23:37Z`
-Last Modify @| `2022-12-27T03:29:57Z`
+Last Modify @| `2022-12-27T03:36:58Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/23)
 
