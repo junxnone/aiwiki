@@ -1,8 +1,8 @@
 ---
-Title | Tools OpenCV Read RTSPCamera
+Title | OpenCV IO RTSPCamera
 -- | --
 Created @ | `2018-11-30T09:42:47Z`
-Last Modify @| `2022-12-27T03:16:37Z`
+Last Modify @| `2022-12-27T09:20:27Z`
 Labels | `ML`
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/351)
 
