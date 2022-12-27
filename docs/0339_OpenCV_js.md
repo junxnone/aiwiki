@@ -1,8 +1,8 @@
 ---
-Title | Tools OpenCV js
+Title | OpenCV js
 -- | --
 Created @ | `2021-07-30T06:24:04Z`
-Last Modify @| `2022-12-27T02:35:45Z`
+Last Modify @| `2022-12-27T09:08:02Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/339)
 
