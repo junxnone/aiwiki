@@ -1,8 +1,8 @@
 ---
-Title | Global Average Pooling
+Title | ML GAP
 -- | --
 Created @ | `2019-02-24T14:07:21Z`
-Last Modify @| `2022-12-27T03:40:19Z`
+Last Modify @| `2022-12-27T03:43:12Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/267)
 
