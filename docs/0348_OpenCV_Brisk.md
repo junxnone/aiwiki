@@ -1,8 +1,8 @@
 ---
-Title | Tools OpenCV Brisk
+Title | OpenCV Brisk
 -- | --
 Created @ | `2018-10-21T17:11:34Z`
-Last Modify @| `2022-12-27T03:10:58Z`
+Last Modify @| `2022-12-27T09:17:06Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/348)
 
