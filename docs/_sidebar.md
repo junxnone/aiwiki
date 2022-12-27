@@ -289,6 +289,12 @@
     - [Labelme](/0074_Tools_Label_Labelme)
     - [VIA VGG Image Annotator](/0075_Tools_Label_VGG)
   - [Eigen](/0303_Tools_Eigen)
+  - [OpenCV](/0105_Tools_OpenCV)
+    - [GaussianBlur](/0320_Tools_OpenCV_GaussianBlur)
+    - Image
+      - [Image Processing](/0316_Tools_OpenCV_Image_Processing)
+    - [bilateralFilter](/0317_Tools_OpenCV_bilateralFilter)
+    - [js](/0339_Tools_OpenCV_js)
   - [论文阅读相关](/0072_Tools_ReadPapers)
 - [Datasets 数据集](/0017_Datasets)
   - [2D Images](/0018_Datasets_Image2D)
