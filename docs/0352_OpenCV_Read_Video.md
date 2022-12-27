@@ -1,8 +1,8 @@
 ---
-Title | Tools OpenCV Read Video
+Title | OpenCV Read Video
 -- | --
 Created @ | `2019-08-09T08:54:58Z`
-Last Modify @| `2022-12-27T03:19:32Z`
+Last Modify @| `2022-12-27T09:12:52Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/352)
 
