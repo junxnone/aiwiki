@@ -2,8 +2,8 @@
 Title | OpenCV IO Video
 -- | --
 Created @ | `2019-08-09T08:54:58Z`
-Last Modify @| `2022-12-27T09:13:02Z`
-Labels | ``
+Last Modify @| `2022-12-27T09:39:39Z`
+Labels | `index`
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/352)
 
 ---
