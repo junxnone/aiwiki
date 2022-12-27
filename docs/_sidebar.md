@@ -290,10 +290,13 @@
     - [VIA VGG Image Annotator](/0075_Tools_Label_VGG)
   - [Eigen](/0303_Tools_Eigen)
   - [OpenCV](/0105_Tools_OpenCV)
+    - [CLAHE](/0341_Tools_OpenCV_CLAHE)
     - [GaussianBlur](/0320_Tools_OpenCV_GaussianBlur)
+    - [Hough  Line/Circle 霍夫线圆](/0340_Tools_OpenCV_Hough)
     - Image
       - [Image Processing](/0316_Tools_OpenCV_Image_Processing)
     - [bilateralFilter](/0317_Tools_OpenCV_bilateralFilter)
+    - [boxFilter](/0319_Tools_OpenCV_boxFilter)
     - [js](/0339_Tools_OpenCV_js)
   - [论文阅读相关](/0072_Tools_ReadPapers)
 - [Datasets 数据集](/0017_Datasets)
