@@ -1,8 +1,8 @@
 ---
-Title | Tools OpenCV CLAHE
+Title | OpenCV CLAHE
 -- | --
 Created @ | `2018-09-25T06:43:35Z`
-Last Modify @| `2022-12-27T02:38:23Z`
+Last Modify @| `2022-12-27T09:17:35Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/341)
 
