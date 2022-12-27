@@ -29,6 +29,7 @@
         - [Color Space 转换](/0120_Media_Image_Color_Space_Transform)
     - [Histogram 图像直方图](/0342_Media_Image_Histogram)
     - [Perspective Transformation - 透视变换](/0345_Media_Image_PT)
+    - [Resize](/0347_Media_Image_Resize)
   - [Video 视频](/0036_Media_Video)
   - Tools
     - [GStreamer](/0109_Media_Tools_GStreamer)
