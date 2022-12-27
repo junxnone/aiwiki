@@ -293,6 +293,7 @@
     - [VIA VGG Image Annotator](/0075_Tools_Label_VGG)
   - [Eigen](/0303_Tools_Eigen)
   - [OpenCV](/0105_Tools_OpenCV)
+    - [Brisk  特征点匹配](/0348_Tools_OpenCV_Brisk)
     - [CLAHE](/0341_Tools_OpenCV_CLAHE)
     - [Contours 轮廓](/0343_Tools_OpenCV_Contours)
     - [GaussianBlur](/0320_Tools_OpenCV_GaussianBlur)
