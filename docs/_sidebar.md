@@ -307,27 +307,10 @@
     - [VIA VGG Image Annotator](/0075_Tools_Label_VGG)
   - [Eigen](/0303_Tools_Eigen)
   - [FLOPs Parameters 计算](/0026_Tools_FPCalculate)
-  - [OpenCV](/0105_Tools_OpenCV)
-    - [OpenCV 二值化](/0330_Tools_OpenCV_BIN)
-    - [Brisk  特征点匹配](/0348_Tools_OpenCV_Brisk)
-    - [CLAHE](/0341_Tools_OpenCV_CLAHE)
-    - [Colormaps](/0349_Tools_OpenCV_Colormaps)
-    - [Contours 轮廓](/0343_Tools_OpenCV_Contours)
-    - [GaussianBlur](/0320_Tools_OpenCV_GaussianBlur)
-    - [Hough  Line/Circle 霍夫线圆](/0340_Tools_OpenCV_Hough)
-    - [Image Processing](/0316_Tools_OpenCV_IP)
+  - OpenCV
     - Read
-      - [Image](/0361_Tools_OpenCV_Read_Image)
       - [读取 RTSP Camera](/0351_Tools_OpenCV_Read_RTSPCamera)
-      - [Video](/0352_Tools_OpenCV_Read_Video)
     - [absdiff](/0353_Tools_OpenCV_absdiff)
-    - [bilateralFilter](/0317_Tools_OpenCV_bilateralFilter)
-      - [Bilateral Filtering for Gray and Color Images](/0318_Tools_OpenCV_bilateralFilter_BF)
-    - [boxFilter](/0319_Tools_OpenCV_boxFilter)
-    - [计算图片 average brightness](/0350_Tools_OpenCV_brightness)
-    - [distanceTransform 处理区域粘连](/0346_Tools_OpenCV_distanceTransform)
-    - [js](/0339_Tools_OpenCV_js)
-    - [膨胀腐蚀](/0344_Tools_OpenCV_morphology)
   - [论文阅读相关](/0072_Tools_ReadPapers)
 - [Datasets 数据集](/0017_Datasets)
   - [2D Images](/0018_Datasets_Image2D)
@@ -363,6 +346,32 @@
   - [NLP](/0021_Datasets_NLP)
   - [Video](/0019_Datasets_Video)
 - [KnowledgeGraph](/0329_KnowledgeGraph)
+- [OpenCV](/0105_OpenCV)
+  - [Brisk  特征点匹配](/0348_OpenCV_Brisk)
+  - [CLAHE](/0341_OpenCV_CLAHE)
+  - IO
+    - [Image](/0361_OpenCV_IO_Image)
+    - [Video](/0352_OpenCV_IO_Video)
+  - [Image Processing](/0316_OpenCV_IP)
+    - [Colormaps](/0349_OpenCV_IP_Colormaps)
+    - Feature
+      - [Hough  Line/Circle 霍夫线圆](/0340_OpenCV_IP_Feature_Hough)
+    - Filter
+      - [GaussianBlur](/0320_OpenCV_IP_Filter_GaussianBlur)
+      - [bilateralFilter](/0317_OpenCV_IP_Filter_bilateralFilter)
+        - [Bilateral Filtering for Gray and Color Images](/0318_OpenCV_IP_Filter_bilateralFilter_BF)
+      - [boxFilter](/0319_OpenCV_IP_Filter_boxFilter)
+      - [膨胀腐蚀](/0344_OpenCV_IP_Filter_morphology)
+    - misc
+      - [OpenCV 二值化](/0330_OpenCV_IP_misc_BIN)
+      - [distanceTransform 处理区域粘连](/0346_OpenCV_IP_misc_distanceTransform)
+    - shape
+      - [Contours 轮廓](/0343_OpenCV_IP_shape_Contours)
+  - Read
+    - [Video](/0352_OpenCV_Read_Video)
+  - [OpenCV UseCase](/0362_OpenCV_UC)
+    - [计算图片 average brightness](/0350_OpenCV_UC_brightness)
+  - [js](/0339_OpenCV_js)
 - [Wiki History](/hist)
 
 ---
