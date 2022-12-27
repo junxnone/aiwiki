@@ -1,8 +1,8 @@
 ---
-Title | Tools OpenCV GaussianBlur
+Title | OpenCV IP Filter GaussianBlur
 -- | --
 Created @ | `2022-11-29T07:55:56Z`
-Last Modify @| `2022-12-27T02:32:59Z`
+Last Modify @| `2022-12-27T09:05:25Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/320)
 
