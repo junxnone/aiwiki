@@ -1,8 +1,8 @@
 ---
-Title | Tools OpenCV Colormaps
+Title | OpenCV IP Colormaps
 -- | --
 Created @ | `2019-08-07T05:19:00Z`
-Last Modify @| `2022-12-27T03:12:33Z`
+Last Modify @| `2022-12-27T09:13:37Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/349)
 
