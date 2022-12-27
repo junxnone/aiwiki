@@ -2,7 +2,7 @@
 Title | CV HoughTransform
 -- | --
 Created @ | `2020-11-10T06:34:44Z`
-Last Modify @| `2022-12-23T14:44:23Z`
+Last Modify @| `2022-12-27T02:37:29Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/71)
 
@@ -47,4 +47,4 @@ k = ∞ | ![image](https://user-images.githubusercontent.com/2216970/98333415-a5
 
 
 ---
-- [ OpenCV Examples](https://github.com/junxnone/examples/issues/223)
+- [ OpenCV Examples](https://github.com/junxnone/aiwiki/issues/340)
