@@ -321,3 +321,6 @@
     - [Brief](/0092_Datasets_Image2D_PascalVOC)
   - [Image3D](/0087_Datasets_Image3D)
 - [Wiki History](/hist)
+
+---
+<kbd>2022.12.27<sub>Junx</sub></kbd>
