@@ -1,8 +1,8 @@
 ---
-Title | Tools OpenCV Image Processing
+Title | Tools OpenCV IP
 -- | --
 Created @ | `2022-11-28T06:22:43Z`
-Last Modify @| `2022-12-27T02:34:16Z`
+Last Modify @| `2022-12-27T02:40:34Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/316)
 
