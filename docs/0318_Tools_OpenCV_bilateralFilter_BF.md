@@ -1,8 +1,8 @@
 ---
-Title | Bilateral Filtering for Gray and Color Images
+Title | Tools OpenCV bilateralFilter BF
 -- | --
 Created @ | `2022-11-28T07:25:47Z`
-Last Modify @| `2022-12-27T02:42:22Z`
+Last Modify @| `2022-12-27T02:43:01Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/318)
 
