@@ -364,8 +364,6 @@
       - [distanceTransform 处理区域粘连](/0346_OpenCV_IP_misc_distanceTransform)
     - shape
       - [Contours 轮廓](/0343_OpenCV_IP_shape_Contours)
-  - Read
-    - [Video](/0352_OpenCV_Read_Video)
   - [OpenCV UseCase](/0362_OpenCV_UC)
     - [计算图片 average brightness](/0350_OpenCV_UC_brightness)
   - core
