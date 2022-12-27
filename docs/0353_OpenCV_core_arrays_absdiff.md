@@ -1,8 +1,8 @@
 ---
-Title | Tools OpenCV absdiff
+Title | OpenCV core arrays absdiff
 -- | --
 Created @ | `2022-07-04T01:28:29Z`
-Last Modify @| `2022-12-27T05:50:24Z`
+Last Modify @| `2022-12-27T09:22:06Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/353)
 
