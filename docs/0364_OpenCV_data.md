@@ -2,7 +2,7 @@
 Title | OpenCV data
 -- | --
 Created @ | `2022-12-28T07:18:27Z`
-Updated @| `2022-12-28T07:18:27Z`
+Updated @| `2022-12-28T07:22:02Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/364)
 
@@ -11,11 +11,12 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/364)
 
 ## 数据类型
 
-- 8U/8S/16U/16S32F/64F
+- [8/16/32/64] - bit
+- [U/S/F] - 8U/8S/16U/16S32F/64F
   - U 无符号整数
   - S 有符号整数
   - F 浮点数
-- C1/C2/C3/C4 通道数
+- C[1/2/3/4] - 通道数 - 8UC1/8UC3/8UC4
   - C1 Gray
   - C3 Color Image [BGR]
   - C4 `BGR + Alpha`
