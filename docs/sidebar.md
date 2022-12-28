@@ -78,4 +78,9 @@
     - AutoML
     - OC
   - Image3D
+- OpenCV
+  - IO
+  - UC
+  - IP
+  - Core
 
