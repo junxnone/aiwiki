@@ -341,14 +341,13 @@
   - [Audio](/0020_Datasets_Audio)
   - [NLP](/0021_Datasets_NLP)
   - [Video](/0019_Datasets_Video)
-- [KnowledgeGraph](/0329_KnowledgeGraph)
 - [OpenCV](/0105_OpenCV)
-  - [Brisk  特征点匹配](/0348_OpenCV_Brisk)
-  - [CLAHE](/0341_OpenCV_CLAHE)
   - IO
     - [Image](/0361_OpenCV_IO_Image)
     - [读取 RTSP Camera](/0351_OpenCV_IO_RTSPCamera)
     - [Video](/0352_OpenCV_IO_Video)
+  - [OpenCV UseCase](/0362_OpenCV_UC)
+    - [计算图片 average brightness](/0350_OpenCV_UC_brightness)
   - [Image Processing](/0316_OpenCV_IP)
     - [Colormaps](/0349_OpenCV_IP_Colormaps)
     - Feature
@@ -364,13 +363,15 @@
       - [distanceTransform 处理区域粘连](/0346_OpenCV_IP_misc_distanceTransform)
     - shape
       - [Contours 轮廓](/0343_OpenCV_IP_shape_Contours)
-  - [OpenCV UseCase](/0362_OpenCV_UC)
-    - [计算图片 average brightness](/0350_OpenCV_UC_brightness)
+  - [Brisk  特征点匹配](/0348_OpenCV_Brisk)
+  - [CLAHE](/0341_OpenCV_CLAHE)
   - core
     - arrays
       - [absdiff](/0353_OpenCV_core_arrays_absdiff)
+  - [数据结构](/0364_OpenCV_data)
   - [js](/0339_OpenCV_js)
+- [KnowledgeGraph](/0329_KnowledgeGraph)
 - [Wiki History](/hist)
 
 ---
-<kbd>2022.12.28<sub>Junx14</sub></kbd>
+<kbd>2022.12.28<sub>Junx15</sub></kbd>
