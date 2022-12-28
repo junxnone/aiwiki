@@ -2,7 +2,7 @@
 Title | OpenCV data
 -- | --
 Created @ | `2022-12-28T07:18:27Z`
-Updated @| `2022-12-28T07:22:02Z`
+Updated @| `2022-12-28T07:48:33Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/364)
 
@@ -23,7 +23,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/364)
 
 
 
-## Mat n 维矩阵
+## Mat  n 维矩阵
 
 - **cols** 列，图像宽度
 - **rows** 行，图像高度
@@ -36,7 +36,8 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/364)
 - 用于编译时已知类型和大小的小矩阵
 - 用于减少动态内存分配和加速计算
 
-### Vec 向量
+### Vec 固定向量
+
 
 - 继承于 Matx
 - cols = 1
@@ -48,4 +49,25 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/364)
   - s - short
   - w ushort
 
+#### Scalar
+
+- 4 个元素的 Vector
+- 继承 Vec  - `=Vec<double, 4>`
+
+
+## Point 点
+
+- 定义了 2/3 维空间中的点 `(x, y)` / `(x, y, z)`
+- Point[2/3][i/l/f/d]
+  - i - int
+  - l - int64
+  - f - float
+  - d - double
+
+
+## Rect
+
+- 定义一个矩形 `(h, w, x, y)` 
+  - `xy` 为 Top-Left Corner
+- Rect2[i/d/f]
 
