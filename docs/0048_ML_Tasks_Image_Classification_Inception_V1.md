@@ -2,11 +2,13 @@
 Title | ML Tasks Image Classification Inception V1
 -- | --
 Created @ | `2019-12-04T09:27:53Z`
-Last Modify @| `2022-12-26T14:50:10Z`
+Updated @| `2023-01-31T06:34:19Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/48)
 
 ---
+# Inception V1
+
 ## Reference
 -  2014 **Inception V1 / GoogleNet** Going deeper with convolutions [[paper](https://arxiv.org/pdf/1409.4842.pdf)]
 - [深度学习---GoogLeNet](https://blog.csdn.net/qq_38906523/article/details/80061075)
