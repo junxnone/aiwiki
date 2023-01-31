@@ -1,8 +1,8 @@
 ---
-Title | ML Dropout MS
+Title | ML Op Dropout MS
 -- | --
 Created @ | `2020-03-23T01:35:35Z`
-Last Modify @| `2022-12-26T14:52:23Z`
+Updated @| `2023-01-31T07:15:44Z`
 Labels | `index`
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/259)
 
