@@ -2,7 +2,7 @@
 Title | ML Tasks Image Classification
 -- | --
 Created @ | `2019-05-12T14:38:40Z`
-Last Modify @| `2022-12-24T12:36:44Z`
+Updated @| `2023-01-31T06:52:15Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/61)
 
@@ -27,22 +27,6 @@ Labels = 1 | Binary/sigmoid | Multi-Class/softmax
 Labels > 1 | Multi-Label/sigmoid | Multi-Output/task
 
 
-## 经典分类方法
-
-- [LeNet](/LeNet)
-- [AlexNet](/AlexNet)
-- [VGGNet](/VGGNet)
-- [Inception](/Inception_Summary)
-  - [Inception V1](/InceptionV1)
-  - [Inception V2 & V3](/InceptionV2V3)
-  - [Inception V4](/InceptionV4)
-- [Xception](/Xception)
-- [MobileNet](/MobileNet_Summary)
-  - [MobileNet V1](/MobileNetV1)
-  - [MobileNet V2](/MobileNetV2)
-  - [MobileNet V3](/MobileNetV3)
-- EfficientNet
-- [ResNet](/ResNet)
 
 
 ## 常见的挑战
