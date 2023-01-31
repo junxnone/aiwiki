@@ -1,8 +1,8 @@
 ---
-Title | ML GAP
+Title | ML Op Pooling GAP
 -- | --
 Created @ | `2019-02-24T14:07:21Z`
-Last Modify @| `2022-12-27T03:43:12Z`
+Updated @| `2023-01-31T06:46:17Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/267)
 
