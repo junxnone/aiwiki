@@ -2,11 +2,13 @@
 Title | ML Tasks Image Detection YOLO tiny
 -- | --
 Created @ | `2020-02-20T06:02:54Z`
-Last Modify @| `2022-12-24T12:47:55Z`
+Updated @| `2023-01-31T06:36:29Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/52)
 
 ---
+# YOLO tiny
+
 ## Reference
 
 - [tiny darknet](https://pjreddie.com/darknet/tiny-darknet/)
