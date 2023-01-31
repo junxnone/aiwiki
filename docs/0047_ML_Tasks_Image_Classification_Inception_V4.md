@@ -2,11 +2,13 @@
 Title | ML Tasks Image Classification Inception V4
 -- | --
 Created @ | `2019-12-04T10:51:56Z`
-Last Modify @| `2022-12-24T12:39:43Z`
+Updated @| `2023-01-31T06:34:42Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/47)
 
 ---
+# Inception V4
+
 ## Reference
 - 2016 **Inception V4 & Inception-ResNet**  Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning [[paper](https://arxiv.org/pdf/1602.07261.pdf)]
 
