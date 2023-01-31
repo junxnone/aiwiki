@@ -1,8 +1,8 @@
 ---
-Title | ML Regularization norm
+Title | Math norm
 -- | --
 Created @ | `2019-08-05T06:44:26Z`
-Last Modify @| `2022-12-23T15:02:12Z`
+Updated @| `2023-01-31T07:28:07Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/254)
 
