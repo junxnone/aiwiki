@@ -1,8 +1,8 @@
 ---
-Title | ML AF Softmax
+Title | ML Op AF Softmax
 -- | --
 Created @ | `2022-12-24T12:25:20Z`
-Last Modify @| `2022-12-24T12:25:20Z`
+Updated @| `2023-01-31T07:26:16Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/335)
 
