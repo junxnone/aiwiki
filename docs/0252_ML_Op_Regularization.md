@@ -1,8 +1,8 @@
 ---
-Title | ML Regularization
+Title | ML Op Regularization
 -- | --
 Created @ | `2019-09-11T01:11:11Z`
-Last Modify @| `2022-12-23T15:01:26Z`
+Updated @| `2023-01-31T07:27:48Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/252)
 
