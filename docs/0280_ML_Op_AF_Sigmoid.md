@@ -1,8 +1,8 @@
 ---
-Title | ML AF Sigmoid
+Title | ML Op AF Sigmoid
 -- | --
 Created @ | `2019-11-19T03:01:04Z`
-Last Modify @| `2022-12-24T12:21:52Z`
+Updated @| `2023-01-31T07:26:25Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/280)
 
@@ -37,23 +37,6 @@ softmax | - 多分类 | 在 classes_num 个不同输出类别上的概率分布
 Name | 公式 | Figure
 -- | -- | --
 sigmoid | $sigmoid(x)= \frac{1}{1 + e^{-x}}$ | <img width="500px" src="https://user-images.githubusercontent.com/2216970/150644672-56f10a62-b025-4989-8ca0-05689e12a17f.png">
-
-## Softmax
-- `Softmax` = `Soft` + `max`
- - hardmax  相对就是求最大值
-- $softmax(\vec{z})_{i}=\frac{e^{z_{i}}}{\sum_{j=1}^{K}e^{z_{i}}}$
-  - $\vec{z}$ : Input Vector
-  - $z_{i}$: Vector Value
-  - $e^{z_{i}}$: Vector Value 指数函数值
-  - $\sum_{j=1}^{K}e^{z_{i}}$: 确保所有值加起来等于 1
-  - $K$: 类别数量
-- 添加指数函数使输出的概率距离更大
-- 将 `Vector` 映射到 `概率 Vector`
-
-### Examples
-
-![image](https://user-images.githubusercontent.com/2216970/150642984-52b92b2e-aab0-437f-847f-40d3192e7dfe.png) | ![image](https://user-images.githubusercontent.com/2216970/150642988-c506db62-2f63-41cf-8de8-9be3ec281d34.png) | ![image](https://user-images.githubusercontent.com/2216970/150642992-c312daa2-87ac-4580-a386-258d484839ed.png) | ![image](https://user-images.githubusercontent.com/2216970/150642996-cc86ea00-2083-4493-a49e-50996bfea93b.png)
--- | -- | -- | --
 
 
 
