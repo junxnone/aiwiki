@@ -2,11 +2,13 @@
 Title | ML Tasks Image Classification MobileNet V1
 -- | --
 Created @ | `2020-02-25T10:14:26Z`
-Last Modify @| `2022-12-24T12:42:11Z`
+Updated @| `2023-01-31T06:34:56Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/42)
 
 ---
+# MobileNet V1
+
 ## Reference
 - 2017 **MobileNet V1** MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications [[paper](https://arxiv.org/pdf/1704.04861.pdf)]
 - [MobileNets 论文笔记](https://blog.csdn.net/Jesse_Mx/article/details/70766871)
