@@ -1,8 +1,8 @@
 ---
-Title | ML Task MD
+Title | ML Tasks MD
 -- | --
 Created @ | `2019-08-21T01:55:30Z`
-Last Modify @| `2022-12-25T04:38:06Z`
+Updated @| `2023-01-31T07:28:43Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/243)
 
