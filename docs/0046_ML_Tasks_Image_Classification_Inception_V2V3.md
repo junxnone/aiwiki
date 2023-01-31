@@ -2,11 +2,13 @@
 Title | ML Tasks Image Classification Inception V2V3
 -- | --
 Created @ | `2019-12-04T09:37:22Z`
-Last Modify @| `2022-12-26T14:50:25Z`
+Updated @| `2023-01-31T06:34:33Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/46)
 
 ---
+# Inception V2V3
+
 ## Reference
 - 2015 **Inception V2 & V3** Rethinking the Inception Architecture for Computer Vision [[paper](https://arxiv.org/pdf/1512.00567.pdf)]
 - [Inception结构](https://baike.baidu.com/item/Inception%E7%BB%93%E6%9E%84/22761220?fr=aladdin)
