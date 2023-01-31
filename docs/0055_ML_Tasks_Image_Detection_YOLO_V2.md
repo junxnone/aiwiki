@@ -2,11 +2,14 @@
 Title | ML Tasks Image Detection YOLO V2
 -- | --
 Created @ | `2020-01-14T06:37:42Z`
-Last Modify @| `2022-12-24T12:47:34Z`
+Updated @| `2023-01-31T06:32:18Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/55)
 
 ---
+
+# YOLO V2
+
 ## Reference
 - 2015 **YOLO V1** You Only Look Once: Unified, Real-Time Object Detection [[paper](https://arxiv.org/pdf/1506.02640.pdf)] [[netscope](http://ethereon.github.io/netscope/#/gist/96209c6940e02b17c34009f6c3fee75e)] [[Code](https://pjreddie.com/darknet/yolo/)] [[Code2 - AlexeyAB](https://github.com/AlexeyAB/darknet)]
 - 2016 **YOLO V2** YOLO9000: Better, Faster, Stronger [[paper](https://arxiv.org/pdf/1612.08242.pdf)] [[netscope](http://ethereon.github.io/netscope/#/gist/8826fef24ed0b5086affdb6e65db26b7)]  [[Code](https://pjreddie.com/darknet/yolo/)]  [[Code2 - AlexeyAB](https://github.com/AlexeyAB/darknet)]
