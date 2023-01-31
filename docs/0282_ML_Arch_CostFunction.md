@@ -1,8 +1,8 @@
 ---
-Title | ML CostFunction
+Title | ML Arch CostFunction
 -- | --
 Created @ | `2018-12-12T09:57:45Z`
-Last Modify @| `2022-12-23T14:50:12Z`
+Updated @| `2023-01-31T07:24:45Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/282)
 
