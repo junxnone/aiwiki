@@ -1,8 +1,8 @@
 ---
-Title | ML Pooling
+Title | ML Op Pooling
 -- | --
 Created @ | `2019-03-02T04:16:50Z`
-Last Modify @| `2022-12-24T12:15:37Z`
+Updated @| `2023-01-31T06:46:09Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/268)
 
