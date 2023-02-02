@@ -1,8 +1,8 @@
 ---
-Title | ML LossFunction FocalLoss
+Title | ML Arch LossFunction FocalLoss
 -- | --
 Created @ | `2019-03-14T06:35:24Z`
-Last Modify @| `2022-12-23T14:59:22Z`
+Updated @| `2023-02-02T08:53:46Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/284)
 
