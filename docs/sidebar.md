@@ -31,6 +31,8 @@
       - Downsampling
       - Tools
 - ML
+  - OML
+  - Arch
   - Tasks
     - Image
       - Classification
@@ -39,9 +41,12 @@
       - Retrieval
       - OCR
       - Anomaly
-  - Arch
   - Op
   - Metrics
+  - PreP
+  - ProP
+  - AE
+  - Transformer
   - AutoML
     - FE
     - HPO
