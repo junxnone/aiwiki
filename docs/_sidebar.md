@@ -313,7 +313,7 @@
   - [Eigen](/0303_Tools_Eigen)
   - [FLOPs Parameters 计算](/0026_Tools_FPCalculate)
   - [论文阅读相关](/0072_Tools_ReadPapers)
-  - [Training&Inference Tools](/0005_Tools_TIHistory)
+  - [Training & Inference Tools History](/0005_Tools_TIHistory)
 - [Datasets 数据集](/0017_Datasets)
   - [2D Images](/0018_Datasets_Image2D)
     - [Image Classification Datasets](/0028_Datasets_Image2D_Classification)
@@ -380,4 +380,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd>2023.02.02<sub>Junx22</sub></kbd>
+<kbd>2023.02.03<sub>Junx00</sub></kbd>
