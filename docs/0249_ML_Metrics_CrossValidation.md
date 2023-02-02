@@ -1,8 +1,8 @@
 ---
-Title | ML CrossValidation
+Title | ML Metrics CrossValidation
 -- | --
 Created @ | `2020-06-11T05:02:59Z`
-Last Modify @| `2022-12-23T14:53:33Z`
+Updated @| `2023-02-02T09:03:00Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/249)
 
