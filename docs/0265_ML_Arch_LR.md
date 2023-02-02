@@ -1,8 +1,8 @@
 ---
-Title | ML LR
+Title | ML Arch LR
 -- | --
 Created @ | `2019-12-05T09:03:55Z`
-Last Modify @| `2022-12-24T12:16:57Z`
+Updated @| `2023-02-02T08:54:16Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/265)
 
