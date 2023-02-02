@@ -53,7 +53,6 @@
     - HPO
     - NAS
   - AL
-  - Metrics
 - Tools 
   - Numpy
   - TI
