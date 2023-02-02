@@ -1,8 +1,8 @@
 ---
-Title | ML SVM 原理
+Title | ML OML SVM 原理
 -- | --
 Created @ | `2021-03-29T05:16:05Z`
-Last Modify @| `2022-12-23T15:05:26Z`
+Updated @| `2023-02-02T08:56:48Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/116)
 
