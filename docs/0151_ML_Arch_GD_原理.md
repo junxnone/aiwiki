@@ -1,12 +1,15 @@
 ---
-Title | ML GD 原理
+Title | ML Arch GD 原理
 -- | --
 Created @ | `2021-04-06T06:57:07Z`
-Last Modify @| `2022-12-23T14:54:50Z`
+Updated @| `2023-02-02T09:32:18Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/151)
 
 ---
+
+# GD 原理推导
+
 ## Reference
 - [梯度下降（Gradient Descent）小结](https://www.cnblogs.com/pinard/p/5970503.html)
 
