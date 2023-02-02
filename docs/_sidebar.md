@@ -111,6 +111,11 @@
       - [SVM 原理推导](/0116_ML_OML_SVM_原理)
   - Arch
     - [Cost Function 代价函数](/0282_ML_Arch_CostFunction)
+    - [Gradient Descent 梯度下降](/0147_ML_Arch_GD)
+      - [History](/0149_ML_Arch_GD_History)
+      - [Momentum](/0150_ML_Arch_GD_Momentum)
+      - [BGD SGD MBGD](/0148_ML_Arch_GD_xGD)
+      - [GD 原理推导](/0151_ML_Arch_GD_原理)
     - [Hyperparameter 超参数](/0368_ML_Arch_HP)
     - [Learning Rate 学习率](/0265_ML_Arch_LR)
       - [Cyclical Learning Rate 周期学习率](/0266_ML_Arch_LR_CLR)
@@ -214,11 +219,6 @@
     - [NAS](/0014_ML_AutoML_NAS)
     - Tools
       - [NNI](/0016_ML_AutoML_Tools_NNI)
-  - [Gradient Descent 梯度下降](/0147_ML_GD)
-    - [History](/0149_ML_GD_History)
-    - [Momentum](/0150_ML_GD_Momentum)
-    - [BGD SGD MBGD](/0148_ML_GD_xGD)
-    - [原理](/0151_ML_GD_原理)
   - [Metrics 评价指标](/0138_ML_Metrics)
     - [Classification](/0137_ML_Metrics_Classification)
     - [CrossValidation 交叉验证](/0249_ML_Metrics_CrossValidation)
@@ -380,4 +380,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd>2023.02.02<sub>Junx17</sub></kbd>
+<kbd>2023.02.02<sub>Junx18</sub></kbd>
