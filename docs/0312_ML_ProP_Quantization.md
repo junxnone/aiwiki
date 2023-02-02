@@ -1,8 +1,8 @@
 ---
-Title | ML Quantization
+Title | ML ProP Quantization
 -- | --
 Created @ | `2018-10-16T02:57:36Z`
-Last Modify @| `2022-12-24T16:02:29Z`
+Updated @| `2023-02-02T09:26:53Z`
 Labels | `ML`
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/312)
 
