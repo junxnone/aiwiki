@@ -1,8 +1,8 @@
 ---
-Title | ML Convolution Math
+Title | ML Op Convolution Math
 -- | --
 Created @ | `2019-06-09T07:26:18Z`
-Last Modify @| `2022-12-24T12:13:45Z`
+Updated @| `2023-02-02T09:00:38Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/10)
 
