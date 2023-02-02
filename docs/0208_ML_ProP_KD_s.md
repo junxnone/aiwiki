@@ -1,8 +1,8 @@
 ---
-Title | ML KD s
+Title | ML ProP KD s
 -- | --
 Created @ | `2021-04-25T05:42:37Z`
-Last Modify @| `2022-12-24T15:53:55Z`
+Updated @| `2023-02-02T09:26:27Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/208)
 
