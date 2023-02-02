@@ -2,7 +2,7 @@
 Title | ML Arch GD
 -- | --
 Created @ | `2018-12-12T10:16:49Z`
-Updated @| `2023-02-02T09:31:49Z`
+Updated @| `2023-02-02T09:36:02Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/147)
 
@@ -29,6 +29,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/147)
 - [BGD/SGD/MBGD](/Gradient_Descent_BGD_SGD_MBGD)
 - [Gradient Descent History](/Gradient_Descent_History)
 - [Gradient Descent Momentum/Nesterov](/Gradient_Descent_Momentum)
+- Optimizer
 
 ## 对比
 
