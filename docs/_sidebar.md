@@ -1,3 +1,96 @@
+0
+1
+1
+1
+1
+0
+1
+2
+2
+2
+2
+1
+1
+2
+3
+3
+3
+3
+0
+0
+1
+1
+1
+1
+1
+1
+2
+3
+3
+3
+3
+3
+0
+1
+1
+1
+2
+3
+3
+3
+3
+3
+3
+1
+1
+1
+1
+1
+1
+1
+2
+2
+2
+1
+1
+0
+1
+1
+1
+2
+2
+2
+2
+2
+2
+2
+1
+2
+2
+2
+1
+1
+1
+1
+1
+0
+1
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+1
+0
+1
+1
+1
+1
 - [数学基础](/0288_Math)
   - [向量](/0292_Math_Vector)
   - [Determinant  行列式](/0301_Math_Determinant)
@@ -187,20 +280,49 @@
         - [STFPM](/0324_ML_Tasks_Image_Anomaly_STFPM)
     - [Motion Detection 运动侦测](/0243_ML_Tasks_MD)
     - [MetricLearning](/0157_ML_Tasks_MetricLearning)
+  - [Op](/0366_ML_Op)
+    - [Activation Function 激活函数](/0279_ML_Op_AF)
+      - [Sigmoid](/0280_ML_Op_AF_Sigmoid)
+      - [Softmax](/0335_ML_Op_AF_Softmax)
+    - [Convolution](/0009_ML_Op_Convolution)
+      - [卷积在 DL 中的应用](/0011_ML_Op_Convolution_DL)
+      - [卷积 数学定义](/0010_ML_Op_Convolution_Math)
+    - [Dropout](/0258_ML_Op_Dropout)
+      - [Multi-Sample Dropout](/0259_ML_Op_Dropout_MS)
+    - [Pooling 池化](/0268_ML_Op_Pooling)
+      - [Global Average Pooling](/0267_ML_Op_Pooling_GAP)
+      - [Spatial Pyramid Pooling - 空间金字塔池化](/0365_ML_Op_Pooling_SPP)
+    - [Regularization  正则化](/0252_ML_Op_Regularization)
+  - [Metrics 评价指标](/0138_ML_Metrics)
+    - [Classification](/0137_ML_Metrics_Classification)
+    - [CrossValidation 交叉验证](/0249_ML_Metrics_CrossValidation)
+    - [Detection](/0230_ML_Metrics_Detection)
+      - [GIoU](/0232_ML_Metrics_Detection_GIoU)
+    - [Pairwise](/0139_ML_Metrics_Pairwise)
+    - [Segmentation](/0231_ML_Metrics_Segmentation)
+  - [PreProcessing](/0369_ML_PreP)
+    - [Data Augmentation 数据增强](/0255_ML_PreP_DataAug)
+      - [AutoAugment](/0256_ML_PreP_DataAug_AutoAugment)
+      - [Copy-Pasting](/0269_ML_PreP_DataAug_CP)
+      - [Cutout](/0257_ML_PreP_DataAug_Cutout)
+    - [Data Normalization 数据标准化](/0251_ML_PreP_DataNorm)
+  - [ProPrecessing](/0370_ML_ProP)
+    - [Knowledge Distillation 知识蒸馏](/0207_ML_ProP_KD)
+      - [History](/0336_ML_ProP_KD_History)
+      - [Distilling the Knowledge in a Neural Network](/0208_ML_ProP_KD_s)
+    - [Quantization  量化](/0312_ML_ProP_Quantization)
   - [AutoEncoder](/0209_ML_AE)
-  - [Active Learning](/0118_ML_AL)
-    - [Query Strategy 查询/抽样 策略](/0276_ML_AL_QS)
-      - [Pool-Based Sampling](/0274_ML_AL_QS_PoolBasedSampling)
-      - [QBC](/0272_ML_AL_QS_QBC)
-      - [Stream-based Selective Sampling](/0273_ML_AL_QS_StreamBasedSelectiveSampling)
-      - [Uncertainty Sampling](/0275_ML_AL_QS_UncertaintySampling)
-    - [Tools](/0175_ML_AL_Tools)
-      - [AIDE](/0270_ML_AL_Tools_AIDE)
-  - [Attention 注意力](/0210_ML_Attention)
-    - [Bahdanau Attention](/0214_ML_Attention_Bahdanau)
-    - [Luong Attention](/0211_ML_Attention_Luong)
-    - [Position Encoding](/0213_ML_Attention_PE)
-    - [Attention Is All You Need](/0212_ML_Attention_S)
+  - [Transformer](/0229_ML_Transformer)
+    - [Bottleneck Transformers](/0228_ML_Transformer_BT)
+    - [DETR](/0165_ML_Transformer_DETR)
+    - [DeiT](/0253_ML_Transformer_DeiT)
+    - [Efficient Attention](/0225_ML_Transformer_EfficientAttention)
+    - [Linformer](/0224_ML_Transformer_Linformer)
+    - T2T
+      - [ViT](/0227_ML_Transformer_T2T_ViT)
+    - [Transformer in Transformer](/0360_ML_Transformer_TiT)
+    - [ViT](/0223_ML_Transformer_ViT)
+    - [Transformer 在视觉方面的应用](/0226_ML_Transformer_Vision)
   - [AutoML](/0012_ML_AutoML)
     - [Feature Engineering](/0206_ML_AutoML_FE)
     - [HPO](/0013_ML_AutoML_HPO)
@@ -219,13 +341,19 @@
     - [NAS](/0014_ML_AutoML_NAS)
     - Tools
       - [NNI](/0016_ML_AutoML_Tools_NNI)
-  - [Metrics 评价指标](/0138_ML_Metrics)
-    - [Classification](/0137_ML_Metrics_Classification)
-    - [CrossValidation 交叉验证](/0249_ML_Metrics_CrossValidation)
-    - [Detection](/0230_ML_Metrics_Detection)
-      - [GIoU](/0232_ML_Metrics_Detection_GIoU)
-    - [Pairwise](/0139_ML_Metrics_Pairwise)
-    - [Segmentation](/0231_ML_Metrics_Segmentation)
+  - [Active Learning](/0118_ML_AL)
+    - [Query Strategy 查询/抽样 策略](/0276_ML_AL_QS)
+      - [Pool-Based Sampling](/0274_ML_AL_QS_PoolBasedSampling)
+      - [QBC](/0272_ML_AL_QS_QBC)
+      - [Stream-based Selective Sampling](/0273_ML_AL_QS_StreamBasedSelectiveSampling)
+      - [Uncertainty Sampling](/0275_ML_AL_QS_UncertaintySampling)
+    - [Tools](/0175_ML_AL_Tools)
+      - [AIDE](/0270_ML_AL_Tools_AIDE)
+  - [Attention 注意力](/0210_ML_Attention)
+    - [Bahdanau Attention](/0214_ML_Attention_Bahdanau)
+    - [Luong Attention](/0211_ML_Attention_Luong)
+    - [Position Encoding](/0213_ML_Attention_PE)
+    - [Attention Is All You Need](/0212_ML_Attention_S)
   - [Nearest Neighbor Search 最近邻搜索](/0102_ML_NNS)
     - [Approximate Nearest Neighbor 近似最近邻](/0103_ML_NNS_ANN)
       - [Approximate Nearest Neighbors Oh Yeah](/0333_ML_NNS_ANN_Annoy)
@@ -237,43 +365,8 @@
         - [Source Code Structure](/0129_ML_NNS_KDTree_FLANN_SourceCode)
         - [UseCase](/0130_ML_NNS_KDTree_FLANN_UseCase)
       - [nanoflann](/0123_ML_NNS_KDTree_nanoflann)
-  - [Op](/0366_ML_Op)
-    - [Activation Function 激活函数](/0279_ML_Op_AF)
-      - [Sigmoid](/0280_ML_Op_AF_Sigmoid)
-      - [Softmax](/0335_ML_Op_AF_Softmax)
-    - [Convolution](/0009_ML_Op_Convolution)
-      - [卷积在 DL 中的应用](/0011_ML_Op_Convolution_DL)
-      - [卷积 数学定义](/0010_ML_Op_Convolution_Math)
-    - [Dropout](/0258_ML_Op_Dropout)
-      - [Multi-Sample Dropout](/0259_ML_Op_Dropout_MS)
-    - [Pooling 池化](/0268_ML_Op_Pooling)
-      - [Global Average Pooling](/0267_ML_Op_Pooling_GAP)
-      - [Spatial Pyramid Pooling - 空间金字塔池化](/0365_ML_Op_Pooling_SPP)
-    - [Regularization  正则化](/0252_ML_Op_Regularization)
-  - [PreProcessing](/0369_ML_PreP)
-    - [Data Augmentation 数据增强](/0255_ML_PreP_DataAug)
-      - [AutoAugment](/0256_ML_PreP_DataAug_AutoAugment)
-      - [Copy-Pasting](/0269_ML_PreP_DataAug_CP)
-      - [Cutout](/0257_ML_PreP_DataAug_Cutout)
-    - [Data Normalization 数据标准化](/0251_ML_PreP_DataNorm)
-  - [ProPrecessing](/0370_ML_ProP)
-    - [Knowledge Distillation 知识蒸馏](/0207_ML_ProP_KD)
-      - [History](/0336_ML_ProP_KD_History)
-      - [Distilling the Knowledge in a Neural Network](/0208_ML_ProP_KD_s)
-    - [Quantization  量化](/0312_ML_ProP_Quantization)
   - [Reinforcement Learning 强化学习](/0290_ML_RL)
   - [Semi-Supervised Learning 半监督学习](/0271_ML_SSL)
-  - [Transformer](/0229_ML_Transformer)
-    - [Bottleneck Transformers](/0228_ML_Transformer_BT)
-    - [DETR](/0165_ML_Transformer_DETR)
-    - [DeiT](/0253_ML_Transformer_DeiT)
-    - [Efficient Attention](/0225_ML_Transformer_EfficientAttention)
-    - [Linformer](/0224_ML_Transformer_Linformer)
-    - T2T
-      - [ViT](/0227_ML_Transformer_T2T_ViT)
-    - [Transformer in Transformer](/0360_ML_Transformer_TiT)
-    - [ViT](/0223_ML_Transformer_ViT)
-    - [Transformer 在视觉方面的应用](/0226_ML_Transformer_Vision)
 - Tools
   - [Numpy](/0328_Tools_Numpy)
   - [Training&Inference Tools](/0005_Tools_TI)
