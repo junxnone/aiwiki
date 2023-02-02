@@ -39,6 +39,9 @@
       - Retrieval
       - OCR
       - Anomaly
+  - Arch
+  - Op
+  - Metrics
   - AutoML
     - FE
     - HPO
