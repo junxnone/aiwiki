@@ -46,6 +46,7 @@
   - PreP
   - ProP
   - AE
+  - Attention
   - Transformer
   - AutoML
     - FE
