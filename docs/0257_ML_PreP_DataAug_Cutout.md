@@ -1,12 +1,13 @@
 ---
-Title | ML DataAug Cutout
+Title | ML PreP DataAug Cutout
 -- | --
 Created @ | `2020-07-21T11:52:15Z`
-Last Modify @| `2022-12-24T12:31:16Z`
+Updated @| `2023-02-02T09:15:11Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/257)
 
 ---
+# Cutout
 ## Reference
 - [paper - 2017 - Improved Regularization of Convolutional Neural Networks with Cutout](https://arxiv.org/abs/1708.04552)
 
