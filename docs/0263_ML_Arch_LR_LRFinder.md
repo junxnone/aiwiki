@@ -1,8 +1,8 @@
 ---
-Title | ML LR LRFinder
+Title | ML Arch LR LRFinder
 -- | --
 Created @ | `2019-09-03T09:29:52Z`
-Last Modify @| `2022-12-24T12:19:34Z`
+Updated @| `2023-02-02T08:54:44Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/263)
 
