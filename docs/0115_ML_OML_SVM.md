@@ -1,8 +1,8 @@
 ---
-Title | ML SVM
+Title | ML OML SVM
 -- | --
 Created @ | `2019-05-11T13:48:41Z`
-Last Modify @| `2022-12-23T15:04:18Z`
+Updated @| `2023-02-02T08:56:42Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/115)
 
