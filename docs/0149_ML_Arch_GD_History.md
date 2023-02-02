@@ -1,8 +1,8 @@
 ---
-Title | ML GD History
+Title | ML Arch GD History
 -- | --
 Created @ | `2021-04-06T06:21:52Z`
-Last Modify @| `2022-12-23T14:55:38Z`
+Updated @| `2023-02-02T09:31:59Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/149)
 
