@@ -1,8 +1,8 @@
 ---
-Title | ML DecisionTree
+Title | ML OML DecisionTree
 -- | --
 Created @ | `2021-03-30T07:53:56Z`
-Last Modify @| `2022-12-23T15:03:01Z`
+Updated @| `2023-02-02T08:56:33Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/113)
 
