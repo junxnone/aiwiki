@@ -1,9 +1,9 @@
 ---
-Title | ML Convolution DL
+Title | ML Op Convolution DL
 -- | --
 Created @ | `2018-11-21T03:03:53Z`
-Last Modify @| `2022-12-24T12:14:40Z`
-Labels | ``
+Updated @| `2023-02-02T09:25:13Z`
+Labels | `ML`
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/11)
 
 ---
