@@ -1,8 +1,8 @@
 ---
-Title | ML GD Momentum
+Title | ML Arch GD Momentum
 -- | --
 Created @ | `2019-03-12T01:50:50Z`
-Last Modify @| `2022-12-23T14:56:26Z`
+Updated @| `2023-02-02T09:32:07Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/150)
 
