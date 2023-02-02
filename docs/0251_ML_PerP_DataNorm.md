@@ -1,8 +1,8 @@
 ---
-Title | ML DataNorm
+Title | ML PerP DataNorm
 -- | --
 Created @ | `2018-09-12T04:02:02Z`
-Last Modify @| `2022-12-24T12:29:03Z`
+Updated @| `2023-02-02T09:14:00Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/251)
 
