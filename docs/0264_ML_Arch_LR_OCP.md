@@ -1,8 +1,8 @@
 ---
-Title | ML LR OCP
+Title | ML Arch LR OCP
 -- | --
 Created @ | `2019-09-03T09:39:35Z`
-Last Modify @| `2022-12-25T04:51:44Z`
+Updated @| `2023-02-02T08:54:51Z`
 Labels | `index`
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/264)
 
