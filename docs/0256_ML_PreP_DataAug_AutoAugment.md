@@ -1,12 +1,13 @@
 ---
-Title | ML DataAug AutoAugment
+Title | ML PreP DataAug AutoAugment
 -- | --
 Created @ | `2020-07-10T05:17:03Z`
-Last Modify @| `2022-12-24T12:30:53Z`
+Updated @| `2023-02-02T09:14:52Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/256)
 
 ---
+# AutoAugment
 ## Reference
 
 - [paper - 2018 - AutoAugment: Learning Augmentation Policies from Data](https://arxiv.org/abs/1805.09501) 
