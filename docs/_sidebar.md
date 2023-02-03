@@ -231,8 +231,7 @@
     - [DeiT](/0253_ML_Transformer_DeiT)
     - [Efficient Attention](/0225_ML_Transformer_EfficientAttention)
     - [Linformer](/0224_ML_Transformer_Linformer)
-    - T2T
-      - [ViT](/0227_ML_Transformer_T2T_ViT)
+    - [T2TViT](/0227_ML_Transformer_T2TViT)
     - [Transformer in Transformer](/0360_ML_Transformer_TiT)
     - [ViT](/0223_ML_Transformer_ViT)
     - [Transformer 在视觉方面的应用](/0226_ML_Transformer_Vision)
@@ -384,4 +383,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd>2023.02.03<sub>Junx15</sub></kbd>
+<kbd>2023.02.03<sub>Junx16</sub></kbd>
