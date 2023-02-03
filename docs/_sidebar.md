@@ -377,8 +377,10 @@
       - [absdiff](/0353_OpenCV_core_arrays_absdiff)
   - [数据结构](/0364_OpenCV_data)
   - [js](/0339_OpenCV_js)
+- Hot
+  - [ChatGPT](/0373_Hot_ChatGPT)
 - [KnowledgeGraph](/0329_KnowledgeGraph)
 - [Wiki History](/hist)
 
 ---
-<kbd>2023.02.03<sub>Junx14</sub></kbd>
+<kbd>2023.02.03<sub>Junx15</sub></kbd>
