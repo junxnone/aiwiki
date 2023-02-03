@@ -1,8 +1,8 @@
 ---
-Title | ML PostPro Quantization
+Title | ML PostP Quantization
 -- | --
 Created @ | `2018-10-16T02:57:36Z`
-Updated @| `2023-02-03T08:17:16Z`
+Updated @| `2023-02-03T08:44:45Z`
 Labels | `ML`
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/312)
 
