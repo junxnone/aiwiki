@@ -1,8 +1,8 @@
 ---
-Title | Hot ChatGPT
+Title | Hot AIGC ChatGPT
 -- | --
 Created @ | `2023-02-03T07:43:08Z`
-Updated @| `2023-02-03T07:43:08Z`
+Updated @| `2023-02-03T07:45:32Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/373)
 
