@@ -1,8 +1,8 @@
 ---
-Title | Math SimulateAnneal
+Title | Math SA
 -- | --
 Created @ | `2021-03-30T08:34:59Z`
-Last Modify @| `2022-12-27T06:00:29Z`
+Updated @| `2023-02-03T02:50:10Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/357)
 
