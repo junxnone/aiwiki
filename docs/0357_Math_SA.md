@@ -2,12 +2,12 @@
 Title | Math SA
 -- | --
 Created @ | `2021-03-30T08:34:59Z`
-Updated @| `2023-02-03T02:50:10Z`
+Updated @| `2023-02-03T02:51:32Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/357)
 
 ---
-# Simulate Anneal 模拟退火
+# Simulated annealing 模拟退火
 
 
 ## Reference
@@ -17,8 +17,16 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/357)
 - [SA - demo](http://aimacode.github.io/aima-javascript/4-Beyond-Classical-Search/)
 - [SA - 路径规划 demo](https://harmonc.github.io/sketches/simulated_annealing/index.html)
 
-## Brief
-- SA - Simulate Anneal -  来源于固体退火原理
+## Hill climbing
+
+- 爬山算法是一种简单的贪心搜索算法，该算法每次从当前解的临近解空间中选择一个最优解作为当前解,直到达到一个局部最优解
+- 如图， 有局部最优解 B/E, 如果初始点在 A - G之前的谷底，则只可能达到局部最优点 B/E
+
+![image](https://user-images.githubusercontent.com/2216970/216500266-5a38f235-cae3-4040-a054-6431ecef705c.png)
+
+## Simulated Annealing
+
+- SA - Simulated annealing -  来源于固体退火原理
 - `Hill Climbing` + `Random Walk`
 - 搜索过程中以一定概率接受比当前解较差的解，以跳出局部最优
   - 概率随着时间推移逐渐降低
