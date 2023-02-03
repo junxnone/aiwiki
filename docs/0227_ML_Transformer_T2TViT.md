@@ -1,8 +1,8 @@
 ---
-Title | ML Transformer T2T-ViT
+Title | ML Transformer T2TViT
 -- | --
 Created @ | `2021-02-18T05:34:31Z`
-Last Modify @| `2022-12-24T15:49:29Z`
+Updated @| `2023-02-03T07:59:13Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/227)
 
