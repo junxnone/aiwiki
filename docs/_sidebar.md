@@ -377,7 +377,7 @@
       - [absdiff](/0353_OpenCV_core_arrays_absdiff)
   - [数据结构](/0364_OpenCV_data)
   - [js](/0339_OpenCV_js)
-- Hot
+- [AI 热点](/0375_Hot)
   - [AIGC - AI Generated Content](/0374_Hot_AIGC)
     - [ChatGPT](/0373_Hot_AIGC_ChatGPT)
 - [KnowledgeGraph](/0329_KnowledgeGraph)
