@@ -378,7 +378,8 @@
   - [数据结构](/0364_OpenCV_data)
   - [js](/0339_OpenCV_js)
 - Hot
-  - [ChatGPT](/0373_Hot_ChatGPT)
+  - [AIGC - AI Generated Content](/0374_Hot_AIGC)
+    - [ChatGPT](/0373_Hot_AIGC_ChatGPT)
 - [KnowledgeGraph](/0329_KnowledgeGraph)
 - [Wiki History](/hist)
 
