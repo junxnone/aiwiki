@@ -13,9 +13,9 @@
   - [QuadTree/OCTree - 四叉树/八叉树](/0356_Math_QuadTree)
   - [Quaternion 四元数](/0289_Math_Quaternion)
   - [RANSAC](/0293_Math_RANSAC)
+  - [Simulated annealing 模拟退火](/0357_Math_SA)
   - [Stochastic process 随机过程](/0355_Math_SC)
   - [SVD](/0297_Math_SVD)
-  - [Simulate Anneal 模拟退火](/0357_Math_SimulateAnneal)
   - [norm 范数](/0254_Math_norm)
 - Media
   - [图像](/0325_Media_Image)
@@ -118,6 +118,7 @@
       - [GD 原理推导](/0151_ML_Arch_GD_原理)
     - [Hyperparameter 超参数](/0368_ML_Arch_HP)
     - [Learning Rate 学习率](/0265_ML_Arch_LR)
+      - [AnnealingLR 退火学习率](/0372_ML_Arch_LR_AnnealingLR)
       - [Cyclical Learning Rate 周期学习率](/0266_ML_Arch_LR_CLR)
       - [学习率选择](/0263_ML_Arch_LR_LRFinder)
       - [One Cycle Policy](/0264_ML_Arch_LR_OCP)
@@ -380,4 +381,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd>2023.02.03<sub>Junx10</sub></kbd>
+<kbd>2023.02.03<sub>Junx11</sub></kbd>
