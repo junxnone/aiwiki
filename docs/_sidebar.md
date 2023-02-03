@@ -48,7 +48,7 @@
         - [gst-inspect](/0112_Media_Tools_GStreamer_Tools_gstinspect)
         - [gst-launch](/0110_Media_Tools_GStreamer_Tools_gstlaunch)
       - [Plugins](/0143_Media_Tools_GStreamer_Plugins)
-- CV
+- [CV 计算机视觉](/0371_CV)
   - [Thresholding 二值化](/0099_CV_BIN)
     - [scikit-image 二值化](/0331_CV_BIN_ScikitImage)
   - [Blob Detection](/0068_CV_Blob)
@@ -380,4 +380,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd>2023.02.03<sub>Junx08</sub></kbd>
+<kbd>2023.02.03<sub>Junx10</sub></kbd>
