@@ -2,12 +2,12 @@
 Title | ML Arch GD
 -- | --
 Created @ | `2018-12-12T10:16:49Z`
-Updated @| `2023-02-02T09:36:02Z`
+Updated @| `2023-02-04T13:37:58Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/147)
 
 ---
-# Gradient Descent 梯度下降
+# Gradient Descent & Optimizer
 
 ## Reference
 
