@@ -2,12 +2,32 @@
 Title | ML Arch GD
 -- | --
 Created @ | `2018-12-12T10:16:49Z`
-Updated @| `2023-02-04T13:37:58Z`
+Updated @| `2023-02-04T14:02:41Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/147)
 
 ---
 # Gradient Descent & Optimizer
+
+- 使用梯度下降进行优化，是几乎所有优化器的核心思想
+
+## 梯度
+
+- 向量(方向) 描述变化率
+- 表示某一函数在该点处的方向导数沿着该方向取得最大值(即最大方向导数的方向)
+- 函数在该点处沿着该方向变化最快，变化率最大（为该梯度的模）
+
+![image](https://user-images.githubusercontent.com/2216970/216771243-f3dc74e1-2ce1-4db1-89b2-adf2b0515efa.png)
+
+## 梯度下降
+
+- 通过寻找梯度下降的方式寻找最优点
+
+## 对比
+
+![1](https://user-images.githubusercontent.com/2216970/54171780-98cfc280-44b6-11e9-9588-ef8249c67586.gif) | ![2](https://user-images.githubusercontent.com/2216970/54171786-9bcab300-44b6-11e9-9e80-3550a56ed548.gif)
+-- | --
+
 
 ## Reference
 
@@ -24,17 +44,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/147)
 - [gradient descent visualization tool](https://github.com/lilipads/gradient_descent_viz)
 - [deeplearningbook  - optimization](https://www.deeplearningbook.org/contents/optimization.html)
 
-## Brief
-- [Gradient Descent 原理推导](/Gradient_Descent_原理推导)
-- [BGD/SGD/MBGD](/Gradient_Descent_BGD_SGD_MBGD)
-- [Gradient Descent History](/Gradient_Descent_History)
-- [Gradient Descent Momentum/Nesterov](/Gradient_Descent_Momentum)
-- Optimizer
 
-## 对比
-
-![1](https://user-images.githubusercontent.com/2216970/54171780-98cfc280-44b6-11e9-9588-ef8249c67586.gif) | ![2](https://user-images.githubusercontent.com/2216970/54171786-9bcab300-44b6-11e9-9e80-3550a56ed548.gif)
--- | --
 
 
 
