@@ -5,6 +5,7 @@
   - [Least Squares 最小二乘法](/0294_Math_LeastSquares)
     - [Moving Least Squares 移动最小二乘法](/0291_Math_LeastSquares_Moving)
   - [贝叶斯定理](/0217_Math_BT)
+  - [Derivative 导数](/0377_Math_Derivative)
   - [Dynamic Programming 动态规划](/0310_Math_DynamicProgramming)
   - [Gaussian Distribution 高斯分布](/0023_Math_GaussianDistribution)
   - [Gaussian Filter 高斯滤波器](/0215_Math_GaussianFilter)
