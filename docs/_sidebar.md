@@ -111,7 +111,7 @@
       - [SVM 原理推导](/0116_ML_OML_SVM_原理)
   - [ML 架构](/0376_ML_Arch)
     - [Cost Function 代价函数](/0282_ML_Arch_CostFunction)
-    - [Gradient Descent 梯度下降](/0147_ML_Arch_GD)
+    - [Gradient Descent & Optimizer](/0147_ML_Arch_GD)
       - [History](/0149_ML_Arch_GD_History)
       - [Momentum](/0150_ML_Arch_GD_Momentum)
       - [BGD SGD MBGD](/0148_ML_Arch_GD_xGD)
@@ -383,4 +383,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd>2023.02.04<sub>Junx20</sub></kbd>
+<kbd>2023.02.04<sub>Junx22</sub></kbd>
