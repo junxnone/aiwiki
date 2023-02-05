@@ -2,7 +2,7 @@
 Title | Math Derivative
 -- | --
 Created @ | `2023-02-04T14:11:22Z`
-Updated @| `2023-02-05T06:09:23Z`
+Updated @| `2023-02-05T06:11:16Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/377)
 
@@ -32,3 +32,10 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/377)
 ## 方向导数
 
 - 某一点在某个方向上的导数值
+
+## 梯度
+
+- 一个向量
+- 方向与最大方向导数方向一致
+- 模为方向导数的最大值
+
