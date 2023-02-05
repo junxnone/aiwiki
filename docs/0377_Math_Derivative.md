@@ -2,7 +2,7 @@
 Title | Math Derivative
 -- | --
 Created @ | `2023-02-04T14:11:22Z`
-Updated @| `2023-02-05T06:03:26Z`
+Updated @| `2023-02-05T06:08:01Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/377)
 
@@ -15,7 +15,16 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/377)
 - $\frac{df}{dx} |_{x=x_{0}}$
 - ${f}\'(x_{0})$ 
 
-## 一元函数
+## 一元函数 - 导数
 
 ![image](https://user-images.githubusercontent.com/2216970/216772006-487c3f97-dfad-4dfb-bf6f-54f8f625a098.png)
+
+## 方向导数
+
+- 某一点在某个方向上的导数值
+
+
+## 偏导数
+
+- 函数 $f(x_{1},x_{2},x_{3}, ...)$ 在某一坐标轴 $(x_{1},x_{2},x_{3}, ...)$ 上的变化率
 
