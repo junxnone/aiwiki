@@ -1,8 +1,8 @@
 ---
-Title | ML Arch LossFunction DiceLoss
+Title | ML Arch Func LossFunction DiceLoss
 -- | --
 Created @ | `2019-12-09T03:27:35Z`
-Updated @| `2023-02-02T08:53:37Z`
+Updated @| `2023-02-06T01:59:11Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/283)
 
