@@ -111,9 +111,11 @@
     - [SVM 支持向量机](/0115_ML_OML_SVM)
       - [SVM 原理推导](/0116_ML_OML_SVM_原理)
   - [ML 架构](/0376_ML_Arch)
-    - [Cost Function 代价函数](/0282_ML_Arch_CostFunction)
     - [Loss/Cost/ Object Function - 损失代价目标函数](/0378_ML_Arch_Func)
+      - [Cost Function 代价函数](/0282_ML_Arch_Func_CostFunction)
       - [Loss Function 损失函数](/0281_ML_Arch_Func_LossFunction)
+        - [Dice Loss](/0283_ML_Arch_Func_LossFunction_DiceLoss)
+        - [Focal Loss](/0284_ML_Arch_Func_LossFunction_FocalLoss)
     - [Gradient Descent & Optimizer](/0147_ML_Arch_GD)
       - [History](/0149_ML_Arch_GD_History)
       - [Momentum](/0150_ML_Arch_GD_Momentum)
@@ -125,9 +127,6 @@
       - [Cyclical Learning Rate 周期学习率](/0266_ML_Arch_LR_CLR)
       - [学习率选择](/0263_ML_Arch_LR_LRFinder)
       - [One Cycle Policy](/0264_ML_Arch_LR_OCP)
-    - LossFunction
-      - [Dice Loss](/0283_ML_Arch_LossFunction_DiceLoss)
-      - [Focal Loss](/0284_ML_Arch_LossFunction_FocalLoss)
   - [ML/DL 常见任务](/0003_ML_Tasks)
     - Image
       - [Classification](/0061_ML_Tasks_Image_Classification)
@@ -386,4 +385,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd>2023.02.06<sub>Junx09</sub></kbd>
+<kbd>2023.02.06<sub>Junx10</sub></kbd>
