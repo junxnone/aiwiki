@@ -1,8 +1,8 @@
 ---
-Title | ML Arch LossFunction
+Title | ML Arch Func LossFunction
 -- | --
 Created @ | `2019-04-08T06:11:14Z`
-Updated @| `2023-01-31T07:24:52Z`
+Updated @| `2023-02-06T01:58:29Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/281)
 
