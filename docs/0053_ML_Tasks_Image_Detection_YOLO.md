@@ -2,7 +2,7 @@
 Title | ML Tasks Image Detection YOLO
 -- | --
 Created @ | `2018-12-09T09:33:49Z`
-Last Modify @| `2022-12-24T12:47:04Z`
+Updated @| `2023-02-07T02:58:30Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/53)
 
@@ -30,6 +30,24 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/53)
 
 **YOLO**  - `You Only Look Once`
 
+
+```mermaid
+
+graph LR
+    O(YOLO家谱)--> I(Joseph Redmon)
+    I --> V1(YOLOv1)
+    I --> V2(YOLOv2)
+    I --> V3(YOLOv3)
+    I --> A(Alexey Bochkovskiy)
+    A --> V4(YOLOv4)
+    A --> V7(YOLOv7)
+    I --> U(Ultralytics LLC) --> V5(YOLOv5)
+    I --> M(美团) --> V6(YOLOv6)
+    I --> K(旷世) --> VX(YOLOX)
+    I --> Ba(百度) --> PP(YOLOPP)
+    I --> CYW(ChienYaoWang) --> VR(YOLOR)
+
+```
 
 
 ## History
