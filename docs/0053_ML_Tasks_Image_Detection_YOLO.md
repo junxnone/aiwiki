@@ -2,7 +2,7 @@
 Title | ML Tasks Image Detection YOLO
 -- | --
 Created @ | `2018-12-09T09:33:49Z`
-Updated @| `2023-02-08T10:09:10Z`
+Updated @| `2023-02-08T13:23:18Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/53)
 
@@ -42,7 +42,7 @@ graph LR
 - 2021 **YOLOR** You Only Learn One Representation: Unified Network for Multiple Tasks [[paper](https://arxiv.org/abs/2105.04206)]
 - 2021 **YOLOX** YOLOX: Exceeding YOLO Series in 2021 [[paper](https://arxiv.org/abs/2107.08430)]
 - 2022 **YOLOv6** YOLOv6: A Single-Stage Object Detection Framework for Industrial Applications [[paper](https://arxiv.org/abs/2209.02976)]
-- 2022 ***YOLOv7** YOLOv7: Trainable bag-of-freebies sets new state-of-the-art for real-time object detectors [[paper](https://arxiv.org/abs/2207.02696)]
+- 2022 **YOLOv7** YOLOv7: Trainable bag-of-freebies sets new state-of-the-art for real-time object detectors [[paper](https://arxiv.org/abs/2207.02696)]
 
 
 
