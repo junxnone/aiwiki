@@ -2,55 +2,51 @@
 Title | ML Tasks Image Detection YOLO
 -- | --
 Created @ | `2018-12-09T09:33:49Z`
-Updated @| `2023-02-07T02:58:30Z`
+Updated @| `2023-02-08T10:09:10Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/53)
 
 ---
-## Reference
-- 2015 **YOLO V1** You Only Look Once: Unified, Real-Time Object Detection [[paper](https://arxiv.org/pdf/1506.02640.pdf)] [[netscope](http://ethereon.github.io/netscope/#/gist/96209c6940e02b17c34009f6c3fee75e)] [[Code](https://pjreddie.com/darknet/yolo/)] [[Code2 - AlexeyAB](https://github.com/AlexeyAB/darknet)] [[docs](https://pjreddie.com/darknet/yolov1/)]
-- 2016 **YOLO V2** YOLO9000: Better, Faster, Stronger [[paper](https://arxiv.org/pdf/1612.08242.pdf)] [[netscope](http://ethereon.github.io/netscope/#/gist/8826fef24ed0b5086affdb6e65db26b7)]  [[Code](https://pjreddie.com/darknet/yolo/)] [[docs](https://pjreddie.com/darknet/yolov2/)]  [[YOLO 9000](https://pjreddie.com/publications/yolo9000/)]
-- 2018 **YOLOv3**  An Incremental Improvement [[paper](https://pjreddie.com/media/files/papers/YOLOv3.pdf)] **[[YOLOv3 netscope](http://ethereon.github.io/netscope/#/gist/a9badc1fd4eefb7463c99e33d046af9e)]** [[Code](https://pjreddie.com/darknet/yolo/)] [docs](https://pjreddie.com/darknet/yolo/) [[docs](https://pjreddie.com/darknet/yolo/)]
-- YOLO tiny - 基于 [Darknet Reference Model](https://pjreddie.com/darknet/imagenet/#reference)
-- [目标检测（九）--YOLO v1,v2,v3](https://blog.csdn.net/App_12062011/article/details/77554288)
-- [YOLO lite](https://reu2018dl.github.io/#myPage)
-- [YOLO-LITE项目实现(比SSD和MobileNet更快的算法)](https://blog.csdn.net/ghw15221836342/article/details/84427923)
-- [Yolo9000算法分析](https://blog.csdn.net/small_munich/article/details/79548149)
-- [pjreddie Publications](https://pjreddie.com/publications/)
-- [YOLO v2算法详解+YOLO9000介绍](https://blog.csdn.net/Chunfengyanyulove/article/details/80860870)
-- [YOLO-v3模型参数anchor设置](https://blog.csdn.net/m_buddy/article/details/82926024)
-- [YOLOv2 YOLOv3 如何选择先验框（priors anchor）（自用）](https://blog.csdn.net/Pattorio/article/details/80095511)
-- [YOLO v3网络结构分析](https://blog.csdn.net/qq_37541097/article/details/81214953) 
-- [yoloV1，看过好多篇，这篇感觉讲的最通俗易懂](https://blog.csdn.net/m0_37192554/article/details/81092514)
-- [YOLOV3 基于OpenCV DNN 的目标检测实现](https://www.aiuai.cn/aifarm962.html)
-- [目标检测之YOLO V2 V3](http://www.cnblogs.com/wangguchangqing/p/10480995.html)
-- [从yolov1到yolov3](https://shartoo.github.io/2019/03/12/yolo-v123/)
 
-## Brief
+# YOLO 系列
 
-**YOLO**  - `You Only Look Once`
+- **YOLO**  - `You Only Look Once`
+
 
 
 ```mermaid
 
 graph LR
     O(YOLO家谱)--> I(Joseph Redmon)
-    I --> V1(YOLOv1)
-    I --> V2(YOLOv2)
-    I --> V3(YOLOv3)
+    I --> V1(2015 YOLOv1)
+    I --> V2(2016 YOLOv2)
+    I --> V3(2018 YOLOv3)
     I --> A(Alexey Bochkovskiy)
-    A --> V4(YOLOv4)
-    A --> V7(YOLOv7)
-    I --> U(Ultralytics LLC) --> V5(YOLOv5)
-    I --> M(美团) --> V6(YOLOv6)
-    I --> K(旷世) --> VX(YOLOX)
-    I --> Ba(百度) --> PP(YOLOPP)
-    I --> CYW(ChienYaoWang) --> VR(YOLOR)
+    A --> V4(2020 YOLOv4)
+    A --> V7(2022 YOLOv7)
+    I --> U(Ultralytics LLC) --> V5(2021 YOLOv5)
+    I --> M(美团) --> V6(2022 YOLOv6)
+    I --> K(旷世) --> VX(2021 YOLOX)
+    I --> Ba(百度) --> PP(PP-YOLO)
+    I --> CYW(ChienYaoWang) --> VR(2021 YOLOR)
 
 ```
 
 
-## History
+## Papers
+
+- 2015 **YOLO V1** You Only Look Once: Unified, Real-Time Object Detection [[paper](https://arxiv.org/pdf/1506.02640.pdf)] [[netscope](http://ethereon.github.io/netscope/#/gist/96209c6940e02b17c34009f6c3fee75e)] [[Code](https://pjreddie.com/darknet/yolo/)] [[Code2 - AlexeyAB](https://github.com/AlexeyAB/darknet)] [[docs](https://pjreddie.com/darknet/yolov1/)]
+- 2016 **YOLO V2** YOLO9000: Better, Faster, Stronger [[paper](https://arxiv.org/pdf/1612.08242.pdf)] [[netscope](http://ethereon.github.io/netscope/#/gist/8826fef24ed0b5086affdb6e65db26b7)]  [[Code](https://pjreddie.com/darknet/yolo/)] [[docs](https://pjreddie.com/darknet/yolov2/)]  [[YOLO 9000](https://pjreddie.com/publications/yolo9000/)]
+- 2018 **YOLOv3**  An Incremental Improvement [[paper](https://pjreddie.com/media/files/papers/YOLOv3.pdf)] **[[YOLOv3 netscope](http://ethereon.github.io/netscope/#/gist/a9badc1fd4eefb7463c99e33d046af9e)]** [[Code](https://pjreddie.com/darknet/yolo/)] [docs](https://pjreddie.com/darknet/yolo/) [[docs](https://pjreddie.com/darknet/yolo/)]
+- 2021 **YOLOv4** YOLOv4: Optimal Speed and Accuracy of Object Detection [[paper](https://arxiv.org/abs/2004.10934)]
+- 2021 **YOLOR** You Only Learn One Representation: Unified Network for Multiple Tasks [[paper](https://arxiv.org/abs/2105.04206)]
+- 2021 **YOLOX** YOLOX: Exceeding YOLO Series in 2021 [[paper](https://arxiv.org/abs/2107.08430)]
+- 2022 **YOLOv6** YOLOv6: A Single-Stage Object Detection Framework for Industrial Applications [[paper](https://arxiv.org/abs/2209.02976)]
+- 2022 ***YOLOv7** YOLOv7: Trainable bag-of-freebies sets new state-of-the-art for real-time object detectors [[paper](https://arxiv.org/abs/2207.02696)]
+
+
+
+## 提升变化
 
 Date | Name | Tech + Improvement | Comment
 -- | -- | -- | --
