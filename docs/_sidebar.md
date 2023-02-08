@@ -149,7 +149,7 @@
         - [FasterRCNN](/0059_ML_Tasks_Image_Detection_FasterRCNN)
         - [RCNN](/0057_ML_Tasks_Image_Detection_RCNN)
         - [RCNN VS Fast RCNN VS Faster RCNN](/0060_ML_Tasks_Image_Detection_RCNNs)
-        - [YOLO](/0053_ML_Tasks_Image_Detection_YOLO)
+        - [YOLO 系列](/0053_ML_Tasks_Image_Detection_YOLO)
           - [YOLO V1](/0054_ML_Tasks_Image_Detection_YOLO_V1)
           - [YOLO V2](/0055_ML_Tasks_Image_Detection_YOLO_V2)
           - [YOLO V3](/0056_ML_Tasks_Image_Detection_YOLO_V3)
@@ -385,4 +385,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd>2023.02.08<sub>Junx18</sub></kbd>
+<kbd>2023.02.08<sub>Junx20</sub></kbd>
