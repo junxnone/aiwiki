@@ -2,12 +2,11 @@
 Title | ML Tasks Image Detection YOLO
 -- | --
 Created @ | `2018-12-09T09:33:49Z`
-Updated @| `2023-02-08T13:23:18Z`
+Updated @| `2023-02-09T09:30:44Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/53)
 
 ---
-
 # YOLO 系列
 
 - **YOLO**  - `You Only Look Once`
@@ -48,10 +47,28 @@ graph LR
 
 ## 提升变化
 
-Date | Name | Tech + Improvement | Comment
--- | -- | -- | --
-2015 | YOLO v1 | <li>定位问题 -> 回归问题</li>
-2016 | YOLO v2 - 9000 | <li>Darknet19</li><li>使用 BN Layers</li><li>高分辨率分类器</li><li>使用聚类获取 Anchor Box</li><li>特征融合</li><li>多尺度训练</li><li>分类检测数据集联合训练</li>
-2018 | YOLO v3 |<li>Darknet53</li><li>引入 FPN</li>
-2019 | YOLO SPP | <li>Dense Connection Block</li><li>Spatial Pyramid Pooling Block</li>
+
+### YOLOv1
+- 定位问题 --> 回归问题
+
+### YOLOv2
+
+- Darknet19
+- BN Layers
+- 高分辨率分类器
+- 使用聚类获取 Anchor Box
+- 特征融合
+- 多尺度训练
+- 分类检测数据集联合训练
+
+### YOLOv3
+
+- Darknet53
+- FPN
+
+### YOLOv4
+
+- CSPDarkNet53
+- CutMix & Mosaic
+- Mish
 
