@@ -153,6 +153,7 @@
           - [YOLO V1](/0054_ML_Tasks_Image_Detection_YOLO_V1)
           - [YOLO V2](/0055_ML_Tasks_Image_Detection_YOLO_V2)
           - [YOLO V3](/0056_ML_Tasks_Image_Detection_YOLO_V3)
+          - [YOLO V5](/0379_ML_Tasks_Image_Detection_YOLO_V5)
           - [YOLO tiny](/0052_ML_Tasks_Image_Detection_YOLO_tiny)
       - [Segmentation](/0159_ML_Tasks_Image_Segmentation)
         - [Deeplab](/0162_ML_Tasks_Image_Segmentation_Deeplab)
@@ -385,4 +386,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd>2023.02.14<sub>Junx20</sub></kbd>
+<kbd>2023.02.14<sub>Junx21</sub></kbd>
