@@ -383,7 +383,8 @@
   - [AIGC - AI Generated Content](/0374_Hot_AIGC)
     - [ChatGPT](/0373_Hot_AIGC_ChatGPT)
 - [KnowledgeGraph](/0329_KnowledgeGraph)
+- [资源参考](/0380_Reference)
 - [Wiki History](/hist)
 
 ---
-<kbd>2023.02.15<sub>Junx10</sub></kbd>
+<kbd>2023.02.15<sub>Junx11</sub></kbd>
