@@ -2,7 +2,7 @@
 Title | ML Tasks Image Detection YOLO
 -- | --
 Created @ | `2018-12-09T09:33:49Z`
-Updated @| `2023-02-15T08:22:02Z`
+Updated @| `2023-02-15T08:29:20Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/53)
 
@@ -15,19 +15,19 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/53)
 
 ```mermaid
 
-graph LR
-    O(YOLO家谱)--> I(Joseph Redmon)
-    I --> V1(2015 YOLOv1)
-    I --> V2(2016 YOLOv2)
-    I --> V3(2018 YOLOv3)
-    I --> A(Alexey Bochkovskiy)
-    A --> V4(2020 YOLOv4)
-    A --> V7(2022 YOLOv7)
-    I --> U(Ultralytics LLC) --> V5(2021 YOLOv5)
-    I --> M(美团) --> V6(2022 YOLOv6)
-    I --> K(旷世) --> VX(2021 YOLOX)
-    I --> Ba(百度) --> PP(PP-YOLO)
-    I --> CYW(ChienYaoWang) --> VR(2021 YOLOR)
+graph TD
+    O(YOLO家谱)--> |Joseph Redmon| V1(2015 YOLOv1)
+    V1 --> V2(2016 YOLOv2)
+    V2 --> V3(2018 YOLOv3)
+    V3 --> |Alexey Bochkovskiy| V4(2020 YOLOv4)
+    V3 --> |百度| PP(2020 PP-YOLO)
+    V3 --> |旷世| VX(2021 YOLOX)
+    V4 --> V7(2022 YOLOv7)
+    V4 --> |Ultralytics LLC| V5(2021 YOLOv5)
+    V5 --> V8(2022 YOLOv8)
+    V4 --> |美团| V6(2022 YOLOv6)
+    V5 --> V6
+    V4 --> |ChienYaoWang| VR(2021 YOLOR)
 
 ```
 
