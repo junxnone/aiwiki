@@ -2,7 +2,7 @@
 Title | ML Metrics Detection
 -- | --
 Created @ | `2019-01-16T03:46:56Z`
-Updated @| `2023-02-16T15:15:37Z`
+Updated @| `2023-02-16T15:39:51Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/230)
 
@@ -45,12 +45,6 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/230)
 - [GIoU](/GIoU)
 - By Image/BBox
 
-## TPR & FPR
-- $TPR = \frac{TP}{TP+FN}$
-- $FPR = \frac{FP}{FP+FN}$
-
-> @ PASCAL VOC 2005
-
 ## Precision
 ```
 Precision = TP / (TP + FP)
@@ -65,41 +59,17 @@ Recall = TP / (TP + FN)
 - 样本所有正例中，识别正确的比例
 - 也被称作`查全率`， 即检测出来的样本/实际应该检测出的样本。
 
-## AP & mAP
 
-- AP - AP 一般指单个类别
-- mAP - mAP 一般指所有类别
-  - $mAP = \frac{\int_{1}^{n} AP}{n}$
+## Object Detection Metrics History
 
----
-- `mAP@.50IOU` - 当 IoU 大于 0.50 时认为正确识别的 mAP
-- `mAP@.75IOU` - 当 IoU 大于 0.75 时认为正确识别时的 mAP
-- `mAP@[.5:.95]` - IoU [0.5, 0.95] 范围内以步长 0.05 间隔计算 mAP
-
-> COCO 中称 mAP 为 AP
-> We make no distinction between AP and mAP (and likewise AR and mAR) and assume the difference is clear from context.
+```mermaid
 
 
-## AR
-
-- AR  - 在每个图像中检测到固定数量的最大召回（recall），在类别和IoU上平均
-
-
-## IoU
-
-- 产生的候选框和 `Label BBox` 的交叠率，即它们交集与并集的比值。
-- 最理想情况是完全重叠，即比值为1.
-- 一般来说，这个 IoU＞ 0.5 就可以被认为一个不错的结果
-
-![image](https://user-images.githubusercontent.com/2216970/51228980-9f016100-1995-11e9-8acc-3f5c07981a1c.png)
+graph TD
+    O(Object Detection Metrics History)--> |PASCAL VOC 2005| V1(TPR & FPR)
+    V1 --> |PASCAL VOC 2007| V2(11 Point Interpolation AP IoU=0.5)
+    V2 --> |PASCAL VOC 2010| V3(PR-AUC IoU=0.5)
+    V3 --> |MS COCO 2014| V4("mAP@0.5 mAP@[0.5:0.05:0.95] (101 Point Interpolation AP)")
 
 
-
-## COCO metrics
-- COCO IoU 按照 `AP@[.5:.95]` 来计算, 更严格
-  - 早期的 Pascal VOC 按照 `AP@.50IOU` 来计算
-- COCO 中按 Area 面积定义 Small/Medium/Large Object, 可以统计不同大小 Object 的 Metrics
-  - **Small** --> (< `32 * 32` < ) --> **Medium** --> (< `96 * 96` <) --> **Large**
-
-![image](https://user-images.githubusercontent.com/2216970/51243686-2236ad00-19be-11e9-8fc9-bf0ff1ce6aa7.png)
-
+```
