@@ -208,6 +208,7 @@
     - [Classification](/0137_ML_Metrics_Classification)
     - [CrossValidation 交叉验证](/0249_ML_Metrics_CrossValidation)
     - [Detection](/0230_ML_Metrics_Detection)
+      - [AP & mAP & AR](/0382_ML_Metrics_Detection_APmAPAR)
       - [GIoU](/0232_ML_Metrics_Detection_GIoU)
       - [TPR & FPR](/0381_ML_Metrics_Detection_TPRFPR)
     - [Pairwise](/0139_ML_Metrics_Pairwise)
