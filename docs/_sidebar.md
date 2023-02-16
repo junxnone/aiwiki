@@ -210,6 +210,7 @@
     - [Detection](/0230_ML_Metrics_Detection)
       - [AP & mAP & AR](/0382_ML_Metrics_Detection_APmAPAR)
       - [GIoU](/0232_ML_Metrics_Detection_GIoU)
+      - [IoU - Intersection Over Union](/0383_ML_Metrics_Detection_IoU)
       - [TPR & FPR](/0381_ML_Metrics_Detection_TPRFPR)
     - [Pairwise](/0139_ML_Metrics_Pairwise)
     - [Segmentation](/0231_ML_Metrics_Segmentation)
