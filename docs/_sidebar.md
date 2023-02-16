@@ -209,6 +209,7 @@
     - [CrossValidation 交叉验证](/0249_ML_Metrics_CrossValidation)
     - [Detection](/0230_ML_Metrics_Detection)
       - [GIoU](/0232_ML_Metrics_Detection_GIoU)
+      - [TPR & FPR](/0381_ML_Metrics_Detection_TPRFPR)
     - [Pairwise](/0139_ML_Metrics_Pairwise)
     - [Segmentation](/0231_ML_Metrics_Segmentation)
   - [PreProcessing](/0369_ML_PreP)
@@ -387,4 +388,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd>2023.02.16<sub>Junx22</sub></kbd>
+<kbd>2023.02.16<sub>Junx23</sub></kbd>
