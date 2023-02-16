@@ -2,7 +2,7 @@
 Title | ML Metrics Detection
 -- | --
 Created @ | `2019-01-16T03:46:56Z`
-Updated @| `2023-02-16T15:04:15Z`
+Updated @| `2023-02-16T15:15:37Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/230)
 
@@ -29,8 +29,12 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/230)
 - [The PASCAL Visual Object Classes (VOC) Challenge](http://homepages.inf.ed.ac.uk/ckiw/postscript/ijcv_voc09.pdf)
 - [Metrics for object detection](https://github.com/rafaelpadilla/Object-Detection-Metrics)
 - [An Introduction to Evaluation Metrics for Object Detection](https://blog.zenggyu.com/en/post/2018-12-16/an-introduction-to-evaluation-metrics-for-object-detection/)
+- [Mean Average Precision (mAP) in Object Detection](https://learnopencv.com/mean-average-precision-map-object-detection-model-evaluation-metric)
+
 
 ## Metrics
+- TPR - `True Positive Rate`
+- FPR - `False Positive Rate`
 - Accuracy
 - Precision
 - Recall
@@ -40,6 +44,12 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/230)
 - IoU - `Intersection over Union`
 - [GIoU](/GIoU)
 - By Image/BBox
+
+## TPR & FPR
+- $TPR = \frac{TP}{TP+FN}$
+- $FPR = \frac{FP}{FP+FN}$
+
+> @ PASCAL VOC 2005
 
 ## Precision
 ```
