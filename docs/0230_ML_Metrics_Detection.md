@@ -2,7 +2,7 @@
 Title | ML Metrics Detection
 -- | --
 Created @ | `2019-01-16T03:46:56Z`
-Last Modify @| `2022-12-24T12:33:13Z`
+Updated @| `2023-02-16T15:04:15Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/230)
 
@@ -33,10 +33,10 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/230)
 ## Metrics
 - Accuracy
 - Precision
-  - AP - `Average Precision`
-  - mAP - `Mean Average Precison` 
 - Recall
-  - AR - `Average Recall`
+- AP - `Average Precision`
+- mAP - `Mean Average Precison` 
+- AR - `Average Recall`
 - IoU - `Intersection over Union`
 - [GIoU](/GIoU)
 - By Image/BBox
@@ -46,13 +46,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/230)
 Precision = TP / (TP + FP)
 ```
 - 识别为正例的样例中，识别正确的比例
-- AP - AP 衡量的是在每个类别上的好坏
-- mAP - mAP 衡量的是在所有类别上的好坏。
 
----
-- `mAP@.50IOU` - 当 IoU 大于 0.50 时认为正确识别的 mAP
-- `mAP@.75IOU` - 当 IoU 大于 0.75 时认为正确识别时的 mAP
-- `mAP@[.5:.95]` - IoU [0.5, 0.95] 范围内以步长 0.05 间隔计算 mAP
 
 ## Recall
 ```
@@ -60,6 +54,24 @@ Recall = TP / (TP + FN)
 ```
 - 样本所有正例中，识别正确的比例
 - 也被称作`查全率`， 即检测出来的样本/实际应该检测出的样本。
+
+## AP & mAP
+
+- AP - AP 一般指单个类别
+- mAP - mAP 一般指所有类别
+  - $mAP = \frac{\int_{1}^{n} AP}{n}$
+
+---
+- `mAP@.50IOU` - 当 IoU 大于 0.50 时认为正确识别的 mAP
+- `mAP@.75IOU` - 当 IoU 大于 0.75 时认为正确识别时的 mAP
+- `mAP@[.5:.95]` - IoU [0.5, 0.95] 范围内以步长 0.05 间隔计算 mAP
+
+> COCO 中称 mAP 为 AP
+> We make no distinction between AP and mAP (and likewise AR and mAR) and assume the difference is clear from context.
+
+
+## AR
+
 - AR  - 在每个图像中检测到固定数量的最大召回（recall），在类别和IoU上平均
 
 
