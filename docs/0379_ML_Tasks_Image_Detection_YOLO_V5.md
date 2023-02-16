@@ -2,7 +2,7 @@
 Title | ML Tasks Image Detection YOLO V5
 -- | --
 Created @ | `2023-02-14T13:27:32Z`
-Updated @| `2023-02-14T13:27:32Z`
+Updated @| `2023-02-16T14:01:46Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/379)
 
@@ -12,6 +12,8 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/379)
 ## Reference
 
 - [YOLOv5 (6.0/6.1) brief summary](https://github.com/ultralytics/yolov5/issues/6998)
+- [Github Code](https://github.com/ultralytics/yolov5)
+- [Docs Wiki](https://github.com/ultralytics/yolov5/wiki)
 
 
 ## Arch
