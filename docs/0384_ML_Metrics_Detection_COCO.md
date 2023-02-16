@@ -2,7 +2,7 @@
 Title | ML Metrics Detection COCO
 -- | --
 Created @ | `2023-02-16T15:23:32Z`
-Updated @| `2023-02-16T15:23:32Z`
+Updated @| `2023-02-16T15:47:02Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/384)
 
@@ -18,3 +18,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/384)
 
 ![image](https://user-images.githubusercontent.com/2216970/51243686-2236ad00-19be-11e9-8fc9-bf0ff1ce6aa7.png)
 
+
+## Reference
+
+- [COCO Detection Evaluation](https://cocodataset.org/#detection-eval)
