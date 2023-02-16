@@ -2,7 +2,7 @@
 Title | ML Metrics Detection
 -- | --
 Created @ | `2019-01-16T03:46:56Z`
-Updated @| `2023-02-16T15:46:13Z`
+Updated @| `2023-02-16T16:01:12Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/230)
 
@@ -42,8 +42,8 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/230)
 - mAP - `Mean Average Precison` 
 - AR - `Average Recall`
 - IoU - `Intersection over Union`
-- [GIoU](/GIoU)
-- By Image/BBox
+- GIoU
+- Image/Object Level
 
 ## Precision
 ```
@@ -67,7 +67,7 @@ Recall = TP / (TP + FN)
 
 
 graph TD
-    O(Object Detection \n Metrics History)--> |PASCAL VOC 2005| V1(TPR & FPR)
+    O(Object Detection \n Metrics History)--> |PASCAL VOC 2005| V1(TPR / FPR)
     V1 --> |PASCAL VOC 2007| V2("11 Point Interpolation AP \n (IoU=0.5)")
     V2 --> |PASCAL VOC 2010| V3("PR-AUC \n (IoU=0.5)")
     V3 --> |MS COCO 2014| V4("mAP@0.5 mAP@[0.5:0.05:0.95] \n(101 Point Interpolation AP)")
