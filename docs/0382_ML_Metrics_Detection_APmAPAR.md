@@ -2,7 +2,7 @@
 Title | ML Metrics Detection APmAPAR
 -- | --
 Created @ | `2023-02-16T15:19:37Z`
-Updated @| `2023-02-20T04:08:18Z`
+Updated @| `2023-02-20T05:44:17Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/382)
 
@@ -15,7 +15,9 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/382)
 
 ### 计算步骤
 
-![image](https://user-images.githubusercontent.com/2216970/219999922-5d64b9cf-f1e5-439a-9ae1-346b699051df.png)
+GT | ![image](https://user-images.githubusercontent.com/2216970/220018804-6eeb8f11-aeba-4fb7-8c35-80a84858b7cb.png)
+-- | --
+Predict Dog  | ![image](https://user-images.githubusercontent.com/2216970/219999922-5d64b9cf-f1e5-439a-9ae1-346b699051df.png)
 
 #### 计算 Precision & Recall
 
