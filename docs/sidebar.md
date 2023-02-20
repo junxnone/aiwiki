@@ -43,8 +43,8 @@
       - Anomaly
   - Op
   - Metrics
-    - TPRFPR
     - IoU
+    - TPRFPR
     - APmAPAR
     - GIoU
   - PreP
