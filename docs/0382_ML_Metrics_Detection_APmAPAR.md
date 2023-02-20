@@ -2,7 +2,7 @@
 Title | ML Metrics Detection APmAPAR
 -- | --
 Created @ | `2023-02-16T15:19:37Z`
-Updated @| `2023-02-20T05:49:00Z`
+Updated @| `2023-02-20T05:55:54Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/382)
 
@@ -20,12 +20,16 @@ GT | ![image](https://user-images.githubusercontent.com/2216970/220018804-6eeb8f
 Predict Dog  | ![image](https://user-images.githubusercontent.com/2216970/219999922-5d64b9cf-f1e5-439a-9ae1-346b699051df.png)
 
 #### 计算 Precision & Recall
-
+- 根据 `confidence` 排序
+- 
 ![image](https://user-images.githubusercontent.com/2216970/219999957-82ea09f1-1813-49e8-bdc5-eadc712051c8.png)
 
 #### Plot PRCurve
 
 ![image](https://user-images.githubusercontent.com/2216970/220000067-3e7a8e79-1b1e-49ad-9681-d8b8468c681c.png)
+![mean-average-precision-map-calculation-11-point-interpolation-pascal-voc-manual](https://user-images.githubusercontent.com/2216970/220021066-6f256990-3c13-43ad-901a-6fa23139bd67.gif)
+
+
 
 ##### 11 Point Interpolation Method
 
