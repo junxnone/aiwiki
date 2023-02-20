@@ -2,7 +2,7 @@
 Title | ML Metrics Detection APmAPAR
 -- | --
 Created @ | `2023-02-16T15:19:37Z`
-Updated @| `2023-02-20T08:09:16Z`
+Updated @| `2023-02-20T08:20:15Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/382)
 
@@ -49,6 +49,9 @@ Predict Dog  | ![image](https://user-images.githubusercontent.com/2216970/219999
 
 
 ##### Interpolating all points
+
+- AUC(Area Under Curve) on PR Curve
+
 
 $\huge \sum_{0}^{n}(r_{n+1} - r_n)p_{interp}(r_{n+1})\newline p_{interp}(r_{n+1})=\underset{\bar{r}:\bar(r)\geq r_{n+1}}{max}p(\tilde{r})$
 
