@@ -2,7 +2,7 @@
 Title | ML Metrics Detection APmAPAR
 -- | --
 Created @ | `2023-02-16T15:19:37Z`
-Updated @| `2023-02-20T04:03:16Z`
+Updated @| `2023-02-20T04:08:18Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/382)
 
@@ -31,7 +31,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/382)
 
 ![image](https://user-images.githubusercontent.com/2216970/220000690-1d169ef1-3857-46b0-996e-3a67070e9e77.png)
 
-- $\huge AP =  \frac{1}{11}\times \text{(Sum of 11 interpolated Precision values)}$
+- $\huge AP =  \frac{1}{11}\times \int_{1}^{11}Precisions$
 - $\huge =\frac{1}{11}\times (1+4\times 0.71+6\times 0)$
 - $\huge =0.349$
 
