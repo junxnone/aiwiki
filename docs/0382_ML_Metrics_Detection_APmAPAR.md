@@ -2,12 +2,14 @@
 Title | ML Metrics Detection APmAPAR
 -- | --
 Created @ | `2023-02-16T15:19:37Z`
-Updated @| `2023-02-20T06:00:30Z`
+Updated @| `2023-02-20T07:08:57Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/382)
 
 ---
 # AP & mAP & AR
+
+- `mAP@[0.5:.05:.95]` - 当前比较流行的衡量标准
 
 ## AP
 - PR 曲线下的面积
