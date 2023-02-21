@@ -388,7 +388,9 @@
     - [ChatGPT](/0373_Hot_AIGC_ChatGPT)
 - [KnowledgeGraph](/0329_KnowledgeGraph)
 - [资源参考](/0380_Reference)
+- paper
+  - [CSPNet](/0385_paper_CSPNet)
 - [Wiki History](/hist)
 
 ---
-<kbd>2023.02.22<sub>Junx06</sub></kbd>
+<kbd>2023.02.22<sub>Junx07</sub></kbd>
