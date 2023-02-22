@@ -50,43 +50,7 @@
     toc: {
       tocMaxLevel: 6,
       target: 'h2, h3, h4, h5, h6'
-    },
-    darklightTheme: {
-            siteFont : "PT Sans",
-            defaultTheme : 'dark',
-            codeFontFamily : 'Roboto Mono, Monaco, courier, monospace',
-            bodyFontSize : '17px',
-            dark: {
-                accent: '#3427cd',
-                toogleBackground : '#ffffff',
-                background: '#00000',
-                textColor: '#ffffff',
-                codeTextColor : '#ffffff',
-                codeBackgroundColor : '#0e2233',
-                borderColor : '#ffffff',//'#0d2538',
-                blockQuoteColor : '#858585',
-                highlightColor : '#d22778',
-                sidebarSublink : '#ffffff',//'#b4b4b4',
-                codeTypeColor : '#ffffff',
-                coverBackground : 'linear-gradient(to left bottom, hsl(118, 100%, 85%) 0%,hsl(181, 100%, 85%) 100%)',
-                toogleImage : 'url(https://cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/icons/sun.svg)'
-            },
-            light: {
-                accent: '#1401f3',
-                toogleBackground : '#091a28',
-                background: '#ffffff',
-                textColor: '#000000',//'#34495e',
-                codeTextColor : '#525252',
-                codeBackgroundColor : '#f8f8f8',
-                borderColor : 'rgba(0, 0, 0, 0.07)',
-                blockQuoteColor : '#858585',
-                highlightColor : '#d22778',
-                sidebarSublink : '#000000',//'#b4b4b4',
-                codeTypeColor : '#091a28',
-                coverBackground : 'linear-gradient(to left bottom, hsl(118, 100%, 85%) 0%,hsl(181, 100%, 85%) 100%)',
-                toogleImage : 'url(https://cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/icons/moon.svg)'
-            }
-        }
+    }
   }
 
 
@@ -96,15 +60,10 @@
   <script src="assets/search.min.js"></script>
   <script src="assets/countable.js"></script>
   <script src="assets/docsify-plugin-toc.min.js"></script>
-  <!--<script src="assets/darklight.min.js"></script>-->
   <script src="assets/docsify-sidebar-collapse.min.js"></script>
   <script src="assets/wikilink.min.js"></script>
   <script src="assets/docsify.gitalk.min.js"></script>
   <script src="assets/gitalk.min.js"></script>
-  <!-- CDN files for docsify-katex -->
-  <script src="//cdn.jsdelivr.net/npm/docsify-katex@1.4.4/dist/docsify-katex.js"></script>
-  <!-- or <script src="//cdn.jsdelivr.net/gh/upupming/docsify-katex@1.4.4/dist/docsify-katex.js"></script> -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"/>
   <link rel="stylesheet" href="assets/docsify-quick-page.css">
   <script src="assets/docsify-quick-page.js"></script>
   <link rel="stylesheet" href="assets/dark-mode.css">
@@ -114,11 +73,21 @@
   <link rel="stylesheet" href="assets/edit.css">
   <script src="assets/edit.js"></script>
 
-  <!pdf plugin>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js"></script> 
-  <script src="//unpkg.com/docsify-pdf-embed-plugin/src/docsify-pdf-embed.js"></script>
-  <script src="//unpkg.com/mermaid/dist/mermaid.js"></script>
+  <!-- 
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js"></script>
+  <script src="//unpkg.com/docsify-pdf-embed-plugin/src/docsify-pdf-embed.js"></script> 
+  <script src="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
   <script src="//unpkg.com/docsify-mermaid@latest/dist/docsify-mermaid.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-katex@1.4.4/dist/docsify-katex.js"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"/>
+  -->
+  <script src="assets/pdfobject.min.js"></script> 
+  <script src="assets/docsify-pdf-embed.js"></script>
+  <script src="assets/mermaid.min.js"></script>
+  <script src="assets/docsify-mermaid.js"></script>
+  <link rel="stylesheet" href="assets/katex.min.css"/>
+  <script src="assets/docsify-katex.js"></script>
+
   <script>mermaid.initialize({ startOnLoad: true });</script>
 
   <script>
@@ -150,14 +119,15 @@
             const markdownUrl = new URL(prefix + vm.route.file, document.location);
             const createIssueUrl="https://github.com/" + window.$docsify.repo + "/issues/new/choose";
             
-            return `[🆕 NewPage](${createIssueUrl}) | [🔑 MarkMap](${markmapUrl}?md=${markdownUrl})\n --|--\n` + mdstr;
+            return `[🆕 NewPage](${createIssueUrl}) | [🔑 MarkMap](${markmapUrl}?md=${markdownUrl})\n --|--\n\n` + mdstr;
           }
         );
       }
     );
 
   </script>
- <script>
+  
+  <script>
   if (typeof navigator.serviceWorker !== 'undefined') {
     navigator.serviceWorker.register('sw.js')
   }
