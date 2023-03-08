@@ -2,12 +2,13 @@
 Title | CV TIS
 -- | --
 Created @ | `2021-04-13T06:40:04Z`
-Last Modify @| `2022-12-24T12:54:12Z`
+Updated @| `2023-03-08T07:37:26Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/158)
 
 ---
-## Reference
+# Traditional Image Segmentation 传统图像分割
+
 
 ## DL 之前的 Segmentation 技术
 - Normalized cut
