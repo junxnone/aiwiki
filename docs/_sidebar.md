@@ -62,7 +62,7 @@
   - [Histogram Equalization 直方图均衡](/0100_CV_HE)
   - [Hough Transform 霍夫变换](/0071_CV_HoughTransform)
   - [Structure Tensor 结构张量](/0070_CV_StructureTensor)
-  - [TIS](/0158_CV_TIS)
+  - [Traditional Image Segmentation 传统图像分割](/0158_CV_TIS)
   - [Traditional OCR 传统字符识别](/0199_CV_TOCR)
   - [Tools](/0063_CV_Tools)
 - [3D](/0076_3D)
@@ -393,4 +393,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd>2023.03.08<sub>Junx14</sub></kbd>
+<kbd>2023.03.08<sub>Junx16</sub></kbd>
