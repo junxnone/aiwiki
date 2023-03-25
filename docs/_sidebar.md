@@ -260,6 +260,8 @@
     - [NAS](/0014_ML_AutoML_NAS)
       - [DARTS](/0389_ML_AutoML_NAS_DARTS)
       - [ENAS](/0391_ML_AutoML_NAS_ENAS)
+      - [NAS Metrics](/0394_ML_AutoML_NAS_Metrics)
+      - [NASNet](/0395_ML_AutoML_NAS_NASNet)
       - [NASwRL](/0390_ML_AutoML_NAS_NASwRL)
       - [One-Shot](/0393_ML_AutoML_NAS_OneShot)
       - [PNAS](/0388_ML_AutoML_NAS_PNAS)
@@ -400,4 +402,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd>2023.03.25<sub>Junx22</sub></kbd>
+<kbd>2023.03.25<sub>Junx23</sub></kbd>
