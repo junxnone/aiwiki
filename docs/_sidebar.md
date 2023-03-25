@@ -259,8 +259,12 @@
           - [UseCase](/0141_ML_AutoML_HPO_Tools_SIGOPT_UseCase)
     - [NAS](/0014_ML_AutoML_NAS)
       - [DARTS](/0389_ML_AutoML_NAS_DARTS)
+      - [ENAS](/0391_ML_AutoML_NAS_ENAS)
+      - [NASwRL](/0390_ML_AutoML_NAS_NASwRL)
+      - [One-Shot](/0393_ML_AutoML_NAS_OneShot)
       - [PNAS](/0388_ML_AutoML_NAS_PNAS)
       - [ProxylessNAS](/0387_ML_AutoML_NAS_ProxylessNAS)
+      - [Search Space](/0392_ML_AutoML_NAS_SearchSpace)
     - Tools
       - [NNI](/0016_ML_AutoML_Tools_NNI)
   - [Active Learning](/0118_ML_AL)
