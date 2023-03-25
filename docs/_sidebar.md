@@ -196,6 +196,7 @@
       - [Sigmoid](/0280_ML_Op_AF_Sigmoid)
       - [Softmax](/0335_ML_Op_AF_Softmax)
     - [Convolution](/0009_ML_Op_Convolution)
+      - [ConvFlops](/0396_ML_Op_Convolution_ConvFlops)
       - [卷积在 DL 中的应用](/0011_ML_Op_Convolution_DL)
       - [卷积 数学定义](/0010_ML_Op_Convolution_Math)
     - [Dropout](/0258_ML_Op_Dropout)
@@ -402,4 +403,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd>2023.03.25<sub>Junx23</sub></kbd>
+<kbd>2023.03.26<sub>Junx00</sub></kbd>
