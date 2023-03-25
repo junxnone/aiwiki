@@ -258,6 +258,8 @@
           - [Options](/0142_ML_AutoML_HPO_Tools_SIGOPT_Options)
           - [UseCase](/0141_ML_AutoML_HPO_Tools_SIGOPT_UseCase)
     - [NAS](/0014_ML_AutoML_NAS)
+      - [DARTS](/0389_ML_AutoML_NAS_DARTS)
+      - [PNAS](/0388_ML_AutoML_NAS_PNAS)
       - [ProxylessNAS](/0387_ML_AutoML_NAS_ProxylessNAS)
     - Tools
       - [NNI](/0016_ML_AutoML_Tools_NNI)
