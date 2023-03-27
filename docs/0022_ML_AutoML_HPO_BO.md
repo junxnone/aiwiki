@@ -2,39 +2,28 @@
 Title | ML AutoML HPO BO
 -- | --
 Created @ | `2021-09-09T02:22:17Z`
-Last Modify @| `2022-12-24T13:19:12Z`
+Updated @| `2023-03-27T14:37:02Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/22)
 
 ---
 # Bayesian Optimization
-## Reference
-- [2011 Algorithms for Hyper-Parameter Optimization](https://papers.nips.cc/paper/2011/file/86e8f7ab32cfd12577bc2619bc635690-Paper.pdf)
-- [Github repo - fmfn/BayesianOptimization](https://github.com/fmfn/BayesianOptimization)
-- [贝叶斯优化(Bayesian Optimization)深入理解](https://developer.aliyun.com/article/661786)
-- [NNI 中的 BOHB Advisor](https://nni.readthedocs.io/zh/latest/Tuner/BohbAdvisor.html)
-- [cse515t - Bayesian Optimization](https://www.cse.wustl.edu/~garnett/cse515t/spring_2015/files/lecture_notes/12.pdf)
-- [拟合目标函数后验分布的调参利器：贝叶斯优化](https://www.jiqizhixin.com/articles/2017-08-18-5)
-- [AutoML HPO 学习笔记（一）- 贝叶斯优化](https://chengfeng96.com/blog/2019/09/08/%E8%B4%9D%E5%8F%B6%E6%96%AF%E4%BC%98%E5%8C%96%E7%AC%94%E8%AE%B0/)
-- [贝叶斯优化/Bayesian Optimization](https://zhuanlan.zhihu.com/p/76269142)
-- [贝叶斯优化(BayesianOptimization)](https://blog.csdn.net/Leon_winter/article/details/86604553)
-- [贝叶斯优化 (Bayesian Optimization)](https://leovan.me/cn/2020/06/bayesian-optimization/)
-- [Auto Machine Learning笔记 - Bayesian Optimization](http://codewithzhangyi.com/2018/07/31/Auto%20Hyperparameter%20Tuning%20-%20Bayesian%20Optimization/)
 
-
-## 基础知识
-- [高斯分布](/Gaussian_distribution)
-- [高斯滤波](/Gaussian_Filter)
-- [高斯过程](/Gaussian_Process)
-- [贝叶斯定理](/贝叶斯定理)
-
-## Brief
 - Bayesian Optimization - 贝叶斯优化
 - 用于非凸函数(不可求导)优化
 - 基于 [Gaussian Processes - 高斯过程]
 - 不适用于高维空间
 - 基于随机性和概率分布
 - [采集函数](/BO_Acquisition_Function)
+
+## 基础知识
+- [高斯分布](/0023_Math_GaussianDistribution)
+- [高斯滤波](/0215_Math_GaussianFilter)
+- [高斯过程](/0216_Math_GaussianProcess)
+- [贝叶斯定理](/0217_Math_BT)
+
+## 原理
+
 
 ![image](https://user-images.githubusercontent.com/2216970/111953074-16f0e600-8b21-11eb-80e5-412e41960269.png) | 
 -- | 
@@ -83,3 +72,16 @@ Name | Description
 -- | --
 高斯过程回归 |
 
+
+## Reference
+- [2011 Algorithms for Hyper-Parameter Optimization](https://papers.nips.cc/paper/2011/file/86e8f7ab32cfd12577bc2619bc635690-Paper.pdf)
+- [Github repo - fmfn/BayesianOptimization](https://github.com/fmfn/BayesianOptimization)
+- [贝叶斯优化(Bayesian Optimization)深入理解](https://developer.aliyun.com/article/661786)
+- [NNI 中的 BOHB Advisor](https://nni.readthedocs.io/zh/latest/Tuner/BohbAdvisor.html)
+- [cse515t - Bayesian Optimization](https://www.cse.wustl.edu/~garnett/cse515t/spring_2015/files/lecture_notes/12.pdf)
+- [拟合目标函数后验分布的调参利器：贝叶斯优化](https://www.jiqizhixin.com/articles/2017-08-18-5)
+- [AutoML HPO 学习笔记（一）- 贝叶斯优化](https://chengfeng96.com/blog/2019/09/08/%E8%B4%9D%E5%8F%B6%E6%96%AF%E4%BC%98%E5%8C%96%E7%AC%94%E8%AE%B0/)
+- [贝叶斯优化/Bayesian Optimization](https://zhuanlan.zhihu.com/p/76269142)
+- [贝叶斯优化(BayesianOptimization)](https://blog.csdn.net/Leon_winter/article/details/86604553)
+- [贝叶斯优化 (Bayesian Optimization)](https://leovan.me/cn/2020/06/bayesian-optimization/)
+- [Auto Machine Learning笔记 - Bayesian Optimization](http://codewithzhangyi.com/2018/07/31/Auto%20Hyperparameter%20Tuning%20-%20Bayesian%20Optimization/)
