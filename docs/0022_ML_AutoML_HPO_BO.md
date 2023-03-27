@@ -2,7 +2,7 @@
 Title | ML AutoML HPO BO
 -- | --
 Created @ | `2021-09-09T02:22:17Z`
-Updated @| `2023-03-27T14:37:02Z`
+Updated @| `2023-03-27T14:37:56Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/22)
 
@@ -68,6 +68,7 @@ ROAR |
 -  根据 `Acquisition Function`(绿色区域) 获取最大值作为下一个采样点
 
 ## PF - Prior Function - 先验函数
+
 Name | Description
 -- | --
 高斯过程回归 |
