@@ -105,6 +105,8 @@
       - [AABB OBB](/0315_3D_Tools_PCL_Bbox)
       - [PPF](/0083_3D_Tools_PCL_PPF)
       - [SAC](/0314_3D_Tools_PCL_SAC)
+      - Surface
+        - [GreedyProjectionTriangulation](/0399_3D_Tools_PCL_Surface_triangulation)
 - ML
   - [传统机器学习](/0367_ML_OML)
     - [Decision Tree 决策树](/0113_ML_OML_DecisionTree)
@@ -405,4 +407,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd>2023.03.28<sub>Junx20</sub></kbd>
+<kbd>2023.03.28<sub>Junx21</sub></kbd>
