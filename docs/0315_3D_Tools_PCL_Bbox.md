@@ -2,15 +2,15 @@
 Title | 3D Tools PCL Bbox
 -- | --
 Created @ | `2022-09-21T05:56:12Z`
-Updated @| `2023-03-30T06:59:10Z`
+Updated @| `2023-03-30T07:00:29Z`
 Labels | `index`
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/315)
 
 ---
 # AABB OBB
 
-- AABB - `Axis-aligned bounding box`
-- OBB - `Oriented bounding box` 
+- AABB - `Axis-aligned bounding box` - Bbox 与坐标轴平行
+- OBB - `Oriented bounding box`  - 不平行于轴相对包含区域较小
 
 
 ## Reference
