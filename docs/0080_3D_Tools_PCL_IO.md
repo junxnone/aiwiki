@@ -2,24 +2,21 @@
 Title | 3D Tools PCL IO
 -- | --
 Created @ | `2021-05-11T02:02:53Z`
-Updated @| `2023-03-30T06:56:12Z`
+Updated @| `2023-03-30T07:16:57Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/80)
 
 ---
 # Read/Write
 
-## Reference
-- [IO Docs](https://pcl.readthedocs.io/projects/tutorials/en/latest/index.html#i-o)
-- [PCD File Format](https://pcl.readthedocs.io/projects/tutorials/en/latest/pcd_file_format.html#pcd-file-format)
-- [PLY - Polygon File Format](http://paulbourke.net/dataformats/ply/)
-
-## Brief
 - PCD (Point Cloud Data) read/write
 - Other formats
 
+## 存储 Format
+
 Name | Description
 -- | --
+PCD | PCL
 PLY | developed at Stanford University by Turk et al
 STL | CAD Software
 OBJ | developed by Wavefront Technologies
@@ -130,3 +127,9 @@ Cloud C:
     -0.734766 0.854581 -0.0361733 0.439387 0.56706 0.905417
     -0.4607 -0.277468 -0.916762 -0.579787 0.898706 -0.504929
 ```
+
+
+## Reference
+- [IO Docs](https://pcl.readthedocs.io/projects/tutorials/en/latest/index.html#i-o)
+- [PCD File Format](https://pcl.readthedocs.io/projects/tutorials/en/latest/pcd_file_format.html#pcd-file-format)
+- [PLY - Polygon File Format](http://paulbourke.net/dataformats/ply/)
