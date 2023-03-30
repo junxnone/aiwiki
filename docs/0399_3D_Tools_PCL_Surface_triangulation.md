@@ -2,7 +2,7 @@
 Title | 3D Tools PCL Surface triangulation
 -- | --
 Created @ | `2023-03-28T13:19:47Z`
-Updated @| `2023-03-28T13:19:47Z`
+Updated @| `2023-03-30T06:51:35Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/399)
 
@@ -14,6 +14,9 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/399)
   - 将三维点通过法线投影到某一平面
   - 对投影得到的点云作平面内的三角化
   - 根据平面内三位点的拓扑连接关系获得一个三角网格曲面模型
+
+## 基于Delaunay法则的空间区域增长算法
+-选取一个初始三角面片，不断的向外扩张最后形成一个完整的三角网格曲面
 
 
 ## Reference
