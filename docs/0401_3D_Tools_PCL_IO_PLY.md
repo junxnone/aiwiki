@@ -2,7 +2,7 @@
 Title | 3D Tools PCL IO PLY
 -- | --
 Created @ | `2023-03-30T07:48:14Z`
-Updated @| `2023-03-30T07:48:14Z`
+Updated @| `2023-03-30T07:49:02Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/401)
 
@@ -60,7 +60,7 @@ end_header
 1 1 1
 -1 1 1
 -1 -1 1
-1 -1 1
+1 -1 1  // 第 24 个 vertex element
 3 0 1 2  // 第一个 face element
 3 0 2 3
 3 4 5 6
@@ -72,7 +72,7 @@ end_header
 3 16 17 18
 3 16 18 19
 3 20 21 22
-3 20 22 23
+3 20 22 23   // 第 12 个 face element
 ```
 
 
