@@ -402,6 +402,7 @@
 - [AI 热点](/0375_Hot)
   - [AIGC - AI Generated Content](/0374_Hot_AIGC)
     - [ChatGPT](/0373_Hot_AIGC_ChatGPT)
+  - [Stable Diffusion](/0402_Hot_StableDiffusion)
 - [KnowledgeGraph](/0329_KnowledgeGraph)
 - [资源参考](/0380_Reference)
 - [paper](/0386_paper)
@@ -409,4 +410,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd>2023.05.16<sub>Junx20</sub></kbd>
+<kbd>2023.05.16<sub>Junx21</sub></kbd>
