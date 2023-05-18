@@ -2,22 +2,20 @@
 Title | 3D Tools PCL Tools
 -- | --
 Created @ | `2021-05-11T03:42:58Z`
-Last Modify @| `2022-12-25T03:53:19Z`
+Updated @| `2023-05-18T15:23:28Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/81)
 
 ---
-## Reference
-- []()
+# PCL Tools
 
-## Brief
 - 可视化工具 pcl_viewer
 - 点云格式转换 ply2pcd/xyz2pcd/...
 - `mesh` 转点云 mesh2pcd/mesh_sampling
 
 
-## UseCase
-### pcl_viewer
+
+## pcl_viewer
 
 
 ```
@@ -35,7 +33,7 @@ pcl_viewer test/car6.pcd
 `j` - 截图
 ```
 
-### mesh 转点云
+## mesh 转点云
 - pcl_mesh2pcd 
 
 ```
@@ -62,4 +60,8 @@ Syntax is: pcl_mesh_sampling input.{ply,obj} output.pcd <options>
                      -write_colors  = flag to write colors to the output pcd
                      -no_vis_result = flag to stop visualizing the generated pcd
 ```
+
+## Reference
+- []()
+
 
