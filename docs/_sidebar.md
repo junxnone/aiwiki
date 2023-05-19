@@ -400,7 +400,7 @@
   - [数据结构](/0364_OpenCV_data)
   - [js](/0339_OpenCV_js)
 - [AI 热点](/0375_Hot)
-  - [AIGC - AI Generated Content](/0374_Hot_AIGC)
+  - [AIGC](/0374_Hot_AIGC)
     - [ChatGPT](/0373_Hot_AIGC_ChatGPT)
   - [Stable Diffusion](/0402_Hot_StableDiffusion)
 - [KnowledgeGraph](/0329_KnowledgeGraph)
@@ -410,4 +410,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd>2023.05.19<sub>Junx22</sub></kbd>
+<kbd>2023.05.20<sub>Junx00</sub></kbd>
