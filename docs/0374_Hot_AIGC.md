@@ -2,7 +2,7 @@
 Title | Hot AIGC
 -- | --
 Created @ | `2023-02-03T07:46:02Z`
-Updated @| `2023-05-19T14:44:02Z`
+Updated @| `2023-05-19T14:54:39Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/374)
 
@@ -38,4 +38,8 @@ graph TD
 - Disco Diffusion
 - MidJourney
 - Stable Diffusion (V1/V2)
+
+
+## Reference
+- [人工智能系列深度报告：AIGC行业综述篇](https://github.com/junxnone/aiwiki/files/11518064/AIGC.pdf)
 
