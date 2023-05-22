@@ -2,7 +2,7 @@
 Title | Hot AIGC
 -- | --
 Created @ | `2023-02-03T07:46:02Z`
-Updated @| `2023-05-22T14:03:19Z`
+Updated @| `2023-05-22T14:03:38Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/374)
 
@@ -43,7 +43,7 @@ graph TD
 ```mermaid
    %%{init: { 'logLevel': 'debug', 'theme': 'base', 'timeline': {'disableMulticolor': true}}}%%
     timeline
-        title History of Social Media Platform
+        title History of AIGC Tools
             OpenAI  :  2021.01 DALL-E & CLIP 
                     : 2022.04 DALL-E 2
             Disco Diffusion : 2021.10 v1 
