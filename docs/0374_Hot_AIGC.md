@@ -2,7 +2,7 @@
 Title | Hot AIGC
 -- | --
 Created @ | `2023-02-03T07:46:02Z`
-Updated @| `2023-05-19T14:54:39Z`
+Updated @| `2023-05-22T13:48:33Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/374)
 
@@ -39,6 +39,19 @@ graph TD
 - MidJourney
 - Stable Diffusion (V1/V2)
 
+
+```mermaid
+   %%{init: { 'logLevel': 'debug', 'theme': 'base', 'timeline': {'disableMulticolor': true}}}%%
+    timeline
+        title History of Social Media Platform
+          2021.01 : DALL-E & CLIP<br>[OpenAI]
+          2021.10 : Disco Diffusion
+          2022.02 : MidJourney v1
+          2022.04 : DALL-E 2
+          2022.07 : MidJourney v3
+          2022.08 : Stable Diffusion
+          2023.03 : MidJourney v5
+```
 
 ## Reference
 - [人工智能系列深度报告：AIGC行业综述篇](https://github.com/junxnone/aiwiki/files/11518064/AIGC.pdf)
