@@ -2,7 +2,7 @@
 Title | Hot AIGC
 -- | --
 Created @ | `2023-02-03T07:46:02Z`
-Updated @| `2023-05-22T14:07:43Z`
+Updated @| `2023-05-22T14:08:51Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/374)
 
@@ -29,7 +29,7 @@ graph TD
 ```
 
 
-![image](https://user-images.githubusercontent.com/2216970/216766798-c51e4de0-7bca-4b07-899d-e824484ca501.png)
+![image](https://github.com/junxnone/aiwiki/assets/2216970/287b4202-710c-461d-9b86-becb473c6e6e)
 
 
 ## 相关工具
