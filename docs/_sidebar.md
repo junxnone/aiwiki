@@ -407,6 +407,8 @@
 - [资源参考](/0380_Reference)
 - [paper](/0386_paper)
   - [CSPNet](/0385_paper_CSPNet)
+- x
+  - [缺陷图片生成](/0403_x_DefectGen)
 - [Wiki History](/hist)
 
 ---
