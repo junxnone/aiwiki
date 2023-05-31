@@ -402,6 +402,7 @@
 - [AI 热点](/0375_Hot)
   - [AIGC](/0374_Hot_AIGC)
     - [ChatGPT](/0373_Hot_AIGC_ChatGPT)
+  - [LaMa - Image Inpainting](/0404_Hot_LaMa)
   - [Stable Diffusion](/0402_Hot_StableDiffusion)
 - [KnowledgeGraph](/0329_KnowledgeGraph)
 - [资源参考](/0380_Reference)
@@ -412,4 +413,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd>2023.05.31<sub>Junx08</sub></kbd>
+<kbd>2023.05.31<sub>Junx10</sub></kbd>
