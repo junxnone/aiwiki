@@ -2,7 +2,7 @@
 Title | paper LoRA
 -- | --
 Created @ | `2023-06-02T07:07:34Z`
-Updated @| `2023-06-02T07:07:34Z`
+Updated @| `2023-06-02T09:02:45Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/406)
 
@@ -16,3 +16,4 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/406)
 
 - paper 2021 [LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/abs/2106.09685)
 - [Code - Microsoft](https://github.com/microsoft/LoRA)
+- [使用 LoRA 进行 Stable Diffusion 的高效参数微调](https://huggingface.co/blog/zh/lora)
