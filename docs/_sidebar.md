@@ -409,9 +409,10 @@
 - [paper](/0386_paper)
   - [CSPNet](/0385_paper_CSPNet)
   - [DreamBooth](/0405_paper_DreamBooth)
+  - [LoRA](/0406_paper_LoRA)
 - x
   - [缺陷图片生成](/0403_x_DefectGen)
 - [Wiki History](/hist)
 
 ---
-<kbd>2023.06.02<sub>Junx14</sub></kbd>
+<kbd>2023.06.02<sub>Junx15</sub></kbd>
