@@ -2,7 +2,7 @@
 Title | Hot AIGC
 -- | --
 Created @ | `2023-02-03T07:46:02Z`
-Updated @| `2023-06-02T00:54:53Z`
+Updated @| `2023-06-02T01:45:21Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/374)
 
@@ -63,3 +63,4 @@ graph TD
 - [CLIP](https://github.com/openai/CLIP)
 - [Stable Diffusion](https://github.com/Stability-AI/stablediffusion)
 - [Midjourney](https://www.midjourney.com/home/)
+- [ChatGPT is not all you need. A State of the Art Review of large Generative AI models](https://arxiv.org/pdf/2301.04655.pdf)
