@@ -408,6 +408,7 @@
 - [资源参考](/0380_Reference)
 - [paper](/0386_paper)
   - [CSPNet](/0385_paper_CSPNet)
+  - [DreamBooth](/0405_paper_DreamBooth)
 - x
   - [缺陷图片生成](/0403_x_DefectGen)
 - [Wiki History](/hist)
