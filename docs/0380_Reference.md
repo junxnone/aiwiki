@@ -2,13 +2,15 @@
 Title | Reference
 -- | --
 Created @ | `2023-02-15T03:28:19Z`
-Updated @| `2023-06-02T01:11:29Z`
+Updated @| `2023-06-02T08:59:58Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/380)
 
 ---
 # 资源参考
 
+## Papers
+- [paperswithcode](https://paperswithcode.com/methods)
 
 ## Books
 
