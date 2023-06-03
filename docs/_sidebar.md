@@ -402,6 +402,7 @@
 - [AI 热点](/0375_Hot)
   - [AIGC](/0374_Hot_AIGC)
     - [ChatGPT](/0373_Hot_AIGC_ChatGPT)
+  - [大模型](/0408_Hot_HugeModel)
   - [LaMa - Image Inpainting](/0404_Hot_LaMa)
   - [Stable Diffusion](/0402_Hot_StableDiffusion)
 - [KnowledgeGraph](/0329_KnowledgeGraph)
