@@ -414,7 +414,8 @@
   - [LoRA](/0406_paper_LoRA)
 - x
   - [缺陷图片生成](/0403_x_DefectGen)
+  - [Cool Demo](/0409_x_Demo)
 - [Wiki History](/hist)
 
 ---
-<kbd>2023.06.04<sub>Junx12</sub></kbd>
+<kbd>2023.06.04<sub>Junx13</sub></kbd>
