@@ -2,7 +2,7 @@
 Title | paper ControlNet
 -- | --
 Created @ | `2023-06-02T07:16:30Z`
-Updated @| `2023-06-05T03:25:43Z`
+Updated @| `2023-06-05T03:29:26Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/407)
 
@@ -22,6 +22,10 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/407)
   - Anime Line Drawing
 
 
+----
+<details>
+<summary>Input Demo</summary>
+
 Input | Demo
 -- | -- 
 Canny Edge | ![image](https://github.com/junxnone/aiwiki/assets/2216970/dcdd5a02-a35c-44b1-b6a2-b2825a9ddc42)
@@ -34,6 +38,9 @@ Semantic Segmentation | ![image](https://github.com/junxnone/aiwiki/assets/22169
 Depth | ![image](https://github.com/junxnone/aiwiki/assets/2216970/553bcdfe-f457-4bfe-a60b-1ec0d02209a5)
 Normal Map | ![image](https://github.com/junxnone/aiwiki/assets/2216970/f5ff8345-c389-4afe-91e6-11d2f16dbcc5)
 Anime Line Drawing | ![image](https://github.com/junxnone/aiwiki/assets/2216970/7409623f-2585-47a8-9829-9081a1de1371)
+
+</details>
+
 
 
 ## Arch
