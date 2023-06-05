@@ -2,7 +2,7 @@
 Title | paper ControlNet
 -- | --
 Created @ | `2023-06-02T07:16:30Z`
-Updated @| `2023-06-05T03:29:26Z`
+Updated @| `2023-06-05T03:31:45Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/407)
 
@@ -10,7 +10,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/407)
 # ControlNet
 
 - Control diffusion models
-- 添加输入控制 `Stable Diffusion`
+- 添加输入到 `Stable Diffusion` 中 控制生成内容
   - Canny Edge
   - M-LSD Lines
   - HED Boundary
