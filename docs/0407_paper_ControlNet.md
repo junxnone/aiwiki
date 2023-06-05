@@ -2,7 +2,7 @@
 Title | paper ControlNet
 -- | --
 Created @ | `2023-06-02T07:16:30Z`
-Updated @| `2023-06-05T03:31:45Z`
+Updated @| `2023-06-05T03:32:25Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/407)
 
@@ -48,5 +48,4 @@ Anime Line Drawing | ![image](https://github.com/junxnone/aiwiki/assets/2216970/
 ![image](https://github.com/junxnone/aiwiki/assets/2216970/9297539c-fd83-4014-ab46-fb77c148bed9)
 
 ## Reference
-- paper 2023 **ControlNet** [Adding Conditional Control to Text-to-Image Diffusion Models](https://arxiv.org/abs/2302.05543)
-- [Code](https://github.com/lllyasviel/ControlNet/tree/main)
+- paper 2023 **ControlNet** [Adding Conditional Control to Text-to-Image Diffusion Models](https://arxiv.org/abs/2302.05543) [[Code](https://github.com/lllyasviel/ControlNet/tree/main)]
