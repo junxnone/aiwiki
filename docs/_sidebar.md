@@ -404,6 +404,7 @@
     - [ChatGPT](/0373_Hot_AIGC_ChatGPT)
   - [大模型](/0408_Hot_HugeModel)
     - [HugeModel LightWeight-FineTuning](/0410_Hot_HugeModel_Tuning)
+      - [Adapter FineTuning](/0412_Hot_HugeModel_Tuning_Adapter)
       - [DreamBooth](/0405_Hot_HugeModel_Tuning_DreamBooth)
       - [LoRA](/0406_Hot_HugeModel_Tuning_LoRA)
       - [Prefix Tuning](/0411_Hot_HugeModel_Tuning_PrefixTuning)
@@ -420,4 +421,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1143370605</sub></kbd>
+<kbd><sub>@1156310605</sub></kbd>
