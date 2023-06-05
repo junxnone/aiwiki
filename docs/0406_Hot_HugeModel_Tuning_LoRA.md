@@ -2,7 +2,7 @@
 Title | Hot HugeModel Tuning LoRA
 -- | --
 Created @ | `2023-06-02T07:07:34Z`
-Updated @| `2023-06-05T13:45:36Z`
+Updated @| `2023-06-05T13:52:51Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/406)
 
@@ -19,6 +19,11 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/406)
 
 
 ![image](https://github.com/junxnone/aiwiki/assets/2216970/5aecb88f-b112-4026-abb0-45cdb1d001a2)
+
+## 模型合并
+- LoRA + BigMdel 
+- $W = W_0 + BA$
+- 微调后由 $h=W_0x$  变为 $h=Wx$
 
 ### 比较
 
