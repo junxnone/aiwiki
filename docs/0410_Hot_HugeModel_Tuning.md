@@ -2,12 +2,12 @@
 Title | Hot HugeModel Tuning
 -- | --
 Created @ | `2023-06-05T03:10:12Z`
-Updated @| `2023-06-05T03:10:12Z`
+Updated @| `2023-06-05T03:36:14Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/410)
 
 ---
-# HugeModel Tuning
+# HugeModel LightWeight-FineTuning 
 
 - Adapter
 - Prompting
