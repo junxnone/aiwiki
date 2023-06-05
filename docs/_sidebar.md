@@ -403,7 +403,10 @@
   - [AIGC](/0374_Hot_AIGC)
     - [ChatGPT](/0373_Hot_AIGC_ChatGPT)
   - [大模型](/0408_Hot_HugeModel)
-    - [HugeModel Tuning](/0410_Hot_HugeModel_Tuning)
+    - [HugeModel LightWeight-FineTuning](/0410_Hot_HugeModel_Tuning)
+      - [DreamBooth](/0405_Hot_HugeModel_Tuning_DreamBooth)
+      - [LoRA](/0406_Hot_HugeModel_Tuning_LoRA)
+      - [Prefix Tuning](/0411_Hot_HugeModel_Tuning_PrefixTuning)
   - [LaMa - Image Inpainting](/0404_Hot_LaMa)
   - [Stable Diffusion](/0402_Hot_StableDiffusion)
 - [KnowledgeGraph](/0329_KnowledgeGraph)
@@ -411,12 +414,10 @@
 - [paper](/0386_paper)
   - [CSPNet](/0385_paper_CSPNet)
   - [ControlNet](/0407_paper_ControlNet)
-  - [DreamBooth](/0405_paper_DreamBooth)
-  - [LoRA](/0406_paper_LoRA)
 - x
   - [缺陷图片生成](/0403_x_DefectGen)
   - [Cool Demo](/0409_x_Demo)
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1110480605</sub></kbd>
+<kbd><sub>@1143370605</sub></kbd>
