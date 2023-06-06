@@ -2,7 +2,7 @@
 Title | Hot HugeModel Tuning DreamBooth
 -- | --
 Created @ | `2023-06-02T06:52:09Z`
-Updated @| `2023-06-05T03:11:09Z`
+Updated @| `2023-06-06T02:12:07Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/405)
 
@@ -10,6 +10,9 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/405)
 # DreamBooth
 
 - Fine Tuning Text-to-Image Diffusion Models
+
+![image](https://github.com/junxnone/aiwiki/assets/2216970/7ba2669b-c52a-4ac7-b1d2-6f6818f32fae)
+
 
 ## Reference
 - [DreamBooth Doc](https://dreambooth.github.io/)
