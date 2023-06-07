@@ -410,6 +410,7 @@
       - [Prefix Tuning](/0411_Hot_HugeModel_Tuning_PrefixTuning)
   - [Imagen](/0413_Hot_Imagen)
   - [LaMa - Image Inpainting](/0404_Hot_LaMa)
+  - [Segment Anything](/0414_Hot_SA)
   - [Stable Diffusion](/0402_Hot_StableDiffusion)
 - [KnowledgeGraph](/0329_KnowledgeGraph)
 - [资源参考](/0380_Reference)
@@ -422,4 +423,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1004230607</sub></kbd>
+<kbd><sub>@1011550607</sub></kbd>
