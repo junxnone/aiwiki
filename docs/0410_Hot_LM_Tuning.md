@@ -2,12 +2,12 @@
 Title | Hot LM Tuning
 -- | --
 Created @ | `2023-06-05T03:10:12Z`
-Updated @| `2023-06-13T15:16:01Z`
+Updated @| `2023-06-13T15:16:51Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/410)
 
 ---
-# HugeModel LightWeight-FineTuning 
+# 大模型微调
 
 - Adapter
 - Prompting
