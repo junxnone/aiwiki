@@ -1,8 +1,8 @@
 ---
-Title | Hot HugeModel Tuning DreamBooth
+Title | Hot LLM Tuning DreamBooth
 -- | --
 Created @ | `2023-06-02T06:52:09Z`
-Updated @| `2023-06-06T03:22:02Z`
+Updated @| `2023-06-13T15:14:29Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/405)
 
