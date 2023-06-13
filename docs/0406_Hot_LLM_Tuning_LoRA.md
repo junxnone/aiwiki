@@ -1,8 +1,8 @@
 ---
-Title | Hot HugeModel Tuning LoRA
+Title | Hot LLM Tuning LoRA
 -- | --
 Created @ | `2023-06-02T07:07:34Z`
-Updated @| `2023-06-05T13:52:51Z`
+Updated @| `2023-06-13T15:14:34Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/406)
 
