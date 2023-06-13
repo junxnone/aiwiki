@@ -1,8 +1,8 @@
 ---
-Title | Hot HugeModel
+Title | Hot LLM
 -- | --
 Created @ | `2023-06-03T16:08:24Z`
-Updated @| `2023-06-05T07:00:50Z`
+Updated @| `2023-06-13T15:14:14Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/408)
 
