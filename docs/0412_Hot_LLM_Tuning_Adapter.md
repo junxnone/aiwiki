@@ -1,8 +1,8 @@
 ---
-Title | Hot HugeModel Tuning Adapter
+Title | Hot LLM Tuning Adapter
 -- | --
 Created @ | `2023-06-05T03:55:55Z`
-Updated @| `2023-06-05T07:09:19Z`
+Updated @| `2023-06-13T15:14:25Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/412)
 
