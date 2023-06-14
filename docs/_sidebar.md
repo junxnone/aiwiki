@@ -402,13 +402,13 @@
 - [AI 热点](/0375_Hot)
   - [AIGC](/0374_Hot_AIGC)
     - [ChatGPT](/0373_Hot_AIGC_ChatGPT)
-  - [大模型](/0408_Hot_HugeModel)
-    - [HugeModel LightWeight-FineTuning](/0410_Hot_HugeModel_Tuning)
-      - [Adapter FineTuning](/0412_Hot_HugeModel_Tuning_Adapter)
-      - [DreamBooth](/0405_Hot_HugeModel_Tuning_DreamBooth)
-      - [LoRA](/0406_Hot_HugeModel_Tuning_LoRA)
-      - [Prefix Tuning](/0411_Hot_HugeModel_Tuning_PrefixTuning)
   - [Imagen](/0413_Hot_Imagen)
+  - [大模型](/0408_Hot_LM)
+    - [大模型微调](/0410_Hot_LM_Tuning)
+      - [Adapter FineTuning](/0412_Hot_LM_Tuning_Adapter)
+      - [DreamBooth](/0405_Hot_LM_Tuning_DreamBooth)
+      - [LoRA](/0406_Hot_LM_Tuning_LoRA)
+      - [Prefix Tuning](/0411_Hot_LM_Tuning_PrefixTuning)
   - [LaMa - Image Inpainting](/0404_Hot_LaMa)
   - [Segment Anything](/0414_Hot_SA)
   - [Stable Diffusion](/0402_Hot_StableDiffusion)
@@ -423,4 +423,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1614190613</sub></kbd>
+<kbd><sub>@1614140614</sub></kbd>
