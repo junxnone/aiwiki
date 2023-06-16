@@ -18,7 +18,7 @@
   - [Stochastic process 随机过程](/0355_Math_SC)
   - [SVD](/0297_Math_SVD)
   - [norm 范数](/0254_Math_norm)
-- Media
+- [Media](/0417_Media)
   - [图像](/0325_Media_Image)
     - [2D 图像](/0035_Media_Image_2DImage)
     - [3D 图像](/0039_Media_Image_3DImage)
@@ -423,4 +423,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0818250616</sub></kbd>
+<kbd><sub>@0819240616</sub></kbd>
