@@ -2,34 +2,17 @@
 Title | ML Metrics
 -- | --
 Created @ | `2021-11-21T06:01:17Z`
-Last Modify @| `2022-12-24T12:32:17Z`
+Updated @| `2023-06-16T06:45:42Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/138)
 
 ---
 # Metrics 评价指标
 
-## Reference
-- [机器学模型评价与优化（学习笔记）](https://blog.csdn.net/xx19901314/article/details/52168260) 
-- [深入理解AUC](https://tracholar.github.io/machine-learning/2018/01/26/auc.html)
-- [精确率、召回率、F1 值、ROC、AUC 各自的优缺点是什么？](https://www.zhihu.com/question/30643044/answer/562062736)
-- [【机器学习笔记】：一文让你彻底理解准确率，精准率，召回率，真正率，假正率，ROC/AUC](https://zhuanlan.zhihu.com/p/46714763)
-- [Tensorflow Models Supported object detection evaluation protocols](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/evaluation_protocols.md)
-- [VOC2010 DEVKIT doc](http://host.robots.ox.ac.uk/pascal/VOC/voc2010/devkit_doc_08-May-2010.pdf)
 
-
-## Brief
 - 每种 Task/Challenger 都会定义各自的 Metrics 用来评估模型的性能
 - 每种 Metrics 想要衡量的东西不同, 通过不同 Metrics 的比较可以评价一个模型不同方面的特性
-- 按 Task 分类
-  - [(Image)Classification Metrics](/Image_Classification_Metrics)
-  - [Image Object Detection Metrics](/Image_Object_Detection_Metrics)
-  - [Image Segmentation Metrics](/Image_Segmentation_Metrics)
-  - [Pairwise Metrics](/Pairwise_Metrics)
-  - Regression Metrics
-  - Multilabel Ranking Metrics
-  - Clustering Metrics 
-  - Biclustering Metrics
+
 
 ## 基本概念
 
@@ -80,3 +63,13 @@ IoU | | √ | √
 - scikit-learn metrics
 - keras metrics
 - torch metrics
+- [All metrics on the Hugging Face Hub](https://huggingface.co/metrics)
+
+## Reference
+- [机器学模型评价与优化（学习笔记）](https://blog.csdn.net/xx19901314/article/details/52168260) 
+- [深入理解AUC](https://tracholar.github.io/machine-learning/2018/01/26/auc.html)
+- [精确率、召回率、F1 值、ROC、AUC 各自的优缺点是什么？](https://www.zhihu.com/question/30643044/answer/562062736)
+- [【机器学习笔记】：一文让你彻底理解准确率，精准率，召回率，真正率，假正率，ROC/AUC](https://zhuanlan.zhihu.com/p/46714763)
+- [Tensorflow Models Supported object detection evaluation protocols](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/evaluation_protocols.md)
+- [VOC2010 DEVKIT doc](http://host.robots.ox.ac.uk/pascal/VOC/voc2010/devkit_doc_08-May-2010.pdf)
+
