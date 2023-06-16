@@ -24,7 +24,12 @@
   <script type="importmap">{ "imports": { "three": "https://unpkg.com/three/build/three.module.js" }}</script>
   <script type="module">
     import { CSS2DRenderer, CSS2DObject } from '//unpkg.com/three/examples/jsm/renderers/CSS2DRenderer.js';
+    import { UnrealBloomPass } from '//unpkg.com/three/examples/jsm/postprocessing/UnrealBloomPass.js';
 
+    const highlightNodes = new Set();
+    const highlightLinks = new Set();
+    let hoverNode = null;
+    
     const Graph = ForceGraph3D({
       extraRenderers: [new CSS2DRenderer()]
     })
@@ -61,7 +66,78 @@
             node, // lookAt ({ x, y, z })
             3000  // ms transition duration
           );
+        })        
+        .linkWidth(link => highlightLinks.has(link) ? 4 : 1)
+        .linkDirectionalParticles(link => highlightLinks.has(link) ? 4 : 0)
+        .linkDirectionalParticleWidth(4)
+        .onNodeHover(node => {
+          // no state change
+          if ((!node && !highlightNodes.size) || (node && hoverNode === node)) return;
+
+          highlightNodes.clear();
+          highlightLinks.clear();
+          if (node) {
+            highlightNodes.add(node);
+            node.neighbors.forEach(neighbor => highlightNodes.add(neighbor));
+            node.links.forEach(link => highlightLinks.add(link));
+          }
+
+          hoverNode = node || null;
+
+          updateHighlight();
         })
-    ;
+        .onLinkHover(link => {
+          highlightNodes.clear();
+          highlightLinks.clear();
+
+          if (link) {
+            highlightLinks.add(link);
+            highlightNodes.add(link.source);
+            highlightNodes.add(link.target);
+          }
+
+          updateHighlight();
+        });
+
+      function updateHighlight() {
+        // trigger update of highlighted objects in scene
+        Graph
+          .nodeColor(Graph.nodeColor())
+          .linkWidth(Graph.linkWidth())
+          .linkDirectionalParticles(Graph.linkDirectionalParticles());
+      }
+
+        
+        setTimeout(() => {
+            const { nodes, links }  = Graph.graphData();
+            const gData = {
+              nodes: [...nodes],
+              links: [...links]
+            };
+            const nodesById = Object.fromEntries(gData.nodes.map(node => [node.id, node]));
+
+            console.log(gData)
+            gData.links.forEach(link => {
+            const a = nodesById[link.source.id];
+            const b = nodesById[link.target.id];
+            !a.neighbors && (a.neighbors = []);
+            !b.neighbors && (b.neighbors = []);
+            a.neighbors.push(b);
+            b.neighbors.push(a);
+      
+            !a.links && (a.links = []);
+            !b.links && (b.links = []);
+            a.links.push(link);
+            b.links.push(link);
+          });
+          Graph.graphData(gData);
+        }, 1000);
+    
+    const bloomPass = new UnrealBloomPass();
+    bloomPass.strength = 3;
+    bloomPass.radius = 1;
+    bloomPass.threshold = 0.1;
+    Graph.postProcessingComposer().addPass(bloomPass);
+    
   </script>
 </body>
