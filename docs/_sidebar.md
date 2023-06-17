@@ -260,8 +260,6 @@
       - [Random Search](/0204_ML_AutoML_HPO_RandomSearch)
       - Tools
         - [SIGOPT](/0015_ML_AutoML_HPO_Tools_SIGOPT)
-          - [Options](/0142_ML_AutoML_HPO_Tools_SIGOPT_Options)
-          - [UseCase](/0141_ML_AutoML_HPO_Tools_SIGOPT_UseCase)
     - [NAS](/0014_ML_AutoML_NAS)
       - [DARTS](/0389_ML_AutoML_NAS_DARTS)
       - [ENAS](/0391_ML_AutoML_NAS_ENAS)
@@ -274,6 +272,9 @@
       - [Search Space](/0392_ML_AutoML_NAS_SearchSpace)
     - Tools
       - [NNI](/0016_ML_AutoML_Tools_NNI)
+      - SIGOPT
+        - [Options](/0142_ML_AutoML_Tools_SIGOPT_Options)
+        - [UseCase](/0141_ML_AutoML_Tools_SIGOPT_UseCase)
   - [Active Learning](/0118_ML_AL)
     - [Query Strategy 查询/抽样 策略](/0276_ML_AL_QS)
       - [Pool-Based Sampling](/0274_ML_AL_QS_PoolBasedSampling)
@@ -420,4 +421,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0048180618</sub></kbd>
+<kbd><sub>@0050300618</sub></kbd>
