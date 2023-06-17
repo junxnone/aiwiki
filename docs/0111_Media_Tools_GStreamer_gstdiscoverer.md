@@ -1,8 +1,8 @@
 ---
-Title | Media Tools GStreamer Tools gstdiscoverer
+Title | Media Tools GStreamer gstdiscoverer
 -- | --
 Created @ | `2021-02-05T03:30:10Z`
-Last Modify @| `2022-12-23T13:18:18Z`
+Updated @| `2023-06-17T15:29:50Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/111)
 
