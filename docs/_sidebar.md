@@ -391,7 +391,7 @@
       - [distanceTransform 处理区域粘连](/0346_OpenCV_IP_misc_distanceTransform)
     - shape
       - [Contours 轮廓](/0343_OpenCV_IP_shape_Contours)
-  - Core
+  - [Core functionality 核心功能函数](/0425_OpenCV_Core)
     - [absdiff 检测物体运动](/0353_OpenCV_Core_absdiff)
   - [Brisk  特征点匹配](/0348_OpenCV_Brisk)
   - [CLAHE](/0341_OpenCV_CLAHE)
@@ -421,4 +421,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@2343100617</sub></kbd>
+<kbd><sub>@0003540618</sub></kbd>
