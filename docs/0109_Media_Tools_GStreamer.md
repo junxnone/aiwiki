@@ -2,20 +2,14 @@
 Title | Media Tools GStreamer
 -- | --
 Created @ | `2018-11-27T15:44:49Z`
-Last Modify @| `2022-12-23T13:14:53Z`
+Updated @| `2023-06-17T15:28:07Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/109)
 
 ---
-## Reference
-- [gstreamer blog](https://blog.csdn.net/knowledgebao/article/category/8053683)
-- [Gstreamer的安装](https://blog.csdn.net/knowledgebao/article/details/83993255)
-- [Docs](https://thiblahute.github.io/GStreamer-doc/index.html?gi-language=c)
-- [wiki - wdv4758h](https://wdv4758h.github.io/notes/multimedia/gstreamer.html#)
 
+# GStreamer 流媒体应用框架
 
-
-## Brief
 - Gstreamer 是一个通用跨平台的流媒体应用框架, 可以处理 Audio/Video/其他数据流
 - [Gstreamer Install](/Gstreamer_Install)
 - [Command Line Tools](#Command-Line-Tools)
@@ -53,6 +47,12 @@ ges-launch-1.0 | 控制 timeline 开始时间/间隔/...
 
 ![image](https://user-images.githubusercontent.com/2216970/138203169-3e1ebef5-fb7f-4c08-a5d8-5a41159f3be9.png)
 
+
+## Reference
+- [gstreamer blog](https://blog.csdn.net/knowledgebao/article/category/8053683)
+- [Gstreamer的安装](https://blog.csdn.net/knowledgebao/article/details/83993255)
+- [Docs](https://thiblahute.github.io/GStreamer-doc/index.html?gi-language=c)
+- [wiki - wdv4758h](https://wdv4758h.github.io/notes/multimedia/gstreamer.html#)
 
 
 
