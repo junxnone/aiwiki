@@ -377,7 +377,7 @@
   - [OpenCV UseCase](/0362_OpenCV_UC)
     - [计算图片 average brightness](/0350_OpenCV_UC_brightness)
   - [Image Processing](/0316_OpenCV_IP)
-    - [Colormaps](/0349_OpenCV_IP_Colormaps)
+    - [ColorMaps](/0349_OpenCV_IP_Colormaps)
     - Feature
       - [Hough  Line/Circle 霍夫线圆](/0340_OpenCV_IP_Feature_Hough)
     - [Image Filtering](/0363_OpenCV_IP_Filter)
@@ -421,4 +421,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0003540618</sub></kbd>
+<kbd><sub>@0020310618</sub></kbd>
