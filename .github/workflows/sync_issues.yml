@@ -24,19 +24,5 @@ jobs:
           actor: ${{ github.actor }}
           nohead: ${{ contains(github.event.issue.labels.*.name, 'nohead') }}
   update_sidebar:
+    uses: ./.github/workflows/update_sidebar.yml
     needs: issue2md
-    if: github.event.action == 'opened'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: print github log
-        run: |
-          git log
-          git pull
-          git log
-      - uses: junxnone/autosidebar@main
-        with:
-          push_branch: "main"
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          actor: ${{ github.actor }}
-          docs_path: "docs"
