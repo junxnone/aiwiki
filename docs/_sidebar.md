@@ -395,7 +395,7 @@
   - [CLAHE](/0341_OpenCV_CLAHE)
   - core
     - arrays
-      - [absdiff](/0353_OpenCV_core_arrays_absdiff)
+      - [absdiff 检测物体运动](/0353_OpenCV_core_arrays_absdiff)
   - [数据结构](/0364_OpenCV_data)
   - [js](/0339_OpenCV_js)
 - [AI 热点](/0375_Hot)
@@ -422,4 +422,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@2338180617</sub></kbd>
+<kbd><sub>@2342220617</sub></kbd>
