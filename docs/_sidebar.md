@@ -44,11 +44,10 @@
     - [GStreamer 流媒体应用框架](/0109_Media_Tools_GStreamer)
       - [Install](/0117_Media_Tools_GStreamer_Install)
       - [Concepts](/0144_Media_Tools_GStreamer_Concepts)
-      - Tools
-        - [gst-launch](/0110_Media_Tools_GStreamer_Tools_gstlaunch)
       - [Plugins](/0143_Media_Tools_GStreamer_Plugins)
       - [gst-discoverer](/0111_Media_Tools_GStreamer_gstdiscoverer)
       - [gst-inspect](/0112_Media_Tools_GStreamer_gstinspect)
+      - [gst-launch](/0110_Media_Tools_GStreamer_gstlaunch)
 - [CV 计算机视觉](/0371_CV)
   - [Thresholding 二值化](/0099_CV_BIN)
     - [scikit-image 二值化](/0331_CV_BIN_ScikitImage)
@@ -423,4 +422,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@2331080617</sub></kbd>
+<kbd><sub>@2331340617</sub></kbd>
