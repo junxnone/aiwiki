@@ -4,6 +4,7 @@ on:
     - cron: '0 8 * * *'
   issues:
     types: [pinned]
+  workflow_call:
 
 jobs:
   run:
