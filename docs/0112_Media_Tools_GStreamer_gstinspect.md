@@ -1,8 +1,8 @@
 ---
-Title | Media Tools GStreamer Tools gstinspect
+Title | Media Tools GStreamer gstinspect
 -- | --
 Created @ | `2021-02-05T03:20:38Z`
-Last Modify @| `2022-12-23T13:16:55Z`
+Updated @| `2023-06-17T15:30:26Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/112)
 
