@@ -5,12 +5,15 @@ on:
   issues:
     types: [pinned]
   workflow_call:
+  workflow_dispatch:
 
 jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.ref }}
       - uses: junxnone/autosidebar@main
         with:
           push_branch: "main"
