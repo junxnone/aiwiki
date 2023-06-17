@@ -391,11 +391,10 @@
       - [distanceTransform 处理区域粘连](/0346_OpenCV_IP_misc_distanceTransform)
     - shape
       - [Contours 轮廓](/0343_OpenCV_IP_shape_Contours)
+  - Core
+    - [absdiff 检测物体运动](/0353_OpenCV_Core_absdiff)
   - [Brisk  特征点匹配](/0348_OpenCV_Brisk)
   - [CLAHE](/0341_OpenCV_CLAHE)
-  - core
-    - arrays
-      - [absdiff 检测物体运动](/0353_OpenCV_core_arrays_absdiff)
   - [数据结构](/0364_OpenCV_data)
   - [js](/0339_OpenCV_js)
 - [AI 热点](/0375_Hot)
@@ -422,4 +421,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@2342220617</sub></kbd>
+<kbd><sub>@2343100617</sub></kbd>
