@@ -24,8 +24,7 @@
     - [3D 图像](/0039_Media_Image_3DImage)
     - [Camera](/0107_Media_Image_Camera)
       - [GenICam](/0106_Media_Image_Camera_GenICam)
-        - Tools
-          - [Aravis](/0108_Media_Image_Camera_GenICam_Tools_Aravis)
+        - [Aravis](/0108_Media_Image_Camera_GenICam_Aravis)
       - [低延迟](/0037_Media_Image_Camera_LowLatency)
       - [像素格式](/0119_Media_Image_Camera_PixelFormat)
       - [定拍 vs 飞拍](/0038_Media_Image_Camera_定拍飞拍)
@@ -421,4 +420,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0020310618</sub></kbd>
+<kbd><sub>@0042180618</sub></kbd>
