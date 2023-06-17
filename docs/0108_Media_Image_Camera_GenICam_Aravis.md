@@ -1,8 +1,8 @@
 ---
-Title | Media Image Camera GenICam Tools Aravis
+Title | Media Image Camera GenICam Aravis
 -- | --
 Created @ | `2021-10-19T16:32:03Z`
-Last Modify @| `2022-12-23T13:32:47Z`
+Updated @| `2023-06-17T16:41:41Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/108)
 
