@@ -1,8 +1,8 @@
 ---
-Title | 3D Tools PCL Surface triangulation
+Title | 3D Algos triangulation
 -- | --
 Created @ | `2023-03-28T13:19:47Z`
-Updated @| `2023-03-30T13:31:17Z`
+Updated @| `2023-06-17T16:53:30Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/399)
 
