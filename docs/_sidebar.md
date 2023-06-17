@@ -258,8 +258,6 @@
         - [TPE](/0221_ML_AutoML_HPO_BO_TPE)
       - [GridSearch](/0205_ML_AutoML_HPO_GridSearch)
       - [Random Search](/0204_ML_AutoML_HPO_RandomSearch)
-      - Tools
-        - [SIGOPT](/0015_ML_AutoML_HPO_Tools_SIGOPT)
     - [NAS](/0014_ML_AutoML_NAS)
       - [DARTS](/0389_ML_AutoML_NAS_DARTS)
       - [ENAS](/0391_ML_AutoML_NAS_ENAS)
@@ -272,7 +270,7 @@
       - [Search Space](/0392_ML_AutoML_NAS_SearchSpace)
     - Tools
       - [NNI](/0016_ML_AutoML_Tools_NNI)
-      - SIGOPT
+      - [SIGOPT](/0015_ML_AutoML_Tools_SIGOPT)
         - [Options](/0142_ML_AutoML_Tools_SIGOPT_Options)
         - [UseCase](/0141_ML_AutoML_Tools_SIGOPT_UseCase)
   - [Active Learning](/0118_ML_AL)
@@ -421,4 +419,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0050300618</sub></kbd>
+<kbd><sub>@0050450618</sub></kbd>
