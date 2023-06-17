@@ -90,6 +90,7 @@
       - [NDT Normal Distributions Transform](/0295_3D_Algos_Registration_NDT)
       - [PPF 粗配准](/0085_3D_Algos_Registration_PPF)
       - [SAC-IA](/0300_3D_Algos_Registration_SACIA)
+    - [GreedyProjectionTriangulation](/0399_3D_Algos_triangulation)
   - [DL](/0233_3D_DL)
   - [3D Tools](/0419_3D_Tools)
     - [Point Cloud Library](/0077_3D_Tools_PCL)
@@ -105,8 +106,6 @@
       - [AABB OBB](/0315_3D_Tools_PCL_Bbox)
       - [PPF](/0083_3D_Tools_PCL_PPF)
       - [SAC](/0314_3D_Tools_PCL_SAC)
-      - Surface
-        - [GreedyProjectionTriangulation](/0399_3D_Tools_PCL_Surface_triangulation)
 - [ML](/0416_ML)
   - [传统机器学习](/0367_ML_OML)
     - [Decision Tree 决策树](/0113_ML_OML_DecisionTree)
@@ -419,4 +418,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0051430618</sub></kbd>
+<kbd><sub>@0054050618</sub></kbd>
