@@ -41,7 +41,7 @@
     - [Resize](/0347_Media_Image_Resize)
   - [Video 视频](/0036_Media_Video)
   - Tools
-    - [GStreamer](/0109_Media_Tools_GStreamer)
+    - [GStreamer 流媒体应用框架](/0109_Media_Tools_GStreamer)
       - [Install](/0117_Media_Tools_GStreamer_Install)
       - [Concepts](/0144_Media_Tools_GStreamer_Concepts)
       - Tools
@@ -423,4 +423,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1942540617</sub></kbd>
+<kbd><sub>@2328400617</sub></kbd>
