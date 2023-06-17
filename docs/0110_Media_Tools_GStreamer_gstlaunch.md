@@ -2,17 +2,13 @@
 Title | Media Tools GStreamer gstlaunch
 -- | --
 Created @ | `2018-11-27T15:45:35Z`
-Updated @| `2023-06-17T15:30:53Z`
+Updated @| `2023-06-17T15:31:55Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/110)
 
 ---
 # gst-launch
 
-## Reference
-- [gstreamer基础教程10-GStreamer tools](https://blog.csdn.net/knowledgebao/article/details/82789613)
-
-## Brief
 - 参数为 **pipeline**, 使用特定字符串描述
 
 
@@ -33,3 +29,8 @@ gst-launch-1.0 videotestsrc pattern=11 ! videoconvert ! autovideosink
 ```
 gst-launch-1.0 videotestsrc ! videoconvert ! tee name=t ! queue ! autovideosink t. ! queue ! autovideosink
 ```
+
+
+## Reference
+- [gstreamer基础教程10-GStreamer tools](https://blog.csdn.net/knowledgebao/article/details/82789613)
+
