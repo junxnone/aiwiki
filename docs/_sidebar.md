@@ -81,7 +81,7 @@
     - [Rotation Matrix 旋转矩阵](/0234_3D_Cloud_RM)
     - [离群点移除](/0287_3D_Cloud_SOR)
     - [降采样](/0285_3D_Cloud_Sampling)
-  - Algos
+  - [3D 算法](/0422_3D_Algos)
     - [Registration 配准](/0235_3D_Algos_Registration)
       - [ICP 精配准](/0086_3D_Algos_Registration_ICP)
         - [GICP](/0296_3D_Algos_Registration_ICP_GICP)
@@ -422,4 +422,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@2332290617</sub></kbd>
+<kbd><sub>@2334190617</sub></kbd>
