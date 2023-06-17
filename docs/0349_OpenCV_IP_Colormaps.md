@@ -2,15 +2,13 @@
 Title | OpenCV IP Colormaps
 -- | --
 Created @ | `2019-08-07T05:19:00Z`
-Updated @| `2023-06-17T16:19:49Z`
+Updated @| `2023-06-17T16:20:00Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/349)
 
 ---
 
-
-
-## ColorMaps
+# ColorMaps
 
 ![image](https://user-images.githubusercontent.com/2216970/62598123-e42db600-b91a-11e9-83cd-c5938446d98b.png)
 
