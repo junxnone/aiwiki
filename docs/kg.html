@@ -40,7 +40,7 @@
       .linkWidth(2)
       .showNavInfo(false)
       .nodeThreeObject(node => {
-          const sprite = new SpriteText(node.id);
+          const sprite = new SpriteText(node.title);
           sprite.material.depthWrite = false; // make sprite background transparent
           sprite.color = node.color;
           sprite.textHeight = 8;
@@ -67,9 +67,9 @@
             3000  // ms transition duration
           );
         })        
-        .linkWidth(link => highlightLinks.has(link) ? 4 : 1)
-        .linkDirectionalParticles(link => highlightLinks.has(link) ? 4 : 0)
-        .linkDirectionalParticleWidth(4)
+        .linkWidth(link => highlightLinks.has(link) ? 2 : 1)
+        .linkDirectionalParticles(link => highlightLinks.has(link) ? 2 : 0)
+        .linkDirectionalParticleWidth(2)
         .onNodeHover(node => {
           // no state change
           if ((!node && !highlightNodes.size) || (node && hoverNode === node)) return;
@@ -136,6 +136,8 @@
           });
           Graph.graphData(gData);
         }, 200);
+    
+
     
     const bloomPass = new UnrealBloomPass();
     bloomPass.strength = 3;
