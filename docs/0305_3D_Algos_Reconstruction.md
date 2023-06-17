@@ -1,8 +1,8 @@
 ---
-Title | 3D Reconstruction
+Title | 3D Algos Reconstruction
 -- | --
 Created @ | `2022-04-01T06:28:06Z`
-Last Modify @| `2022-12-25T03:28:38Z`
+Updated @| `2023-06-17T15:34:12Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/305)
 
