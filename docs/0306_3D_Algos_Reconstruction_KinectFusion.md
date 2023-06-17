@@ -1,8 +1,8 @@
 ---
-Title | 3D Reconstruction KinectFusion
+Title | 3D Algos Reconstruction KinectFusion
 -- | --
 Created @ | `2022-04-05T03:11:35Z`
-Last Modify @| `2022-12-25T03:29:10Z`
+Updated @| `2023-06-17T15:34:19Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/306)
 
