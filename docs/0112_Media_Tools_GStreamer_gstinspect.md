@@ -2,15 +2,14 @@
 Title | Media Tools GStreamer gstinspect
 -- | --
 Created @ | `2021-02-05T03:20:38Z`
-Updated @| `2023-06-17T15:30:26Z`
+Updated @| `2023-06-17T15:31:29Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/112)
 
 ---
 # gst-inspect
 
-## Reference
-- [GStreamer基础教程12 - 常用命令工具](https://www.cnblogs.com/xleng/p/11791944.html)
+
 
 ## UseCase
 
@@ -94,3 +93,6 @@ Plugin Details:
   2 features:
   +-- 2 elements
 ```
+
+## Reference
+- [GStreamer基础教程12 - 常用命令工具](https://www.cnblogs.com/xleng/p/11791944.html)
