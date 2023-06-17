@@ -133,7 +133,7 @@
       - [学习率选择](/0263_ML_Arch_LR_LRFinder)
       - [One Cycle Policy](/0264_ML_Arch_LR_OCP)
   - [ML/DL 常见任务](/0003_ML_Tasks)
-    - Image
+    - [Image 相关 Tasks](/0420_ML_Tasks_Image)
       - [Classification](/0061_ML_Tasks_Image_Classification)
         - [AlexNet](/0027_ML_Tasks_Image_Classification_AlexNet)
         - [History](/0166_ML_Tasks_Image_Classification_History)
@@ -423,4 +423,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1921400617</sub></kbd>
+<kbd><sub>@1932060617</sub></kbd>
