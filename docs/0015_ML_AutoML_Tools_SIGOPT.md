@@ -2,19 +2,16 @@
 Title | ML AutoML Tools SIGOPT
 -- | --
 Created @ | `2021-09-01T09:01:43Z`
-Updated @| `2023-06-17T16:50:13Z`
+Updated @| `2023-06-17T16:51:04Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/15)
 
 ---
-## Reference
-- [SigOpt docs](https://app.sigopt.com/docs)  [[code](https://github.com/sigopt)]
-- 2016 A Stratified Analysis of Bayesian Optimization Methods [[paper](https://arxiv.org/pdf/1603.09441.pdf)]
-- [sigopt_experiment_and_optimization_demo.ipynb](https://colab.research.google.com/github/sigopt/sigopt-examples/blob/master/get-started/sigopt_experiment_and_optimization_demo.ipynb)
-- [Intro to Multicriteria Optimization](https://sigopt.com/blog/intro-to-multicriteria-optimization/)
 
 
-## Brief
+
+# SIGOPT
+
 - Online Tools - 跟踪/分析/微调 `AI Model`
 - [sigopt UseCase](/HPO_SIGOPT_Usecase)
 - [sigopt Options - parameters/metrics](/HPO_SIGOPT_Options)
@@ -50,3 +47,9 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/15)
   - set `parallel_bandwidth`
   - Init workers with `EXPERIMENT_ID`
   - Optimization Loop - `Suggestions/Training/Evaluation/Observations`
+
+## Reference
+- [SigOpt docs](https://app.sigopt.com/docs)  [[code](https://github.com/sigopt)]
+- 2016 A Stratified Analysis of Bayesian Optimization Methods [[paper](https://arxiv.org/pdf/1603.09441.pdf)]
+- [sigopt_experiment_and_optimization_demo.ipynb](https://colab.research.google.com/github/sigopt/sigopt-examples/blob/master/get-started/sigopt_experiment_and_optimization_demo.ipynb)
+- [Intro to Multicriteria Optimization](https://sigopt.com/blog/intro-to-multicriteria-optimization/)
