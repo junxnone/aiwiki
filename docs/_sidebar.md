@@ -268,7 +268,7 @@
       - [PNAS](/0388_ML_AutoML_NAS_PNAS)
       - [ProxylessNAS](/0387_ML_AutoML_NAS_ProxylessNAS)
       - [Search Space](/0392_ML_AutoML_NAS_SearchSpace)
-    - Tools
+    - [AutoML Tools](/0427_ML_AutoML_Tools)
       - [NNI](/0016_ML_AutoML_Tools_NNI)
       - [SIGOPT](/0015_ML_AutoML_Tools_SIGOPT)
         - [Options](/0142_ML_AutoML_Tools_SIGOPT_Options)
@@ -419,4 +419,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0050450618</sub></kbd>
+<kbd><sub>@0051220618</sub></kbd>
