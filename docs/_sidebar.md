@@ -82,6 +82,8 @@
     - [离群点移除](/0287_3D_Cloud_SOR)
     - [降采样](/0285_3D_Cloud_Sampling)
   - [3D 算法](/0422_3D_Algos)
+    - [3D Reconstruction 3D重建](/0305_3D_Algos_Reconstruction)
+      - [KinectFusion](/0306_3D_Algos_Reconstruction_KinectFusion)
     - [Registration 配准](/0235_3D_Algos_Registration)
       - [ICP 精配准](/0086_3D_Algos_Registration_ICP)
         - [GICP](/0296_3D_Algos_Registration_ICP_GICP)
@@ -89,8 +91,6 @@
       - [NDT Normal Distributions Transform](/0295_3D_Algos_Registration_NDT)
       - [PPF 粗配准](/0085_3D_Algos_Registration_PPF)
       - [SAC-IA](/0300_3D_Algos_Registration_SACIA)
-  - [3D Reconstruction 3D重建](/0305_3D_Reconstruction)
-    - [KinectFusion](/0306_3D_Reconstruction_KinectFusion)
   - [DL](/0233_3D_DL)
   - [3D Tools](/0419_3D_Tools)
     - [Point Cloud Library](/0077_3D_Tools_PCL)
@@ -422,4 +422,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@2334190617</sub></kbd>
+<kbd><sub>@2334470617</sub></kbd>
