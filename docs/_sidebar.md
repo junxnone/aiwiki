@@ -82,7 +82,7 @@
     - [离群点移除](/0287_3D_Cloud_SOR)
     - [降采样](/0285_3D_Cloud_Sampling)
   - [3D 算法](/0422_3D_Algos)
-    - [3D Reconstruction 3D重建](/0305_3D_Algos_Reconstruction)
+    - [3D 重建](/0305_3D_Algos_Reconstruction)
       - [KinectFusion](/0306_3D_Algos_Reconstruction_KinectFusion)
     - [Registration 配准](/0235_3D_Algos_Registration)
       - [ICP 精配准](/0086_3D_Algos_Registration_ICP)
@@ -422,4 +422,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@2334470617</sub></kbd>
+<kbd><sub>@2335250617</sub></kbd>
