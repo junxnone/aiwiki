@@ -2,16 +2,14 @@
 Title | OpenCV core arrays absdiff
 -- | --
 Created @ | `2022-07-04T01:28:29Z`
-Last Modify @| `2022-12-27T09:22:06Z`
+Updated @| `2023-06-17T15:41:47Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/353)
 
 ---
-## Reference
-- [API absdiff()](https://docs.opencv.org/4.6.0/d2/de8/group__core__array.html#ga6fef31bc8c4071cbc114a758a2b79c14)
+# absdiff 检测物体运动
 
-## Brief
-- 多用于移动检测
+- 多用于移动检测 
 
 
 输入 | 计算公式
@@ -29,4 +27,9 @@ pre_frame | frame | absdiff
 
 
 ## UseCase
+
+
+## Reference
+- [API absdiff()](https://docs.opencv.org/4.6.0/d2/de8/group__core__array.html#ga6fef31bc8c4071cbc114a758a2b79c14)
+
 
