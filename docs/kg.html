@@ -139,7 +139,7 @@
       })
       .onNodeRightClick(node => {
         // Aim at node from outside it
-        const distance = 100;
+        const distance = 200;
         const distRatio = 1 + distance / Math.hypot(node.x, node.y, node.z);
 
         const newPos = node.x || node.y || node.z
@@ -276,7 +276,7 @@
 
     function focusonnode(node) {
       // Aim at node from outside it
-      const distance = 100;
+      const distance = 200;
       const distRatio = 1 + distance / Math.hypot(node.x, node.y, node.z);
 
       const newPos = node.x || node.y || node.z
