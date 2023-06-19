@@ -1,149 +1,311 @@
 <head>
-  <style> body { margin: 0; } </style>
+  <style>
+    body {
+      margin: 0;
+    }
+  </style>
 
   <script src="//unpkg.com/three"></script>
   <script src="//unpkg.com/three-spritetext"></script>
 
   <script src="//unpkg.com/3d-force-graph"></script>
-<!--  <script src="../../dist/3d-force-graph.js"></script>-->
+  <!--  <script src="../../dist/3d-force-graph.js"></script>-->
 
   <style>
     .node-label {
       font-size: 12px;
       padding: 1px 4px;
       border-radius: 4px;
-      background-color: rgba(0,0,0,0.5);
+      background-color: rgba(0, 0, 0, 0.5);
       user-select: none;
     }
   </style>
+  <style>
+    .search {
+      position: absolute;
+      top: 1px;
+      left: 1px;
+    }
+
+    .search-input-text {
+      border: 0px;
+      float: left;
+      height: 25px;
+      line-height: 25px;
+      outline: none;
+      width: 100px;
+      font-size: 10px;
+      border-radius: 5px;
+    }
+
+    #footer {
+      position: fixed;
+      bottom: 0%;
+      width: 100%;
+      margin-bottom: 5px;
+      text-align: left;
+    }
+  </style>
+
+  <style type="text/css">
+    @font-face {
+      font-family: "CenturyGothicPro";
+      src: url("fonts/CenturyGothic-Bold.woff") format("woff");
+    }
+  </style>
+
 </head>
 
 <body>
+
   <div id="3d-graph"></div>
-
   <script type="importmap">{ "imports": { "three": "https://unpkg.com/three/build/three.module.js" }}</script>
-  <script type="module">
-    import { CSS2DRenderer, CSS2DObject } from '//unpkg.com/three/examples/jsm/renderers/CSS2DRenderer.js';
-    import { UnrealBloomPass } from '//unpkg.com/three/examples/jsm/postprocessing/UnrealBloomPass.js';
 
-    const highlightNodes = new Set();
-    const highlightLinks = new Set();
+  <script>
+    var kgfile = 'kg.json'
+
+
+    async function main() {
+      const url = new URL(document.location);
+      if (url.searchParams.has("json")) {
+        let kgjson = url.searchParams.get("json");
+        console.log("render kg:" + kgjson)
+        kgfile = kgjson;
+      }
+    }
+    main().catch((e) => console.error(e));
+
+    let highlightNodes = new Set();
+    let highlightLinks = new Set();
     let hoverNode = null;
-    
-    const Graph = ForceGraph3D({
-      extraRenderers: [new CSS2DRenderer()]
+    var sData = {};
+
+    var doubleclick = false;
+    var timer;
+    window.addEventListener("dblclick", event => { doubleclick = true; })
+    //setInterval(myTimer, 100);
+    //function myTimer() {doubleclick = false}
+
+    var Graph = ForceGraph3D({
     })
-    (document.getElementById('3d-graph'))
-      .jsonUrl('kg.json')
+      (document.getElementById('3d-graph'))
+      .jsonUrl(kgfile)
       .nodeAutoColorBy('group')
       .linkAutoColorBy('value')
       .linkWidth(2)
       .showNavInfo(false)
       .nodeThreeObject(node => {
-          const sprite = new SpriteText(node.title);
-          sprite.material.depthWrite = false; // make sprite background transparent
-          sprite.color = node.color;
-          sprite.textHeight = 8;
-          return sprite;
+        const sprite = new SpriteText(node.title);
+        sprite.material.depthWrite = false; // make sprite background transparent
+        sprite.color = node.color;
+        sprite.textHeight = 8;
+        return sprite;
       })
-      .onNodeClick(node => window.open(node.url))
+      //.onNodeClick(node => window.open(node.url))
+      .onNodeClick(node => {
+        clearTimeout(timer);
+        timer = setTimeout(function () {
+          //single click
+          window.open(node.url)
+        }, 500)
+        if (doubleclick) {
+          clearTimeout(timer);
+          doubleclick = false;
+          //double click
+          node.expand = !node.expand;
+          update_visible(node);
+          node.visible = true;
+          Graph.nodeVisibility(node => node.visible)
+            .linkVisibility(link => link.source.visible && link.target.visible)
+        }
+      })
+      .onBackgroundClick(node => {
+        clearTimeout(timer);
+        timer = setTimeout(function () {
+          //single click
+        }, 500)
+        if (doubleclick) {
+          clearTimeout(timer);
+          doubleclick = false;
+          //double click
+          let nodenum = Graph.graphData().nodes.length
+          Graph.cameraPosition({ x: 0, y: 0, z: Math.cbrt(nodenum) * 170 }, { x: 0, y: 0, z: 0 }, 2000)
+        }
+      })
       .onNodeDragEnd(node => {
-          node.fx = node.x;
-          node.fy = node.y;
-          node.fz = node.z;
+        node.fx = node.x;
+        node.fy = node.y;
+        node.fz = node.z;
       })
       .onNodeRightClick(node => {
-          // Aim at node from outside it
-          const distance = 100;
-          const distRatio = 1 + distance/Math.hypot(node.x, node.y, node.z);
+        // Aim at node from outside it
+        const distance = 100;
+        const distRatio = 1 + distance / Math.hypot(node.x, node.y, node.z);
 
-          const newPos = node.x || node.y || node.z
-            ? { x: node.x * distRatio, y: node.y * distRatio, z: node.z * distRatio }
-            : { x: 0, y: 0, z: distance }; // special case if node is in (0,0,0)
+        const newPos = node.x || node.y || node.z
+          ? { x: node.x * distRatio, y: node.y * distRatio, z: node.z * distRatio }
+          : { x: 0, y: 0, z: distance }; // special case if node is in (0,0,0)
 
-          Graph.cameraPosition(
-            newPos, // new position
-            node, // lookAt ({ x, y, z })
-            3000  // ms transition duration
-          );
-        })        
-        .linkWidth(link => highlightLinks.has(link) ? 2 : 1)
-        .linkDirectionalParticles(link => highlightLinks.has(link) ? 2 : 0)
-        .linkDirectionalParticleWidth(2)
-        .onNodeHover(node => {
-          // no state change
-          if ((!node && !highlightNodes.size) || (node && hoverNode === node)) return;
+        Graph.cameraPosition(
+          newPos, // new position
+          node, // lookAt ({ x, y, z })
+          3000  // ms transition duration
+        );
+      })
+      .linkWidth(link => highlightLinks.has(link) ? 2 : 1)
+      .linkDirectionalParticles(link => highlightLinks.has(link) ? 4 : 0)
+      .linkDirectionalParticleWidth(3)
+      .linkDirectionalParticleResolution(10)
+      .linkDirectionalParticleSpeed(0.005)
+      .onNodeHover(node => {
+        // no state change
+        if ((!node && !highlightNodes.size) || (node && hoverNode === node)) return;
 
-          highlightNodes.clear();
-          highlightLinks.clear();
-          if (node) {
-            highlightNodes.add(node);
-            if(node.neighbors){
-               node.neighbors.forEach(neighbor => highlightNodes.add(neighbor));
-            }
-            if(node.links){
-              node.links.forEach(link => highlightLinks.add(link));
-            }
+        highlightNodes.clear();
+        highlightLinks.clear();
+        if (node) {
+          highlightNodes.add(node);
+          if (node.neighbors) {
+            node.neighbors.forEach(neighbor => highlightNodes.add(neighbor));
           }
-
-          hoverNode = node || null;
-
-          updateHighlight();
-        })
-        .onLinkHover(link => {
-          highlightNodes.clear();
-          highlightLinks.clear();
-
-          if (link) {
-            highlightLinks.add(link);
-            highlightNodes.add(link.source);
-            highlightNodes.add(link.target);
+          if (node.links) {
+            node.links.forEach(link => highlightLinks.add(link));
           }
+        }
 
-          updateHighlight();
-        });
+        hoverNode = node || null;
+        updateHighlight();
+      })
+      .onLinkHover(link => {
+        highlightNodes.clear();
+        highlightLinks.clear();
 
-      function updateHighlight() {
-        // trigger update of highlighted objects in scene
-        Graph
-          .nodeColor(Graph.nodeColor())
-          .linkWidth(Graph.linkWidth())
-          .linkDirectionalParticles(Graph.linkDirectionalParticles());
+        if (link) {
+          highlightLinks.add(link);
+          highlightNodes.add(link.source);
+          highlightNodes.add(link.target);
+        }
+        updateHighlight();
+      });
+
+    function updateHighlight() {
+      // trigger update of highlighted objects in scene
+      Graph
+        .nodeColor(Graph.nodeColor())
+        .linkWidth(Graph.linkWidth())
+        .linkDirectionalParticles(Graph.linkDirectionalParticles());
+    }
+
+    setTimeout(() => {
+      const { nodes, links } = Graph.graphData();
+      sData = {
+        nodes: [...nodes],
+        links: [...links]
+      };
+      const nodesById = Object.fromEntries(sData.nodes.map(node => [node.id, node]));
+
+      sData.links.forEach(link => {
+        const a = nodesById[link.source.id];
+        const b = nodesById[link.target.id];
+
+        !a.neighbors && (a.neighbors = []);
+        !b.neighbors && (b.neighbors = []);
+        a.neighbors.push(b);
+        b.neighbors.push(a);
+
+        !a.links && (a.links = []);
+        !b.links && (b.links = []);
+        a.links.push(link);
+        b.links.push(link);
+        sData.nodes[link.source.index].childLinks.push(link);
+      });
+      Graph.graphData(sData);
+    }, 500);
+    var searchi = 0
+    var prev_key = ''
+    function searchtnode() {
+      var keyword = document.getElementById("searchBox").value;
+      if (prev_key == keyword) {
+        searchi = searchi + 1;
       }
+      else {
+        searchi = 0;
+      }
+      prev_key = keyword;
+      var matchstr = '/' + keyword + '/';
+      //const node = sData.nodes.find((n) => n.id.search(keyword));
+      const idsnodes = sData.nodes.filter((n) => n.id.match(new RegExp(keyword, 'ig')));
+      const titlesnodes = sData.nodes.filter((n) => n.title.match(new RegExp(keyword, 'ig')));
+      const nodes = titlesnodes.concat(idsnodes);
 
-        
-        setTimeout(() => {
-            const { nodes, links }  = Graph.graphData();
-            const gData = {
-              nodes: [...nodes],
-              links: [...links]
-            };
-            const nodesById = Object.fromEntries(gData.nodes.map(node => [node.id, node]));
+      if (nodes.length > 0) {
+        if (nodes.length > searchi) {
+          focusonnode(nodes[searchi]);
+        } else {
+          searchi = 0;
+          focusonnode(nodes[searchi]);
+        }
+      } else {
+        tempAlert("啥也没找到!", 2000);
 
-            console.log(gData)
-            gData.links.forEach(link => {
-            const a = nodesById[link.source.id];
-            const b = nodesById[link.target.id];
-            !a.neighbors && (a.neighbors = []);
-            !b.neighbors && (b.neighbors = []);
-            a.neighbors.push(b);
-            b.neighbors.push(a);
-      
-            !a.links && (a.links = []);
-            !b.links && (b.links = []);
-            a.links.push(link);
-            b.links.push(link);
-          });
-          Graph.graphData(gData);
-        }, 200);
-    
+      }
+    }
+    function tempAlert(msg, duration) {
+      var el = document.createElement("div");
+      el.setAttribute("style", "position:absolute;top:3px;left:103px;font-size: 16px;color:red;background-color:transparent;");
+      el.innerHTML = msg;
+      setTimeout(function () {
+        el.parentNode.removeChild(el);
+      }, duration);
+      document.body.appendChild(el);
+    }
 
-    
+    function update_visible(snode) {
+      var visible = snode.expand;
+
+      function traverseTree(node, svisible) {
+        node.visible = svisible;//!node.visible;
+        node.childLinks.forEach(link => link.visible = svisible)
+        node.childLinks
+          .map(link => ((typeof link.target) === 'object') ? link.target : nodesById[link.target]) // get child node
+          .forEach(node => traverseTree(node, svisible));
+      }
+      traverseTree(snode, visible);
+
+    }
+
+    function focusonnode(node) {
+      // Aim at node from outside it
+      const distance = 100;
+      const distRatio = 1 + distance / Math.hypot(node.x, node.y, node.z);
+
+      const newPos = node.x || node.y || node.z
+        ? { x: node.x * distRatio, y: node.y * distRatio, z: node.z * distRatio }
+        : { x: 0, y: 0, z: distance }; // special case if node is in (0,0,0)
+
+      Graph.cameraPosition(
+        newPos, // new position
+        node, // lookAt ({ x, y, z })
+        3000  // ms transition duration
+      );
+    }
+  </script>
+  <script type="module">
+    import { UnrealBloomPass } from '//unpkg.com/three/examples/jsm/postprocessing/UnrealBloomPass.js';
     const bloomPass = new UnrealBloomPass();
     bloomPass.strength = 3;
     bloomPass.radius = 1;
     bloomPass.threshold = 0.1;
     Graph.postProcessingComposer().addPass(bloomPass);
-    
+
   </script>
+  <div class="search">
+    <form onsubmit="searchtnode();return false">
+      <input class="search-input-text" id="searchBox" type="text" placeholder="Search..." />
+    </form>
+  </div>
+  <div id="footer">
+    <span style="font-size:0.8vw;color:#ffffff;"> Left-click: Open Node Url<br> Mouse-wheel: Zoom <br> Right-click:
+      Focus on Node <br> Double-click on node: Expand/Collapse Nodes <br> Double-click on background: Reset View </span>
+  </div>
 </body>
