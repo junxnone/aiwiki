@@ -1,7 +1,7 @@
 ---
 Title | README
 -- | --
-Updated @ | `2023-06-24T15:55:08Z`
+Updated @ | `2023-06-24T15:55:26Z`
 Edit @ | [here](https://github.com/junxnone/aiwiki/issues/33)
 
 ---
@@ -17,5 +17,5 @@ This is a AI Wiki.
 
 [Index](_sidebar.md ':include')
 
-[kg](https://junxnone.github.io/aiwiki/kg ':include :type=iframe width=100% height=1000px')
+[kg](https://junxnone.github.io/kg?json=aiwiki/kg.json ':include :type=iframe width=100% height=1000px')
 
