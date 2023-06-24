@@ -1,7 +1,7 @@
 ---
 Title | README
 -- | --
-Updated @ | `2023-06-17T12:03:28Z`
+Updated @ | `2023-06-24T15:55:08Z`
 Edit @ | [here](https://github.com/junxnone/aiwiki/issues/33)
 
 ---
@@ -11,7 +11,7 @@ Edit @ | [here](https://github.com/junxnone/aiwiki/issues/33)
 This is a AI Wiki. 
 
 - [Mindmap - Markmap](https://junxnone.github.io/aiwiki/markmap.html?md=https://junxnone.github.io/aiwiki/_sidebar.md)
-- [3D Knowledge Graph](https://junxnone.github.io/aiwiki/kg)
+- [3D Knowledge Graph](https://junxnone.github.io/kg?json=aiwiki/kg.json)
 
 ---
 
