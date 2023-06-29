@@ -397,6 +397,7 @@
 - [AI 热点](/0375_Hot)
   - [AIGC](/0374_Hot_AIGC)
     - [ChatGPT](/0373_Hot_AIGC_ChatGPT)
+  - [DragGAN](/0429_Hot_DragGAN)
   - [Imagen](/0413_Hot_Imagen)
   - [大模型](/0408_Hot_LM)
     - [大模型微调](/0410_Hot_LM_Tuning)
@@ -419,4 +420,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1616140629</sub></kbd>
+<kbd><sub>@1832350629</sub></kbd>
