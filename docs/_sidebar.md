@@ -415,7 +415,8 @@
 - [x](/0418_x)
   - [缺陷图片生成](/0403_x_DefectGen)
   - [Cool Demo](/0409_x_Demo)
+- [应用](/0428_应用)
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1616110628</sub></kbd>
+<kbd><sub>@0947000629</sub></kbd>
