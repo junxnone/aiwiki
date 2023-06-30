@@ -2,7 +2,7 @@
 Title | Hot DragGAN
 -- | --
 Created @ | `2023-06-29T10:31:41Z`
-Updated @| `2023-06-29T10:31:41Z`
+Updated @| `2023-06-30T13:49:17Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/429)
 
@@ -15,3 +15,4 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/429)
 
 ## Reference
 - 2023.5 [Drag Your GAN: Interactive Point-based Manipulation on the Generative Image Manifold](https://arxiv.org/abs/2305.10973)  [[code](https://github.com/XingangPan/DragGAN)]
+- [How DragGAN Works: A Technical Deep Dive](https://chenliu-1996.github.io/blogs/ExplainDragGAN/main.pdf)
