@@ -115,7 +115,7 @@
         hook.beforeEach(
           function (mdstr) {
             const prefix = document.location.pathname.endsWith('/') ? '' : '..';
-            const markmapUrl = new URL(prefix + 'markmap.html', document.location);
+            const markmapUrl = new URL("https://junxnone.github.io/jstools/mdmarkmap");
             const markdownUrl = new URL(prefix + vm.route.file, document.location);
             const createIssueUrl="https://github.com/" + window.$docsify.repo + "/issues/new/choose";
             
