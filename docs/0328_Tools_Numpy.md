@@ -2,11 +2,20 @@
 Title | Tools Numpy
 -- | --
 Created @ | `2022-12-13T09:04:40Z`
-Last Modify @| `2022-12-25T04:02:02Z`
+Updated @| `2023-07-06T09:28:20Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/328)
 
 ---
+# Numpy
+- NumPy - 来源于两个单词 `Numerical` 和 `Python`
+- 提供了大量的进行数值计算的库函数和操作
+- 用途:
+  - 数学计算
+  - 图像处理
+  - 机器学习
+
+
 ## Visualization Tools
 
 - [array-visualizer](https://github.com/biraj21/array-visualizer) [[app](https://arrayvis.netlify.app/)]
