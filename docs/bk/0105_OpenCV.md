@@ -3,26 +3,13 @@
 | Title     | OpenCV                                                |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2021-10-16T04:31:07Z`                                |
-| Updated @ | `2022-12-28T06:16:31Z`                                |
+| Updated @ | `2023-08-02T13:21:02Z`                                |
 | Labels    | `index`                                               |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/105) |
 
 -----
 
-## Reference
-
-  - \[[repo](https://github.com/opencv)\]
-    \[[Docs](https://docs.opencv.org/4.x/)\]
-  - [中文文档 - apachecn](https://opencv.apachecn.org/#/)
-  - [ComputerVision - opencv](http://zhaoxuhui.top/tags/#ComputerVision)
-  - [OpenCV with Python By
-    Example](https://www.jianshu.com/c/ff20dc22c1bb)
-  - [OpenCV技术文章汇总](https://mp.weixin.qq.com/s?__biz=MzA4MDExMDEyMw==&mid=2247485470&idx=1&sn=5c7781a089f1bbdc36d85fe38256c69f&chksm=9fa87f5aa8dff64c5260e3577b3abd60b368768f991aaa024e3a20f8780e5db4228e93ad662f&mpshare=1&scene=1&srcid=#rd)
-  - [教程](http://codec.wang/docs/opencv/)
-  - [OpenCV-Python](https://www.cnblogs.com/Undo-self-blog/category/1160700.html)
-  - [OpenCV-Python](https://www.cnblogs.com/FHC1994/category/1210553.html)
-
-## Brief
+# OpenCV
 
   - **OpenCV** - `Open Source Computer Vision Library`
   - **支持语言** - `python/C/C++/js`
@@ -185,3 +172,17 @@
 ### OpenCV-Python
 
 ### OpenCV.js
+
+## Reference
+
+  - \[[repo](https://github.com/opencv)\]
+    \[[Docs](https://docs.opencv.org/4.x/)\]
+  - [OpenCV Wiki](https://github.com/opencv/opencv/wiki) `包含了许多开发调试信息`
+  - [中文文档 - apachecn](https://opencv.apachecn.org/#/)
+  - [ComputerVision - opencv](http://zhaoxuhui.top/tags/#ComputerVision)
+  - [OpenCV with Python By
+    Example](https://www.jianshu.com/c/ff20dc22c1bb)
+  - [OpenCV技术文章汇总](https://mp.weixin.qq.com/s?__biz=MzA4MDExMDEyMw==&mid=2247485470&idx=1&sn=5c7781a089f1bbdc36d85fe38256c69f&chksm=9fa87f5aa8dff64c5260e3577b3abd60b368768f991aaa024e3a20f8780e5db4228e93ad662f&mpshare=1&scene=1&srcid=#rd)
+  - [教程](http://codec.wang/docs/opencv/)
+  - [OpenCV-Python](https://www.cnblogs.com/Undo-self-blog/category/1160700.html)
+  - [OpenCV-Python](https://www.cnblogs.com/FHC1994/category/1210553.html)
