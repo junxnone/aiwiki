@@ -3,7 +3,7 @@
 | Title     | OpenCV PerfTest                                       |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-08-02T13:47:29Z`                                |
-| Updated @ | `2023-08-02T13:47:29Z`                                |
+| Updated @ | `2023-08-02T14:32:55Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/431) |
 
@@ -36,6 +36,7 @@ make
 ## Run Test
 
     ./opencv_perf_core --gtest_output=xml
+    ./opencv_perf_imgproc --gtest_output=xml:result.xml
 
 ### Analyzing Result
 
