@@ -393,6 +393,7 @@
   - [Brisk  特征点匹配](/0348_OpenCV_Brisk)
   - [CLAHE](/0341_OpenCV_CLAHE)
   - [OpenCV With IPP](/0430_OpenCV_IPP)
+  - [OpenCV with OpenCL](/0432_OpenCV_OpenCL)
   - [OpenCV Performance Test](/0431_OpenCV_PerfTest)
   - [数据结构](/0364_OpenCV_data)
   - [js](/0339_OpenCV_js)
@@ -422,4 +423,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@2148510802</sub></kbd>
+<kbd><sub>@2233340802</sub></kbd>
