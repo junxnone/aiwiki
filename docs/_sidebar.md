@@ -383,6 +383,7 @@
         - [Bilateral Filtering for Gray and Color Images](/0318_OpenCV_IP_Filter_bilateralFilter_BF)
       - [boxFilter](/0319_OpenCV_IP_Filter_boxFilter)
       - [膨胀腐蚀](/0344_OpenCV_IP_Filter_morphology)
+    - [OpenCV MatchTemplate 模板匹配](/0433_OpenCV_IP_MatchTemplate)
     - misc
       - [OpenCV 二值化](/0330_OpenCV_IP_misc_BIN)
       - [distanceTransform 处理区域粘连](/0346_OpenCV_IP_misc_distanceTransform)
@@ -423,4 +424,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1613460803</sub></kbd>
+<kbd><sub>@2148540803</sub></kbd>
