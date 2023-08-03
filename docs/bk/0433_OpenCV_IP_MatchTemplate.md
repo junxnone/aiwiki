@@ -3,7 +3,7 @@
 | Title     | OpenCV IP MatchTemplate                               |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2019-03-16T10:24:15Z`                                |
-| Updated @ | `2023-08-03T14:19:26Z`                                |
+| Updated @ | `2023-08-03T14:30:28Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/433) |
 
@@ -36,7 +36,12 @@
 
 ### 公式
 
-![image](media/8b74402a166bf85a358dbbd7f70782ec2983c3da.png)
+  - $I$ - Image
+  - $T$ - Template Image
+  - $R$ - Result
+  - $M$ - Mask
+
+![image](media/c1a49e0b58ecce18c3cfe712ffae8d31583134ff.png)
 
 ## Reference
 

@@ -2,7 +2,7 @@
 Title | OpenCV IP MatchTemplate
 -- | --
 Created @ | `2019-03-16T10:24:15Z`
-Updated @| `2023-08-03T14:19:26Z`
+Updated @| `2023-08-03T14:30:28Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/433)
 
@@ -33,8 +33,14 @@ CCOEFF| Correlation Coefficient | 去均值相关 | 相关系数匹配 [-1, 1] ,
 CCOEFF_NORMED |   | | 归一化
 
 ### 公式
+- $I$ - Image
+- $T$ - Template Image
+- $R$ - Result
+- $M$ - Mask
 
-![image](https://user-images.githubusercontent.com/2216970/98330069-9aa7ab80-2034-11eb-9fce-bcd0d81932fc.png)
+![image](https://github.com/junxnone/aiwiki/assets/2216970/5b22d6d7-ffbd-43e8-ac6c-44374a59ffc0)
+
+
 
 
 ## Reference
