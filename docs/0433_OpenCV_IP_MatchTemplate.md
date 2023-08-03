@@ -2,7 +2,7 @@
 Title | OpenCV IP MatchTemplate
 -- | --
 Created @ | `2019-03-16T10:24:15Z`
-Updated @| `2023-08-03T13:47:47Z`
+Updated @| `2023-08-03T14:19:26Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/433)
 
@@ -23,16 +23,17 @@ UseCase | Pipeline
 
 ## TemplateMatchModes
 
-Name | Full Name | Description
--- | -- | --
-SQDIFF | Sum of SquaredDifference | 平方差匹配，值越小越接近
-SQDIFF_NORMED | | 归一化平方差匹配
-CCORR | Cross Correlation | 相关匹配，值越大越接近
-CCORR_NORMED |  | 归一化相关匹配
-CCOEFF| | 相关系数匹配 [-1, 1] , 值越大越接近
-CCOEFF_NORMED | | 
+Name | Full Name | Loss Function | Description
+-- | -- | -- | --
+SQDIFF | Sum of **Sq**uared **Diff**erence | 差值平方和 | 值越小越接近
+SQDIFF_NORMED | | | 归一化
+CCORR | Cross Correlation | 相关度 | 相关匹配，值越大越接近
+CCORR_NORMED |  | | 归一化
+CCOEFF| Correlation Coefficient | 去均值相关 | 相关系数匹配 [-1, 1] , 值越大越接近
+CCOEFF_NORMED |   | | 归一化
 
-**公式**
+### 公式
+
 ![image](https://user-images.githubusercontent.com/2216970/98330069-9aa7ab80-2034-11eb-9fce-bcd0d81932fc.png)
 
 
@@ -41,3 +42,7 @@ CCOEFF_NORMED | |
 - [多目标模板匹配](https://blog.csdn.net/x454045816/article/details/52638528)
 - [SIFT,SURF,ORB,FAST 特征提取算法比较](https://blog.csdn.net/vonzhoufz/article/details/46594369)
 - [OpenCV 模板匹配 matchTemplate 源码解析](https://www.zywvvd.com/notes/study/image-processing/opencv/opencv-matchTemplate/opencv-matchtemplate-src/opencv-matchtemplate-src/)
+- [MatchTemplate API](https://docs.opencv.org/4.8.0/df/dfb/group__imgproc__object.html#ga586ebfb0a7fb604b35a23d85391329be)
+- [TemplateMatchModes](https://docs.opencv.org/4.8.0/df/dfb/group__imgproc__object.html#ga3a7850640f1fe1f58fe91a2d7583695d)
+- [paper 1995 Fast Normalized Cross-Correlation](https://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.21.6062)
+- [pape 2007 Early Termination Algorithms for Correlation Coefficient Based Block Matching](https://www.researchgate.net/publication/221123808_Early_Termination_Algorithms_for_Correlation_Coefficient_Based_Block_Matching)
