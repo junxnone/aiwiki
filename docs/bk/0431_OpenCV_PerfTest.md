@@ -3,7 +3,7 @@
 | Title     | OpenCV PerfTest                                       |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-08-02T13:47:29Z`                                |
-| Updated @ | `2023-08-02T14:32:55Z`                                |
+| Updated @ | `2023-08-04T07:46:25Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/431) |
 
@@ -66,3 +66,5 @@ make
 
   - [Running performance tests and analyzing the
     results](https://github.com/opencv/opencv/wiki/HowToUsePerfTests)
+  - [How to Write Perf
+    Tests](https://github.com/opencv/opencv/wiki/HowToWritePerfTests)
