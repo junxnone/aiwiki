@@ -2,7 +2,7 @@
 Title | OpenCV IPP
 -- | --
 Created @ | `2023-08-01T14:08:47Z`
-Updated @| `2023-08-04T10:15:16Z`
+Updated @| `2023-08-07T14:31:40Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/430)
 
@@ -13,6 +13,8 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/430)
 - 官方 Release 版本包含 IPP, 直接编译到了 `opencv library` 中
 - 手动编译时可以通过 `WITH_IPP` 指定是否编译 `IPP`
 - Ubuntu Package `libopencv-dev` 默认是 [DWITH_IPP=OFF](https://salsa.debian.org/science-team/opencv/-/blob/debian/experimental/debian/rules#L105)
+- `opencv-python` package 和 Windows exe Package 是 编译了 IPP
+
 
 ---
 <script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fopencv%2Fopencv%2Fblob%2F0052d46b8e33c7bfe0e1450e4bff28b88f455570%2FCMakeLists.txt%23L290-L292&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
