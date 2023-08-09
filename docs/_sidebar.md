@@ -393,6 +393,7 @@
     - [absdiff 检测物体运动](/0353_OpenCV_Core_absdiff)
   - [Brisk  特征点匹配](/0348_OpenCV_Brisk)
   - [CLAHE](/0341_OpenCV_CLAHE)
+  - [Debug OpenCV](/0434_OpenCV_Debug)
   - [OpenCV With IPP](/0430_OpenCV_IPP)
   - [OpenCV with OpenCL](/0432_OpenCV_OpenCL)
   - [OpenCV Performance Test](/0431_OpenCV_PerfTest)
@@ -424,4 +425,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1615250809</sub></kbd>
+<kbd><sub>@0026130810</sub></kbd>
