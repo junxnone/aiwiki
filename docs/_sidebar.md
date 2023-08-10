@@ -397,6 +397,7 @@
   - [HAL - Universal Intrinsics](/0435_OpenCV_HAL)
   - [OpenCV With IPP](/0430_OpenCV_IPP)
   - [OpenCV with OpenCL](/0432_OpenCV_OpenCL)
+  - [OpenCV parallel_for_](/0437_OpenCV_ParallelFor)
   - [OpenCV Performance Test](/0431_OpenCV_PerfTest)
   - [TAPI - Transparent API](/0436_OpenCV_TAPI)
   - [数据结构](/0364_OpenCV_data)
@@ -427,4 +428,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@2259270810</sub></kbd>
+<kbd><sub>@2323130810</sub></kbd>
