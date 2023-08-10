@@ -398,6 +398,7 @@
   - [OpenCV With IPP](/0430_OpenCV_IPP)
   - [OpenCV with OpenCL](/0432_OpenCV_OpenCL)
   - [OpenCV Performance Test](/0431_OpenCV_PerfTest)
+  - [TAPI - Transparent API](/0436_OpenCV_TAPI)
   - [数据结构](/0364_OpenCV_data)
   - [js](/0339_OpenCV_js)
 - [AI 热点](/0375_Hot)
@@ -426,4 +427,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@2241450810</sub></kbd>
+<kbd><sub>@2259270810</sub></kbd>
