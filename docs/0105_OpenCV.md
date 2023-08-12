@@ -2,12 +2,11 @@
 Title | OpenCV
 -- | --
 Created @ | `2021-10-16T04:31:07Z`
-Updated @| `2023-08-02T13:21:02Z`
+Updated @| `2023-08-12T07:15:31Z`
 Labels | `index`
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/105)
 
 ---
-
 # OpenCV
 - **OpenCV**  - `Open Source Computer Vision Library`
 - **支持语言** - `python/C/C++/js`
@@ -15,6 +14,12 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/105)
 
 
 ## OpenCV 架构
+
+### repos
+- `opencv`: 主仓库，包含 主要的函数，稳定的算法，构建脚本和工具
+- `opencv_contrib`:  包含实验性质的和不稳定的算法，需要和主仓库一起构建
+- `opencv_extra`: 包含测试数据和其他文件
+
 
 ### Main Modules
 
