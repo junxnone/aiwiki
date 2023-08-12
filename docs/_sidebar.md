@@ -395,6 +395,7 @@
   - [CLAHE](/0341_OpenCV_CLAHE)
   - [OpenCV CPU Optimizations](/0438_OpenCV_CPUOpt)
   - [Debug OpenCV](/0434_OpenCV_Debug)
+  - [G-API - Graph API](/0439_OpenCV_GAPI)
   - [HAL - Universal Intrinsics](/0435_OpenCV_HAL)
   - [OpenCV With IPP](/0430_OpenCV_IPP)
   - [OpenCV with OpenCL](/0432_OpenCV_OpenCL)
@@ -429,4 +430,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1523480812</sub></kbd>
+<kbd><sub>@1547260812</sub></kbd>
