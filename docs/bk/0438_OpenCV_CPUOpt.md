@@ -3,7 +3,7 @@
 | Title     | OpenCV CPUOpt                                         |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-08-10T15:43:52Z`                                |
-| Updated @ | `2023-08-13T14:56:50Z`                                |
+| Updated @ | `2023-08-13T16:01:39Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/438) |
 
@@ -30,7 +30,7 @@
 
     arithm.cpp //dispatcher and general Implementation
     arithm.dispatch.cpp //
-    arithm.simd.hpp  // simd 实现
+    arithm.simd.hpp  // simd 实现, 会被处理多次生成不同的实现 SSE/AVX/AVX2/...
     arithm_ipp.hpp // ipp 实现
 
 ### 查看 安装的 opencv lib 编译选项
