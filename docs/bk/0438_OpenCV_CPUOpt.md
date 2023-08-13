@@ -3,7 +3,7 @@
 | Title     | OpenCV CPUOpt                                         |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-08-10T15:43:52Z`                                |
-| Updated @ | `2023-08-13T14:37:49Z`                                |
+| Updated @ | `2023-08-13T14:56:50Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/438) |
 
@@ -13,7 +13,6 @@
 
   - OpenCV 在 `X86_64` 平台上使用 `SSE3` 作为基本指令集，`SSE4.2/AVX/AVX2` 作为自适应调度优化
   - Runtime 中自动根据 `CPU Features` 调用
-  - 并不是所有的 SIMD 指令集都实现了，只实现了部分最优化的
 
 > Enabled runtime dispatched optimizations for larger set of functions
 > in core and imgproc modules. `@OpenCV 4.1`
@@ -23,8 +22,18 @@
   - CMake 中的编译变量
       - `CPU_BASELINE`: 指定编译的 Baseline 实现(x86\_64 中为 SSE3)
       - `CPU_DISPATCH`: 指定哪些其他实现会被编译(x\_86\_64 中为 SSE4.2/AVX/AVX2)
+  - 并不是所有的 SIMD 指令集都实现了，只实现了部分最优化的
+      - 例如 `arithm.simd.hpp` / `arithm_ipp.hpp`
+  - C++ 编译器不支持单个文件使用多个 SIMD 优化？？
 
 <!-- end list -->
+
+    arithm.cpp //dispatcher and general Implementation
+    arithm.dispatch.cpp //
+    arithm.simd.hpp  // simd 实现
+    arithm_ipp.hpp // ipp 实现
+
+### 查看 安装的 opencv lib 编译选项
 
     $ opencv_version -v
     
