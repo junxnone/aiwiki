@@ -2,7 +2,7 @@
 Title | OpenCV Debug
 -- | --
 Created @ | `2023-08-09T16:25:06Z`
-Updated @| `2023-08-13T16:16:04Z`
+Updated @| `2023-08-13T16:20:44Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/434)
 
@@ -19,6 +19,18 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/434)
   - `set OPENCV_TRACE=1` for Windows
 - Run your App to generate the `OpenCVTrace.txt`
 - Run `trace_profiler.py` to generate the summary
+
+
+name | type | default | description
+-- | -- | -- | --
+⭐ OPENCV_TRACE | bool | false | enable trace
+OPENCV_TRACE_LOCATION | string | OpenCVTrace | trace file name ("${name}-$03d.txt")
+OPENCV_TRACE_DEPTH_OPENCV | num | 1 |  0 不限制跟踪深度，1不跟踪细节，只有 API
+OPENCV_TRACE_MAX_CHILDREN_OPENCV | num | 1000 |  限制 OpenCV API 调用的跟踪
+OPENCV_TRACE_MAX_CHILDREN | num | 1000 |  跟踪子节点，避免大循环
+OPENCV_TRACE_SYNC_OPENCL | bool | false | wait for OpenCL kernels to finish
+
+
 
 ```
  ID name                                                                      count thr          min          max       median          avg       *self*          IPP   %       OpenCL   %
@@ -46,6 +58,15 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/434)
 
 
 ```
+
+## ITT
+
+
+name | type | default | description
+-- | -- | -- | --
+OPENCV_TRACE_ITT_ENABLE | bool | true |  
+OPENCV_TRACE_ITT_PARENT | bool | false | set parentID for ITT task
+OPENCV_TRACE_ITT_SET_THREAD_NAME | bool | false | set name for OpenCV's threads "OpenCVThread-%03d"
 
 ## Reference
 - [OpenCV environment variables reference](https://docs.opencv.org/4.x/d6/dea/tutorial_env_reference.html)

@@ -3,7 +3,7 @@
 | Title     | OpenCV Debug                                          |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-08-09T16:25:06Z`                                |
-| Updated @ | `2023-08-13T16:16:04Z`                                |
+| Updated @ | `2023-08-13T16:20:44Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/434) |
 
@@ -25,7 +25,14 @@
   - Run your App to generate the `OpenCVTrace.txt`
   - Run `trace_profiler.py` to generate the summary
 
-<!-- end list -->
+| name                                 | type   | default     | description                          |
+| ------------------------------------ | ------ | ----------- | ------------------------------------ |
+| ⭐ OPENCV\_TRACE                      | bool   | false       | enable trace                         |
+| OPENCV\_TRACE\_LOCATION              | string | OpenCVTrace | trace file name ("${name}-$03d.txt") |
+| OPENCV\_TRACE\_DEPTH\_OPENCV         | num    | 1           | 0 不限制跟踪深度，1不跟踪细节，只有 API              |
+| OPENCV\_TRACE\_MAX\_CHILDREN\_OPENCV | num    | 1000        | 限制 OpenCV API 调用的跟踪                  |
+| OPENCV\_TRACE\_MAX\_CHILDREN         | num    | 1000        | 跟踪子节点，避免大循环                          |
+| OPENCV\_TRACE\_SYNC\_OPENCL          | bool   | false       | wait for OpenCL kernels to finish    |
 
 ``` 
  ID name                                                                      count thr          min          max       median          avg       *self*          IPP   %       OpenCL   %
@@ -53,6 +60,14 @@
 
 
 ```
+
+## ITT
+
+| name                                  | type | default | description                                       |
+| ------------------------------------- | ---- | ------- | ------------------------------------------------- |
+| OPENCV\_TRACE\_ITT\_ENABLE            | bool | true    |                                                   |
+| OPENCV\_TRACE\_ITT\_PARENT            | bool | false   | set parentID for ITT task                         |
+| OPENCV\_TRACE\_ITT\_SET\_THREAD\_NAME | bool | false   | set name for OpenCV's threads "OpenCVThread-%03d" |
 
 ## Reference
 
