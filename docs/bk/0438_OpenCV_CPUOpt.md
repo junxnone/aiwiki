@@ -3,7 +3,7 @@
 | Title     | OpenCV CPUOpt                                         |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-08-10T15:43:52Z`                                |
-| Updated @ | `2023-08-13T16:01:39Z`                                |
+| Updated @ | `2023-08-14T08:31:40Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/438) |
 
@@ -63,7 +63,13 @@
     .......
     ....
 
-## 环境变量 OPENCV\_CPU\_DISABLE
+## Runtime 环境变量
+
+  - 运行时环境变量可以设置运行时调用的实现
+      - OPENCV\_CPU\_DISABLE
+      - OPENCV\_IPP
+
+-----
 
   - Linux
 
