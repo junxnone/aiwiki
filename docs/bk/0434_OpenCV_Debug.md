@@ -3,7 +3,7 @@
 | Title     | OpenCV Debug                                          |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-08-09T16:25:06Z`                                |
-| Updated @ | `2023-08-13T16:25:03Z`                                |
+| Updated @ | `2023-08-15T07:37:35Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/434) |
 
@@ -66,7 +66,7 @@
 ```
 
     export OPENCV_TRACE=1
-    export OPENCV_TRACE_LOCATION=0
+    export OPENCV_TRACE_DEPTH_OPENCV=0
 
 ``` 
  ID name                                                                      count thr          min          max       median          avg       *self*          IPP   %       OpenCL   %
