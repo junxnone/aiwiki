@@ -3,7 +3,7 @@
 | Title     | OpenCV Debug                                          |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-08-09T16:25:06Z`                                |
-| Updated @ | `2023-08-15T07:37:35Z`                                |
+| Updated @ | `2023-08-16T02:20:55Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/434) |
 
@@ -24,6 +24,10 @@
       - `set OPENCV_TRACE=1` for Windows
   - Run your App to generate the `OpenCVTrace.txt`
   - Run `trace_profiler.py` to generate the summary
+  - `export OPENCV_TRACE_DEPTH_OPENCV=0` 可以不限制跟踪深度
+
+> 使用 `OPENCV_TRACE/OPENCV_TRACE_DEPTH_OPENCV` 跟踪会增加执行时间，performance
+> 测试时不要使用
 
 | name                                 | type   | default     | description                          |
 | ------------------------------------ | ------ | ----------- | ------------------------------------ |
