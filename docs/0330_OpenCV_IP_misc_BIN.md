@@ -2,20 +2,14 @@
 Title | OpenCV IP misc BIN
 -- | --
 Created @ | `2019-05-24T08:05:26Z`
-Last Modify @| `2022-12-27T09:15:35Z`
+Updated @| `2023-09-19T14:54:57Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/330)
 
 ---
-
 # OpenCV 二值化
 
-## Reference
-- [Python-OpenCV 处理图像（七）：图像灰度化处理](https://blog.csdn.net/qq_26898461/article/details/50454371) 
-- [opencv threshold tutorial](https://docs.opencv.org/master/db/d8e/tutorial_threshold.html)
 
-
-## Brief
 
 - cv2.threshold
 - cv2.adaptiveThreshold
@@ -45,6 +39,63 @@ cv2.THRESH_TOZERO_INV | ![image](https://user-images.githubusercontent.com/22169
 
 ## 自适应二值化
 
+- 根据图像局部像素值来取阈值
+
+
+```
+void cv::adaptiveThreshold(InputArray 	src,
+                      OutputArray 	dst,
+                      double 	maxValue,
+                      int 	adaptiveMethod,
+                      int 	thresholdType,
+                      int 	blockSize,
+                      double 	C 
+)	
+```
+
+参数 | 描述
+-- | --
+maxValue | 符合条件的值赋予的值, 二值化中的大值, 小值为 0
+adaptiveMethod | 使用的自适应算法 `ADAPTIVE_THRESH_MEAN_C`/`ADAPTIVE_THRESH_GAUSSIAN_C`
+thresholdType | 二值化方法
+blockSize | 计算阈值的邻域
+C | 减去的常数
+
+
+### 自适应算法
+#### ADAPTIVE_THRESH_MEAN_C
+- 取相邻区域均值
+- `T(x,y)` 为点 `(x,y)` 相邻区域 `blockSize x blockSize` 的均值 减去 `C`
+- 相当于用 `boxfilter` 求阈值
+
+<script src="https://junxnone.github.io/emgithub/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fopencv%2Fopencv%2Fblob%2F157b0e7760117a60de457a4ae874b0709edc4e53%2Fmodules%2Fimgproc%2Fsrc%2Fthresh.cpp%23L1695-L1697&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
+
+#### ADAPTIVE_THRESH_GAUSSIAN_C
+- 取相邻区域高斯加权和
+- `T(x,y)` 为点 `(x,y)` 相邻区域 `blockSize x blockSize` 的 高斯加权和 减去 `C`
+- 相当于用 `GaussianBlur` 求阈值
+
+
+<script src="https://junxnone.github.io/emgithub/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fopencv%2Fopencv%2Fblob%2F157b0e7760117a60de457a4ae874b0709edc4e53%2Fmodules%2Fimgproc%2Fsrc%2Fthresh.cpp%23L1698C51-L1705&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
+
+
+### 二值化方法
+
+Enum | 描述 
+-- | -- 
+THRESH_BINARY | 大于阈值取大值，否则为 0
+THRESH_BINARY_INV | 与上面相反
+THRESH_TRUNC | 大于阈值取阈值，其他不变 
+THRESH_TOZERO | 小于阈值取 0 ，其他不变
+THRESH_TOZERO_INV | 与上面相反
+THRESH_OTSU |  Otsu 算法 选择最佳阈值 
+THRESH_TRIANGLE | Triangle 算法选择最佳阈值 
+
+
+> 详情见  [ThresholdTypes](https://docs.opencv.org/4.x/d7/d1b/group__imgproc__misc.html#gaa9e58d2860d4afa658ef70a9b1115576)
+
+
+
 ```
 dst = cv2.adaptiveThreshold(src, maxval, thresh_type, type, Block Size, C)
 ```
@@ -52,4 +103,12 @@ dst = cv2.adaptiveThreshold(src, maxval, thresh_type, type, Block Size, C)
 - `cv.ADAPTIVE_THRESH_GAUSSIAN_C` - 阈值是权重为高斯窗的邻域值的加权和
 
 ![image](https://user-images.githubusercontent.com/2216970/98205820-cb73dc00-1f73-11eb-841c-2a631a07e753.png)
+
+
+## Reference
+- [Python-OpenCV 处理图像（七）：图像灰度化处理](https://blog.csdn.net/qq_26898461/article/details/50454371) 
+- [opencv threshold tutorial](https://docs.opencv.org/master/db/d8e/tutorial_threshold.html)
+- [ADAPTIVE_THRESH_MEAN_C Impl](https://github.com/opencv/opencv/blob/157b0e7760117a60de457a4ae874b0709edc4e53/modules/imgproc/src/thresh.cpp#L1695-L1697)
+- [ADAPTIVE_THRESH_GAUSSIAN_C Impl](https://github.com/opencv/opencv/blob/157b0e7760117a60de457a4ae874b0709edc4e53/modules/imgproc/src/thresh.cpp#L1698C51-L1705)
+- [ThresholdTypes](https://docs.opencv.org/4.x/d7/d1b/group__imgproc__misc.html#gaa9e58d2860d4afa658ef70a9b1115576)
 
