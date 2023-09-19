@@ -3,7 +3,7 @@
 | Title     | OpenCV IP misc BIN                                    |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2019-05-24T08:05:26Z`                                |
-| Updated @ | `2023-09-19T14:54:57Z`                                |
+| Updated @ | `2023-09-19T15:07:19Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/330) |
 
@@ -74,7 +74,7 @@ void cv::adaptiveThreshold(InputArray   src,
   - `T(x,y)` 为点 `(x,y)` 相邻区域 `blockSize x blockSize` 的 高斯加权和 减去 `C`
   - 相当于用 `GaussianBlur` 求阈值
 
-<script src="https://junxnone.github.io/emgithub/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fopencv%2Fopencv%2Fblob%2F157b0e7760117a60de457a4ae874b0709edc4e53%2Fmodules%2Fimgproc%2Fsrc%2Fthresh.cpp%23L1698C51-L1705&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
+<script src="https://junxnone.github.io/emgithub/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fopencv%2Fopencv%2Fblob%2F157b0e7760117a60de457a4ae874b0709edc4e53%2Fmodules%2Fimgproc%2Fsrc%2Fthresh.cpp%23L1698-L1705&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
 
 ### 二值化方法
 
