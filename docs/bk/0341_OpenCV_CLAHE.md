@@ -1,22 +1,15 @@
 -----
 
-| Title         | OpenCV CLAHE                                          |
-| ------------- | ----------------------------------------------------- |
-| Created @     | `2018-09-25T06:43:35Z`                                |
-| Last Modify @ | `2022-12-27T09:17:35Z`                                |
-| Labels        | \`\`                                                  |
-| Edit @        | [here](https://github.com/junxnone/aiwiki/issues/341) |
+| Title     | OpenCV CLAHE                                          |
+| --------- | ----------------------------------------------------- |
+| Created @ | `2018-09-25T06:43:35Z`                                |
+| Updated @ | `2023-09-19T05:29:22Z`                                |
+| Labels    | \`\`                                                  |
+| Edit @    | [here](https://github.com/junxnone/aiwiki/issues/341) |
 
 -----
 
-## Reference
-
-  - [图像直方图及均衡方法总结（二）自适应直方图均衡AHE,CLAHE](https://blog.csdn.net/piaoxuezhong/article/details/78271785)
-  - [cv2.createCLAHE](https://www.programcreek.com/python/example/89353/cv2.createCLAHE)
-  - [Histogram Equalization -
-    HE/AHE/CLAHE](https://github.com/junxnone/tech-io/issues/887)
-
-## Brief
+# 直方图均衡
 
 直方图均衡化是图像处理领域中利用图像直方图对对比度进行调整的方法。通过这种方法，亮度可以更好地在直方图上分布。这样就可以用于增强局部的对比度而不影响整体的对比度，直方图均衡化通过有效地扩展常用的亮度来实现这种功能。
 
@@ -59,3 +52,10 @@ CLAHE与AHE的不同主要在于其对于对比度的限幅，在CLAHE中，对�
 
   - 原图 ![image](media/a711fcb23bfcc111e8aca29b9d5672405b208f22.png)
   - 处理后的图像 ![image](media/e951e60f3951fc542d4bdb767213eb90395408e0.png)
+
+## Reference
+
+  - [图像直方图及均衡方法总结（二）自适应直方图均衡AHE,CLAHE](https://blog.csdn.net/piaoxuezhong/article/details/78271785)
+  - [cv2.createCLAHE](https://www.programcreek.com/python/example/89353/cv2.createCLAHE)
+  - [Histogram Equalization -
+    HE/AHE/CLAHE](https://github.com/junxnone/tech-io/issues/887)
