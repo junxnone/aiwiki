@@ -1,37 +1,15 @@
 -----
 
-| Title         | CV BIN                                               |
-| ------------- | ---------------------------------------------------- |
-| Created @     | `2020-11-11T04:02:36Z`                               |
-| Last Modify @ | `2022-12-23T14:36:55Z`                               |
-| Labels        | \`\`                                                 |
-| Edit @        | [here](https://github.com/junxnone/aiwiki/issues/99) |
+| Title     | CV BIN                                               |
+| --------- | ---------------------------------------------------- |
+| Created @ | `2020-11-11T04:02:36Z`                               |
+| Updated @ | `2023-09-19T14:56:14Z`                               |
+| Labels    | \`\`                                                 |
+| Edit @    | [here](https://github.com/junxnone/aiwiki/issues/99) |
 
 -----
 
 # Thresholding 二值化
-
-## Reference
-
-  - [Thresholding (image
-    processing)](https://en.wikipedia.org/wiki/Thresholding_%28image_processing%29)
-  - [auto threshold](https://imagej.net/Auto_Threshold.html)
-  - [十三种基于直方图的图像全局二值化算法原理、实现、代码及效果](https://www.cnblogs.com/adas/p/5430793.html)
-  - [Survey over image thresholding techniques and quantitative
-    performance
-    evaluation](https://fei.edu.br/~psergio/VisaoComputacional/Artigos%20para%20Estudo/Threshold_survey.pdf)
-  - [Picture thresholding using an iterative selection method]()
-  - 1986 [Minimum Error Thresholding - J.Kittler]()
-  - [Otsu's method -
-    Wikipedia](https://en.wikipedia.org/wiki/Otsu%27s_method)
-      - [A Threshold Selection Method from Gray-Level
-        Histograms](http://raw.githubusercontent.com/jinglou/p2016-rss-small-target/master/refs/Otsu.pdf)
-  - [Otsu
-    Thresholding](http://www.labbookpages.co.uk/software/imgProc/otsuThreshold.html)
-    -- [CN](https://blog.csdn.net/felix86/article/details/38684465)
-  - [图像二值化方法介绍](https://blog.csdn.net/JJBOOM425/article/details/100645594)
-
-## Brief
 
   - Image Thresholding - 图像二值化(非黑即白的简化问题)
   - Global thresholding - 使用同一阈值二值化
@@ -101,3 +79,23 @@
   - [scikit-image
     Thresholding](https://github.com/junxnone/aiwiki/issues/331)
   - [OpenCV Threshold](https://github.com/junxnone/aiwiki/issues/330)
+
+## Reference
+
+  - [Thresholding (image
+    processing)](https://en.wikipedia.org/wiki/Thresholding_%28image_processing%29)
+  - [auto threshold](https://imagej.net/Auto_Threshold.html)
+  - [十三种基于直方图的图像全局二值化算法原理、实现、代码及效果](https://www.cnblogs.com/adas/p/5430793.html)
+  - [Survey over image thresholding techniques and quantitative
+    performance
+    evaluation](https://fei.edu.br/~psergio/VisaoComputacional/Artigos%20para%20Estudo/Threshold_survey.pdf)
+  - [Picture thresholding using an iterative selection method]()
+  - 1986 [Minimum Error Thresholding - J.Kittler]()
+  - [Otsu's method -
+    Wikipedia](https://en.wikipedia.org/wiki/Otsu%27s_method)
+      - [A Threshold Selection Method from Gray-Level
+        Histograms](http://raw.githubusercontent.com/jinglou/p2016-rss-small-target/master/refs/Otsu.pdf)
+  - [Otsu
+    Thresholding](http://www.labbookpages.co.uk/software/imgProc/otsuThreshold.html)
+    -- [CN](https://blog.csdn.net/felix86/article/details/38684465)
+  - [图像二值化方法介绍](https://blog.csdn.net/JJBOOM425/article/details/100645594)
