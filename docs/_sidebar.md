@@ -392,7 +392,7 @@
   - [Core functionality 核心功能函数](/0425_OpenCV_Core)
     - [absdiff 检测物体运动](/0353_OpenCV_Core_absdiff)
   - [Brisk  特征点匹配](/0348_OpenCV_Brisk)
-  - [CLAHE](/0341_OpenCV_CLAHE)
+  - [直方图均衡](/0341_OpenCV_CLAHE)
   - [OpenCV CPU Optimizations](/0438_OpenCV_CPUOpt)
   - [Debug OpenCV](/0434_OpenCV_Debug)
   - [G-API - Graph API](/0439_OpenCV_GAPI)
@@ -430,4 +430,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1615100918</sub></kbd>
+<kbd><sub>@1330230919</sub></kbd>
