@@ -1,8 +1,8 @@
 ---
-Title | OpenCV Core bitwise_xxx
+Title | OpenCV Core bitwisexxx
 -- | --
 Created @ | `2023-09-20T15:27:25Z`
-Updated @| `2023-09-20T15:27:25Z`
+Updated @| `2023-09-20T15:51:12Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/444)
 
