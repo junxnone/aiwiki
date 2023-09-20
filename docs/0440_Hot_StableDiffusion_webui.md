@@ -1,0 +1,35 @@
+---
+Title | Hot StableDiffusion webui
+-- | --
+Created @ | `2023-09-20T04:15:30Z`
+Updated @| `2023-09-20T04:15:30Z`
+Labels | ``
+Edit @| [here](https://github.com/junxnone/aiwiki/issues/440)
+
+---
+# SD 应用 webui
+- 运行环境
+- 提示词
+
+
+## 提示词
+- 分辨率提示词
+- 风格提示词
+- 提示词权重
+- 反向提示词
+
+## 其他参数
+### 采样步数
+- 越多越清晰(超过某值提升有限)，时间越长
+- 20 ~ 40 ？？
+
+
+### 采样方法
+- 插画风格/细节丰富/采样快
+
+### 宽高
+
+
+
+## Reference
+- 提示词参考
