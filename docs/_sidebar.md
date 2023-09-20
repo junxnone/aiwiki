@@ -418,6 +418,7 @@
   - [LaMa - Image Inpainting](/0404_Hot_LaMa)
   - [Segment Anything](/0414_Hot_SA)
   - [Stable Diffusion](/0402_Hot_StableDiffusion)
+    - [SD 应用 webui](/0440_Hot_StableDiffusion_webui)
 - [KnowledgeGraph](/0329_KnowledgeGraph)
 - [资源参考](/0380_Reference)
 - [paper](/0386_paper)
@@ -430,4 +431,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@2308420919</sub></kbd>
+<kbd><sub>@1216350920</sub></kbd>
