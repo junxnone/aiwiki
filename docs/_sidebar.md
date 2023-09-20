@@ -379,6 +379,7 @@
       - [Hough  Line Circle 霍夫线圆](/0340_OpenCV_IP_Feature_Hough)
     - [Image Filtering](/0363_OpenCV_IP_Filter)
       - [GaussianBlur](/0320_OpenCV_IP_Filter_GaussianBlur)
+      - [用于边缘检测的线性滤波器 Sobel](/0443_OpenCV_IP_Filter_Sobel)
       - [bilateralFilter](/0317_OpenCV_IP_Filter_bilateralFilter)
         - [Bilateral Filtering for Gray and Color Images](/0318_OpenCV_IP_Filter_bilateralFilter_BF)
       - [blur 模糊处理](/0441_OpenCV_IP_Filter_blur)
@@ -433,4 +434,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@2323530920</sub></kbd>
+<kbd><sub>@2325050920</sub></kbd>
