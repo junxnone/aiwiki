@@ -383,6 +383,7 @@
         - [Bilateral Filtering for Gray and Color Images](/0318_OpenCV_IP_Filter_bilateralFilter_BF)
       - [blur 模糊处理](/0441_OpenCV_IP_Filter_blur)
       - [boxFilter](/0319_OpenCV_IP_Filter_boxFilter)
+      - [medianBlur 中值滤波](/0442_OpenCV_IP_Filter_medianBlur)
       - [膨胀腐蚀](/0344_OpenCV_IP_Filter_morphology)
     - [OpenCV MatchTemplate 模板匹配](/0433_OpenCV_IP_MatchTemplate)
     - misc
@@ -432,4 +433,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@2323080920</sub></kbd>
+<kbd><sub>@2323530920</sub></kbd>
