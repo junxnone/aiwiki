@@ -381,6 +381,7 @@
       - [GaussianBlur](/0320_OpenCV_IP_Filter_GaussianBlur)
       - [bilateralFilter](/0317_OpenCV_IP_Filter_bilateralFilter)
         - [Bilateral Filtering for Gray and Color Images](/0318_OpenCV_IP_Filter_bilateralFilter_BF)
+      - [blur 模糊处理](/0441_OpenCV_IP_Filter_blur)
       - [boxFilter](/0319_OpenCV_IP_Filter_boxFilter)
       - [膨胀腐蚀](/0344_OpenCV_IP_Filter_morphology)
     - [OpenCV MatchTemplate 模板匹配](/0433_OpenCV_IP_MatchTemplate)
@@ -431,4 +432,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1615040920</sub></kbd>
+<kbd><sub>@2323080920</sub></kbd>
