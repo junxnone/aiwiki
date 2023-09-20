@@ -3,7 +3,7 @@
 | Title     | Hot StableDiffusion webui                             |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-09-20T04:15:30Z`                                |
-| Updated @ | `2023-09-20T04:15:30Z`                                |
+| Updated @ | `2023-09-20T06:29:36Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/440) |
 
@@ -36,4 +36,6 @@
 
 ## Reference
 
+  - [stable-diffusion-webui -
+    AUTOMATIC1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
   - 提示词参考
