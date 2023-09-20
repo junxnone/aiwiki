@@ -394,6 +394,8 @@
       - [Contours 轮廓](/0343_OpenCV_IP_shape_Contours)
   - [Core functionality 核心功能函数](/0425_OpenCV_Core)
     - [absdiff 检测物体运动](/0353_OpenCV_Core_absdiff)
+    - bitwise
+      - [bitwise_xxx](/0444_OpenCV_Core_bitwise_xxx)
   - [Brisk  特征点匹配](/0348_OpenCV_Brisk)
   - [直方图均衡](/0341_OpenCV_CLAHE)
   - [OpenCV CPU Optimizations](/0438_OpenCV_CPUOpt)
@@ -434,4 +436,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@2325050920</sub></kbd>
+<kbd><sub>@2329040920</sub></kbd>
