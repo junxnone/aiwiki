@@ -380,7 +380,7 @@
     - [Image Filtering](/0363_OpenCV_IP_Filter)
       - [GaussianBlur](/0320_OpenCV_IP_Filter_GaussianBlur)
       - [用于边缘检测的线性滤波器 Sobel](/0443_OpenCV_IP_Filter_Sobel)
-      - [bilateralFilter](/0317_OpenCV_IP_Filter_bilateralFilter)
+      - [Bilateral Filter 双边滤波](/0317_OpenCV_IP_Filter_bilateralFilter)
         - [Bilateral Filtering for Gray and Color Images](/0318_OpenCV_IP_Filter_bilateralFilter_BF)
       - [blur 模糊处理](/0441_OpenCV_IP_Filter_blur)
       - [boxFilter](/0319_OpenCV_IP_Filter_boxFilter)
@@ -435,4 +435,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1126160922</sub></kbd>
+<kbd><sub>@1145540922</sub></kbd>
