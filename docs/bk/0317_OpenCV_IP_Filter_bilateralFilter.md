@@ -3,7 +3,7 @@
 | Title     | OpenCV IP Filter bilateralFilter                      |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2022-11-28T06:40:30Z`                                |
-| Updated @ | `2023-09-22T03:44:36Z`                                |
+| Updated @ | `2023-09-22T06:16:26Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/317) |
 
@@ -60,8 +60,8 @@ void cv::bilateralFilter(InputArray     src,
 
   - **d**: 过滤直径, 比较大时(\>5) 会处理比较慢
   - **sigma** 比较小时(\<10), 影响较小, 比较大时(\>150), 卡通化
-      - **sigmaColor**: 颜色空间过滤参数
-      - **sigmaSpace** 坐标空间过滤参数, 值越大, 影响像素越远
+      - **sigmaColor**: 颜色空间过滤参数(Range Filter)
+      - **sigmaSpace** 坐标空间过滤参数, 值越大, 影响像素越远 (Domain Filter)
 
 ## Reference
 
