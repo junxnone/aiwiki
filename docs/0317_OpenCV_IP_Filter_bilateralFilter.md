@@ -2,7 +2,7 @@
 Title | OpenCV IP Filter bilateralFilter
 -- | --
 Created @ | `2022-11-28T06:40:30Z`
-Updated @| `2023-09-22T03:23:51Z`
+Updated @| `2023-09-22T03:25:12Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/317)
 
@@ -11,7 +11,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/317)
 ## Bilateral Filter 双边滤波
 
 - 普通滤波器导致图像边缘处也被模糊, 因此诞生了 双边滤波
-- 加入了像素间的相似程度考虑
+- 赋予点不同距离的点不同的权重，赋予差值不同的点不同权重
 - **双边**
   - 高斯平滑滤波: 考虑像素在空间距离上的关系
   - 差值: 差值越小，边缘的概率越小，权重应该越高
