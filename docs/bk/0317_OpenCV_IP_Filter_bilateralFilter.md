@@ -3,7 +3,7 @@
 | Title     | OpenCV IP Filter bilateralFilter                      |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2022-11-28T06:40:30Z`                                |
-| Updated @ | `2023-09-22T06:22:27Z`                                |
+| Updated @ | `2023-10-08T07:53:07Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/317) |
 
@@ -68,7 +68,8 @@ void cv::bilateralFilter(InputArray     src,
 
   - [Bilateral Filtering for Gray and Color
     Images](https://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/MANDUCHI1/Bilateral_Filtering.html)
-    \[[paper](https://users.soe.ucsc.edu/~manduchi/Papers/ICCV98.pdf)\]
+    \[paper - [Bilateral Filtering for Gray and Color
+    Images.pdf](https://github.com/junxnone/aiwiki/files/12840067/Bilateral.Filtering.for.Gray.and.Color.Images.pdf)\]
   - [Bilateral Filtering: Theory and
     Applications](https://people.csail.mit.edu/sparis/publi/2009/fntcgv/Paris_09_Bilateral_filtering.pdf)
   - [双边滤波原理（Bilateral
