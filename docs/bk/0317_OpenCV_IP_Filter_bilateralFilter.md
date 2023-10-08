@@ -3,7 +3,7 @@
 | Title     | OpenCV IP Filter bilateralFilter                      |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2022-11-28T06:40:30Z`                                |
-| Updated @ | `2023-10-08T07:53:07Z`                                |
+| Updated @ | `2023-10-08T15:34:04Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/317) |
 
@@ -19,16 +19,33 @@
 
 ## 原理
 
-  - $h(x)=k^{-1}(x)\\int\_{-\\infty}^{+\\infty}\\int\_{-\\infty}^{+\\infty}f(\\xi)c(\\xi,x)s(f(\\xi),f(x))d\\xi$
+  - **滤波函数:** $\\huge
+    h(x)=k^{-1}(x)\\int\_{-\\infty}^{+\\infty}\\int\_{-\\infty}^{+\\infty}f(\\xi)c(\\xi,x)s(f(\\xi),f(x))d\\xi$
   - k的作用是归一化，使各权重因子的和为1
 
-### Domain Filter
+### Domain Filter (Geometric)
 
-$h(x)=k\_d^{-1}(x)\\int\_{-\\infty}^{+\\infty}\\int\_{-\\infty}^{+\\infty}f(\\xi)c(\\xi,x)d\\xi$
+$\\huge
+h(x)=k\_d^{-1}(x)\\int\_{-\\infty}^{+\\infty}\\int\_{-\\infty}^{+\\infty}f(\\xi)c(\\xi,x)d\\xi$
 
-### Range Filter
+  - $c(\\xi,x)$ 测量邻域中心点 x 和近邻点 $\\xi$ 的色度(?像素)接近度
 
-$h(x)=k\_r^{-1}(x)\\int\_{-\\infty}^{+\\infty}\\int\_{-\\infty}^{+\\infty}f(\\xi)s(f(\\xi),f(x))d\\xi$
+$\\huge c(\\xi,x)=e^{-\\frac{1}{2}(\\frac{d(\\xi,x)}{\\sigma\_d})^2}$
+
+  - $d(\\xi,x) = d(\\xi - x) = \\left|| \\xi - x \\right||$ 是 欧式距离
+
+### Range Filter (Photometric)
+
+$\\huge
+h(x)=k\_r^{-1}(x)\\int\_{-\\infty}^{+\\infty}\\int\_{-\\infty}^{+\\infty}f(\\xi)s(f(\\xi),f(x))d\\xi$
+
+  - $s(f(\\xi),f(x))$ 测量邻域中心点 x 和近邻点 $\\xi$ 的几何接近度
+
+$\\huge
+s(\\xi,x)=e^{-\\frac{1}{2}(\\frac{\\delta(f(\\xi),f(x))}{\\sigma\_r})^2}$
+
+$\\huge \\delta(\\phi,\\textbf{f}) = \\delta(\\phi - \\textbf{f}) =
+\\left|| \\phi - \\textbf{f}\\right||$
 
 ## 不同 $σ\_d$ 和 $σ\_r$ 效果
 
