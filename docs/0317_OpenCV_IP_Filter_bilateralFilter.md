@@ -2,7 +2,7 @@
 Title | OpenCV IP Filter bilateralFilter
 -- | --
 Created @ | `2022-11-28T06:40:30Z`
-Updated @| `2023-10-08T15:34:04Z`
+Updated @| `2023-10-09T02:57:21Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/317)
 
@@ -14,6 +14,12 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/317)
 - **双边**
   - Domain Filter (空域信息): 考虑像素在空间距离上的关系
   - Range Filter (值域信息): 差值越小，边缘的概率越小，权重应该越高
+
+![image](https://github.com/junxnone/aiwiki/assets/2216970/b485464d-43ae-4e8f-b60c-8b43d426c6f2)
+
+- (a) Input
+- (b) Combined similarity weights
+- (c) Output
 
 
 ## 原理
@@ -41,6 +47,9 @@ $\huge h(x)=k_r^{-1}(x)\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}f(\xi)s(f
 $\huge   s(\xi,x)=e^{-\frac{1}{2}(\frac{\delta(f(\xi),f(x))}{\sigma_r})^2}$
 
 $\huge \delta(\phi,\textbf{f}) = \delta(\phi - \textbf{f}) = \left\|| \phi - \textbf{f}\right\||$
+
+
+
 
 ## 不同 $σ_d$ 和 $σ_r$ 效果
 - 两个 sigma 值为 kernel 的方差，方差越大，说明该项对于权重的影响越大

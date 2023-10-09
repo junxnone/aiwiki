@@ -3,7 +3,7 @@
 | Title     | OpenCV IP Filter bilateralFilter                      |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2022-11-28T06:40:30Z`                                |
-| Updated @ | `2023-10-08T15:34:04Z`                                |
+| Updated @ | `2023-10-09T02:57:21Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/317) |
 
@@ -16,6 +16,12 @@
   - **双边**
       - Domain Filter (空域信息): 考虑像素在空间距离上的关系
       - Range Filter (值域信息): 差值越小，边缘的概率越小，权重应该越高
+
+![image](media/33e184e95eb8566c1a98e4b2e45e16b73639f713.png)
+
+  - (a) Input
+  - (b) Combined similarity weights
+  - (c) Output
 
 ## 原理
 
