@@ -2,7 +2,7 @@
 Title | OpenCV IP Filter bilateralFilter
 -- | --
 Created @ | `2022-11-28T06:40:30Z`
-Updated @| `2023-10-10T00:56:54Z`
+Updated @| `2023-10-10T01:04:32Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/317)
 
@@ -34,7 +34,7 @@ $\huge h(x)=k_d^{-1}(x)\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}f(\xi)c(\
 
 $\huge c(\xi,x)=e^{-\frac{1}{2}(\frac{d(\xi,x)}{\sigma_d})^2}$
 
-- $d(\xi,x) = d(\xi - x) = \left\| \xi - x \right\|$ 是 欧式距离
+- $d(\xi,x) = d(\xi - x) = \left\|\xi - x\right\|$ 是 欧式距离
 
 
 ### Range Filter (Photometric)
@@ -46,7 +46,7 @@ $\huge h(x)=k_r^{-1}(x)\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}f(\xi)s(f
 
 $\huge   s(\xi,x)=e^{-\frac{1}{2}(\frac{\delta(f(\xi),f(x))}{\sigma_r})^2}$
 
-$\huge \delta(\phi,\textbf{f}) = \delta(\phi - \textbf{f}) = \left\| \phi - \textbf{f}\right\|$
+$\huge \delta(\phi,\textbf{f}) = \delta(\phi - \textbf{f}) = \left\|\phi - \textbf{f}\right\|$
 
 
 
