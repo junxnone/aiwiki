@@ -3,7 +3,7 @@
 | Title     | Hot LLMs                                              |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-10-12T09:01:24Z`                                |
-| Updated @ | `2023-10-12T09:01:24Z`                                |
+| Updated @ | `2023-10-12T15:15:33Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/446) |
 
@@ -44,3 +44,5 @@
     \[[中译](https://zhuanlan.zhihu.com/p/630216305)\]
   - [LLMs LIsts -
     Wikipedia](https://en.wikipedia.org/wiki/Large_language_model#List)
+  - [Open LLM
+    Leaderboard](https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard)
