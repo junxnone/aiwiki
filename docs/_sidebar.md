@@ -413,6 +413,7 @@
     - [ChatGPT](/0373_Hot_AIGC_ChatGPT)
   - [DragGAN](/0429_Hot_DragGAN)
   - [Imagen](/0413_Hot_Imagen)
+  - [Large Language Models](/0446_Hot_LLMs)
   - [大模型](/0408_Hot_LM)
     - [大模型微调](/0410_Hot_LM_Tuning)
       - [Adapter FineTuning](/0412_Hot_LM_Tuning_Adapter)
@@ -436,4 +437,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1614521012</sub></kbd>
+<kbd><sub>@1702391012</sub></kbd>
