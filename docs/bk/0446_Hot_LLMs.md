@@ -3,13 +3,15 @@
 | Title     | Hot LLMs                                              |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-10-12T09:01:24Z`                                |
-| Updated @ | `2023-10-13T07:50:59Z`                                |
+| Updated @ | `2023-10-13T08:36:49Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/446) |
 
 -----
 
 # Large Language Models
+
+  - [LLM Leaderboard](https://opencompass.org.cn/leaderboard-llm)
 
 ## LLM 发展
 
