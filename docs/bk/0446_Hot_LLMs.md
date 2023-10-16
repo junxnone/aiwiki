@@ -3,7 +3,7 @@
 | Title     | Hot LLMs                                              |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-10-12T09:01:24Z`                                |
-| Updated @ | `2023-10-13T08:38:47Z`                                |
+| Updated @ | `2023-10-16T06:37:22Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/446) |
 
@@ -19,7 +19,7 @@
   - 2021 年之前，以 encoder-only 和 encoder-decoder 为主
   - 2021 年之后，以 decoder-only 为主
 
-![](media/92bd84b7e7ed0d7b52ad1bf5710f79670bb1bcda.jpg)
+![image](media/d3b455dd43f73d3704b486920a01354680e1c657.png)
 
 ## 应用场景
 

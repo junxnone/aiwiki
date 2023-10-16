@@ -2,7 +2,7 @@
 Title | Hot LLMs
 -- | --
 Created @ | `2023-10-12T09:01:24Z`
-Updated @| `2023-10-13T08:38:47Z`
+Updated @| `2023-10-16T06:37:22Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/446)
 
@@ -16,8 +16,8 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/446)
 - 2021 年之前，以 encoder-only 和 encoder-decoder 为主
 - 2021 年之后，以 decoder-only 为主
 
+![image](https://github.com/junxnone/aiwiki/assets/2216970/272fa0cc-f97f-4c7e-9a45-9caf1a1f5974)
 
-![](https://raw.githubusercontent.com/Mooler0410/LLMsPracticalGuide/main/imgs/qr_version.jpg)
 
 ## 应用场景
 
