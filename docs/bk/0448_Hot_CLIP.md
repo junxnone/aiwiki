@@ -3,7 +3,7 @@
 | Title     | Hot CLIP                                              |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-10-17T06:40:49Z`                                |
-| Updated @ | `2023-10-17T06:40:49Z`                                |
+| Updated @ | `2023-10-17T07:05:51Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/448) |
 
@@ -48,3 +48,5 @@
   - [Code - OpenAI](https://github.com/OpenAI/CLIP)
   - 2021.2 **CLIP** [Learning Transferable Visual Models From Natural
     Language Supervision](https://arxiv.org/abs/2103.00020)
+  - [【深度学习】详解
+    CLIP](https://blog.csdn.net/qq_39478403/article/details/127858015)
