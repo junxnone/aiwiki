@@ -3,7 +3,7 @@
 | Title     | Hot Imagen                                            |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-06-07T02:03:36Z`                                |
-| Updated @ | `2023-10-18T07:39:40Z`                                |
+| Updated @ | `2023-10-18T07:41:37Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/413) |
 
@@ -20,6 +20,10 @@
       - Image2Image Translation
       - Super Resolution
       - Inpainting
+
+| Text2Image                                                   | Image2Image Translation                                      | Super Resolution                                             | Inpainting                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ---------------------------------------------------------- |
+| ![img](media/ef7f0a1aa8ed0612f3e094aec99ac576c774af88.shtml) | ![img](media/d43c1c190bc5bef6638ed77af17f3eda27da94df.shtml) | ![img](media/bbdf05fa77be25413384db852c4ab4b9a4c43784.shtml) | ![img](media/5b4d237fe794e8e049d17f40798d77ebc8c78987.gif) |
 
 ## Arch
 

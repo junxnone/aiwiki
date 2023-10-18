@@ -2,7 +2,7 @@
 Title | Hot Imagen
 -- | --
 Created @ | `2023-06-07T02:03:36Z`
-Updated @| `2023-10-18T07:39:40Z`
+Updated @| `2023-10-18T07:41:37Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/413)
 
@@ -19,6 +19,9 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/413)
   - Super Resolution
   - Inpainting
 
+Text2Image | Image2Image Translation | Super Resolution | Inpainting
+-- | -- | -- | --
+![img](https://github.com/deep-floyd/IF/blob/develop/pics/dream-III.jpg) | ![img](https://github.com/deep-floyd/IF/blob/develop/pics/img_to_img_scheme.jpeg) | ![img](https://github.com/deep-floyd/IF/blob/develop/pics/deep_floyd_if_image_2_image.gif) | ![img](https://github.com/deep-floyd/IF/raw/develop/pics/deep_floyd_if_inpainting.gif)
 
 ## Arch
 ![image](https://github.com/junxnone/aiwiki/assets/2216970/98a736ed-efb0-46be-8934-35f4c8bd4da9)
