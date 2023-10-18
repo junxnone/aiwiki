@@ -3,7 +3,7 @@
 | Title     | Hot StableDiffusion Algos                             |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-10-12T06:32:04Z`                                |
-| Updated @ | `2023-10-18T06:15:38Z`                                |
+| Updated @ | `2023-10-18T06:27:23Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/445) |
 
@@ -12,8 +12,11 @@
 # Stable Diffusion 原理
 
   - Lantent Space - 潜在空间
+  - Diffusion Model - 像素空间 (Imagen/DALL-E)
   - Latent Diffusion Model - 潜在扩散模型
   - 条件扩散
+
+> **扩散**: 指物理现象中物质向密度低的方向散开
 
 ## Steps
 
