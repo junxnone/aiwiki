@@ -2,7 +2,7 @@
 Title | Hot Imagen
 -- | --
 Created @ | `2023-06-07T02:03:36Z`
-Updated @| `2023-10-18T06:32:13Z`
+Updated @| `2023-10-18T07:39:40Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/413)
 
@@ -13,6 +13,12 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/413)
 - Google Brain
 - DrawBench 新的评估基准
 - Diffusion Model - Pixel Space
+- 功能
+  - Text2Image
+  - Image2Image Translation
+  - Super Resolution
+  - Inpainting
+
 
 ## Arch
 ![image](https://github.com/junxnone/aiwiki/assets/2216970/98a736ed-efb0-46be-8934-35f4c8bd4da9)
