@@ -2,7 +2,7 @@
 Title | Hot StableDiffusion Algos
 -- | --
 Created @ | `2023-10-12T06:32:04Z`
-Updated @| `2023-10-18T09:15:52Z`
+Updated @| `2023-10-18T09:21:58Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/445)
 
@@ -18,6 +18,9 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/445)
 > **扩散**: 指物理现象中物质向密度低的方向散开
 
 ## Arch
+- VAE: `图像在像素空间和潜在空间转换的工具`
+- UNet: `预测出的噪声残差从原噪声矩阵中去除，得到逐步去噪后的图像Latent Feature`
+- CLIP Text Encoder
 
 ![image](https://github.com/junxnone/aiwiki/assets/2216970/7b9ea896-6031-47e8-a082-beb817799631)
 
@@ -29,7 +32,6 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/445)
 ![image](https://github.com/junxnone/aiwiki/assets/2216970/0f419bcc-0181-4623-9ba4-040fc98c0b62)
 
 ### Unet
-
 
 
 
