@@ -11,6 +11,7 @@
   - [Gaussian Filter 高斯滤波器](/0215_Math_GaussianFilter)
   - [Gaussian Process 高斯过程](/0216_Math_GaussianProcess)
   - [Lagrange Multiplier Method 拉格朗日乘数法](/0358_Math_LMM)
+  - [马尔可夫过程](/0449_Math_MarkovProcess)
   - [QuadTree/OCTree - 四叉树/八叉树](/0356_Math_QuadTree)
   - [Quaternion 四元数](/0289_Math_Quaternion)
   - [RANSAC](/0293_Math_RANSAC)
@@ -439,4 +440,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1436431018</sub></kbd>
+<kbd><sub>@1454461018</sub></kbd>
