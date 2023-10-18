@@ -3,7 +3,7 @@
 | Title     | Hot Imagen                                            |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-06-07T02:03:36Z`                                |
-| Updated @ | `2023-06-07T02:17:04Z`                                |
+| Updated @ | `2023-10-18T06:32:13Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/413) |
 
@@ -14,8 +14,11 @@
   - Text2Image Model
   - Google Brain
   - DrawBench 新的评估基准
+  - Diffusion Model - Pixel Space
 
-![image](media/af933d1cd590db6ffe2c988aced1d69587b030e1.png)
+## Arch
+
+![image](media/c5d19fa158c845cce9cf59d66f0f5552bbd3abb4.png)
 
 ## Reference
 
