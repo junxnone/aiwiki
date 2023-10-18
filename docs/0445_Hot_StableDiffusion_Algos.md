@@ -2,7 +2,7 @@
 Title | Hot StableDiffusion Algos
 -- | --
 Created @ | `2023-10-12T06:32:04Z`
-Updated @| `2023-10-18T06:27:23Z`
+Updated @| `2023-10-18T06:35:34Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/445)
 
@@ -34,3 +34,4 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/445)
 ## Reference
 
 - [Stable Diffusion原理详解](https://developer.aliyun.com/article/1215455)
+- [扩散概率模型 - DPM](https://www.zhangzhenhu.com/aigc/%E6%89%A9%E6%95%A3%E6%A6%82%E7%8E%87%E6%A8%A1%E5%9E%8B.html)
