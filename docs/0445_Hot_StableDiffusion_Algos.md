@@ -2,7 +2,7 @@
 Title | Hot StableDiffusion Algos
 -- | --
 Created @ | `2023-10-12T06:32:04Z`
-Updated @| `2023-10-18T09:21:58Z`
+Updated @| `2023-10-18T14:53:46Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/445)
 
@@ -22,7 +22,6 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/445)
 - UNet: `预测出的噪声残差从原噪声矩阵中去除，得到逐步去噪后的图像Latent Feature`
 - CLIP Text Encoder
 
-![image](https://github.com/junxnone/aiwiki/assets/2216970/7b9ea896-6031-47e8-a082-beb817799631)
 
 ![image](https://github.com/junxnone/aiwiki/assets/2216970/674c6d1c-b3ee-4e62-a8db-64e040c65efa)
 
@@ -47,6 +46,9 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/445)
 
 ![image](https://github.com/junxnone/aiwiki/assets/2216970/a84ce994-0a4c-4fe3-886d-4bfe6a9629f9)
 
+### Inference
+
+![image](https://github.com/junxnone/aiwiki/assets/2216970/7b9ea896-6031-47e8-a082-beb817799631)
 
 
 ## Reference

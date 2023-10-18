@@ -3,7 +3,7 @@
 | Title     | Hot StableDiffusion Algos                             |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-10-12T06:32:04Z`                                |
-| Updated @ | `2023-10-18T09:21:58Z`                                |
+| Updated @ | `2023-10-18T14:53:46Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/445) |
 
@@ -23,8 +23,6 @@
   - VAE: `图像在像素空间和潜在空间转换的工具`
   - UNet: `预测出的噪声残差从原噪声矩阵中去除，得到逐步去噪后的图像Latent Feature`
   - CLIP Text Encoder
-
-![image](media/1f26f24e987af26d485424f85dc813265a70d7e4.png)
 
 ![image](media/f1f1a6f07b7f64032abdd9db6d82754a57501b18.png)
 
@@ -49,6 +47,10 @@
       - 输入为 `去噪条件`, 去噪获取图片潜在空间表示，经过图像解码器转换获取最终图像
 
 ![image](media/e0d7242f40df2f24bbb4e7d9a1b779bb9799a63f.png)
+
+### Inference
+
+![image](media/1f26f24e987af26d485424f85dc813265a70d7e4.png)
 
 ## Reference
 
