@@ -3,7 +3,7 @@
 | Title     | Hot StableDiffusion Algos                             |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-10-12T06:32:04Z`                                |
-| Updated @ | `2023-10-18T14:53:46Z`                                |
+| Updated @ | `2023-10-19T02:05:26Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/445) |
 
@@ -51,6 +51,8 @@
 ### Inference
 
 ![image](media/1f26f24e987af26d485424f85dc813265a70d7e4.png)
+
+![image](media/e9ceab82636a9cb41d93e72ef80115679a1b1d90.png)
 
 ## Reference
 

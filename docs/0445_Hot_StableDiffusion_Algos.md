@@ -2,7 +2,7 @@
 Title | Hot StableDiffusion Algos
 -- | --
 Created @ | `2023-10-12T06:32:04Z`
-Updated @| `2023-10-18T14:53:46Z`
+Updated @| `2023-10-19T02:05:26Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/445)
 
@@ -50,6 +50,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/445)
 
 ![image](https://github.com/junxnone/aiwiki/assets/2216970/7b9ea896-6031-47e8-a082-beb817799631)
 
+![image](https://github.com/junxnone/aiwiki/assets/2216970/e29dee77-7a4d-45c2-b045-2357eb58d00a)
 
 ## Reference
 
