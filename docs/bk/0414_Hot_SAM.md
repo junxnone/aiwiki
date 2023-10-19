@@ -3,14 +3,15 @@
 | Title     | Hot SAM                                               |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-06-07T02:11:14Z`                                |
-| Updated @ | `2023-10-19T14:29:35Z`                                |
+| Updated @ | `2023-10-19T14:30:36Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/414) |
 
 -----
 
-# Segment Anything
+# SAM
 
+  - SAM - `Segment Anything Model`
   - a promptable segmentation task
   - a segmentation model (SAM) that powers data annotation and enables
     zero-shot transfer to a range
