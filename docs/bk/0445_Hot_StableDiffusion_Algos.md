@@ -3,7 +3,7 @@
 | Title     | Hot StableDiffusion Algos                             |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-10-12T06:32:04Z`                                |
-| Updated @ | `2023-10-19T02:05:26Z`                                |
+| Updated @ | `2023-10-19T07:20:54Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/445) |
 
@@ -63,3 +63,5 @@
     Diffusion（SD）核心基础知识](https://zhuanlan.zhihu.com/p/632809634)
   - [深入浅出完整解析Stable Diffusion
     XL（SDXL）核心基础知识](https://zhuanlan.zhihu.com/p/643420260)
+  - [深入浅出讲解Stable
+    Diffusion原理，新手也能看明白](https://zhuanlan.zhihu.com/p/627133524)

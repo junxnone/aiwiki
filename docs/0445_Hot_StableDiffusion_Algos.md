@@ -2,7 +2,7 @@
 Title | Hot StableDiffusion Algos
 -- | --
 Created @ | `2023-10-12T06:32:04Z`
-Updated @| `2023-10-19T02:05:26Z`
+Updated @| `2023-10-19T07:20:54Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/445)
 
@@ -58,5 +58,5 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/445)
 - [扩散概率模型 - DPM](https://www.zhangzhenhu.com/aigc/%E6%89%A9%E6%95%A3%E6%A6%82%E7%8E%87%E6%A8%A1%E5%9E%8B.html)
 - [深入浅出完整解析Stable Diffusion（SD）核心基础知识](https://zhuanlan.zhihu.com/p/632809634)
 - [深入浅出完整解析Stable Diffusion XL（SDXL）核心基础知识](https://zhuanlan.zhihu.com/p/643420260)
-
+- [深入浅出讲解Stable Diffusion原理，新手也能看明白](https://zhuanlan.zhihu.com/p/627133524)
 
