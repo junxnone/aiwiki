@@ -423,7 +423,7 @@
       - [LoRA](/0406_Hot_LM_Tuning_LoRA)
       - [Prefix Tuning](/0411_Hot_LM_Tuning_PrefixTuning)
   - [LaMa - Image Inpainting](/0404_Hot_LaMa)
-  - [Segment Anything](/0414_Hot_SAM)
+  - [SAM](/0414_Hot_SAM)
   - [Stable Diffusion](/0402_Hot_StableDiffusion)
     - [Stable Diffusion 原理](/0445_Hot_StableDiffusion_Algos)
     - [SD 应用 webui](/0440_Hot_StableDiffusion_webui)
@@ -440,4 +440,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@2230531019</sub></kbd>
+<kbd><sub>@2231501019</sub></kbd>
