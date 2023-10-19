@@ -1,8 +1,8 @@
 ---
-Title | Hot SA
+Title | Hot SAM
 -- | --
 Created @ | `2023-06-07T02:11:14Z`
-Updated @| `2023-06-07T02:12:55Z`
+Updated @| `2023-10-19T14:29:35Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/414)
 
