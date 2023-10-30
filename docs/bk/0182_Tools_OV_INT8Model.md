@@ -1,28 +1,15 @@
 -----
 
-| Title         | Tools OV INT8Model                                    |
-| ------------- | ----------------------------------------------------- |
-| Created @     | `2020-03-18T08:44:15Z`                                |
-| Last Modify @ | `2022-12-24T15:57:12Z`                                |
-| Labels        | \`\`                                                  |
-| Edit @        | [here](https://github.com/junxnone/aiwiki/issues/182) |
+| Title     | Tools OV INT8Model                                    |
+| --------- | ----------------------------------------------------- |
+| Created @ | `2020-03-18T08:44:15Z`                                |
+| Updated @ | `2023-10-30T07:57:27Z`                                |
+| Labels    | \`\`                                                  |
+| Edit @    | [here](https://github.com/junxnone/aiwiki/issues/182) |
 
 -----
 
 # OpenVINO INT8 Model
-
-## Reference
-
-  - [Optimizing models
-    post-training](https://docs.openvino.ai/latest/pot_introduction.html#doxid-pot-introduction)
-  - [calibration\_tool](https://docs.openvinotoolkit.org/2019_R3.1/_inference_engine_tools_calibration_tool_README.html)
-  - [NNCF](https://github.com/openvinotoolkit/nncf)
-  - [Intel® Neural
-    Compressor](https://github.com/intel/neural-compressor)
-  - [Post-Training Quantization with TensorFlow Classification
-    Model](https://github.com/openvinotoolkit/openvino_notebooks/blob/173645d14740b0ceba9d9785552823bf8330ce67/notebooks/301-tensorflow-training-openvino/301-tensorflow-training-openvino-pot.ipynb)
-
-## Brief
 
   - OpenVINO INT8 Model - 增加性能/减少模型大小
   - POT - `Post-training Optimization Tool`
@@ -42,3 +29,14 @@
   - POT Python API/POT cmd-line
 
 <img width=800 src="https://user-images.githubusercontent.com/2216970/168195305-aaebb76e-d783-462b-b178-b4fbfe3fee8a.png">
+
+## Reference
+
+  - [Optimizing models
+    post-training](https://docs.openvino.ai/latest/pot_introduction.html#doxid-pot-introduction)
+  - [calibration\_tool](https://docs.openvinotoolkit.org/2019_R3.1/_inference_engine_tools_calibration_tool_README.html)
+  - [NNCF](https://github.com/openvinotoolkit/nncf)
+  - [Intel® Neural
+    Compressor](https://github.com/intel/neural-compressor)
+  - [Post-Training Quantization with TensorFlow Classification
+    Model](https://github.com/openvinotoolkit/openvino_notebooks/blob/173645d14740b0ceba9d9785552823bf8330ce67/notebooks/301-tensorflow-training-openvino/301-tensorflow-training-openvino-pot.ipynb)
