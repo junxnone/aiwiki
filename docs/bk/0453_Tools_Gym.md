@@ -3,7 +3,7 @@
 | Title     | Tools Gym                                             |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-10-30T10:03:49Z`                                |
-| Updated @ | `2023-10-30T10:03:49Z`                                |
+| Updated @ | `2023-10-30T10:04:32Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/453) |
 
@@ -17,5 +17,7 @@
 ## Reference
 
   - [gym - OpenAI](https://github.com/openai/gym)
+    \[[docs](https://www.gymlibrary.dev/content/vectorising/#vectorized-environments)\]
   - [Gymnasium - Farama
     Foundation](https://github.com/Farama-Foundation/Gymnasium)
+    \[[docs](https://gymnasium.farama.org/)\]
