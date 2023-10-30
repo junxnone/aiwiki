@@ -3,13 +3,13 @@
 | Title     | Tools Gym                                             |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-10-30T10:03:49Z`                                |
-| Updated @ | `2023-10-30T10:04:32Z`                                |
+| Updated @ | `2023-10-30T10:06:07Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/453) |
 
 -----
 
-# Isaac Gym - Nvidia
+# Gym
 
   - `Gym(OpenAI)` =\> `Gymnasium(Farama Foundation)` `@2022.10`
   - \=\> `IsaacGym` - NVIDIA
