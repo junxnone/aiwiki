@@ -3,7 +3,7 @@
 | Title     | x Model Precision                                     |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-10-30T07:33:26Z`                                |
-| Updated @ | `2023-10-30T07:53:07Z`                                |
+| Updated @ | `2023-10-30T07:59:08Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/450) |
 
@@ -20,6 +20,10 @@
       - INT8
       - U8
       - U1
+
+## FP16
+
+![IEEE\_754r\_Half\_Floating\_Point\_Format](media/a3e3b552b298ffd8fb5f3d62fb14c3a10c68a21c.svg)
 
 ## Reference
 
