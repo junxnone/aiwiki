@@ -435,9 +435,11 @@
 - [x](/0418_x)
   - [缺陷图片生成](/0403_x_DefectGen)
   - [Cool Demo](/0409_x_Demo)
+  - Model
+    - [Model Precision](/0450_x_Model_Precision)
   - [Question](/0447_x_Q)
 - [应用](/0428_应用)
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1625291029</sub></kbd>
+<kbd><sub>@1550591030</sub></kbd>
