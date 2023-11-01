@@ -427,6 +427,7 @@
       - [LoRA](/0406_Hot_LM_Tuning_LoRA)
       - [Prefix Tuning](/0411_Hot_LM_Tuning_PrefixTuning)
   - [LaMa - Image Inpainting](/0404_Hot_LaMa)
+  - [Latent Space 潜在空间](/0455_Hot_LatentSpace)
   - [SAM](/0414_Hot_SAM)
   - [Stable Diffusion](/0402_Hot_StableDiffusion)
     - [Stable Diffusion 原理](/0445_Hot_StableDiffusion_Algos)
@@ -446,4 +447,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1806481101</sub></kbd>
+<kbd><sub>@2249071101</sub></kbd>
