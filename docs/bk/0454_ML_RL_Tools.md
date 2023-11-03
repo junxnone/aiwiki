@@ -3,7 +3,7 @@
 | Title     | ML RL Tools                                           |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-10-31T09:22:19Z`                                |
-| Updated @ | `2023-11-03T15:07:23Z`                                |
+| Updated @ | `2023-11-03T15:28:54Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/454) |
 
@@ -11,7 +11,7 @@
 
 # RL Tools
 
-## Tasks Env
+## Tasks Env / 算法框架
 
   - [bidexhands](https://github.com/PKU-MARL/DexterousHands)
   - [rl-games](https://github.com/Denys88/rl_games)
@@ -21,6 +21,10 @@
       - 
 ## 物理引擎模拟器
 
+  - [Box2D](https://box2d.org/)
+      - 用于游戏的 2D 物理引擎
+    
+      - > A 2D Physics Engine for Games
   - [Isaac Gym](0453_Tools_Gym) ==\>
     \[[IsaacGymEnvs](https://github.com/NVIDIA-Omniverse/IsaacGymEnvs)\]
       - Nvidia 开发的一款模拟器，用于强化学习
