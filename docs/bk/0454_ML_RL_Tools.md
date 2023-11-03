@@ -3,7 +3,7 @@
 | Title     | ML RL Tools                                           |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-10-31T09:22:19Z`                                |
-| Updated @ | `2023-11-03T14:58:27Z`                                |
+| Updated @ | `2023-11-03T15:07:23Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/454) |
 
@@ -15,12 +15,12 @@
 
   - [bidexhands](https://github.com/PKU-MARL/DexterousHands)
   - [rl-games](https://github.com/Denys88/rl_games)
-
-## 模拟器
-
   - [Gym](https://github.com/openai/gym) ==\>
     \[[Gymnasium](https://github.com/Farama-Foundation/Gymnasium)\]
-      - OpenAI
+      - `OpenAI` ==\> `Farama-Foundation`
+      - 
+## 物理引擎模拟器
+
   - [Isaac Gym](0453_Tools_Gym) ==\>
     \[[IsaacGymEnvs](https://github.com/NVIDIA-Omniverse/IsaacGymEnvs)\]
       - Nvidia 开发的一款模拟器，用于强化学习
