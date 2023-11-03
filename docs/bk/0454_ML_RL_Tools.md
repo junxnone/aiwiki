@@ -3,7 +3,7 @@
 | Title     | ML RL Tools                                           |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-10-31T09:22:19Z`                                |
-| Updated @ | `2023-11-03T09:36:40Z`                                |
+| Updated @ | `2023-11-03T14:58:27Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/454) |
 
@@ -18,7 +18,11 @@
 
 ## 模拟器
 
-  - [Isaac Gym](0453_Tools_Gym)
+  - [Gym](https://github.com/openai/gym) ==\>
+    \[[Gymnasium](https://github.com/Farama-Foundation/Gymnasium)\]
+      - OpenAI
+  - [Isaac Gym](0453_Tools_Gym) ==\>
+    \[[IsaacGymEnvs](https://github.com/NVIDIA-Omniverse/IsaacGymEnvs)\]
       - Nvidia 开发的一款模拟器，用于强化学习
       - 集成了 rl-games
   - [Brax](https://github.com/google/brax)
@@ -28,3 +32,12 @@
         > for research and development of robotics, human perception,
         > materials science, reinforcement learning, and other
         > simulation-heavy applications
+  - [MuJoCo](https://mujoco.org/)
+    ([Github](https://github.com/google-deepmind/mujoco)) ==\>
+    \[[dm\_control](https://github.com/google-deepmind/dm_control)\]
+      - Google DeepMind 开发的一款开源物理引擎模拟器
+    
+      - > MuJoCo is a free and open source physics engine that aims to
+        > facilitate research and development in robotics, biomechanics,
+        > graphics and animation, and other areas where fast and
+        > accurate simulation is needed.
