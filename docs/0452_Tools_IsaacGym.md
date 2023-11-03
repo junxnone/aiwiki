@@ -1,8 +1,8 @@
 ---
-Title | Tools Gym IsaacGym
+Title | Tools IsaacGym
 -- | --
 Created @ | `2023-10-30T09:59:37Z`
-Updated @| `2023-11-01T09:52:26Z`
+Updated @| `2023-11-03T15:06:59Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/452)
 
