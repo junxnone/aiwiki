@@ -2,7 +2,7 @@
 Title | Tools IsaacGym
 -- | --
 Created @ | `2023-10-30T09:59:37Z`
-Updated @| `2023-11-06T14:32:04Z`
+Updated @| `2023-11-06T14:35:59Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/452)
 
@@ -17,6 +17,11 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/452)
 - API - C++/Python
 
 
+CPU & GPU | Only GPU
+-- | --
+![image](https://github.com/junxnone/aiwiki/assets/2216970/ce8e3528-765f-47c8-9858-c660a896d6b6) | ![image](https://github.com/junxnone/aiwiki/assets/2216970/934bd761-caa8-4a94-a168-4faaa68f800e)
+
+
 ## Arch
 
 - PhysX
@@ -28,9 +33,6 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/452)
 ![image](https://github.com/junxnone/aiwiki/assets/2216970/b27f8b5e-1e45-470b-bf27-c762f256ae26)
 
 
-CPU & GPU | Only GPU
--- | --
-![image](https://github.com/junxnone/aiwiki/assets/2216970/ce8e3528-765f-47c8-9858-c660a896d6b6) | ![image](https://github.com/junxnone/aiwiki/assets/2216970/934bd761-caa8-4a94-a168-4faaa68f800e)
 
 
 
