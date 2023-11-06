@@ -2,7 +2,7 @@
 Title | Tools IsaacGym
 -- | --
 Created @ | `2023-10-30T09:59:37Z`
-Updated @| `2023-11-03T15:14:00Z`
+Updated @| `2023-11-06T14:32:04Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/452)
 
@@ -14,6 +14,25 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/452)
 - **优点** : 加速整个训练过程
   - 避免了传统的交互环境中存在的CPU仿真环境模拟到GPU网络训练的转换
   - 由于使用GPU对物理环境进行仿真，Isaac Gym环境还可以同时并行运算数以千计的仿真环境，快速为当前的policy提供大量训练样本，从而从另一个方面，改善online-policy的算法在学习过程中出现的，样本收集慢，采样效率低下的问题
+- API - C++/Python
+
+
+## Arch
+
+- PhysX
+  - CPU and GPU simulation
+- Flex
+  - Only GPU simulation
+
+
+![image](https://github.com/junxnone/aiwiki/assets/2216970/b27f8b5e-1e45-470b-bf27-c762f256ae26)
+
+
+CPU & GPU | Only GPU
+-- | --
+![image](https://github.com/junxnone/aiwiki/assets/2216970/ce8e3528-765f-47c8-9858-c660a896d6b6) | ![image](https://github.com/junxnone/aiwiki/assets/2216970/934bd761-caa8-4a94-a168-4faaa68f800e)
+
+
 
 ## Reference
 - [gym - OpenAI](https://github.com/openai/gym)
