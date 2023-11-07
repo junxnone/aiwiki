@@ -292,7 +292,7 @@
         - [Source Code Structure](/0129_ML_NNS_KDTree_FLANN_SourceCode)
         - [UseCase](/0130_ML_NNS_KDTree_FLANN_UseCase)
       - [nanoflann](/0123_ML_NNS_KDTree_nanoflann)
-  - [Reinforcement Learning 强化学习](/0290_ML_RL)
+  - [RL 强化学习](/0290_ML_RL)
     - [RL Tools](/0454_ML_RL_Tools)
   - [Semi-Supervised Learning 半监督学习](/0271_ML_SSL)
 - [AI Tools](/0415_Tools)
@@ -447,4 +447,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@2314281106</sub></kbd>
+<kbd><sub>@1030581107</sub></kbd>
