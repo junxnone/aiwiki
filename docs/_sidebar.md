@@ -416,6 +416,7 @@
 - [AI 热点](/0375_Hot)
   - [AIGC](/0374_Hot_AIGC)
     - [ChatGPT](/0373_Hot_AIGC_ChatGPT)
+    - [AIGC Tools](/0456_Hot_AIGC_Tools)
   - [CLIP](/0448_Hot_CLIP)
   - [DragGAN](/0429_Hot_DragGAN)
   - [Imagen](/0413_Hot_Imagen)
@@ -447,4 +448,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1626151108</sub></kbd>
+<kbd><sub>@2323471108</sub></kbd>
