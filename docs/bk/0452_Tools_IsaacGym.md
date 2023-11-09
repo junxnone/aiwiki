@@ -3,7 +3,7 @@
 | Title     | Tools IsaacGym                                        |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-10-30T09:59:37Z`                                |
-| Updated @ | `2023-11-06T15:02:56Z`                                |
+| Updated @ | `2023-11-09T12:16:19Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/452) |
 
@@ -15,6 +15,7 @@
     Sim？`
   - IsaacGym - NVIDIA’s physics simulation environment for reinforcement
     learning research
+      - end-to-end GPU accelerated RL for physically based systems
   - [Isaac Gym Benchmark
     Environments](https://github.com/NVIDIA-Omniverse/IsaacGymEnvs?tab=readme-ov-file#isaac-gym-benchmark-environments)
     :
