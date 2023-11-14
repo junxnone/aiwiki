@@ -57,6 +57,7 @@
     - HPO
     - NAS
   - AL
+- RL
 - Tools 
   - Numpy
   - TI
