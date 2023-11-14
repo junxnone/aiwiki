@@ -3,7 +3,7 @@
 | Title     | RL Taks                                               |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-11-14T07:13:45Z`                                |
-| Updated @ | `2023-11-14T07:25:18Z`                                |
+| Updated @ | `2023-11-14T07:25:57Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/457) |
 
@@ -20,6 +20,6 @@
 
 ## Others
 
-| Names    | Images |
-| -------- | ------ |
-| Humanoid |        |
+| Names    | Images                                                          |
+| -------- | --------------------------------------------------------------- |
+| Humanoid | ![humanoid](media/b6b7dda77a6c8a822a85effd183f591a7529ceaf.gif) |
