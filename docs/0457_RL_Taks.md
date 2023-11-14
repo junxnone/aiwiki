@@ -2,7 +2,7 @@
 Title | RL Taks
 -- | --
 Created @ | `2023-11-14T07:13:45Z`
-Updated @| `2023-11-14T07:25:57Z`
+Updated @| `2023-11-14T07:27:57Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/457)
 
@@ -24,4 +24,5 @@ Starcraft 2 | ![mmm2](https://github.com/junxnone/aiwiki/assets/2216970/3ede0fc2
 Names | Images
 -- | --
 Humanoid | ![humanoid](https://github.com/junxnone/aiwiki/assets/2216970/586d697e-c5f9-4adc-b0e1-4a0079aa50d8)
+Ant | ![ant](https://github.com/junxnone/aiwiki/assets/2216970/2bac4f9e-e7a3-436a-9fad-3778e1a2aeab)
 
