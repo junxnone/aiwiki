@@ -1,38 +1,26 @@
 -----
 
-| Title         | ML Tasks Image Segmentation FCN                       |
-| ------------- | ----------------------------------------------------- |
-| Created @     | `2019-11-27T07:41:13Z`                                |
-| Last Modify @ | `2022-12-24T12:51:05Z`                                |
-| Labels        | \`\`                                                  |
-| Edit @        | [here](https://github.com/junxnone/aiwiki/issues/160) |
+| Title     | ML Tasks Image Segmentation FCN                       |
+| --------- | ----------------------------------------------------- |
+| Created @ | `2019-11-27T07:41:13Z`                                |
+| Updated @ | `2023-11-21T14:42:14Z`                                |
+| Labels    | \`\`                                                  |
+| Edit @    | [here](https://github.com/junxnone/aiwiki/issues/160) |
 
 -----
 
-## Reference
+# FCN
 
-  - [FCN的学习及理解（Fully Convolutional Networks for Semantic
-    Segmentation）](https://blog.csdn.net/qq_36269513/article/details/80420363)
-  - [paper - Fully Convolutional Networks for Semantic
-    Segmentation](https://www.cv-foundation.org/openaccess/content_cvpr_2015/html/Long_Fully_Convolutional_Networks_2015_CVPR_paper.html)
-  - [paper - CVPR 2015 - Fully Convolutional Networks for Semantic
-    Segmentation - arxiv](https://arxiv.org/abs/1411.4038)
-  - [paper - PAMI 2016 - Fully Convolutional Networks for Semantic
-    Segmentation - arxiv](https://arxiv.org/abs/1605.06211)
-  - [Github repo](https://github.com/shelhamer/fcn.berkeleyvision.org)
-  - [全卷积网络 FCN 详解](https://zhuanlan.zhihu.com/p/30195134)
-  - [网络结构 FCN-8S-PASCAL -
-    Netscope](http://ethereon.github.io/netscope/#/preset/fcn-8s-pascal)
-  - [计算机视觉中upsampling(上采样)的三种方式](https://blog.csdn.net/u014451076/article/details/79156967)
+  - 传统的CNN(AlexNet)结构中，前5层是卷积层，第6/7层是长度为4096的FC(全连接层)，第8层是长度为1000的FC，分别对应1000个类别的概率
+  - FCN将这3层FC一维向量表示为卷积层，卷积核的大小 ( 通道数，宽，高) 分别为 (4096, 1, 1) - (4096, 1,
+    1) - (1000, 1, 1), 所有的层都是卷积层，故称为全卷积网络
+  - 从抽象的特征中恢复出每个像素所属的类别
 
-## Brief
+![image](media/ca8516f09ba8068ff2108da0c063efcf3df2bb6b.png)
 
 基于CNN网络产生 feature map, FCN 采用反卷积层对最后一个卷积层的 feature map 进行上采样,
 使它恢复到输入图像相同的尺寸，从而可以对每个像素都产生了一个预测,
 同时保留了原始输入图像中的空间信息, 最后在上采样的特征图上进行逐像素分类
-
-  - 2015 年 3/6 月分别在 arxiv 和 CVPR 会议上发表
-  - 从抽象的特征中恢复出每个像素所属的类别
 
 <img width="500px" src="https://user-images.githubusercontent.com/2216970/69857008-e3ee6780-12c9-11ea-9b50-e23c28896049.png">
 
@@ -43,14 +31,6 @@
   - **存储开销大:** 若每个像素使用的图像块的大小为15x15，则所需的存储空间为原来图像的225倍
   - **计算效率低:** 相邻的像素块存在重复，对每个像素块逐个卷积，存在大量重复计算
   - **像素块大小的限制了感知区域的大小:** 像素块的大小比整幅图像的大小小很多，只能提取一些局部的特征，从而导致分类的性能受到限制
-
-## FCN
-
-  - 传统的CNN(AlexNet)结构中，前5层是卷积层，第6/7层是长度为4096的FC(全连接层)，第8层是长度为1000的FC，分别对应1000个类别的概率
-  - FCN将这3层FC一维向量表示为卷积层，卷积核的大小 ( 通道数，宽，高) 分别为 (4096, 1, 1) - (4096, 1,
-    1) - (1000, 1, 1), 所有的层都是卷积层，故称为全卷积网络
-
-![image](media/ca8516f09ba8068ff2108da0c063efcf3df2bb6b.png)
 
 ### 网络结构
 
@@ -123,3 +103,19 @@ com-gif-maker](media/6643aa843919594ca598bd3d4f9945c7d0207530.gif)
 ## 后续
 
   - DeepLab - Fully Connected CRF - conditional random fields
+
+## Reference
+
+  - [FCN的学习及理解（Fully Convolutional Networks for Semantic
+    Segmentation）](https://blog.csdn.net/qq_36269513/article/details/80420363)
+  - [paper - Fully Convolutional Networks for Semantic
+    Segmentation](https://www.cv-foundation.org/openaccess/content_cvpr_2015/html/Long_Fully_Convolutional_Networks_2015_CVPR_paper.html)
+  - [paper - CVPR 2015 - Fully Convolutional Networks for Semantic
+    Segmentation - arxiv](https://arxiv.org/abs/1411.4038)
+  - [paper - PAMI 2016 - Fully Convolutional Networks for Semantic
+    Segmentation - arxiv](https://arxiv.org/abs/1605.06211)
+  - [Github repo](https://github.com/shelhamer/fcn.berkeleyvision.org)
+  - [全卷积网络 FCN 详解](https://zhuanlan.zhihu.com/p/30195134)
+  - [网络结构 FCN-8S-PASCAL -
+    Netscope](http://ethereon.github.io/netscope/#/preset/fcn-8s-pascal)
+  - [计算机视觉中upsampling(上采样)的三种方式](https://blog.csdn.net/u014451076/article/details/79156967)
