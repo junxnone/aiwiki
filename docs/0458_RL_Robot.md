@@ -2,7 +2,7 @@
 Title | RL Robot
 -- | --
 Created @ | `2023-11-21T07:46:49Z`
-Updated @| `2023-11-21T07:51:06Z`
+Updated @| `2023-11-21T07:52:17Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/458)
 
@@ -16,6 +16,8 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/458)
 - 位形空间(C-Space - Configuration space)
 - 拓扑
 - 旋转
+
+![image](https://github.com/junxnone/aiwiki/assets/2216970/0a727402-a40f-4046-93aa-9b794e721fbc)
 
 
 ## Reference
