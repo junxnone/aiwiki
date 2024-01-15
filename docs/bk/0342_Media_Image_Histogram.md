@@ -1,22 +1,15 @@
 -----
 
-| Title         | Media Image Histogram                                 |
-| ------------- | ----------------------------------------------------- |
-| Created @     | `2018-10-09T08:20:07Z`                                |
-| Last Modify @ | `2022-12-27T02:40:23Z`                                |
-| Labels        | \`\`                                                  |
-| Edit @        | [here](https://github.com/junxnone/aiwiki/issues/342) |
+| Title     | Media Image Histogram                                 |
+| --------- | ----------------------------------------------------- |
+| Created @ | `2018-10-09T08:20:07Z`                                |
+| Updated @ | `2024-01-15T06:27:36Z`                                |
+| Labels    | \`\`                                                  |
+| Edit @    | [here](https://github.com/junxnone/aiwiki/issues/342) |
 
 -----
 
 # Histogram 图像直方图
-
-## Reference
-
-  - [OpenCV
-    中的直方图](https://opencv.apachecn.org/#/docs/4.0.0/4.10-tutorial_py_histograms)
-
-## Brief
 
   - X - 像素值
   - Y - 相应的像素数量
@@ -63,3 +56,8 @@
   - 应用 - 分割部分同色物体
 
 ![image](media/492f0bfa8b1a1b59f7f6401ad61e9d74b14c2229.png)
+
+## Reference
+
+  - [OpenCV
+    中的直方图](https://opencv.apachecn.org/#/docs/4.0.0/4.10-tutorial_py_histograms)

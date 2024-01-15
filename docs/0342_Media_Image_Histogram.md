@@ -2,16 +2,13 @@
 Title | Media Image Histogram
 -- | --
 Created @ | `2018-10-09T08:20:07Z`
-Last Modify @| `2022-12-27T02:40:23Z`
+Updated @| `2024-01-15T06:27:36Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/342)
 
 ---
 # Histogram 图像直方图
-## Reference
-- [OpenCV 中的直方图](https://opencv.apachecn.org/#/docs/4.0.0/4.10-tutorial_py_histograms)
 
-## Brief
 - X - 像素值
 - Y - 相应的像素数量
 
@@ -55,4 +52,7 @@ Gray | RGB
 
 ![image](https://user-images.githubusercontent.com/2216970/98323092-ff0e3f00-2023-11eb-82bf-9fa64903851b.png)
 
+
+## Reference
+- [OpenCV 中的直方图](https://opencv.apachecn.org/#/docs/4.0.0/4.10-tutorial_py_histograms)
 
