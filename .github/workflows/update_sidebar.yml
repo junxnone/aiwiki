@@ -11,9 +11,6 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: ${{ github.ref }}
       - uses: junxnone/autosidebar@main
         with:
           push_branch: "main"
