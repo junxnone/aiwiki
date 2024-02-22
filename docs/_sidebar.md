@@ -450,7 +450,8 @@
     - [Model Precision](/0450_x_Model_Precision)
   - [Question](/0447_x_Q)
 - [应用](/0428_应用)
+- [有趣的工具](/0462_有趣的工具)
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1402220222</sub></kbd>
+<kbd><sub>@1452450222</sub></kbd>
