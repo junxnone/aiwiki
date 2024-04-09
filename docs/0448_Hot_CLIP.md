@@ -2,14 +2,14 @@
 Title | Hot CLIP
 -- | --
 Created @ | `2023-10-17T06:40:49Z`
-Updated @| `2024-04-09T06:35:32Z`
+Updated @| `2024-04-09T06:37:45Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/448)
 
 ---
 # CLIP
 - CLIP - `Contrastive Language–Image Pre-training` 对比语言图像预训练
-- `Image` - `Text`
+- `Image` - `Text` -> `Image 分类`
 - 可以学习到具有通用性的图像特征
 - 可以进行零样本迁移学习
 
