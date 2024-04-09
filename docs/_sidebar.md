@@ -424,6 +424,7 @@
     - [AIGC Tools](/0456_Hot_AIGC_Tools)
   - [CLIP](/0448_Hot_CLIP)
   - [DragGAN](/0429_Hot_DragGAN)
+  - [GLIP](/0463_Hot_GLIP)
   - [Imagen](/0413_Hot_Imagen)
   - [Large Language Models](/0446_Hot_LLMs)
   - [大模型](/0408_Hot_LM)
@@ -454,4 +455,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1456360409</sub></kbd>
+<kbd><sub>@1515590409</sub></kbd>
