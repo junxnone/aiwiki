@@ -2,11 +2,12 @@
 Title | Datasets Image2D Defect
 -- | --
 Created @ | `2019-04-01T05:41:31Z`
-Updated @| `2024-04-16T02:04:27Z`
+Updated @| `2024-04-16T02:05:16Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/245)
 
 ---
+# Defect/Anomaly Dataset
 
 ## Datasets
 - [hot-rolled steel strip defect - Northeastern University (NEU)](http://faculty.neu.edu.cn/yunhyan/NEU_surface_defect_database.html)
