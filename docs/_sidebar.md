@@ -365,7 +365,7 @@
     - [OCR](/0240_Datasets_Image2D_OCR)
     - [Face](/0238_Datasets_Image2D_Face)
     - [KeyPoint](/0248_Datasets_Image2D_KeyPoint)
-    - [Defect](/0245_Datasets_Image2D_Defect)
+    - [Defect/Anomaly Dataset](/0245_Datasets_Image2D_Defect)
     - [AutoML](/0244_Datasets_Image2D_AutoML)
     - [OC](/0239_Datasets_Image2D_OC)
     - [COCO](/0247_Datasets_Image2D_COCO)
@@ -455,4 +455,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1005410416</sub></kbd>
+<kbd><sub>@1014160416</sub></kbd>
