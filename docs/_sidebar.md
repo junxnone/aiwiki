@@ -370,7 +370,7 @@
     - [OC](/0239_Datasets_Image2D_OC)
     - [COCO](/0247_Datasets_Image2D_COCO)
     - [Edge Detection](/0098_Datasets_Image2D_EdgeDetection)
-    - [Brief](/0092_Datasets_Image2D_PascalVOC)
+    - [PascalVOC](/0092_Datasets_Image2D_PascalVOC)
   - [Image3D](/0087_Datasets_Image3D)
   - [Audio](/0020_Datasets_Audio)
   - [NLP](/0021_Datasets_NLP)
@@ -455,4 +455,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0945430416</sub></kbd>
+<kbd><sub>@1005410416</sub></kbd>
