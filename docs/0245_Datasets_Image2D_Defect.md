@@ -2,7 +2,7 @@
 Title | Datasets Image2D Defect
 -- | --
 Created @ | `2019-04-01T05:41:31Z`
-Updated @| `2024-04-16T02:05:16Z`
+Updated @| `2024-04-16T02:13:14Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/245)
 
@@ -17,7 +17,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/245)
 - [BTAD](http://avires.dimi.uniud.it/papers/btad/btad.zip)
 - [SDD](https://www.vicos.si/resources/kolektorsdd/)
 - [DAGM - 表面纹理缺陷检测](https://www.kaggle.com/datasets/mhskjelvareid/dagm-2007-competition-dataset-optical-inspection) [[download](https://zenodo.org/records/8086136)]
-
+- [DTD-Synthetic](https://drive.google.com/drive/folders/10OyPzvI3H6llCZBxKxFlKWt1Pw1tkMK1)
 
 
 ## Reference
