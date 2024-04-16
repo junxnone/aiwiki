@@ -1,39 +1,15 @@
 -----
 
-| Title         | Datasets Image2D PascalVOC                           |
-| ------------- | ---------------------------------------------------- |
-| Created @     | `2018-12-03T15:42:02Z`                               |
-| Last Modify @ | `2022-12-25T17:27:53Z`                               |
-| Labels        | \`\`                                                 |
-| Edit @        | [here](https://github.com/junxnone/aiwiki/issues/92) |
+| Title     | Datasets Image2D PascalVOC                           |
+| --------- | ---------------------------------------------------- |
+| Created @ | `2018-12-03T15:42:02Z`                               |
+| Updated @ | `2024-04-16T01:44:32Z`                               |
+| Labels    | \`\`                                                 |
+| Edit @    | [here](https://github.com/junxnone/aiwiki/issues/92) |
 
 -----
 
-## Reference
-
-  - [Pascal VOC Homepage](http://host.robots.ox.ac.uk/pascal/VOC/)
-  - [Pascal VOC Dataset
-    - 2012](http://host.robots.ox.ac.uk/pascal/VOC/index.html)
-  - [Pascal VOC Development Kit
-    - 2012](http://host.robots.ox.ac.uk/pascal/VOC/voc2012/htmldoc/devkit_doc.html)
-  - [Pascal VOC Dataset Mirror -
-    pjreddie.com](https://pjreddie.com/projects/pascal-voc-dataset-mirror/)
-  - [PascalVOC 数据集
-    介绍](https://blog.csdn.net/weixin_39679367/article/details/80932532)
-  - [paper - 2014 - The PASCAL Visual Object Classes Challenge: A
-    Retrospective](http://host.robots.ox.ac.uk/pascal/VOC/pubs/everingham15.pdf)
-  - [Leadereboards](http://host.robots.ox.ac.uk:8080/leaderboard/main_bootstrap.php)
-  - [Distribution -
-    Statistics](http://host.robots.ox.ac.uk/pascal/VOC/voc2012/dbstats.html)
-  - [Pascal SBD - Semantic Boundaries Dataset and
-    Benchmark](http://home.bharathh.info/pubs/codes/SBD/download.html) -
-    [\<Google
-    Drive\>](https://drive.google.com/file/d/1EQSKo5n2obj7tW8RytYTJ-eEYbXqtUXE/view)
-    [\<BaiduPan jgx7\>](https://pan.baidu.com/s/1-kYEZtOo99VJGHrKlOK5dQ)
-  - [SBD数据集
-    简介](https://blog.csdn.net/zz2230633069/article/details/89335205)
-
-# Brief
+# PascalVOC
 
   - 2005 - 2012 Challenges - `Detection/Segmentation`
   - VOC 2012
@@ -75,3 +51,27 @@
 | 2010 | 20 classes. The train/val data has 10,103 images containing 23,374 ROI annotated objects and 4,203 segmentations.                                                                                                                                                          | Action Classification taster introduced.Associated challenge on large scale classification introduced based on ImageNet.Amazon Mechanical Turk used for early stages of the annotation.                                                                                                                                                                                                                             | Method of computing AP changed. Now uses all data points rather than TREC style sampling.Test data annotation not made public.                         |
 | 2011 | 20 classes. The train/val data has 11,530 images containing 27,450 ROI annotated objects and 5,034 segmentations.                                                                                                                                                          | Action Classification taster extended to 10 classes + "other".                                                                                                                                                                                                                                                                                                                                                      | Layout annotation is now not "complete": only people are annotated and some people may be unannotated.                                                 |
 | 2012 | 20 classes. The train/val data has 11,530 images containing 27,450 ROI annotated objects and 6,929 segmentations.                                                                                                                                                          | Size of segmentation dataset substantially increased.People in action classification dataset are additionally annotated with a reference point on the body.                                                                                                                                                                                                                                                         | Datasets for classification, detection and person layout are the same as VOC2011.                                                                      |
+
+## Reference
+
+  - [Pascal VOC Homepage](http://host.robots.ox.ac.uk/pascal/VOC/)
+  - [Pascal VOC Dataset
+    - 2012](http://host.robots.ox.ac.uk/pascal/VOC/index.html)
+  - [Pascal VOC Development Kit
+    - 2012](http://host.robots.ox.ac.uk/pascal/VOC/voc2012/htmldoc/devkit_doc.html)
+  - [Pascal VOC Dataset Mirror -
+    pjreddie.com](https://pjreddie.com/projects/pascal-voc-dataset-mirror/)
+  - [PascalVOC 数据集
+    介绍](https://blog.csdn.net/weixin_39679367/article/details/80932532)
+  - [paper - 2014 - The PASCAL Visual Object Classes Challenge: A
+    Retrospective](http://host.robots.ox.ac.uk/pascal/VOC/pubs/everingham15.pdf)
+  - [Leadereboards](http://host.robots.ox.ac.uk:8080/leaderboard/main_bootstrap.php)
+  - [Distribution -
+    Statistics](http://host.robots.ox.ac.uk/pascal/VOC/voc2012/dbstats.html)
+  - [Pascal SBD - Semantic Boundaries Dataset and
+    Benchmark](http://home.bharathh.info/pubs/codes/SBD/download.html) -
+    [\<Google
+    Drive\>](https://drive.google.com/file/d/1EQSKo5n2obj7tW8RytYTJ-eEYbXqtUXE/view)
+    [\<BaiduPan jgx7\>](https://pan.baidu.com/s/1-kYEZtOo99VJGHrKlOK5dQ)
+  - [SBD数据集
+    简介](https://blog.csdn.net/zz2230633069/article/details/89335205)
