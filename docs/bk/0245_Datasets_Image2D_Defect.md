@@ -3,7 +3,7 @@
 | Title     | Datasets Image2D Defect                               |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2019-04-01T05:41:31Z`                                |
-| Updated @ | `2024-04-16T02:13:14Z`                                |
+| Updated @ | `2024-04-16T02:15:32Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/245) |
 
@@ -34,3 +34,5 @@
 
   - [几种表面缺陷检测数据集](https://zhuanlan.zhihu.com/p/59836697)
   - [缺陷检测数据集汇总（附下载链接）](https://aijishu.com/a/1060000000087666)
+  - [AnomayCLIP - Industrial/Medical
+    Datasets](https://github.com/zqhang/AnomalyCLIP?tab=readme-ov-file#prepare-your-dataset)
