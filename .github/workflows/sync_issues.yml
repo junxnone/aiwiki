@@ -5,8 +5,10 @@ on:
 jobs:
   issue2md:
     runs-on: ubuntu-latest
+    outputs:
+      commit_hash: ${{ steps.backup-last-commit.outputs.commit_hash }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: print github event action
         run: |
           echo "${{ github.event.action }}"
@@ -23,6 +25,20 @@ jobs:
           number: ${{ github.event.issue.number }}
           actor: ${{ github.actor }}
           nohead: ${{ contains(github.event.issue.labels.*.name, 'nohead') }}
+      - name: Backup last commit
+        id: backup-last-commit
+        run: |
+          echo "commit_hash=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
   update_sidebar:
-    uses: ./.github/workflows/update_sidebar.yml
     needs: issue2md
+    runs-on: ubuntu-latest
+    steps:
+      - uses: junxnone/autosidebar@main
+        with:
+          push_branch: "main"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          actor: ${{ github.actor }}
+          docs_path: "docs"
+          root_node: ${{ github.event.repository.name }}
+          ref: ${{ needs.issue2md.outputs.commit_hash }}
+
