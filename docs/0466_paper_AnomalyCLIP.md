@@ -2,7 +2,7 @@
 Title | paper AnomalyCLIP
 -- | --
 Created @ | `2024-04-26T07:52:00Z`
-Updated @| `2024-04-26T07:55:54Z`
+Updated @| `2024-04-26T08:10:03Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/466)
 
@@ -24,7 +24,6 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/466)
 
 *   现实情况中的数据集可用性(隐私/保密) 产生了 ZSAD 的需求
 *   面临的挑战
-
     *   视觉外观
     *   前景物体
     *   背景特征
@@ -34,7 +33,6 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/466)
 *   VLM(CLIP) 在各个领域表现抢眼
 *   WinCLIP
 *   为 ZSAD  手动设计了大量的提示词用于增强CLIP 的泛化能力
-
     *   但是局限于CLIP 被用来理解类语义的目的，在 AD 领域表现出较差的泛化能力
 *   CoOP 使用了可学习的提示词
 *   手动设计的提示和可学习的提示会导致提示词嵌入和目标语义的全局特征对齐，不能捕捉到更局部细粒度的异常
@@ -53,6 +51,8 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/466)
 6.  Refinement of textual space: 添加额外的可学习 token embedding 到 文本编码器
 7.  Refinement of the local visual space: DPAM (Diagonally Prominent Attention Map) 用于在细粒度上优化分割图
 8.  Inference 时使用相似度得分作为图像级异常分数，像素级使用合并的中间层分割(插值/平滑)
+9. Grounding-DINO-T --> Swin-T
+10. Grounding-DINO-L --> Swin-L
 
 
 ![Image](https://github.com/junxnone/aiwiki/assets/2216970/6aab0f44-6333-4b7d-9819-ce47746b4ae3)
@@ -79,17 +79,18 @@ prompt_abnormal = ['damaged {}', 'broken {}', '{} with flaw', '{} with defect', 
 3.  可学习 token embedding 为前 9 层，每层长度为 4
 4.  使用 mvtec 数据集训练，以评估其他数据集，使用 VisA 数据集训练，以评估 mvtec
 
-结果对比
+
+
+## 结果对比
 
 *   对比了 CLIP/CLIP-AC/WinCLIP/VAND/CoOp/AnomalyCLIP 模型
 *   在工业和医学数据集上都有较好的表现
-
     *   工业数据集 MVTec/VisA/MPDD/BTAD/SDD/DAGM/DTD-Synthetic&#x20;
     *   医学成像数据集(模型训练使用 MVTec)  HeadCT/BrainMRT/Br35H/COVID-19/ISIC/CVC-ColonDB/CVC-ClinicDB/Kvasir/Endo/TN3K
-*
+
 
 ## Test
-- 提供了两个预训练模型
+- 提供了两个预训练模型(Grounding-DINO-T)
   - 在 `MVTec AD` 数据集上训练模型，测试其他数据集
   - 在 `VisA` 数据集上训练模型，测试 `MVTec AD` 
 
