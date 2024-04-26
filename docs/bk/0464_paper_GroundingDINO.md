@@ -3,13 +3,15 @@
 | Title     | paper GroundingDINO                                   |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2024-04-26T07:30:30Z`                                |
-| Updated @ | `2024-04-26T07:30:30Z`                                |
+| Updated @ | `2024-04-26T07:32:26Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/464) |
 
 -----
 
 # Grounding DINO
+
+![Image](media/fc51b10c9768b7ecba4c6de0ffe48dc80e1e73da.png)
 
 ## 简介
 
@@ -24,6 +26,8 @@
       - 用于区域细化或检测区域的 Head
       - 特征融合一般在 Neck ，Qury Init 或Head 三种中的一种
   - 现有的开放集检测器大都倾向于检测新类别
+
+![Image](media/ced7df5cf6752b66ca1a9a54663b9b040570ebe5.png)
 
 ## 架构
 
