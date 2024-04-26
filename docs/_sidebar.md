@@ -444,6 +444,7 @@
 - [paper](/0386_paper)
   - [CSPNet](/0385_paper_CSPNet)
   - [ControlNet](/0407_paper_ControlNet)
+  - [Grounding DINO](/0464_paper_GroundingDINO)
 - [x](/0418_x)
   - [缺陷图片生成](/0403_x_DefectGen)
   - [Cool Demo](/0409_x_Demo)
@@ -455,4 +456,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1616350425</sub></kbd>
+<kbd><sub>@1531360426</sub></kbd>
