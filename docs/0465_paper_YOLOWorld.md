@@ -2,7 +2,7 @@
 Title | paper YOLOWorld
 -- | --
 Created @ | `2024-04-26T07:46:01Z`
-Updated @| `2024-04-26T07:46:01Z`
+Updated @| `2024-04-26T07:49:46Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/465)
 
@@ -54,6 +54,16 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/465)
         *   max-sigmoid attention
         *   I-Pooling Attention(Image Pooling Attention)
 
+
+
+
+![Image](https://github.com/junxnone/aiwiki/assets/2216970/a8980aeb-0d68-4c41-b6f3-825905d071b8)
+
+
+![Image](https://github.com/junxnone/aiwiki/assets/2216970/4c435263-8ed8-4fde-8c31-a8ca177b7e16)
+
+
+
 ###   预训练方法
 
     *   Total Loss = Contrastive Loss + λ \*  (IoU Loss + Distributed Focal Loss)
@@ -70,6 +80,10 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/465)
 *   和 GLIP-T/GLIPv2-t/Grounding DINO-T/DetCLIP-T 等轻 Backbone 网络比较，获得了较好的性能
 *   **消融实验**: 更丰富的文本信息/RepVL-PAN/Frozen CLIP Text Encoder 都能取得较好的性能提升
 
+
+
+
+![Image](https://github.com/junxnone/aiwiki/assets/2216970/ed00d2f8-1942-4dce-8e24-82a1d5747e19)
 
 
 

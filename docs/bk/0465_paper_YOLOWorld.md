@@ -3,7 +3,7 @@
 | Title     | paper YOLOWorld                                       |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2024-04-26T07:46:01Z`                                |
-| Updated @ | `2024-04-26T07:46:01Z`                                |
+| Updated @ | `2024-04-26T07:49:46Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/465) |
 
@@ -69,6 +69,10 @@
         *   max-sigmoid attention
         *   I-Pooling Attention(Image Pooling Attention)
 
+![Image](media/aea5dfb0794ae9f67d7ccb29a79591959a2c1bf6.png)
+
+![Image](media/23eacd284372a848d8de2df8511008907007d8a3.png)
+
 ### 预训练方法
 
     *   Total Loss = Contrastive Loss + λ \*  (IoU Loss + Distributed Focal Loss)
@@ -85,6 +89,8 @@
   - 和 GLIP-T/GLIPv2-t/Grounding DINO-T/DetCLIP-T 等轻 Backbone
     网络比较，获得了较好的性能
   - **消融实验**: 更丰富的文本信息/RepVL-PAN/Frozen CLIP Text Encoder 都能取得较好的性能提升
+
+![Image](media/3544148094e4dd474af30862fb692ad8a3985cd2.png)
 
 ## YOLO World S/M/L/X/XL and v1/v2
 
