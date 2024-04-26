@@ -442,6 +442,7 @@
 - [KnowledgeGraph](/0329_KnowledgeGraph)
 - [资源参考](/0380_Reference)
 - [paper](/0386_paper)
+  - [AnomalyCLIP](/0466_paper_AnomalyCLIP)
   - [CSPNet](/0385_paper_CSPNet)
   - [ControlNet](/0407_paper_ControlNet)
   - [Grounding DINO](/0464_paper_GroundingDINO)
@@ -457,4 +458,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1550520426</sub></kbd>
+<kbd><sub>@1553080426</sub></kbd>
