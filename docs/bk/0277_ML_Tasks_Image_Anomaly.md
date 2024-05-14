@@ -1,13 +1,41 @@
 -----
 
-| Title         | ML Tasks Image Anomaly                                |
-| ------------- | ----------------------------------------------------- |
-| Created @     | `2019-04-08T07:06:13Z`                                |
-| Last Modify @ | `2022-12-24T13:06:25Z`                                |
-| Labels        | \`\`                                                  |
-| Edit @        | [here](https://github.com/junxnone/aiwiki/issues/277) |
+| Title     | ML Tasks Image Anomaly                                |
+| --------- | ----------------------------------------------------- |
+| Created @ | `2019-04-08T07:06:13Z`                                |
+| Updated @ | `2024-05-14T15:34:22Z`                                |
+| Labels    | \`\`                                                  |
+| Edit @    | [here](https://github.com/junxnone/aiwiki/issues/277) |
 
 -----
+
+# Image Anomaly Detection
+
+  - 产品缺陷检测/不正常行为检测/医学图像检测
+
+## Algos
+
+  - 无监督学习
+  - AutoEncoder
+  - GAN
+  - [PaDiM](/PaDiM)
+  - [STFPM](/STFPM)
+  - DFM
+  - DFKDE
+  - Draem
+  - AnomalyCLIP
+  - AnomalyGPT
+  - MuSC
+
+## 应用
+
+  - 缺陷检测
+  - 医学图像异常检测
+  - 工业危害检测
+
+## Tools
+
+  - [anomalib](https://github.com/openvinotoolkit/anomalib)
 
 ## Reference
 
@@ -22,36 +50,5 @@
   - [iForest （Isolation Forest）孤立森林 异常检测
     入门篇](https://www.jianshu.com/p/5af3c66e0410)
   - [半监督”异常检测方法GANomaly](https://zhuanlan.zhihu.com/p/47832951)
-
-## Brief
-
-  - 异常值检测/产品缺陷检测/不正常行为检测
-      - 结构化数据/时间序列数据
-      - 图像/视频
-
-## Algos
-
-  - 无监督学习
-  - AutoEncoder
-  - GAN
-  - [PaDiM](/PaDiM)
-  - [STFPM](/STFPM)
-  - DFM
-  - DFKDE
-  - Draem
-
-## 应用
-
-  - 缺陷检测
-  - 医学图像异常检测
-  - 工业危害检测
-  - 诈骗检测
-  - 网络入侵检测
-
-## Tools
-
-  - [anomalib](https://github.com/openvinotoolkit/anomalib)
-
-## Datasets
-
-  - [MVTecAD (MVTEC Anomaly Detection Datasets)](/MVTec)
+  - [IM-IAD：工业制造中的工业图像异常检测基准](https://blog.csdn.net/m0_63828250/article/details/136891730)
+  - [awesome-industrial-anomaly-detection](https://github.com/M-3LAB/awesome-industrial-anomaly-detection)
