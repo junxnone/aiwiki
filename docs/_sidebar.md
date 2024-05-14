@@ -209,7 +209,7 @@
       - [Spatial Pyramid Pooling - 空间金字塔池化](/0365_ML_Op_Pooling_SPP)
     - [Regularization  正则化](/0252_ML_Op_Regularization)
   - [Metrics 评价指标](/0138_ML_Metrics)
-    - [Classification](/0137_ML_Metrics_Classification)
+    - [Metrics for Classification](/0137_ML_Metrics_Classification)
     - [CrossValidation 交叉验证](/0249_ML_Metrics_CrossValidation)
     - [Detection](/0230_ML_Metrics_Detection)
       - [AP & mAP & AR](/0382_ML_Metrics_Detection_APmAPAR)
@@ -458,4 +458,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1617380514</sub></kbd>
+<kbd><sub>@1641510514</sub></kbd>
