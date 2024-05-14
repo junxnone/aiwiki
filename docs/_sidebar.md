@@ -188,7 +188,7 @@
         - [TextScanner](/0192_ML_Tasks_Image_OCR_TextScanner)
         - Tools
           - [TextRecognitionDataGenerator](/0187_ML_Tasks_Image_OCR_Tools_TextRecognitionDataGenerator)
-      - [Anomaly](/0277_ML_Tasks_Image_Anomaly)
+      - [Image Anomaly Detection](/0277_ML_Tasks_Image_Anomaly)
         - [MVTec](/0323_ML_Tasks_Image_Anomaly_MVTec)
         - [PaDiM](/0322_ML_Tasks_Image_Anomaly_PaDiM)
         - [STFPM](/0324_ML_Tasks_Image_Anomaly_STFPM)
@@ -458,4 +458,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1711310514</sub></kbd>
+<kbd><sub>@2335370514</sub></kbd>
