@@ -3,7 +3,7 @@
 | Title     | ML Metrics Classification                             |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2021-11-21T04:55:43Z`                                |
-| Updated @ | `2024-05-14T08:40:34Z`                                |
+| Updated @ | `2024-05-14T08:52:25Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/137) |
 
@@ -26,17 +26,43 @@
 
 ### TP/TN/FP/FN
 
-| `Predict Label ↓` `Actual Label →` | 1  | 0  |
-| ---------------------------------- | -- | -- |
-| 1                                  | TP | FP |
-| 0                                  | FN | TN |
+| `pd ↓` `gt →` | 1  | 0  |
+| ------------- | -- | -- |
+| 1             | TP | FP |
+| 0             | FN | TN |
 
-| Name          | Formula                                                                                                                                                                             | Description           |
-| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- |
-| Accuracy      | Accuracy = N<sub>correct</sub> / N<sub>Total</sub> <br> $\\texttt{accuracy}(y, \\hat{y}) = \\frac{1}{n\_\\text{samples}} \\sum\_{i=0}^{n\_\\text{samples}-1} 1(\\hat{y}\_i = y\_i)$ | 预测正确的占总数的比例           |
-| Precision     | $\\text{precision} = \\frac{tp}{tp + fp}$                                                                                                                                           | 所有识别为正例的情况中，识别正确的比例   |
-| Recall        | $\\text{recall} = \\frac{tp}{tp + fn}$                                                                                                                                              | 所有实际类别为正例的情况中，识别正确的比例 |
-| F<sub>β</sub> | $F\_\\beta = (1 + \\beta^2) \\frac{\\text{precision} \\times \\text{recall}}{\\beta^2 \\text{precision} + \\text{recall}}$ <br>F1: 当 β = 1 时的 F<sub>β</sub>                         |                       |
+> gt: Ground Truth - Actual Label pd: Predict Label
+
+### Accuracy
+
+  - 预测正确的占总数的比例
+  - 当样本不均衡时，Accuracy 不能很好的区分模型
+
+Accuracy = N<sub>correct</sub> / N<sub>Total</sub>
+
+$\\texttt{accuracy}(y, \\hat{y}) = \\frac{1}{n\_\\text{samples}}
+\\sum\_{i=0}^{n\_\\text{samples}-1} 1(\\hat{y}\_i = y\_i)$
+
+### Precision
+
+  - 所有识别为正例的情况中，识别正确的比例
+  - 异常识别中表示为：值越大，FP 越少，误识别的概率越小
+
+$\\text{precision} = \\frac{tp}{tp + fp}$
+
+### Recall
+
+  - 所有实际类别为正例的情况中，识别正确的比例
+  - 异常识别中表示为: 值越大，FN 越少，漏检的概率越小
+
+$\\text{recall} = \\frac{tp}{tp + fn}$
+
+### F<sub>β</sub>
+
+  - F1: 当 β = 1 时的 F<sub>β</sub>
+
+$F\_\\beta = (1 + \\beta^2) \\frac{\\text{precision} \\times
+\\text{recall}}{\\beta^2 \\text{precision} + \\text{recall}}$
 
 ## Multiclass and Multilabel Classification
 
