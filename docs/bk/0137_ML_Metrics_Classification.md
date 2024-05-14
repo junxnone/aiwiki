@@ -3,7 +3,7 @@
 | Title     | ML Metrics Classification                             |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2021-11-21T04:55:43Z`                                |
-| Updated @ | `2024-05-14T08:52:25Z`                                |
+| Updated @ | `2024-05-14T08:54:54Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/137) |
 
@@ -40,7 +40,7 @@
 
 Accuracy = N<sub>correct</sub> / N<sub>Total</sub>
 
-$\\texttt{accuracy}(y, \\hat{y}) = \\frac{1}{n\_\\text{samples}}
+$\\text{accuracy}(y, \\hat{y}) = \\frac{1}{n\_\\text{samples}}
 \\sum\_{i=0}^{n\_\\text{samples}-1} 1(\\hat{y}\_i = y\_i)$
 
 ### Precision
