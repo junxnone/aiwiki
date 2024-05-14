@@ -2,21 +2,17 @@
 Title | ML Metrics Classification
 -- | --
 Created @ | `2021-11-21T04:55:43Z`
-Last Modify @| `2022-12-24T12:32:57Z`
+Updated @| `2024-05-14T08:40:34Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/137)
 
 ---
-## Reference
-- [Metrics and scoring - scikit-learn](https://scikit-learn.org/stable/modules/model_evaluation.html#metrics-and-scoring-quantifying-the-quality-of-predictions)
-- [sklearn.metrics.confusion_matrix](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.confusion_matrix.html)
-- [The Relationship Between Precision-Recall and ROC Curves](https://www.biostat.wisc.edu/~page/rocpr.pdf)
+# Metrics for Classification
 
-## Brief
 - 图像分类任务中根据二分类/多分类/多标签等有不同的 Metrics
 - **Accuracy** `当样本不均衡时，Accuracy 不能很好的区分模型`
-- Precision
-- Recall
+- **Precision**
+- **Recall**
 - F<sub>β</sub>/`F1`
 - ROC
 - PR
@@ -106,3 +102,10 @@ Normalized confusion matrix
 ![image](https://user-images.githubusercontent.com/2216970/204750904-e664abb7-5f1d-4491-86e0-93867ee7280e.png)
 
 #### PR-AUC
+
+
+
+## Reference
+- [Metrics and scoring - scikit-learn](https://scikit-learn.org/stable/modules/model_evaluation.html#metrics-and-scoring-quantifying-the-quality-of-predictions)
+- [sklearn.metrics.confusion_matrix](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.confusion_matrix.html)
+- [The Relationship Between Precision-Recall and ROC Curves](https://www.biostat.wisc.edu/~page/rocpr.pdf)
