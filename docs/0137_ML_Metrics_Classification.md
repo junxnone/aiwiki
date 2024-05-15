@@ -2,7 +2,7 @@
 Title | ML Metrics Classification
 -- | --
 Created @ | `2021-11-21T04:55:43Z`
-Updated @| `2024-05-15T01:57:34Z`
+Updated @| `2024-05-15T01:58:42Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/137)
 
@@ -61,7 +61,7 @@ $\huge \text{recall} = \frac{tp}{tp + fn}$
 ### F<sub>β</sub>
 - F1: 当 β = 1 时的 F<sub>β</sub>
 
-$\huge F_\beta = (1 + \beta^2) \frac{\text{precision} \times \text{recall}}{\beta^2 \text{precision} + \text{recall}}$ 
+$\huge F_\beta = (1 + \beta^2) \frac{\text{Precision} \times \text{Recall}}{\beta^2 \text{Precision} + \text{Recall}}$ 
 
 
 ## Multiclass and Multilabel Classification
