@@ -446,6 +446,7 @@
   - [CSPNet](/0385_paper_CSPNet)
   - [ControlNet](/0407_paper_ControlNet)
   - [Grounding DINO](/0464_paper_GroundingDINO)
+  - [MuSC](/0467_paper_MuSC)
   - [YOLO-World](/0465_paper_YOLOWorld)
 - [x](/0418_x)
   - [缺陷图片生成](/0403_x_DefectGen)
@@ -458,4 +459,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@2335370514</sub></kbd>
+<kbd><sub>@0916130515</sub></kbd>
