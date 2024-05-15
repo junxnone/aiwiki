@@ -3,7 +3,7 @@
 | Title     | ML Metrics Classification                             |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2021-11-21T04:55:43Z`                                |
-| Updated @ | `2024-05-15T16:41:48Z`                                |
+| Updated @ | `2024-05-15T16:42:48Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/137) |
 
@@ -83,7 +83,7 @@ $\\huge \\texttt{top-k accuracy}(y, \\hat{f}) =
 
 -----
 
-$\\huge \\text{precision} = \\frac{tp}{tp + fp}$
+$\\huge \\text{Precision} = \\frac{TP}{TP+FP}$
 
 ## Recall
 
@@ -92,7 +92,7 @@ $\\huge \\text{precision} = \\frac{tp}{tp + fp}$
 
 -----
 
-$\\large \\text{recall} = \\frac{TP}{TP+FN}$
+$\\large \\text{Recall} = \\frac{TP}{TP+FN}$
 
 ## AP
 
