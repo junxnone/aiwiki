@@ -330,7 +330,7 @@
   - [模型可视化](/0133_Tools_VIS)
     - [ONNX 可视化工具](/0134_Tools_VIS_ONNX)
     - [Quiver](/0136_Tools_VIS_Quiver)
-    - [netron](/0135_Tools_VIS_netron)
+    - [模型结构可视化工具 netron](/0135_Tools_VIS_netron)
   - [标注工具](/0006_Tools_Label)
     - [CVAT](/0073_Tools_Label_CVAT)
     - [LabelImg](/0250_Tools_Label_LabelImg)
@@ -459,4 +459,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1419130515</sub></kbd>
+<kbd><sub>@1427390515</sub></kbd>
