@@ -2,7 +2,7 @@
 Title | ML Metrics Classification
 -- | --
 Created @ | `2021-11-21T04:55:43Z`
-Updated @| `2024-05-15T15:15:52Z`
+Updated @| `2024-05-15T15:29:40Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/137)
 
@@ -21,9 +21,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/137)
 - Error Rate
 
 
-## Binary Classification Metrics
-
-### TP/TN/FP/FN
+## TP/TN/FP/FN
 
 `pd ↓` `gt →` | 1 | 0
 -- | -- | --
@@ -34,7 +32,9 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/137)
 > gt: Ground Truth - Actual Label
 > pd: Predict Label
 
-### Accuracy
+:bookmark: Binary Classification
+
+## Accuracy
 - 预测正确的占总数的比例
 - 当样本不均衡时，Accuracy 不能很好的区分模型
 
@@ -48,9 +48,32 @@ $\huge \texttt{accuracy}(y, \hat{y}) = \frac{1}{n_\text{samples}} \sum_{i=0}^{n_
 
 ---
 
+### Balanced Accuracy
+- 用于 `P/N` 不平衡的情况
+- 如果 `P` 较多(990)，`N` 较少(10)，所有**sample**都预测为 `P`,  **Accuracy** 很高(99%)
+
+---
+
+$\texttt{balanced-accuracy} = \frac{1}{2}\left( \frac{TP}{TP + FN} + \frac{TN}{TN + FP}\right )$ 
+---
+
+$\texttt{balanced-accuracy}(y, \hat{y}, w) = \frac{1}{\sum{\hat{w}_i}} \sum_i 1(\hat{y}_i = y_i) \hat{w}_i$
+---
+
+### Top-k Accuracy
+- 多分类的情况下，只要预测前 `k` 类别中包含目标类别，则为预测正确，计入 `Top-k Accuracy`
+
+---
+
+$\huge \texttt{top-k accuracy}(y, \hat{f}) = \frac{1}{n_\text{samples}} \sum_{i=0}^{n_\text{samples}-1} \sum_{j=1}^{k} 1(\hat{f}_{i,j} = y_i)$ 
+
+
+
 ### Precision
 -  所有识别为正例的情况中，识别正确的比例
 - 异常识别中表示为：值越大，FP 越少，误识别的概率越小
+
+---
 
 $\huge \text{precision} = \frac{tp}{tp + fp}$
 
@@ -59,10 +82,14 @@ $\huge \text{precision} = \frac{tp}{tp + fp}$
 - 所有实际类别为正例的情况中，识别正确的比例
 - 异常识别中表示为: 值越大，FN 越少，漏检的概率越小
 
+---
+
 $\huge \text{recall} = \frac{tp}{tp + fn}$
 
 ### F<sub>β</sub>
 - F1: 当 β = 1 时的 F<sub>β</sub>
+
+---
 
 $\huge F_\beta = (1 + \beta^2) \frac{\text{Precision} \times \text{Recall}}{\beta^2 \text{Precision} + \text{Recall}}$ 
 
@@ -84,13 +111,6 @@ average | Precision | Recall |F<sub>β</sub>
 - $P(A, B) := \frac{\left| A \cap B \right|}{\left|A\right|}$
 - $R(A, B) := \frac{\left| A \cap B \right|}{\left|B\right|}$
 - $F_\beta(A, B) := \left(1 + \beta^2\right) \frac{P(A, B) \times R(A, B)}{\beta^2 P(A, B) + R(A, B)}$
-
-Accuracy | Math Formula
--- | --
-Accuracy |  $\texttt{accuracy}(y, \hat{y}) = \frac{1}{n_\text{samples}} \sum_{i=0}^{n_\text{samples}-1} 1(\hat{y}_i = y_i)$
-Top-k Accuracy | $\texttt{top-k accuracy}(y, \hat{f}) = \frac{1}{n_\text{samples}} \sum_{i=0}^{n_\text{samples}-1} \sum_{j=1}^{k} 1(\hat{f}_{i,j} = y_i)$ 
-Balanced Accuracy |$\texttt{balanced-accuracy} = \frac{1}{2}\left( \frac{TP}{TP + FN} + \frac{TN}{TN + FP}\right )$ <br> $\texttt{balanced-accuracy}(y, \hat{y}, w) = \frac{1}{\sum{\hat{w}_i}} \sum_i 1(\hat{y}_i = y_i) \hat{w}_i$
-
 
 
 
