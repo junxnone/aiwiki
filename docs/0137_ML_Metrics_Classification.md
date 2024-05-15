@@ -2,7 +2,7 @@
 Title | ML Metrics Classification
 -- | --
 Created @ | `2021-11-21T04:55:43Z`
-Updated @| `2024-05-15T15:29:40Z`
+Updated @| `2024-05-15T15:58:48Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/137)
 
@@ -23,16 +23,13 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/137)
 
 ## TP/TN/FP/FN
 
-`pd ↓` `gt →` | 1 | 0
--- | -- | --
+👇`Predict Label` | 1 | 0 | 👈`GroundTruth`
+-- | -- | -- | --
 1 | TP | FP
 0 | FN | TN
 
 
-> gt: Ground Truth - Actual Label
-> pd: Predict Label
-
-:bookmark: Binary Classification
+:bookmark: <kbd>Binary Classification</kbd>
 
 ## Accuracy
 - 预测正确的占总数的比例
@@ -69,7 +66,7 @@ $\huge \texttt{top-k accuracy}(y, \hat{f}) = \frac{1}{n_\text{samples}} \sum_{i=
 
 
 
-### Precision
+## Precision
 -  所有识别为正例的情况中，识别正确的比例
 - 异常识别中表示为：值越大，FP 越少，误识别的概率越小
 
@@ -78,7 +75,7 @@ $\huge \texttt{top-k accuracy}(y, \hat{f}) = \frac{1}{n_\text{samples}} \sum_{i=
 $\huge \text{precision} = \frac{tp}{tp + fp}$
 
 
-### Recall
+## Recall
 - 所有实际类别为正例的情况中，识别正确的比例
 - 异常识别中表示为: 值越大，FN 越少，漏检的概率越小
 
@@ -86,7 +83,19 @@ $\huge \text{precision} = \frac{tp}{tp + fp}$
 
 $\huge \text{recall} = \frac{tp}{tp + fn}$
 
-### F<sub>β</sub>
+
+## AP
+- Average precision
+- AP 根据 `精确率-召回率曲线` 为在每个`阈值`处实现的精度的加权平均值，权重为前一个阈值的`召回率`的增加
+
+$\huge \text{AP} = \sum_n (R_n - R_{n-1}) P_n$
+
+> where $P_n$ and $R_n$ are the precision and recall at the nth threshold
+
+
+
+
+## F<sub>β</sub>
 - F1: 当 β = 1 时的 F<sub>β</sub>
 
 ---
@@ -94,7 +103,8 @@ $\huge \text{recall} = \frac{tp}{tp + fn}$
 $\huge F_\beta = (1 + \beta^2) \frac{\text{Precision} \times \text{Recall}}{\beta^2 \text{Precision} + \text{Recall}}$ 
 
 
-## Multiclass and Multilabel Classification
+## micro/macro/weighted/samples
+- Multiclass and Multilabel Classification
 - **micro**: 取全部样例
 - **macro**:  按类别取均值
 - **weighted**: 对类别按比例给予权重计算
@@ -134,13 +144,26 @@ Normalized confusion matrix
  [0.   0.   1.  ]]
 ```
 
-### AUROC
-- `The Area Under the Receiver Operating Characteristic`
-- AUC常常用来评估二分类模型的性能。
-- 曲线下的面积通常指的是ROC曲线。
+
+## AUC
+- **A**rea **U**nder the **C**urve
+- AUC常常用来评估二分类模型的性能, 能够综合的表达 `Precision` & `Recall` 性能
+- 通过计算曲线下的面积作为评估指标
 - 相比于准确率、召回率、F1值等依赖于判决阈值的评估指标，AUC则没有这个问题。
 
-#### ROC-AUC
+
+### PR-AUC
+- Precision-Recall Curve
+- 相差不大的 AP，但是有可能 `PRC` 有可能有较大区别
+  - 如下两图，AP 只相差 2%，但是左图并不能同时在 `Precision` & `Recall` 上达到较好的平衡，图二则可以
+
+AnomalyCLIP `@mvtec-bottle` | MuSC `@mvtec-bottle`
+-- | --
+![image](https://github.com/junxnone/aiwiki/assets/2216970/abc34a7a-66ea-4388-b3f8-5c28c808e11a) | ![image](https://github.com/junxnone/aiwiki/assets/2216970/29835b2d-8f7a-4411-a5a3-e413222df32d)
+
+
+
+### ROC-AUC
 - ROC - `Receiver Operating Characteristic Curve` - 受试者工作特征曲线
 - 横坐标为假阳性率(FPR)
 ![image](https://user-images.githubusercontent.com/2216970/60111139-f9ea8000-979f-11e9-9832-ec36e1592a74.png)
@@ -148,8 +171,6 @@ Normalized confusion matrix
 ![image](https://user-images.githubusercontent.com/2216970/60111167-07076f00-97a0-11e9-91e2-45a834874a2b.png)
 
 ![image](https://user-images.githubusercontent.com/2216970/204750904-e664abb7-5f1d-4491-86e0-93867ee7280e.png)
-
-#### PR-AUC
 
 
 
