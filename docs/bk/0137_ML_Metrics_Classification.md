@@ -3,7 +3,7 @@
 | Title     | ML Metrics Classification                             |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2021-11-21T04:55:43Z`                                |
-| Updated @ | `2024-05-15T16:42:48Z`                                |
+| Updated @ | `2024-05-15T16:58:07Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/137) |
 
@@ -38,12 +38,12 @@
 
 -----
 
-$\\huge Accuracy = \\frac{N\_{correct}}{N\_{Total}} = \\frac{TP + TN}{TP
-+ TN + FP + FN}$
+$\\large Accuracy = \\frac{N\_{correct}}{N\_{Total}} = \\frac{TP +
+TN}{TP + TN + FP + FN}$
 
 -----
 
-$\\huge \\texttt{accuracy}(y, \\hat{y}) = \\frac{1}{n\_\\text{samples}}
+$\\large \\texttt{accuracy}(y, \\hat{y}) = \\frac{1}{n\_\\text{samples}}
 \\sum\_{i=0}^{n\_\\text{samples}-1} 1(\\hat{y}\_i = y\_i)$
 
 -----
@@ -55,12 +55,12 @@ $\\huge \\texttt{accuracy}(y, \\hat{y}) = \\frac{1}{n\_\\text{samples}}
 
 -----
 
-$\\huge \\texttt{balanced-accuracy} = \\frac{1}{2}\\left( \\frac{TP}{TP
+$\\large \\texttt{balanced-accuracy} = \\frac{1}{2}\\left( \\frac{TP}{TP
 + FN} + \\frac{TN}{TN + FP}\\right )$
 
 -----
 
-$\\huge \\texttt{balanced-accuracy}(y, \\hat{y}, w) =
+$\\large \\texttt{balanced-accuracy}(y, \\hat{y}, w) =
 \\frac{1}{\\sum{\\hat{w}\_i}} \\sum\_i 1(\\hat{y}\_i = y\_i)
 \\hat{w}\_i$
 
@@ -72,7 +72,7 @@ $\\huge \\texttt{balanced-accuracy}(y, \\hat{y}, w) =
 
 -----
 
-$\\huge \\texttt{top-k accuracy}(y, \\hat{f}) =
+$\\large \\texttt{top-k accuracy}(y, \\hat{f}) =
 \\frac{1}{n\_\\text{samples}} \\sum\_{i=0}^{n\_\\text{samples}-1}
 \\sum\_{j=1}^{k} 1(\\hat{f}\_{i,j} = y\_i)$
 
@@ -83,7 +83,7 @@ $\\huge \\texttt{top-k accuracy}(y, \\hat{f}) =
 
 -----
 
-$\\huge \\text{Precision} = \\frac{TP}{TP+FP}$
+$\\large \\text{Precision} = \\frac{TP}{TP+FP}$
 
 ## Recall
 
@@ -99,7 +99,7 @@ $\\large \\text{Recall} = \\frac{TP}{TP+FN}$
   - Average precision
   - AP 根据 `精确率-召回率曲线` 为在每个`阈值`处实现的精度的加权平均值，权重为前一个阈值的`召回率`的增加
 
-$\\huge \\text{AP} = \\sum\_n (R\_n - R\_{n-1}) P\_n$
+$\\large \\text{AP} = \\sum\_n (R\_n - R\_{n-1}) P\_n$
 
 > where $P\_n$ and $R\_n$ are the precision and recall at the nth
 > threshold
@@ -110,7 +110,7 @@ $\\huge \\text{AP} = \\sum\_n (R\_n - R\_{n-1}) P\_n$
 
 -----
 
-$\\huge F\_\\beta = (1 + \\beta^2) \\frac{\\text{Precision} \\times
+$\\large F\_\\beta = (1 + \\beta^2) \\frac{\\text{Precision} \\times
 \\text{Recall}}{\\beta^2 \\text{Precision} + \\text{Recall}}$
 
 ## micro/macro/weighted/samples
@@ -172,8 +172,8 @@ $\\huge F\_\\beta = (1 + \\beta^2) \\frac{\\text{Precision} \\times
 ### ROC-AUC
 
   - ROC - `Receiver Operating Characteristic Curve` - 受试者工作特征曲线
-  - 横坐标为假阳性率 $FPR = \\frac{FP}{N}$
-  - 纵坐标为真阳性率 $TPR = \\frac{TP}{N}$
+  - 横坐标为假阳性率 \[ $FPR = \\frac{FP}{N}$ \]
+  - 纵坐标为真阳性率 \[ $TPR = \\frac{TP}{N}$ \]
 
 ![image](media/7516c8f6cffaf17f82091d5564f72b82c0d65743.png)
 
