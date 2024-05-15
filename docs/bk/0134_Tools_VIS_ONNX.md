@@ -1,26 +1,18 @@
 -----
 
-| Title         | Tools VIS ONNX                                        |
-| ------------- | ----------------------------------------------------- |
-| Created @     | `2020-04-26T02:35:59Z`                                |
-| Last Modify @ | `2022-12-25T04:22:43Z`                                |
-| Labels        | \`\`                                                  |
-| Edit @        | [here](https://github.com/junxnone/aiwiki/issues/134) |
+| Title     | Tools VIS ONNX                                        |
+| --------- | ----------------------------------------------------- |
+| Created @ | `2020-04-26T02:35:59Z`                                |
+| Updated @ | `2024-05-15T06:27:40Z`                                |
+| Labels    | \`\`                                                  |
+| Edit @    | [here](https://github.com/junxnone/aiwiki/issues/134) |
 
 -----
 
 # ONNX 可视化工具
 
-## Reference
-
-  - [Visualizing an ONNX
-    Model](https://github.com/onnx/tutorials/blob/master/tutorials/VisualizingAModel.md)
-  - [onnx/tools/net\_drawer.py](https://github.com/onnx/onnx/blob/master/onnx/tools/net_drawer.py)
-
-## Brief
-
   - Graphviz + pydot
-  - [netron](https://github.com/junxnone/AI/issues/97)
+  - netron
 
 ## Graphviz + pydot
 
@@ -63,3 +55,9 @@
 ![image](media/9a66372b669d4c63a074124f3686b993f03f23c0.png)
 
 ![image](media/8fd0dd36984e77ad3d0c92c5f6f4f3f2825b3a0f.png)
+
+## Reference
+
+  - [Visualizing an ONNX
+    Model](https://github.com/onnx/tutorials/blob/master/tutorials/VisualizingAModel.md)
+  - [onnx/tools/net\_drawer.py](https://github.com/onnx/onnx/blob/master/onnx/tools/net_drawer.py)

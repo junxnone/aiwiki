@@ -2,23 +2,15 @@
 Title | Tools VIS ONNX
 -- | --
 Created @ | `2020-04-26T02:35:59Z`
-Last Modify @| `2022-12-25T04:22:43Z`
+Updated @| `2024-05-15T06:27:40Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/134)
 
 ---
-
 # ONNX 可视化工具
 
-## Reference
-
-- [Visualizing an ONNX Model](https://github.com/onnx/tutorials/blob/master/tutorials/VisualizingAModel.md)
-- [onnx/tools/net_drawer.py](https://github.com/onnx/onnx/blob/master/onnx/tools/net_drawer.py)
-
-
-## Brief
 - Graphviz + pydot
-- [netron](https://github.com/junxnone/AI/issues/97) 
+- netron
 
 ## Graphviz + pydot
 
@@ -59,4 +51,11 @@ AlexNet(
 ![image](https://user-images.githubusercontent.com/2216970/80299188-f9a68100-87c4-11ea-9a16-a651392dafb2.png)
 
 ![image](https://user-images.githubusercontent.com/2216970/80296632-70388400-87af-11ea-99f9-ce5335c163b3.png)
+
+
+## Reference
+
+- [Visualizing an ONNX Model](https://github.com/onnx/tutorials/blob/master/tutorials/VisualizingAModel.md)
+- [onnx/tools/net_drawer.py](https://github.com/onnx/onnx/blob/master/onnx/tools/net_drawer.py)
+
 
