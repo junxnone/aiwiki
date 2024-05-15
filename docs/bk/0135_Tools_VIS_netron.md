@@ -1,20 +1,15 @@
 -----
 
-| Title         | Tools VIS netron                                      |
-| ------------- | ----------------------------------------------------- |
-| Created @     | `2018-12-13T15:37:35Z`                                |
-| Last Modify @ | `2022-12-25T04:22:01Z`                                |
-| Labels        | \`\`                                                  |
-| Edit @        | [here](https://github.com/junxnone/aiwiki/issues/135) |
+| Title     | Tools VIS netron                                      |
+| --------- | ----------------------------------------------------- |
+| Created @ | `2018-12-13T15:37:35Z`                                |
+| Updated @ | `2024-05-15T06:26:30Z`                                |
+| Labels    | \`\`                                                  |
+| Edit @    | [here](https://github.com/junxnone/aiwiki/issues/135) |
 
 -----
 
-## Reference
-
-  - [Github repo](https://github.com/lutzroeder/netron)
-  - [Web UI](https://lutzroeder.github.io/netron)
-
-## Brief
+# 模型结构可视化工具 netron
 
   - Visualizer for deep learning and machine learning models
   - **Support model files**
@@ -46,3 +41,8 @@
     netron xxx.onnx --port xxx_port --host xxx_host
 
 > access from <http://xxx_host:xxx_port>
+
+## Reference
+
+  - [Github repo](https://github.com/lutzroeder/netron)
+  - [Web UI](https://netron.app/)

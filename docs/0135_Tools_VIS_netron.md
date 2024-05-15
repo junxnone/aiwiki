@@ -2,19 +2,15 @@
 Title | Tools VIS netron
 -- | --
 Created @ | `2018-12-13T15:37:35Z`
-Last Modify @| `2022-12-25T04:22:01Z`
+Updated @| `2024-05-15T06:26:30Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/135)
 
 ---
 
-## Reference
 
-- [Github repo](https://github.com/lutzroeder/netron)
-- [Web UI](https://lutzroeder.github.io/netron)
+# 模型结构可视化工具 netron
 
-
-## Brief
 - Visualizer for deep learning and machine learning models  
 - **Support model files**
   - ONNX (.onnx, .pb, .pbtxt)
@@ -50,4 +46,10 @@ http://localhost:8080/
 netron xxx.onnx --port xxx_port --host xxx_host
 ```
 > access from <http://xxx_host:xxx_port>
+
+
+## Reference
+
+- [Github repo](https://github.com/lutzroeder/netron)
+- [Web UI](https://netron.app/)
 
