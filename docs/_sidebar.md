@@ -327,7 +327,7 @@
     - [Tips](/0261_Tools_Darknet_AlexeyAB)
     - [Config Files](/0262_Tools_Darknet_cfgFiles)
   - [anomalib](/0321_Tools_anomalib)
-  - [可视化](/0133_Tools_VIS)
+  - [模型可视化](/0133_Tools_VIS)
     - [ONNX 可视化工具](/0134_Tools_VIS_ONNX)
     - [Quiver](/0136_Tools_VIS_Quiver)
     - [netron](/0135_Tools_VIS_netron)
@@ -459,4 +459,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1000540515</sub></kbd>
+<kbd><sub>@1109350515</sub></kbd>
