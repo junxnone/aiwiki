@@ -2,22 +2,13 @@
 Title | Tools VIS
 -- | --
 Created @ | `2019-08-20T06:28:49Z`
-Last Modify @| `2022-12-25T04:19:30Z`
+Updated @| `2024-05-15T03:08:32Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/133)
 
 ---
-# 可视化
+# 模型可视化
 
-## Reference
-- [cnn-explainer](https://poloclub.github.io/cnn-explainer/) 
-- [CNN-Visualization](https://github.com/scutan90/CNN-Visualization)  [[第七章 可视化工具 -  CNN-Visualization](https://github.com/scutan90/CNN-Visualization/blob/master/CNN%E5%8F%AF%E8%A7%86%E5%8C%96.md#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7)]
-- [Mnist 可视化 - tensorflow](https://nbviewer.jupyter.org/github/wang-jinghui/MyCSDN_Blog/blob/master/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9CCNN%3ATensorflow%E5%AE%9E%E7%8E%B0%28%E4%BB%A5%E5%8F%8A%E5%AF%B9%E5%8D%B7%E7%A7%AF%E7%89%B9%E5%BE%81%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%29/tensorflow%3Acnn%2Cfeature%2Cvisualization.ipynb)
-- [grad-cam](https://github.com/jacobgil/pytorch-grad-cam)
-- [tensorspace](https://tensorspace.org/)
-
-
-## Brief
 - 网络架构可视化
 - Data 可视化
   - Feature Map
@@ -33,6 +24,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/133)
 ### Tools
 #### 网络架构可视化
 - 基于Web的
+  - [netron](https://github.com/lutzroeder/netron)
   - [Quiver](/Quiver)
   - [NN-SVG](http://alexlenail.me/NN-SVG/index.html) - - - [Github](https://github.com/zfrenchee/NN-SVG)
   - [ConvNetDraw](https://cbovar.github.io/ConvNetDraw/)
@@ -76,5 +68,11 @@ AlexNet Style | ![image](https://user-images.githubusercontent.com/2216970/16098
 
 ![image](https://user-images.githubusercontent.com/2216970/63329123-f4568400-c363-11e9-99dd-ecf6646f9ea5.png)
 
+## Reference
+- [cnn-explainer](https://poloclub.github.io/cnn-explainer/) 
+- [CNN-Visualization](https://github.com/scutan90/CNN-Visualization)  [[第七章 可视化工具 -  CNN-Visualization](https://github.com/scutan90/CNN-Visualization/blob/master/CNN%E5%8F%AF%E8%A7%86%E5%8C%96.md#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7)]
+- [Mnist 可视化 - tensorflow](https://nbviewer.jupyter.org/github/wang-jinghui/MyCSDN_Blog/blob/master/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9CCNN%3ATensorflow%E5%AE%9E%E7%8E%B0%28%E4%BB%A5%E5%8F%8A%E5%AF%B9%E5%8D%B7%E7%A7%AF%E7%89%B9%E5%BE%81%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%29/tensorflow%3Acnn%2Cfeature%2Cvisualization.ipynb)
+- [grad-cam](https://github.com/jacobgil/pytorch-grad-cam)
+- [tensorspace](https://tensorspace.org/)
 
 
