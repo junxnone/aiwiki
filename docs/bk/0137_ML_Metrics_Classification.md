@@ -3,7 +3,7 @@
 | Title     | ML Metrics Classification                             |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2021-11-21T04:55:43Z`                                |
-| Updated @ | `2024-05-15T01:58:42Z`                                |
+| Updated @ | `2024-05-15T15:15:52Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/137) |
 
@@ -38,11 +38,17 @@
   - 预测正确的占总数的比例
   - 当样本不均衡时，Accuracy 不能很好的区分模型
 
-$\\huge Accuracy = \\frac{N\_{correct}}{N\_{Total}}$ $\\huge Accuracy =
-\\frac{TP + TN}{TP + TN + FP + FN}$
+-----
 
-$\\huge \\text{accuracy}(y, \\hat{y}) = \\frac{1}{n\_\\text{samples}}
+$\\huge Accuracy = \\frac{N\_{correct}}{N\_{Total}} = \\frac{TP + TN}{TP
++ TN + FP + FN}$
+
+-----
+
+$\\huge \\texttt{accuracy}(y, \\hat{y}) = \\frac{1}{n\_\\text{samples}}
 \\sum\_{i=0}^{n\_\\text{samples}-1} 1(\\hat{y}\_i = y\_i)$
+
+-----
 
 ### Precision
 
