@@ -2,7 +2,7 @@
 Title | ML Metrics Classification
 -- | --
 Created @ | `2021-11-21T04:55:43Z`
-Updated @| `2024-05-15T16:16:16Z`
+Updated @| `2024-05-15T16:41:48Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/137)
 
@@ -83,7 +83,7 @@ $\huge \text{precision} = \frac{tp}{tp + fp}$
 
 ---
 
-$\huge \text{recall} = \frac{tp}{tp + fn}$
+$\large \text{recall} = \frac{TP}{TP+FN}$
 
 
 ## AP
@@ -167,10 +167,8 @@ AnomalyCLIP `@mvtec-bottle` | MuSC `@mvtec-bottle`
 
 ### ROC-AUC
 - ROC - `Receiver Operating Characteristic Curve` - 受试者工作特征曲线
-- 横坐标为假阳性率(FPR)
-![image](https://user-images.githubusercontent.com/2216970/60111139-f9ea8000-979f-11e9-9832-ec36e1592a74.png)
-- 纵坐标为真阳性率(TPR)
-![image](https://user-images.githubusercontent.com/2216970/60111167-07076f00-97a0-11e9-91e2-45a834874a2b.png)
+- 横坐标为假阳性率 $FPR = \frac{FP}{N}$
+- 纵坐标为真阳性率 $TPR = \frac{TP}{N}$
 
 ![image](https://user-images.githubusercontent.com/2216970/204750904-e664abb7-5f1d-4491-86e0-93867ee7280e.png)
 

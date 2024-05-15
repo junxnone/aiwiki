@@ -3,7 +3,7 @@
 | Title     | ML Metrics Classification                             |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2021-11-21T04:55:43Z`                                |
-| Updated @ | `2024-05-15T16:16:16Z`                                |
+| Updated @ | `2024-05-15T16:41:48Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/137) |
 
@@ -92,7 +92,7 @@ $\\huge \\text{precision} = \\frac{tp}{tp + fp}$
 
 -----
 
-$\\huge \\text{recall} = \\frac{tp}{tp + fn}$
+$\\large \\text{recall} = \\frac{TP}{TP+FN}$
 
 ## AP
 
@@ -172,10 +172,8 @@ $\\huge F\_\\beta = (1 + \\beta^2) \\frac{\\text{Precision} \\times
 ### ROC-AUC
 
   - ROC - `Receiver Operating Characteristic Curve` - 受试者工作特征曲线
-  - 横坐标为假阳性率(FPR)
-    ![image](media/efa51f90d591c9acd8b84a77515727b9230aebea.png)
-  - 纵坐标为真阳性率(TPR)
-    ![image](media/f91668092140fe0d5b1c6cbd3687e83673ba0e5d.png)
+  - 横坐标为假阳性率 $FPR = \\frac{FP}{N}$
+  - 纵坐标为真阳性率 $TPR = \\frac{TP}{N}$
 
 ![image](media/7516c8f6cffaf17f82091d5564f72b82c0d65743.png)
 
