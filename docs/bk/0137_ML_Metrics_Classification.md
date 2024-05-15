@@ -3,7 +3,7 @@
 | Title     | ML Metrics Classification                             |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2021-11-21T04:55:43Z`                                |
-| Updated @ | `2024-05-15T15:58:48Z`                                |
+| Updated @ | `2024-05-15T16:09:11Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/137) |
 
@@ -55,9 +55,16 @@ $\\huge \\texttt{accuracy}(y, \\hat{y}) = \\frac{1}{n\_\\text{samples}}
 
 -----
 
-## $\\texttt{balanced-accuracy} = \\frac{1}{2}\\left( \\frac{TP}{TP + FN} + \\frac{TN}{TN + FP}\\right )$
+$\\texttt{balanced-accuracy} = \\frac{1}{2}\\left( \\frac{TP}{TP + FN} +
+\\frac{TN}{TN + FP}\\right )$
 
-## $\\texttt{balanced-accuracy}(y, \\hat{y}, w) = \\frac{1}{\\sum{\\hat{w}\_i}} \\sum\_i 1(\\hat{y}\_i = y\_i) \\hat{w}\_i$
+-----
+
+$\\texttt{balanced-accuracy}(y, \\hat{y}, w) =
+\\frac{1}{\\sum{\\hat{w}\_i}} \\sum\_i 1(\\hat{y}\_i = y\_i)
+\\hat{w}\_i$
+
+-----
 
 ### Top-k Accuracy
 
