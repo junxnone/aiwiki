@@ -2,7 +2,7 @@
 Title | paper AnomalyCLIP
 -- | --
 Created @ | `2024-04-26T07:52:00Z`
-Updated @| `2024-05-14T06:17:02Z`
+Updated @| `2024-05-19T03:58:48Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/466)
 
@@ -55,7 +55,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/466)
 10. Grounding-DINO-L --> Swin-L
 
 
-![Image](https://github.com/junxnone/aiwiki/assets/2216970/6aab0f44-6333-4b7d-9819-ce47746b4ae3)
+![Image](https://junxnone.github.io/aiwiki/bk/media/97ea53394b1246c92b0abf60957cd335fc3bc351.png)
 
 
 ### Text Prompts
@@ -97,4 +97,4 @@ prompt_abnormal = ['damaged {}', 'broken {}', '{} with flaw', '{} with defect', 
 
 # Reference
 - [[AnomalyCLIP: Object-agnostic Prompt Learning for Zero-shot Anomaly Detection](https://arxiv.org/pdf/2310.18961.pdf)] [[code](https://github.com/zqhang/AnomalyCLIP)]
-- [OpenVIew](https://openreview.net/forum?id=buC4E91xZE)
+- [OpenReview for AnomalyCLIP](https://openreview.net/forum?id=buC4E91xZE)
