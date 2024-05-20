@@ -1,24 +1,17 @@
 -----
 
-| Title         | Datasets Image2D Classification Pets                 |
-| ------------- | ---------------------------------------------------- |
-| Created @     | `2019-01-24T20:39:23Z`                               |
-| Last Modify @ | `2022-12-26T14:54:56Z`                               |
-| Labels        | `index`                                              |
-| Edit @        | [here](https://github.com/junxnone/aiwiki/issues/29) |
+| Title     | Datasets Image2D Classification Pets                 |
+| --------- | ---------------------------------------------------- |
+| Created @ | `2019-01-24T20:39:23Z`                               |
+| Updated @ | `2024-05-20T09:04:50Z`                               |
+| Labels    | `index`                                              |
+| Edit @    | [here](https://github.com/junxnone/aiwiki/issues/29) |
 
 -----
 
 # Oxford-IIIT Pets
 
-## Reference
-
-  - [dataset](http://www.robots.ox.ac.uk/~vgg/data/pets/)
-  - [convert to tfrecord python
-    script](https://github.com/tensorflow/models/blob/master/research/object_detection/dataset_tools/create_pet_tf_record.py)
-
-## Brief
-
+  - 由英国牛津大学视觉几何组（Visual Geometry Group）收集整理
   - Oxford-IIIT Pet Dataset 包含37种宠物分类，每种分类大概200张图片
 
 ![image](media/878f56068e744f0ad185be068b477c76af0beda7.png)
@@ -64,3 +57,9 @@
      |— SPECIES
 
 > 德国短毛犬( German Shorthaired)
+
+## Reference
+
+  - [dataset](http://www.robots.ox.ac.uk/~vgg/data/pets/)
+  - [convert to tfrecord python
+    script](https://github.com/tensorflow/models/blob/master/research/object_detection/dataset_tools/create_pet_tf_record.py)
