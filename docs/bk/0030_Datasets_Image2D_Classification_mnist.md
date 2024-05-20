@@ -1,26 +1,20 @@
 -----
 
-| Title         | Datasets Image2D Classification mnist                |
-| ------------- | ---------------------------------------------------- |
-| Created @     | `2019-01-18T18:36:57Z`                               |
-| Last Modify @ | `2022-12-24T16:08:54Z`                               |
-| Labels        | \`\`                                                 |
-| Edit @        | [here](https://github.com/junxnone/aiwiki/issues/30) |
+| Title     | Datasets Image2D Classification mnist                |
+| --------- | ---------------------------------------------------- |
+| Created @ | `2019-01-18T18:36:57Z`                               |
+| Updated @ | `2024-05-20T08:58:37Z`                               |
+| Labels    | \`\`                                                 |
+| Edit @    | [here](https://github.com/junxnone/aiwiki/issues/30) |
 
 -----
 
-## Reference
+# Mnist
 
-  - [mnist dataset](http://yann.lecun.com/exdb/mnist/)
-  - [Image Classification on MNIST -
-    paperswithcode](https://paperswithcode.com/sota/image-classification-on-mnist?metric=Accuracy)
+  - 美国国家标准与技术研究所, National Institute of Standards and Technology (NIST).
+  - 250 个不同人手写的数字构成, 其中 50% 是高中学生, 50% 来自人口普查局 (the Census Bureau) 的工作人员
 
-## Brief
-
-MNIST 数据集来自美国国家标准与技术研究所, National Institute of Standards and Technology
-(NIST). 训练集 (training set) 由来自 250 个不同人手写的数字构成, 其中 50% 是高中学生, 50%
-来自人口普查局 (the Census Bureau) 的工作人员. 测试集(test set)
-也是同样比例的手写数字数据.
+## Samples
 
 <img width="300px" src="https://user-images.githubusercontent.com/2216970/51413058-95037c00-1ba8-11e9-9153-c5f0764f8e42.png">
 <img width="300px" src="https://user-images.githubusercontent.com/2216970/179348954-f84fb28d-8784-4421-8e3a-f87481fdd1db.png">
@@ -62,3 +56,9 @@ TRAINING SET IMAGE FILE (train-images-idx3-ubyte):
     0017     unsigned byte   ??               pixel 
     ........ 
     xxxx     unsigned byte   ??               pixel
+
+## Reference
+
+  - [mnist dataset](http://yann.lecun.com/exdb/mnist/)
+  - [Image Classification on MNIST -
+    paperswithcode](https://paperswithcode.com/sota/image-classification-on-mnist?metric=Accuracy)
