@@ -2,7 +2,7 @@
 Title | Math norm
 -- | --
 Created @ | `2019-08-05T06:44:26Z`
-Updated @| `2024-05-21T09:46:22Z`
+Updated @| `2024-05-21T09:50:40Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/254)
 
@@ -30,6 +30,8 @@ $\large x = (x_1, x_2,...,x_n)$
 
 - 向量各个元素绝对值之和，Manhattan distance。
 
+$ L_1 = \parallel x \parallel_1 = \sum_{1}^{n} \left|x_{i}\right|$
+
 ![image](https://user-images.githubusercontent.com/2216970/67923324-7a0a7180-fbe8-11e9-938a-51b47d1500ca.png)
 
 
@@ -37,6 +39,9 @@ $\large x = (x_1, x_2,...,x_n)$
 
 - **欧几里得范数**，常用**计算向量长度**
 - 即 `p = 2` , 向量元素绝对值的平方和再开方，matlab调用函数norm(x, 2)。
+
+
+$ L_2 = \parallel x \parallel_2 = \sqrt{\sum_{1}^{n} x_{i}^{2}} $
 
 ![image](https://user-images.githubusercontent.com/2216970/62444213-73a65e00-b78f-11e9-8746-7cc9a6ce7aa9.png)
 
