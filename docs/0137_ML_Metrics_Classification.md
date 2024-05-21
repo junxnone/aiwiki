@@ -2,7 +2,7 @@
 Title | ML Metrics Classification
 -- | --
 Created @ | `2021-11-21T04:55:43Z`
-Updated @| `2024-05-20T01:48:38Z`
+Updated @| `2024-05-21T03:20:24Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/137)
 
@@ -157,8 +157,10 @@ Normalized confusion matrix
 - 相比于准确率、召回率、F1值等依赖于判决阈值的评估指标，AUC则没有这个问题。
 
 
-### PR-AUC
-- Precision-Recall Curve
+### PRC & AUPR
+
+- **PRC** - `Precision-Recall Curve`
+- **AUPR** - `Area Under the Precision-Recall Curve`
 - 相差不大的 AP，但是有可能 `PRC` 有可能有较大区别
   - 如下两图，AP 只相差 2%，但是左图并不能同时在 `Precision` & `Recall` 上达到较好的平衡，图二则可以
 
