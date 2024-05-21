@@ -2,7 +2,7 @@
 Title | Math norm
 -- | --
 Created @ | `2019-08-05T06:44:26Z`
-Updated @| `2024-05-21T15:20:22Z`
+Updated @| `2024-05-21T15:34:28Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/254)
 
@@ -16,7 +16,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/254)
 - **L-p** 范数公式如下
 
 
-$\huge  L_p =  \left|\left| x \right| \right|_p  = \sqrt[p]{\sum_{1}^{n} x_{i}^{p}}$
+$\huge  L_p =  \Vert x \Vert_p  = \sqrt[p]{\sum_{1}^{n} x_{i}^{p}} $
 
 $\large x = (x_1, x_2,...,x_n)$
 
@@ -30,9 +30,8 @@ $\large x = (x_1, x_2,...,x_n)$
 
 - 向量各个元素绝对值之和，Manhattan distance。
 
-$ L_1 = \parallel x \parallel_1 = \sum_{1}^{n} \left|x_{i}\right|$
+$\huge  L_1 = \Vert x \Vert_1 = \sum_{1}^{n} \vert x_{i}\vert$
 
-![image](https://user-images.githubusercontent.com/2216970/67923324-7a0a7180-fbe8-11e9-938a-51b47d1500ca.png)
 
 
 ### L-2 范数 - (Euclid范数)
@@ -41,9 +40,8 @@ $ L_1 = \parallel x \parallel_1 = \sum_{1}^{n} \left|x_{i}\right|$
 - 即 `p = 2` , 向量元素绝对值的平方和再开方，matlab调用函数norm(x, 2)。
 
 
-$ L_2 = \parallel x \parallel_2 = \sqrt{\sum_{1}^{n} x_{i}^{2}} $
+$\huge L_2 = \Vert x \Vert_2 = \sqrt{\sum_{1}^{n} x_{i}^{2}} $
 
-![image](https://user-images.githubusercontent.com/2216970/62444213-73a65e00-b78f-11e9-8746-7cc9a6ce7aa9.png)
 
 
 
