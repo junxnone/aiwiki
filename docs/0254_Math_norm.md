@@ -2,7 +2,7 @@
 Title | Math norm
 -- | --
 Created @ | `2019-08-05T06:44:26Z`
-Updated @| `2024-05-21T09:50:40Z`
+Updated @| `2024-05-21T15:20:22Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/254)
 
@@ -16,7 +16,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/254)
 - **L-p** 范数公式如下
 
 
-$\huge  L_p = \parallel x \parallel_p = \sqrt[p]{\sum_{1}^{n} x_{i}^{p}}$
+$\huge  L_p =  \left|\left| x \right| \right|_p  = \sqrt[p]{\sum_{1}^{n} x_{i}^{p}}$
 
 $\large x = (x_1, x_2,...,x_n)$
 

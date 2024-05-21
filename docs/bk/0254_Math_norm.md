@@ -3,7 +3,7 @@
 | Title     | Math norm                                             |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2019-08-05T06:44:26Z`                                |
-| Updated @ | `2024-05-21T09:50:40Z`                                |
+| Updated @ | `2024-05-21T15:20:22Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/254) |
 
@@ -18,8 +18,8 @@
   - **L-p范数不是一个范数，而是一组范数**
   - **L-p** 范数公式如下
 
-$\\huge L\_p = \\parallel x \\parallel\_p = \\sqrt\[p\]{\\sum\_{1}^{n}
-x\_{i}^{p}}$
+$\\huge L\_p = \\left|\\left| x \\right| \\right|*p =
+\\sqrt\[p\]{\\sum*{1}^{n} x\_{i}^{p}}$
 
 $\\large x = (x\_1, x\_2,...,x\_n)$
 
