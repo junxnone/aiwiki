@@ -3,7 +3,7 @@
 | Title     | ML Metrics Classification                             |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2021-11-21T04:55:43Z`                                |
-| Updated @ | `2024-05-21T03:20:24Z`                                |
+| Updated @ | `2024-05-21T03:23:47Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/137) |
 
@@ -175,11 +175,15 @@ $\\large F\_\\beta = (1 + \\beta^2) \\frac{\\text{Precision} \\times
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | ![image](media/b0cff925e84e3a1ac68635e21696b5e17fd8e195.png) | ![image](media/5ee8c1cc2859c4bb7fe5d49361dc092218d0d0a7.png) |
 
-### ROC-AUC
+### AUROC
 
-  - ROC - `Receiver Operating Characteristic Curve` - 受试者工作特征曲线
-  - 横坐标为假阳性率 \[ $FPR = \\frac{FP}{N}$ \]
-  - 纵坐标为真阳性率 \[ $TPR = \\frac{TP}{N}$ \]
+  - **AUROC** - `Area Under the Receiver Operating Characteristic Curve`
+    - 受试者工作特征曲线
+  - 通过不断改变分类阈值，计算出一系列的真阳性率（TPR，即召回率）和假阳性率（FPR），将这些点连接起来形成一条曲线，即 ROC 曲线
+      - 横坐标为假阳性率 \[ $FPR = \\frac{FP}{N}$ \]
+      - 纵坐标为真阳性率 \[ $TPR = \\frac{TP}{N}$ \]
+  - 值越接近 1，表示模型的性能越好；值越接近 0.5，则表示模型性能接近随机猜测。
+  - 不受样本类别不平衡影响，较为综合地反映模型区分不同类别样本的能力
 
 ![image](media/7516c8f6cffaf17f82091d5564f72b82c0d65743.png)
 
