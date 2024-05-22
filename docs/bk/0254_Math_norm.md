@@ -3,7 +3,7 @@
 | Title     | Math norm                                             |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2019-08-05T06:44:26Z`                                |
-| Updated @ | `2024-05-21T15:34:28Z`                                |
+| Updated @ | `2024-05-22T02:55:12Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/254) |
 
@@ -18,10 +18,10 @@
   - **L-p范数不是一个范数，而是一组范数**
   - **L-p** 范数公式如下
 
-$\\huge L\_p = \\Vert x \\Vert\_p = \\sqrt\[p\]{\\sum\_{1}^{n}
-x\_{i}^{p}} $
+$$\\huge L\_p = \\Vert x \\Vert\_p = \\sqrt\[p\]{\\sum\_{1}^{n}
+x\_{i}^{p}} $$
 
-$\\large x = (x\_1, x\_2,...,x\_n)$
+$$\\large x = (x\_1, x\_2,...,x\_n)$$
 
 ![image](media/2b6ea6caef2b658f74b236a806257e1889491e93.png)
 
@@ -33,14 +33,16 @@ $\\large x = (x\_1, x\_2,...,x\_n)$
 
   - 向量各个元素绝对值之和，Manhattan distance。
 
-$\\huge L\_1 = \\Vert x \\Vert\_1 = \\sum\_{1}^{n} \\vert x\_{i}\\vert$
+$$\\huge L\_1 = \\Vert x \\Vert\_1 = \\sum\_{1}^{n} \\vert
+x\_{i}\\vert$$
 
 ### L-2 范数 - (Euclid范数)
 
   - **欧几里得范数**，常用**计算向量长度**
   - 即 `p = 2` , 向量元素绝对值的平方和再开方，matlab调用函数norm(x, 2)。
 
-$\\huge L\_2 = \\Vert x \\Vert\_2 = \\sqrt{\\sum\_{1}^{n} x\_{i}^{2}} $
+$$\\huge L\_2 = \\Vert x \\Vert\_2 = \\sqrt{\\sum\_{1}^{n} x\_{i}^{2}}
+$$
 
 ## Reference
 

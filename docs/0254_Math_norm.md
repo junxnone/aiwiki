@@ -2,7 +2,7 @@
 Title | Math norm
 -- | --
 Created @ | `2019-08-05T06:44:26Z`
-Updated @| `2024-05-21T15:34:28Z`
+Updated @| `2024-05-22T02:55:12Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/254)
 
@@ -16,9 +16,9 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/254)
 - **L-p** 范数公式如下
 
 
-$\huge  L_p =  \Vert x \Vert_p  = \sqrt[p]{\sum_{1}^{n} x_{i}^{p}} $
+$$\huge  L_p =  \Vert x \Vert_p  = \sqrt[p]{\sum_{1}^{n} x_{i}^{p}} $$
 
-$\large x = (x_1, x_2,...,x_n)$
+$$\large x = (x_1, x_2,...,x_n)$$
 
 
 ![image](https://user-images.githubusercontent.com/2216970/62444440-0f37ce80-b790-11e9-9fc0-6bc51fa78b35.png)
@@ -30,7 +30,7 @@ $\large x = (x_1, x_2,...,x_n)$
 
 - 向量各个元素绝对值之和，Manhattan distance。
 
-$\huge  L_1 = \Vert x \Vert_1 = \sum_{1}^{n} \vert x_{i}\vert$
+$$\huge  L_1 = \Vert x \Vert_1 = \sum_{1}^{n} \vert x_{i}\vert$$
 
 
 
@@ -40,7 +40,7 @@ $\huge  L_1 = \Vert x \Vert_1 = \sum_{1}^{n} \vert x_{i}\vert$
 - 即 `p = 2` , 向量元素绝对值的平方和再开方，matlab调用函数norm(x, 2)。
 
 
-$\huge L_2 = \Vert x \Vert_2 = \sqrt{\sum_{1}^{n} x_{i}^{2}} $
+$$\huge L_2 = \Vert x \Vert_2 = \sqrt{\sum_{1}^{n} x_{i}^{2}} $$
 
 
 
