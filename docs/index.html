@@ -7,8 +7,7 @@
   <link rel="shortcut icon" type="image/png" href="assets/logo_favicon.png"/>
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="assets/vue.css">
-  <!--<link rel="stylesheet" href="assets/darklight.min.css">-->
-<!--   <link rel="stylesheet" href="assets/docsify-sidebar-collapse.min.css"> -->
+  <link rel="stylesheet" href="assets/docsify-sidebar-collapse.min.css">
   <link rel="stylesheet" href="assets/gitalk.css">
 
 
@@ -56,13 +55,13 @@
 
 
   </script>
-<!--   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/external-script.min.js"></script> -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/external-script.min.js"></script>
   <script src="assets/docsify.min.js"></script>
   <script src="assets/docsify-copy-code.min.js"></script>
   <script src="assets/search.min.js"></script>
   <script src="assets/countable.js"></script>
   <script src="assets/docsify-plugin-toc.min.js"></script>
-<!--   <script src="assets/docsify-sidebar-collapse.min.js"></script> -->
+  <script src="assets/docsify-sidebar-collapse.min.js"></script>
   <script src="assets/wikilink.min.js"></script>
   <script src="assets/docsify.gitalk.min.js"></script>
   <script src="assets/gitalk.min.js"></script>
@@ -74,25 +73,26 @@
   <script src="assets/back-to-top.js"></script>
   <link rel="stylesheet" href="assets/edit.css">
   <script src="assets/edit.js"></script>
-
-  <!-- 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js"></script>
-  <script src="//unpkg.com/docsify-pdf-embed-plugin/src/docsify-pdf-embed.js"></script> 
-  <script src="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-  <script src="//unpkg.com/docsify-mermaid@latest/dist/docsify-mermaid.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify-katex@1.4.4/dist/docsify-katex.js"></script>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"/>
-  -->
   <script src="assets/pdfobject.min.js"></script> 
   <script src="assets/docsify-pdf-embed.js"></script>
   <script src="assets/mermaid.min.js"></script>
   <script src="assets/docsify-mermaid.js"></script>
 
-
-  <script src="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+<!-- // docsify-katex conflict with search plugin -->
+<!-- <script src="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
   <script src="//cdn.jsdelivr.net/npm/marked@4"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script> -->
+
+<!-- //use docsify-latex + mathjax -->
+<script src="//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify-latex@0"></script>
+
+
+<!-- //or use docsify-latex + katex -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
+  <script src="//cdn.jsdelivr.net/npm/docsify-latex@0"></script> -->
   
   <script>mermaid.initialize({ startOnLoad: true });</script>
 
