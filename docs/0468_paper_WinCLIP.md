@@ -2,7 +2,7 @@
 Title | paper WinCLIP
 -- | --
 Created @ | `2024-06-13T01:21:32Z`
-Updated @| `2024-06-13T01:21:32Z`
+Updated @| `2024-06-13T01:22:51Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/468)
 
@@ -39,6 +39,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/468)
 *   **Multi-scale Aggeration**
     *   为了提升检测的多尺度能力，聚合多尺度的检测结果
 
+![image](https://github.com/junxnone/aiwiki/assets/2216970/9656a871-da52-4cdc-9980-7cb3593a6161)
 
 
 ## Reference

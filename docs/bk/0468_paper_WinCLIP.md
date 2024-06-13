@@ -3,7 +3,7 @@
 | Title     | paper WinCLIP                                         |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2024-06-13T01:21:32Z`                                |
-| Updated @ | `2024-06-13T01:21:32Z`                                |
+| Updated @ | `2024-06-13T01:22:51Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/468) |
 
@@ -43,6 +43,8 @@
       - 聚合 `overlapping` 处的多个分数, 通过 `armonic averaging` /`加权` 提升分割性能
   - **Multi-scale Aggeration**
       - 为了提升检测的多尺度能力，聚合多尺度的检测结果
+
+![image](media/425468f65f433933cac06b958b7f2e7892a71a08.png)
 
 ## Reference
 
