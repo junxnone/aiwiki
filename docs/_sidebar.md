@@ -447,6 +447,7 @@
   - [ControlNet](/0407_paper_ControlNet)
   - [Grounding DINO](/0464_paper_GroundingDINO)
   - [MuSC](/0467_paper_MuSC)
+  - [WinCLIP](/0468_paper_WinCLIP)
   - [YOLO-World](/0465_paper_YOLOWorld)
 - [x](/0418_x)
   - [缺陷图片生成](/0403_x_DefectGen)
@@ -459,4 +460,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1616340612</sub></kbd>
+<kbd><sub>@0922280613</sub></kbd>
