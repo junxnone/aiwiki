@@ -3,7 +3,7 @@
 | Title     | paper WinCLIP                                         |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2024-06-13T01:21:32Z`                                |
-| Updated @ | `2024-06-13T01:22:51Z`                                |
+| Updated @ | `2024-06-13T01:25:19Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/468) |
 
@@ -45,6 +45,8 @@
       - 为了提升检测的多尺度能力，聚合多尺度的检测结果
 
 ![image](media/425468f65f433933cac06b958b7f2e7892a71a08.png)
+
+![image](media/7b4980873fecf3a1247afe10552afb14f63dc5b2.png)
 
 ## Reference
 

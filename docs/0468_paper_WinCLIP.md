@@ -2,7 +2,7 @@
 Title | paper WinCLIP
 -- | --
 Created @ | `2024-06-13T01:21:32Z`
-Updated @| `2024-06-13T01:22:51Z`
+Updated @| `2024-06-13T01:25:19Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/468)
 
@@ -40,6 +40,8 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/468)
     *   为了提升检测的多尺度能力，聚合多尺度的检测结果
 
 ![image](https://github.com/junxnone/aiwiki/assets/2216970/9656a871-da52-4cdc-9980-7cb3593a6161)
+
+![image](https://github.com/junxnone/aiwiki/assets/2216970/67a84c22-2995-41b6-8c53-4e8240d762c5)
 
 
 ## Reference
