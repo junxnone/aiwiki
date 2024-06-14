@@ -3,7 +3,7 @@
 | Title     | paper WinCLIP                                         |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2024-06-13T01:21:32Z`                                |
-| Updated @ | `2024-06-13T01:25:19Z`                                |
+| Updated @ | `2024-06-14T02:57:33Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/468) |
 
@@ -47,6 +47,30 @@
 ![image](media/425468f65f433933cac06b958b7f2e7892a71a08.png)
 
 ![image](media/7b4980873fecf3a1247afe10552afb14f63dc5b2.png)
+
+## anomalib Impl
+
+### Zero-Shot
+
+  - 计算 image score, 即 `image_embeddings` 和 `text_embeddings` 的余弦距离，再进行
+    softmax
+
+<iframe frameborder="0" scrolling="no" style="width:100%; height:142px;" allow="clipboard-write" src="https://junxnone.github.io/emgithub/iframe.html?target=https%3A%2F%2Fgithub.com%2Fopenvinotoolkit%2Fanomalib%2Fblob%2F56843d2671977d07ad228e6e5d870bf7f240cf59%2Fsrc%2Fanomalib%2Fmodels%2Fimage%2Fwinclip%2Futils.py%23L95-L97&style=agate&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></iframe>
+
+  - 计算 Pixel Anomaly Map, 即 每个 `window_embeddings` 和 `text_embeddings`
+    计算余弦距离，并聚合
+
+<iframe frameborder="0" scrolling="no" style="width:100%; height:226px;" allow="clipboard-write" src="https://junxnone.github.io/emgithub/iframe.html?target=https%3A%2F%2Fgithub.com%2Fopenvinotoolkit%2Fanomalib%2Fblob%2F22caf3badf610641c6b0d4f7ba5d6e1b1e419ce8%2Fsrc%2Fanomalib%2Fmodels%2Fimage%2Fwinclip%2Ftorch_model.py%23L275-L281&style=agate&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></iframe>
+
+### Few-Shot
+
+  - pixel/image level score 分别 计算 few-shot branch 和 zero-shot 的均值 作为最终值
+
+<iframe frameborder="0" scrolling="no" style="width:100%; height:142px;" allow="clipboard-write" src="https://junxnone.github.io/emgithub/iframe.html?target=https%3A%2F%2Fgithub.com%2Fopenvinotoolkit%2Fanomalib%2Fblob%2F22caf3badf610641c6b0d4f7ba5d6e1b1e419ce8%2Fsrc%2Fanomalib%2Fmodels%2Fimage%2Fwinclip%2Ftorch_model.py%23L243-L245&style=agate&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></iframe>
+
+  - Pixel Anomaly Map, 聚合 `patch_embedings`, `window_embeddings` 的余弦相似度
+
+<iframe frameborder="0" scrolling="no" style="width:100%; height:352px;" allow="clipboard-write" src="https://junxnone.github.io/emgithub/iframe.html?target=https%3A%2F%2Fgithub.com%2Fopenvinotoolkit%2Fanomalib%2Fblob%2F22caf3badf610641c6b0d4f7ba5d6e1b1e419ce8%2Fsrc%2Fanomalib%2Fmodels%2Fimage%2Fwinclip%2Ftorch_model.py%23L304-L316&style=agate&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></iframe>
 
 ## Reference
 
