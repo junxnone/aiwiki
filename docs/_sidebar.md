@@ -422,7 +422,6 @@
     - [ChatGPT](/0373_Hot_AIGC_ChatGPT)
     - [RAG](/0461_Hot_AIGC_RAG)
     - [AIGC Tools](/0456_Hot_AIGC_Tools)
-  - [CLIP](/0448_Hot_CLIP)
   - [DragGAN](/0429_Hot_DragGAN)
   - [GLIP](/0463_Hot_GLIP)
   - [Imagen](/0413_Hot_Imagen)
@@ -443,6 +442,7 @@
 - [资源参考](/0380_Reference)
 - [paper](/0386_paper)
   - [AnomalyCLIP](/0466_paper_AnomalyCLIP)
+  - [CLIP](/0448_paper_CLIP)
   - [CSPNet](/0385_paper_CSPNet)
   - [ControlNet](/0407_paper_ControlNet)
   - [Grounding DINO](/0464_paper_GroundingDINO)
@@ -461,4 +461,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1454240618</sub></kbd>
+<kbd><sub>@1538360618</sub></kbd>
