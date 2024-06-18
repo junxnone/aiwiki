@@ -360,7 +360,7 @@
 - 2019-11-30&nbsp;&nbsp; [Spatial Pyramid Pooling - 空间金字塔池化](/0365_ML_Op_Pooling_SPP)&nbsp;&nbsp; :bookmark:ML :bookmark:Op :bookmark:Pooling :bookmark:SPP
 - 2019-11-29&nbsp;&nbsp; [Deeplab](/0162_ML_Tasks_Image_Segmentation_Deeplab)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Segmentation :bookmark:Deeplab
 - 2019-11-27&nbsp;&nbsp; [FCN](/0160_ML_Tasks_Image_Segmentation_FCN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Segmentation :bookmark:FCN
-- 2019-11-19&nbsp;&nbsp; [Sigmoid](/0280_ML_Op_AF_Sigmoid)&nbsp;&nbsp; :bookmark:ML :bookmark:Op :bookmark:AF :bookmark:Sigmoid
+- 2019-11-19&nbsp;&nbsp; [sigmoid](/0280_ML_Op_AF_Sigmoid)&nbsp;&nbsp; :bookmark:ML :bookmark:Op :bookmark:AF :bookmark:Sigmoid
 - 2019-09-11&nbsp;&nbsp; [Regularization  正则化](/0252_ML_Op_Regularization)&nbsp;&nbsp; :bookmark:ML :bookmark:Op :bookmark:Regularization
 - 2019-09-03&nbsp;&nbsp; [学习率选择](/0263_ML_Arch_LR_LRFinder)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:LR :bookmark:LRFinder
 - 2019-09-03&nbsp;&nbsp; [One Cycle Policy](/0264_ML_Arch_LR_OCP)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:LR :bookmark:OCP

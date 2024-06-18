@@ -196,7 +196,7 @@
     - [MetricLearning](/0157_ML_Tasks_MetricLearning)
   - [Op](/0366_ML_Op)
     - [Activation Function 激活函数](/0279_ML_Op_AF)
-      - [Sigmoid](/0280_ML_Op_AF_Sigmoid)
+      - [sigmoid](/0280_ML_Op_AF_Sigmoid)
       - [Softmax](/0335_ML_Op_AF_Softmax)
     - [Convolution](/0009_ML_Op_Convolution)
       - [ConvFlops](/0396_ML_Op_Convolution_ConvFlops)
@@ -460,4 +460,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1616520617</sub></kbd>
+<kbd><sub>@1057050618</sub></kbd>
