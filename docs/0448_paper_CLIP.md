@@ -1,8 +1,8 @@
 ---
-Title | Hot CLIP
+Title | paper CLIP
 -- | --
 Created @ | `2023-10-17T06:40:49Z`
-Updated @| `2024-04-09T06:37:45Z`
+Updated @| `2024-06-18T07:37:31Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/448)
 
