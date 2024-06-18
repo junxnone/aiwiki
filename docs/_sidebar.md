@@ -447,6 +447,7 @@
   - [ControlNet](/0407_paper_ControlNet)
   - [Grounding DINO](/0464_paper_GroundingDINO)
   - [MuSC](/0467_paper_MuSC)
+  - [SAA+](/0469_paper_SAAplus)
   - [WinCLIP](/0468_paper_WinCLIP)
   - [YOLO-World](/0465_paper_YOLOWorld)
 - [x](/0418_x)
@@ -460,4 +461,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1057050618</sub></kbd>
+<kbd><sub>@1441060618</sub></kbd>
