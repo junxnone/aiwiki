@@ -445,6 +445,7 @@
   - [CLIP](/0448_paper_CLIP)
   - [CSPNet](/0385_paper_CSPNet)
   - [ControlNet](/0407_paper_ControlNet)
+  - [Eureka](/0470_paper_Eureka)
   - [Grounding DINO](/0464_paper_GroundingDINO)
   - [MuSC](/0467_paper_MuSC)
   - [SAA+](/0469_paper_SAAplus)
@@ -461,4 +462,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1616080622</sub></kbd>
+<kbd><sub>@1744400622</sub></kbd>
