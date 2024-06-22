@@ -1,15 +1,34 @@
 -----
 
-| Title         | Tools Pytorch                                         |
-| ------------- | ----------------------------------------------------- |
-| Created @     | `2019-01-25T23:32:24Z`                                |
-| Last Modify @ | `2022-12-25T04:07:58Z`                                |
-| Labels        | \`\`                                                  |
-| Edit @        | [here](https://github.com/junxnone/aiwiki/issues/168) |
+| Title     | Tools Pytorch                                         |
+| --------- | ----------------------------------------------------- |
+| Created @ | `2019-01-25T23:32:24Z`                                |
+| Updated @ | `2024-06-22T17:25:57Z`                                |
+| Labels    | \`\`                                                  |
+| Edit @    | [here](https://github.com/junxnone/aiwiki/issues/168) |
 
 -----
 
 # Pytorch
+
+  - [Pytorch Optimizer](/Pytorch_Optimizer)
+  - [Pytorch Pipeline](/Pytorch_Pipeline)
+  - [Pytorch Early Stopping](/Pytorch_Early_Stopping)
+  - [Pytorch 可视化](/Pytorch_Visualization)
+  - [Pytorch Tips](/Pytorch_Tips)
+  - [PyTorchLightning](https://github.com/PyTorchLightning/pytorch-lightning)
+  - [TorchMetrics](https://torchmetrics.readthedocs.io/en/latest/)
+  - [Pytorch ignite](https://github.com/pytorch/ignite/)
+  - [pytorch - 加速](/Pytorch_加速)
+  - [Examples Analysis](https://github.com/junxnone/examples-1/issues/1)
+
+## History
+
+| Year | Description   |
+| ---- | ------------- |
+| \~   | 基于Torch       |
+| 2017 | 由 Facebook 发布 |
+| 2018 | 兼并 Caffe2     |
 
 ## Reference
 
@@ -32,24 +51,3 @@
       - [深度学习与PyTorch入门实战 - bilibili
         Videos](https://www.bilibili.com/video/av49008640/)
   - [深入浅出PyTorc](https://datawhalechina.github.io/thorough-pytorch/index.html)
-
-## Brief
-
-  - [Pytorch Optimizer](/Pytorch_Optimizer)
-  - [Pytorch Pipeline](/Pytorch_Pipeline)
-  - [Pytorch Early Stopping](/Pytorch_Early_Stopping)
-  - [Pytorch 可视化](/Pytorch_Visualization)
-  - [Pytorch Tips](/Pytorch_Tips)
-  - [PyTorchLightning](https://github.com/PyTorchLightning/pytorch-lightning)
-  - [TorchMetrics](https://torchmetrics.readthedocs.io/en/latest/)
-  - [Pytorch ignite](https://github.com/pytorch/ignite/)
-  - [pytorch - 加速](/Pytorch_加速)
-  - [Examples Analysis](https://github.com/junxnone/examples-1/issues/1)
-
-## History
-
-| Year | Description   |
-| ---- | ------------- |
-| \~   | 基于Torch       |
-| 2017 | 由 Facebook 发布 |
-| 2018 | 兼并 Caffe2     |
