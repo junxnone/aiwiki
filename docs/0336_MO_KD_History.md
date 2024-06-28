@@ -2,12 +2,12 @@
 Title | MO KD History
 -- | --
 Created @ | `2021-04-12T06:23:02Z`
-Updated @| `2024-06-28T15:25:17Z`
+Updated @| `2024-06-28T15:29:40Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/336)
 
 ---
-## Reference
+# KD History
 
 ## History
 **Pattern**
