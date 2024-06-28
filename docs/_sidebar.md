@@ -439,6 +439,7 @@
     - [Stable Diffusion 原理](/0445_Hot_StableDiffusion_Algos)
     - [SD 应用 webui](/0440_Hot_StableDiffusion_webui)
 - [KnowledgeGraph](/0329_KnowledgeGraph)
+- [模型性能优化技术](/0471_MO)
 - [资源参考](/0380_Reference)
 - [paper](/0386_paper)
   - [AnomalyCLIP](/0466_paper_AnomalyCLIP)
@@ -462,4 +463,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1615520628</sub></kbd>
+<kbd><sub>@2324400628</sub></kbd>
