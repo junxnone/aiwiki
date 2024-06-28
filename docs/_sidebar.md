@@ -437,7 +437,7 @@
 - [KnowledgeGraph](/0329_KnowledgeGraph)
 - [模型性能优化技术](/0471_MO)
   - [Knowledge Distillation 知识蒸馏](/0207_MO_KD)
-    - [History](/0336_MO_KD_History)
+    - [KD History](/0336_MO_KD_History)
     - [Distilling the Knowledge in a Neural Network](/0208_MO_KD_s)
   - [量化](/0312_MO_Quantization)
 - [资源参考](/0380_Reference)
@@ -463,4 +463,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@2329530628</sub></kbd>
+<kbd><sub>@2330370628</sub></kbd>
