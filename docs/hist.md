@@ -447,7 +447,7 @@
 - 2018-10-31&nbsp;&nbsp; [Inception](/0049_ML_Tasks_Image_Classification_Inception)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Classification :bookmark:Inception
 - 2018-10-29&nbsp;&nbsp; [RL 强化学习](/0290_RL)&nbsp;&nbsp; :bookmark:RL
 - 2018-10-21&nbsp;&nbsp; [Brisk  特征点匹配](/0348_OpenCV_Brisk)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:Brisk
-- 2018-10-16&nbsp;&nbsp; [Quantization  量化](/0312_MO_Quantization)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization
+- 2018-10-16&nbsp;&nbsp; [量化](/0312_MO_Quantization)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization
 - 2018-10-09&nbsp;&nbsp; [Histogram 图像直方图](/0342_Media_Image_Histogram)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Histogram
 - 2018-09-27&nbsp;&nbsp; [MobileNet](/0045_ML_Tasks_Image_Classification_MobileNet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Classification :bookmark:MobileNet
 - 2018-09-27&nbsp;&nbsp; [LabelImg](/0250_Tools_Label_LabelImg)&nbsp;&nbsp; :bookmark:Tools :bookmark:Label :bookmark:LabelImg

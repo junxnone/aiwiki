@@ -439,7 +439,7 @@
   - [Knowledge Distillation 知识蒸馏](/0207_MO_KD)
     - [History](/0336_MO_KD_History)
     - [Distilling the Knowledge in a Neural Network](/0208_MO_KD_s)
-  - [Quantization  量化](/0312_MO_Quantization)
+  - [量化](/0312_MO_Quantization)
 - [资源参考](/0380_Reference)
 - [paper](/0386_paper)
   - [AnomalyCLIP](/0466_paper_AnomalyCLIP)
@@ -463,4 +463,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@2329140628</sub></kbd>
+<kbd><sub>@2329530628</sub></kbd>
