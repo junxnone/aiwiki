@@ -2,17 +2,14 @@
 Title | MO KD s
 -- | --
 Created @ | `2021-04-25T05:42:37Z`
-Updated @| `2024-06-28T15:25:05Z`
+Updated @| `2024-06-28T15:29:16Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/208)
 
 ---
 # Distilling the Knowledge in a Neural Network
 
-## Reference
-- 2015-03  Distilling the Knowledge in a Neural Network [[Paper](https://arxiv.org/abs/1503.02531)] [[Code](codelink)]
 
-## Brief
 - `Soft Target` 比 `Hard Target` 包含更多的信息
   - 不同类之间的关系(相似性)
 
@@ -60,4 +57,8 @@ Num | Evaluation
 
 
 ## Tricks
+
+
+## Reference
+- 2015-03  Distilling the Knowledge in a Neural Network [[Paper](https://arxiv.org/abs/1503.02531)] [[Code](codelink)]
 
