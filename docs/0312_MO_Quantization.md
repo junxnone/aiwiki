@@ -2,17 +2,12 @@
 Title | MO Quantization
 -- | --
 Created @ | `2018-10-16T02:57:36Z`
-Updated @| `2024-06-28T15:24:16Z`
+Updated @| `2024-06-28T15:28:40Z`
 Labels | `ML`
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/312)
 
 ---
-# Quantization  量化
-
-## Reference 
-- [模型量化详解](https://blog.csdn.net/WZZ18191171661/article/details/103332338)
-
-## Brief
+# 量化
 - Quantization - 量化
   - 嵌入式设备/移动设备 - 低计算能力/低内存/低存储空间/低功耗/...
   - 压缩参数/提升速度/降低内存占用/低计算单元占用面积
@@ -58,3 +53,10 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/312)
 - 计算 `Zero Point`/`Scale`
 - 根据Data对模型进行量化
 - 验证量化模型性能, 若模型性能不好，则尝试不同的 `Z/S` 重复量化
+
+
+## Reference 
+- [模型量化详解](https://blog.csdn.net/WZZ18191171661/article/details/103332338)
+
+
+
