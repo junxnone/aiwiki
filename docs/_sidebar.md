@@ -226,10 +226,8 @@
       - [Cutout](/0257_ML_PreP_DataAug_Cutout)
     - [Data Normalization 数据标准化](/0251_ML_PreP_DataNorm)
   - [PostProcessing](/0370_ML_PostP)
-    - [Knowledge Distillation 知识蒸馏](/0207_ML_PostP_KD)
+    - KD
       - [History](/0336_ML_PostP_KD_History)
-      - [Distilling the Knowledge in a Neural Network](/0208_ML_PostP_KD_s)
-    - [Quantization  量化](/0312_ML_PostP_Quantization)
   - [AutoEncoder](/0209_ML_AE)
   - [Attention 注意力](/0210_ML_Attention)
     - [Bahdanau Attention](/0214_ML_Attention_Bahdanau)
@@ -440,6 +438,9 @@
     - [SD 应用 webui](/0440_Hot_StableDiffusion_webui)
 - [KnowledgeGraph](/0329_KnowledgeGraph)
 - [模型性能优化技术](/0471_MO)
+  - [Knowledge Distillation 知识蒸馏](/0207_MO_KD)
+    - [Distilling the Knowledge in a Neural Network](/0208_MO_KD_s)
+  - [Quantization  量化](/0312_MO_Quantization)
 - [资源参考](/0380_Reference)
 - [paper](/0386_paper)
   - [AnomalyCLIP](/0466_paper_AnomalyCLIP)
@@ -463,4 +464,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@2324400628</sub></kbd>
+<kbd><sub>@2326120628</sub></kbd>
