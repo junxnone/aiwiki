@@ -436,7 +436,7 @@
     - [SD 应用 webui](/0440_Hot_StableDiffusion_webui)
 - [KnowledgeGraph](/0329_KnowledgeGraph)
 - [模型性能优化技术](/0471_MO)
-  - [Knowledge Distillation 知识蒸馏](/0207_MO_KD)
+  - [知识蒸馏](/0207_MO_KD)
     - [KD History](/0336_MO_KD_History)
     - [Distilling the Knowledge in a Neural Network](/0208_MO_KD_s)
   - [量化](/0312_MO_Quantization)
@@ -463,4 +463,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@2330370628</sub></kbd>
+<kbd><sub>@1615420629</sub></kbd>
