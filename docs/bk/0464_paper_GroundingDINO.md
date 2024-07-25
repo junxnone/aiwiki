@@ -3,7 +3,7 @@
 | Title     | paper GroundingDINO                                   |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2024-04-26T07:30:30Z`                                |
-| Updated @ | `2024-04-26T07:32:26Z`                                |
+| Updated @ | `2024-07-25T02:47:54Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/464) |
 
@@ -58,3 +58,8 @@
   - RefCOCO/+/g
   - Ablations 消融实验: w/o Encoder Fusion/Query Selection/Text Cross
     Attention/Word-level Text prompt, 都有不同程度的drop
+
+## Reference
+
+  - [Grounding DINO: Marrying DINO with Grounded Pre-Training for
+    Open-Set Object Detection](https://arxiv.org/abs/2303.05499)
