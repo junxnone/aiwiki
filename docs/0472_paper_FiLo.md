@@ -2,7 +2,7 @@
 Title | paper FiLo
 -- | --
 Created @ | `2024-07-25T02:18:10Z`
-Updated @| `2024-07-25T02:33:59Z`
+Updated @| `2024-07-25T02:39:22Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/472)
 
@@ -14,8 +14,14 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/472)
 
 ## Arch
 - FG-Des
+  - Adaptively Learned Text Templates
+  - Fine - Grained Anomaly Descriptions
 - HQ-Loc
-- MMCI
+  - Grounding DINO Preliminary Localization
+  - Position - Enhanced Textual Prompt
+  - MMCI
+- Adapter：使用瓶颈结构的Adapter对齐全局图像特征和文本特征
+- Loss Functions：选择交叉熵损失和Focal损失、Dice损失来优化全局异常分数和异常图，通过平衡超参数计算最终损失
 
 ![Image](https://github.com/user-attachments/assets/5e86c7bd-f902-4599-bfc6-ea0702e81bea)
 
