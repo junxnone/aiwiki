@@ -3,7 +3,7 @@
 | Title     | paper FiLo                                            |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2024-07-25T02:18:10Z`                                |
-| Updated @ | `2024-07-25T02:44:15Z`                                |
+| Updated @ | `2024-07-25T02:46:46Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/472) |
 
@@ -77,3 +77,8 @@ Anomaly Map（异常图）的计算过程如下：
     $(G\_{\\sigma})$是一个高斯滤波器， $(\\sigma)$控制平滑程度。
 
 综上所述，通过以上步骤计算得到Anomaly Map。
+
+## Reference
+
+  - [FiLo: Zero-Shot Anomaly Detection by Fine-Grained Description and
+    High-Quality Localization](https://arxiv.org/abs/2404.13671)
