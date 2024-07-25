@@ -3,7 +3,7 @@
 | Title     | paper GroundingDINO                                   |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2024-04-26T07:30:30Z`                                |
-| Updated @ | `2024-07-25T02:47:54Z`                                |
+| Updated @ | `2024-07-25T09:05:08Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/464) |
 
@@ -40,6 +40,11 @@
       - Qury Init：语言引导的查询模式
       - Head：带图像-文本交叉注意力，可以增强查询表示的跨模态解码器
   - Sub-sentence level representation (Attention masks)
+
+<!-- end list -->
+
+  - Language-guided Query Selection 模块的作用是从图像特征中选择与输入文本更相关的特征作为解码器查询。
+      - **实现:** 通过计算图像特征和文本特征的点积，然后选择点积最大值对应的前 Nq 个索引，从而确定与输入文本相关的图像查询
 
 ![Image](media/1ec4e8de75cee4d14ee13eed5f9011c3f31cbe9c.png)
 
