@@ -3,13 +3,15 @@
 | Title     | paper GroundingDINO                                   |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2024-04-26T07:30:30Z`                                |
-| Updated @ | `2024-07-25T09:05:08Z`                                |
+| Updated @ | `2024-07-26T03:03:58Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/464) |
 
 -----
 
 # Grounding DINO
+
+  - [MM-Grounding-DINO](https://github.com/open-mmlab/mmdetection/tree/main/configs/grounding_dino)
 
 ![Image](media/fc51b10c9768b7ecba4c6de0ffe48dc80e1e73da.png)
 
@@ -68,3 +70,5 @@
 
   - [Grounding DINO: Marrying DINO with Grounded Pre-Training for
     Open-Set Object Detection](https://arxiv.org/abs/2303.05499)
+  - [MM-Grounding-DINO: An Open and Comprehensive Pipeline for Unified
+    Object Grounding and Detection](https://arxiv.org/abs/2401.02361)
