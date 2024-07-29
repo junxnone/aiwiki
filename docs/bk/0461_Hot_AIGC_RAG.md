@@ -3,7 +3,7 @@
 | Title     | Hot AIGC RAG                                          |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2024-02-20T01:35:11Z`                                |
-| Updated @ | `2024-07-27T14:13:16Z`                                |
+| Updated @ | `2024-07-29T01:58:39Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/461) |
 
@@ -16,7 +16,12 @@
       - Q\&A
       - 专业知识检索
       - 保密文档知识检索
-      - 读论文/文章视频总结(豆包)
+      - 读论文/文章视频总结
+
+## Tools
+
+  - [豆包
+    浏览器扩展](https://chrome.google.com/webstore/detail/dbjibobgilijgolhjdcbdebjhejelffo)
 
 ## Reference
 
