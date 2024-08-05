@@ -2,13 +2,15 @@
 Title | Tools VIS
 -- | --
 Created @ | `2019-08-20T06:28:49Z`
-Updated @| `2024-05-15T03:08:32Z`
+Updated @| `2024-08-05T08:21:35Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/133)
 
 ---
 # 模型可视化
-
+- 文字显示 & 图表显示
+- 文字显示
+  - torchinfo
 - 网络架构可视化
 - Data 可视化
   - Feature Map
