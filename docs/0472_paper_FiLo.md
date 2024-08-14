@@ -2,7 +2,7 @@
 Title | paper FiLo
 -- | --
 Created @ | `2024-07-25T02:18:10Z`
-Updated @| `2024-07-25T02:46:46Z`
+Updated @| `2024-08-14T01:43:06Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/472)
 
@@ -62,6 +62,11 @@ Anomaly Map（异常图）的计算过程如下：
 4. 最终的定位结果通过公式 $(M=G_{\sigma}(M^{a}+1-M^{n})/2)$计算，其中 $(G_{\sigma})$是一个高斯滤波器， $(\sigma)$控制平滑程度。
 
 综上所述，通过以上步骤计算得到Anomaly Map。
+
+## 性能评估
+- MMCI 提供了最大的增长
+
+![image](https://github.com/user-attachments/assets/c1287fb1-cd26-4bd5-a7b2-da1abebffe29)
 
 
 ## Reference
