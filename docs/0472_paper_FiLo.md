@@ -2,7 +2,7 @@
 Title | paper FiLo
 -- | --
 Created @ | `2024-07-25T02:18:10Z`
-Updated @| `2024-08-14T01:43:06Z`
+Updated @| `2024-08-19T08:34:06Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/472)
 
@@ -10,6 +10,8 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/472)
 # FiLo
 - 增加了 LLMs 来生成异常描述信息
 - 增加了 Grounding  DINO 来生成 位置信息
+- CLIP Backbone: `ViT-L-14-336px`
+- GroundingDINO - `Swin-T`
 
 
 ## Arch
