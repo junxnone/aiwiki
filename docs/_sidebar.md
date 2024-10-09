@@ -461,9 +461,10 @@
   - Model
     - [Model Precision](/0450_x_Model_Precision)
   - [Question](/0447_x_Q)
+  - [Tip-Adapter](/0475_x_TipAdapter)
 - [应用](/0428_应用)
 - [有趣的工具](/0462_有趣的工具)
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1619401008</sub></kbd>
+<kbd><sub>@0954541009</sub></kbd>
