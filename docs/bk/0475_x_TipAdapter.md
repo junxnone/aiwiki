@@ -3,7 +3,7 @@
 | Title     | x TipAdapter                                          |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2024-10-09T01:53:49Z`                                |
-| Updated @ | `2024-10-09T01:53:50Z`                                |
+| Updated @ | `2024-10-10T02:55:35Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/475) |
 
@@ -11,7 +11,8 @@
 
 # Tip-Adapter
 
-  - 利用 CLIP 构建 Cache Model, 结合 CLIP 的输出综合生成结果
+  - 利用 CLIP，从少量样本训练集中构建`键值缓存模型`来作为适配器，结合 CLIP 的输出综合生成结果
+  - 无需训练 - 非参数方式，训练的话更优
 
 ![image](media/ccdec38416ff353cd7f9aeb673f93d7934a8671b.png)
 
