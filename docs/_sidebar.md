@@ -460,6 +460,7 @@
   - [CoOP](/0474_x_CoOP)
   - [缺陷图片生成](/0403_x_DefectGen)
   - [Cool Demo](/0409_x_Demo)
+  - [MTA](/0479_x_MTA)
   - Model
     - [Model Precision](/0450_x_Model_Precision)
   - [Question](/0447_x_Q)
@@ -470,4 +471,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1054111011</sub></kbd>
+<kbd><sub>@1113431011</sub></kbd>
