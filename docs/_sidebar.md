@@ -455,6 +455,7 @@
   - [WinCLIP](/0468_paper_WinCLIP)
   - [YOLO-World](/0465_paper_YOLOWorld)
 - [x](/0418_x)
+  - [BitFit](/0478_x_BitFit)
   - [CaFo](/0476_x_CaFo)
   - [CoOP](/0474_x_CoOP)
   - [缺陷图片生成](/0403_x_DefectGen)
@@ -469,4 +470,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1024041011</sub></kbd>
+<kbd><sub>@1054111011</sub></kbd>
