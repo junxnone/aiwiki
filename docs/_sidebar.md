@@ -463,9 +463,10 @@
     - [Model Precision](/0450_x_Model_Precision)
   - [Question](/0447_x_Q)
   - [Tip-Adapter](/0475_x_TipAdapter)
+  - [VPT - Visual Prompt Tuning](/0477_x_VPT)
 - [应用](/0428_应用)
 - [有趣的工具](/0462_有趣的工具)
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0953201011</sub></kbd>
+<kbd><sub>@1021051011</sub></kbd>
