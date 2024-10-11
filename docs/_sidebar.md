@@ -455,6 +455,7 @@
   - [WinCLIP](/0468_paper_WinCLIP)
   - [YOLO-World](/0465_paper_YOLOWorld)
 - [x](/0418_x)
+  - [CaFo](/0476_x_CaFo)
   - [CoOP](/0474_x_CoOP)
   - [缺陷图片生成](/0403_x_DefectGen)
   - [Cool Demo](/0409_x_Demo)
@@ -467,4 +468,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1619071010</sub></kbd>
+<kbd><sub>@0953201011</sub></kbd>
