@@ -366,6 +366,7 @@
     - [OC](/0239_Datasets_Image2D_OC)
     - [COCO](/0247_Datasets_Image2D_COCO)
     - [DTD - Describable Textures Dataset](/0481_Datasets_Image2D_DTD)
+    - [DTD-Synthetic](/0482_Datasets_Image2D_DTDSynthetic)
     - [Edge Detection](/0098_Datasets_Image2D_EdgeDetection)
     - [PascalVOC](/0092_Datasets_Image2D_PascalVOC)
   - [Image3D](/0087_Datasets_Image3D)
@@ -473,4 +474,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1052261012</sub></kbd>
+<kbd><sub>@1128031012</sub></kbd>
