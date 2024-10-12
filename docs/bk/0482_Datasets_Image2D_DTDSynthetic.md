@@ -3,7 +3,7 @@
 | Title     | Datasets Image2D DTDSynthetic                         |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2024-10-12T03:26:59Z`                                |
-| Updated @ | `2024-10-12T03:27:00Z`                                |
+| Updated @ | `2024-10-12T03:27:40Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/482) |
 
@@ -34,3 +34,5 @@
 
   - [Zero-Shot Versus Many-Shot: Unsupervised Texture Anomaly
     Detection](https://openaccess.thecvf.com/content/WACV2023/papers/Aota_Zero-Shot_Versus_Many-Shot_Unsupervised_Texture_Anomaly_Detection_WACV_2023_paper.pdf)
+  - [Download the
+    Dataset](https://drive.google.com/drive/folders/10OyPzvI3H6llCZBxKxFlKWt1Pw1tkMK1)
