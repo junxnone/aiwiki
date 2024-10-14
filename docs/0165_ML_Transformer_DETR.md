@@ -2,17 +2,21 @@
 Title | ML Transformer DETR
 -- | --
 Created @ | `2021-02-01T02:14:33Z`
-Updated @| `2024-10-14T08:42:44Z`
+Updated @| `2024-10-14T14:38:50Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/165)
 
 ---
-
 # DETR
 
 - **DE**tection **TR**ansformer
-- Detection
-  - 预测固定数量 `N` 的预测集合
+- 简化了检测流程，去除了许多手工设计的的组件(NMS/AnchorGeneration) - `先验知识`
+- 传统的目标检测方法是使用大量的 `proposals/anchors/window centers` 将问题转换为回归和分类问题
+  - 受锚点设计/后处理(NMS)影响较大
+- 将目标检测问题视为集合预测问题
+- 使用匈牙利算法实现二分匹配，计算损失，优化训练
+- **特性**
+  - 一次性预测固定数量 `N` 的预测集合
   - `+ no objects`
 
 ## Arch
