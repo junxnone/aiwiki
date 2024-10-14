@@ -1,23 +1,15 @@
 -----
 
-| Title         | ML Transformer DETR                                   |
-| ------------- | ----------------------------------------------------- |
-| Created @     | `2021-02-01T02:14:33Z`                                |
-| Last Modify @ | `2022-12-24T15:51:27Z`                                |
-| Labels        | \`\`                                                  |
-| Edit @        | [here](https://github.com/junxnone/aiwiki/issues/165) |
+| Title     | ML Transformer DETR                                   |
+| --------- | ----------------------------------------------------- |
+| Created @ | `2021-02-01T02:14:33Z`                                |
+| Updated @ | `2024-10-14T08:42:44Z`                                |
+| Labels    | \`\`                                                  |
+| Edit @    | [here](https://github.com/junxnone/aiwiki/issues/165) |
 
 -----
 
-## Reference
-
-  - 2020-05 **\[DETR\]** End-to-End Object Detection with Transformers
-    \[[Paper](https://arxiv.org/abs/2005.12872v3)\]
-    \[[Code](https://github.com/facebookresearch/detr)\]
-  - [Object detection set prediction
-    loss](https://senyang-ml.github.io/2020/06/04/detr/)
-
-## Brief
+# DETR
 
   - **DE**tection **TR**ansformer
   - Detection
@@ -93,3 +85,11 @@
 | --- | ------------------------------------------------------------ |
 | 1   | ![image](media/981ad850ffe7a3c7aafec32fd1155bd51746adf9.png) |
 | 2   | ![image](media/42d59f1df1b360efbe6b1bd4e491f1db17246ef3.png) |
+
+## Reference
+
+  - 2020-05 **\[DETR\]** End-to-End Object Detection with Transformers
+    \[[Paper](https://arxiv.org/abs/2005.12872v3)\]
+    \[[Code](https://github.com/facebookresearch/detr)\]
+  - [Object detection set prediction
+    loss](https://senyang-ml.github.io/2020/06/04/detr/)

@@ -2,16 +2,14 @@
 Title | ML Transformer DETR
 -- | --
 Created @ | `2021-02-01T02:14:33Z`
-Last Modify @| `2022-12-24T15:51:27Z`
+Updated @| `2024-10-14T08:42:44Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/165)
 
 ---
-## Reference
-- 2020-05 **[DETR]** End-to-End Object Detection with Transformers [[Paper](https://arxiv.org/abs/2005.12872v3)] [[Code](https://github.com/facebookresearch/detr)] 
-- [Object detection set prediction loss](https://senyang-ml.github.io/2020/06/04/detr/)
 
-## Brief
+# DETR
+
 - **DE**tection **TR**ansformer
 - Detection
   - 预测固定数量 `N` 的预测集合
@@ -87,4 +85,10 @@ Num | Evaluation
 -- | --
 1 | ![image](https://user-images.githubusercontent.com/2216970/115985810-2b247900-a5e0-11eb-9a06-6d820c5b5135.png)
 2 | ![image](https://user-images.githubusercontent.com/2216970/115985843-4b543800-a5e0-11eb-807e-02dc200453ed.png)
+
+
+
+## Reference
+- 2020-05 **[DETR]** End-to-End Object Detection with Transformers [[Paper](https://arxiv.org/abs/2005.12872v3)] [[Code](https://github.com/facebookresearch/detr)] 
+- [Object detection set prediction loss](https://senyang-ml.github.io/2020/06/04/detr/)
 
