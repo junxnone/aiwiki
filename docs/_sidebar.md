@@ -450,6 +450,7 @@
   - [CSPNet](/0385_paper_CSPNet)
   - [ControlNet](/0407_paper_ControlNet)
   - [DINO](/0483_paper_DINO)
+  - [Deformable DETR](/0484_paper_DeformableDETR)
   - [Eureka](/0470_paper_Eureka)
   - [FiLo](/0472_paper_FiLo)
   - [Grounding DINO](/0464_paper_GroundingDINO)
@@ -475,4 +476,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@2239571014</sub></kbd>
+<kbd><sub>@1202301015</sub></kbd>
