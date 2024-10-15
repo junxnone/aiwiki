@@ -234,7 +234,6 @@
     - [Attention Is All You Need](/0212_ML_Attention_S)
   - [Transformer](/0229_ML_Transformer)
     - [Bottleneck Transformers](/0228_ML_Transformer_BT)
-    - [DETR](/0165_ML_Transformer_DETR)
     - [DeiT](/0253_ML_Transformer_DeiT)
     - [Efficient Attention](/0225_ML_Transformer_EfficientAttention)
     - [Linformer](/0224_ML_Transformer_Linformer)
@@ -449,6 +448,7 @@
   - [CLIP](/0448_paper_CLIP)
   - [CSPNet](/0385_paper_CSPNet)
   - [ControlNet](/0407_paper_ControlNet)
+  - [DETR](/0165_paper_DETR)
   - [DINO](/0483_paper_DINO)
   - [Deformable DETR](/0484_paper_DeformableDETR)
   - [Eureka](/0470_paper_Eureka)
@@ -476,4 +476,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1754451015</sub></kbd>
+<kbd><sub>@1802461015</sub></kbd>
