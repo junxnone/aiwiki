@@ -2,7 +2,7 @@
 Title | paper DINO
 -- | --
 Created @ | `2024-10-14T09:32:21Z`
-Updated @| `2024-10-15T09:53:33Z`
+Updated @| `2024-10-15T09:54:08Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/483)
 
@@ -56,7 +56,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/483)
 - 即层 i 的参数受层 i 和层 (i + 1) 的损失影响，通过使用下一层的输出监督当前层的最终框，提高预测框的精度
 - 即优化初始化框 $b_{i - 1}$ ，也优化框偏移量 $\Delta b_{i}$
 
-预测框$b_{i}^{(pred)}$的最终精度由两个因素决定：初始框$b_{i - 1}$的质量和框的预测偏移量$\Delta b_{i}$。“一次预测”方案仅优化后者，因为梯度信息只流向第(i - 1)层。相比之下，我们同时改进了初始框$b_{i - 1}$和预测框偏移量$\Delta b_{i}$。一种提高质量的简单方法是用下一层的输出$\Delta b_{i + 1}$来监督第 i 层的最终框$b_{i}'$。因此，我们使用$b_{i}'$和$\Delta b_{i + 1}$的总和作为第(i + 1)层的预测框。
+
 
 ![image](https://github.com/user-attachments/assets/da6ee827-a429-4347-8142-fb9853de36bd)
 
