@@ -1,8 +1,8 @@
 ---
-Title | ML Transformer DETR
+Title | paper DETR
 -- | --
 Created @ | `2021-02-01T02:14:33Z`
-Updated @| `2024-10-15T08:35:34Z`
+Updated @| `2024-10-15T10:01:39Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/165)
 
