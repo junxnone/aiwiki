@@ -454,7 +454,7 @@
   - [Eureka](/0470_paper_Eureka)
   - [FiLo](/0472_paper_FiLo)
   - [Grounding DINO](/0464_paper_GroundingDINO)
-    - [Grounding DINO](/0485_paper_GroundingDINO_cn)
+    - [Grounding DINO 翻译](/0485_paper_GroundingDINO_cn)
   - [MuSC](/0467_paper_MuSC)
   - [SAA+](/0469_paper_SAAplus)
   - [WinCLIP](/0468_paper_WinCLIP)
@@ -477,4 +477,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1828351015</sub></kbd>
+<kbd><sub>@2355171015</sub></kbd>
