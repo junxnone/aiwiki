@@ -1,8 +1,8 @@
 ---
-Title | x TipAdapter
+Title | paper TipAdapter
 -- | --
 Created @ | `2024-10-09T01:53:49Z`
-Updated @| `2024-10-10T03:04:19Z`
+Updated @| `2024-10-16T09:11:20Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/475)
 
