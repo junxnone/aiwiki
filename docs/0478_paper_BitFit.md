@@ -1,8 +1,8 @@
 ---
-Title | x BitFit
+Title | paper BitFit
 -- | --
 Created @ | `2024-10-11T02:53:15Z`
-Updated @| `2024-10-11T02:53:16Z`
+Updated @| `2024-10-16T09:11:00Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/478)
 
