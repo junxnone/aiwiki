@@ -1,8 +1,8 @@
 ---
-Title | x CoOP
+Title | paper CoOP
 -- | --
 Created @ | `2024-10-08T03:31:04Z`
-Updated @| `2024-10-08T08:14:29Z`
+Updated @| `2024-10-16T09:21:55Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/474)
 
