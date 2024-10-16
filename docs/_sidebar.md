@@ -1,24 +1,3 @@
-- [数学基础](/0288_Math)
-  - [向量](/0292_Math_Vector)
-  - [Determinant  行列式](/0301_Math_Determinant)
-  - [矩阵](/0311_Math_Matrix)
-  - [Least Squares 最小二乘法](/0294_Math_LeastSquares)
-    - [Moving Least Squares 移动最小二乘法](/0291_Math_LeastSquares_Moving)
-  - [贝叶斯定理](/0217_Math_BT)
-  - [Derivative 导数](/0377_Math_Derivative)
-  - [Dynamic Programming 动态规划](/0310_Math_DynamicProgramming)
-  - [Gaussian Distribution 高斯分布](/0023_Math_GaussianDistribution)
-  - [Gaussian Filter 高斯滤波器](/0215_Math_GaussianFilter)
-  - [Gaussian Process 高斯过程](/0216_Math_GaussianProcess)
-  - [Lagrange Multiplier Method 拉格朗日乘数法](/0358_Math_LMM)
-  - [马尔可夫过程](/0449_Math_MarkovProcess)
-  - [QuadTree/OCTree - 四叉树/八叉树](/0356_Math_QuadTree)
-  - [Quaternion 四元数](/0289_Math_Quaternion)
-  - [RANSAC](/0293_Math_RANSAC)
-  - [Simulated annealing 模拟退火](/0357_Math_SA)
-  - [Stochastic process 随机过程](/0355_Math_SC)
-  - [SVD](/0297_Math_SVD)
-  - [norm 范数](/0254_Math_norm)
 - [Media](/0417_Media)
   - [图像](/0325_Media_Image)
     - [2D 图像](/0035_Media_Image_2DImage)
@@ -479,4 +458,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1824281016</sub></kbd>
+<kbd><sub>@1843051016</sub></kbd>
