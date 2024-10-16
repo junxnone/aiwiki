@@ -1,8 +1,8 @@
 ---
-Title | x LFA
+Title | paper LFA
 -- | --
 Created @ | `2024-10-11T05:12:02Z`
-Updated @| `2024-10-12T02:07:58Z`
+Updated @| `2024-10-16T09:21:15Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/480)
 
