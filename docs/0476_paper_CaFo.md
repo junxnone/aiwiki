@@ -1,8 +1,8 @@
 ---
-Title | x CaFo
+Title | paper CaFo
 -- | --
 Created @ | `2024-10-11T01:52:10Z`
-Updated @| `2024-10-11T01:52:10Z`
+Updated @| `2024-10-16T09:11:10Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/476)
 
