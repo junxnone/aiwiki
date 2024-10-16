@@ -448,6 +448,7 @@
   - [BitFit](/0478_paper_BitFit)
   - [CLIP](/0448_paper_CLIP)
   - [CSPNet](/0385_paper_CSPNet)
+  - [CaFo](/0476_paper_CaFo)
   - [ControlNet](/0407_paper_ControlNet)
   - [DETR](/0165_paper_DETR)
   - [DINO](/0483_paper_DINO)
@@ -459,10 +460,11 @@
   - [MTA](/0479_paper_MTA)
   - [MuSC](/0467_paper_MuSC)
   - [SAA+](/0469_paper_SAAplus)
+  - [Tip-Adapter](/0475_paper_TipAdapter)
+  - [VPT - Visual Prompt Tuning](/0477_paper_VPT)
   - [WinCLIP](/0468_paper_WinCLIP)
   - [YOLO-World](/0465_paper_YOLOWorld)
 - [x](/0418_x)
-  - [CaFo](/0476_x_CaFo)
   - [CoOP](/0474_x_CoOP)
   - [缺陷图片生成](/0403_x_DefectGen)
   - [Cool Demo](/0409_x_Demo)
@@ -471,11 +473,9 @@
     - [Model Precision](/0450_x_Model_Precision)
   - [Optuna](/0486_x_Optuna)
   - [Question](/0447_x_Q)
-  - [Tip-Adapter](/0475_x_TipAdapter)
-  - [VPT - Visual Prompt Tuning](/0477_x_VPT)
 - [应用](/0428_应用)
 - [有趣的工具](/0462_有趣的工具)
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1712111016</sub></kbd>
+<kbd><sub>@1717111016</sub></kbd>
