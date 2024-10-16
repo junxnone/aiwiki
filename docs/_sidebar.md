@@ -449,6 +449,7 @@
   - [CLIP](/0448_paper_CLIP)
   - [CSPNet](/0385_paper_CSPNet)
   - [CaFo](/0476_paper_CaFo)
+  - [CoOP](/0474_paper_CoOP)
   - [ControlNet](/0407_paper_ControlNet)
   - [DETR](/0165_paper_DETR)
   - [DINO](/0483_paper_DINO)
@@ -466,7 +467,6 @@
   - [WinCLIP](/0468_paper_WinCLIP)
   - [YOLO-World](/0465_paper_YOLOWorld)
 - [x](/0418_x)
-  - [CoOP](/0474_x_CoOP)
   - [缺陷图片生成](/0403_x_DefectGen)
   - [Cool Demo](/0409_x_Demo)
   - Model
@@ -478,4 +478,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1722201016</sub></kbd>
+<kbd><sub>@1722571016</sub></kbd>
