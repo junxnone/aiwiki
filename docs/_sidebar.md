@@ -457,6 +457,7 @@
   - [FiLo](/0472_paper_FiLo)
   - [Grounding DINO](/0464_paper_GroundingDINO)
     - [Grounding DINO 翻译](/0485_paper_GroundingDINO_cn)
+  - [LFA](/0480_paper_LFA)
   - [MTA](/0479_paper_MTA)
   - [MuSC](/0467_paper_MuSC)
   - [SAA+](/0469_paper_SAAplus)
@@ -468,7 +469,6 @@
   - [CoOP](/0474_x_CoOP)
   - [缺陷图片生成](/0403_x_DefectGen)
   - [Cool Demo](/0409_x_Demo)
-  - [LFA](/0480_x_LFA)
   - Model
     - [Model Precision](/0450_x_Model_Precision)
   - [Optuna](/0486_x_Optuna)
@@ -478,4 +478,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1717111016</sub></kbd>
+<kbd><sub>@1722201016</sub></kbd>
