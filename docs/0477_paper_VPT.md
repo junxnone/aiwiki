@@ -1,8 +1,8 @@
 ---
-Title | x VPT
+Title | paper VPT
 -- | --
 Created @ | `2024-10-11T02:20:05Z`
-Updated @| `2024-10-11T02:23:01Z`
+Updated @| `2024-10-16T09:11:29Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/477)
 
