@@ -1,8 +1,8 @@
 ---
-Title | x MTA
+Title | paper MTA
 -- | --
 Created @ | `2024-10-11T03:12:36Z`
-Updated @| `2024-10-11T03:13:55Z`
+Updated @| `2024-10-16T09:10:49Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/479)
 
