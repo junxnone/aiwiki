@@ -469,6 +469,7 @@
   - [MTA](/0479_x_MTA)
   - Model
     - [Model Precision](/0450_x_Model_Precision)
+  - [Optuna](/0486_x_Optuna)
   - [Question](/0447_x_Q)
   - [Tip-Adapter](/0475_x_TipAdapter)
   - [VPT - Visual Prompt Tuning](/0477_x_VPT)
@@ -477,4 +478,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1619301016</sub></kbd>
+<kbd><sub>@1637371016</sub></kbd>
