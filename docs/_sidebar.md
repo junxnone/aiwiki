@@ -445,6 +445,7 @@
 - [资源参考](/0380_Reference)
 - [paper](/0386_paper)
   - [AnomalyCLIP](/0466_paper_AnomalyCLIP)
+  - [BitFit](/0478_paper_BitFit)
   - [CLIP](/0448_paper_CLIP)
   - [CSPNet](/0385_paper_CSPNet)
   - [ControlNet](/0407_paper_ControlNet)
@@ -455,18 +456,17 @@
   - [FiLo](/0472_paper_FiLo)
   - [Grounding DINO](/0464_paper_GroundingDINO)
     - [Grounding DINO 翻译](/0485_paper_GroundingDINO_cn)
+  - [MTA](/0479_paper_MTA)
   - [MuSC](/0467_paper_MuSC)
   - [SAA+](/0469_paper_SAAplus)
   - [WinCLIP](/0468_paper_WinCLIP)
   - [YOLO-World](/0465_paper_YOLOWorld)
 - [x](/0418_x)
-  - [BitFit](/0478_x_BitFit)
   - [CaFo](/0476_x_CaFo)
   - [CoOP](/0474_x_CoOP)
   - [缺陷图片生成](/0403_x_DefectGen)
   - [Cool Demo](/0409_x_Demo)
   - [LFA](/0480_x_LFA)
-  - [MTA](/0479_x_MTA)
   - Model
     - [Model Precision](/0450_x_Model_Precision)
   - [Optuna](/0486_x_Optuna)
@@ -478,4 +478,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1659551016</sub></kbd>
+<kbd><sub>@1712111016</sub></kbd>
