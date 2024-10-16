@@ -447,6 +447,7 @@
   - [AnomalyCLIP](/0466_paper_AnomalyCLIP)
   - [BitFit](/0478_paper_BitFit)
   - [CLIP](/0448_paper_CLIP)
+    - [CLIP Finetune](/0487_paper_CLIP_Finetune)
   - [CSPNet](/0385_paper_CSPNet)
   - [CaFo](/0476_paper_CaFo)
   - [CoOP](/0474_paper_CoOP)
@@ -478,4 +479,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1722571016</sub></kbd>
+<kbd><sub>@1724351016</sub></kbd>
