@@ -3,7 +3,7 @@
 | Title     | x Optuna                                              |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2024-10-16T08:36:29Z`                                |
-| Updated @ | `2024-10-16T08:58:44Z`                                |
+| Updated @ | `2024-10-17T01:22:59Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/486) |
 
@@ -57,3 +57,8 @@
 | SuccessiveHalvingPruner | 基于 Successive Halving 算法逐步减少正在运行的试验数量，将资源集中在表现较好的试验上。  | 大规模超参数搜索问题，计算资源有限需快速找到较好解决方案。     |
 | HyperbandPruner         | 结合 Successive Halving 算法和随机搜索思想，在不同资源级别上进行试验并动态调整资源分配。 | 复杂优化问题和大规模超参数搜索，能在较短时间内找到高质量解决方案。 |
 | ThresholdPruner         | 根据用户设定的阈值来进行剪枝，若试验中间结果超过阈值则停止试验。                       | 对目标函数有先验知识，知道合理阈值时使用。             |
+
+## Reference
+
+  - [optuna](https://optuna.org/)
+  - [optuna docs](https://optuna.readthedocs.io/)
