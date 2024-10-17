@@ -3,7 +3,7 @@
 | Title     | x Optuna                                              |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2024-10-16T08:36:29Z`                                |
-| Updated @ | `2024-10-17T01:52:10Z`                                |
+| Updated @ | `2024-10-17T02:33:16Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/486) |
 
@@ -14,6 +14,9 @@
   - 超参数优化
   - optuna-dashboard 可以读取存储的数据用来显示
       - 支持 web/vscode/jupyter
+  - 优化停止机制
+  - Trail 早停机制
+  - 超参采样器
 
 ## Samplers
 
