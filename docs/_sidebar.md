@@ -324,6 +324,7 @@
       - [Oxford-IIIT Pets](/0029_Datasets_Image2D_Classification_Pets)
       - [Mnist](/0030_Datasets_Image2D_Classification_mnist)
     - [Detection](/0237_Datasets_Image2D_Detection)
+      - [BBox Format](/0488_Datasets_Image2D_Detection_BBox)
       - [BIT-Vehicle](/0246_Datasets_Image2D_Detection_BITVehicle)
     - [Segmentation](/0097_Datasets_Image2D_Segmentation)
       - [Balloon](/0090_Datasets_Image2D_Segmentation_Balloon)
@@ -458,4 +459,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1657261118</sub></kbd>
+<kbd><sub>@1709211118</sub></kbd>
