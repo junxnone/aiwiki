@@ -1,25 +1,17 @@
 -----
 
-| Title         | Datasets Image2D Detection BITVehicle                 |
-| ------------- | ----------------------------------------------------- |
-| Created @     | `2018-12-19T17:36:01Z`                                |
-| Last Modify @ | `2022-12-24T16:11:21Z`                                |
-| Labels        | \`\`                                                  |
-| Edit @        | [here](https://github.com/junxnone/aiwiki/issues/246) |
+| Title     | Datasets Image2D Detection BITVehicle                 |
+| --------- | ----------------------------------------------------- |
+| Created @ | `2018-12-19T17:36:01Z`                                |
+| Updated @ | `2024-11-18T08:56:13Z`                                |
+| Labels    | \`\`                                                  |
+| Edit @    | [here](https://github.com/junxnone/aiwiki/issues/246) |
 
 -----
 
 # BIT-Vehicle
 
-## Reference
-
-  - [ BitVehicle](http://iitlab.bit.edu.cn/mcislab/vehicledb/)
-  - 彩蛋 ctrl + u \~\~ [backup- BIT-Vehicle
-    Dataset.html](https://github.com/zj2626/Vehicle_Type_Identification/blob/d7fa07cb687275da9a25157711d6f8e06fa0abfe/document/BIT-Vehicle%20Dataset.html)
-
-## Brief
-
-**The BIT-Vehicle dataset contains 9,850 vehicle images.**
+  - **The BIT-Vehicle dataset contains 9,850 vehicle images.**
 
 ## Categories
 
@@ -52,3 +44,9 @@
     contains five fileds: left, top, right, bottom, and category. The
     former four fileds characterize the location of the vehicle in the
     image, and the field "category" represents the type of the vehicle.
+
+## Reference
+
+  - [ BitVehicle](http://iitlab.bit.edu.cn/mcislab/vehicledb/)
+  - 彩蛋 ctrl + u \~\~ [backup- BIT-Vehicle
+    Dataset.html](https://github.com/zj2626/Vehicle_Type_Identification/blob/d7fa07cb687275da9a25157711d6f8e06fa0abfe/document/BIT-Vehicle%20Dataset.html)
