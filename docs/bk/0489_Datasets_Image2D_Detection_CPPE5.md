@@ -3,7 +3,7 @@
 | Title     | Datasets Image2D Detection CPPE5                      |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2024-11-22T03:19:28Z`                                |
-| Updated @ | `2024-11-22T03:19:28Z`                                |
+| Updated @ | `2024-11-22T03:23:26Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/489) |
 
@@ -14,12 +14,17 @@
   - Medical Personal Protective Equipment : 用于医学个人防护设备相关研究的数据集,
     旨在研究医学个人防护设备的下级分类
   - 数据集中的文本为英文，数据集大小在1K - 10K之间，包含1029个数据点（图像），其中训练集有1000张图像，测试集有29张图像。
-  - 数据集统计信息
-      - 4698 bounding boxes
-      - 1029 high-quality non-iconic images
-      - Average image size of 947 pixels
-      - 5 object categories
-      - \~4.57 annotations per image
+
+![image](media/0213734ddad0465fdff783a4f9757f36f840e6ce.png)
+
+## 数据集统计信息
+
+  - 4698 bounding boxes
+  - 1029 high-quality non-iconic images
+  - Average image size of 947 pixels
+  - 5 object categories
+  - \~4.57 annotations per image
+  - \~230MB
 
 ## 类别
 
