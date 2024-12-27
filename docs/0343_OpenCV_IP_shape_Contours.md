@@ -2,23 +2,14 @@
 Title | OpenCV IP shape Contours
 -- | --
 Created @ | `2020-02-27T06:33:42Z`
-Last Modify @| `2022-12-27T09:12:40Z`
+Updated @| `2024-12-27T06:50:44Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/343)
 
 ---
 # Contours 轮廓
 
-## Reference
 
-- [cv.findContours()](https://docs.opencv.org/4.2.0/d3/dc0/group__imgproc__shape.html#gadf1ad6a0b82947fa1fe3c3d497f260e0)
-- [mode - RetrievalModes](https://docs.opencv.org/4.2.0/d3/dc0/group__imgproc__shape.html#ga819779b9857cc2f8601e6526a3a5bc71)
-- [method - ContourApproximationModes](https://docs.opencv.org/4.2.0/d3/dc0/group__imgproc__shape.html#ga4303f45752694956374734a03c54d5ff)
-- [查找轮廓（cv2.findCountours函数）](https://www.cnblogs.com/wmy-ncut/p/9889294.html)
-- [jupyter notebook](https://github.com/junxnone/examples/blob/master/opencv/OpenCV_findContours_drawContours.ipynb)
-- [Contours - Opencv tutorial - apachecn](https://opencv.apachecn.org/#/docs/4.0.0/4.9-tutorial_py_contours)
-
-## Brief
 
 Function | Description | Comments
 -- | -- | --
@@ -42,7 +33,7 @@ cv.line() | 绘制线
 cv.minMaxLoc() | mask 中最大最小值
 
 
-## findContours()
+## 检测边缘轮廓 findContours()
 ```
 contours, hierarchy = cv.findContours(image, mode, method[,contours[,hierarchy[,offset]]])
 ```
@@ -62,7 +53,7 @@ cv2.CHAIN_APPROX_SIMPLE | 压缩垂直、水平、对角方向，只保留端点
 cv2.CHAIN_APPROX_TX89_L1 | 使用teh-Chini近似算法
 cv2.CHAIN_APPROX_TC89_KCOS | 使用teh-Chini近似算法
 
-## drawContours()
+## 画出轮廓 drawContours()
 
 ```
 image = cv.drawContours(image, contours, contourIdx,  \
@@ -81,7 +72,7 @@ hierarchy | Optional information about hierarchy. It is only needed if you want 
 maxLevel | Maximal level for drawn contours. If it is 0, only the specified contour is drawn. If it is 1, the function draws the contour(s) and all the nested contours. If it is 2, the function draws the contours, all the nested contours, all the nested-to-nested contours, and so on. This parameter is only taken into account when there is hierarchy available.
 offset | Optional contour shift parameter. Shift all the drawn contours by the specified offset=(dx,dy) .
 
-## contourArea()
+## 计算轮廓面积 contourArea()
 ```
 retval = cv.contourArea(contour[, oriented])
 ```
@@ -100,4 +91,14 @@ def get_area(image, contours):
 
     return area_list
 ```
+
+
+## Reference
+
+- [cv.findContours()](https://docs.opencv.org/4.2.0/d3/dc0/group__imgproc__shape.html#gadf1ad6a0b82947fa1fe3c3d497f260e0)
+- [mode - RetrievalModes](https://docs.opencv.org/4.2.0/d3/dc0/group__imgproc__shape.html#ga819779b9857cc2f8601e6526a3a5bc71)
+- [method - ContourApproximationModes](https://docs.opencv.org/4.2.0/d3/dc0/group__imgproc__shape.html#ga4303f45752694956374734a03c54d5ff)
+- [查找轮廓（cv2.findCountours函数）](https://www.cnblogs.com/wmy-ncut/p/9889294.html)
+- [jupyter notebook](https://github.com/junxnone/examples/blob/master/opencv/OpenCV_findContours_drawContours.ipynb)
+- [Contours - Opencv tutorial - apachecn](https://opencv.apachecn.org/#/docs/4.0.0/4.9-tutorial_py_contours)
 
