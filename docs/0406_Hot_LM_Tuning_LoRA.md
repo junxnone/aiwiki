@@ -2,7 +2,7 @@
 Title | Hot LM Tuning LoRA
 -- | --
 Created @ | `2023-06-02T07:07:34Z`
-Updated @| `2023-06-13T15:16:15Z`
+Updated @| `2025-01-02T03:25:29Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/406)
 
@@ -10,6 +10,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/406)
 # LoRA
 
 - LoRA - `Low-Rank Adaptation` 是微软研究员引入的一项新技术，主要用于处理大模型微调的问题。
+- 在神经网络中，权重矩阵通常是高维的。LoRa 假设这些权重矩阵可以分解为低秩的形式。
 - 已有研究表明了过度参数化的模型其实是位于一个低的内在维度上，所以作者假设在模型适应过程中的权重变化也具有较低的“内在等级”
 
 
@@ -22,6 +23,10 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/406)
 
 ## 模型合并
 - LoRA + BigMdel 
+- $W = W_0+\Delta W$ 
+  - $W_0$ 是预训练模型的原始权重矩阵
+  - $\Delta W =BA$
+  - $B$ $A$ 是通过微调学习得到的低秩矩阵
 - $W = W_0 + BA$
 - 微调后由 $h=W_0x$  变为 $h=Wx$
 
