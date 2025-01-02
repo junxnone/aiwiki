@@ -2,7 +2,7 @@
 Title | Hot LM Tuning LoRA
 -- | --
 Created @ | `2023-06-02T07:07:34Z`
-Updated @| `2025-01-02T06:05:16Z`
+Updated @| `2025-01-02T06:25:01Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/406)
 
@@ -23,11 +23,10 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/406)
 
 ## 模型合并
 - LoRA + BigMdel 
-- $W = W_0+\Delta W$ 
+- $W = W_0+\Delta W = W_0 + BA$ 
   - $W_0$ 是预训练模型的原始权重矩阵
   - $\Delta W =BA$ : $\Delta W$ 被分解为两个低秩矩阵 $B$ $A$ 的乘积
-  -  $B$ $A$ 是通过微调学习得到的低秩矩阵
-- $W = W_0 + BA$
+  -  $B$ $A$ 是对原始权重矩阵进行微小的调整，以适应特定的下游任务。
 - 微调后由 $h=W_0x$  变为 $h=Wx$
 
 ### 比较
