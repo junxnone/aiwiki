@@ -3,7 +3,7 @@
 | Title     | Hot LM Tuning LoRA                                    |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-06-02T07:07:34Z`                                |
-| Updated @ | `2025-01-06T01:26:43Z`                                |
+| Updated @ | `2025-01-06T01:35:33Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/406) |
 
@@ -33,7 +33,7 @@
 
 ### Example Fc1
 
-![image](media/e609a0a21f075a89e0fd37f7e76ab6eaac56f2c6.png)
+![image](media/74c00f5fefb5dcbd6b21d14159385d1ca52100a2.png)
 
 ### 比较
 
