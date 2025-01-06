@@ -2,7 +2,7 @@
 Title | Hot LM Tuning LoRA
 -- | --
 Created @ | `2023-06-02T07:07:34Z`
-Updated @| `2025-01-02T06:25:01Z`
+Updated @| `2025-01-06T01:26:43Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/406)
 
@@ -28,6 +28,12 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/406)
   - $\Delta W =BA$ : $\Delta W$ 被分解为两个低秩矩阵 $B$ $A$ 的乘积
   -  $B$ $A$ 是对原始权重矩阵进行微小的调整，以适应特定的下游任务。
 - 微调后由 $h=W_0x$  变为 $h=Wx$
+
+### Example Fc1
+
+![image](https://github.com/user-attachments/assets/4e5c9925-1bc7-47de-9938-420382e42d9e)
+
+
 
 ### 比较
 
