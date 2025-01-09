@@ -3,7 +3,7 @@
 | Title     | Tools Pytorch TorchScript                             |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2024-12-23T08:43:03Z`                                |
-| Updated @ | `2024-12-25T01:27:53Z`                                |
+| Updated @ | `2025-01-09T08:54:55Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/490) |
 
@@ -22,3 +22,5 @@
   - **保存和加载**: 保存的文件中包含代码，参数，属性和debuginfo，可以加载到非 python code 中执行
       - {}.save("xxx.pt")
       - torch.jit.load('xxx.pt')
+  - **Tips:** Pytorch 转 OpenVINO 和 ONNX 等模型，也是使用此中间表示
+      - 所以构建模型时最好能使用`是否能转换TorchScript` 作为参考标准
