@@ -2,7 +2,7 @@
 Title | Tools Pytorch TorchScript
 -- | --
 Created @ | `2024-12-23T08:43:03Z`
-Updated @| `2025-01-10T07:15:23Z`
+Updated @| `2025-01-10T07:16:39Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/490)
 
@@ -37,6 +37,11 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/490)
 
 ## `@torch.jit.script` 装饰器
 - 用于将 Python 函数或类转换为可被 PyTorch JIT（Just - In - Time）编译器理解和优化的形式。
+- **优点**
+  - 性能提升
+  - 跨平台部署方便
+  - 可序列化和保存
+
 
 ### 工作原理
 
