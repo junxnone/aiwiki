@@ -411,6 +411,7 @@
       - [AdaLoRA](/0491_Hot_LM_Tuning_AdaLoRA)
       - [Adapter FineTuning](/0412_Hot_LM_Tuning_Adapter)
       - [DreamBooth](/0405_Hot_LM_Tuning_DreamBooth)
+      - [LoHa](/0492_Hot_LM_Tuning_LoHa)
       - [LoRA](/0406_Hot_LM_Tuning_LoRA)
       - [Prefix Tuning](/0411_Hot_LM_Tuning_PrefixTuning)
   - [LaMa - Image Inpainting](/0404_Hot_LaMa)
@@ -462,4 +463,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1636440113</sub></kbd>
+<kbd><sub>@1641130113</sub></kbd>
