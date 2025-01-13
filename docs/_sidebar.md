@@ -408,6 +408,7 @@
   - [Large Language Models](/0446_Hot_LLMs)
   - [大模型](/0408_Hot_LM)
     - [大模型微调](/0410_Hot_LM_Tuning)
+      - [AdaLoRA](/0491_Hot_LM_Tuning_AdaLoRA)
       - [Adapter FineTuning](/0412_Hot_LM_Tuning_Adapter)
       - [DreamBooth](/0405_Hot_LM_Tuning_DreamBooth)
       - [LoRA](/0406_Hot_LM_Tuning_LoRA)
@@ -461,4 +462,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0957580113</sub></kbd>
+<kbd><sub>@1121390113</sub></kbd>
