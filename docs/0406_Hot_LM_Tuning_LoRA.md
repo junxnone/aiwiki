@@ -2,7 +2,7 @@
 Title | Hot LM Tuning LoRA
 -- | --
 Created @ | `2023-06-02T07:07:34Z`
-Updated @| `2025-01-13T01:56:55Z`
+Updated @| `2025-01-13T06:02:51Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/406)
 
@@ -41,6 +41,13 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/406)
 ### 比较
 
 ![image](https://github.com/junxnone/aiwiki/assets/2216970/1e810c91-87c1-4b5e-86c3-de7a08b22405)
+
+
+## LoRA+
+- LoRA+的作者可以证明，只有单一的学习率是次优的。将矩阵B的学习率设置为远高于矩阵A的学习率，可以使得训练更加高效。
+- 矩阵B的初始化为0，所以需要比随机初始化的矩阵a需要更大的更新步骤。通过将矩阵B的学习率设置为矩阵A的16倍，作者已经能够在模型精度上获得小幅提高(约2%)，同时将RoBERTa或lama-7b等模型的训练时间加快2倍。
+
+
 
 
 ## Reference
