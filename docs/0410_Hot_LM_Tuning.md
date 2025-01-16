@@ -2,13 +2,14 @@
 Title | Hot LM Tuning
 -- | --
 Created @ | `2023-06-05T03:10:12Z`
-Updated @| `2025-01-16T02:19:27Z`
+Updated @| `2025-01-16T02:22:49Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/410)
 
 ---
 # 大模型微调
 
+- Full Fine-Tuning
 - Adapter-Tuning
   - LoRAs
 - Prompting
