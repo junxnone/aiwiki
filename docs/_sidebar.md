@@ -415,6 +415,7 @@
       - [LoHa](/0492_Hot_LM_Tuning_LoHa)
       - [LoKr](/0493_Hot_LM_Tuning_LoKr)
       - [LoRA](/0406_Hot_LM_Tuning_LoRA)
+      - [OFT/BOFT](/0495_Hot_LM_Tuning_OFT)
       - [Prefix Tuning](/0411_Hot_LM_Tuning_PrefixTuning)
   - [LaMa - Image Inpainting](/0404_Hot_LaMa)
   - [Latent Space 潜在空间](/0455_Hot_LatentSpace)
@@ -465,4 +466,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1107130116</sub></kbd>
+<kbd><sub>@1115230116</sub></kbd>
