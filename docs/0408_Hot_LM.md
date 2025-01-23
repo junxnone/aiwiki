@@ -2,7 +2,7 @@
 Title | Hot LM
 -- | --
 Created @ | `2023-06-03T16:08:24Z`
-Updated @| `2025-01-23T07:43:49Z`
+Updated @| `2025-01-23T07:51:25Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/408)
 
@@ -10,6 +10,13 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/408)
 # 大模型
 
 ```markmap
+
+---
+title: 大模型
+markmap:
+  maxWidth: 300
+---
+
 
 # 大模型
 
