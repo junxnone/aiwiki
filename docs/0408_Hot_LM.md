@@ -2,18 +2,37 @@
 Title | Hot LM
 -- | --
 Created @ | `2023-06-03T16:08:24Z`
-Updated @| `2023-06-13T15:15:57Z`
+Updated @| `2025-01-23T07:13:41Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/408)
 
 ---
 # 大模型
-- Language Model
-- Vision Model
-- RL Model
-- Speech
-- Science
 
+```markmap
+
+# 大模型
+
+## 大语言模型 LLM
+- Chat
+- RAG
+- 
+
+## 语言视觉大模型 VLM 
+- 图片/视频生成
+- 图片/视频理解
+
+
+## Science
+- 化学药物生成
+- 数学推理
+- 代码生成
+
+## RL
+- 策略生成
+- 机器人动作生成
+
+```
 
 ```mermaid
 timeline
