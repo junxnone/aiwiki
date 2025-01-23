@@ -3,7 +3,7 @@
 | Title     | Hot LM                                                |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-06-03T16:08:24Z`                                |
-| Updated @ | `2025-01-23T08:00:12Z`                                |
+| Updated @ | `2025-01-23T08:06:21Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/408) |
 
@@ -15,7 +15,7 @@
 ---
 title: 大模型
 markmap:
-  initialExpandLevel: 4
+  initialExpandLevel: 3
 ---
 
 
