@@ -78,7 +78,7 @@
 - 2023-06-16&nbsp;&nbsp; [3D Tools](/0419_3D_Tools)&nbsp;&nbsp; :bookmark:3D :bookmark:Tools
 - 2023-06-16&nbsp;&nbsp; [Media](/0417_Media)&nbsp;&nbsp; :bookmark:Media
 - 2023-06-16&nbsp;&nbsp; [AI Tools](/0415_Tools)&nbsp;&nbsp; :bookmark:Tools
-- 2023-06-16&nbsp;&nbsp; [ML](/0416_ML)&nbsp;&nbsp; :bookmark:ML
+- 2023-06-16&nbsp;&nbsp; [机器学习/深度学习](/0416_ML)&nbsp;&nbsp; :bookmark:ML
 - 2023-06-07&nbsp;&nbsp; [Imagen](/0413_LM_VLM_Imagen)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:Imagen
 - 2023-06-07&nbsp;&nbsp; [SAM](/0414_LM_VLM_SAM)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:SAM
 - 2023-06-05&nbsp;&nbsp; [Prefix Tuning](/0411_LM_FT_PrefixTuning)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:PrefixTuning
