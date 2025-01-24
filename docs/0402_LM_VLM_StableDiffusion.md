@@ -1,8 +1,8 @@
 ---
-Title | Hot StableDiffusion
+Title | LM VLM StableDiffusion
 -- | --
 Created @ | `2023-05-16T13:25:14Z`
-Updated @| `2023-06-07T01:44:35Z`
+Updated @| `2025-01-24T03:10:37Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/402)
 
