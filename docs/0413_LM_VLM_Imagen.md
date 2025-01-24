@@ -1,8 +1,8 @@
 ---
-Title | Hot Imagen
+Title | LM VLM Imagen
 -- | --
 Created @ | `2023-06-07T02:03:36Z`
-Updated @| `2023-10-18T07:43:02Z`
+Updated @| `2025-01-24T03:09:45Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/413)
 
