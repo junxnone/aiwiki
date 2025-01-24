@@ -406,7 +406,7 @@
   - [GLIP](/0463_Hot_GLIP)
   - [Imagen](/0413_Hot_Imagen)
   - [Large Language Models](/0446_Hot_LLMs)
-  - [大模型](/0408_Hot_LM)
+  - LM
     - [大模型微调](/0410_Hot_LM_Tuning)
       - [AdaLoRA](/0491_Hot_LM_Tuning_AdaLoRA)
       - [Adapter FineTuning](/0412_Hot_LM_Tuning_Adapter)
@@ -424,6 +424,7 @@
     - [Stable Diffusion 原理](/0445_Hot_StableDiffusion_Algos)
     - [SD 应用 webui](/0440_Hot_StableDiffusion_webui)
 - [KnowledgeGraph](/0329_KnowledgeGraph)
+- [大模型](/0408_LM)
 - [模型性能优化技术](/0471_MO)
   - [知识蒸馏](/0207_MO_KD)
     - [KD History](/0336_MO_KD_History)
@@ -466,4 +467,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1619010123</sub></kbd>
+<kbd><sub>@1052550124</sub></kbd>
