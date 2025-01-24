@@ -1,8 +1,8 @@
 ---
-Title | Hot AIGC RAG
+Title | LM RAG
 -- | --
 Created @ | `2024-02-20T01:35:11Z`
-Updated @| `2024-07-29T01:58:39Z`
+Updated @| `2025-01-24T03:12:10Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/461)
 
