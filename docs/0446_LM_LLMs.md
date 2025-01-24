@@ -1,8 +1,8 @@
 ---
-Title | Hot LLMs
+Title | LM LLMs
 -- | --
 Created @ | `2023-10-12T09:01:24Z`
-Updated @| `2023-10-17T03:12:25Z`
+Updated @| `2025-01-24T03:06:10Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/446)
 
