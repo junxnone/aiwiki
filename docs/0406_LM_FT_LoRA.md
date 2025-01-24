@@ -1,8 +1,8 @@
 ---
-Title | Hot LM Tuning LoRA
+Title | LM FT LoRA
 -- | --
 Created @ | `2023-06-02T07:07:34Z`
-Updated @| `2025-01-13T06:22:49Z`
+Updated @| `2025-01-24T02:53:24Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/406)
 
