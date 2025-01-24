@@ -402,10 +402,8 @@
     - [ChatGPT](/0373_Hot_AIGC_ChatGPT)
     - [RAG](/0461_Hot_AIGC_RAG)
     - [AIGC Tools](/0456_Hot_AIGC_Tools)
-  - [LaMa - Image Inpainting](/0404_Hot_LaMa)
   - [Latent Space 潜在空间](/0455_Hot_LatentSpace)
-  - [SAM](/0414_Hot_SAM)
-  - [Stable Diffusion](/0402_Hot_StableDiffusion)
+  - StableDiffusion
     - [Stable Diffusion 原理](/0445_Hot_StableDiffusion_Algos)
     - [SD 应用 webui](/0440_Hot_StableDiffusion_webui)
 - [KnowledgeGraph](/0329_KnowledgeGraph)
@@ -425,6 +423,9 @@
     - [DragGAN](/0429_LM_VLM_DragGAN)
     - [GLIP](/0463_LM_VLM_GLIP)
     - [Imagen](/0413_LM_VLM_Imagen)
+    - [LaMa - Image Inpainting](/0404_LM_VLM_LaMa)
+    - [SAM](/0414_LM_VLM_SAM)
+    - [Stable Diffusion](/0402_LM_VLM_StableDiffusion)
 - [模型性能优化技术](/0471_MO)
   - [知识蒸馏](/0207_MO_KD)
     - [KD History](/0336_MO_KD_History)
@@ -467,4 +468,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1110500124</sub></kbd>
+<kbd><sub>@1111400124</sub></kbd>
