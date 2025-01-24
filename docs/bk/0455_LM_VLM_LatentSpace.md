@@ -1,15 +1,17 @@
----
-Title | Hot LatentSpace
--- | --
-Created @ | `2023-11-01T14:35:32Z`
-Updated @| `2023-11-01T14:35:32Z`
-Labels | ``
-Edit @| [here](https://github.com/junxnone/aiwiki/issues/455)
+-----
 
----
+| Title     | LM VLM LatentSpace                                    |
+| --------- | ----------------------------------------------------- |
+| Created @ | `2023-11-01T14:35:32Z`                                |
+| Updated @ | `2025-01-24T03:11:11Z`                                |
+| Labels    | \`\`                                                  |
+| Edit @    | [here](https://github.com/junxnone/aiwiki/issues/455) |
+
+-----
+
 # Latent Space 潜在空间
-- 抽象多维空间，对输入进行编码表示到潜在空间后，在外部世界中相似的样本在潜在空间中彼此靠近
 
+  - 抽象多维空间，对输入进行编码表示到潜在空间后，在外部世界中相似的样本在潜在空间中彼此靠近
 
 ### 图像生成
 
