@@ -1,8 +1,3 @@
-- Math
-  - Vector
-  - Determinant
-  - Matrix
-  - LeastSquares
 - Media
   - Image
     - 2DImage
@@ -17,6 +12,11 @@
       - Tools
       - Plugins
 - CV
+- OpenCV
+  - IO
+  - UC
+  - IP
+  - Core 
 - 3D
   - Camera
   - Cloud
@@ -30,6 +30,19 @@
       - RangeImage
       - Downsampling
       - Tools
+- Datasets
+  - Image2D
+    - Classification
+    - Detection
+    - Segmentation
+    - Retrieval
+    - OCR
+    - Face
+    - KeyPoint
+    - Defect
+    - AutoML
+    - OC
+  - Image3D 
 - ML
   - OML
   - Arch
@@ -57,7 +70,10 @@
     - HPO
     - NAS
   - AL
+- LM
+- MO
 - RL
+- paper
 - Tools 
   - Numpy
   - TI
@@ -78,22 +94,6 @@
   - anomalib
   - VIS
   - Label
-- Datasets
-  - Image2D
-    - Classification
-    - Detection
-    - Segmentation
-    - Retrieval
-    - OCR
-    - Face
-    - KeyPoint
-    - Defect
-    - AutoML
-    - OC
-  - Image3D
-- OpenCV
-  - IO
-  - UC
-  - IP
-  - Core
+
+
 
