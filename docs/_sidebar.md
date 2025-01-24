@@ -400,11 +400,8 @@
 - [AI 热点](/0375_Hot)
   - [AIGC](/0374_Hot_AIGC)
     - [ChatGPT](/0373_Hot_AIGC_ChatGPT)
-    - [RAG](/0461_Hot_AIGC_RAG)
     - [AIGC Tools](/0456_Hot_AIGC_Tools)
-  - [Latent Space 潜在空间](/0455_Hot_LatentSpace)
   - StableDiffusion
-    - [Stable Diffusion 原理](/0445_Hot_StableDiffusion_Algos)
     - [SD 应用 webui](/0440_Hot_StableDiffusion_webui)
 - [KnowledgeGraph](/0329_KnowledgeGraph)
 - [大模型](/0408_LM)
@@ -419,13 +416,16 @@
     - [OFT/BOFT](/0495_LM_FT_OFT)
     - [Prefix Tuning](/0411_LM_FT_PrefixTuning)
   - [Large Language Models](/0446_LM_LLMs)
+  - [RAG](/0461_LM_RAG)
   - VLM
     - [DragGAN](/0429_LM_VLM_DragGAN)
     - [GLIP](/0463_LM_VLM_GLIP)
     - [Imagen](/0413_LM_VLM_Imagen)
     - [LaMa - Image Inpainting](/0404_LM_VLM_LaMa)
+    - [Latent Space 潜在空间](/0455_LM_VLM_LatentSpace)
     - [SAM](/0414_LM_VLM_SAM)
     - [Stable Diffusion](/0402_LM_VLM_StableDiffusion)
+      - [Stable Diffusion 原理](/0445_LM_VLM_StableDiffusion_Algos)
 - [模型性能优化技术](/0471_MO)
   - [知识蒸馏](/0207_MO_KD)
     - [KD History](/0336_MO_KD_History)
@@ -468,4 +468,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1111400124</sub></kbd>
+<kbd><sub>@1113050124</sub></kbd>
