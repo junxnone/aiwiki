@@ -1,8 +1,8 @@
 ---
-Title | Hot GLIP
+Title | LM VLM GLIP
 -- | --
 Created @ | `2024-04-09T06:55:23Z`
-Updated @| `2024-04-09T07:14:49Z`
+Updated @| `2025-01-24T03:09:23Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/463)
 
