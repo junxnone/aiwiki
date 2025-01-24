@@ -1,8 +1,8 @@
 ---
-Title | Hot LM Tuning LoHa
+Title | LM FT LoHa
 -- | --
 Created @ | `2025-01-13T08:40:09Z`
-Updated @| `2025-01-13T08:57:06Z`
+Updated @| `2025-01-24T02:53:10Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/492)
 
