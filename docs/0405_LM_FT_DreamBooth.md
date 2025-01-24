@@ -1,8 +1,8 @@
 ---
-Title | Hot LM Tuning DreamBooth
+Title | LM FT DreamBooth
 -- | --
 Created @ | `2023-06-02T06:52:09Z`
-Updated @| `2023-06-13T15:16:11Z`
+Updated @| `2025-01-24T02:52:57Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/405)
 
