@@ -1,8 +1,8 @@
 ---
-Title | Hot DragGAN
+Title | LM VLM DragGAN
 -- | --
 Created @ | `2023-06-29T10:31:41Z`
-Updated @| `2023-06-30T14:03:46Z`
+Updated @| `2025-01-24T03:09:51Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/429)
 
