@@ -1,8 +1,8 @@
 ---
-Title | Hot LM Tuning LoKr
+Title | LM FT LoKr
 -- | --
 Created @ | `2025-01-13T09:00:32Z`
-Updated @| `2025-01-13T09:00:32Z`
+Updated @| `2025-01-24T02:53:18Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/493)
 
