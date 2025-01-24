@@ -405,10 +405,6 @@
   - [DragGAN](/0429_Hot_DragGAN)
   - [GLIP](/0463_Hot_GLIP)
   - [Imagen](/0413_Hot_Imagen)
-  - [Large Language Models](/0446_Hot_LLMs)
-  - LM
-    - Tuning
-      - [Prefix Tuning](/0411_Hot_LM_Tuning_PrefixTuning)
   - [LaMa - Image Inpainting](/0404_Hot_LaMa)
   - [Latent Space 潜在空间](/0455_Hot_LatentSpace)
   - [SAM](/0414_Hot_SAM)
@@ -426,6 +422,8 @@
     - [LoKr](/0493_LM_FT_LoKr)
     - [LoRA](/0406_LM_FT_LoRA)
     - [OFT/BOFT](/0495_LM_FT_OFT)
+    - [Prefix Tuning](/0411_LM_FT_PrefixTuning)
+  - [Large Language Models](/0446_LM_LLMs)
 - [模型性能优化技术](/0471_MO)
   - [知识蒸馏](/0207_MO_KD)
     - [KD History](/0336_MO_KD_History)
@@ -468,4 +466,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1054330124</sub></kbd>
+<kbd><sub>@1107090124</sub></kbd>
