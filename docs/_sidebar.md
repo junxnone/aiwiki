@@ -408,11 +408,6 @@
   - [Large Language Models](/0446_Hot_LLMs)
   - LM
     - Tuning
-      - [IA3](/0494_Hot_LM_Tuning_IA3)
-      - [LoHa](/0492_Hot_LM_Tuning_LoHa)
-      - [LoKr](/0493_Hot_LM_Tuning_LoKr)
-      - [LoRA](/0406_Hot_LM_Tuning_LoRA)
-      - [OFT/BOFT](/0495_Hot_LM_Tuning_OFT)
       - [Prefix Tuning](/0411_Hot_LM_Tuning_PrefixTuning)
   - [LaMa - Image Inpainting](/0404_Hot_LaMa)
   - [Latent Space 潜在空间](/0455_Hot_LatentSpace)
@@ -426,6 +421,11 @@
     - [AdaLoRA](/0491_LM_FT_AdaLoRA)
     - [Adapter FineTuning](/0412_LM_FT_Adapter)
     - [DreamBooth](/0405_LM_FT_DreamBooth)
+    - [IA3](/0494_LM_FT_IA3)
+    - [LoHa](/0492_LM_FT_LoHa)
+    - [LoKr](/0493_LM_FT_LoKr)
+    - [LoRA](/0406_LM_FT_LoRA)
+    - [OFT/BOFT](/0495_LM_FT_OFT)
 - [模型性能优化技术](/0471_MO)
   - [知识蒸馏](/0207_MO_KD)
     - [KD History](/0336_MO_KD_History)
@@ -468,4 +468,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1053520124</sub></kbd>
+<kbd><sub>@1054330124</sub></kbd>
