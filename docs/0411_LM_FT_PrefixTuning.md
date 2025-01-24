@@ -1,8 +1,8 @@
 ---
-Title | Hot LM Tuning PrefixTuning
+Title | LM FT PrefixTuning
 -- | --
 Created @ | `2023-06-05T03:43:02Z`
-Updated @| `2023-06-13T15:16:19Z`
+Updated @| `2025-01-24T02:53:41Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/411)
 
