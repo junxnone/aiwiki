@@ -402,9 +402,6 @@
     - [ChatGPT](/0373_Hot_AIGC_ChatGPT)
     - [RAG](/0461_Hot_AIGC_RAG)
     - [AIGC Tools](/0456_Hot_AIGC_Tools)
-  - [DragGAN](/0429_Hot_DragGAN)
-  - [GLIP](/0463_Hot_GLIP)
-  - [Imagen](/0413_Hot_Imagen)
   - [LaMa - Image Inpainting](/0404_Hot_LaMa)
   - [Latent Space 潜在空间](/0455_Hot_LatentSpace)
   - [SAM](/0414_Hot_SAM)
@@ -424,6 +421,10 @@
     - [OFT/BOFT](/0495_LM_FT_OFT)
     - [Prefix Tuning](/0411_LM_FT_PrefixTuning)
   - [Large Language Models](/0446_LM_LLMs)
+  - VLM
+    - [DragGAN](/0429_LM_VLM_DragGAN)
+    - [GLIP](/0463_LM_VLM_GLIP)
+    - [Imagen](/0413_LM_VLM_Imagen)
 - [模型性能优化技术](/0471_MO)
   - [知识蒸馏](/0207_MO_KD)
     - [KD History](/0336_MO_KD_History)
@@ -466,4 +467,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1107090124</sub></kbd>
+<kbd><sub>@1110500124</sub></kbd>
