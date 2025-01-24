@@ -1,8 +1,8 @@
 ---
-Title | Hot LaMa
+Title | LM VLM LaMa
 -- | --
 Created @ | `2023-05-31T02:40:17Z`
-Updated @| `2023-05-31T02:40:17Z`
+Updated @| `2025-01-24T03:10:15Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/404)
 
