@@ -1,8 +1,8 @@
 ---
-Title | Hot LM Tuning OFT
+Title | LM FT OFT
 -- | --
 Created @ | `2025-01-16T03:14:25Z`
-Updated @| `2025-01-16T03:33:34Z`
+Updated @| `2025-01-24T02:53:32Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/495)
 
