@@ -1,8 +1,8 @@
 ---
-Title | Hot LM Tuning Adapter
+Title | LM FT Adapter
 -- | --
 Created @ | `2023-06-05T03:55:55Z`
-Updated @| `2023-06-13T15:16:07Z`
+Updated @| `2025-01-24T02:52:48Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/412)
 
