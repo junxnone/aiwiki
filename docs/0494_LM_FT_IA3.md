@@ -1,8 +1,8 @@
 ---
-Title | Hot LM Tuning IA3
+Title | LM FT IA3
 -- | --
 Created @ | `2025-01-16T03:06:12Z`
-Updated @| `2025-01-16T03:06:12Z`
+Updated @| `2025-01-24T02:53:03Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/494)
 
