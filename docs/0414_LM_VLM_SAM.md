@@ -1,8 +1,8 @@
 ---
-Title | Hot SAM
+Title | LM VLM SAM
 -- | --
 Created @ | `2023-06-07T02:11:14Z`
-Updated @| `2023-10-19T14:30:36Z`
+Updated @| `2025-01-24T03:10:20Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/414)
 
