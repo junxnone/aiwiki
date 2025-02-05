@@ -453,6 +453,7 @@
   - [AIGC](/0374_Hot_AIGC)
     - [ChatGPT](/0373_Hot_AIGC_ChatGPT)
     - [AIGC Tools](/0456_Hot_AIGC_Tools)
+  - [DeepSeek](/0496_Hot_DeepSeek)
 - [KnowledgeGraph](/0329_KnowledgeGraph)
 - [资源参考](/0380_Reference)
 - [x](/0418_x)
@@ -467,4 +468,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1026160205</sub></kbd>
+<kbd><sub>@1321230205</sub></kbd>
