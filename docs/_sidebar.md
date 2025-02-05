@@ -369,6 +369,7 @@
     - [SAM](/0414_LM_VLM_SAM)
     - [Stable Diffusion](/0402_LM_VLM_StableDiffusion)
       - [Stable Diffusion 原理](/0445_LM_VLM_StableDiffusion_Algos)
+      - [SD 应用 webui](/0440_LM_VLM_StableDiffusion_WebUI)
 - [模型性能优化技术](/0471_MO)
   - [知识蒸馏](/0207_MO_KD)
     - [KD History](/0336_MO_KD_History)
@@ -452,8 +453,6 @@
   - [AIGC](/0374_Hot_AIGC)
     - [ChatGPT](/0373_Hot_AIGC_ChatGPT)
     - [AIGC Tools](/0456_Hot_AIGC_Tools)
-  - StableDiffusion
-    - [SD 应用 webui](/0440_Hot_StableDiffusion_webui)
 - [KnowledgeGraph](/0329_KnowledgeGraph)
 - [资源参考](/0380_Reference)
 - [x](/0418_x)
@@ -468,4 +467,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1021090205</sub></kbd>
+<kbd><sub>@1026160205</sub></kbd>
