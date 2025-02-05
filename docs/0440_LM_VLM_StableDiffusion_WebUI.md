@@ -1,8 +1,8 @@
 ---
-Title | Hot StableDiffusion webui
+Title | LM VLM StableDiffusion WebUI
 -- | --
 Created @ | `2023-09-20T04:15:30Z`
-Updated @| `2023-09-21T03:09:36Z`
+Updated @| `2025-02-05T02:25:20Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/440)
 
