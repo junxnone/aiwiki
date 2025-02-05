@@ -3,7 +3,7 @@
 | Title     | Hot DeepSeek                                          |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2025-02-05T05:20:29Z`                                |
-| Updated @ | `2025-02-05T08:55:05Z`                                |
+| Updated @ | `2025-02-05T08:58:40Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/496) |
 
@@ -14,6 +14,32 @@
   - MOE
   - MLA
   - 冷启动 + 多阶段强化学习
+
+<!-- end list -->
+
+``` markmap
+
+# DeepSeek-R1
+
+- R1
+- R1-Zero
+- Distill
+  - Llama
+    - 70B
+    - 8B
+  - Qwen
+    - 32B
+    - 14B
+    - 7B
+    - 1.5B
+
+```
+
+## 运行支持
+
+  - sglang
+  - vllm
+  - ollama
 
 ## Reference
 
