@@ -360,6 +360,7 @@
     - [Prefix Tuning](/0411_LM_FT_PrefixTuning)
   - [Large Language Models](/0446_LM_LLMs)
   - [RAG](/0461_LM_RAG)
+  - [大模型相关工具](/0497_LM_Tools)
   - VLM
     - [DragGAN](/0429_LM_VLM_DragGAN)
     - [GLIP](/0463_LM_VLM_GLIP)
@@ -468,4 +469,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1321230205</sub></kbd>
+<kbd><sub>@1459170205</sub></kbd>
