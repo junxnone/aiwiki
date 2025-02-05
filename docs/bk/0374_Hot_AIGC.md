@@ -3,7 +3,7 @@
 | Title     | Hot AIGC                                              |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-02-03T07:46:02Z`                                |
-| Updated @ | `2023-10-18T06:35:04Z`                                |
+| Updated @ | `2025-02-05T02:19:16Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/374) |
 
@@ -18,18 +18,17 @@
 
 <!-- end list -->
 
-``` mermaid
+``` markmap
 
-graph TD
-    T(Text) --> A(Audio)
-    T --> I(Image)
-    I --> I
-    T --> D(3D)
-    T --> V(Video)
-    I --> T
-    T --> C(Code)
-    T --> T
-    T --> S(Science)
+# AIGC
+
+- Text2Audio
+- Text2Image
+- Text23D
+- Text2Video
+- Text2Code
+- Text2Science
+
 ```
 
 ![image](media/849b5f99ff876806d1064bdd3f965e598c51eeb2.png)

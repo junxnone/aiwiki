@@ -2,7 +2,7 @@
 Title | Hot AIGC
 -- | --
 Created @ | `2023-02-03T07:46:02Z`
-Updated @| `2023-10-18T06:35:04Z`
+Updated @| `2025-02-05T02:19:16Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/374)
 
@@ -14,18 +14,17 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/374)
   - UGC: `User Generated Content` 用户个体生成的内容，个人vlog/blog/...
 
 
-```mermaid
+```markmap
 
-graph TD
-    T(Text) --> A(Audio)
-    T --> I(Image)
-    I --> I
-    T --> D(3D)
-    T --> V(Video)
-    I --> T
-    T --> C(Code)
-    T --> T
-    T --> S(Science)
+# AIGC
+
+- Text2Audio
+- Text2Image
+- Text23D
+- Text2Video
+- Text2Code
+- Text2Science
+
 ```
 
 
