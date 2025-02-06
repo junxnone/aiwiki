@@ -2,7 +2,7 @@
 Title | LM map
 -- | --
 Created @ | `2025-02-06T07:39:00Z`
-Updated @| `2025-02-06T07:52:07Z`
+Updated @| `2025-02-06T07:55:48Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/498)
 
@@ -17,7 +17,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/498)
 ---
 title: 大模型
 markmap:
-  initialExpandLevel: 3
+  initialExpandLevel: 4
 ---
 
 #  大模型
