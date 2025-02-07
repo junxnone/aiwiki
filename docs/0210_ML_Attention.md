@@ -2,7 +2,7 @@
 Title | ML Attention
 -- | --
 Created @ | `2020-05-09T03:15:34Z`
-Updated @| `2025-02-07T08:39:40Z`
+Updated @| `2025-02-07T08:42:30Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/210)
 
@@ -20,7 +20,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/210)
 ---
 title: 注意力机制
 markmap:
-  initialExpandLevel: 3
+  initialExpandLevel: 4
 ---
 
 # 注意力机制
