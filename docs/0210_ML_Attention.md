@@ -2,7 +2,7 @@
 Title | ML Attention
 -- | --
 Created @ | `2020-05-09T03:15:34Z`
-Updated @| `2025-02-07T08:30:44Z`
+Updated @| `2025-02-07T08:39:40Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/210)
 
@@ -14,6 +14,8 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/210)
   - 减少计算 - 可以减小处理高维输入数据的计算负担，通过结构化的选取输入的子集，降低数据维度
   - 优化算法 - 让任务处理系统更专注于找到输入数据中显著的与当前输出相关的有用信息
   
+---
+
 ```markmap
 ---
 title: 注意力机制
