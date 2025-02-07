@@ -3,7 +3,7 @@
 | Title     | ML Attention                                          |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2020-05-09T03:15:34Z`                                |
-| Updated @ | `2025-02-07T08:20:28Z`                                |
+| Updated @ | `2025-02-07T08:30:44Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/210) |
 
@@ -20,7 +20,6 @@
 <!-- end list -->
 
 ``` markmap
-
 ---
 title: 注意力机制
 markmap:
