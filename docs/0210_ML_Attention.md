@@ -2,7 +2,7 @@
 Title | ML Attention
 -- | --
 Created @ | `2020-05-09T03:15:34Z`
-Updated @| `2025-02-07T08:42:30Z`
+Updated @| `2025-02-07T08:43:08Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/210)
 
@@ -77,24 +77,6 @@ markmap:
 
 ```
 
-
-
-## 分类
-
-Name | Description
--- | -- 
-Location-wise | Object Position
-Item-wise  | Seq2Seq / Vector/ Feature Map
-
-Name | Description
--- | -- 
-Soft Attention | `sequence` 中 取概率加权和
-Hard Attention | `sequence` 中 只有一个取 `1`, 其他取 `0` <br>不可导，不能反向传播<br> `@RL强化学习`
-
-Name | Description
--- | -- 
-Self-attention | 
-Context-attention | 
 
 
 
