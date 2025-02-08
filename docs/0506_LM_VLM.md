@@ -2,7 +2,7 @@
 Title | LM VLM
 -- | --
 Created @ | `2025-02-08T08:28:59Z`
-Updated @| `2025-02-08T08:28:59Z`
+Updated @| `2025-02-08T08:31:31Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/506)
 
@@ -21,7 +21,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/506)
 ---
 title: VLM
 markmap:
-  initialExpandLevel: 3
+  initialExpandLevel: 4
 ---
 
 # VLM
