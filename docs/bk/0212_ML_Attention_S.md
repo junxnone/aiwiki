@@ -1,28 +1,15 @@
 -----
 
-| Title         | ML Attention S                                        |
-| ------------- | ----------------------------------------------------- |
-| Created @     | `2020-05-09T02:39:37Z`                                |
-| Last Modify @ | `2022-12-25T05:03:58Z`                                |
-| Labels        | `index`                                               |
-| Edit @        | [here](https://github.com/junxnone/aiwiki/issues/212) |
+| Title     | ML Attention S                                        |
+| --------- | ----------------------------------------------------- |
+| Created @ | `2020-05-09T02:39:37Z`                                |
+| Updated @ | `2025-02-08T01:36:36Z`                                |
+| Labels    | `index`                                               |
+| Edit @    | [here](https://github.com/junxnone/aiwiki/issues/212) |
 
 -----
 
 # Attention Is All You Need
-
-## Reference
-
-  - [paper - 2017 - Attention Is All You
-    Need](https://arxiv.org/pdf/1706.03762.pdf)
-  - [The Illustrated
-    Transformer](http://jalammar.github.io/illustrated-transformer/)
-  - [解析Transformer模型](https://mp.weixin.qq.com/s/kjLFPyTb7pal7oorX3ejkw)
-  - [position\_encoding](https://github.com/tensorflow/examples/blob/master/community/en/position_encoding.ipynb)
-  - [transformer jupyter notebook -
-    tensorflow](https://github.com/tensorflow/docs/blob/master/site/en/tutorials/text/transformer.ipynb)
-
-## Brief
 
   - 堆叠 Encoders-Decoders
       - do not share weight
@@ -31,7 +18,7 @@
       - Self-attention
       - Multi-Head Attention
   - Feed Forward
-  - [Position Encoding](/Position_Encoding)
+  - [Position Encoding](/0213_ML_Attention_PE)
 
 ## Arch
 
@@ -95,3 +82,14 @@
 ## 存在问题
 
   - 复杂度 O(n^2), 需要计算量大
+
+## Reference
+
+  - [paper - 2017 - Attention Is All You
+    Need](https://arxiv.org/pdf/1706.03762.pdf)
+  - [The Illustrated
+    Transformer](http://jalammar.github.io/illustrated-transformer/)
+  - [解析Transformer模型](https://mp.weixin.qq.com/s/kjLFPyTb7pal7oorX3ejkw)
+  - [position\_encoding](https://github.com/tensorflow/examples/blob/master/community/en/position_encoding.ipynb)
+  - [transformer jupyter notebook -
+    tensorflow](https://github.com/tensorflow/docs/blob/master/site/en/tutorials/text/transformer.ipynb)
