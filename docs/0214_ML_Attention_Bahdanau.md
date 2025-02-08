@@ -2,7 +2,7 @@
 Title | ML Attention Bahdanau
 -- | --
 Created @ | `2020-07-01T03:51:29Z`
-Updated @| `2025-02-08T01:44:23Z`
+Updated @| `2025-02-08T02:00:20Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/214)
 
@@ -22,6 +22,9 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/214)
 
 
 ## Arch
+- 双向 RNN 作为编码器，在解码时解码器可（软）搜索源句相关部分
+
+
 
 Pipeline | 公式
 -- | --
