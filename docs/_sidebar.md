@@ -364,6 +364,7 @@
     - [LLaMA](/0504_LM_LLMs_LLaMA)
     - [LLMs Metrics](/0503_LM_LLMs_Metrics)
     - [LLM Parameters](/0502_LM_LLMs_Parameters)
+  - [多模态大模型](/0505_LM_LMMs)
   - [RAG](/0461_LM_RAG)
   - [大模型相关工具](/0497_LM_Tools)
     - [OPEA](/0501_LM_Tools_OPEA)
@@ -476,4 +477,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1602550208</sub></kbd>
+<kbd><sub>@1604240208</sub></kbd>
