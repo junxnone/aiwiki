@@ -361,6 +361,7 @@
     - [OFT/BOFT](/0495_LM_FT_OFT)
     - [Prefix Tuning](/0411_LM_FT_PrefixTuning)
   - [Large Language Models](/0446_LM_LLMs)
+    - [LLMs Metrics](/0503_LM_LLMs_Metrics)
     - [LLM Parameters](/0502_LM_LLMs_Parameters)
   - [RAG](/0461_LM_RAG)
   - [大模型相关工具](/0497_LM_Tools)
@@ -474,4 +475,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1557320208</sub></kbd>
+<kbd><sub>@1558070208</sub></kbd>
