@@ -1,27 +1,15 @@
 -----
 
-| Title         | ML Attention Luong                                    |
-| ------------- | ----------------------------------------------------- |
-| Created @     | `2020-07-01T03:51:29Z`                                |
-| Last Modify @ | `2022-12-24T13:30:58Z`                                |
-| Labels        | \`\`                                                  |
-| Edit @        | [here](https://github.com/junxnone/aiwiki/issues/211) |
+| Title     | ML Attention Luong                                    |
+| --------- | ----------------------------------------------------- |
+| Created @ | `2020-07-01T03:51:29Z`                                |
+| Updated @ | `2025-02-08T01:34:52Z`                                |
+| Labels    | \`\`                                                  |
+| Edit @    | [here](https://github.com/junxnone/aiwiki/issues/211) |
 
 -----
 
 # Luong Attention
-
-## Reference
-
-  - [paper - 2014 - Neural Machine Translation by Jointly Learning to
-    Align and Translate](https://arxiv.org/abs/1409.0473)
-  - [paper - 2015 - Effective Approaches to Attention-based Neural
-    Machine Translation](https://arxiv.org/abs/1508.04025)
-  - [BahdanauAttention与LuongAttention注意力机制简介](https://blog.csdn.net/u010960155/article/details/82853632)
-  - [一文看懂 Bahdanau 和 Luong 两种 Attention
-    机制的区别](https://zhuanlan.zhihu.com/p/129316415)
-
-## Brief
 
 | Name             | Pipeline                                                     | 公式                                                                                                                             |
 | ---------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
@@ -38,3 +26,13 @@
 | Luong Attention [paper](https://arxiv.org/abs/1508.04025)   | h(t) -\> a(t)   | ![image](media/24e1b8272e0b0bda0448b4d9f8e4ab3cdd486245.png) |
 
 ![image](media/40579fb4c968afc57b0ee3b72303ee3c8ee58716.png)
+
+## Reference
+
+  - [paper - 2014 - Neural Machine Translation by Jointly Learning to
+    Align and Translate](https://arxiv.org/abs/1409.0473)
+  - [paper - 2015 - Effective Approaches to Attention-based Neural
+    Machine Translation](https://arxiv.org/abs/1508.04025)
+  - [BahdanauAttention与LuongAttention注意力机制简介](https://blog.csdn.net/u010960155/article/details/82853632)
+  - [一文看懂 Bahdanau 和 Luong 两种 Attention
+    机制的区别](https://zhuanlan.zhihu.com/p/129316415)
