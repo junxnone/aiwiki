@@ -2,7 +2,7 @@
 Title | ML Attention SDPA
 -- | --
 Created @ | `2025-02-08T02:47:28Z`
-Updated @| `2025-02-08T02:47:28Z`
+Updated @| `2025-02-08T03:04:57Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/499)
 
@@ -16,10 +16,10 @@ Scaled Dot-Product Attention的计算公式为：
 
 $$Attention(Q,K,V) = softmax(\frac{QK^T}{\sqrt{d_k}})V$$ 
 
-?> 其中 $Q$ 是Query矩阵
-?> $K$ 是Key矩阵
-?> $V$ 是Value矩阵
-?> $d_k$ 是 $K$ 的维度
+?> 其中 $Q$ 是Query矩阵  
+?> $K$ 是Key矩阵  
+?> $V$ 是Value矩阵  
+?> $d_k$ 是 $K$ 的维度  
 ?> $softmax$ 函数用于将得分转换为概率分布，表示每个位置的重要性权重。
 
 ![Image](https://github.com/user-attachments/assets/1cf3c8d8-754f-488c-a7e8-ff468ff3f178)
