@@ -2,14 +2,26 @@
 Title | ML Attention Bahdanau
 -- | --
 Created @ | `2020-07-01T03:51:29Z`
-Updated @| `2025-02-08T01:34:23Z`
+Updated @| `2025-02-08T01:44:23Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/214)
 
 ---
 # Bahdanau Attention
 
+- 更好地捕捉长序列依赖 
+- 提高模型的可解释性
+- 增强模型的泛化能力
 
+## 背景
+- 2014 年由 Dzmitry Bahdanau 等人在论文《Neural Machine Translation by Jointly Learning to Align and Translate》中提出，旨在解决机器翻译等序列到序列（seq2seq）模型中存在的长序列信息丢失问题。
+
+?> 传统的 seq2seq 模型中，编码器将输入序列编码成一个固定长度的向量表示，然后解码器根据这个向量生成输出序列。然而，当输入序列较长时，这种固定长度的向量难以捕捉到所有信息，导致翻译等任务的性能下降。
+
+
+
+
+## Arch
 
 Pipeline | 公式
 -- | --
