@@ -368,7 +368,7 @@
   - [RAG](/0461_LM_RAG)
   - [大模型相关工具](/0497_LM_Tools)
     - [OPEA](/0501_LM_Tools_OPEA)
-  - VLM
+  - [VLM](/0506_LM_VLM)
     - [DragGAN](/0429_LM_VLM_DragGAN)
     - [GLIP](/0463_LM_VLM_GLIP)
     - [Imagen](/0413_LM_VLM_Imagen)
@@ -477,4 +477,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1617260208</sub></kbd>
+<kbd><sub>@1629530208</sub></kbd>
