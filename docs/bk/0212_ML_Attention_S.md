@@ -3,7 +3,7 @@
 | Title     | ML Attention S                                        |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2020-05-09T02:39:37Z`                                |
-| Updated @ | `2025-02-08T02:30:23Z`                                |
+| Updated @ | `2025-02-08T06:26:04Z`                                |
 | Labels    | `index`                                               |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/212) |
 
@@ -11,8 +11,7 @@
 
 # Attention Is All You Need
 
-  - 堆叠 Encoders-Decoders
-      - do not share weight
+  - 堆叠 Encoders-Decoders(不共享权重)
   - 并行计算
   - Attention
       - Self-attention
