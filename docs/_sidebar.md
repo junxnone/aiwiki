@@ -291,6 +291,7 @@
     - [Luong Attention](/0211_ML_Attention_Luong)
     - [Position Encoding](/0213_ML_Attention_PE)
     - [Attention Is All You Need](/0212_ML_Attention_S)
+    - [Scaled Dot-Product Attention](/0499_ML_Attention_SDPA)
   - [Transformer](/0229_ML_Transformer)
     - [Bottleneck Transformers](/0228_ML_Transformer_BT)
     - [DeiT](/0253_ML_Transformer_DeiT)
@@ -470,4 +471,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1031310208</sub></kbd>
+<kbd><sub>@1048270208</sub></kbd>
