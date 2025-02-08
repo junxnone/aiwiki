@@ -2,7 +2,7 @@
 Title | ML Attention S
 -- | --
 Created @ | `2020-05-09T02:39:37Z`
-Updated @| `2025-02-08T01:36:36Z`
+Updated @| `2025-02-08T02:30:23Z`
 Labels | `index`
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/212)
 
@@ -27,11 +27,15 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/212)
 
 ### Encoder
 
+- 编码器由多个相同结构的编码器层堆叠而成，每个编码器层包含自注意力层和前馈神经网络层。
+
 Encoder | Self-Attention
 -- | --
 ![image](https://user-images.githubusercontent.com/2216970/105963885-7cde6580-60bc-11eb-8c30-c9dbfbd24197.png) | ![image](https://user-images.githubusercontent.com/2216970/106080333-ce84ff80-6151-11eb-8c99-2dfaf5c057c2.png)
 
 #### Self-Attention
+- 自注意力机制是 Transformer 的核心，它允许模型在编码每个单词时关注输入序列中的其他单词，从而提高模型的性能。自注意力机制通过计算查询向量、键向量和值向量之间的点积来确定每个单词的注意力权重，然后对值向量进行加权求和得到输出。
+
 
 Steps | Description | Figure 
 --- | -- | -- 
@@ -50,6 +54,7 @@ Steps | Description | Figure
 
 #### MultiHead-Attention
 - N 个 `Self-Attention` 合并
+- 多头注意力机制是对自注意力机制的进一步改进，它通过使用多个不同的查询、键和值矩阵，提高了模型的注意力能力和表示能力。多头注意力机制将多个自注意力输出进行拼接，然后通过一个额外的权重矩阵进行线性变换，得到最终的输出。
 
 ![image](https://user-images.githubusercontent.com/2216970/106083990-61c13380-6158-11eb-8495-3a5905863bc1.png) | ![image](https://user-images.githubusercontent.com/2216970/106420747-3dd25a80-6496-11eb-84b3-0968b8a0fe0a.png)
 -- | --
