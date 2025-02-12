@@ -2,7 +2,7 @@
 Title | LM FT LoKr
 -- | --
 Created @ | `2025-01-13T09:00:32Z`
-Updated @| `2025-01-24T02:53:18Z`
+Updated @| `2025-02-12T02:18:01Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/493)
 
@@ -10,8 +10,8 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/493)
 # LoKr
 
 - 基于 Kronecker 积分解矩阵，可调整参数数量且灵活性高
-
-
+- 主要应用于扩散模型
+- 可以通过堆叠矩阵列来向量化。这可以加快过程来避免完全重建 ΔW
 
 ## 原理
 - 对于Kronecker积，前向传播 $h' = W_0h + b$ 被修改为：
