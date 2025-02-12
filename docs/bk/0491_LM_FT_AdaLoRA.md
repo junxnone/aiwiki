@@ -3,7 +3,7 @@
 | Title     | LM FT AdaLoRA                                         |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2025-01-13T03:20:41Z`                                |
-| Updated @ | `2025-01-24T02:52:20Z`                                |
+| Updated @ | `2025-02-12T08:49:39Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/491) |
 
@@ -26,6 +26,8 @@
         $\\{{\\lambda\_i}\\}\_{1≤i\<r}$
       - $r \\ll \\min(d\_1, d\_2)$
         提出新的重要性度量指标，结合奇异值和向量来计算每个三元组（包含第个奇异值和对应向量）的重要性得分。
+
+![Image](media/00422a0c965970e8ac09775c80f5882ac7063938.png)
 
 ## Reference
 

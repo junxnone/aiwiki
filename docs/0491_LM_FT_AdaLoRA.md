@@ -2,7 +2,7 @@
 Title | LM FT AdaLoRA
 -- | --
 Created @ | `2025-01-13T03:20:41Z`
-Updated @| `2025-01-24T02:52:20Z`
+Updated @| `2025-02-12T08:49:39Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/491)
 
@@ -16,10 +16,13 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/491)
 
 ## 原理
 - 将预训练权重矩阵的增量更新参数化为奇异值分解的形式: $W = W^{(0)} + \Delta = W^{(0)} + P\Lambda Q$
-  - $(P \in \mathbb{R}^{d_1×r}\)$ 和 $(Q \in \mathbb{R}^{r×d_2})$ 分别表示 $(\Delta\)$ 的左/右奇异向量
-  - 对角矩阵 $(\Lambda \in {R}^{r×r}\)$ 包含奇异值 $\\{{\lambda_i}\\}_{1≤i<r}$
+  - $(P \in \mathbb{R}^{d_1×r})$ 和 $(Q \in \mathbb{R}^{r×d_2})$ 分别表示 $(\Delta)$ 的左/右奇异向量
+  - 对角矩阵 $(\Lambda \in {R}^{r×r})$ 包含奇异值 $\\{{\lambda_i}\\}_{1≤i<r}$
   - $r \ll \min(d_1, d_2)$
 提出新的重要性度量指标，结合奇异值和向量来计算每个三元组（包含第个奇异值和对应向量）的重要性得分。
+
+
+![Image](https://github.com/user-attachments/assets/8b9589cd-8677-4c42-bdaa-6e41c0df512f)
 
 ## Reference
 
