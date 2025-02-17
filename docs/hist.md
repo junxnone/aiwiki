@@ -1,6 +1,6 @@
 # Wiki History
 
-- 2025-02-17&nbsp;&nbsp; [RDT-1B](/0507_RDT_1B)&nbsp;&nbsp; :bookmark:RDT :bookmark:1B
+- 2025-02-17&nbsp;&nbsp; [RDT-1B 一种用于双手操作的扩散基础模型](/0507_RDT_1B)&nbsp;&nbsp; :bookmark:RDT :bookmark:1B
 - 2025-02-08&nbsp;&nbsp; [Scaled Dot-Product Attention](/0499_ML_Attention_SDPA)&nbsp;&nbsp; :bookmark:ML :bookmark:Attention :bookmark:SDPA
 - 2025-02-08&nbsp;&nbsp; [Multi-Head Attention](/0500_ML_Attention_MHA)&nbsp;&nbsp; :bookmark:ML :bookmark:Attention :bookmark:MHA
 - 2025-02-08&nbsp;&nbsp; [LLMs Metrics](/0503_LM_LLMs_Metrics)&nbsp;&nbsp; :bookmark:LM :bookmark:LLMs :bookmark:Metrics
