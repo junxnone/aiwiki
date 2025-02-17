@@ -409,6 +409,8 @@
   - [LFA](/0480_paper_LFA)
   - [MTA](/0479_paper_MTA)
   - [MuSC](/0467_paper_MuSC)
+  - RDT
+    - [RDT-1B 一种用于双手操作的扩散基础模型](/0507_paper_RDT_1B)
   - [SAA+](/0469_paper_SAAplus)
   - [Tip-Adapter](/0475_paper_TipAdapter)
   - [VPT - Visual Prompt Tuning](/0477_paper_VPT)
@@ -464,8 +466,6 @@
     - [AIGC Tools](/0456_Hot_AIGC_Tools)
   - [DeepSeek](/0496_Hot_DeepSeek)
 - [KnowledgeGraph](/0329_KnowledgeGraph)
-- RDT
-  - [RDT-1B 一种用于双手操作的扩散基础模型](/0507_RDT_1B)
 - [资源参考](/0380_Reference)
 - [x](/0418_x)
   - [缺陷图片生成](/0403_x_DefectGen)
@@ -479,4 +479,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1038590217</sub></kbd>
+<kbd><sub>@1343280217</sub></kbd>
