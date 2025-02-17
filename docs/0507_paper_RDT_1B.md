@@ -2,7 +2,7 @@
 Title | paper RDT-1B
 -- | --
 Created @ | `2025-02-17T02:10:50Z`
-Updated @| `2025-02-17T05:42:23Z`
+Updated @| `2025-02-17T08:09:42Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/507)
 
@@ -20,8 +20,12 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/507)
   - $c$ 是控制频率。
   - 动作 $a_t$ 通常是期望的本体感知 $z_{t + 1}^1$ 的一个子集 。
 - Pretrain + Finetune  
-
+ 
 ## Arch
+- T5-XXL, 将语言命令编码
+- SigLIP 图像编码，图像文本对齐
+- MLPs 编码机器人物理量
+
 
 ![Image](https://github.com/user-attachments/assets/7fd22583-afcf-4e78-a953-cd00cb2b0c6b)
 
@@ -30,3 +34,4 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/507)
 ## Reference
 - [RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation](https://arxiv.org/pdf/2410.07864)
 - [Code](https://github.com/thu-ml/RoboticsDiffusionTransformer)
+- [Dataset](https://huggingface.co/datasets/robotics-diffusion-transformer/rdt-ft-data)
