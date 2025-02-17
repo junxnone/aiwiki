@@ -2,7 +2,7 @@
 Title | paper RDT-1B
 -- | --
 Created @ | `2025-02-17T02:10:50Z`
-Updated @| `2025-02-17T02:38:28Z`
+Updated @| `2025-02-17T05:42:23Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/507)
 
@@ -11,7 +11,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/507)
 
 
  - 以扩散模型(DiTs)为基础，能够有效表征多模态，
- - 通过可扩展的 Transformer 的创新设计，来应对多模态输入的异质性问题，并捕捉机器人数据的非线性和高频特性。
+ - 通过可扩展的 Transformer 的创新设计，来应对多模态输入的**异质性问题(不同机器人之间的物理结构和动作空间可能差异巨大)**，并捕捉机器人数据的非线性和高频特性。
 - 引入了物理可解释统一动作空间, 可以统一不同机器人的动作表示形式，同时保留原始动作的物理意义，有助于学习可迁移的物理知识。
 - 在应用于双手操作时，现有模型面临量化误差和行为不协调的问题，这在很大程度上是由于其对动作空间进行了离散化处理。
 - **Task**:  给定语言指令 $\ell$ ，在 $t \in \mathbb{N}^{+}$ 时刻，策略接收观测值 $o_{t}$ ；然后生成动作 $a_{t}$ ，以控制两个机器人手臂实现由 $\ell$ 指定的目标。观测值表示为一个三元组 $o_{t}:=(X_{t - T_{max} + 1 : t + 1}, z_{t}, c)$，
@@ -25,3 +25,8 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/507)
 
 ![Image](https://github.com/user-attachments/assets/7fd22583-afcf-4e78-a953-cd00cb2b0c6b)
 
+
+
+## Reference
+- [RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation](https://arxiv.org/pdf/2410.07864)
+- [Code](https://github.com/thu-ml/RoboticsDiffusionTransformer)
