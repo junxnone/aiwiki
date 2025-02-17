@@ -2,7 +2,7 @@
 Title | paper RDT-1B
 -- | --
 Created @ | `2025-02-17T02:10:50Z`
-Updated @| `2025-02-17T08:09:42Z`
+Updated @| `2025-02-17T09:08:56Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/507)
 
@@ -22,8 +22,8 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/507)
 - Pretrain + Finetune  
  
 ## Arch
-- T5-XXL, 将语言命令编码
-- SigLIP 图像编码，图像文本对齐
+- T5-XXL(frozen), 将语言命令编码
+- SigLIP(frozen) 图像编码，图像文本对齐
 - MLPs 编码机器人物理量
 
 
@@ -35,3 +35,5 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/507)
 - [RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation](https://arxiv.org/pdf/2410.07864)
 - [Code](https://github.com/thu-ml/RoboticsDiffusionTransformer)
 - [Dataset](https://huggingface.co/datasets/robotics-diffusion-transformer/rdt-ft-data)
+- [Google T5 Model](https://huggingface.co/google/t5-v1_1-xxl/tree/main)
+- [Google SigLIP Model](https://huggingface.co/google/siglip-so400m-patch14-384/tree/main)
