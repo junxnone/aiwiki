@@ -1,6 +1,6 @@
 # Wiki History
 
-- 2025-02-18&nbsp;&nbsp; [RDT-1B](/0508_paper_RDT_CN)&nbsp;&nbsp; :bookmark:paper :bookmark:RDT :bookmark:CN
+- 2025-02-18&nbsp;&nbsp; [RDT-1B 翻译](/0508_paper_RDT_CN)&nbsp;&nbsp; :bookmark:paper :bookmark:RDT :bookmark:CN
 - 2025-02-17&nbsp;&nbsp; [RDT-1B 一种用于双手操作的扩散基础模型](/0507_paper_RDT)&nbsp;&nbsp; :bookmark:paper :bookmark:RDT
 - 2025-02-08&nbsp;&nbsp; [LLaMA](/0504_LM_LLMs_LLaMA)&nbsp;&nbsp; :bookmark:LM :bookmark:LLMs :bookmark:LLaMA
 - 2025-02-08&nbsp;&nbsp; [OPEA](/0501_LM_Tools_OPEA)&nbsp;&nbsp; :bookmark:LM :bookmark:Tools :bookmark:OPEA

@@ -410,7 +410,7 @@
   - [MTA](/0479_paper_MTA)
   - [MuSC](/0467_paper_MuSC)
   - [RDT-1B 一种用于双手操作的扩散基础模型](/0507_paper_RDT)
-    - [RDT-1B](/0508_paper_RDT_CN)
+    - [RDT-1B 翻译](/0508_paper_RDT_CN)
   - [SAA+](/0469_paper_SAAplus)
   - [Tip-Adapter](/0475_paper_TipAdapter)
   - [VPT - Visual Prompt Tuning](/0477_paper_VPT)
@@ -479,4 +479,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1335480218</sub></kbd>
+<kbd><sub>@1336220218</sub></kbd>
