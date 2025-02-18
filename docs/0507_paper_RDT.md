@@ -1,8 +1,8 @@
 ---
-Title | paper RDT-1B
+Title | paper RDT
 -- | --
 Created @ | `2025-02-17T02:10:50Z`
-Updated @| `2025-02-17T09:08:56Z`
+Updated @| `2025-02-18T03:56:48Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/507)
 
