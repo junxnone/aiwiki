@@ -2,7 +2,7 @@
 Title | paper RDT CN
 -- | --
 Created @ | `2025-02-18T03:20:41Z`
-Updated @| `2025-02-18T05:30:14Z`
+Updated @| `2025-02-18T05:34:47Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/508)
 
@@ -190,6 +190,8 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/508)
 
 **问题5**：大模型规模、海量数据以及扩散模型都是我们模型表现出色的关键因素。从表2中可以看出，缺少任何一个因素都会导致性能严重下降，这证明了我们这些改进的必要性。特别是RDT（从头开始训练）在未见物体和场景上表现不佳，这表明预训练获得的知识对模型的泛化能力至关重要。 
 
+![Image](https://github.com/user-attachments/assets/d2015661-fd97-4d83-b371-24a4a2f23074)
+表3：量化结果。我们报告了ACT、OpenVLA、RDT（从头开始训练，无预训练）以及RDT（我们的模型，经过预训练）在7项任务中的成功率（%）。每个子任务单元格中的子列代表不同的元素（物体、指令、场景）。ACT并非基于语言条件，因此无法完成指令跟随任务。我们的RDT模型始终优于其他模型。 
 
 ## 6 结论
 
