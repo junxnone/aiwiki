@@ -2,12 +2,12 @@
 Title | paper RDT CN
 -- | --
 Created @ | `2025-02-18T03:20:41Z`
-Updated @| `2025-02-18T05:34:47Z`
+Updated @| `2025-02-18T05:35:24Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/508)
 
 ---
-# RDT-1B
+# RDT-1B 翻译
 
 ## 摘要
 
