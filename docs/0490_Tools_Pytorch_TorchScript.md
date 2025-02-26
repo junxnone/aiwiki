@@ -2,7 +2,7 @@
 Title | Tools Pytorch TorchScript
 -- | --
 Created @ | `2024-12-23T08:43:03Z`
-Updated @| `2025-02-26T02:21:57Z`
+Updated @| `2025-02-26T02:27:22Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/490)
 
@@ -56,4 +56,6 @@ JIT 编译器会进行类型推断。例如，对于函数的参数和返回值�
 
 
 ## Reference
+- [TorchScript](https://pytorch.org/docs/stable/jit.html)
 - [export 🤗 Transformers models to TorchScript](https://huggingface.co/docs/transformers/en/torchscript)
+
