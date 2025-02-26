@@ -3,7 +3,7 @@
 | Title     | Tools Pytorch TorchScript                             |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2024-12-23T08:43:03Z`                                |
-| Updated @ | `2025-01-10T07:16:39Z`                                |
+| Updated @ | `2025-02-26T02:21:57Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/490) |
 
@@ -62,3 +62,8 @@ JIT
 
 基于对代码的分析和类型推断，JIT
 编译器会执行一系列的优化操作。这些操作包括但不限于常量折叠（将可以在编译时计算的常量表达式提前计算）、循环展开（对于确定次数的小循环，将循环体展开以减少循环开销）、函数内联（将被频繁调用的小函数的代码直接插入到调用处，减少函数调用开销）等。
+
+## Reference
+
+  - [export 🤗 Transformers models to
+    TorchScript](https://huggingface.co/docs/transformers/en/torchscript)
