@@ -436,6 +436,7 @@
     - [DevCloud](/0179_Tools_OV_DevCloud)
     - [OpenVINO INT8 Model](/0182_Tools_OV_INT8Model)
     - [NNCF](/0451_Tools_OV_NNCF)
+    - [OpenVINO 优化](/0509_Tools_OV_Optimizations)
     - [Security](/0176_Tools_OV_Security)
     - [Tips](/0184_Tools_OV_Tips)
     - [Workbench](/0178_Tools_OV_Workbench)
@@ -479,4 +480,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1618310330</sub></kbd>
+<kbd><sub>@1616310331</sub></kbd>
