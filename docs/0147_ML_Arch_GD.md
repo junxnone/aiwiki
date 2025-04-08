@@ -2,7 +2,7 @@
 Title | ML Arch GD
 -- | --
 Created @ | `2018-12-12T10:16:49Z`
-Updated @| `2023-02-04T14:02:41Z`
+Updated @| `2025-04-08T02:37:48Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/147)
 
@@ -16,6 +16,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/147)
 - 向量(方向) 描述变化率
 - 表示某一函数在该点处的方向导数沿着该方向取得最大值(即最大方向导数的方向)
 - 函数在该点处沿着该方向变化最快，变化率最大（为该梯度的模）
+- 在神经网络的训练过程中，梯度消失和爆炸是常见的问题。
 
 ![image](https://user-images.githubusercontent.com/2216970/216771243-f3dc74e1-2ce1-4db1-89b2-adf2b0515efa.png)
 
@@ -27,6 +28,15 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/147)
 
 ![1](https://user-images.githubusercontent.com/2216970/54171780-98cfc280-44b6-11e9-9588-ef8249c67586.gif) | ![2](https://user-images.githubusercontent.com/2216970/54171786-9bcab300-44b6-11e9-9e80-3550a56ed548.gif)
 -- | --
+
+
+## 梯度消失
+- 梯度消失指的是在反向传播过程中，梯度随着层数的增加而逐渐减小，导致前面的层难以学习到有效的参数更新；
+- 一些激活函数，如 ReLU 函数及其变体，能够在一定程度上缓解梯度消失问题，因为它们在正数部分的导数为常数 1，不会导致梯度在传播过程中指数级地衰减。
+
+## 梯度爆炸
+- 梯度爆炸则是梯度变得过大，使得模型无法稳定训练。
+- 通过合理选择激活函数和调整网络结构，也可以避免梯度爆炸的发生，使得神经网络能够更加稳定和高效地进行训练。
 
 
 ## Reference
