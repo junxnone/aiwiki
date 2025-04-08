@@ -2,15 +2,15 @@
 Title | ML Op AF
 -- | --
 Created @ | `2019-03-13T05:26:53Z`
-Updated @| `2025-04-08T02:40:03Z`
+Updated @| `2025-04-08T02:42:15Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/279)
 
 ---
 # Activation Function 激活函数
 
-- 当输入激励达到一定强度，神经元就会被激活，产生输出信号。模拟这一细胞激活过程的函数，就叫激活函数。
-- 将输入映射到某个范围
+- 【当神经元的输入激励达到一定强度，就会被激活，产生输出信号】模拟这一细胞激活过程的函数，就叫激活函数。
+- 激活函数将输入映射到某个范围，例如 `[0, 1]`
 - 作为每一层 Layer 最后的选择条件: `Layer N Output` --> `Activation Function` -> `Layer N+1 Input`
 - 激活函数引入了**非线性特性**
   - `没有激活函数的神经网络` == `线性回归模型` - `Linear regression Model`
