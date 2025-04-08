@@ -2,23 +2,13 @@
 Title | ML Op AF Softmax
 -- | --
 Created @ | `2022-12-24T12:25:20Z`
-Updated @| `2023-01-31T07:26:16Z`
+Updated @| `2025-04-08T02:30:00Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/335)
 
 ---
-## Reference
-- http://neuralnetworksanddeeplearning.com/chap3.html#softmax 
-- [logistic函数和softmax函数](http://www.cnblogs.com/maybe2030/p/5678387.html)
-- [详解sigmoid与softmax， 多分类及多标签分类](https://blog.csdn.net/uncle_ll/article/details/82778750)
-- [Keras - Softmax 与 Sigmoid 二分类问题分析](https://www.aiuai.cn/aifarm679.html)
-- [Keras深度学习笔记(三)：神经网络入门](https://xiaosheng.me/2018/11/24/article154/)
-- [sigmoid_and_softmax.ipynb](https://gist.github.com/ypwhs/6905ebbda99d04621f9fc00417657ae2)
-- [一文详解Softmax函数](https://zhuanlan.zhihu.com/p/105722023)
-- [Softmax Function - deepai.org](https://deepai.org/machine-learning-glossary-and-terms/softmax-layer)
 
-
-## Brief
+# Softmax
 - `Sigmoid Function` == `Logistic Function`
 - **二分类时** `sigmoid` 和 `softmax` 等价
 
@@ -64,5 +54,17 @@ $softmax(\vec{z})_{1}=\frac{e^{z_{1}}}{e^{z_{1}} + e^{z_{2}}}=\frac{e^{x}}{e^{x}
 - Sigmoid 与 Softmax 完全等价
 - Sigmoid 与 Softmax 分类器的权值可以相互转换
 - Softmax 会比 Sigmoid 浪费 2 倍的权值空间
+
+
+## Reference
+- http://neuralnetworksanddeeplearning.com/chap3.html#softmax 
+- [logistic函数和softmax函数](http://www.cnblogs.com/maybe2030/p/5678387.html)
+- [详解sigmoid与softmax， 多分类及多标签分类](https://blog.csdn.net/uncle_ll/article/details/82778750)
+- [Keras - Softmax 与 Sigmoid 二分类问题分析](https://www.aiuai.cn/aifarm679.html)
+- [Keras深度学习笔记(三)：神经网络入门](https://xiaosheng.me/2018/11/24/article154/)
+- [sigmoid_and_softmax.ipynb](https://gist.github.com/ypwhs/6905ebbda99d04621f9fc00417657ae2)
+- [一文详解Softmax函数](https://zhuanlan.zhihu.com/p/105722023)
+- [Softmax Function - deepai.org](https://deepai.org/machine-learning-glossary-and-terms/softmax-layer)
+
 
 
