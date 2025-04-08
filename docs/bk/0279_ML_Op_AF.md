@@ -3,28 +3,13 @@
 | Title     | ML Op AF                                              |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2019-03-13T05:26:53Z`                                |
-| Updated @ | `2023-01-31T07:25:57Z`                                |
+| Updated @ | `2025-04-08T02:31:43Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/279) |
 
 -----
 
 # Activation Function 激活函数
-
-## Reference
-
-  - [Activation function -
-    Wikipedia](https://en.wikipedia.org/wiki/Activation_function)
-  - [激活函数（Sigmoid, tanh,
-    Relu）](https://blog.csdn.net/weixin_41417982/article/details/81437088)
-  - [Activation Function -
-    LiFeiFei](https://study.163.com/course/courseLearn.htm?courseId=1004697005#/learn/video?lessonId=1050369427&courseId=1004697005)
-  - [Rectifier (neural
-    networks)](https://en.wikipedia.org/wiki/Rectifier_\(neural_networks\))
-  - [notebook
-    demo](https://github.com/junxnone/examples/blob/master/nn/Activation_Function.ipynb)
-
-## Brief
 
   - 当输入激励达到一定强度，神经元就会被激活，产生输出信号。模拟这一细胞激活过程的函数，就叫激活函数。
   - 作为每一层 Layer 最后的选择条件: `Layer N Output` --\> `Activation Function` -\>
@@ -104,3 +89,16 @@
 | ---- | ------- | ------ | -------- |
 | ELU  |         |        |          |
 | GELU |         |        |          |
+
+## Reference
+
+  - [Activation function -
+    Wikipedia](https://en.wikipedia.org/wiki/Activation_function)
+  - [激活函数（Sigmoid, tanh,
+    Relu）](https://blog.csdn.net/weixin_41417982/article/details/81437088)
+  - [Activation Function -
+    LiFeiFei](https://study.163.com/course/courseLearn.htm?courseId=1004697005#/learn/video?lessonId=1050369427&courseId=1004697005)
+  - [Rectifier (neural
+    networks)](https://en.wikipedia.org/wiki/Rectifier_\(neural_networks\))
+  - [notebook
+    demo](https://github.com/junxnone/examples/blob/master/nn/Activation_Function.ipynb)
