@@ -3,7 +3,7 @@
 | Title     | paper RDT                                             |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2025-02-17T02:10:50Z`                                |
-| Updated @ | `2025-02-18T03:56:48Z`                                |
+| Updated @ | `2025-04-09T05:35:00Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/507) |
 
@@ -30,9 +30,14 @@
 
   - T5-XXL(frozen), 将语言命令编码
   - SigLIP(frozen) 图像编码，图像文本对齐
+  - RDT-1B 基于 DiTs 实现，扩展其 `DiT Blocks` 到总参数 1B+
   - MLPs 编码机器人物理量
 
 ![Image](media/e6d59ae6716bc1c3ab9bffb068824402ce876bd8.png)
+
+### DiTs 架构
+
+![Image](media/ff2d26e7239f499b105ac219c05f001f3a13fd7c.png)
 
 ## Reference
 
