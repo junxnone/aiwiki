@@ -391,6 +391,7 @@
   - [RL Tasks](/0457_RL_Taks)
   - [RL Tools](/0454_RL_Tools)
 - [paper](/0386_paper)
+  - [AdaBLDM](/0510_paper_AdaBLDM)
   - [AnomalyCLIP](/0466_paper_AnomalyCLIP)
   - [BitFit](/0478_paper_BitFit)
   - [CLIP](/0448_paper_CLIP)
@@ -480,4 +481,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1622590409</sub></kbd>
+<kbd><sub>@1521040410</sub></kbd>
