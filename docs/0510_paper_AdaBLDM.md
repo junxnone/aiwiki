@@ -2,7 +2,7 @@
 Title | paper AdaBLDM
 -- | --
 Created @ | `2025-04-10T07:20:03Z`
-Updated @| `2025-04-10T07:43:32Z`
+Updated @| `2025-04-10T08:03:50Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/510)
 
@@ -16,7 +16,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/510)
   - copy-paste  过拟合问题
 - 提出定制的混合潜在扩散模型（AdaBLDM），通过扩散模型在潜在空间生成缺陷样本，利用 “trimap” 掩码和文本提示进行特征编辑。
 - 该模型的图像生成推理过程分为自由扩散、编辑扩散和在线解码器自适应三个阶段。
-
+- **trimap:** 图片背景 + 目标物体掩码 + 缺陷掩码
 
 **此前的一些方法**
 
