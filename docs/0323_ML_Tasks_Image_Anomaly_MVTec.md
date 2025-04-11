@@ -2,17 +2,12 @@
 Title | ML Tasks Image Anomaly MVTec
 -- | --
 Created @ | `2022-12-05T08:08:10Z`
-Last Modify @| `2022-12-24T13:06:54Z`
+Updated @| `2025-04-11T07:08:37Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/323)
 
 ---
-## Reference
-
-- [官网](https://www.mvtec.com/company/research/datasets/mvtec-ad/)
-- [paper - The MVTec Anomaly Detection Dataset: A Comprehensive Real-World Dataset for Unsupervised Anomaly Detection](https://link.springer.com/content/pdf/10.1007/s11263-020-01400-4.pdf)
-
-## Brief
+# MVTec
 
 - MVTec AD是MVtec公司提出的一个用于异常检测的数据集
 - 模仿了工业实际生产场景
@@ -28,4 +23,10 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/323)
 ![image](https://user-images.githubusercontent.com/2216970/205589876-dc4aabd8-8842-42aa-a9b2-f3fbcabe0a16.png)
 
 ![image](https://user-images.githubusercontent.com/2216970/205590065-093a52ae-cf60-4486-a5a6-dd410ae5f2a4.png)
+
+## Reference
+
+- [官网](https://www.mvtec.com/company/research/datasets/mvtec-ad/)
+- [paper - The MVTec Anomaly Detection Dataset: A Comprehensive Real-World Dataset for Unsupervised Anomaly Detection](https://link.springer.com/content/pdf/10.1007/s11263-020-01400-4.pdf)
+
 
