@@ -392,6 +392,7 @@
   - [RL Tools](/0454_RL_Tools)
 - [paper](/0386_paper)
   - [AdaBLDM](/0510_paper_AdaBLDM)
+  - [A Survey on Industrial Anomalies Synthesis](/0511_paper_AnomaliesSynthesisSurvey)
   - [AnomalyCLIP](/0466_paper_AnomalyCLIP)
   - [BitFit](/0478_paper_BitFit)
   - [CLIP](/0448_paper_CLIP)
@@ -481,4 +482,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1509370411</sub></kbd>
+<kbd><sub>@1540310411</sub></kbd>
