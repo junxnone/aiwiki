@@ -471,6 +471,7 @@
 - [KnowledgeGraph](/0329_KnowledgeGraph)
 - [资源参考](/0380_Reference)
 - [x](/0418_x)
+  - [Diffusion Model](/0512_x_DM)
   - [缺陷图片生成](/0403_x_DefectGen)
   - [Cool Demo](/0409_x_Demo)
   - Model
@@ -482,4 +483,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1035130414</sub></kbd>
+<kbd><sub>@1135240414</sub></kbd>
