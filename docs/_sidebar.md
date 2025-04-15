@@ -394,6 +394,7 @@
   - [AdaBLDM](/0510_paper_AdaBLDM)
   - [A Survey on Industrial Anomalies Synthesis](/0511_paper_AnomaliesSynthesisSurvey)
   - [AnomalyCLIP](/0466_paper_AnomalyCLIP)
+  - [AnomalyDiffusion](/0513_paper_AnomalyDiffusion)
   - [BitFit](/0478_paper_BitFit)
   - [CLIP](/0448_paper_CLIP)
     - [CLIP Finetune](/0487_paper_CLIP_Finetune)
@@ -483,4 +484,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1622290415</sub></kbd>
+<kbd><sub>@1716290415</sub></kbd>
