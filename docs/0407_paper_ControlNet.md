@@ -2,7 +2,7 @@
 Title | paper ControlNet
 -- | --
 Created @ | `2023-06-02T07:16:30Z`
-Updated @| `2025-04-15T02:57:54Z`
+Updated @| `2025-04-15T03:17:52Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/407)
 
@@ -47,6 +47,9 @@ Anime Line Drawing | ![image](https://github.com/junxnone/aiwiki/assets/2216970/
 
 
 ## Arch
+- Copy `SD` 的 `Encoder Block` 和 `Mid Block` 创建可训练副本并将各 Block 输出通过  `Zero Convolution` 链接到原始模型的 `Decoder Block` 
+- 冻结 SD  所有  的权重
+
 
 ![image](https://github.com/junxnone/aiwiki/assets/2216970/9297539c-fd83-4014-ab46-fb77c148bed9)
 
