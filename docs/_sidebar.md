@@ -473,6 +473,7 @@
 - [资源参考](/0380_Reference)
 - [x](/0418_x)
   - [Diffusion Model](/0512_x_DM)
+    - [BLDM](/0514_x_DM_BLDM)
   - [缺陷图片生成](/0403_x_DefectGen)
   - [Cool Demo](/0409_x_Demo)
   - Model
@@ -484,4 +485,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1424320416</sub></kbd>
+<kbd><sub>@1538560416</sub></kbd>
