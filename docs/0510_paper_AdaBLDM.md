@@ -2,7 +2,7 @@
 Title | paper AdaBLDM
 -- | --
 Created @ | `2025-04-10T07:20:03Z`
-Updated @| `2025-04-16T06:23:37Z`
+Updated @| `2025-04-16T09:18:59Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/510)
 
@@ -29,8 +29,8 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/510)
 ![Image](https://github.com/user-attachments/assets/fa996f7e-3ca2-46ed-9b5c-a5732d2b4665)
 
 > [!NOTE]
-> ![Image](https://github.com/user-attachments/assets/1a055644-7055-4b56-a398-27791512d986)
 > 参考: BLDM 架构图
+> ![Image](https://github.com/user-attachments/assets/1a055644-7055-4b56-a398-27791512d986)
 
 ![Image](https://github.com/user-attachments/assets/8aa521a7-bc2b-45fd-b820-b8d74964206f)
 
