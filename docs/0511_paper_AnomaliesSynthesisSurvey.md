@@ -2,7 +2,7 @@
 Title | paper AnomaliesSynthesisSurvey
 -- | --
 Created @ | `2025-04-11T07:39:36Z`
-Updated @| `2025-04-14T02:34:19Z`
+Updated @| `2025-04-16T02:37:21Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/511)
 
@@ -125,7 +125,7 @@ Guoyang Xie3,4† , Guannan Jiang4,† , Zhichao Lu3
 
 ## 5. 基于生成模型（GM）的合成
 
-###全图合成
+### 全图合成
 
 **全图合成**是基于生成模型（GM）的模型中的一种基础方法，被广泛用于直接合成工业异常情况。它利用生成对抗网络（GAN）和扩散模型等生成模型，构建一种独特的映射关系，将高斯噪声转化为异常样本，从而有效地逼近真实异常情况的分布。通过针对不同类型的异常训练不同的模型，就有可能生成种类繁多且与实际异常情况非常接近的高质量数据。
 
