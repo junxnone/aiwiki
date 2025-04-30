@@ -2,7 +2,7 @@
 Title | paper AdaBLDM
 -- | --
 Created @ | `2025-04-10T07:20:03Z`
-Updated @| `2025-04-16T09:18:59Z`
+Updated @| `2025-04-30T02:30:21Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/510)
 
@@ -80,7 +80,20 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/510)
   - 更新步数 $t = t + 1$ ，进入下一次循环，直到 $t > T_{ft}$ 。3. **输出**：循环结束后，再次使用优化后的解码器 $\Phi$ 对 $z^*_{NG}$ 进行解码，得到优化后的图像 $x^*_{NG}$ 并返回。这个最终的 $x^*_{NG}$ 就是经过在线解码器自适应优化后的图像，在缺陷表现和与原始图像的关联方面达到了更好的平衡。
 
 
+### 前景估计算法
+- [前景估计参考方法: Target before Shooting: Accurate Anomaly Detection and Localization under One Millisecond via Cascade Patch Retrieval](https://arxiv.org/pdf/2308.06748)
+- **1 生成训练数据**
+  - 利用 DenseNet201 骨干网络处理训练图像，生成原始特征张量。将张量中的向量特征用预先定义的码本进行编码，再重新组合成码图，以此来挑选前景估计分支（FEB）的训练样本。由于大多数异常检测数据集没有明确的前景 / 背景标签，该算法通过特定规则生成伪标签：把图像的中心区域视为前景（正样本），周围区域视为背景（负样本），但为避免类别模糊，只选取周围区域中具有多数代码的特征作为负样本，同时舍弃中心区域具有该多数代码的样本。
+- **2 构建分类器**
+  - 从所有参考图像中选取部分向量特征作为分类器的训练特征，采用 1x1 卷积层将这些特征分为前景和背景两类。在实际应用中，对于测试图像，先预测其前景预测图，同时收集其 K 个最近邻图像的前景预测图。通过比较测试图像和其最近邻图像的前景预测图，取对应位置的最大值，得到最终的前景估计图。
+  
+
+![Image](https://github.com/user-attachments/assets/3701b565-2e7f-4cee-977d-ca3f06c32a3c)
+
+> 由 DenseNet201 获得的深度特征和伪标签用于学习一个 1×1 卷积层。
+
 ## Reference
 
 - [A Novel Approach to Industrial Defect Generation through Blended Latent Diffusion Model with Online Adaptation](https://arxiv.org/abs/2402.19330)
 - [Code](https://github.com/GrandpaXun242/AdaBLDM)
+- [前景估计参考方法: Target before Shooting: Accurate Anomaly Detection and Localization under One Millisecond via Cascade Patch Retrieval](https://arxiv.org/pdf/2308.06748)
