@@ -2,7 +2,7 @@
 Title | paper AdaBLDM cn
 -- | --
 Created @ | `2025-05-08T07:10:33Z`
-Updated @| `2025-05-08T07:34:21Z`
+Updated @| `2025-05-08T07:59:34Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/515)
 
@@ -71,6 +71,29 @@ Mingwen Wang1
 ## 3 所提出的方法
 
 ### A. 任务定义和预备知识
+
+遵循异常检测的常规设置，一个无异常（正常）样本集 $x_{OK}=\{x_{OK}^{i} \in \mathbb{R}^{H_{x} \times W_{x} \times 3}, i = 1,2, \ldots, N_{OK}\}$ 可用于训练。此外，正如在第一节中所介绍的，一些有缺陷（异常）样本 $x_{NG}=\{x_{NG}^{i} \in \mathbb{R}^{H_{x} \times W_{x} \times 3} | i = 1,2, \ldots, N_{NG}\}$ 以及相应的异常掩码 $M_{NG}=\{M_{NG}^{i} \in \mathbb{B}^{H_{x} \times W_{x}} | i = 1,2, \ldots, N_{NG}\}$ 被作为缺陷生成的 “种子”，并且通常 $N_{NG} \ll N_{OK}$ 。所提出方法的目标是生成一些带有合成缺陷区域的训练样本，即
+
+${x_{OK}, x_{NG}, M_{NG}} \stackrel{Defect \ Generator}{\to} {X_{NG}^{\*}, M_{NG}^{*}}, (1)$
+
+其中 $X_{NG}^{\*}=\{x_{NG}^{\*i} \in \mathbb{R}^{H_x \times W_x \times 3} | i = 1,2, \ldots, N_{NG}^{\*}\}$ 且 $M_{NG}^{\*}=\{M_{NG}^{\*i} \in \mathbb{B}^{H_x \times W_x} | i = 1,2, \ldots, N_{NG}^{\*}\}$ 分别包含所获得的合成样本和相应的缺陷掩码。此外，通常我们设置 $N_{NG}^{*} \gg N_{NG}$ 以确保生成的样本具有高度的模式变化。 
+
+在本文中，我们提议使用扩散模型来生成合成样本。对于扩散模型[18, 38]而言，将生成目标视为无噪声变量 $x_0$ 是很常见的，并且将“正向扩散过程”定义如下：
+
+ $$\large \begin{aligned} 
+& q\left(x_{t} | x_{t-1}\right)=\mathcal{N}\left(x_{t} ; \sqrt{1-\beta_{t}} x_{t-1}, \beta_{t} I\right) \\ 
+& q\left(x_{1: T} | x_{0}\right)=\prod_{t=1}^{T} q\left(x_{t} | x_{t-1}\right), 
+\end{aligned}$$ 
+
+其中 ${\beta_{t} \in(0,1)}_{t = 1}^{T}$ 表示预定义的方差调度， $I$ 是单位矩阵。当 $T$ 足够大时，扩散过程可以将一张正常图像转换为随机噪声 $x_T$ 。相反，“反向扩散过程”定义为：
+ 
+$$\large \begin{aligned} 
+& p_{\theta}\left(x_{t-1} | x_{t}\right)=\mathcal{N}\left(x_{t-1} ; \mu_{\theta}\left(x_{t}, t\right), \sum_{\theta}\left(x_{t}, t\right)\right) \\ 
+& p_{\theta}\left(x_{0: T}\right)=p\left(x_{T}\right) \prod_{t=1}^{T} p_{\theta}\left(x_{t-1} | x_{t}\right), 
+\end{aligned}$$ 
+
+其中 $\mu_{\theta}(\cdot)$ 和 $\sum_{\theta}(\cdot)$ 是两个未知函数，通常用深度模型来近似表示。在测试阶段，给定不同的随机高斯噪声样本 $x_{T}^{\bar{i}}$ ， $i = 1, \ldots, N_{t s t}$ ，人们可以从与训练样本相同的域中获得高质量且多样的样本 $x_{0}^{i}$ ，对于所有的 $i$ （通常是RGB图像）。与上述扩散过程类似，我们也可以基于一个在样本集 $x_{OK}$ 和 $x_{NG}$ 上已经学习得很好的扩散模型，在 $x_{NG}^{*}$ 中生成逼真的异常图像。 
+
 
 ### B. 潜在扩散模型与跨模态提示 
 
