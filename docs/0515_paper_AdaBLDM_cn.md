@@ -2,7 +2,7 @@
 Title | paper AdaBLDM cn
 -- | --
 Created @ | `2025-05-08T07:10:33Z`
-Updated @| `2025-05-08T07:59:34Z`
+Updated @| `2025-05-08T08:39:17Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/515)
 
@@ -74,9 +74,9 @@ Mingwen Wang1
 
 遵循异常检测的常规设置，一个无异常（正常）样本集 $x_{OK}=\{x_{OK}^{i} \in \mathbb{R}^{H_{x} \times W_{x} \times 3}, i = 1,2, \ldots, N_{OK}\}$ 可用于训练。此外，正如在第一节中所介绍的，一些有缺陷（异常）样本 $x_{NG}=\{x_{NG}^{i} \in \mathbb{R}^{H_{x} \times W_{x} \times 3} | i = 1,2, \ldots, N_{NG}\}$ 以及相应的异常掩码 $M_{NG}=\{M_{NG}^{i} \in \mathbb{B}^{H_{x} \times W_{x}} | i = 1,2, \ldots, N_{NG}\}$ 被作为缺陷生成的 “种子”，并且通常 $N_{NG} \ll N_{OK}$ 。所提出方法的目标是生成一些带有合成缺陷区域的训练样本，即
 
-${x_{OK}, x_{NG}, M_{NG}} \stackrel{Defect \ Generator}{\to} {X_{NG}^{\*}, M_{NG}^{*}}, (1)$
+${x_{OK}, x_{NG}, M_{NG}} \stackrel{Defect \ Generator}{\to} {X_{NG}^{ *}, M_{NG}^{ *}}, (1)$
 
-其中 $X_{NG}^{\*}=\{x_{NG}^{\*i} \in \mathbb{R}^{H_x \times W_x \times 3} | i = 1,2, \ldots, N_{NG}^{\*}\}$ 且 $M_{NG}^{\*}=\{M_{NG}^{\*i} \in \mathbb{B}^{H_x \times W_x} | i = 1,2, \ldots, N_{NG}^{\*}\}$ 分别包含所获得的合成样本和相应的缺陷掩码。此外，通常我们设置 $N_{NG}^{*} \gg N_{NG}$ 以确保生成的样本具有高度的模式变化。 
+其中 $X_{NG}^{* }=\{x_{NG}^{* i} \in \mathbb{R}^{H_x \times W_x \times 3} | i = 1,2, \ldots, N_{NG}^{* }\}$ 且 $M_{NG}^{* }=\{M_{NG}^{* i} \in \mathbb{B}^{H_x \times W_x} | i = 1,2, \ldots, N_{NG}^{* }\}$ 分别包含所获得的合成样本和相应的缺陷掩码。此外，通常我们设置 $N_{NG}^{*} \gg N_{NG}$ 以确保生成的样本具有高度的模式变化。 
 
 在本文中，我们提议使用扩散模型来生成合成样本。对于扩散模型[18, 38]而言，将生成目标视为无噪声变量 $x_0$ 是很常见的，并且将“正向扩散过程”定义如下：
 
