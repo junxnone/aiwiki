@@ -3,7 +3,7 @@
 | Title     | paper AdaBLDM cn                                      |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2025-05-08T07:10:33Z`                                |
-| Updated @ | `2025-05-08T11:40:13Z`                                |
+| Updated @ | `2025-05-08T11:46:36Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/515) |
 

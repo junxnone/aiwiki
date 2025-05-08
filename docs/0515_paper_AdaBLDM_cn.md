@@ -2,7 +2,7 @@
 Title | paper AdaBLDM cn
 -- | --
 Created @ | `2025-05-08T07:10:33Z`
-Updated @| `2025-05-08T11:40:13Z`
+Updated @| `2025-05-08T11:46:36Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/515)
 
@@ -128,9 +128,9 @@ $$\Gamma(x, y)=
 
 如图2所示，在提出的AdaBLDM算法中，首先通过一个卷积块对控制三值图 $\Gamma$ 进行嵌入操作，得到 $\zeta(\Gamma) \in \mathbb{R}^{H_z \times W_z \times C_z}$  。
 
-然后将嵌入特征输入到编码器网络 $\hat{\epsilon}_{tri} \(\cdot\)$ 中，该编码器网络与 $`\epsilon_{\theta}(\cdot)`$ 的去噪编码器结构相同且初始参数一致，不过原有的“空间注意力”模块被替换为对嵌入的三值图特征进行的自注意力处理过程。
+然后将嵌入特征输入到编码器网络 $\hat{\epsilon}_{tri} (\cdot)$ 中，该编码器网络与 $`\epsilon_{\theta}(\cdot)`$ 的去噪编码器结构相同且初始参数一致，不过原有的“空间注意力”模块被替换为对嵌入的三值图特征进行的自注意力处理过程。
 
-之后，从  $\hat{\epsilon}_{\text{tri}}\(\cdot\)$  不同层提取的深度特征通过按元素相加的方式注入到 $`{\epsilon}_{\theta}(\cdot)`$  的去噪解码器的相应层中(见图2).
+之后，从  $\hat{\epsilon}_{\text{tri}}(\cdot)$  不同层提取的深度特征通过按元素相加的方式注入到 $`{\epsilon}_{\theta}(\cdot)`$  的去噪解码器的相应层中(见图2).
 
 
 ### C. 损失函数和训练方案
