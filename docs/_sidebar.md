@@ -392,6 +392,7 @@
   - [RL Tools](/0454_RL_Tools)
 - [paper](/0386_paper)
   - [AdaBLDM](/0510_paper_AdaBLDM)
+    - [AdaBLDM 译文](/0515_paper_AdaBLDM_cn)
   - [A Survey on Industrial Anomalies Synthesis](/0511_paper_AnomaliesSynthesisSurvey)
   - [AnomalyCLIP](/0466_paper_AnomalyCLIP)
   - [AnomalyDiffusion](/0513_paper_AnomalyDiffusion)
@@ -485,4 +486,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1623130507</sub></kbd>
+<kbd><sub>@1511330508</sub></kbd>
