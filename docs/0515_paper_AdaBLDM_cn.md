@@ -2,7 +2,7 @@
 Title | paper AdaBLDM cn
 -- | --
 Created @ | `2025-05-08T07:10:33Z`
-Updated @| `2025-05-08T08:39:17Z`
+Updated @| `2025-05-08T11:40:13Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/515)
 
@@ -96,6 +96,42 @@ $$\large \begin{aligned}
 
 
 ### B. 潜在扩散模型与跨模态提示 
+
+#### 1) 带有控制信息的潜在扩散模型：
+
+在本文中，受其值得称赞的优点的启发[19]，我们采用潜在扩散模型（LDM）作为我们方法的主干。顾名思义，潜在扩散模型的正向和反向扩散过程都是在低维潜在空间中进行的。给定一个输入图像 $x \in \mathbb{R}^{H_x \times W_x \times 3}$ ，通过编码器函数 $\Omega(\cdot)$ 可得到其对应的潜在特征 $z \in \mathbb{R}^{H_z \times W_z \times C_z}$ ，即 $z = \Omega(x)$ ，同时也可以通过解码操作从 $z$ 恢复出图像 $x$ ，即 $x = \Phi(z)$ 。基于潜在特征 $z$ 以及公式(3)的一些简化，潜在空间中的反向条件概率被修正为：
+ $\large p_{\theta}(z_{t - 1} | z_t, t, C) = \mathcal{N}\left(z_{t - 1}; \frac{1}{\sqrt{\alpha_t}}\left(z_t - \frac{1 - \alpha_t}{\sqrt{1 - \overline{\alpha}_t}}\right), \sigma_tI\right)T, (4)$
+
+$T=\epsilon_{\theta}(z_t, t, C)$
+
+其中 $\epsilon_{\theta}(\cdot)$ 表示待训练的 $\theta$ 参数化深度模型； $C$ 表示输入到潜在扩散模型中用于稳定生成过程的控制提示信息[19]； $\alpha_t$ 、 $\overline{\alpha}_t$ 和 $\sigma_t$ 是在每个第 $t$ 步都可以通过确定性方式计算得到的参数。在我们的方法中，我们提议生成跨模态控制特征，以提高合成缺陷的质量。 
+
+#### 2) 语言提示：
+
+作为一个有效的模块，语言提示被引入来控制和稳定扩散模型的生成过程[19, 21]。在这项工作中，语言提示\(y\)是通过在以下模板句子中指定关键词来获得的：
+$\large y := "\{obj\}, a \{obj\} \text{ with a } \{def\}", \quad (5)$
+其中，关键词\(obj\)和\(def\)分别表示当前对象的类别（如图2中的胶囊）和缺陷类型（比如胶囊上的黑色污染物）。可以看出，这种模板设计很直接，因此提示很容易获得。然后，句子 $y$ 由CLIP模型[52]的参数冻结的文本编码器 $\tau(\cdot): \mathbb{R}^{d_y} \to \mathbb{R}^{d_{lang}}$ 进行处理。特别地，如图2所示，语言控制信息被输入到生成模型 $\epsilon_{\theta}(\cdot)$ 中，并且生成过程是由[19]中提出的KQ-V注意力机制来控制的。 
+
+#### 3) 缺陷三值图提示：
+
+回想一下，在实际的异常检测任务中，无缺陷样本在数量和模式变化方面通常较为充足。因此，我们提议基于无缺陷原型来生成有缺陷样本，而非从零开始生成。简而言之，设计了一个“三值图” $\Gamma \in \mathbb{R}^{H_{x} \times W_{x}}$ 来指定生成对象和缺陷的期望位置，如图2所示。为了获得合适的三值图，我们首先使用[14]中提出的方法，在随机选择的无缺陷图像 $x_{OK}$ 上估计前景区域，并将前景掩码保存为 $F \in \mathbb{B}^{H_{x} \times W_{x}}$ ，其中 $F(x, y)=1$ 表示坐标 $[x, y]$ 处为前景像素。其次，基于从集合 $M_{NG}$ 中随机选择的真实异常掩码创建一个合成缺陷掩码。形式上，新异常掩码的生成过程表示为：
+
+$`\mathcal{M}_{NG} \stackrel{rand. i}{\to} M_{NG}^i \stackrel{rand. affine}{\to} M_{NG}^A \stackrel{fit F}{\to} M_{NG}^{* }, (6)`$
+
+其中 $M_{NG}^{i}$ 、 $M_{NG}^{A}$ 、 $M_{NG}^{*} \in \mathbb{B}^{H_{x} \times W_{x}}$ ；“rand.  $i$ ”指随机索引选择；“rand. affine”表示随机仿射变换，而“fit  $F$ ”表示调整 $M_{NG}^{A}$ 的位置和比例，使调整后的掩码完全处于由 $F$ 定义的前景区域内。最后， $\Gamma$ 上每个像素的值定义如下：
+
+$$\Gamma(x, y)= 
+\begin{cases} & 1 & \text{ If } M_{N G}^{*}(x, y)=1, \\    
+&0.5 & \text{ If } F(x, y)=1 \\ 
+&0 & \text{else.} 
+\end{cases}$$
+
+如图2所示，在提出的AdaBLDM算法中，首先通过一个卷积块对控制三值图 $\Gamma$ 进行嵌入操作，得到 $\zeta(\Gamma) \in \mathbb{R}^{H_z \times W_z \times C_z}$  。
+
+然后将嵌入特征输入到编码器网络 $\hat{\epsilon}_{tri} \(\cdot\)$ 中，该编码器网络与 $`\epsilon_{\theta}(\cdot)`$ 的去噪编码器结构相同且初始参数一致，不过原有的“空间注意力”模块被替换为对嵌入的三值图特征进行的自注意力处理过程。
+
+之后，从  $\hat{\epsilon}_{\text{tri}}\(\cdot\)$  不同层提取的深度特征通过按元素相加的方式注入到 $`{\epsilon}_{\theta}(\cdot)`$  的去噪解码器的相应层中(见图2).
+
 
 ### C. 损失函数和训练方案
 
