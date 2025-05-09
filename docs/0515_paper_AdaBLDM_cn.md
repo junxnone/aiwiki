@@ -2,7 +2,7 @@
 Title | paper AdaBLDM cn
 -- | --
 Created @ | `2025-05-08T07:10:33Z`
-Updated @| `2025-05-09T07:35:58Z`
+Updated @| `2025-05-09T07:49:54Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/515)
 
@@ -244,12 +244,25 @@ $`L_{L D M}:=\mathbb{E}_{z_t, \mathcal{C}, \epsilon \sim \mathcal{N}(0,1), t}\le
 
 最后，作为对表IV-B1的定性补充，图7展示了由DeSTseg算法预测的异常热图。我们可以看到，高质量的模拟合成数据有利于配备了AdaBLDM的算法，该算法能够输出具有竞争力的用于异常检测和定位的热图。 
 
+![Image](https://github.com/user-attachments/assets/d030867b-d895-4f1b-83e7-0f76f8ab55c1)
+> [!NOTE]
+> 图4. MVTec AD数据集中的真实缺陷样本和合成缺陷样本。从上到下依次是：带有真实缺陷的样本；使用DCDGANc-StarGAN生成的样本；使用DCDGANc-StyleGAN生成的样本；使用直接特征匹配（DFM）生成的样本以及使用我们的方法生成的样本。 
+
+![Image](https://github.com/user-attachments/assets/4f1b621c-b0f3-4900-b98b-467346800673)
+> [!NOTE]
+>图5展示了在MVTec AD数据集的榛子子类别上，关于生成质量的细粒度比较。不同的生成算法模拟了不同种类的缺陷，并且可以在更详细的层面上对它们的性能进行比较。 
+
+
+![Image](https://github.com/user-attachments/assets/17d03c5d-dc21-4c1e-811e-7d96b2639a6f)
+> [!NOTE]
+> 图6. AdaBLDM在BTAD和KSDDV2数据集上的生成输出结果。 
+
 ### D. 消融研究
 
 在本节中，我们系统地评估了我们方法中各个组件的贡献。我们进行了以下实验： 
 
 #### 利用领域知识进行预训练 
-如在第三节C部分所介绍的那样，去噪模型\(\epsilon_{\theta}(\cdot)\)是在领域数据上进行预训练的。如果移除这个模块，AdaBLDM将依赖于来自LAION-5B数据集[65]的先验知识，而该数据集与工业异常检测领域的相关性可能并不高。需要注意的是，为了保证比较的公平性，预训练过程与当前的子类别是严格相互独立的。 
+如在第三节C部分所介绍的那样，去噪模型 $\epsilon_{\theta}(\cdot)$ 是在领域数据上进行预训练的。如果移除这个模块，AdaBLDM将依赖于来自LAION-5B数据集[65]的先验知识，而该数据集与工业异常检测领域的相关性可能并不高。需要注意的是，为了保证比较的公平性，预训练过程与当前的子类别是严格相互独立的。 
 
 
 #### 图像编辑
@@ -267,3 +280,29 @@ $`L_{L D M}:=\mathbb{E}_{z_t, \mathcal{C}, \epsilon \sim \mathcal{N}(0,1), t}\le
 ## 五、结论与未来工作
 
 在本文中，我们提出了一种先进的方法，用于生成逼真的有缺陷样本，以用于工业异常检测和定位。受扩散模型的启发，我们对混合潜在扩散模型（BLDM）进行定制，使其能很好地适用于这一特定任务。所提出的算法，称为AdaBLDM（自适应混合潜在扩散模型），与现有的基于传统“剪切粘贴”方案或生成对抗网络（GANs）的方法相比，能够生成更好的合成样本。通过将AdaBLDM应用于异常检测的数据增强中，由于对像素级对齐的有缺陷区域进行了良好控制，我们实现了异常检测（AD）方面的先进性能。在未来，我们将通过引入更精细的控制信号（例如描述所需缺陷的形状、大小等细节的语言提示）来探索生成高质量的合成缺陷样本。未来工作的另一个有吸引力的方向是加快扩散模型的去噪过程，以便在有限的时间预算内生成更多的缺陷样本，这在大多数实际场景中是一个关键约束。 
+
+
+![Image](https://github.com/user-attachments/assets/b9afda4a-d81d-401f-8bce-71576988f43b)
+
+> [!NOTE]
+> 表一 MVTec AD数据集上支持向量机（SVM）的异常检测与定位性能，像素级曲线下面积（PIXEL-AUC）、PRO、平均精度（AP）、实例平均精度（IAP）、IAP90，最佳数值和次佳数值分别以红色和蓝色显示。  
+
+![Image](https://github.com/user-attachments/assets/730f9b14-788e-491d-b666-52a682a4111d)
+
+> [!NOTE]
+> 表二 MVTec AD数据集上DeSTseg的异常检测与定位性能，像素级曲线下面积（PIXEL-AUC）、PRO、平均精度（AP）、实例平均精度（IAP）、IAP90，最佳数值和次佳数值分别以红色和蓝色显示。  
+
+![Image](https://github.com/user-attachments/assets/124393ff-2cda-4378-863c-bc3e89f036e4)
+
+> [!NOTE]
+> 表三 在BTAD数据集上DeSTseg的异常检测与定位性能，像素级曲线下面积（PIXEL-AUC）、PRO、平均精度（AP）、实例平均精度（IAP）、IAP90，最佳数值和次佳数值分别以红色和蓝色显示。   
+
+![Image](https://github.com/user-attachments/assets/219aac24-048e-45cf-9f7c-6e13fdbcff34)
+
+> [!NOTE]
+> 表四 在KSDD2数据集上DeSTseg的异常检测与定位性能，像素级曲线下面积（PIXEL-AUC）、PRO、平均精度（AP）、实例平均精度（IAP）、IAP90，最佳数值和次佳数值分别以红色和蓝色显示。   
+
+![Image](https://github.com/user-attachments/assets/7c65b299-f38d-46bb-8546-22e065cc348c)
+
+> [!NOTE]
+> 表五 对于MVTec AD，在表五中生成图像的 $KID×103@5K$ 和LPIPS@5K指标下，最佳数值和次佳数值分别以红色和蓝色显示。    
