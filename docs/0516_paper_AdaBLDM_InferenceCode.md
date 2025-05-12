@@ -1,8 +1,8 @@
 ---
-Title | paper AdaBLDM Code Test
+Title | paper AdaBLDM InferenceCode
 -- | --
 Created @ | `2025-05-12T03:25:54Z`
-Updated @| `2025-05-12T03:25:54Z`
+Updated @| `2025-05-12T03:26:44Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/516)
 
