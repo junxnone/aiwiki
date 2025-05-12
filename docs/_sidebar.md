@@ -392,8 +392,7 @@
   - [RL Tools](/0454_RL_Tools)
 - [paper](/0386_paper)
   - [AdaBLDM](/0510_paper_AdaBLDM)
-    - Code
-      - [Inference Code 分析](/0516_paper_AdaBLDM_Code_Test)
+    - [Inference Code 分析](/0516_paper_AdaBLDM_InferenceCode)
     - [AdaBLDM 译文](/0515_paper_AdaBLDM_cn)
   - [A Survey on Industrial Anomalies Synthesis](/0511_paper_AnomaliesSynthesisSurvey)
   - [AnomalyCLIP](/0466_paper_AnomalyCLIP)
@@ -488,4 +487,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1126570512</sub></kbd>
+<kbd><sub>@1127420512</sub></kbd>
