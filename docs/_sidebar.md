@@ -251,6 +251,7 @@
         - [MVTec](/0323_ML_Tasks_Image_Anomaly_MVTec)
         - [PaDiM](/0322_ML_Tasks_Image_Anomaly_PaDiM)
         - [STFPM](/0324_ML_Tasks_Image_Anomaly_STFPM)
+        - [异常缺陷生成](/0517_ML_Tasks_Image_Anomaly_Synthesis)
     - [Motion Detection 运动侦测](/0243_ML_Tasks_MD)
     - [MetricLearning](/0157_ML_Tasks_MetricLearning)
   - [Op](/0366_ML_Op)
@@ -487,4 +488,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1619270518</sub></kbd>
+<kbd><sub>@0924070519</sub></kbd>
