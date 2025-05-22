@@ -3,7 +3,7 @@
 | Title     | ML Tasks Image Anomaly Synthesis                      |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2025-05-19T01:22:49Z`                                |
-| Updated @ | `2025-05-19T01:22:49Z`                                |
+| Updated @ | `2025-05-22T01:21:04Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/517) |
 
@@ -435,7 +435,7 @@
 
 ##### Example - DefectDiffu
 
-![Image](media/903afb629d411b71edba76e0f51a037203dd50a0.shtml)
+![Image](media/120daf2e3e294d799ce3d39d9bdfc64c0eeacce5.png)
 
 > \[\!NOTE\]
 > 
@@ -461,7 +461,7 @@
 
 ##### Example - DualAnoDiff
 
-![Image](media/120daf2e3e294d799ce3d39d9bdfc64c0eeacce5.png)
+![Image](media/cd00389f223211629a4e2bcf9af2eaf571702db7.png)
 
 > \[\!NOTE\]
 > 
@@ -489,9 +489,9 @@
 >       - 2 **输出结果**：经过上述过程，最终生成整体异常图像 $I$ 和局部异常图像 $I\_{a}$ 及其对应的异常掩码
 >         $M\_{a}$ ，用于后续的工业异常检测等任务。
 
-##### Example - AdaBLDM [note](/0510_paper_AdaBLDM)
+##### Example - AdaBLDM - [note](/0510_paper_AdaBLDM)
 
-![Image](media/cd00389f223211629a4e2bcf9af2eaf571702db7.png)
+![Image](media/2f5e41b6245ec38ca3424a572610609b13c37dea.png)
 
 > \[\!NOTE\]
 > 
@@ -503,8 +503,8 @@
 >         $\\epsilon\_{\\theta}(\\cdot)$ ，利用KQ-V注意力机制控制生成过程。
 >       - **缺陷trimap提示**：基于无缺陷样本估计前景区域，得到前景掩码 $F$
 >         ；从真实异常掩码中随机选择并进行仿射变换、调整位置和比例，得到合成异常掩码
->         $M\_{NG}^{\*}$ 。根据 $M\_{NG}^{\*}$ 和 $F$ 生成“trimap” $\\Gamma$ ，
->         $\\Gamma$ 经卷积块嵌入和特定编码器处理后，其特征注入到
+>         $M\_{NG}^{ \*}$ 。根据 $M\_{NG}^{ \*}$ 和 $F$ 生成“trimap” $\\Gamma$
+>         ， $\\Gamma$ 经卷积块嵌入和特定编码器处理后，其特征注入到
 >         $\\epsilon\_{\\theta}(\\cdot)$ 的相应层，以此指定生成对象和缺陷的位置。
 >   - 3 **模型训练**：模型的学习目标由损失函数 $L\_{LDM}$ 定义。其中，
 >     $\\epsilon\_{\\theta}(\\cdot)$ 用领域数据集预训练并在各子类别学习时冻结；trimap特征编码器

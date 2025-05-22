@@ -2,7 +2,7 @@
 Title | ML Tasks Image Anomaly Synthesis
 -- | --
 Created @ | `2025-05-19T01:22:49Z`
-Updated @| `2025-05-19T01:22:49Z`
+Updated @| `2025-05-22T01:21:04Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/517)
 
@@ -379,7 +379,7 @@ U - Net 作为核心可学习模型：
 
 ##### Example - DefectDiffu
 
-![Image](https://github.com/user-attachments/assets/f893d61a-bdeb-44a3-8051-7486e8dd8060)
+![Image](https://github.com/user-attachments/assets/e690dbc9-9ed7-462a-a9f2-fb73a5a29bdb)
 
 > [!NOTE]
 > - **条件模块（Condition Module）**
@@ -395,7 +395,7 @@ U - Net 作为核心可学习模型：
 
 ##### Example - DualAnoDiff
 
-![Image](https://github.com/user-attachments/assets/e690dbc9-9ed7-462a-a9f2-fb73a5a29bdb)
+![Image](https://github.com/user-attachments/assets/56c1d3eb-ce38-4f7a-a96f-d91c543c3bcf)
 
 > [!NOTE]
 >   - **输入与初始处理**
@@ -414,15 +414,15 @@ U - Net 作为核心可学习模型：
 >   - 2 **输出结果**：经过上述过程，最终生成整体异常图像 $I$ 和局部异常图像 $I_{a}$ 及其对应的异常掩码 $M_{a}$  ，用于后续的工业异常检测等任务。 
 
 
-##### Example - AdaBLDM  [note](/0510_paper_AdaBLDM)
+##### Example - AdaBLDM - [note](/0510_paper_AdaBLDM)
 
-![Image](https://github.com/user-attachments/assets/56c1d3eb-ce38-4f7a-a96f-d91c543c3bcf)
+![Image](https://github.com/user-attachments/assets/490fb14d-7df4-4347-9c36-ae1d5ea763f8)
 
 > [!NOTE]
 > - 1 **准备工作**：获取无缺陷样本集 $x_{OK}$ 、少量有缺陷样本 $x_{NG}$ 及相应的异常掩码 $M_{NG}$  。以扩散模型为基础，通过正向扩散过程将正常图像转化为随机噪声，反向扩散过程则从噪声生成图像。
 > - 2 **引入控制信息**
 >   - **语言提示**：按照 “{obj}, a {obj} with a {def}” 模板设定关键词，得到语言提示 $y$ ，经CLIP模型的文本编码器 $\tau(\cdot)$ 处理后，输入生成模型 $\epsilon_{\theta}(\cdot)$ ，利用KQ-V注意力机制控制生成过程。
->   - **缺陷trimap提示**：基于无缺陷样本估计前景区域，得到前景掩码 $F$  ；从真实异常掩码中随机选择并进行仿射变换、调整位置和比例，得到合成异常掩码 $M_{NG}^{\*}$  。根据 $M_{NG}^{\*}$ 和 $F$ 生成“trimap” $\Gamma$ ， $\Gamma$ 经卷积块嵌入和特定编码器处理后，其特征注入到 $\epsilon_{\theta}(\cdot)$ 的相应层，以此指定生成对象和缺陷的位置。
+>   - **缺陷trimap提示**：基于无缺陷样本估计前景区域，得到前景掩码 $F$  ；从真实异常掩码中随机选择并进行仿射变换、调整位置和比例，得到合成异常掩码 $M_{NG}^{ *}$  。根据 $M_{NG}^{ *}$ 和 $F$ 生成“trimap” $\Gamma$ ， $\Gamma$ 经卷积块嵌入和特定编码器处理后，其特征注入到 $\epsilon_{\theta}(\cdot)$ 的相应层，以此指定生成对象和缺陷的位置。
 > - 3 **模型训练**：模型的学习目标由损失函数 $L_{LDM}$ 定义。其中， $\epsilon_{\theta}(\cdot)$ 用领域数据集预训练并在各子类别学习时冻结；trimap特征编码器 $\hat{\epsilon}_{tri }(\cdot)$ 用原始LDM模型参数初始化并基于真实缺陷样本微调；卷积块 $\zeta(\cdot)$ 基于真实异常样本从头学习；图像编码器 $\Omega(\cdot)$ 和解码器 $\Phi(\cdot)$ 采用VQ-VAE算法的相应模块并在训练中固定；文本编码器 $\tau(\cdot)$ 从CLIP复制并在训练时冻结。
 > - 4 **多阶段生成**
 >   - **自由扩散阶段**：给定无缺陷图像 $x_{OK}$ 、trimap  $\Gamma$ 和缺陷掩码 $M_{NG}^{*}$ 等，先进行 $T_{1}$ 步常规去噪，不做内容编辑。
