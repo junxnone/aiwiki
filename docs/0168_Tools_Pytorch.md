@@ -2,7 +2,7 @@
 Title | Tools Pytorch
 -- | --
 Created @ | `2019-01-25T23:32:24Z`
-Updated @| `2024-06-22T17:25:57Z`
+Updated @| `2025-05-27T02:29:48Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/168)
 
@@ -17,7 +17,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/168)
 - [PyTorchLightning](https://github.com/PyTorchLightning/pytorch-lightning)
 - [TorchMetrics](https://torchmetrics.readthedocs.io/en/latest/)
 - [Pytorch ignite](https://github.com/pytorch/ignite/)
-- [pytorch - 加速](/Pytorch_加速)
+- [pytorch - 加速Training/Inference](/0169_Tools_Pytorch_Speed)
 - [Examples Analysis](https://github.com/junxnone/examples-1/issues/1)
 
 
