@@ -249,7 +249,6 @@
           - [TextRecognitionDataGenerator](/0187_ML_Tasks_Image_OCR_Tools_TextRecognitionDataGenerator)
       - [Image Anomaly Detection](/0277_ML_Tasks_Image_Anomaly)
         - [MVTec](/0323_ML_Tasks_Image_Anomaly_MVTec)
-        - [PaDiM](/0322_ML_Tasks_Image_Anomaly_PaDiM)
         - [STFPM](/0324_ML_Tasks_Image_Anomaly_STFPM)
         - [异常缺陷生成](/0517_ML_Tasks_Image_Anomaly_Synthesis)
     - [Motion Detection 运动侦测](/0243_ML_Tasks_MD)
@@ -415,6 +414,7 @@
   - [LFA](/0480_paper_LFA)
   - [MTA](/0479_paper_MTA)
   - [MuSC](/0467_paper_MuSC)
+  - [PaDiM](/0322_paper_PaDiM)
   - [RDT-1B 一种用于双手操作的扩散基础模型](/0507_paper_RDT)
     - [RDT-1B 翻译](/0508_paper_RDT_CN)
   - [SAA+](/0469_paper_SAAplus)
@@ -488,4 +488,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1718500526</sub></kbd>
+<kbd><sub>@0933450527</sub></kbd>
