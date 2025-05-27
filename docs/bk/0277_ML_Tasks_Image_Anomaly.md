@@ -3,7 +3,7 @@
 | Title     | ML Tasks Image Anomaly                                |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2019-04-08T07:06:13Z`                                |
-| Updated @ | `2025-05-27T01:36:09Z`                                |
+| Updated @ | `2025-05-27T01:46:02Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/277) |
 
@@ -19,13 +19,17 @@
   - AutoEncoder
   - GAN
   - [PaDiM](/0322_paper_PaDiM)
-  - [STFPM](/STFPM)
+  - [STFPM](/0324_paper_STFPM)
   - DFM
   - DFKDE
   - Draem
   - AnomalyCLIP
   - AnomalyGPT
   - MuSC
+
+## 数据集
+
+  - MVTec
 
 ## 应用
 
