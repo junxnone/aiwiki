@@ -2,7 +2,7 @@
 Title | ML Tasks Image Anomaly
 -- | --
 Created @ | `2019-04-08T07:06:13Z`
-Updated @| `2024-05-14T15:34:22Z`
+Updated @| `2025-05-27T01:36:09Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/277)
 
@@ -16,7 +16,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/277)
 - 无监督学习
 - AutoEncoder
 - GAN
-- [PaDiM](/PaDiM)
+- [PaDiM](/0322_paper_PaDiM)
 - [STFPM](/STFPM)
 - DFM
 - DFKDE
