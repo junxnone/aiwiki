@@ -1,8 +1,8 @@
 ---
-Title | ML Tasks Image Anomaly PaDiM
+Title | paper PaDiM
 -- | --
 Created @ | `2022-12-05T01:58:43Z`
-Updated @| `2025-05-26T09:17:07Z`
+Updated @| `2025-05-27T01:32:38Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/322)
 
