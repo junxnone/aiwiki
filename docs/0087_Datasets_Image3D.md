@@ -2,25 +2,14 @@
 Title | Datasets Image3D
 -- | --
 Created @ | `2021-07-27T05:32:49Z`
-Last Modify @| `2022-12-24T16:04:55Z`
+Updated @| `2025-05-28T06:54:49Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/87)
 
 ---
-## Reference
-- [Open3D-ML - datasets](https://github.com/intel-isl/Open3D-ML#datasets)
-- [工业3D 模型库](https://www.traceparts.cn/)
-- [Shapenet](https://shapenet.org/)
-- [Modelnet](http://modelnet.cs.princeton.edu/)
-- [Pascal 3D+](https://cvgl.stanford.edu/projects/pascal3d.html)
-- [Large Geometric Models Archive at Georgia Tech](https://www.cc.gatech.edu/projects/large_models/)
-- [The Stanford 3D Scanning Repository](http://graphics.stanford.edu/data/3Dscanrep/)
-- [ObjectNet3D](https://cvgl.stanford.edu/projects/objectnet3d/)
-- [Pix3D](http://pix3d.csail.mit.edu/)
-- [3D Mnist](https://www.kaggle.com/daavoo/3d-mnist/Kernels)
+# 3D Images
 
-
-## Brief
+- 点云？
 
 Name | Description
 -- | --
@@ -38,4 +27,15 @@ ScanNet([project-page](http://www.scan-net.org/))
 GSO([project-page](https://goo.gle/scanned-objects))| [Google Scanned Objects: A High-Quality Dataset of 3D Scanned Household Items](https://arxiv.org/pdf/2204.11918.pdf)
 
 
+## Reference
+- [Open3D-ML - datasets](https://github.com/intel-isl/Open3D-ML#datasets)
+- [工业3D 模型库](https://www.traceparts.cn/)
+- [Shapenet](https://shapenet.org/)
+- [Modelnet](http://modelnet.cs.princeton.edu/)
+- [Pascal 3D+](https://cvgl.stanford.edu/projects/pascal3d.html)
+- [Large Geometric Models Archive at Georgia Tech](https://www.cc.gatech.edu/projects/large_models/)
+- [The Stanford 3D Scanning Repository](http://graphics.stanford.edu/data/3Dscanrep/)
+- [ObjectNet3D](https://cvgl.stanford.edu/projects/objectnet3d/)
+- [Pix3D](http://pix3d.csail.mit.edu/)
+- [3D Mnist](https://www.kaggle.com/daavoo/3d-mnist/Kernels)
 
