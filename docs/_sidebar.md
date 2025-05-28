@@ -162,7 +162,7 @@
     - [DTD-Synthetic](/0482_Datasets_Image2D_DTDSynthetic)
     - [Edge Detection](/0098_Datasets_Image2D_EdgeDetection)
     - [PascalVOC](/0092_Datasets_Image2D_PascalVOC)
-  - [Image3D](/0087_Datasets_Image3D)
+  - [3D Images](/0087_Datasets_Image3D)
   - [Audio](/0020_Datasets_Audio)
   - [NLP](/0021_Datasets_NLP)
   - [Video](/0019_Datasets_Video)
@@ -488,4 +488,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1622450527</sub></kbd>
+<kbd><sub>@1455500528</sub></kbd>
