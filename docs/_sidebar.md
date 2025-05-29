@@ -430,6 +430,7 @@
     - [Early Stopping](/0172_Tools_Pytorch_ES)
     - [Visualization 可视化](/0171_Tools_Pytorch_VIS)
     - [加速](/0169_Tools_Pytorch_Speed)
+      - [torch.compile](/0518_Tools_Pytorch_Speed_compile)
     - [多 GPUs](/0338_Tools_Pytorch_mGPUs)
     - [Tips](/0170_Tools_Pytorch_Tips)
     - [Data](/0359_Tools_Pytorch_Data)
@@ -488,4 +489,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1131160529</sub></kbd>
+<kbd><sub>@1135270529</sub></kbd>
