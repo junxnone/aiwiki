@@ -395,6 +395,7 @@
     - [AdaBLDM 译文](/0515_paper_AdaBLDM_cn)
   - [A Survey on Industrial Anomalies Synthesis](/0511_paper_AnomaliesSynthesisSurvey)
   - [AnomalyAny](/0519_paper_AnomalyAny)
+    - [AnomalyAny CN](/0520_paper_AnomalyAny_cn)
   - [AnomalyCLIP](/0466_paper_AnomalyCLIP)
   - [AnomalyDiffusion](/0513_paper_AnomalyDiffusion)
   - [BitFit](/0478_paper_BitFit)
@@ -490,4 +491,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1000260603</sub></kbd>
+<kbd><sub>@1005300603</sub></kbd>
