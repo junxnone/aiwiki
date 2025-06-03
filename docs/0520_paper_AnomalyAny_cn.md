@@ -2,7 +2,7 @@
 Title | paper AnomalyAny cn
 -- | --
 Created @ | `2025-06-03T02:04:27Z`
-Updated @| `2025-06-03T03:27:28Z`
+Updated @| `2025-06-03T03:29:28Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/520)
 
@@ -75,9 +75,11 @@ $$L_{L D M}:=\mathbb{E}_{\mathcal{E}(x), c, \epsilon \sim \mathcal{N}(0,1), t}\l
 ## 4 方法
 
 ![Image](https://github.com/user-attachments/assets/68fe8967-a79e-41d4-a587-80b2da043fcc)
+
 **图2. AnomalyAny框架示意图，展示了时间步t下注意力引导与提示引导优化过程的细节。**
 
 ![Image](https://github.com/user-attachments/assets/f0321ddc-537e-4e93-a234-e69cb99fa977)
+
 **图3. 生成的异常样本及损坏注意力图示例。图中展示了（a）正常引导图像，以及由（b）Stable Diffusion、（c）不含正常样本条件化的本方法、（d）不含注意力引导优化的本方法、（e）不含提示引导优化的本方法和（f）我们提出的AnomalyAny生成的结果。**
 
 在这项工作中，我们提出了AnomalyAny——一种用于在未知物体和异常类型上生成逼真的、可通过提示控制的异常的新型框架，如图2所示。该框架包含三个核心模块：首先通过测试时正常样本条件化（4.1节）基于单个正常样本引导生成过程，实现对新物体和异常类型的异常生成；生成阶段引入两阶段优化流程，注意力引导的异常优化（4.2节）先将生成焦点集中于复杂异常概念，再通过提示引导的异常细化（4.3节）利用详细文本描述进一步提升生成质量。
@@ -105,9 +107,11 @@ $$\mathcal{L}_{att} = 1 - \max(\overline{A}_{t}^{j} \odot \text{mask}), \quad z_
 其中 $\alpha_t$ 为步长，该目标通过最大化 $\bar{A}_t^j$ 强化异常token的激活。通过迭代优化，我们逐步将异常的语义特征融入生成的图像中，如图4所示。
 
 ![Image](https://github.com/user-attachments/assets/30226956-d4e4-498d-8ed8-5274c93cee35)
+
 **图4. 中间生成结果及不同去噪步骤下异常token注意力图的可视化。**
 
 ![Image](https://github.com/user-attachments/assets/d9d214da-d7b5-4726-86a7-b53a444b8742)
+
 **图5. 基于异常token注意力优化后生成的异常示例：(a) 未使用定位感知调度器；(b) 使用定位感知调度器。**
 
 
@@ -140,6 +144,7 @@ $$\tau(c) \leftarrow \tau(c) - \nabla_{\tau(c)}\left(\mathcal{L}_{prompt} + \mat
 借助我们提出的AnomalyAny框架，我们实现了可通过提示生成未见异常的功能。值得注意的是，由于AnomalyAny未在特定数据集上进行训练，因此不受可用正常样本分布的限制，这使其能够广泛适用于各种未见的物体类别和异常类型。此外，注意力图定义了每个文本token的概率分布，这使我们能够将时间步0的最终平滑注意力图 $\bar{A}_0^j$ 用作像素级注释，以定位 $c_j$ 所描述的异常。
 
 ![Image](https://github.com/user-attachments/assets/6710ea95-403e-46d7-9752-439640b0c0d0)
+
 **图6. 任意物体和异常描述的异常生成结果。右下角展示了异常标记的注意力图。**
 
 ## 5 实验
