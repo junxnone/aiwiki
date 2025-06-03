@@ -3,7 +3,7 @@
 | Title     | paper AnomalyAny                                      |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2025-06-03T01:57:57Z`                                |
-| Updated @ | `2025-06-03T01:57:57Z`                                |
+| Updated @ | `2025-06-03T01:59:13Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/519) |
 
@@ -12,6 +12,8 @@
 # AnomalyAny
 
   - Anomaly Anything
+
+![Image](media/1626f6477b43900ba13bdae40d6e643548d2da78.png)
 
 ## Arch
 

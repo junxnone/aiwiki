@@ -2,7 +2,7 @@
 Title | paper AnomalyAny
 -- | --
 Created @ | `2025-06-03T01:57:57Z`
-Updated @| `2025-06-03T01:57:57Z`
+Updated @| `2025-06-03T01:59:13Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/519)
 
@@ -10,6 +10,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/519)
 # AnomalyAny
 - Anomaly Anything
 
+![Image](https://github.com/user-attachments/assets/ab1b87ef-ab95-47a4-9ca4-8e95d785f267)
 
 ## Arch
 
