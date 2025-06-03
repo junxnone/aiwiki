@@ -2,7 +2,7 @@
 Title | paper AnomalyAny cn
 -- | --
 Created @ | `2025-06-03T02:04:27Z`
-Updated @| `2025-06-03T03:25:11Z`
+Updated @| `2025-06-03T03:27:28Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/520)
 
@@ -98,11 +98,11 @@ $$z_{t}=mask \odot z_{t}+(1- mask ) \odot z_{t}^{normal} . \ (5)$$
 
 $$\overline{A}_{t}=\text{Gaussian}\left(\text{softmax}\left(\overline{A}_{t}\right)\right), \overline{A}_{t} \in 16 × 16 × N$$  
 
-在生成过程中，通过 $\bar{A}_{t}$ 引导的优化强制图像传达异常类型token  $c_j$ （如“damaged”）的语义：每个时间步t，最大化与异常描述相关的注意力以优化中间潜在表示 $z_t$ ，优化后去噪得到 $z_{t-1}$ （如图2所示）。具体而言，提取与 $c_j$ 相关的注意力图 $\bar{A}_{t}^{j}$ ，通过损失函数 $L_{att}$ 计算 $z_t$ 的梯度更新，并允许通过掩码限制优化区域。步骤t的优化公式为：  
+在生成过程中，通过 $\bar{A}_t$ 引导的优化强制图像传达异常类型token  $c_j$ （如“damaged”）的语义：每个时间步t，最大化与异常描述相关的注意力以优化中间潜在表示 $z_t$ ，优化后去噪得到 $z_{t-1}$ （如图2所示）。具体而言，提取与 $c_j$ 相关的注意力图 $\bar{A}_t^j$ ，通过损失函数 $L_{att}$ 计算 $z_t$ 的梯度更新，并允许通过掩码限制优化区域。步骤t的优化公式为：  
 
 $$\mathcal{L}_{att} = 1 - \max(\overline{A}_{t}^{j} \odot \text{mask}), \quad z_{t} \leftarrow z_{t} - \alpha_{t} \cdot \nabla_{z_{t}} \mathcal{L}_{att} \odot \text{mask}$$
 
-其中 $\alpha_t$ 为步长，该目标通过最大化 $\bar{A}_{t}^{j}$ 强化异常token的激活。通过迭代优化，我们逐步将异常的语义特征融入生成的图像中，如图4所示。
+其中 $\alpha_t$ 为步长，该目标通过最大化 $\bar{A}_t^j$ 强化异常token的激活。通过迭代优化，我们逐步将异常的语义特征融入生成的图像中，如图4所示。
 
 ![Image](https://github.com/user-attachments/assets/30226956-d4e4-498d-8ed8-5274c93cee35)
 **图4. 中间生成结果及不同去噪步骤下异常token注意力图的可视化。**
@@ -111,7 +111,7 @@ $$\mathcal{L}_{att} = 1 - \max(\overline{A}_{t}^{j} \odot \text{mask}), \quad z_
 **图5. 基于异常token注意力优化后生成的异常示例：(a) 未使用定位感知调度器；(b) 使用定位感知调度器。**
 
 
-我们的实验结果表明，上述迭代更新可能会在特定像素上产生冗余注意力，从而导致图像伪影。为缓解过度优化问题，我们提出了一种定位感知调度器。从初始生成结果 $z_{t_{start}}$ 及其异常注意力图 $\bar{A}_{t_{start}}^{j}$ 出发，我们通过统计平滑注意力图中注意力值超过均值的像素数量，确定激活像素数 $n_{tstar}$ 。在每个优化步骤t，计算激活像素数 $n_t$ ，并按以下公式计算标量 $\alpha_t$ ：
+我们的实验结果表明，上述迭代更新可能会在特定像素上产生冗余注意力，从而导致图像伪影。为缓解过度优化问题，我们提出了一种定位感知调度器。从初始生成结果 $z_{t_{start}}$ 及其异常注意力图 $\bar{A}_{t_{start}}^j$ 出发，我们通过统计平滑注意力图中注意力值超过均值的像素数量，确定激活像素数 $n_{tstar}$ 。在每个优化步骤t，计算激活像素数 $n_t$ ，并按以下公式计算标量 $\alpha_t$ ：
 
 $$\alpha_t = \lambda(1 + \Delta_t \cdot t) \cdot \frac{n_t}{n_{t_{start}}}$$
 
@@ -125,7 +125,7 @@ $$\alpha_t = \lambda(1 + \Delta_t \cdot t) \cdot \frac{n_t}{n_{t_{start}}}$$
 
 $$\mathcal{L}_{img} = 1.0 - \text{cosine}\left(\Phi^{T}(c'), \Phi^{V}(\tilde{x}_t)\right), \quad (10)$$
   
-其中 $\Phi^{T}(\cdot)$ 和 $\Phi^{V}(\cdot)$ 分别表示CLIP的文本编码器和视觉编码器。最小化该相似度损失可使生成的异常更贴近 $c'$ 的语义属性，从而通过详细描述细化异常类型。随后，我们对 $z_t$ 进行注意力和语义对齐的联合优化：  
+其中 $\Phi^T(\cdot)$ 和 $\Phi^V(\cdot)$ 分别表示CLIP的文本编码器和视觉编码器。最小化该相似度损失可使生成的异常更贴近 $c'$ 的语义属性，从而通过详细描述细化异常类型。随后，我们对 $z_t$ 进行注意力和语义对齐的联合优化：  
 
 $$\mathcal{L} = \mathcal{L}_{img} + \alpha_t \cdot \mathcal{L}_{att}, \quad z_t \leftarrow z_t - \nabla_{z_t}\mathcal{L} \odot \text{mask}. \quad (11)$$
 
