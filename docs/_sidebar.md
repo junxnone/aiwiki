@@ -394,6 +394,7 @@
     - [Inference Code 分析](/0516_paper_AdaBLDM_InferenceCode)
     - [AdaBLDM 译文](/0515_paper_AdaBLDM_cn)
   - [A Survey on Industrial Anomalies Synthesis](/0511_paper_AnomaliesSynthesisSurvey)
+  - [AnomalyAny](/0519_paper_AnomalyAny)
   - [AnomalyCLIP](/0466_paper_AnomalyCLIP)
   - [AnomalyDiffusion](/0513_paper_AnomalyDiffusion)
   - [BitFit](/0478_paper_BitFit)
@@ -489,4 +490,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1624080602</sub></kbd>
+<kbd><sub>@0959050603</sub></kbd>
