@@ -2,7 +2,7 @@
 Title | paper AnomalyAny cn
 -- | --
 Created @ | `2025-06-03T02:04:27Z`
-Updated @| `2025-06-03T03:01:59Z`
+Updated @| `2025-06-03T03:11:54Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/520)
 
@@ -74,6 +74,12 @@ $$L_{L D M}:=\mathbb{E}_{\mathcal{E}(x), c, \epsilon \sim \mathcal{N}(0,1), t}\l
 
 ## 4 方法
 
+![Image](https://github.com/user-attachments/assets/68fe8967-a79e-41d4-a587-80b2da043fcc)
+**图2. AnomalyAny框架示意图，展示了时间步t下注意力引导与提示引导优化过程的细节。**
+
+![Image](https://github.com/user-attachments/assets/f0321ddc-537e-4e93-a234-e69cb99fa977)
+**图3. 生成的异常样本及损坏注意力图示例。图中展示了（a）正常引导图像，以及由（b）Stable Diffusion、（c）不含正常样本条件化的本方法、（d）不含注意力引导优化的本方法、（e）不含提示引导优化的本方法和（f）我们提出的AnomalyAny生成的结果。**
+
 在这项工作中，我们提出了AnomalyAny——一种用于在未知物体和异常类型上生成逼真的、可通过提示控制的异常的新型框架，如图2所示。该框架包含三个核心模块：首先通过测试时正常样本条件化（4.1节）基于单个正常样本引导生成过程，实现对新物体和异常类型的异常生成；生成阶段引入两阶段优化流程，注意力引导的异常优化（4.2节）先将生成焦点集中于复杂异常概念，再通过提示引导的异常细化（4.3节）利用详细文本描述进一步提升生成质量。
 
 ### 4.1. 测试时正常样本条件化
@@ -96,5 +102,40 @@ $$\overline{A}_{t}=\text{Gaussian}\left(\text{softmax}\left(\overline{A}_{t}\rig
 
 $$\mathcal{L}_{att} = 1 - \max(\overline{A}_{t}^{j} \odot \text{mask}), \quad z_{t} \leftarrow z_{t} - \alpha_{t} \cdot \nabla_{z_{t}} \mathcal{L}_{att} \odot \text{mask}$$
 
-其中 $\alpha_t$ 为步长，该目标通过最大化 $\bar{A}_{t}^{j}$ 强化异常token的激活。通过迭代优化，确保生成图像准确表达目标异常语义。
+其中 $\alpha_t$ 为步长，该目标通过最大化 $\bar{A}_{t}^{j}$ 强化异常token的激活。通过迭代优化，我们逐步将异常的语义特征融入生成的图像中，如图4所示。
+
+![Image](https://github.com/user-attachments/assets/30226956-d4e4-498d-8ed8-5274c93cee35)
+**图4. 中间生成结果及不同去噪步骤下异常token注意力图的可视化。**
+
+![Image](https://github.com/user-attachments/assets/d9d214da-d7b5-4726-86a7-b53a444b8742)
+**图5. 基于异常token注意力优化后生成的异常示例：(a) 未使用定位感知调度器；(b) 使用定位感知调度器。**
+
+
+我们的实验结果表明，上述迭代更新可能会在特定像素上产生冗余注意力，从而导致图像伪影。为缓解过度优化问题，我们提出了一种定位感知调度器。从初始生成结果 $z_{t_{start}}$ 及其异常注意力图 $\bar{A}_{t_{start}}^{j}$ 出发，我们通过统计平滑注意力图中注意力值超过均值的像素数量，确定激活像素数 $n_{tstar}$ 。在每个优化步骤t，计算激活像素数 $n_t$ ，并按以下公式计算标量 $\alpha_t$ ：
+
+$$\alpha_t = \lambda(1 + \Delta_t \cdot t) \cdot \frac{n_t}{n_{t_{start}}}$$
+
+其中，λ是控制优化强度的缩放因子， $\Delta_t$ 用于调整步长以逐步降低更新速率。随着激活像素逐渐局部化，我们减小 $\alpha_t$ 以缓解过拟合问题。如图5所示，该策略显著降低了生成样本中不真实的伪影。
+
+### 4.3. 通过提示引导优化实现精细异常生成
+
+基于注意力的优化虽能强制生成由一到两个token组成的异常关键词，但有限的token长度常导致描述模糊，降低生成场景的真实性与丰富度。为增强语义引导并提升生成质量，我们提出融入详细异常描述的提示引导优化方法用于异常精细化生成。具体而言，为丰富生成的异常分布，我们利用GPT-4[1]为给定物体生成潜在异常类型 $c_j$ 及其对应详细描述 $c$ 。例如，当物体为瓶子时，通过提示GPT-4可识别如“损坏”等异常类型及其描述——“瓶子特写，破损区域呈现粗糙不平的纹理”，从而为生成多样化的损坏类型或异常提供更精细的引导。
+
+为了在生成过程中融入这些长文本描述的语义引导，我们在最后的去噪步骤中引入基于CLIP的图像生成损失函数，以确保生成图像与文本引导之间的语义一致性。在时间步t，给定潜在表示 $z_t$ ，我们通过解码器得到生成结果 $\tilde{x}_t = D(z_t)$ 。然后在CLIP[26]嵌入空间中最小化其与 $c'$ 的距离，公式如下：  
+
+$$\mathcal{L}_{img} = 1.0 - \text{cosine}\left(\Phi^{T}(c'), \Phi^{V}(\tilde{x}_t)\right), \quad (10)$$
+  
+其中 $\Phi^{T}(\cdot)$ 和 $\Phi^{V}(\cdot)$ 分别表示CLIP的文本编码器和视觉编码器。最小化该相似度损失可使生成的异常更贴近 $c'$ 的语义属性，从而通过详细描述细化异常类型。随后，我们对 $z_t$ 进行注意力和语义对齐的联合优化：  
+
+$$\mathcal{L} = \mathcal{L}_{img} + \alpha_t \cdot \mathcal{L}_{att}, \quad z_t \leftarrow z_t - \nabla_{z_t}\mathcal{L} \odot \text{mask}. \quad (11)$$
+
+为进一步融入语义引导，我们通过计算c与更精细引导文本c'的相似度来适配c，并按如下方式优化提示嵌入：
+
+$$\mathcal{L}_{prompt} = 1.0 - \text{cosine}\left(\tau(c), \tau(c')\right), \quad(12)$$
+
+$$\tau(c) \leftarrow \tau(c) - \nabla_{\tau(c)}\left(\mathcal{L}_{prompt} + \mathcal{L}_{img}\right). \quad(13)$$
+
+这一过程丰富了原始提示嵌入 $\tau(c)$ 中的语义信息，以有效引导生成过程。在我们的框架中，我们在总推理步骤的最后30步优化此联合损失。这种集成引导不仅增强了语义一致性，还缓解了仅基于注意力优化时常出现的不真实伪影，从而实现了与详细提示规范一致的、更精确且上下文丰富的异常生成。
+
+借助我们提出的AnomalyAny框架，我们实现了可通过提示生成未见异常的功能。值得注意的是，由于AnomalyAny未在特定数据集上进行训练，因此不受可用正常样本分布的限制，这使其能够广泛适用于各种未见的物体类别和异常类型。此外，注意力图定义了每个文本token的概率分布，这使我们能够将时间步0的最终平滑注意力图 $\bar{A}_{0}^{j}$ 用作像素级注释，以定位 $c_{j}$ 所描述的异常。
 
