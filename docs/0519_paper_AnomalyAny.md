@@ -2,7 +2,7 @@
 Title | paper AnomalyAny
 -- | --
 Created @ | `2025-06-03T01:57:57Z`
-Updated @| `2025-06-05T03:00:32Z`
+Updated @| `2025-06-05T03:02:04Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/519)
 
@@ -26,6 +26,8 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/519)
 ### 测试时正常样本条件化
 - 生成过程中添加正常样本信息，以生成与目标正常分布一致的图像
 - 从 $t_{start} = T \cdot (1-\gamma)$ 中间步骤开始，利用含噪潜在表示 $z_{t_{start}}^{normal}$ 传递来自引导正常图像 $x^{normal}$ 的损坏特征 （参数γ控制起始步骤（即添加到引导数据样本的噪声尺度），实验中设 $\gamma=0.25$ 以平衡与原始分布的相似度和促进多样化结果的推理步骤。）
+- 掩码作为异常区域的约束( 可选，目标物体掩码，或详细异常位置掩码)
+
 
 ### 注意力引导异常优化
 - 聚合SD的注意力图，获取与 N 个 文本提示 token c 对应的注意力图集合 $A_t$ (16x16xN)
