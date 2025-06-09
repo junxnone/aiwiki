@@ -249,6 +249,7 @@
           - [TextRecognitionDataGenerator](/0187_ML_Tasks_Image_OCR_Tools_TextRecognitionDataGenerator)
       - [Image Anomaly Detection](/0277_ML_Tasks_Image_Anomaly)
         - [MVTec](/0323_ML_Tasks_Image_Anomaly_MVTec)
+        - [算法落地实践](/0521_ML_Tasks_Image_Anomaly_Pipeline)
         - [异常缺陷生成](/0517_ML_Tasks_Image_Anomaly_Synthesis)
     - [Motion Detection 运动侦测](/0243_ML_Tasks_MD)
     - [MetricLearning](/0157_ML_Tasks_MetricLearning)
@@ -491,4 +492,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1619590608</sub></kbd>
+<kbd><sub>@0830070609</sub></kbd>
