@@ -410,6 +410,7 @@
   - [DINO](/0483_paper_DINO)
   - [Deformable DETR](/0484_paper_DeformableDETR)
   - [DualAnoDiff](/0522_paper_DualAnoDiff)
+    - [DualAnoDiff CN](/0523_paper_DualAnoDiff_cn)
   - [Eureka](/0470_paper_Eureka)
   - [FiLo](/0472_paper_FiLo)
   - [Grounding DINO](/0464_paper_GroundingDINO)
@@ -493,4 +494,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1040350610</sub></kbd>
+<kbd><sub>@1043190610</sub></kbd>
