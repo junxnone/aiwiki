@@ -390,7 +390,7 @@
   - [Robot 基础知识](/0458_RL_Robot)
   - [RL Tasks](/0457_RL_Taks)
   - [RL Tools](/0454_RL_Tools)
-- [paper](/0386_paper)
+- [Papers](/0386_paper)
   - [AdaBLDM](/0510_paper_AdaBLDM)
     - [Inference Code 分析](/0516_paper_AdaBLDM_InferenceCode)
     - [AdaBLDM 译文](/0515_paper_AdaBLDM_cn)
@@ -494,4 +494,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1623480610</sub></kbd>
+<kbd><sub>@1640280610</sub></kbd>
