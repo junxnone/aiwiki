@@ -1,8 +1,8 @@
 ---
-Title | adabldm gradio demo guide
+Title | paper AdaBLDM envs
 -- | --
 Created @ | `2025-08-08T07:55:07Z`
-Updated @| `2025-08-08T07:55:07Z`
+Updated @| `2025-08-08T07:58:54Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/524)
 
