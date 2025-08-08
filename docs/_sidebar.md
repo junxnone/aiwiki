@@ -394,6 +394,7 @@
   - [AdaBLDM](/0510_paper_AdaBLDM)
     - [Inference Code 分析](/0516_paper_AdaBLDM_InferenceCode)
     - [AdaBLDM 译文](/0515_paper_AdaBLDM_cn)
+    - [envs](/0524_paper_AdaBLDM_envs)
   - [A Survey on Industrial Anomalies Synthesis](/0511_paper_AnomaliesSynthesisSurvey)
   - [AnomalyAny](/0519_paper_AnomalyAny)
     - [AnomalyAny CN](/0520_paper_AnomalyAny_cn)
@@ -494,4 +495,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1625510807</sub></kbd>
+<kbd><sub>@1600020808</sub></kbd>
