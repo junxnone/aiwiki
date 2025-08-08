@@ -1,6 +1,6 @@
 # Wiki History
 
-- 2025-08-08&nbsp;&nbsp; [envs](/0524_paper_AdaBLDM_envs)&nbsp;&nbsp; :bookmark:paper :bookmark:AdaBLDM :bookmark:envs
+- 2025-08-08&nbsp;&nbsp; [AdaBLDM 环境设置](/0524_paper_AdaBLDM_envs)&nbsp;&nbsp; :bookmark:paper :bookmark:AdaBLDM :bookmark:envs
 - 2025-06-10&nbsp;&nbsp; [DualAnoDiff CN](/0523_paper_DualAnoDiff_cn)&nbsp;&nbsp; :bookmark:paper :bookmark:DualAnoDiff :bookmark:cn
 - 2025-06-10&nbsp;&nbsp; [DualAnoDiff](/0522_paper_DualAnoDiff)&nbsp;&nbsp; :bookmark:paper :bookmark:DualAnoDiff
 - 2025-06-09&nbsp;&nbsp; [算法落地实践](/0521_ML_Tasks_Image_Anomaly_Pipeline)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Anomaly :bookmark:Pipeline
