@@ -3,7 +3,7 @@
 | Title     | ML Metrics Segmentation BF1S                          |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2025-11-13T08:09:31Z`                                |
-| Updated @ | `2025-11-13T08:09:31Z`                                |
+| Updated @ | `2025-11-13T10:08:19Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/526) |
 
@@ -21,3 +21,10 @@
 3.  计算召回率（Recall）：真实边界中被模型成功预测的比例。
 4.  按 F1 公式计算：F1 = 2 × (Precision × Recall) / (Precision + Recall)，取值范围
     0-1，越接近 1 表示边界分割越精准。
+
+## Q？
+
+  - 标注本身存在的误差？pixel-level (几个甚至十几个 pixel 的误差)
+  - Instance-Level vs Class-Level(Semantic Segmentation)
+  - 大量的漏检误检如何计算？
+  - confidence 限制？
