@@ -272,6 +272,7 @@
     - [CrossValidation 交叉验证](/0249_ML_Metrics_CrossValidation)
     - [Detection](/0230_ML_Metrics_Detection)
       - [AP & mAP & AR](/0382_ML_Metrics_Detection_APmAPAR)
+      - [Center Distance](/0525_ML_Metrics_Detection_CD)
       - [COCO Detection Metrics](/0384_ML_Metrics_Detection_COCO)
       - [GIoU](/0232_ML_Metrics_Detection_GIoU)
       - [IoU - Intersection Over Union](/0383_ML_Metrics_Detection_IoU)
@@ -495,4 +496,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1623451112</sub></kbd>
+<kbd><sub>@1539061113</sub></kbd>
