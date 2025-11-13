@@ -279,6 +279,7 @@
       - [TPR & FPR](/0381_ML_Metrics_Detection_TPRFPR)
     - [Pairwise](/0139_ML_Metrics_Pairwise)
     - [Segmentation](/0231_ML_Metrics_Segmentation)
+      - [Boundary F1-Score](/0526_ML_Metrics_Segmentation_BF1S)
   - [PreProcessing](/0369_ML_PreP)
     - [Data Augmentation 数据增强](/0255_ML_PreP_DataAug)
       - [AutoAugment](/0256_ML_PreP_DataAug_AutoAugment)
@@ -496,4 +497,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1539061113</sub></kbd>
+<kbd><sub>@1610371113</sub></kbd>
