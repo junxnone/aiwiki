@@ -2,17 +2,12 @@
 Title | ML Tasks Image Detection YOLO tiny
 -- | --
 Created @ | `2020-02-20T06:02:54Z`
-Updated @| `2023-01-31T06:36:29Z`
+Updated @| `2025-12-30T07:47:55Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/52)
 
 ---
 # YOLO tiny
-
-## Reference
-
-- [tiny darknet](https://pjreddie.com/darknet/tiny-darknet/)
-- [YOLOv3-tiny cfg](https://github.com/AlexeyAB/darknet/blob/master/cfg/yolov3-tiny.cfg)
 
 ## Model
 
@@ -44,3 +39,10 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/52)
   22 conv     39       1 x 1/ 1     38 x  38 x 256 ->   38 x  38 x  39 0.029 BF
   23 yolo
 ```
+
+
+## Reference
+
+- [tiny darknet](https://pjreddie.com/darknet/tiny-darknet/)
+- [YOLOv3-tiny cfg](https://github.com/AlexeyAB/darknet/blob/master/cfg/yolov3-tiny.cfg)
+
