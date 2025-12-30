@@ -2,7 +2,7 @@
 Title | ML Tasks Image Detection YOLO V1
 -- | --
 Created @ | `2020-01-13T06:31:10Z`
-Updated @| `2025-12-30T05:32:08Z`
+Updated @| `2025-12-30T05:33:36Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/54)
 
@@ -13,8 +13,9 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/54)
 - One-Stage / Single-Stage
   - 转化为回归问题 - 拟合函数，从特征映射到(x,y,w,h)
 - **Pipeline**
-  - Preprocessing(Image Augmentation) 
-  - Resize 448x448
+  - Preprocessing
+    - Image Augmentation 
+    - Resize 448x448
   - 24 Conv Layers + 4 Max Pooling Layers + 2 FC Layers => 98 BBox confidence - 7x7x30 
   - 阈值去掉置信度较低值
   - NMS 去重复
