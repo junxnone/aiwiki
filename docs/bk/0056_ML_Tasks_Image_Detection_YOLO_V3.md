@@ -3,13 +3,49 @@
 | Title     | ML Tasks Image Detection YOLO V3                     |
 | --------- | ---------------------------------------------------- |
 | Created @ | `2020-01-16T05:08:20Z`                               |
-| Updated @ | `2023-01-31T06:32:33Z`                               |
+| Updated @ | `2025-12-30T07:47:17Z`                               |
 | Labels    | \`\`                                                 |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/56) |
 
 -----
 
 # YOLO V3
+
+  - darknet53
+      - 引入残差结构
+  - 引入 FPN - 多尺度检测
+      - 52x52
+      - 26x26
+      - 13x13
+  - multilabel classification : independent logistic 替换 softmax -\>
+    binary cross-entropy loss
+
+-----
+
+**其他无效tricks**
+
+  - Anchor box x, y offset predictions
+  - Linear x, y predictions instead of logistic
+  - Focal Loss
+  - Dual IOU thresholds and truth assignment
+
+## darknet53
+
+## ![image](media/d90fbf865eba7a343eda035dc188e881ac588780.png)
+
+FPN ![image](media/6a8269172bf349ec16160dc01e10544e854c96bb.png)
+
+## COCO dataset 9 clusters
+
+  - (10×13)
+  - (16×30)
+  - (33×23)
+  - (30×61)
+  - (62×45)
+  - (59×119)
+  - (116 × 90)
+  - (156 × 198)
+  - (373 × 326)
 
 ## Reference
 
@@ -53,41 +89,3 @@
   - [从yolov1到yolov3](https://shartoo.github.io/2019/03/12/yolo-v123/)
   - [YOLO V3](https://pjreddie.com/darknet/yolo/)
   - [Tiny Darknet](https://pjreddie.com/darknet/tiny-darknet/)
-
-## Brief
-
-  - darknet53
-      - 引入残差结构
-  - 引入 FPN - 多尺度检测
-      - 52x52
-      - 26x26
-      - 13x13
-  - multilabel classification : independent logistic 替换 softmax -\>
-    binary cross-entropy loss
-
------
-
-**其他无效tricks**
-
-  - Anchor box x, y offset predictions
-  - Linear x, y predictions instead of logistic
-  - Focal Loss
-  - Dual IOU thresholds and truth assignment
-
-## darknet53
-
-## ![image](media/d90fbf865eba7a343eda035dc188e881ac588780.png)
-
-FPN ![image](media/6a8269172bf349ec16160dc01e10544e854c96bb.png)
-
-## COCO dataset 9 clusters
-
-  - (10×13)
-  - (16×30)
-  - (33×23)
-  - (30×61)
-  - (62×45)
-  - (59×119)
-  - (116 × 90)
-  - (156 × 198)
-  - (373 × 326)
