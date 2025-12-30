@@ -3,37 +3,13 @@
 | Title     | ML Tasks Image Detection YOLO V1                     |
 | --------- | ---------------------------------------------------- |
 | Created @ | `2020-01-13T06:31:10Z`                               |
-| Updated @ | `2023-01-31T06:32:06Z`                               |
+| Updated @ | `2025-12-30T05:32:08Z`                               |
 | Labels    | \`\`                                                 |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/54) |
 
 -----
 
 # YOLO V1
-
-## Reference
-
-  - 2015 **YOLO V1** You Only Look Once: Unified, Real-Time Object
-    Detection \[[paper](https://arxiv.org/pdf/1506.02640.pdf)\]
-    \[[netscope](http://ethereon.github.io/netscope/#/gist/96209c6940e02b17c34009f6c3fee75e)\]
-    \[[Code](https://pjreddie.com/darknet/yolo/)\] \[[Code2 -
-    AlexeyAB](https://github.com/AlexeyAB/darknet)\]
-  - [目标检测（九）--YOLO
-    v1,v2,v3](https://blog.csdn.net/App_12062011/article/details/77554288)
-  - [pjreddie Publications](https://pjreddie.com/publications/)
-  - [yoloV1，看过好多篇，这篇感觉讲的最通俗易懂](https://blog.csdn.net/m0_37192554/article/details/81092514)
-  - [目标检测之YOLO V2
-    V3](http://www.cnblogs.com/wangguchangqing/p/10480995.html)
-  - [Yolo V1 - darknet - pjreddie
-    ](https://pjreddie.com/darknet/yolov1/)
-  - [【目标检测】YOLO](https://zhuanlan.zhihu.com/p/63507794)
-  - [【目标检测】基础知识：IoU、NMS、Bounding box
-    regression](https://zhuanlan.zhihu.com/p/60794316)
-  - [YOLO - PPT -
-    deepsystems.io](https://docs.google.com/presentation/d/14H2c8UuUN0L5l9cDeG-M96UPE6U0CrZN0ChAUr-gN7o/edit#slide=id.p)
-  - [图解YOLO](https://zhuanlan.zhihu.com/p/24916786)
-
-## Brief
 
   - One-Stage / Single-Stage
       - 转化为回归问题 - 拟合函数，从特征映射到(x,y,w,h)
@@ -129,3 +105,25 @@
 
   - 对重叠物体或相邻物体检测能力较差
       - 每个格子只能 Predict 2 个 BBox 和一个类别
+
+## Reference
+
+  - 2015 **YOLO V1** You Only Look Once: Unified, Real-Time Object
+    Detection \[[paper](https://arxiv.org/pdf/1506.02640.pdf)\]
+    \[[netscope](http://ethereon.github.io/netscope/#/gist/96209c6940e02b17c34009f6c3fee75e)\]
+    \[[Code](https://pjreddie.com/darknet/yolo/)\] \[[Code2 -
+    AlexeyAB](https://github.com/AlexeyAB/darknet)\]
+  - [目标检测（九）--YOLO
+    v1,v2,v3](https://blog.csdn.net/App_12062011/article/details/77554288)
+  - [pjreddie Publications](https://pjreddie.com/publications/)
+  - [yoloV1，看过好多篇，这篇感觉讲的最通俗易懂](https://blog.csdn.net/m0_37192554/article/details/81092514)
+  - [目标检测之YOLO V2
+    V3](http://www.cnblogs.com/wangguchangqing/p/10480995.html)
+  - [Yolo V1 - darknet - pjreddie
+    ](https://pjreddie.com/darknet/yolov1/)
+  - [【目标检测】YOLO](https://zhuanlan.zhihu.com/p/63507794)
+  - [【目标检测】基础知识：IoU、NMS、Bounding box
+    regression](https://zhuanlan.zhihu.com/p/60794316)
+  - [YOLO - PPT -
+    deepsystems.io](https://docs.google.com/presentation/d/14H2c8UuUN0L5l9cDeG-M96UPE6U0CrZN0ChAUr-gN7o/edit#slide=id.p)
+  - [图解YOLO](https://zhuanlan.zhihu.com/p/24916786)
