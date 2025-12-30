@@ -2,19 +2,12 @@
 Title | ML Tasks Image Detection YOLO V5
 -- | --
 Created @ | `2023-02-14T13:27:32Z`
-Updated @| `2023-02-16T14:34:38Z`
+Updated @| `2025-12-30T07:48:08Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/379)
 
 ---
 # YOLO V5
-
-## Reference
-
-- [YOLOv5 (6.0/6.1) brief summary](https://github.com/ultralytics/yolov5/issues/6998)
-- [Github Code](https://github.com/ultralytics/yolov5)
-- [Docs Wiki](https://github.com/ultralytics/yolov5/wiki)
-- **Ultralytics 提供了个 [ 数据集管理模型管理的工具 - hub](https://hub.ultralytics.com/)**  [[Trained Model Preview](https://hub.ultralytics.com/models/7lyorIyBxUuJ6xjOSSlt)]
 
 ## Arch
 
@@ -48,5 +41,12 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/379)
 
 
 
+
+## Reference
+
+- [YOLOv5 (6.0/6.1) brief summary](https://github.com/ultralytics/yolov5/issues/6998)
+- [Github Code](https://github.com/ultralytics/yolov5)
+- [Docs Wiki](https://github.com/ultralytics/yolov5/wiki)
+- **Ultralytics 提供了个 [ 数据集管理模型管理的工具 - hub](https://hub.ultralytics.com/)**  [[Trained Model Preview](https://hub.ultralytics.com/models/7lyorIyBxUuJ6xjOSSlt)]
 
 
