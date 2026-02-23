@@ -448,6 +448,7 @@
     - [Inference Engine](/0180_Tools_OV_IE)
     - [POT](/0177_Tools_OV_POT)
     - [Compile Tool](/0183_Tools_OV_CompileTool)
+    - [OpenVINO Debug](/0527_Tools_OV_Debug)
     - [DevCloud](/0179_Tools_OV_DevCloud)
     - [OpenVINO INT8 Model](/0182_Tools_OV_INT8Model)
     - [NNCF](/0451_Tools_OV_NNCF)
@@ -497,4 +498,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1628450121</sub></kbd>
+<kbd><sub>@1646210223</sub></kbd>
