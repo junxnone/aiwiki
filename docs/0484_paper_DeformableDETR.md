@@ -2,7 +2,7 @@
 Title | paper DeformableDETR
 -- | --
 Created @ | `2024-10-15T04:01:29Z`
-Updated @| `2026-02-27T05:28:02Z`
+Updated @| `2026-02-27T05:32:02Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/484)
 
@@ -10,6 +10,23 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/484)
 # Deformable DETR
 
 - MSDA - `Multi-scale Deformable Self-Attention`
+
+>  - **传统注意力**
+>    - 在多尺度特征图上计算时，计算量随特征点数平方级增长，效率低；
+>    - 固定采样位置的注意力无法自适应目标的形变（比如物体扭曲、尺度变化）。
+
+---
+
+维度 | 传统多头注意力 | 多尺度可变形注意力
+-- | -- | --
+采样位置 | 固定（网格全覆盖） | 自适应（仅采样目标相关关键点）
+多尺度处理 | 单独计算后拼接，无联动 | 跨尺度统一采样，融合多尺度信息
+计算复杂度 | O (N²)（N 为特征点数） | O (NK)（K 为采样点数，远小于 N）
+形变适应能力 | 弱（无法应对目标形变） | 强（自适应调整采样位置）
+
+---
+
+<img width="898" height="646" alt="Image" src="https://github.com/user-attachments/assets/9726a2aa-105a-4f98-b10b-661234578f68" />
 
 ## 改进方法
 
@@ -91,3 +108,4 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/484)
 
 ## Reference
 - [Deformable DETR: Deformable Transformers for End-to-End Object Detection](https://arxiv.org/abs/2010.04159)
+- 
