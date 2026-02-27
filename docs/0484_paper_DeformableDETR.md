@@ -2,12 +2,14 @@
 Title | paper DeformableDETR
 -- | --
 Created @ | `2024-10-15T04:01:29Z`
-Updated @| `2024-10-15T05:25:15Z`
+Updated @| `2026-02-27T05:28:02Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/484)
 
 ---
 # Deformable DETR
+
+- MSDA - `Multi-scale Deformable Self-Attention`
 
 ## 改进方法
 
