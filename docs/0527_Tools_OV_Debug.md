@@ -2,7 +2,7 @@
 Title | Tools OV Debug
 -- | --
 Created @ | `2026-01-29T01:47:14Z`
-Updated @| `2026-01-29T01:58:52Z`
+Updated @| `2026-03-02T05:54:57Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/527)
 
@@ -53,6 +53,23 @@ set OV_CPU_BLOB_DUMP_NODE_EXEC_ID=
 set OV_CPU_BLOB_DUMP_NODE_NAME=.+layer2.+
 set OV_CPU_BLOB_DUMP_NODE_TYPE=
 ```
+
+
+### NPU DEBUG
+
+- OV_NPU_LOG_LEVEL
+
+```
+set OV_NPU_LOG_LEVEL=LOG_TRACE
+```
+
+> - LOG_NONE
+> - LOG_ERROR
+> - LOG_WARNING
+> - LOG_INFO
+> - LOG_DEBUG
+> - LOG_TRACE
+
 
 
 ## `add_outputs()` 打印中间层值
