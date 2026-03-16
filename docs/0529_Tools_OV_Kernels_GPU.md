@@ -2,7 +2,7 @@
 Title | Tools OV Kernels GPU
 -- | --
 Created @ | `2026-03-16T08:00:53Z`
-Updated @| `2026-03-16T08:00:53Z`
+Updated @| `2026-03-16T08:15:04Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/529)
 
@@ -15,7 +15,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/529)
 - 负责张量内存格式 / 数据类型的转换 (从 bfyx 格式转为 b_fs_yx_fsv16 阻塞格式、从 f32 转为 f16 )
 
 
-### 格式
+### 格式转换
 
 - 维度缩写：b（batch，批次）、f（feature，通道 / 特征）、y（height，高度）、x（width，宽度）；
 - bfyx：线性格式（也叫通用格式），维度顺序为 [b, f, y, x]，内存中按 “批次→通道→高度→宽度” 依次排布；
@@ -49,3 +49,33 @@ b0 → fg0 → y0 → x0 → fs15 →
 b0 → fg0 → y0 → x1 → fs0 →
 ...  →
 ```
+
+- 张量的逻辑 shape（维度大小）不变，但物理内存的排布 shape（存储维度）会变
+- 存储维度 : bfyx `[2, 32, 2, 2]` -> b_fs_yx_fsv16 `[2,2,2,2,16]`
+
+#### 其他格式转换
+
+
+源格式 | 目标格式 | 适用场景
+-- | -- | --
+bfyx（线性） | b_fs_yx_fsv32 | 32 线程子组的 GPU（通道按 32 分组）
+bfzyx（3D） | b_fs_zyx_fsv32 | 3D 卷积（如医学影像）
+bfyx | bs_fs_yx_bsv16_fsv16 | 批次 + 通道双分组（大批次场景）
+nhwc（TensorFlow） | bfyx | 跨框架模型适配（TF→OpenVINO）
+
+
+### 数据类型转换 
+
+常见类型转换 | 应用场景
+-- | --
+f32 ↔ f16 | 降低显存占用、提升计算速度（GPU 对 f16 原生支持更好）
+f32 ↔ u8/i8 | 量化模型推理（INT8 量化后的数据类型适配）
+f16 ↔ bf16 | 适配 Arc GPU 的 bf16 计算单元
+i32 ↔ i64 | 少数算子的输入类型要求（如索引类算子）
+
+
+### 张量维度对齐 / 补零 / 裁剪
+
+- 1. 通道数对齐（最常见）
+- 2. 空间维度对齐（如高度 / 宽度）
+
