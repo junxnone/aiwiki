@@ -3,7 +3,7 @@
 | Title     | Tools OV Kernels GPU                                  |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-03-16T08:00:53Z`                                |
-| Updated @ | `2026-03-16T08:15:04Z`                                |
+| Updated @ | `2026-03-17T01:45:57Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/529) |
 
@@ -80,3 +80,13 @@
   - 1.  通道数对齐（最常见）
 
   - 2.  空间维度对齐（如高度 / 宽度）
+
+## 与 pytorch 的对应关系
+
+| OpenVINO reorder 核心能力   | PyTorch 等价算子 / 组合方式                            | 适用场景                      |
+| ----------------------- | ---------------------------------------------- | ------------------------- |
+| 维度顺序重排（如 bfyx ↔ nhwc）   | torch.permute() + torch.contiguous()           | 任意维度顺序调整（最核心）             |
+| 内存格式转换（线性 ↔ 阻塞格式）       | torch.\_convert\_layout()（PyTorch 2.0+）/ 自定义重排 | GPU/CPU 硬件优化格式适配（如 NCHWc） |
+| 数据类型转换（如 f32 ↔ f16/u8）  | torch.to(dtype=...)                            | 精度转换（如 FP32→FP16）         |
+| 跨设备数据迁移（Host ↔ Device）  | torch.to(device=...) + 格式 / 类型转换               | CPU/GPU 张量迁移 + 格式适配       |
+| 维度对齐 / 补零（如通道补零到 16 倍数） | torch.nn.functional.pad() + 维度重排               | 硬件要求的维度对齐（如 GPU 通道分组）     |
