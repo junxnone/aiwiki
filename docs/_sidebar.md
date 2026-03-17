@@ -452,7 +452,7 @@
     - [DevCloud](/0179_Tools_OV_DevCloud)
     - [OpenVINO INT8 Model](/0182_Tools_OV_INT8Model)
     - [OV Kernels](/0528_Tools_OV_Kernels)
-      - [OV GPU Kernels](/0529_Tools_OV_Kernels_GPU)
+      - [OV GPU Kernels Reorder](/0529_Tools_OV_Kernels_GPU)
         - [OV GPU Kernels Crop](/0530_Tools_OV_Kernels_GPU_Crop)
     - [NNCF](/0451_Tools_OV_NNCF)
     - [OpenVINO 优化](/0509_Tools_OV_Optimizations)
@@ -501,4 +501,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0947040317</sub></kbd>
+<kbd><sub>@0948270317</sub></kbd>
