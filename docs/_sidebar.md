@@ -454,6 +454,7 @@
     - [OV Kernels](/0528_Tools_OV_Kernels)
       - [GPU Kernels](/0531_Tools_OV_Kernels_GPU)
         - [OV GPU Kernels Crop](/0530_Tools_OV_Kernels_GPU_Crop)
+        - [OV GPU Kernels Permute](/0532_Tools_OV_Kernels_GPU_Permute)
         - [OV GPU Kernels Reorder](/0529_Tools_OV_Kernels_GPU_Reorder)
     - [NNCF](/0451_Tools_OV_NNCF)
     - [OpenVINO 优化](/0509_Tools_OV_Optimizations)
@@ -502,4 +503,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0955130317</sub></kbd>
+<kbd><sub>@1042120317</sub></kbd>
