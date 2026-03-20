@@ -1,8 +1,8 @@
 ---
-Title | Tools OV Ops GPUImpl Permute
+Title | Tools OV OPs GPUImpl Permute
 -- | --
 Created @ | `2026-03-17T02:41:07Z`
-Updated @| `2026-03-20T01:52:11Z`
+Updated @| `2026-03-20T01:54:59Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/532)
 
