@@ -3,13 +3,13 @@
 | Title     | Tools OV Ops GPUImpl Permute                          |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-03-17T02:41:07Z`                                |
-| Updated @ | `2026-03-20T01:47:06Z`                                |
+| Updated @ | `2026-03-20T01:52:11Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/532) |
 
 -----
 
-# OV GPU Kernels Permute
+# GPU Impl Permute
 
   - 改变张量的维度顺序（如 bfyx→byxf、nchw→nhwc），且仅调整维度的逻辑顺序 +
     内存排布，不改变张量的总元素数或数据本身。它与
