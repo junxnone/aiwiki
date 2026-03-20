@@ -2,56 +2,51 @@
 Title | Tools OV OPs
 -- | --
 Created @ | `2026-03-16T07:51:55Z`
-Updated @| `2026-03-20T01:45:50Z`
+Updated @| `2026-03-20T01:50:43Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/528)
 
 ---
-# OV Kernels
+# OpenVINO Ops
+- OpenVINO 中对**算子（Operation，也常称 Layer，不过官方更推荐 Operation 术语）** 的分类并非单一维度，而是围绕**功能、支持的框架、硬件适配、扩展机制** 等多个角度划分，以下是核心分类方式及相关细节：
 
-- CPU/GPU/NPU 都根据自己的计算架构实现了适合自己的kernel
+### 一、按算子的「来源/前端适配」分类
+OpenVINO 通过「Frontends」组件适配不同深度学习框架的算子，将第三方框架算子转换为 OpenVINO 内部统一的算子表示，核心前端对应算子体系：
+1. **IR Frontend**：适配 OpenVINO 原生 IR（Intermediate Representation）格式的算子，是 OpenVINO 最基础的算子体系；
+2. **ONNX Frontend**：适配 ONNX 框架定义的算子，将 ONNX Operator 映射为 OpenVINO 内部算子；
+3. **Paddle Frontend**：适配 PaddlePaddle（飞桨）框架的算子；
+4. **TensorFlow/TensorFlow Lite Frontend**：适配 TensorFlow/TFLite 框架的算子（代码中提及 TF1/TF2 模型适配，隐含对其算子的支持）。
 
+> 代码依据：`src/docs/architecture.md` 中定义的 Frontends 组件包含 `ir_fe`/`onnx_fe`/`paddle_fe`，对应不同框架算子的解析与转换。
 
-## 概念
+### 二、按算子的「硬件执行载体」分类
+OpenVINO 的 Plugin 体系决定了算子最终在哪些硬件上执行，不同硬件插件对算子的支持/优化策略不同，核心分类：
+1. **CPU 算子**：适配 Intel CPU 的算子实现（`src/plugins/intel_cpu`），覆盖通用算子的 x86/Arm 架构优化；
+2. **GPU 算子**：适配 Intel GPU 的算子实现（`src/plugins/intel_gpu`），基于 OpenCL 等底层框架优化；
+3. **NPU 算子**：适配 Intel NPU（神经处理单元）的算子实现（`src/plugins/intel_npu`），面向低功耗推理场景；
+4. **AUTO 算子调度**：由 AUTO Plugin 自动将不同算子分配到最优硬件（CPU/GPU/NPU 等）执行，无需手动指定；
+5. **HETERO/PROXY 算子**：HETERO Plugin 支持算子跨硬件拆分执行，PROXY Plugin 适配代理模式下的算子调度。
 
-| 概念                | GPU Kernels（OpenVINO）| CPU Kernels（OpenVINO）|
-|---------------------|--------------------------------------------------------------------------------|--------------------------------------------------------------------------------|
-| 本质定义            | 运行在 GPU 上的**独立并行执行单元**，基于 OpenCL/C++ SYCL 编写，编译为 GPU 可执行代码 | 无严格意义上的“Kernel”，是基于 oneDNN 封装的**算子逻辑**，通过 CPU 向量指令集（AVX2/AVX512）并行执行 |
-| 存在形式            | 独立的 `.cl`（OpenCL）模板文件（如 `reorder_bfyx.cl`、`crop_blocked.cl`）| 嵌入在 C++ 代码中的算子逻辑（如 `src/plugins/intel_cpu/src/operators/crop.cpp`），依赖 oneDNN 原语 |
-| 编译方式            | 运行时/离线编译为 GPU 二进制代码（SPIR-V/OpenCL Binary）| 编译为 CPU 机器码（x86_64），运行时直接调用（无额外 Kernel 编译步骤）|
+> 代码依据：`.github/labeler.yml` 中按 `category: GPU/NPU/CPU/HETERO/PROXY` 划分插件代码，隐含算子的硬件适配分类。
 
-## 核心维度对比
+### 三、按算子的「功能/语义」分类（逻辑维度）
+OpenVINO 内部按算子的功能语义划分（无明确的“官方枚举列表”，但从示例/文档可归纳核心类别）：
+1. **基础算术算子**：加减乘除、矩阵运算、激活函数（如 ReLU、Sigmoid）等；
+2. **计算机视觉专用算子**：卷积（Conv）、池化（Pooling）、归一化（BN）、形变卷积、视觉特征提取相关算子（如 AlexNet/GoogLeNet 中的分类算子）；
+3. **自然语言处理算子**：Transformer 相关（如 Attention、LayerNorm）、BERT 基准测试相关算子（`openvino-samples/bert-benchmark`）、分词相关算子（SentencePiece tokenizer）；
+4. **推理流程专用算子**：与推理请求（InferRequest）、模型编译（CompiledModel）强相关的“伪算子”（如输入输出张量映射、预处理算子）；
+5. **自定义算子（Custom Layers）**：通过扩展机制支持的非原生算子（文档中「Extensibility mechanism, Custom layers」定义），用户可扩展未被 OpenVINO 原生支持的算子。
 
-| 对比维度            | GPU Kernels                                                                 | CPU Kernels（算子逻辑）|
-|---------------------|-----------------------------------------------------------------------------|--------------------------------------------------------------------------------|
-| **硬件架构适配**    | 面向 **众核并行架构**：数千个轻量级流处理器（SP），适合大规模数据并行；<br>核心是“单指令多线程（SIMT）”，一个 Kernel 被多个 GPU 线程同时执行。 | 面向 **多核串行+向量并行架构**：少数（几核~几十核）高性能核心，适合复杂逻辑+小批量数据并行；<br>核心是“单指令多数据（SIMD）”，通过向量指令（AVX512）在单个核心内并行处理 8/16 个数据。 |
-| **执行方式**        | 1. 以“线程网格（Grid）-线程块（Block）-线程（Thread）”层级调度；<br>2. 每个 Kernel 是独立的执行单元，需单独启动（有 Kernel 调度开销）；<br>3. 典型如 `crop` Kernel 被数百个 GPU 线程并行执行，每个线程处理一个像素/通道分片。 | 1. 以“进程/线程-核心-向量寄存器”层级执行；<br>2. 无独立 Kernel 启动，算子逻辑“内联”在 CPU 线程中执行；<br>3. 典型如 `crop` 逻辑通过 AVX512 指令，单个 CPU 核心一次处理 16 个通道的像素裁剪。 |
-| **内存模型**        | 多级异构内存：<br>- 全局内存（Global Memory，慢，GB 级）；<br>- 局部内存（Local Memory，中，KB 级）；<br>- 私有内存（Private Memory，快，寄存器）；<br>Kernel 优化核心是**减少全局内存访问**（如用 Local Memory 缓存数据）。 | 统一内存模型：<br>- 系统内存（DDR4/DDR5）+ CPU 缓存（L1/L2/L3）；<br>优化核心是**提升缓存命中率**（如数据预取、阻塞格式适配缓存行）。 |
-| **并行粒度**        | 细粒度并行：<br>单个 Kernel 可调度数千个线程，每个线程处理**单个数据元素**（如一个像素、一个通道分片）；<br>适合大规模数据（如图像、特征图）。 | 粗粒度并行：<br>以“向量宽度”为粒度（如 AVX512 一次处理 16 个 float32 数据），单个 CPU 核心处理**一批数据**；<br>适合中等规模数据+复杂逻辑（如小批次推理、算子融合）。 |
-| **优化方向**        | 1. 内存格式适配：如 `b_fs_yx_fsv16` 阻塞格式，匹配 GPU 16线程子组；<br>2. 减少全局内存访问：用 Local Memory 缓存中间结果；<br>3. 线程同步：优化 Block 内线程协作；<br>4. 数据类型：优先 FP16/BF16（GPU 原生支持）。 | 1. 指令集适配：自动选择 AVX2/AVX512/VNNI 指令；<br>2. 缓存优化：适配 64 字节缓存行（如 `nChw16c` 格式）；<br>3. 算子融合：将 `crop+reorder` 合并为一个逻辑，减少内存拷贝；<br>4. 多核调度：均衡分配任务到多个 CPU 核心。 |
-| **典型示例（crop）** | 1. 有独立 `crop_blocked.cl` Kernel；<br>2. 按 GPU 线程块拆分裁剪区域，每个线程处理一个空间位置的通道分片；<br>3. 直接操作 GPU 阻塞格式（无需转回线性）。 | 1. 无独立 Kernel，通过 `dnnl::slice` 原语实现；<br>2. 以向量指令为单位裁剪（如一次处理 16 个通道）；<br>3. 适配 CPU 阻塞格式 `nChw16c`，通过寄存器缓存数据。 |
-| **调度开销**        | 高：每个 Kernel 启动需经历“参数传递→网格配置→线程调度”，频繁启动小 Kernel 会有明显开销；<br>OpenVINO 优化方式：算子融合（如 `reorder+crop` 合并为一个 Kernel）。 | 低：无 Kernel 启动开销，算子逻辑直接在 CPU 线程中执行；<br>OpenVINO 优化方式：多核并行调度，充分利用所有 CPU 核心。 |
-| **格式支持**        | 专用阻塞格式：`b_fs_yx_fsv16`/`b_fs_zyx_fsv32`（适配 GPU 线程子组）| 专用阻塞格式：`nChw8c`/`nChw16c`（适配 CPU 向量指令宽度）|
+### 四、按算子的「扩展/优化维度」分类
+1. **低精度转换算子**：用于模型量化优化的算子（`src/common/low_precision_transformations`），如 INT8/FP16 精度的算子变体；
+2. **预处理算子**：`src/common/preprocessing` 下的预处理相关算子（如 resize、格式转换、归一化），在推理前对输入张量做处理；
+3. **原生支持算子 vs 扩展算子**：
+   - 原生算子：OpenVINO 内置、无需额外扩展即可使用的算子；
+   - 扩展算子：通过 `ov::frontend::extension` 扩展机制适配的算子（`src/frontends/common/include/openvino/frontend/extension`）。
 
-## 关键场景化差异 
-### 1. 推理场景适配
-- **GPU Kernels**：适合**大批次、高分辨率**推理（如 16 批次 224×224 图像），利用数千线程并行处理，吞吐量高；
-- **CPU Kernels（算子）**：适合**小批次、低延迟**推理（如 1 批次推理），通过核心内向量并行+低调度开销，保证响应速度。
+### 五、补充说明
+1. OpenVINO 并未在代码中提供「算子分类的静态枚举表」，而是通过**前端解析、插件实现、扩展机制** 动态管理算子；
+2. 算子兼容性可通过 `core.query_model(model, device)` 接口查询（对应 `hello-query-device` 示例），返回指定硬件对模型中各算子的支持情况；
+3. 官方术语中，“Layer” 逐步被 “Operation” 替代，二者语义等价（参考 `about-openvino/additional-resources/glossary.rst`）。
 
-### 2. 算子融合能力
-- GPU：融合受 Kernel 编译限制，仅能融合逻辑简单的算子（如 `reorder+crop`）；
-- CPU：融合能力更强，可将“卷积+BN+激活+裁剪”合并为一个算子逻辑，完全消除中间内存拷贝。
-
-### 3. 调试方式
-- GPU Kernels：可通过 `OV_GPU_DUMP_SOURCES_PATH` 导出编译后的 OpenCL 代码，用 Intel GPA 工具分析 Kernel 执行时间；
-- CPU 算子：通过 oneDNN 性能分析工具（`dnnl_verbose=1`）查看指令集使用、缓存命中率，或用 VTune 分析 CPU 核心利用率。
-
-## 总结
-| 核心结论                | 关键要点                                                                 |
-|-------------------------|--------------------------------------------------------------------------|
-| 本质差异                | GPU Kernels 是独立并行执行单元，CPU 无真正 Kernel，仅为指令集优化的算子逻辑； |
-| 执行逻辑                | GPU 是“众核细粒度并行”（线程级），CPU 是“多核粗粒度并行”（向量指令级）；     |
-| 优化核心                | GPU 优化内存访问（减少全局内存调用），CPU 优化缓存命中率+指令集利用率；      |
-| 场景适配                | GPU 适合大批次高吞吐量，CPU 适合小批次低延迟；                             |
-
-简单来说，GPU Kernels 是为“大规模数据并行”设计的独立执行单元，而 CPU 侧无真正 Kernel，是为“核心内向量并行+多核调度”设计的算子逻辑——两者的差异本质是 CPU/GPU 硬件架构的差异在 OpenVINO 算子层的体现，OpenVINO 会自动适配两者的优化逻辑，让用户通过统一 API 调用即可获得最优性能。
+若需具体算子的支持列表，可参考 OpenVINO 官方文档的「Supported Operators」章节（代码中未直接枚举，但可通过 `ovc` 工具（Model conversion API）验证算子兼容性）。
