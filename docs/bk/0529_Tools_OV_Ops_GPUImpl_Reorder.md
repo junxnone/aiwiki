@@ -3,13 +3,13 @@
 | Title     | Tools OV Ops GPUImpl Reorder                          |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-03-16T08:00:53Z`                                |
-| Updated @ | `2026-03-20T01:47:18Z`                                |
+| Updated @ | `2026-03-20T01:52:20Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/529) |
 
 -----
 
-# OV GPU Kernels Reorder
+# GPU Impl Reorder
 
   - 负责张量内存格式 / 数据类型的转换 (从 bfyx 格式转为 b\_fs\_yx\_fsv16 阻塞格式、从 f32 转为 f16 )
 
