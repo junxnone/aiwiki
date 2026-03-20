@@ -455,8 +455,8 @@
     - [OpenVINO Ops](/0528_Tools_OV_OPs)
       - [OpenVINO Ops Impl](/0533_Tools_OV_OPs_Impl)
     - Ops
-      - [GPU Kernels](/0531_Tools_OV_Ops_GPUImpl)
-        - [OV GPU Kernels Crop](/0530_Tools_OV_Ops_GPUImpl_Crop)
+      - [OpenVINO GPU Ops Impl](/0531_Tools_OV_Ops_GPUImpl)
+        - [GPU Impl Crop](/0530_Tools_OV_Ops_GPUImpl_Crop)
         - [OV GPU Kernels Permute](/0532_Tools_OV_Ops_GPUImpl_Permute)
         - [OV GPU Kernels Reorder](/0529_Tools_OV_Ops_GPUImpl_Reorder)
     - [OpenVINO 优化](/0509_Tools_OV_Optimizations)
@@ -505,4 +505,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0951500320</sub></kbd>
+<kbd><sub>@0953040320</sub></kbd>

@@ -1,9 +1,9 @@
 # Wiki History
 
 - 2026-03-20&nbsp;&nbsp; [OpenVINO Ops Impl](/0533_Tools_OV_OPs_Impl)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:OPs :bookmark:Impl
-- 2026-03-17&nbsp;&nbsp; [OV GPU Kernels Crop](/0530_Tools_OV_Ops_GPUImpl_Crop)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:Ops :bookmark:GPUImpl :bookmark:Crop
+- 2026-03-17&nbsp;&nbsp; [GPU Impl Crop](/0530_Tools_OV_Ops_GPUImpl_Crop)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:Ops :bookmark:GPUImpl :bookmark:Crop
 - 2026-03-17&nbsp;&nbsp; [OV GPU Kernels Permute](/0532_Tools_OV_Ops_GPUImpl_Permute)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:Ops :bookmark:GPUImpl :bookmark:Permute
-- 2026-03-17&nbsp;&nbsp; [GPU Kernels](/0531_Tools_OV_Ops_GPUImpl)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:Ops :bookmark:GPUImpl
+- 2026-03-17&nbsp;&nbsp; [OpenVINO GPU Ops Impl](/0531_Tools_OV_Ops_GPUImpl)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:Ops :bookmark:GPUImpl
 - 2026-03-16&nbsp;&nbsp; [OV GPU Kernels Reorder](/0529_Tools_OV_Ops_GPUImpl_Reorder)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:Ops :bookmark:GPUImpl :bookmark:Reorder
 - 2026-03-16&nbsp;&nbsp; [OpenVINO Ops](/0528_Tools_OV_OPs)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:OPs
 - 2026-01-29&nbsp;&nbsp; [OpenVINO Debug](/0527_Tools_OV_Debug)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:Debug
