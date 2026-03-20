@@ -452,12 +452,14 @@
     - [DevCloud](/0179_Tools_OV_DevCloud)
     - [OpenVINO INT8 Model](/0182_Tools_OV_INT8Model)
     - Kernels
-      - [GPU Kernels](/0531_Tools_OV_Kernels_GPU)
-        - [OV GPU Kernels Crop](/0530_Tools_OV_Kernels_GPU_Crop)
+      - GPU
         - [OV GPU Kernels Permute](/0532_Tools_OV_Kernels_GPU_Permute)
         - [OV GPU Kernels Reorder](/0529_Tools_OV_Kernels_GPU_Reorder)
     - [NNCF](/0451_Tools_OV_NNCF)
     - [OV Kernels](/0528_Tools_OV_OPs)
+    - Ops
+      - [GPU Kernels](/0531_Tools_OV_Ops_GPUImpl)
+        - [OV GPU Kernels Crop](/0530_Tools_OV_Ops_GPUImpl_Crop)
     - [OpenVINO 优化](/0509_Tools_OV_Optimizations)
     - [Security](/0176_Tools_OV_Security)
     - [Tips](/0184_Tools_OV_Tips)
@@ -504,4 +506,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0946560320</sub></kbd>
+<kbd><sub>@0947520320</sub></kbd>
