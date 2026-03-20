@@ -3,13 +3,13 @@
 | Title     | Tools OV OPs GPUImpl                                  |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-03-17T01:54:12Z`                                |
-| Updated @ | `2026-03-20T01:54:50Z`                                |
+| Updated @ | `2026-03-20T02:00:02Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/531) |
 
 -----
 
-# OpenVINO GPU Ops Impl
+# OPs GPU Impl
 
   - OpenVINO GPU Ops Impl 一般为 OpenCL 实现，可以在 GPU 上大批量并发执行的 kernel
 
