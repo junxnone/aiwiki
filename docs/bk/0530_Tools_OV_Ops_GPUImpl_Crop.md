@@ -3,13 +3,13 @@
 | Title     | Tools OV Ops GPUImpl Crop                             |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-03-17T01:44:08Z`                                |
-| Updated @ | `2026-03-20T01:46:54Z`                                |
+| Updated @ | `2026-03-20T01:52:01Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/530) |
 
 -----
 
-# OV GPU Kernels Crop
+# GPU Impl Crop
 
   - 从输入张量（如 bfyx/b\_fs\_yx\_fsv16 格式）中，按照起始坐标 +
     截取尺寸提取子张量，支持多维度（批次、通道、高度、宽度、深度）的裁剪，且完全适配
