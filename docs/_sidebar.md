@@ -453,13 +453,11 @@
     - [OpenVINO INT8 Model](/0182_Tools_OV_INT8Model)
     - [NNCF](/0451_Tools_OV_NNCF)
     - [OpenVINO Ops](/0528_Tools_OV_OPs)
-      - GPUImpl
+      - [OpenVINO GPU Ops Impl](/0531_Tools_OV_OPs_GPUImpl)
         - [GPU Impl Crop](/0530_Tools_OV_OPs_GPUImpl_Crop)
+        - [GPU Impl Permute](/0532_Tools_OV_OPs_GPUImpl_Permute)
+        - [GPU Impl Reorder](/0529_Tools_OV_OPs_GPUImpl_Reorder)
       - [OpenVINO Ops Impl](/0533_Tools_OV_OPs_Impl)
-    - Ops
-      - [OpenVINO GPU Ops Impl](/0531_Tools_OV_Ops_GPUImpl)
-        - [GPU Impl Permute](/0532_Tools_OV_Ops_GPUImpl_Permute)
-        - [GPU Impl Reorder](/0529_Tools_OV_Ops_GPUImpl_Reorder)
     - [OpenVINO 优化](/0509_Tools_OV_Optimizations)
     - [Security](/0176_Tools_OV_Security)
     - [Tips](/0184_Tools_OV_Tips)
@@ -506,4 +504,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0955450320</sub></kbd>
+<kbd><sub>@0958010320</sub></kbd>
