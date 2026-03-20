@@ -453,6 +453,7 @@
     - [OpenVINO INT8 Model](/0182_Tools_OV_INT8Model)
     - [NNCF](/0451_Tools_OV_NNCF)
     - [OpenVINO Ops](/0528_Tools_OV_OPs)
+      - [OPs CPU Impl](/0534_Tools_OV_OPs_CPUImpl)
       - [OPs GPU Impl](/0531_Tools_OV_OPs_GPUImpl)
         - [GPU Impl Crop](/0530_Tools_OV_OPs_GPUImpl_Crop)
         - [GPU Impl Permute](/0532_Tools_OV_OPs_GPUImpl_Permute)
@@ -504,4 +505,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1001100320</sub></kbd>
+<kbd><sub>@1522080320</sub></kbd>
