@@ -339,6 +339,7 @@
       - [Uncertainty Sampling](/0275_ML_AL_QS_UncertaintySampling)
     - [Tools](/0175_ML_AL_Tools)
       - [AIDE](/0270_ML_AL_Tools_AIDE)
+  - [增量学习/持续学习](/0536_ML_IL)
   - [Nearest Neighbor Search 最近邻搜索](/0102_ML_NNS)
     - [Approximate Nearest Neighbor 近似最近邻](/0103_ML_NNS_ANN)
       - [Approximate Nearest Neighbors Oh Yeah](/0333_ML_NNS_ANN_Annoy)
@@ -506,4 +507,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1652070326</sub></kbd>
+<kbd><sub>@0937070327</sub></kbd>
