@@ -431,6 +431,7 @@
   - [STFPM](/0324_paper_STFPM)
   - [SpecularityNet-PSD](/0538_paper_SpecularityNet)
   - [Tip-Adapter](/0475_paper_TipAdapter)
+  - [Uformer](/0539_paper_Uformer)
   - [VPT - Visual Prompt Tuning](/0477_paper_VPT)
   - [WinCLIP](/0468_paper_WinCLIP)
   - [YOLO-World](/0465_paper_YOLOWorld)
@@ -509,4 +510,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1326440424</sub></kbd>
+<kbd><sub>@1355350424</sub></kbd>
