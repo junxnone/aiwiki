@@ -494,6 +494,7 @@
   - [DeepSeek](/0496_Hot_DeepSeek)
 - [KnowledgeGraph](/0329_KnowledgeGraph)
 - [资源参考](/0380_Reference)
+- [SpecularityNet-PSD](/0538_SpecularityNet)
 - [x](/0418_x)
   - [Diffusion Model](/0512_x_DM)
     - [BLDM](/0514_x_DM_BLDM)
@@ -508,4 +509,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1724540423</sub></kbd>
+<kbd><sub>@1125590424</sub></kbd>
