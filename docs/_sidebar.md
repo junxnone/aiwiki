@@ -429,6 +429,7 @@
     - [RDT-1B 翻译](/0508_paper_RDT_CN)
   - [SAA+](/0469_paper_SAAplus)
   - [STFPM](/0324_paper_STFPM)
+  - [SpecularityNet-PSD](/0538_paper_SpecularityNet)
   - [Tip-Adapter](/0475_paper_TipAdapter)
   - [VPT - Visual Prompt Tuning](/0477_paper_VPT)
   - [WinCLIP](/0468_paper_WinCLIP)
@@ -494,7 +495,6 @@
   - [DeepSeek](/0496_Hot_DeepSeek)
 - [KnowledgeGraph](/0329_KnowledgeGraph)
 - [资源参考](/0380_Reference)
-- [SpecularityNet-PSD](/0538_SpecularityNet)
 - [x](/0418_x)
   - [Diffusion Model](/0512_x_DM)
     - [BLDM](/0514_x_DM_BLDM)
@@ -509,4 +509,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1125590424</sub></kbd>
+<kbd><sub>@1126420424</sub></kbd>
