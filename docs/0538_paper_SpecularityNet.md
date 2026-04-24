@@ -1,8 +1,8 @@
 ---
-Title | SpecularityNet
+Title | paper SpecularityNet
 -- | --
 Created @ | `2026-04-24T03:24:53Z`
-Updated @| `2026-04-24T03:24:53Z`
+Updated @| `2026-04-24T03:25:40Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/538)
 
