@@ -251,6 +251,7 @@
         - [MVTec](/0323_ML_Tasks_Image_Anomaly_MVTec)
         - [算法落地实践](/0521_ML_Tasks_Image_Anomaly_Pipeline)
         - [异常缺陷生成](/0517_ML_Tasks_Image_Anomaly_Synthesis)
+      - [Specular Highlight Removal](/0540_ML_Tasks_Image_SHR)
     - [Motion Detection 运动侦测](/0243_ML_Tasks_MD)
     - [MetricLearning](/0157_ML_Tasks_MetricLearning)
   - [Op](/0366_ML_Op)
@@ -510,4 +511,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1657270426</sub></kbd>
+<kbd><sub>@1439100427</sub></kbd>
