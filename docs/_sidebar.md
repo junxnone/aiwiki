@@ -426,6 +426,7 @@
   - [MuSC](/0467_paper_MuSC)
   - [PaDiM](/0322_paper_PaDiM)
   - [PatchCore](/0535_paper_PatchCore)
+  - [PointNet++](/0541_paper_PointNet)
   - [RDT-1B 一种用于双手操作的扩散基础模型](/0507_paper_RDT)
     - [RDT-1B 翻译](/0508_paper_RDT_CN)
   - [SAA+](/0469_paper_SAAplus)
@@ -511,4 +512,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1821570507</sub></kbd>
+<kbd><sub>@1116340508</sub></kbd>
