@@ -419,6 +419,7 @@
     - [DualAnoDiff CN](/0523_paper_DualAnoDiff_cn)
   - [Eureka](/0470_paper_Eureka)
   - [FiLo](/0472_paper_FiLo)
+  - [FoundationStereo 系列](/0542_paper_FoundationStereo)
   - [Grounding DINO](/0464_paper_GroundingDINO)
     - [Grounding DINO 翻译](/0485_paper_GroundingDINO_cn)
   - [LFA](/0480_paper_LFA)
@@ -512,4 +513,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1941390518</sub></kbd>
+<kbd><sub>@1408240519</sub></kbd>
