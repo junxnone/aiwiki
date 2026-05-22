@@ -420,6 +420,7 @@
   - [Eureka](/0470_paper_Eureka)
   - [FiLo](/0472_paper_FiLo)
   - [FoundationStereo 系列](/0542_paper_FoundationStereo)
+    - [Fast-FoundationStereo: Real-Time Zero-Shot Stereo Matching 读书笔记](/0543_paper_FoundationStereo_FFDS)
   - [Grounding DINO](/0464_paper_GroundingDINO)
     - [Grounding DINO 翻译](/0485_paper_GroundingDINO_cn)
   - [LFA](/0480_paper_LFA)
@@ -513,4 +514,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1919310521</sub></kbd>
+<kbd><sub>@1127050522</sub></kbd>
