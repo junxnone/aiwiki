@@ -440,6 +440,7 @@
   - [VPT - Visual Prompt Tuning](/0477_paper_VPT)
   - [WinCLIP](/0468_paper_WinCLIP)
   - [YOLO-World](/0465_paper_YOLOWorld)
+  - [SAM-6D](/0545_paper_sam6d)
 - [AI Tools](/0415_Tools)
   - [Numpy](/0328_Tools_Numpy)
   - [Pytorch](/0168_Tools_Pytorch)
@@ -515,4 +516,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1826290607</sub></kbd>
+<kbd><sub>@1350380608</sub></kbd>

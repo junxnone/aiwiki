@@ -1,12 +1,13 @@
 # Wiki History
 
+- 2026-06-08&nbsp;&nbsp; [SAM-6D](/0545_paper_sam6d)&nbsp;&nbsp; :bookmark:paper :bookmark:sam6d
 - 2026-06-02&nbsp;&nbsp; [BOP](/0544_Datasets_BOP)&nbsp;&nbsp; :bookmark:Datasets :bookmark:BOP
 - 2026-05-22&nbsp;&nbsp; [Fast-FoundationStereo: Real-Time Zero-Shot Stereo Matching 读书笔记](/0543_paper_FoundationStereo_FFDS)&nbsp;&nbsp; :bookmark:paper :bookmark:FoundationStereo :bookmark:FFDS
 - 2026-05-19&nbsp;&nbsp; [FoundationStereo 系列](/0542_paper_FoundationStereo)&nbsp;&nbsp; :bookmark:paper :bookmark:FoundationStereo
 - 2026-05-08&nbsp;&nbsp; [PointNet++](/0541_paper_PointNet)&nbsp;&nbsp; :bookmark:paper :bookmark:PointNet
 - 2026-04-27&nbsp;&nbsp; [Specular Highlight Removal](/0540_ML_Tasks_Image_SHR)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:SHR
-- 2026-04-24&nbsp;&nbsp; [SpecularityNet-PSD](/0538_paper_SpecularityNet)&nbsp;&nbsp; :bookmark:paper :bookmark:SpecularityNet
 - 2026-04-24&nbsp;&nbsp; [Uformer](/0539_paper_Uformer)&nbsp;&nbsp; :bookmark:paper :bookmark:Uformer
+- 2026-04-24&nbsp;&nbsp; [SpecularityNet-PSD](/0538_paper_SpecularityNet)&nbsp;&nbsp; :bookmark:paper :bookmark:SpecularityNet
 - 2026-03-27&nbsp;&nbsp; [PatchCore 持续学习](/0537_ML_IL_PatchCore)&nbsp;&nbsp; :bookmark:ML :bookmark:IL :bookmark:PatchCore
 - 2026-03-24&nbsp;&nbsp; [PatchCore](/0535_paper_PatchCore)&nbsp;&nbsp; :bookmark:paper :bookmark:PatchCore
 - 2026-03-20&nbsp;&nbsp; [OPs CPU Impl](/0534_Tools_OV_OPs_CPUImpl)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:OPs :bookmark:CPUImpl
@@ -20,8 +21,8 @@
 - 2025-11-13&nbsp;&nbsp; [Center Distance](/0525_ML_Metrics_Detection_CD)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:CD
 - 2025-11-13&nbsp;&nbsp; [Boundary F1-Score](/0526_ML_Metrics_Segmentation_BF1S)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Segmentation :bookmark:BF1S
 - 2025-08-08&nbsp;&nbsp; [AdaBLDM 环境设置](/0524_paper_AdaBLDM_envs)&nbsp;&nbsp; :bookmark:paper :bookmark:AdaBLDM :bookmark:envs
-- 2025-06-10&nbsp;&nbsp; [DualAnoDiff CN](/0523_paper_DualAnoDiff_cn)&nbsp;&nbsp; :bookmark:paper :bookmark:DualAnoDiff :bookmark:cn
 - 2025-06-10&nbsp;&nbsp; [DualAnoDiff](/0522_paper_DualAnoDiff)&nbsp;&nbsp; :bookmark:paper :bookmark:DualAnoDiff
+- 2025-06-10&nbsp;&nbsp; [DualAnoDiff CN](/0523_paper_DualAnoDiff_cn)&nbsp;&nbsp; :bookmark:paper :bookmark:DualAnoDiff :bookmark:cn
 - 2025-06-09&nbsp;&nbsp; [算法落地实践](/0521_ML_Tasks_Image_Anomaly_Pipeline)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Anomaly :bookmark:Pipeline
 - 2025-06-03&nbsp;&nbsp; [AnomalyAny CN](/0520_paper_AnomalyAny_cn)&nbsp;&nbsp; :bookmark:paper :bookmark:AnomalyAny :bookmark:cn
 - 2025-06-03&nbsp;&nbsp; [AnomalyAny](/0519_paper_AnomalyAny)&nbsp;&nbsp; :bookmark:paper :bookmark:AnomalyAny
@@ -37,17 +38,17 @@
 - 2025-03-31&nbsp;&nbsp; [OpenVINO 优化](/0509_Tools_OV_Optimizations)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:Optimizations
 - 2025-02-18&nbsp;&nbsp; [RDT-1B 翻译](/0508_paper_RDT_CN)&nbsp;&nbsp; :bookmark:paper :bookmark:RDT :bookmark:CN
 - 2025-02-17&nbsp;&nbsp; [RDT-1B 一种用于双手操作的扩散基础模型](/0507_paper_RDT)&nbsp;&nbsp; :bookmark:paper :bookmark:RDT
-- 2025-02-08&nbsp;&nbsp; [Multi-Head Attention](/0500_ML_Attention_MHA)&nbsp;&nbsp; :bookmark:ML :bookmark:Attention :bookmark:MHA
-- 2025-02-08&nbsp;&nbsp; [OPEA](/0501_LM_Tools_OPEA)&nbsp;&nbsp; :bookmark:LM :bookmark:Tools :bookmark:OPEA
-- 2025-02-08&nbsp;&nbsp; [VLM](/0506_LM_VLM)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM
-- 2025-02-08&nbsp;&nbsp; [LLaMA](/0504_LM_LLMs_LLaMA)&nbsp;&nbsp; :bookmark:LM :bookmark:LLMs :bookmark:LLaMA
-- 2025-02-08&nbsp;&nbsp; [Scaled Dot-Product Attention](/0499_ML_Attention_SDPA)&nbsp;&nbsp; :bookmark:ML :bookmark:Attention :bookmark:SDPA
 - 2025-02-08&nbsp;&nbsp; [LLM Parameters](/0502_LM_LLMs_Parameters)&nbsp;&nbsp; :bookmark:LM :bookmark:LLMs :bookmark:Parameters
+- 2025-02-08&nbsp;&nbsp; [Multi-Head Attention](/0500_ML_Attention_MHA)&nbsp;&nbsp; :bookmark:ML :bookmark:Attention :bookmark:MHA
 - 2025-02-08&nbsp;&nbsp; [多模态大模型](/0505_LM_LMMs)&nbsp;&nbsp; :bookmark:LM :bookmark:LMMs
+- 2025-02-08&nbsp;&nbsp; [VLM](/0506_LM_VLM)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM
+- 2025-02-08&nbsp;&nbsp; [Scaled Dot-Product Attention](/0499_ML_Attention_SDPA)&nbsp;&nbsp; :bookmark:ML :bookmark:Attention :bookmark:SDPA
+- 2025-02-08&nbsp;&nbsp; [LLaMA](/0504_LM_LLMs_LLaMA)&nbsp;&nbsp; :bookmark:LM :bookmark:LLMs :bookmark:LLaMA
 - 2025-02-08&nbsp;&nbsp; [LLMs Metrics](/0503_LM_LLMs_Metrics)&nbsp;&nbsp; :bookmark:LM :bookmark:LLMs :bookmark:Metrics
+- 2025-02-08&nbsp;&nbsp; [OPEA](/0501_LM_Tools_OPEA)&nbsp;&nbsp; :bookmark:LM :bookmark:Tools :bookmark:OPEA
 - 2025-02-06&nbsp;&nbsp; [大模型分布图](/0498_LM_map)&nbsp;&nbsp; :bookmark:LM :bookmark:map
-- 2025-02-05&nbsp;&nbsp; [DeepSeek](/0496_Hot_DeepSeek)&nbsp;&nbsp; :bookmark:Hot :bookmark:DeepSeek
 - 2025-02-05&nbsp;&nbsp; [大模型相关工具](/0497_LM_Tools)&nbsp;&nbsp; :bookmark:LM :bookmark:Tools
+- 2025-02-05&nbsp;&nbsp; [DeepSeek](/0496_Hot_DeepSeek)&nbsp;&nbsp; :bookmark:Hot :bookmark:DeepSeek
 - 2025-01-16&nbsp;&nbsp; [OFT/BOFT](/0495_LM_FT_OFT)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:OFT
 - 2025-01-16&nbsp;&nbsp; [IA3](/0494_LM_FT_IA3)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:IA3
 - 2025-01-13&nbsp;&nbsp; [LoHa](/0492_LM_FT_LoHa)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:LoHa
@@ -56,17 +57,17 @@
 - 2024-12-23&nbsp;&nbsp; [TorchScript](/0490_Tools_Pytorch_TorchScript)&nbsp;&nbsp; :bookmark:Tools :bookmark:Pytorch :bookmark:TorchScript
 - 2024-11-22&nbsp;&nbsp; [CPPE-5](/0489_Datasets_Image2D_Detection_CPPE5)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:Detection :bookmark:CPPE5
 - 2024-11-18&nbsp;&nbsp; [BBox Format](/0488_Datasets_Image2D_Detection_BBox)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:Detection :bookmark:BBox
-- 2024-10-16&nbsp;&nbsp; [Optuna](/0486_x_Optuna)&nbsp;&nbsp; :bookmark:x :bookmark:Optuna
 - 2024-10-16&nbsp;&nbsp; [CLIP Finetune](/0487_paper_CLIP_Finetune)&nbsp;&nbsp; :bookmark:paper :bookmark:CLIP :bookmark:Finetune
-- 2024-10-15&nbsp;&nbsp; [Deformable DETR](/0484_paper_DeformableDETR)&nbsp;&nbsp; :bookmark:paper :bookmark:DeformableDETR
+- 2024-10-16&nbsp;&nbsp; [Optuna](/0486_x_Optuna)&nbsp;&nbsp; :bookmark:x :bookmark:Optuna
 - 2024-10-15&nbsp;&nbsp; [Grounding DINO 翻译](/0485_paper_GroundingDINO_cn)&nbsp;&nbsp; :bookmark:paper :bookmark:GroundingDINO :bookmark:cn
+- 2024-10-15&nbsp;&nbsp; [Deformable DETR](/0484_paper_DeformableDETR)&nbsp;&nbsp; :bookmark:paper :bookmark:DeformableDETR
 - 2024-10-14&nbsp;&nbsp; [DINO](/0483_paper_DINO)&nbsp;&nbsp; :bookmark:paper :bookmark:DINO
 - 2024-10-12&nbsp;&nbsp; [DTD-Synthetic](/0482_Datasets_Image2D_DTDSynthetic)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:DTDSynthetic
 - 2024-10-12&nbsp;&nbsp; [DTD - Describable Textures Dataset](/0481_Datasets_Image2D_DTD)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:DTD
+- 2024-10-11&nbsp;&nbsp; [VPT - Visual Prompt Tuning](/0477_paper_VPT)&nbsp;&nbsp; :bookmark:paper :bookmark:VPT
+- 2024-10-11&nbsp;&nbsp; [CaFo](/0476_paper_CaFo)&nbsp;&nbsp; :bookmark:paper :bookmark:CaFo
 - 2024-10-11&nbsp;&nbsp; [BitFit](/0478_paper_BitFit)&nbsp;&nbsp; :bookmark:paper :bookmark:BitFit
 - 2024-10-11&nbsp;&nbsp; [MTA](/0479_paper_MTA)&nbsp;&nbsp; :bookmark:paper :bookmark:MTA
-- 2024-10-11&nbsp;&nbsp; [CaFo](/0476_paper_CaFo)&nbsp;&nbsp; :bookmark:paper :bookmark:CaFo
-- 2024-10-11&nbsp;&nbsp; [VPT - Visual Prompt Tuning](/0477_paper_VPT)&nbsp;&nbsp; :bookmark:paper :bookmark:VPT
 - 2024-10-11&nbsp;&nbsp; [LFA](/0480_paper_LFA)&nbsp;&nbsp; :bookmark:paper :bookmark:LFA
 - 2024-10-09&nbsp;&nbsp; [Tip-Adapter](/0475_paper_TipAdapter)&nbsp;&nbsp; :bookmark:paper :bookmark:TipAdapter
 - 2024-10-08&nbsp;&nbsp; [CoOP](/0474_paper_CoOP)&nbsp;&nbsp; :bookmark:paper :bookmark:CoOP
@@ -77,9 +78,9 @@
 - 2024-06-18&nbsp;&nbsp; [SAA+](/0469_paper_SAAplus)&nbsp;&nbsp; :bookmark:paper :bookmark:SAAplus
 - 2024-06-13&nbsp;&nbsp; [WinCLIP](/0468_paper_WinCLIP)&nbsp;&nbsp; :bookmark:paper :bookmark:WinCLIP
 - 2024-05-15&nbsp;&nbsp; [MuSC](/0467_paper_MuSC)&nbsp;&nbsp; :bookmark:paper :bookmark:MuSC
-- 2024-04-26&nbsp;&nbsp; [AnomalyCLIP](/0466_paper_AnomalyCLIP)&nbsp;&nbsp; :bookmark:paper :bookmark:AnomalyCLIP
-- 2024-04-26&nbsp;&nbsp; [YOLO-World](/0465_paper_YOLOWorld)&nbsp;&nbsp; :bookmark:paper :bookmark:YOLOWorld
 - 2024-04-26&nbsp;&nbsp; [Grounding DINO](/0464_paper_GroundingDINO)&nbsp;&nbsp; :bookmark:paper :bookmark:GroundingDINO
+- 2024-04-26&nbsp;&nbsp; [YOLO-World](/0465_paper_YOLOWorld)&nbsp;&nbsp; :bookmark:paper :bookmark:YOLOWorld
+- 2024-04-26&nbsp;&nbsp; [AnomalyCLIP](/0466_paper_AnomalyCLIP)&nbsp;&nbsp; :bookmark:paper :bookmark:AnomalyCLIP
 - 2024-04-09&nbsp;&nbsp; [GLIP](/0463_LM_VLM_GLIP)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:GLIP
 - 2024-02-22&nbsp;&nbsp; [有趣的工具](/0462_有趣的工具)&nbsp;&nbsp; :bookmark:有趣的工具
 - 2024-02-20&nbsp;&nbsp; [RAG](/0461_LM_RAG)&nbsp;&nbsp; :bookmark:LM :bookmark:RAG
@@ -90,53 +91,53 @@
 - 2023-11-08&nbsp;&nbsp; [AIGC Tools](/0456_Hot_AIGC_Tools)&nbsp;&nbsp; :bookmark:Hot :bookmark:AIGC :bookmark:Tools
 - 2023-11-01&nbsp;&nbsp; [Latent Space 潜在空间](/0455_LM_VLM_LatentSpace)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:LatentSpace
 - 2023-10-31&nbsp;&nbsp; [RL Tools](/0454_RL_Tools)&nbsp;&nbsp; :bookmark:RL :bookmark:Tools
+- 2023-10-30&nbsp;&nbsp; [Isaac Gym - Nvidia](/0452_Tools_IsaacGym)&nbsp;&nbsp; :bookmark:Tools :bookmark:IsaacGym
+- 2023-10-30&nbsp;&nbsp; [NNCF](/0451_Tools_OV_NNCF)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:NNCF
 - 2023-10-30&nbsp;&nbsp; [Model Precision](/0450_x_Model_Precision)&nbsp;&nbsp; :bookmark:x :bookmark:Model :bookmark:Precision
 - 2023-10-30&nbsp;&nbsp; [Gym -> Gymnasium](/0453_Tools_Gym)&nbsp;&nbsp; :bookmark:Tools :bookmark:Gym
-- 2023-10-30&nbsp;&nbsp; [NNCF](/0451_Tools_OV_NNCF)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:NNCF
-- 2023-10-30&nbsp;&nbsp; [Isaac Gym - Nvidia](/0452_Tools_IsaacGym)&nbsp;&nbsp; :bookmark:Tools :bookmark:IsaacGym
 - 2023-10-17&nbsp;&nbsp; [CLIP](/0448_paper_CLIP)&nbsp;&nbsp; :bookmark:paper :bookmark:CLIP
 - 2023-10-13&nbsp;&nbsp; [Question](/0447_x_Q)&nbsp;&nbsp; :bookmark:x :bookmark:Q
 - 2023-10-12&nbsp;&nbsp; [Stable Diffusion 原理](/0445_LM_VLM_StableDiffusion_Algos)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:StableDiffusion :bookmark:Algos
 - 2023-10-12&nbsp;&nbsp; [Large Language Models](/0446_LM_LLMs)&nbsp;&nbsp; :bookmark:LM :bookmark:LLMs
-- 2023-09-20&nbsp;&nbsp; [bitwise_xxx](/0444_OpenCV_Core_bitwisexxx)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:Core :bookmark:bitwisexxx
 - 2023-09-20&nbsp;&nbsp; [blur 模糊处理](/0441_OpenCV_IP_Filter_blur)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter :bookmark:blur
 - 2023-09-20&nbsp;&nbsp; [SD 应用 webui](/0440_LM_VLM_StableDiffusion_WebUI)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:StableDiffusion :bookmark:WebUI
-- 2023-09-20&nbsp;&nbsp; [medianBlur 中值滤波](/0442_OpenCV_IP_Filter_medianBlur)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter :bookmark:medianBlur
 - 2023-09-20&nbsp;&nbsp; [用于边缘检测的线性滤波器 Sobel](/0443_OpenCV_IP_Filter_Sobel)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter :bookmark:Sobel
+- 2023-09-20&nbsp;&nbsp; [medianBlur 中值滤波](/0442_OpenCV_IP_Filter_medianBlur)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter :bookmark:medianBlur
+- 2023-09-20&nbsp;&nbsp; [bitwise_xxx](/0444_OpenCV_Core_bitwisexxx)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:Core :bookmark:bitwisexxx
 - 2023-08-12&nbsp;&nbsp; [G-API - Graph API](/0439_OpenCV_GAPI)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:GAPI
-- 2023-08-10&nbsp;&nbsp; [TAPI - Transparent API](/0436_OpenCV_TAPI)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:TAPI
+- 2023-08-10&nbsp;&nbsp; [OpenCV parallel_for_](/0437_OpenCV_ParallelFor)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:ParallelFor
 - 2023-08-10&nbsp;&nbsp; [HAL - Universal Intrinsics](/0435_OpenCV_HAL)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:HAL
 - 2023-08-10&nbsp;&nbsp; [OpenCV CPU Optimizations](/0438_OpenCV_CPUOpt)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:CPUOpt
-- 2023-08-10&nbsp;&nbsp; [OpenCV parallel_for_](/0437_OpenCV_ParallelFor)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:ParallelFor
+- 2023-08-10&nbsp;&nbsp; [TAPI - Transparent API](/0436_OpenCV_TAPI)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:TAPI
 - 2023-08-09&nbsp;&nbsp; [Debug OpenCV](/0434_OpenCV_Debug)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:Debug
 - 2023-08-02&nbsp;&nbsp; [OpenCV with OpenCL](/0432_OpenCV_OpenCL)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:OpenCL
 - 2023-08-02&nbsp;&nbsp; [OpenCV Performance Test](/0431_OpenCV_PerfTest)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:PerfTest
 - 2023-08-01&nbsp;&nbsp; [OpenCV With IPP](/0430_OpenCV_IPP)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IPP
 - 2023-06-29&nbsp;&nbsp; [应用](/0428_应用)&nbsp;&nbsp; :bookmark:应用
 - 2023-06-29&nbsp;&nbsp; [DragGAN](/0429_LM_VLM_DragGAN)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:DragGAN
-- 2023-06-17&nbsp;&nbsp; [OpenCV 读写](/0426_OpenCV_IO)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IO
-- 2023-06-17&nbsp;&nbsp; [多媒体处理工具](/0421_Media_Tools)&nbsp;&nbsp; :bookmark:Media :bookmark:Tools
-- 2023-06-17&nbsp;&nbsp; [Image 相关 Tasks](/0420_ML_Tasks_Image)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image
-- 2023-06-17&nbsp;&nbsp; [AutoML Tools](/0427_ML_AutoML_Tools)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:Tools
-- 2023-06-17&nbsp;&nbsp; [3D Cloud Features](/0424_3D_Cloud_Features)&nbsp;&nbsp; :bookmark:3D :bookmark:Cloud :bookmark:Features
-- 2023-06-17&nbsp;&nbsp; [Core functionality 核心功能函数](/0425_OpenCV_Core)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:Core
 - 2023-06-17&nbsp;&nbsp; [3D 算法](/0422_3D_Algos)&nbsp;&nbsp; :bookmark:3D :bookmark:Algos
+- 2023-06-17&nbsp;&nbsp; [OpenCV 读写](/0426_OpenCV_IO)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IO
 - 2023-06-17&nbsp;&nbsp; [3D Cloud 点云](/0423_3D_Cloud)&nbsp;&nbsp; :bookmark:3D :bookmark:Cloud
-- 2023-06-16&nbsp;&nbsp; [3D Tools](/0419_3D_Tools)&nbsp;&nbsp; :bookmark:3D :bookmark:Tools
-- 2023-06-16&nbsp;&nbsp; [机器学习/深度学习](/0416_ML)&nbsp;&nbsp; :bookmark:ML
+- 2023-06-17&nbsp;&nbsp; [AutoML Tools](/0427_ML_AutoML_Tools)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:Tools
+- 2023-06-17&nbsp;&nbsp; [Core functionality 核心功能函数](/0425_OpenCV_Core)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:Core
+- 2023-06-17&nbsp;&nbsp; [多媒体处理工具](/0421_Media_Tools)&nbsp;&nbsp; :bookmark:Media :bookmark:Tools
+- 2023-06-17&nbsp;&nbsp; [3D Cloud Features](/0424_3D_Cloud_Features)&nbsp;&nbsp; :bookmark:3D :bookmark:Cloud :bookmark:Features
+- 2023-06-17&nbsp;&nbsp; [Image 相关 Tasks](/0420_ML_Tasks_Image)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image
 - 2023-06-16&nbsp;&nbsp; [x](/0418_x)&nbsp;&nbsp; :bookmark:x
 - 2023-06-16&nbsp;&nbsp; [AI Tools](/0415_Tools)&nbsp;&nbsp; :bookmark:Tools
+- 2023-06-16&nbsp;&nbsp; [3D Tools](/0419_3D_Tools)&nbsp;&nbsp; :bookmark:3D :bookmark:Tools
+- 2023-06-16&nbsp;&nbsp; [机器学习/深度学习](/0416_ML)&nbsp;&nbsp; :bookmark:ML
 - 2023-06-16&nbsp;&nbsp; [Media](/0417_Media)&nbsp;&nbsp; :bookmark:Media
-- 2023-06-07&nbsp;&nbsp; [Imagen](/0413_LM_VLM_Imagen)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:Imagen
 - 2023-06-07&nbsp;&nbsp; [SAM](/0414_LM_VLM_SAM)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:SAM
+- 2023-06-07&nbsp;&nbsp; [Imagen](/0413_LM_VLM_Imagen)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:Imagen
+- 2023-06-05&nbsp;&nbsp; [大模型微调](/0410_LM_FT)&nbsp;&nbsp; :bookmark:LM :bookmark:FT
 - 2023-06-05&nbsp;&nbsp; [Prefix Tuning](/0411_LM_FT_PrefixTuning)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:PrefixTuning
 - 2023-06-05&nbsp;&nbsp; [Adapter FineTuning](/0412_LM_FT_Adapter)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:Adapter
-- 2023-06-05&nbsp;&nbsp; [大模型微调](/0410_LM_FT)&nbsp;&nbsp; :bookmark:LM :bookmark:FT
 - 2023-06-04&nbsp;&nbsp; [Cool Demo](/0409_x_Demo)&nbsp;&nbsp; :bookmark:x :bookmark:Demo
 - 2023-06-03&nbsp;&nbsp; [大模型](/0408_LM)&nbsp;&nbsp; :bookmark:LM
-- 2023-06-02&nbsp;&nbsp; [LoRA](/0406_LM_FT_LoRA)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:LoRA
 - 2023-06-02&nbsp;&nbsp; [ControlNet](/0407_paper_ControlNet)&nbsp;&nbsp; :bookmark:paper :bookmark:ControlNet
 - 2023-06-02&nbsp;&nbsp; [DreamBooth](/0405_LM_FT_DreamBooth)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:DreamBooth
+- 2023-06-02&nbsp;&nbsp; [LoRA](/0406_LM_FT_LoRA)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:LoRA
 - 2023-05-31&nbsp;&nbsp; [LaMa - Image Inpainting](/0404_LM_VLM_LaMa)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:LaMa
 - 2023-05-30&nbsp;&nbsp; [缺陷图片生成](/0403_x_DefectGen)&nbsp;&nbsp; :bookmark:x :bookmark:DefectGen
 - 2023-05-16&nbsp;&nbsp; [Stable Diffusion](/0402_LM_VLM_StableDiffusion)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:StableDiffusion
@@ -146,20 +147,20 @@
 - 2023-02-21&nbsp;&nbsp; [Papers](/0386_paper)&nbsp;&nbsp; :bookmark:paper
 - 2023-02-21&nbsp;&nbsp; [CSPNet](/0385_paper_CSPNet)&nbsp;&nbsp; :bookmark:paper :bookmark:CSPNet
 - 2023-02-16&nbsp;&nbsp; [AP & mAP & AR](/0382_ML_Metrics_Detection_APmAPAR)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:APmAPAR
+- 2023-02-16&nbsp;&nbsp; [IoU - Intersection Over Union](/0383_ML_Metrics_Detection_IoU)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:IoU
 - 2023-02-16&nbsp;&nbsp; [TPR & FPR](/0381_ML_Metrics_Detection_TPRFPR)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:TPRFPR
 - 2023-02-16&nbsp;&nbsp; [COCO Detection Metrics](/0384_ML_Metrics_Detection_COCO)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:COCO
-- 2023-02-16&nbsp;&nbsp; [IoU - Intersection Over Union](/0383_ML_Metrics_Detection_IoU)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:IoU
 - 2023-02-15&nbsp;&nbsp; [资源参考](/0380_Reference)&nbsp;&nbsp; :bookmark:Reference
 - 2023-02-14&nbsp;&nbsp; [YOLO V5](/0379_ML_Tasks_Image_Detection_YOLO_V5)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Detection :bookmark:YOLO :bookmark:V5
 - 2023-02-06&nbsp;&nbsp; [Loss/Cost/ Object Function - 损失代价目标函数](/0378_ML_Arch_Func)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:Func
-- 2023-02-03&nbsp;&nbsp; [CV 计算机视觉](/0371_CV)&nbsp;&nbsp; :bookmark:CV
-- 2023-02-03&nbsp;&nbsp; [AI 热点](/0375_Hot)&nbsp;&nbsp; :bookmark:Hot
 - 2023-02-03&nbsp;&nbsp; [ChatGPT](/0373_Hot_AIGC_ChatGPT)&nbsp;&nbsp; :bookmark:Hot :bookmark:AIGC :bookmark:ChatGPT
-- 2023-02-03&nbsp;&nbsp; [AIGC](/0374_Hot_AIGC)&nbsp;&nbsp; :bookmark:Hot :bookmark:AIGC
 - 2023-02-03&nbsp;&nbsp; [AnnealingLR 退火学习率](/0372_ML_Arch_LR_AnnealingLR)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:LR :bookmark:AnnealingLR
+- 2023-02-03&nbsp;&nbsp; [AI 热点](/0375_Hot)&nbsp;&nbsp; :bookmark:Hot
+- 2023-02-03&nbsp;&nbsp; [AIGC](/0374_Hot_AIGC)&nbsp;&nbsp; :bookmark:Hot :bookmark:AIGC
+- 2023-02-03&nbsp;&nbsp; [CV 计算机视觉](/0371_CV)&nbsp;&nbsp; :bookmark:CV
 - 2023-02-03&nbsp;&nbsp; [ML 架构](/0376_ML_Arch)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch
-- 2023-02-02&nbsp;&nbsp; [PostProcessing](/0370_ML_PostP)&nbsp;&nbsp; :bookmark:ML :bookmark:PostP
 - 2023-02-02&nbsp;&nbsp; [传统机器学习](/0367_ML_OML)&nbsp;&nbsp; :bookmark:ML :bookmark:OML
+- 2023-02-02&nbsp;&nbsp; [PostProcessing](/0370_ML_PostP)&nbsp;&nbsp; :bookmark:ML :bookmark:PostP
 - 2023-02-02&nbsp;&nbsp; [PreProcessing](/0369_ML_PreP)&nbsp;&nbsp; :bookmark:ML :bookmark:PreP
 - 2023-02-02&nbsp;&nbsp; [Hyperparameter 超参数](/0368_ML_Arch_HP)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:HP
 - 2023-01-31&nbsp;&nbsp; [Op](/0366_ML_Op)&nbsp;&nbsp; :bookmark:ML :bookmark:Op
