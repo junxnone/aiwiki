@@ -8,7 +8,7 @@
       - [低延迟](/0037_Media_Image_Camera_LowLatency)
       - [像素格式](/0119_Media_Image_Camera_PixelFormat)
       - [定拍 vs 飞拍](/0038_Media_Image_Camera_定拍飞拍)
-      - 相机内参
+      - [相机内参](/0547_Media_Image_Camera_相机内参)
         - [dx、dy：单个像素物理宽/高 通俗解释](/0546_Media_Image_Camera_相机内参_dxdy)
     - [Color](/0126_Media_Image_Color)
       - [Gamut 色域](/0124_Media_Image_Color_Gamut)
@@ -518,4 +518,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1340060710</sub></kbd>
+<kbd><sub>@1344170710</sub></kbd>
