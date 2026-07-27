@@ -423,6 +423,7 @@
     - [DualAnoDiff CN](/0523_paper_DualAnoDiff_cn)
   - [Eureka](/0470_paper_Eureka)
   - [FiLo](/0472_paper_FiLo)
+  - [FoundationPose](/0549_paper_FoundationPose)
   - [FoundationStereo 系列](/0542_paper_FoundationStereo)
     - [Fast-FoundationStereo: Real-Time Zero-Shot Stereo Matching 读书笔记](/0543_paper_FoundationStereo_FFDS)
   - [Grounding DINO](/0464_paper_GroundingDINO)
@@ -519,4 +520,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1756050726</sub></kbd>
+<kbd><sub>@1129040727</sub></kbd>
