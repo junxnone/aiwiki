@@ -2,7 +2,7 @@
 Title | paper FoundationPose
 -- | --
 Created @ | `2026-07-27T03:27:50Z`
-Updated @| `2026-07-27T03:27:50Z`
+Updated @| `2026-07-27T03:28:58Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/549)
 
@@ -14,9 +14,9 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/549)
 - **论文标题**：FoundationPose: Unified 6D Pose Estimation and Tracking of Novel Objects
 - **会议/等级**：CVPR 2024 Highlight（顶会优质论文）
 - **作者/机构**：NVIDIA 英伟达实验室
-- **核心定位**：首个统一**6D位姿估计 \+ 6D位姿跟踪**的通用基础模型，一套网络同时兼容 \*\*Model\-based（CAD模型）\*\* 与 \*\*Model\-free（无模型/少量参考图）\*\* 两大范式，支持未知物体**零样本推理**，测试阶段无需微调。
+- **核心定位**：首个统一**6D位姿估计 \+ 6D位姿跟踪**的通用基础模型，一套网络同时兼容 **Model\-based（CAD模型）** 与 **Model\-free（无模型/少量参考图）** 两大范式，支持未知物体**零样本推理**，测试阶段无需微调。
 - **核心能力**：单帧全局定位 \+ 时序连续跟踪双任务统一，泛化性远超各类专用SOTA模型。
-- **项目主页**：https://nvlabs\.github\.io/FoundationPose/
+- **项目主页**：https://nvlabs.github.io/FoundationPose/
 
 ## 二、研究背景与现存痛点
 
