@@ -504,6 +504,7 @@
     - [ChatGPT](/0373_Hot_AIGC_ChatGPT)
     - [AIGC Tools](/0456_Hot_AIGC_Tools)
   - [DeepSeek](/0496_Hot_DeepSeek)
+  - [Agent Harness](/0551_Hot_Harness)
 - [KnowledgeGraph](/0329_KnowledgeGraph)
 - [资源参考](/0380_Reference)
 - [x](/0418_x)
@@ -521,4 +522,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@2117131014</sub></kbd>
+<kbd><sub>@1615301015</sub></kbd>
