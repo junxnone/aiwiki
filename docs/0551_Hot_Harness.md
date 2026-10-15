@@ -2,7 +2,7 @@
 Title | Hot Harness
 -- | --
 Created @ | `2026-10-15T08:14:23Z`
-Updated @| `2026-10-15T09:17:00Z`
+Updated @| `2026-10-15T09:22:59Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/551)
 
@@ -190,4 +190,5 @@ MCP 成为工具互通标准，Harness Engineering 成为独立方向；专门�
 Agent Harness 是当前 Agent 落地的核心层，承担模型之外所有闭环控制、环境交互、状态管理工作。它分为本地、云端两种部署形态，不同 Harness 有明确的场景偏向，不存在万能最优方案。
 
 模型能力是上限，但 Harness 决定了 Agent 能不能稳定、低成本、安全地触达这个上限；在做 Agent 评测时，必须区分「测模型」和「测 Harness」，控制变量才具备参考意义。随着 MCP 等协议标准化，Harness 生态会进一步解耦：同一套 Harness 可以插拔不同模型、不同工具。
+
 
