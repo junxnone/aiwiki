@@ -3,7 +3,7 @@
 | Title     | Hot Harness                                           |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-10-15T08:14:23Z`                                |
-| Updated @ | `2026-10-15T08:14:23Z`                                |
+| Updated @ | `2026-10-15T09:17:00Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/551) |
 
@@ -80,16 +80,40 @@ Harness，术语开始出圈；2026 年“Harness Engineering”成为独立方�
 闭环流程：上下文注入 → 模型推理决策 → Harness 执行动作 → Harness 持久化产物 → Harness 校验结果 →
 结果回填上下文，循环直到任务完成或终止。
 
+``` markmap
+# Harness 五大模块
+
+- Context Injection 上下文注入
+  - 系统提示词
+  - 会话记忆
+  - 技能定义
+  - 历史对话
+- Control 控制层
+  - Compaction 上下文压缩
+  - Orchestration 任务编排/子Agent调度
+  - Ralph loops 主循环控制
+- Action 动作执行
+  - Bash / 自定义工具
+  - MCP 服务调用
+- Persist 持久化
+  - 文件系统读写 / Git
+  - 进度文件
+- Observe & Verify 观测校验
+  - 测试用例执行
+  - 日志解析
+  - 断言判断
+```
+
 ## 三、Harness 部署形态：本地 Harness / 云端托管 Harness
 
 Harness 本身没有固定部署位置，同一套 Harness 设计，可以本地部署，也可以托管在云端；模型位置和 Harness
 位置可以独立组合：
 
-| 部署模式                   | 说明                                                                | 典型代表                                                                               |
-| ---------------------- | ----------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| 本地 Harness + 云端模型（最主流） | Agent 调度循环、沙箱、文件访问跑在本机进程；仅 LLM 推理请求走厂商 API；可直接访问本机代码、Shell、本地 MCP | Claude Code CLI、Codex CLI、Aider、Hermes Agent                                       |
-| 云端托管 Harness + 云端模型    | Harness Runtime + 隔离沙箱全部运行在厂商服务器；Agent 在远程环境执行，本机只提交任务            | Claude Managed Agents、OpenAI Agents API、Gemini Deep Research、AWS Bedrock AgentCore |
-| 本地 Harness + 本地模型      | Harness 在本机进程，模型通过 Ollama / vLLM 本地推理，全程不出网                       | LangGraph 自建 Harness + Qwen / Llama 本地部署                                           |
+| 部署模式                   | 说明                                                                | 典型代表                                                                                     |
+| ---------------------- | ----------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| 本地 Harness + 云端模型（最主流） | Agent 调度循环、沙箱、文件访问跑在本机进程；仅 LLM 推理请求走厂商 API；可直接访问本机代码、Shell、本地 MCP | Claude Code CLI、Codex CLI、Google Antigravity CLI、Aider、Hermes Agent                      |
+| 云端托管 Harness + 云端模型    | Harness Runtime + 隔离沙箱全部运行在厂商服务器；Agent 在远程环境执行，本机只提交任务            | Claude Managed Agents、OpenAI Agents API、Gemini Deep Research、AWS Bedrock AgentCore、Manus |
+| 本地 Harness + 本地模型      | Harness 在本机进程，模型通过 Ollama / vLLM 本地推理，全程不出网                       | LangGraph 自建 Harness + Qwen / Llama 本地部署                                                 |
 
 > 重要区分：VSCode 上的 Claude Code 插件只是 UI 层，Harness 本体是本地启动的 `claude` CLI 进程。
 
@@ -97,19 +121,21 @@ Harness 本身没有固定部署位置，同一套 Harness 设计，可以本地
 
 分类：厂商原生 Harness、开源通用 Harness、编排网关型 Harness。
 
-| Harness                 | 归属            | 类型             | 核心定位           | 关键特点                                                                    |
-| ----------------------- | ------------- | -------------- | -------------- | ----------------------------------------------------------------------- |
-| Claude Code CLI         | Anthropic     | 厂商原生本地 Harness | 代码优先结对编程       | 工具契约固定（Read/Edit/Bash），上下文压缩成熟，Token 效率高；编码稳定，但对开放式探索任务约束较强             |
-| Claude Managed Agents   | Anthropic     | 云端托管 Harness   | 长周期云端 Agent    | 云端持久沙箱、长会话托管，无需本机在线                                                     |
-| OpenAI Codex CLI        | OpenAI        | 厂商原生本地 Harness | Coding Agent   | 安全校验严格，策略保守，重构场景容易卡住                                                    |
-| OpenAI Agents API       | OpenAI        | 云端托管 Harness   | 通用托管智能体        | 配套 MCP、会话管理、托管沙箱                                                        |
-| Hermes Agent            | Nous Research | 开源通用 Harness   | 长周期通用自动化       | 开放循环，自带复盘、Skill 自进化能力，适合后台持续任务；默认安全护栏宽松，容易 Token 爆炸                     |
-| OpenClaw                | OpenClaw 社区   | 网关编排型 Harness  | 多通道、多 Agent 调度 | 对接 Telegram / Discord 等消息入口；可把 Claude Code、Hermes 作为后端 Runtime；编码能力不是强项 |
-| OpenHands               | 开源社区          | 开源编码 Harness   | 可定制化编码 Agent   | 高度可二次开发，默认策略朴素，长任务容易失忆                                                  |
-| mini-SWE-agent          | 学术基线          | 轻量基线 Harness   | 干净 ReAct 实验基准  | 约束极少，探索型科研任务表现强；缺少快照、高级压缩，稳定性差                                          |
-| Aider                   | 社区开源          | 轻量编码 Harness   | 极简本地结对编码       | 轻量、上手简单，生态成熟                                                            |
-| AgentScope / Qwen-Agent | 阿里            | 开源 Harness 框架  | 多智能体、国产模型适配    | 分布式调度，适配 Qwen 系列                                                        |
-| LangGraph               | LangChain     | Harness 开发框架   | 自定义 Harness 底座 | 状态图、断点、人机介入，工业界自建 Harness 首选底座                                          |
+| Harness                              | 归属                      | 类型             | 核心定位           | 关键特点                                                                                                    |
+| ------------------------------------ | ----------------------- | -------------- | -------------- | ------------------------------------------------------------------------------------------------------- |
+| Claude Code CLI                      | Anthropic               | 厂商原生本地 Harness | 代码优先结对编程       | 工具契约固定（Read/Edit/Bash），上下文压缩成熟，Token 效率高；编码稳定，但对开放式探索任务约束较强                                             |
+| Claude Managed Agents                | Anthropic               | 云端托管 Harness   | 长周期云端 Agent    | 云端持久沙箱、长会话托管，无需本机在线                                                                                     |
+| OpenAI Codex CLI                     | OpenAI                  | 厂商原生本地 Harness | Coding Agent   | 安全校验严格，策略保守，重构场景容易卡住                                                                                    |
+| OpenAI Agents API                    | OpenAI                  | 云端托管 Harness   | 通用托管智能体        | 配套 MCP、会话管理、托管沙箱                                                                                        |
+| Google Antigravity CLI（原 Gemini CLI） | Google                  | 厂商原生本地 Harness | 终端编码 Agent     | 2026-06-18 起取代 Gemini CLI 作为消费侧默认入口，闭源；Gemini CLI 本体保留给企业/API 用户，仍开源（Apache-2.0）；百万级 token 上下文是主要卖点     |
+| Manus                                | Monica（现 Tencent 系独立运营） | 云端托管 Harness   | 通用自主 Agent     | 中心编排器 + 多个专职子 Agent 并行（网页浏览、数据分析、代码执行等），按子任务动态选模型；per-task 沙箱 VM 隔离；GAIA Level 2/3 基准长期领先，定位是"通才"而非编码专精 |
+| Hermes Agent                         | Nous Research           | 开源通用 Harness   | 长周期通用自动化       | 开放循环，自带复盘、Skill 自进化能力，适合后台持续任务；默认安全护栏宽松，容易 Token 爆炸                                                     |
+| OpenClaw                             | OpenClaw 社区             | 网关编排型 Harness  | 多通道、多 Agent 调度 | 对接 Telegram / Discord 等消息入口；可把 Claude Code、Hermes 作为后端 Runtime；编码能力不是强项                                 |
+| OpenHands                            | 开源社区                    | 开源编码 Harness   | 可定制化编码 Agent   | 高度可二次开发，默认策略朴素，长任务容易失忆                                                                                  |
+| mini-SWE-agent                       | 学术基线                    | 轻量基线 Harness   | 干净 ReAct 实验基准  | 约束极少，探索型科研任务表现强；缺少快照、高级压缩，稳定性差                                                                          |
+| Aider                                | 社区开源                    | 轻量编码 Harness   | 极简本地结对编码       | 轻量、上手简单，生态成熟                                                                                            |
+| AgentScope / Qwen-Agent              | 阿里                      | 开源 Harness 框架  | 多智能体、国产模型适配    | 分布式调度，适配 Qwen 系列                                                                                        |
+| LangGraph                            | LangChain               | Harness 开发框架   | 自定义 Harness 底座 | 状态图、断点、人机介入，工业界自建 Harness 首选底座                                                                          |
 
 ## 五、Harness Benchmark：评测思路与跑分规律
 
@@ -136,7 +162,11 @@ Harness，甚至可以超过强模型搭配劣质 Harness。**
 4.  **Claw-SWE-Bench**：面向多通道通用 Agent 的编码基准；
 
 5.  **SWE-bench Verified**：两种用法——打包提交（模型 + Harness）；或锁定 mini-SWE-agent
-    作为统一基线，单独测模型能力。
+    作为统一基线，单独测模型能力；
+
+6.  **GAIA**：面向通用（非纯编码）自主任务的基准，覆盖网页操作、工具使用、多步推理；Manus 这类多 Agent 编排型
+    Harness 在 Level 2/3 上领先其他通才型 Agent，是 Harness 架构差异（多子 Agent 并行 +
+    动态选模型）而非单一模型能力的体现。
 
 ### 3\. 场景化跑分规律（同模型前提下）
 
@@ -147,6 +177,9 @@ Harness，甚至可以超过强模型搭配劣质 Harness。**
   - 长时间后台自动化、持续迭代任务：Hermes Agent 优势明显；
 
   - 多平台机器人、多 Agent 协同：OpenClaw 更合适；
+
+  - 通用非编码自主任务（网页操作、研究、数据分析）：Manus 的多子 Agent 编排架构通常领先单 Agent 工具契约型
+    Harness；
 
   - 安全敏感场景：Codex CLI \> Claude Code \> OpenHands \> Hermes。
 
@@ -167,21 +200,29 @@ Harness，甚至可以超过强模型搭配劣质 Harness。**
 
 4.  **2024 年末 – 2025：Harness 概念正式定型** Anthropic 发布 Claude Code，并发布长任务
     Harness 专题博客，正式定义 Agent Harness；Hermes、OpenClaw、DeepSeek Harness
-    陆续开源；行业认知转变：Agent 瓶颈不在模型，而在 Harness。
+    陆续开源；Google 发布开源的 Gemini CLI（2025-06）；Monica 发布
+    Manus（2025-03），多 Agent 编排型通用 Harness 路线出圈；行业认知转变：Agent 瓶颈不在模型，而在
+    Harness。
 
-5.  **2026 至今：标准化与工程化** MCP 成为工具互通标准，Harness Engineering 成为独立方向；专门针对
-    Harness 的 Benchmark 集中出现；本地 Harness、云端托管 Harness 两条路线并行成熟。
+5.  **2026 至今：标准化与工程化，部分产品线迭代** MCP 成为工具互通标准，Harness Engineering
+    成为独立方向；专门针对 Harness 的 Benchmark 集中出现；本地 Harness、云端托管
+    Harness 两条路线并行成熟；Google 以闭源的 Antigravity CLI（6月）取代 Gemini CLI
+    面向消费端的定位；Manus 历经 Meta
+    收购意向（2025-12）、监管层面的中国业务调整（2026-04）后，于
+    2026-09 由 Tencent 系投资方主导独立运营。
 
 ## 七、选型指南
 
-| 需求场景                       | 推荐选择                                      | 理由                          |
-| -------------------------- | ----------------------------------------- | --------------------------- |
-| 本地 IDE 结对编程、项目重构           | Claude Code CLI / Codex CLI               | 编码稳定性、Token 效率、Git 集成均衡     |
-| 长时间后台自动化、任务自迭代、非编码通用任务     | Hermes Agent                              | 复盘闭环、技能沉淀，适合长期运行            |
-| 多 IM 机器人、多 Agent 编排、统一入口网关 | OpenClaw                                  | 多渠道接入，可以复用其他成熟 Harness 作为后端 |
-| 学术对照实验、干净基线、自由探索           | mini-SWE-agent                            | 约束少，排除 Harness 策略干扰         |
-| 自研定制 Agent、业务深度改造          | LangGraph / AgentScope                    | 灵活可控，完全自主定义 Harness 逻辑      |
-| 云端长期任务，不想本机持续开机            | Claude Managed Agents / Bedrock AgentCore | 厂商托管沙箱，持久运行                 |
+| 需求场景                         | 推荐选择                                      | 理由                                  |
+| ---------------------------- | ----------------------------------------- | ----------------------------------- |
+| 本地 IDE 结对编程、项目重构             | Claude Code CLI / Codex CLI               | 编码稳定性、Token 效率、Git 集成均衡             |
+| 超长上下文、Google 生态内编码           | Google Antigravity CLI（或企业版 Gemini CLI）   | 百万级 token 上下文，深度绑定 Gemini/Vertex AI |
+| 长时间后台自动化、任务自迭代、非编码通用任务       | Hermes Agent                              | 复盘闭环、技能沉淀，适合长期运行                    |
+| 通用自主任务（研究、数据分析、网页操作），不要求本机常驻 | Manus                                     | 多子 Agent 编排 + 云端沙箱，GAIA 通才基准领先      |
+| 多 IM 机器人、多 Agent 编排、统一入口网关   | OpenClaw                                  | 多渠道接入，可以复用其他成熟 Harness 作为后端         |
+| 学术对照实验、干净基线、自由探索             | mini-SWE-agent                            | 约束少，排除 Harness 策略干扰                 |
+| 自研定制 Agent、业务深度改造            | LangGraph / AgentScope                    | 灵活可控，完全自主定义 Harness 逻辑              |
+| 云端长期任务，不想本机持续开机              | Claude Managed Agents / Bedrock AgentCore | 厂商托管沙箱，持久运行                         |
 
 ## 八、总结
 
