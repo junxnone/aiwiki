@@ -505,8 +505,12 @@
     - [AIGC Tools](/0456_Hot_AIGC_Tools)
   - [DeepSeek](/0496_Hot_DeepSeek)
   - [Agent Harness](/0551_Hot_Harness)
+    - [Harness Benchmark](/0557_Hot_Harness_Benchmark)
     - [Harness Context Engineering](/0552_Hot_Harness_Context)
+    - [Harness MCP](/0556_Hot_Harness_MCP)
     - [Harness Orchestration](/0554_Hot_Harness_Orchestration)
+    - [Harness Sandbox](/0555_Hot_Harness_Sandbox)
+    - [Harness Skills](/0553_Hot_Harness_Skills)
 - [KnowledgeGraph](/0329_KnowledgeGraph)
 - [资源参考](/0380_Reference)
 - [x](/0418_x)
@@ -524,4 +528,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1718221015</sub></kbd>
+<kbd><sub>@1724151015</sub></kbd>
