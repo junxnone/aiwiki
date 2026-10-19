@@ -517,6 +517,9 @@
   - Post
     - training
       - [NNCF Post-training Quantization](/0561_NNCF_Post_training_Quantization)
+  - Training
+    - time
+      - [NNCF Training-time Optimization](/0562_NNCF_Training_time_Optimization)
   - Weight
     - [NNCF Weight Compression](/0560_NNCF_Weight_Compression)
 - [资源参考](/0380_Reference)
@@ -538,4 +541,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1627131019</sub></kbd>
+<kbd><sub>@1629491019</sub></kbd>
