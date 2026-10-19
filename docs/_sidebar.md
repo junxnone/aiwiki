@@ -513,6 +513,9 @@
     - [Harness Skills](/0553_Hot_Harness_Skills)
   - [模型可解释性前沿状态](/0558_Hot_Interpretability)
 - [KnowledgeGraph](/0329_KnowledgeGraph)
+- NNCF
+  - Weight
+    - [NNCF Weight Compression](/0560_NNCF_Weight_Compression)
 - [资源参考](/0380_Reference)
 - [x](/0418_x)
   - [Diffusion Model](/0512_x_DM)
@@ -532,4 +535,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1547131019</sub></kbd>
+<kbd><sub>@1624561019</sub></kbd>
