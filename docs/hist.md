@@ -111,7 +111,7 @@
 - 2023-10-30&nbsp;&nbsp; [Isaac Gym - Nvidia](/0452_Tools_IsaacGym)&nbsp;&nbsp; :bookmark:Tools :bookmark:IsaacGym
 - 2023-10-30&nbsp;&nbsp; [Gym -> Gymnasium](/0453_Tools_Gym)&nbsp;&nbsp; :bookmark:Tools :bookmark:Gym
 - 2023-10-30&nbsp;&nbsp; [Model Precision](/0450_x_Model_Precision)&nbsp;&nbsp; :bookmark:x :bookmark:Model :bookmark:Precision
-- 2023-10-30&nbsp;&nbsp; [NNCF](/0451_Tools_OV_NNCF)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:NNCF
+- 2023-10-30&nbsp;&nbsp; [NNCF - Neural Network Compression Framework](/0451_Tools_OV_NNCF)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:NNCF
 - 2023-10-17&nbsp;&nbsp; [CLIP](/0448_paper_CLIP)&nbsp;&nbsp; :bookmark:paper :bookmark:CLIP
 - 2023-10-13&nbsp;&nbsp; [Question](/0447_x_Q)&nbsp;&nbsp; :bookmark:x :bookmark:Q
 - 2023-10-12&nbsp;&nbsp; [Large Language Models](/0446_LM_LLMs)&nbsp;&nbsp; :bookmark:LM :bookmark:LLMs

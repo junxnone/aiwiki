@@ -466,7 +466,7 @@
     - [OpenVINO Debug](/0527_Tools_OV_Debug)
     - [DevCloud](/0179_Tools_OV_DevCloud)
     - [OpenVINO INT8 Model](/0182_Tools_OV_INT8Model)
-    - [NNCF](/0451_Tools_OV_NNCF)
+    - [NNCF - Neural Network Compression Framework](/0451_Tools_OV_NNCF)
     - [OpenVINO Ops](/0528_Tools_OV_OPs)
       - [OPs CPU Impl](/0534_Tools_OV_OPs_CPUImpl)
       - [OPs GPU Impl](/0531_Tools_OV_OPs_GPUImpl)
@@ -541,4 +541,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1629491019</sub></kbd>
+<kbd><sub>@1633571019</sub></kbd>
