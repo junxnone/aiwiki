@@ -461,7 +461,7 @@
   - [OpenVINO](/0185_Tools_OV)
     - [Model Optimizer](/0181_Tools_OV_MO)
     - [Inference Engine](/0180_Tools_OV_IE)
-    - [POT](/0177_Tools_OV_POT)
+    - [~~POT~~](/0177_Tools_OV_POT)
     - [Compile Tool](/0183_Tools_OV_CompileTool)
     - [OpenVINO Debug](/0527_Tools_OV_Debug)
     - [DevCloud](/0179_Tools_OV_DevCloud)
@@ -532,4 +532,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1532471019</sub></kbd>
+<kbd><sub>@1547131019</sub></kbd>

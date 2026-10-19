@@ -314,7 +314,7 @@
 - 2021-02-07&nbsp;&nbsp; [YUV Color Model](/0121_Media_Image_Color_Model_YUV)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Color :bookmark:Model :bookmark:YUV
 - 2021-02-05&nbsp;&nbsp; [gst-discoverer](/0111_Media_Tools_GStreamer_gstdiscoverer)&nbsp;&nbsp; :bookmark:Media :bookmark:Tools :bookmark:GStreamer :bookmark:gstdiscoverer
 - 2021-02-05&nbsp;&nbsp; [gst-inspect](/0112_Media_Tools_GStreamer_gstinspect)&nbsp;&nbsp; :bookmark:Media :bookmark:Tools :bookmark:GStreamer :bookmark:gstinspect
-- 2021-02-02&nbsp;&nbsp; [POT](/0177_Tools_OV_POT)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:POT
+- 2021-02-02&nbsp;&nbsp; [~~POT~~](/0177_Tools_OV_POT)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:POT
 - 2021-02-01&nbsp;&nbsp; [ViT](/0223_ML_Transformer_ViT)&nbsp;&nbsp; :bookmark:ML :bookmark:Transformer :bookmark:ViT
 - 2021-02-01&nbsp;&nbsp; [DETR](/0165_paper_DETR)&nbsp;&nbsp; :bookmark:paper :bookmark:DETR
 - 2021-01-29&nbsp;&nbsp; [Position Encoding](/0213_ML_Attention_PE)&nbsp;&nbsp; :bookmark:ML :bookmark:Attention :bookmark:PE
