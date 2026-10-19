@@ -228,7 +228,7 @@
         - [MSRCNN](/0164_ML_Tasks_Image_Segmentation_MSRCNN)
         - [MaskRCNN](/0163_ML_Tasks_Image_Segmentation_MaskRCNN)
         - [UNet](/0161_ML_Tasks_Image_Segmentation_UNet)
-      - [Retrieval](/0278_ML_Tasks_Image_Retrieval)
+      - [Image Retrieval](/0278_ML_Tasks_Image_Retrieval)
         - [CBIR](/0155_ML_Tasks_Image_Retrieval_CBIR)
           - [Siamese Network](/0153_ML_Tasks_Image_Retrieval_CBIR_SiameseNetwork)
           - [Triplet Network](/0156_ML_Tasks_Image_Retrieval_CBIR_TripletNetwork)
@@ -529,4 +529,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1737111018</sub></kbd>
+<kbd><sub>@1024521019</sub></kbd>
