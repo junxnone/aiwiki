@@ -2,17 +2,15 @@
 Title | Tools OV POT
 -- | --
 Created @ | `2021-02-02T03:09:49Z`
-Last Modify @| `2022-12-24T16:01:06Z`
+Updated @| `2026-10-19T07:46:15Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/177)
 
 ---
-## Reference
-- [Post-Training Optimization Toolkit](https://docs.openvinotoolkit.org/latest/pot_README.html)
-- [Post-Training Optimization Toolkit Installation Guide](https://docs.openvinotoolkit.org/latest/pot_InstallationGuide.html)
 
+# ~~POT~~
+> 已经被 [NNCF](0451_Tools_OV_NNCF) 替代
 
-## Brief
 - POT - `Post-Training Optimization Toolkit`
 - POT Command Line
 - POT API
@@ -41,6 +39,11 @@ Num | Steps | Description
 
 ![image](https://user-images.githubusercontent.com/2216970/106547092-83029500-6547-11eb-9693-be8caa2ef23e.png)
 ![image](https://user-images.githubusercontent.com/2216970/106547106-8a29a300-6547-11eb-92b5-755a887c3807.png)
+
+
+## Reference
+- [Post-Training Optimization Toolkit](https://docs.openvinotoolkit.org/latest/pot_README.html)
+- [Post-Training Optimization Toolkit Installation Guide](https://docs.openvinotoolkit.org/latest/pot_InstallationGuide.html)
 
 
 
