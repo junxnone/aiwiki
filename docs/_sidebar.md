@@ -514,6 +514,9 @@
   - [模型可解释性前沿状态](/0558_Hot_Interpretability)
 - [KnowledgeGraph](/0329_KnowledgeGraph)
 - NNCF
+  - Post
+    - training
+      - [NNCF Post-training Quantization](/0561_NNCF_Post_training_Quantization)
   - Weight
     - [NNCF Weight Compression](/0560_NNCF_Weight_Compression)
 - [资源参考](/0380_Reference)
@@ -535,4 +538,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1624561019</sub></kbd>
+<kbd><sub>@1627131019</sub></kbd>
