@@ -2,7 +2,7 @@
 Title | Tools OV MO Fusion
 -- | --
 Created @ | `2026-10-20T01:38:37Z`
-Updated @| `2026-10-20T01:52:55Z`
+Updated @| `2026-10-20T02:02:51Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/563)
 
@@ -24,7 +24,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/563)
 
 "融合"听起来是一个动作，但实现上其实是两种本质不同的手段，分清楚这两种，后面每个具体模式就容易理解了：
 
-- **机制 A：算子真的从图里消失，参数被代数合并进另一个算子**——比如 Conv 后面跟一个线性的 Scale/Shift，两者复合之后仍然是一次线性运算，可以直接算出一组新的权重/偏置，把下游算子彻底删掉。这种融合**不需要**底层 kernel 库做任何特殊支持，因为融合之后图里就是一个普通的 Conv，运行时根本不知道它曾经是两个算子。[OpenVINO BatchNorm 折叠](0564_OpenVINO_BatchNorm_折叠_BN_Folding) 就是这种机制的典型例子。
+- **机制 A：算子真的从图里消失，参数被代数合并进另一个算子**——比如 Conv 后面跟一个线性的 Scale/Shift，两者复合之后仍然是一次线性运算，可以直接算出一组新的权重/偏置，把下游算子彻底删掉。这种融合**不需要**底层 kernel 库做任何特殊支持，因为融合之后图里就是一个普通的 Conv，运行时根本不知道它曾经是两个算子。[OpenVINO BatchNorm 折叠](0564_Tools_OV_MO_BNFolding) 就是这种机制的典型例子。
 - **机制 B：下游算子保留在语义上，但被当作"后处理操作（Post-op）"附加到上游算子的 kernel 调用里**——比如 Conv 后面跟一个 ReLU，ReLU 不是线性的，没法用代数合并消掉，但可以让 Conv 的 kernel 在算完乘加结果、还没把数据写回内存之前，**顺手在寄存器里对结果做一次 `max(0, x)`，再写出最终结果**。这要求底层计算库（CPU 的 oneDNN、GPU 的 clDNN/oneDNN）本身提供"post-ops"接口，让调用方可以往一个主算子（如 Convolution）上追加若干个后处理操作。OpenVINO GPU 插件的编译流水线里有专门的两个阶段对应这件事：`prepare_primitive_fusing`（把下游的 ReLU、Eltwise Add 等操作标记为要融合进前一个 primitive）和 `add_onednn_optimization_attributes`（把这些标记翻译成 oneDNN 的 post-ops 调用参数）。
 
 图优化阶段具体怎么"找到"该融合哪些算子：OpenVINO 的图变换框架提供了 `ov::pass::MatcherPass` 这个基础设施——开发者预先定义好一个要匹配的子图"模式"（比如"Convolution 后面紧跟一个 Add，且 Add 的另一个输入是常量"），框架会在整张计算图里查找所有匹配这个模式的位置，匹配到之后执行注册好的回调函数，由回调决定是走机制 A（直接改写权重、删除节点）还是机制 B（给上游节点打上 post-op 标记）。
@@ -49,7 +49,7 @@ z = y + b = (W * x) + b
 
 ### Conv + BatchNorm + Activation（先 A 后 B）
 
-第一步，[OpenVINO BatchNorm 折叠](0564_OpenVINO_BatchNorm_折叠_BN_Folding) 的代数把 `BN(Conv(x))` 改写成一个新的卷积：
+第一步，[OpenVINO BatchNorm 折叠](0564_Tools_OV_MO_BNFolding) 的代数把 `BN(Conv(x))` 改写成一个新的卷积：
 
 ```
 BN(Conv(x)) = BN(W*x + b)
@@ -116,7 +116,7 @@ OpenVINO 的模型优化流水线分两段，融合在两段都可能发生，�
 - GPU：用 `OV_GPU_DUMP_SOURCES_PATH` 导出编译后的 OpenCL 源码，检查生成的 kernel 数量是否比计算图里的算子数量少。
 
 ## Reference
-- [OpenVINO BatchNorm 折叠](0564_OpenVINO_BatchNorm_折叠_BN_Folding)
+- [OpenVINO BatchNorm 折叠](0564_Tools_OV_MO_BNFolding)
 - [OpenVINO Matcher Pass 官方文档（图模式匹配/改写框架）](https://docs.openvino.ai/2024/documentation/openvino-extensibility/transformation-api/matcher-pass.html)
 - [OpenVINO GPU Plugin Graph Optimization Passes（prepare_primitive_fusing/add_onednn_optimization_attributes）](https://github.com/openvinotoolkit/openvino/wiki/Graph-Optimization-Passes)
 - [OpenVINO Ops Impl（CPU/GPU 融合能力对比）](0533_Tools_OV_OPs_Impl)
