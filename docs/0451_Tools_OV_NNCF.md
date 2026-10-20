@@ -2,7 +2,7 @@
 Title | Tools OV NNCF
 -- | --
 Created @ | `2023-10-30T07:57:51Z`
-Updated @| `2026-10-19T08:32:59Z`
+Updated @| `2026-10-20T02:00:41Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/451)
 
@@ -13,7 +13,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/451)
 - 支持的后端：OpenVINO IR（官方首选/支持最全）、PyTorch、ONNX，TensorFlow/TorchFX 部分能力为实验性支持。
 - 核心 API 很薄，常用的就三个函数：`nncf.quantize()`（训练后量化）、`nncf.compress_weights()`（仅权重压缩，LLM 场景主力）、`nncf.quantize_with_accuracy_control()`（带精度控制的量化）。
 - 对 Hugging Face 上的 Transformer/LLM 模型，更推荐通过 [Optimum Intel](https://github.com/huggingface/optimum-intel) 的 `.from_pretrained()`/`optimum-cli export openvino` 间接调用 NNCF，而不是直接写 NNCF API。
-- 三个方向各有一篇深入篇：[NNCF Weight Compression](0560_NNCF_Weight_Compression)（AWQ/Scale Estimation/LoRA Correction）、[NNCF Post-training Quantization](0561_NNCF_Post_training_Quantization)（`nncf.quantize()` 参数详解）、[NNCF Training-time Optimization](0562_NNCF_Training_time_Optimization)（QAT/`nncf.prune()`）。
+- 三个方向各有一篇深入篇：[NNCF Weight Compression](0560_Tools_OV_NNCF_WC)（AWQ/Scale Estimation/LoRA Correction）、[NNCF Post-training Quantization](0561_Tools_OV_NNCF_PTQ)（`nncf.quantize()` 参数详解）、[NNCF Training-time Optimization](0562_Tools_OV_NNCF_TTOP)（QAT/`nncf.prune()`）。
 
 ## 模型压缩做了什么（本质原理）
 
@@ -59,14 +59,14 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/451)
 
 | 算法 | API | 说明 |
 |---|---|---|
-| PTQ（Post-Training Quantization） | `nncf.quantize()` | 把权重和激活都量化为 INT8，需要一个小的校准数据集（官方建议约 300 条样本，用于统计激活值分布），适合 CNN/一般 Transformer 模型，详见 [NNCF Post-training Quantization](0561_NNCF_Post_training_Quantization) |
+| PTQ（Post-Training Quantization） | `nncf.quantize()` | 把权重和激活都量化为 INT8，需要一个小的校准数据集（官方建议约 300 条样本，用于统计激活值分布），适合 CNN/一般 Transformer 模型，详见 [NNCF Post-training Quantization](0561_Tools_OV_NNCF_PTQ) |
 | 带精度控制的量化 | `nncf.quantize_with_accuracy_control()` | 在 `nncf.quantize()` 基础上额外传入验证数据集和精度指标，量化过程中自动监控精度下降，超过设定阈值就回退部分层到 FP16/FP32 |
-| 权重压缩（Weight Compression） | `nncf.compress_weights()` | 只压缩权重到 INT8/INT4，**激活值保持浮点**，因此精度通常比全模型量化更好；**不需要校准数据集**（data-free），主要为 LLM 场景设计——LLM 推理瓶颈主要在访存带宽（权重体积），而不是计算，详见 [NNCF Weight Compression](0560_NNCF_Weight_Compression) |
+| 权重压缩（Weight Compression） | `nncf.compress_weights()` | 只压缩权重到 INT8/INT4，**激活值保持浮点**，因此精度通常比全模型量化更好；**不需要校准数据集**（data-free），主要为 LLM 场景设计——LLM 推理瓶颈主要在访存带宽（权重体积），而不是计算，详见 [NNCF Weight Compression](0560_Tools_OV_NNCF_WC) |
 | 激活稀疏化 | — | 实验性，仅 PyTorch 支持，OpenVINO 后端暂不支持 |
 
 ## 训练时压缩算法（Training-Time，仅 PyTorch，需要训练）
 
-> 详见 [NNCF Training-time Optimization](0562_NNCF_Training_time_Optimization)。注意：NNCF 较新版本里，基于 `NNCFConfig` + `create_compressed_model()`（`NNCFNetwork`）的旧版配置式 API 已被移除，连带被移除的还有一批挂在这套旧架构下的训练时算法——NAS、Structural Pruning、AutoML、Knowledge Distillation、Mixed-Precision Quantization、Movement Sparsity。下面是当前（新 API）仍在维护的训练时能力。
+> 详见 [NNCF Training-time Optimization](0562_Tools_OV_NNCF_TTOP)。注意：NNCF 较新版本里，基于 `NNCFConfig` + `create_compressed_model()`（`NNCFNetwork`）的旧版配置式 API 已被移除，连带被移除的还有一批挂在这套旧架构下的训练时算法——NAS、Structural Pruning、AutoML、Knowledge Distillation、Mixed-Precision Quantization、Movement Sparsity。下面是当前（新 API）仍在维护的训练时能力。
 
 - **QAT（Quantization Aware Training）**：现在的做法比旧版简单得多——直接用 `nncf.quantize()` 对 PyTorch 模型做一次量化（此时模型仍是可训练的 `torch.nn.Module`，内部插入了伪量化节点），然后用**完全标准的训练循环**正常微调几个 epoch（建议用较小学习率，如 `1e-5`），让模型自己适应量化带来的精度损失，比训练后量化精度更高；注意模型要转换成 OpenVINO IR 之后权重才会真正变成 INT8，微调期间仍是浮点计算（只是模拟了量化误差）；
 - **LLM 场景的权重专用 QAT**：结合 LoRA/NLS（Neural Low-rank Adapter Search）做权重量化感知训练，是上面 Weight Compression INT4 压缩在"愿意为精度多花训练成本"场景下的进阶版本；
@@ -93,7 +93,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/451)
 | `quantize_with_accuracy_control()` | 降到约 1/4，但敏感层会回退到更高精度，实际压缩率略低于纯 PTQ | 略低于纯 PTQ（部分层未量化） | 有精度监控和阈值兜底，比纯 PTQ 更有保障 | 适合有明确精度下限要求的场景 |
 | Weight Compression INT8 | 降到约 1/4 | 主要缓解内存/显存带宽压力，LLM 解码阶段提速明显；计算仍是浮点，提速幅度不如全 INT8 量化 | 几乎不掉（激活值保持浮点，无量化误差传播） | LLM 场景首选的"安全"压缩方式 |
 | Weight Compression INT4（基础，不开精度恢复） | 降到约 1/8 | 同上，带宽压力进一步降低 | 比 INT8 明显下降 | 需要配合下面的精度恢复算法 |
-| Weight Compression INT4 + AWQ/Scale Estimation/LoRA Correction | 同 INT4（LoRA adapter 带来的体积增量可忽略） | 推理性能和基础 INT4 基本一致，但**压缩耗时更长**（三种算法都要跑校准数据） | 相比基础 INT4 明显改善，可以接近 INT8 水平 | 详见 [NNCF Weight Compression](0560_NNCF_Weight_Compression) |
+| Weight Compression INT4 + AWQ/Scale Estimation/LoRA Correction | 同 INT4（LoRA adapter 带来的体积增量可忽略） | 推理性能和基础 INT4 基本一致，但**压缩耗时更长**（三种算法都要跑校准数据） | 相比基础 INT4 明显改善，可以接近 INT8 水平 | 详见 [NNCF Weight Compression](0560_Tools_OV_NNCF_WC) |
 | QAT：`nncf.quantize()` + 微调（训练时量化） | 取决于目标位宽，通常和对应 PTQ 位宽一致 | 和对应位宽的 PTQ/Weight Compression 推理性能一致（需转换为 OpenVINO IR 后才真正吃到 INT8 加速） | 这几种方法里**精度通常最高**，因为训练过程直接模拟了量化误差 | 代价是需要完整训练流程和数据集，耗时远超训练后方法；仅 PyTorch 支持 |
 | `nncf.prune()`（Magnitude Pruning：非结构化 Local/Global、结构化 2:4） | 按剪枝比例下降（减少的是参数数量，不是数值精度） | 结构化 2:4 模式在有专门硬件支持时能直接转化为推理加速；非结构化剪枝若无稀疏计算支持，推理端提速有限 | 取决于剪枝比例，通常需要训练恢复精度 | 仅 PyTorch 支持；旧版 Filter Pruning（L1/L2/geometric median）、Movement Sparsity、Mixed-Precision Quantization 等已随旧版 `create_compressed_model()` 架构一起移除 |
 | Activation Sparsity（训练后） | 不影响权重体积，理论上能减少推理时的有效计算量 | OpenVINO 后端暂不支持，无法在 OV 上拿到实际加速；仅 PyTorch 实验性支持 | 未知/取决于稀疏率，尚不成熟 | 目前更多是预研性质，不建议在生产环境依赖 |
@@ -154,5 +154,6 @@ optimum-cli export openvino --model microsoft/Phi-3.5-mini-instruct \
 - [4-bit Weight Quantization - OpenVINO 官方文档](https://docs.openvino.ai/2024/openvino-workflow/model-optimization-guide/weight-compression/4-bit-weight-quantization.html)
 - [Optimum Intel](https://github.com/huggingface/optimum-intel)
 - [POT（已弃用，功能并入 NNCF）](0177_Tools_OV_POT)、[OpenVINO INT8 Model](0182_Tools_OV_INT8Model)、[OpenVINO 总览](0185_Tools_OV)
-- 深入篇：[NNCF Weight Compression](0560_NNCF_Weight_Compression)、[NNCF Post-training Quantization](0561_NNCF_Post_training_Quantization)、[NNCF Training-time Optimization](0562_NNCF_Training_time_Optimization)
+- 深入篇：[NNCF Weight Compression](0560_Tools_OV_NNCF_WC)、[NNCF Post-training Quantization](0561_Tools_OV_NNCF_PTQ)、[NNCF Training-time Optimization](0562_Tools_OV_NNCF_TTOP)
+
 
