@@ -460,6 +460,7 @@
     - [TorchScript](/0490_Tools_Pytorch_TorchScript)
   - [OpenVINO](/0185_Tools_OV)
     - [Model Optimizer](/0181_Tools_OV_MO)
+      - [OpenVINO BatchNorm 折叠（BN Folding）](/0564_Tools_OV_MO_BNFolding)
       - [OpenVINO 算子融合（Operator Fusion）](/0563_Tools_OV_MO_Fusion)
     - [Inference Engine](/0180_Tools_OV_IE)
     - [~~POT~~](/0177_Tools_OV_POT)
@@ -518,10 +519,6 @@
   - [模型可解释性前沿状态](/0558_Hot_Interpretability)
 - [KnowledgeGraph](/0329_KnowledgeGraph)
 - OpenVINO
-  - BatchNorm
-    - 折叠
-      - BN
-        - [OpenVINO BatchNorm 折叠（BN Folding）](/0564_OpenVINO_BatchNorm_折叠_BN_Folding)
   - 布局重排
     - Layout
       - [OpenVINO 布局重排（Layout Transformation）](/0565_OpenVINO_布局重排_Layout_Transformation)
@@ -544,4 +541,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0955021020</sub></kbd>
+<kbd><sub>@0957351020</sub></kbd>
