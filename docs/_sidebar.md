@@ -365,6 +365,8 @@
     - [Adapter FineTuning](/0412_LM_FT_Adapter)
     - [大模型对齐训练：SFT / RLHF / DPO](/0568_LM_FT_Alignment)
     - [DreamBooth](/0405_LM_FT_DreamBooth)
+    - GaLore
+      - [GaLore / ReLoRA：用低秩技巧做全参数训练](/0569_LM_FT_GaLore_ReLoRA)
     - [IA3](/0494_LM_FT_IA3)
     - [LoHa](/0492_LM_FT_LoHa)
     - [LoKr](/0493_LM_FT_LoKr)
@@ -539,4 +541,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1503281020</sub></kbd>
+<kbd><sub>@1505111020</sub></kbd>
