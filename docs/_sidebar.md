@@ -523,6 +523,10 @@
   - Weight
     - [NNCF Weight Compression](/0560_NNCF_Weight_Compression)
 - OpenVINO
+  - BatchNorm
+    - 折叠
+      - BN
+        - [OpenVINO BatchNorm 折叠（BN Folding）](/0564_OpenVINO_BatchNorm_折叠_BN_Folding)
   - 算子融合
     - Operator
       - [OpenVINO 算子融合（Operator Fusion）](/0563_OpenVINO_算子融合_Operator_Fusion)
@@ -545,4 +549,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0939461020</sub></kbd>
+<kbd><sub>@0941561020</sub></kbd>
