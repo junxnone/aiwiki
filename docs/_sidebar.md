@@ -519,6 +519,7 @@
     - [Harness Sandbox](/0555_Hot_Harness_Sandbox)
     - [Harness Skills](/0553_Hot_Harness_Skills)
   - [模型可解释性前沿状态](/0558_Hot_Interpretability)
+  - [世界模型（World Model）](/0566_Hot_WorldModel)
 - [KnowledgeGraph](/0329_KnowledgeGraph)
 - [资源参考](/0380_Reference)
 - [x](/0418_x)
@@ -536,4 +537,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1020181020</sub></kbd>
+<kbd><sub>@1104341020</sub></kbd>
