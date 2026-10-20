@@ -371,6 +371,7 @@
     - [LoHa](/0492_LM_FT_LoHa)
     - [LoKr](/0493_LM_FT_LoKr)
     - [LoRA](/0406_LM_FT_LoRA)
+    - [模型合并（Model Merging）](/0573_LM_FT_ModelMerging)
     - [多 LoRA 生产部署（Multi-LoRA Serving）](/0572_LM_FT_MultiLoRAServing)
     - [OFT/BOFT](/0495_LM_FT_OFT)
     - [Prefix Tuning](/0411_LM_FT_PrefixTuning)
@@ -543,4 +544,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1605571020</sub></kbd>
+<kbd><sub>@1607571020</sub></kbd>
