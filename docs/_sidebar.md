@@ -460,6 +460,7 @@
     - [TorchScript](/0490_Tools_Pytorch_TorchScript)
   - [OpenVINO](/0185_Tools_OV)
     - [Model Optimizer](/0181_Tools_OV_MO)
+      - [OpenVINO 算子融合（Operator Fusion）](/0563_Tools_OV_MO_Fusion)
     - [Inference Engine](/0180_Tools_OV_IE)
     - [~~POT~~](/0177_Tools_OV_POT)
     - [Compile Tool](/0183_Tools_OV_CompileTool)
@@ -530,9 +531,6 @@
   - 布局重排
     - Layout
       - [OpenVINO 布局重排（Layout Transformation）](/0565_OpenVINO_布局重排_Layout_Transformation)
-  - 算子融合
-    - Operator
-      - [OpenVINO 算子融合（Operator Fusion）](/0563_OpenVINO_算子融合_Operator_Fusion)
 - [资源参考](/0380_Reference)
 - [x](/0418_x)
   - [Diffusion Model](/0512_x_DM)
@@ -552,4 +550,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0950071020</sub></kbd>
+<kbd><sub>@0953481020</sub></kbd>
