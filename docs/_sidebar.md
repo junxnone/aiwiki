@@ -522,6 +522,10 @@
       - [NNCF Training-time Optimization](/0562_NNCF_Training_time_Optimization)
   - Weight
     - [NNCF Weight Compression](/0560_NNCF_Weight_Compression)
+- OpenVINO
+  - 算子融合
+    - Operator
+      - [OpenVINO 算子融合（Operator Fusion）](/0563_OpenVINO_算子融合_Operator_Fusion)
 - [资源参考](/0380_Reference)
 - [x](/0418_x)
   - [Diffusion Model](/0512_x_DM)
@@ -541,4 +545,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1633571019</sub></kbd>
+<kbd><sub>@0939461020</sub></kbd>
