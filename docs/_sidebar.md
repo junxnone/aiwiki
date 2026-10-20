@@ -527,6 +527,9 @@
     - 折叠
       - BN
         - [OpenVINO BatchNorm 折叠（BN Folding）](/0564_OpenVINO_BatchNorm_折叠_BN_Folding)
+  - 布局重排
+    - Layout
+      - [OpenVINO 布局重排（Layout Transformation）](/0565_OpenVINO_布局重排_Layout_Transformation)
   - 算子融合
     - Operator
       - [OpenVINO 算子融合（Operator Fusion）](/0563_OpenVINO_算子融合_Operator_Fusion)
@@ -549,4 +552,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0941561020</sub></kbd>
+<kbd><sub>@0943411020</sub></kbd>
