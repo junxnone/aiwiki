@@ -1,8 +1,8 @@
 ---
-Title | OpenVINO BatchNorm 折叠 BN Folding
+Title | Tools OV MO BNFolding
 -- | --
 Created @ | `2026-10-20T01:40:56Z`
-Updated @| `2026-10-20T01:49:16Z`
+Updated @| `2026-10-20T01:56:36Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/564)
 
