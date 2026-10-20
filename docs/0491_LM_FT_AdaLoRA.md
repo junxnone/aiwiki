@@ -2,7 +2,7 @@
 Title | LM FT AdaLoRA
 -- | --
 Created @ | `2025-01-13T03:20:41Z`
-Updated @| `2025-02-12T08:49:39Z`
+Updated @| `2026-10-20T07:20:49Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/491)
 
@@ -24,7 +24,25 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/491)
 
 ![Image](https://github.com/user-attachments/assets/8b9589cd-8677-4c42-bdaa-6e41c0df512f)
 
+## 代码示例（Hugging Face PEFT）
+
+```python
+from peft import AdaLoraConfig, get_peft_model
+
+config = AdaLoraConfig(
+    init_r=12,            # 初始秩（通常比目标平均秩略高，留出裁剪空间）
+    target_r=8,           # 训练结束时的目标平均秩
+    tinit=200,            # 前 200 步只预热，不裁剪
+    tfinal=1000,          # total_step - 1000 步之后停止裁剪，秩固定下来精调
+    total_step=5000,      # 总训练步数，AdaLoRA 需要提前知道才能安排三阶段进度
+    task_type="CAUSAL_LM",
+)
+model = get_peft_model(base_model, config)
+```
+
 ## Reference
 
 - [AdaLoRA: Adaptive Budget Allocation for Parameter-Efficient Fine-Tuning](https://arxiv.org/pdf/2303.10512)
 - [AdaLoRA & LoRA 分析 ](https://blog.csdn.net/qq_29788741/article/details/132957760)
+- [大模型微调总览](0410_LM_FT)
+
