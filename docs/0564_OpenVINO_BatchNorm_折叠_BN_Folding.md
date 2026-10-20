@@ -2,14 +2,14 @@
 Title | OpenVINO BatchNorm 折叠 BN Folding
 -- | --
 Created @ | `2026-10-20T01:40:56Z`
-Updated @| `2026-10-20T01:40:56Z`
+Updated @| `2026-10-20T01:49:16Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/564)
 
 ---
 # OpenVINO BatchNorm 折叠（BN Folding）
 
-> 本文是 OpenVINO Model Optimizer / 模型转换总览的深入篇，专门展开 **BatchNorm 折叠**——卷积网络部署优化里最基础、也是后续算子融合（见 [Model Optimizer 总览](0181_Tools_OV_MO) 及其深入篇）的前置步骤。
+> 本文是 OpenVINO Model Optimizer / 模型转换总览的深入篇，专门展开 **BatchNorm 折叠**——卷积网络部署优化里最基础、也是后续 [OpenVINO 算子融合](0563_OpenVINO_算子融合_Operator_Fusion) 的前置步骤。
 
 ## BatchNorm 在推理时到底在算什么
 
@@ -35,7 +35,7 @@ b' = (b_conv - μ) * (γ / sqrt(σ² + ε)) + β   # 新的偏置
 ## 折叠带来的好处
 
 - **少一个独立算子**：BN 被合并进 Conv 的权重/偏置之后，计算图里不再有单独的 BatchNorm 节点，直接减少了一次算子调用、一次中间结果的读写；
-- **为后续融合铺路**：折叠后图里只剩 `Conv → Activation`，这正是算子融合里最经典的 Conv+Activation 融合场景（见 [Model Optimizer 总览](0181_Tools_OV_MO) 及其深入篇）——如果不先把 BN 折叠掉，Conv 和 Activation 中间还隔着一个 BN，没法直接融合；
+- **为后续融合铺路**：折叠后图里只剩 `Conv → Activation`，这正是 [OpenVINO 算子融合](0563_OpenVINO_算子融合_Operator_Fusion) 里最经典的 Conv+Activation 融合场景——如果不先把 BN 折叠掉，Conv 和 Activation 中间还隔着一个 BN，没法直接融合；
 - **减小模型体积和内存占用**：BN 自己的四个参数（`γ`/`β`/`μ`/`σ²`）折叠后不再需要单独存储，直接被吸收进了 Conv 的权重里。
 
 ## 什么时候不能直接折叠
@@ -45,5 +45,6 @@ b' = (b_conv - μ) * (γ / sqrt(σ² + ε)) + β   # 新的偏置
 
 ## Reference
 - Ioffe, S. & Szegedy, C. (2015). Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift. [arXiv:1502.03167](https://arxiv.org/abs/1502.03167)
-- [OpenVINO Model Optimizer 总览](0181_Tools_OV_MO)（含算子融合深入篇链接）
+- [OpenVINO 算子融合](0563_OpenVINO_算子融合_Operator_Fusion)
+- [OpenVINO Model Optimizer 总览](0181_Tools_OV_MO)
 
