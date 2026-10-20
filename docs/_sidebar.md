@@ -462,6 +462,7 @@
     - [Model Optimizer](/0181_Tools_OV_MO)
       - [OpenVINO BatchNorm 折叠（BN Folding）](/0564_Tools_OV_MO_BNFolding)
       - [OpenVINO 算子融合（Operator Fusion）](/0563_Tools_OV_MO_Fusion)
+      - [OpenVINO 布局重排（Layout Transformation）](/0565_Tools_OV_MO_Layout)
     - [Inference Engine](/0180_Tools_OV_IE)
     - [~~POT~~](/0177_Tools_OV_POT)
     - [Compile Tool](/0183_Tools_OV_CompileTool)
@@ -518,10 +519,6 @@
     - [Harness Skills](/0553_Hot_Harness_Skills)
   - [模型可解释性前沿状态](/0558_Hot_Interpretability)
 - [KnowledgeGraph](/0329_KnowledgeGraph)
-- OpenVINO
-  - 布局重排
-    - Layout
-      - [OpenVINO 布局重排（Layout Transformation）](/0565_OpenVINO_布局重排_Layout_Transformation)
 - [资源参考](/0380_Reference)
 - [x](/0418_x)
   - [Diffusion Model](/0512_x_DM)
@@ -541,4 +538,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0957351020</sub></kbd>
+<kbd><sub>@0959261020</sub></kbd>
