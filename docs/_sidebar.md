@@ -363,6 +363,7 @@
   - [大模型微调](/0410_LM_FT)
     - [AdaLoRA](/0491_LM_FT_AdaLoRA)
     - [Adapter FineTuning](/0412_LM_FT_Adapter)
+    - [大模型对齐训练：SFT / RLHF / DPO](/0568_LM_FT_Alignment)
     - [DreamBooth](/0405_LM_FT_DreamBooth)
     - [IA3](/0494_LM_FT_IA3)
     - [LoHa](/0492_LM_FT_LoHa)
@@ -538,4 +539,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1501231020</sub></kbd>
+<kbd><sub>@1503281020</sub></kbd>
