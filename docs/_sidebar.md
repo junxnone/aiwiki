@@ -370,6 +370,7 @@
     - [LoRA](/0406_LM_FT_LoRA)
     - [OFT/BOFT](/0495_LM_FT_OFT)
     - [Prefix Tuning](/0411_LM_FT_PrefixTuning)
+    - [QLoRA](/0567_LM_FT_QLoRA)
   - [Large Language Models](/0446_LM_LLMs)
     - [LLaMA](/0504_LM_LLMs_LLaMA)
     - [LLMs Metrics](/0503_LM_LLMs_Metrics)
@@ -537,4 +538,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1104341020</sub></kbd>
+<kbd><sub>@1501231020</sub></kbd>
