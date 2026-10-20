@@ -460,7 +460,7 @@
     - [Data](/0359_Tools_Pytorch_Data)
     - [TorchScript](/0490_Tools_Pytorch_TorchScript)
   - [OpenVINO](/0185_Tools_OV)
-    - [Model Optimizer](/0181_Tools_OV_MO)
+    - [Model Optimizer (Converter)](/0181_Tools_OV_MO)
       - [OpenVINO BatchNorm 折叠（BN Folding）](/0564_Tools_OV_MO_BNFolding)
       - [OpenVINO 算子融合（Operator Fusion）](/0563_Tools_OV_MO_Fusion)
       - [OpenVINO 布局重排（Layout Transformation）](/0565_Tools_OV_MO_Layout)
@@ -536,4 +536,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1010461020</sub></kbd>
+<kbd><sub>@1020181020</sub></kbd>
