@@ -2,7 +2,7 @@
 Title | LM FT ModelMerging
 -- | --
 Created @ | `2026-10-20T08:06:55Z`
-Updated @| `2026-10-20T08:06:55Z`
+Updated @| `2026-10-20T08:21:08Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/573)
 
@@ -46,7 +46,7 @@ DARE（Drop And REscale，Yu et al. 2023，论文标题"Language Models are Supe
 
 ## 和 LoRA/PEFT 的关系
 
-模型合并既可以合并全参数微调出的完整模型，也可以合并多个 [LoRA](0406_LM_FT_LoRA) adapter（先把每个 LoRA 的 `ΔW=BA` 当作一个独立的"任务向量"，再用上述方法合并这些 `ΔW`，合并完再统一加回底座权重）——这和[多 LoRA 生产部署](0406_LM_FT_LoRA)里"运行时动态挂载多个独立 adapter"是两种不同的思路：模型合并是离线把多个能力"焊死"进一份权重里，多 LoRA 服务是运行时保持多个 adapter 独立、按需切换，各有适用场景。
+模型合并既可以合并全参数微调出的完整模型，也可以合并多个 [LoRA](0406_LM_FT_LoRA) adapter（先把每个 LoRA 的 `ΔW=BA` 当作一个独立的"任务向量"，再用上述方法合并这些 `ΔW`，合并完再统一加回底座权重）——这和 [多 LoRA 生产部署](0572_LM_FT_MultiLoRAServing) 里"运行时动态挂载多个独立 adapter"是两种不同的思路：模型合并是离线把多个能力"焊死"进一份权重里，多 LoRA 服务是运行时保持多个 adapter 独立、按需切换，各有适用场景。
 
 ## Reference
 - Yadav, P. et al. (2023). TIES-Merging: Resolving Interference When Merging Models. [arXiv:2306.01708](https://arxiv.org/abs/2306.01708)
