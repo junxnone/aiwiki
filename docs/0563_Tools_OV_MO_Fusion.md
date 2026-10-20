@@ -1,8 +1,8 @@
 ---
-Title | OpenVINO 算子融合 Operator Fusion
+Title | Tools OV MO Fusion
 -- | --
 Created @ | `2026-10-20T01:38:37Z`
-Updated @| `2026-10-20T01:47:32Z`
+Updated @| `2026-10-20T01:52:55Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/563)
 
