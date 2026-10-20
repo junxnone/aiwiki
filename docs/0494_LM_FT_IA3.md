@@ -2,7 +2,7 @@
 Title | LM FT IA3
 -- | --
 Created @ | `2025-01-16T03:06:12Z`
-Updated @| `2025-01-24T02:53:03Z`
+Updated @| `2026-10-20T07:26:11Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/494)
 
@@ -26,6 +26,21 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/494)
 
 ![image](https://github.com/user-attachments/assets/deb93014-5298-46cb-a321-991b9d865428)
 
+## 代码示例（Hugging Face PEFT）
+
+```python
+from peft import IA3Config, get_peft_model
+
+config = IA3Config(
+    task_type="CAUSAL_LM",
+    target_modules=["k_proj", "v_proj", "down_proj"],
+    feedforward_modules=["down_proj"],   # 必须是 target_modules 的子集
+)
+model = get_peft_model(base_model, config)
+model.print_trainable_parameters()   # 可训练参数比例通常比 LoRA 还要低一个数量级
+```
 
 ## Reference
 - [Few-Shot Parameter-Efficient Fine-Tuning is Better and Cheaper than In-Context Learning](https://arxiv.org/abs/2205.05638)
+- [大模型微调总览](0410_LM_FT)
+
