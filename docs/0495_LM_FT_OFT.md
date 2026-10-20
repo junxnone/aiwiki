@@ -2,7 +2,7 @@
 Title | LM FT OFT
 -- | --
 Created @ | `2025-01-16T03:14:25Z`
-Updated @| `2025-01-24T02:53:32Z`
+Updated @| `2026-10-20T07:28:20Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/495)
 
@@ -30,7 +30,21 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/495)
 
 ![image](https://github.com/user-attachments/assets/a3e0b188-02cc-46d6-920a-29a622fe224e)
 
+## 代码示例（Hugging Face PEFT）
+
+```python
+from peft import OFTConfig, get_peft_model
+
+config = OFTConfig(
+    r=8,
+    target_modules=["to_q", "to_k", "to_v", "to_out.0"],
+    module_dropout=0.0,
+)
+model = get_peft_model(unet, config)
+```
 
 ## Reference
 - [Controlling Text-to-Image Diffusion by Orthogonal Finetuning](https://arxiv.org/abs/2306.07280)
 - [Parameter-Efficient Orthogonal Finetuning via Butterfly Factorization](https://arxiv.org/abs/2311.06243)
+- [大模型微调总览](0410_LM_FT)
+
