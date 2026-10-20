@@ -366,6 +366,7 @@
     - [AdapterFusion](/0571_LM_FT_AdapterFusion)
     - [大模型对齐训练：SFT / RLHF / DPO](/0568_LM_FT_Alignment)
     - [DreamBooth](/0405_LM_FT_DreamBooth)
+    - [微调效果评估](/0574_LM_FT_Evaluation)
     - [GaLore / ReLoRA：用低秩技巧做全参数训练](/0569_LM_FT_GaLoreReLoRA)
     - [IA3](/0494_LM_FT_IA3)
     - [LoHa](/0492_LM_FT_LoHa)
@@ -544,4 +545,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1607571020</sub></kbd>
+<kbd><sub>@1609481020</sub></kbd>
