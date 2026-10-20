@@ -3,7 +3,7 @@
 | Title     | OpenVINO 算子融合 Operator Fusion                         |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-10-20T01:38:37Z`                                |
-| Updated @ | `2026-10-20T01:38:37Z`                                |
+| Updated @ | `2026-10-20T01:47:32Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/563) |
 
@@ -32,8 +32,8 @@ kernel 启动的调度开销。
 
   - **机制 A：算子真的从图里消失，参数被代数合并进另一个算子**——比如 Conv 后面跟一个线性的
     Scale/Shift，两者复合之后仍然是一次线性运算，可以直接算出一组新的权重/偏置，把下游算子彻底删掉。这种融合**不需要**底层
-    kernel 库做任何特殊支持，因为融合之后图里就是一个普通的 Conv，运行时根本不知道它曾经是两个算子。[BatchNorm
-    折叠](0181_Tools_OV_MO) 就是这种机制的典型例子。
+    kernel 库做任何特殊支持，因为融合之后图里就是一个普通的 Conv，运行时根本不知道它曾经是两个算子。[OpenVINO
+    BatchNorm 折叠](0564_OpenVINO_BatchNorm_折叠_BN_Folding) 就是这种机制的典型例子。
   - **机制 B：下游算子保留在语义上，但被当作"后处理操作（Post-op）"附加到上游算子的 kernel 调用里**——比如 Conv
     后面跟一个 ReLU，ReLU 不是线性的，没法用代数合并消掉，但可以让 Conv 的 kernel
     在算完乘加结果、还没把数据写回内存之前，**顺手在寄存器里对结果做一次
@@ -70,7 +70,8 @@ b`，只是现在这一步只用一次算子调用完成。
 
 ### Conv + BatchNorm + Activation（先 A 后 B）
 
-第一步，[BatchNorm 折叠](0181_Tools_OV_MO) 的代数把 `BN(Conv(x))` 改写成一个新的卷积：
+第一步，[OpenVINO BatchNorm 折叠](0564_OpenVINO_BatchNorm_折叠_BN_Folding) 的代数把
+`BN(Conv(x))` 改写成一个新的卷积：
 
     BN(Conv(x)) = BN(W*x + b)
                 = γ * ((W*x + b) - μ) / sqrt(σ² + ε) + β
@@ -149,6 +150,7 @@ OpenVINO 的模型优化流水线分两段，融合在两段都可能发生，�
 
 ## Reference
 
+  - [OpenVINO BatchNorm 折叠](0564_OpenVINO_BatchNorm_折叠_BN_Folding)
   - [OpenVINO Matcher Pass
     官方文档（图模式匹配/改写框架）](https://docs.openvino.ai/2024/documentation/openvino-extensibility/transformation-api/matcher-pass.html)
   - [OpenVINO GPU Plugin Graph Optimization
