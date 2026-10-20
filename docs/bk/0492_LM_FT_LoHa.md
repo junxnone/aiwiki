@@ -3,7 +3,7 @@
 | Title     | LM FT LoHa                                            |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2025-01-13T08:40:09Z`                                |
-| Updated @ | `2025-02-12T02:16:49Z`                                |
+| Updated @ | `2026-10-20T07:22:36Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/492) |
 
@@ -34,7 +34,25 @@
 
 ![image](media/94574406b239527d8f3aa3753e5aa6d384f73bec.png)
 
+## 和 LoKr 的选择
+
+同属 LyCORIS 项目里"用更灵活的矩阵分解替代纯低秩分解"的思路，LoHa 用哈达玛积、[LoKr](0493_LM_FT_LoKr) 用
+Kronecker 积；经验上 LoHa 更适合多概念同时微调的场景，LoKr 在单一概念、需要更高多样性的任务上表现更好。
+
+## 代码示例（Hugging Face PEFT）
+
+``` python
+from peft import LoHaConfig, get_peft_model
+
+config = LoHaConfig(r=16, alpha=16, target_modules=["to_q", "to_v"], module_dropout=0.1)
+model = get_peft_model(unet, config)
+```
+
 ## Reference
 
   - [FedPara: Low-Rank Hadamard Product for Communication-Efficient
     Federated Learning](https://arxiv.org/pdf/2108.06098)
+  - Yeh, S. et al. (2023). Navigating Text-To-Image Customization: From
+    LyCORIS Fine-Tuning to Model Evaluation.
+    [arXiv:2309.14859](https://arxiv.org/abs/2309.14859)
+  - [大模型微调总览](0410_LM_FT)
