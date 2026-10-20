@@ -1,8 +1,8 @@
 ---
-Title | NNCF Weight Compression
+Title | Tools OV NNCF WC
 -- | --
 Created @ | `2026-10-19T08:23:50Z`
-Updated @| `2026-10-19T08:23:50Z`
+Updated @| `2026-10-20T01:53:39Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/560)
 
