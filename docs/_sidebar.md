@@ -489,6 +489,7 @@
         - [GPU Impl Permute](/0532_Tools_OV_OPs_GPUImpl_Permute)
         - [GPU Impl Reorder](/0529_Tools_OV_OPs_GPUImpl_Reorder)
       - [OpenVINO Ops Impl](/0533_Tools_OV_OPs_Impl)
+      - [OPs NPU Impl](/0575_Tools_OV_OPs_NPUImpl)
     - [OpenVINO 优化](/0509_Tools_OV_Optimizations)
     - [Security](/0176_Tools_OV_Security)
     - [Tips](/0184_Tools_OV_Tips)
@@ -545,4 +546,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1622171020</sub></kbd>
+<kbd><sub>@1700211020</sub></kbd>
