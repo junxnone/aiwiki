@@ -2,7 +2,7 @@
 Title | Tools OV MO Layout
 -- | --
 Created @ | `2026-10-20T01:42:41Z`
-Updated @| `2026-10-20T01:58:27Z`
+Updated @| `2026-10-20T02:06:08Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/565)
 
@@ -41,7 +41,7 @@ model = ppp.build()   # 两者不一致，自动插入转换
 
 ### 第三层：设备插件内部的"分块格式"是另一回事
 
-NCHW/NHWC 描述的是 4 个维度**逻辑上**的排列顺序，但 CPU/GPU 实际执行计算时，为了让向量化指令（CPU 的 AVX512）或并行线程组（GPU 的子组）能连续访问内存，往往会把通道维度**再拆分成更细的分块**——比如 CPU 常用的 `nChw16c` 是把通道维度按 16 个一组分块重排，让一条 AVX512 指令刚好处理一组；GPU 常用的 `b_fs_yx_fsv16` 同理是面向 GPU 线程子组宽度的分块格式。这一层转换由 [Reorder kernel](0529_Tools_OV_OPs_GPUImpl_Reorder) 负责，和 `Permute`（单纯做维度顺序交换，如 `nchw→nhwc`，见 [OpenVINO GPU Permute 实现](0532_Tools_OV_OPs_GPUImpl_Permute)）是两种不同的操作——Reorder 转换的是"内存分块方式"，Permute 转换的是"维度逻辑顺序"，两者有时会一起出现、也可能被设备插件融合掉（参考 [OpenVINO 算子融合](0563_OpenVINO_算子融合_Operator_Fusion)）。这一层完全是插件内部实现细节，用户不能也不需要手动指定。
+NCHW/NHWC 描述的是 4 个维度**逻辑上**的排列顺序，但 CPU/GPU 实际执行计算时，为了让向量化指令（CPU 的 AVX512）或并行线程组（GPU 的子组）能连续访问内存，往往会把通道维度**再拆分成更细的分块**——比如 CPU 常用的 `nChw16c` 是把通道维度按 16 个一组分块重排，让一条 AVX512 指令刚好处理一组；GPU 常用的 `b_fs_yx_fsv16` 同理是面向 GPU 线程子组宽度的分块格式。这一层转换由 [Reorder kernel](0529_Tools_OV_OPs_GPUImpl_Reorder) 负责，和 `Permute`（单纯做维度顺序交换，如 `nchw→nhwc`，见 [OpenVINO GPU Permute 实现](0532_Tools_OV_OPs_GPUImpl_Permute)）是两种不同的操作——Reorder 转换的是"内存分块方式"，Permute 转换的是"维度逻辑顺序"，两者有时会一起出现、也可能被设备插件融合掉（参考 [OpenVINO 算子融合](0563_Tools_OV_MO_Fusion)）。这一层完全是插件内部实现细节，用户不能也不需要手动指定。
 
 ## 常见分块格式一览：怎么排布、什么时候用、怎么优化性能
 
@@ -75,6 +75,6 @@ NCHW/NHWC 描述的是 4 个维度**逻辑上**的排列顺序，但 CPU/GPU 实
 - [OpenVINO GPU Permute 实现](0532_Tools_OV_OPs_GPUImpl_Permute)
 - [OpenVINO GPU Crop 实现](0530_Tools_OV_OPs_GPUImpl_Crop)
 - [Batch, Shape and Layout - OpenVINO 官方文档](https://docs.openvino.ai/2025/model-server/ovms_docs_shape_batch_layout.html)
-- [OpenVINO 算子融合](0563_OpenVINO_算子融合_Operator_Fusion)
+- [OpenVINO 算子融合](0563_Tools_OV_MO_Fusion)
 - [OpenVINO Model Optimizer 总览](0181_Tools_OV_MO)
 
