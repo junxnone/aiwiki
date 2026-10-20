@@ -2,7 +2,7 @@
 Title | LM FT Adapter
 -- | --
 Created @ | `2023-06-05T03:55:55Z`
-Updated @| `2026-10-20T07:18:36Z`
+Updated @| `2026-10-20T08:17:28Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/412)
 
@@ -28,12 +28,7 @@ h' = h + f(h W_down) W_up
 
 ## AdapterFusion：把多个任务的 Adapter 组合复用
 
-经典 Adapter 一个任务训一个独立模块，任务之间互不相干；**AdapterFusion**（Pfeiffer et al. 2021）解决的是"怎么复用已经训好的多个任务 Adapter"这个问题，分两阶段：
-
-1. **知识提取**：按经典方式，给每个任务各自训练一个独立的 Adapter（互不干扰，不会发生灾难性遗忘）；
-2. **知识组合**：冻结所有已训练好的任务 Adapter，新增一个小型的注意力式组合层（Fusion 层），学习针对当前新任务，该如何对多个已有 Adapter 的输出做加权组合。
-
-这种"先分别学、再学怎么组合"的两阶段设计是非破坏性的（Non-Destructive）——融合新任务时不会影响已有任务 Adapter 的参数，比直接多任务联合训练或顺序微调更能缓解灾难性遗忘和任务间数据不均衡的问题。AdapterHub（配套的开源生态）提供了大量预训练好的任务 Adapter，可以直接拿来做 AdapterFusion 组合，不需要每个任务都从头训练。
+经典 Adapter 一个任务训一个独立模块，任务之间互不相干——怎么复用已经训好的多个任务 Adapter，详见 [AdapterFusion](0571_LM_FT_AdapterFusion)。
 
 ## 代码示例（Hugging Face `adapters` 库）
 
@@ -48,7 +43,5 @@ model.train_adapter("my_task")   # 冻结原模型参数，只训练新加入的
 
 ## Reference
 - paper 2019 [Parameter-Efficient Transfer Learning for NLP](https://arxiv.org/abs/1902.00751) [[Code](https://github.com/google-research/adapter-bert)]
-- Pfeiffer, J. et al. (2021). AdapterFusion: Non-Destructive Task Composition for Transfer Learning. [arXiv:2005.00247](https://arxiv.org/abs/2005.00247)
-- [AdapterHub](https://adapterhub.ml/)
 - [大模型微调总览](0410_LM_FT)
 
