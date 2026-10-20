@@ -1,8 +1,8 @@
 ---
-Title | NNCF Post-training Quantization
+Title | Tools OV NNCF PTQ
 -- | --
 Created @ | `2026-10-19T08:26:04Z`
-Updated @| `2026-10-19T08:26:04Z`
+Updated @| `2026-10-20T01:53:55Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/561)
 
