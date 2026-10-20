@@ -468,6 +468,9 @@
     - [DevCloud](/0179_Tools_OV_DevCloud)
     - [OpenVINO INT8 Model](/0182_Tools_OV_INT8Model)
     - [NNCF - Neural Network Compression Framework](/0451_Tools_OV_NNCF)
+      - [NNCF Post-training Quantization](/0561_Tools_OV_NNCF_PTQ)
+      - [NNCF Training-time Optimization](/0562_Tools_OV_NNCF_TTOP)
+      - [NNCF Weight Compression](/0560_Tools_OV_NNCF_WC)
     - [OpenVINO Ops](/0528_Tools_OV_OPs)
       - [OPs CPU Impl](/0534_Tools_OV_OPs_CPUImpl)
       - [OPs GPU Impl](/0531_Tools_OV_OPs_GPUImpl)
@@ -514,15 +517,6 @@
     - [Harness Skills](/0553_Hot_Harness_Skills)
   - [模型可解释性前沿状态](/0558_Hot_Interpretability)
 - [KnowledgeGraph](/0329_KnowledgeGraph)
-- NNCF
-  - Post
-    - training
-      - [NNCF Post-training Quantization](/0561_NNCF_Post_training_Quantization)
-  - Training
-    - time
-      - [NNCF Training-time Optimization](/0562_NNCF_Training_time_Optimization)
-  - Weight
-    - [NNCF Weight Compression](/0560_NNCF_Weight_Compression)
 - OpenVINO
   - BatchNorm
     - 折叠
@@ -550,4 +544,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0953481020</sub></kbd>
+<kbd><sub>@0954391020</sub></kbd>
