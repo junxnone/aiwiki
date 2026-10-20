@@ -1,8 +1,8 @@
 ---
-Title | NNCF Training-time Optimization
+Title | Tools OV NNCF TTOP
 -- | --
 Created @ | `2026-10-19T08:28:44Z`
-Updated @| `2026-10-19T08:28:44Z`
+Updated @| `2026-10-20T01:53:24Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/562)
 
