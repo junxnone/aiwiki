@@ -3,7 +3,7 @@
 | Title     | OpenVINO 布局重排 Layout Transformation                   |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-10-20T01:42:41Z`                                |
-| Updated @ | `2026-10-20T01:42:41Z`                                |
+| Updated @ | `2026-10-20T01:50:49Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/565) |
 
@@ -63,9 +63,9 @@ kernel](0529_Tools_OV_OPs_GPUImpl_Reorder) 负责，和 `Permute`（单纯做维
 `nchw→nhwc`，见 [OpenVINO GPU Permute
 实现](0532_Tools_OV_OPs_GPUImpl_Permute)）是两种不同的操作——Reorder
 转换的是"内存分块方式"，Permute
-转换的是"维度逻辑顺序"，两者有时会一起出现、也可能被设备插件融合掉（参考算子融合深入篇，及
-[Model Optimizer 总览](0181_Tools_OV_MO)
-里的链接）。这一层完全是插件内部实现细节，用户不能也不需要手动指定。
+转换的是"维度逻辑顺序"，两者有时会一起出现、也可能被设备插件融合掉（参考
+[OpenVINO
+算子融合](0563_OpenVINO_算子融合_Operator_Fusion)）。这一层完全是插件内部实现细节，用户不能也不需要手动指定。
 
 ## 常见分块格式一览：怎么排布、什么时候用、怎么优化性能
 
@@ -110,4 +110,5 @@ kernel](0529_Tools_OV_OPs_GPUImpl_Reorder) 负责，和 `Permute`（单纯做维
   - [OpenVINO GPU Crop 实现](0530_Tools_OV_OPs_GPUImpl_Crop)
   - [Batch, Shape and Layout - OpenVINO
     官方文档](https://docs.openvino.ai/2025/model-server/ovms_docs_shape_batch_layout.html)
+  - [OpenVINO 算子融合](0563_OpenVINO_算子融合_Operator_Fusion)
   - [OpenVINO Model Optimizer 总览](0181_Tools_OV_MO)
