@@ -2,20 +2,13 @@
 Title | 3D Cloud Features ISS
 -- | --
 Created @ | `2022-03-23T03:30:18Z`
-Updated @| `2026-10-21T05:10:56Z`
+Updated @| `2026-10-21T05:19:31Z`
 Labels | `index`
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/302)
 
 ---
 # ISS KeyPoint
 
-## Reference
-- 2007 ISS [Intrinsic Shape Signatures A Shape Descriptor For 3D Object Recognition.pdf](https://github.com/junxnone/aiwiki/files/8329473/IntrinsicShapeSignaturesAShapeDescriptorFor3DObjectRecognition.pdf)
-- [ISS关键点提取](https://zhuanlan.zhihu.com/p/353832643)
-- [曲率](0304_3D_Cloud_Features_Curvature)
-- [Features 总览](0424_3D_Cloud_Features)
-
-## Brief
 - ISS KeyPoint - `Intrinsic Shape Signatures`
 - 目标：从稠密点云中挑出局部几何"显著"的点作为关键点，减少后续配准/识别的计算量，同时尽量不丢失有代表性的几何信息。
 
@@ -33,4 +26,12 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/302)
 ## 和曲率的关系
 
 ISS 的协方差矩阵特征值分解和 [曲率](0304_3D_Cloud_Features_Curvature) 的计算都依赖对点的局部邻域做二阶统计——本质上都是在回答"这块曲面有多弯、往哪个方向弯"，只是曲率直接刻画几何弯曲程度这个数值，而 ISS 用特征值比值间接衡量"方向显著性"，服务于关键点筛选而不是直接输出一个几何量。
+
+
+
+## Reference
+- 2007 ISS [Intrinsic Shape Signatures A Shape Descriptor For 3D Object Recognition.pdf](https://github.com/junxnone/aiwiki/files/8329473/IntrinsicShapeSignaturesAShapeDescriptorFor3DObjectRecognition.pdf)
+- [ISS关键点提取](https://zhuanlan.zhihu.com/p/353832643)
+- [曲率](0304_3D_Cloud_Features_Curvature)
+- [Features 总览](0424_3D_Cloud_Features)
 
