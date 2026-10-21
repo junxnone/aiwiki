@@ -2,7 +2,7 @@
 Title | 3D Algos Registration ICP MBICP
 -- | --
 Created @ | `2026-10-21T06:25:39Z`
-Updated @| `2026-10-21T06:25:39Z`
+Updated @| `2026-10-21T06:29:13Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/592)
 
@@ -23,7 +23,7 @@ MBICP 定义了一个同时包含平移和旋转分量的"度量距离"，用来
 ## 缺点
 
 - 依赖两份点云**较高的重叠度**假设，重叠度不足时表现会下降；
-- 收敛速度上不如后续提出的 3D Algos Registration ICP PLICP（点到线度量，闭式解、二次收敛）——MBICP 主要解决的是"大旋转误差下别收敛错"的鲁棒性问题，不是收敛速度问题。
+- 收敛速度上不如后续提出的 [PLICP](0593_3D_Algos_Registration_ICP_PLICP)（点到线度量，闭式解、二次收敛）——MBICP 主要解决的是"大旋转误差下别收敛错"的鲁棒性问题，不是收敛速度问题。
 
 ## 使用场景
 
@@ -33,4 +33,5 @@ MBICP 最初是为移动机器人的**2D 激光扫描匹配**场景设计的—�
 - Minguez, J., Lamiraux, F., Montesano, L. Metric-Based Scan Matching Algorithms for Mobile Robot Displacement Estimation, IEEE Transactions on Robotics, 2006
 - [3D Algos Registration ICP](0086_3D_Algos_Registration_ICP)
 - [3D Algos Registration](0235_3D_Algos_Registration)
+
 

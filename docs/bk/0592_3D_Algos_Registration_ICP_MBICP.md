@@ -3,7 +3,7 @@
 | Title     | 3D Algos Registration ICP MBICP                       |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-10-21T06:25:39Z`                                |
-| Updated @ | `2026-10-21T06:25:39Z`                                |
+| Updated @ | `2026-10-21T06:29:13Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/592) |
 
@@ -28,7 +28,8 @@ MBICP
 ## 缺点
 
   - 依赖两份点云**较高的重叠度**假设，重叠度不足时表现会下降；
-  - 收敛速度上不如后续提出的 3D Algos Registration ICP PLICP（点到线度量，闭式解、二次收敛）——MBICP
+  - 收敛速度上不如后续提出的
+    [PLICP](0593_3D_Algos_Registration_ICP_PLICP)（点到线度量，闭式解、二次收敛）——MBICP
     主要解决的是"大旋转误差下别收敛错"的鲁棒性问题，不是收敛速度问题。
 
 ## 使用场景
