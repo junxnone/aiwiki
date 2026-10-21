@@ -2,7 +2,7 @@
 Title | Tools OV OPs NPUImpl
 -- | --
 Created @ | `2026-10-20T08:59:16Z`
-Updated @| `2026-10-20T08:59:16Z`
+Updated @| `2026-10-21T01:27:33Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/575)
 
@@ -35,7 +35,7 @@ OpenVINO 的模型缓存机制（设置 `ov::cache_dir`）对所有插件通用�
 ## 怎么应对算子/动态 shape 限制
 
 - 查询某个模型在 NPU 上的算子兼容情况：用 [OpenVINO Ops](0528_Tools_OV_OPs) 里提到的 `core.query_model(model, "NPU")` 接口，提前看哪些层不被支持；
-- 遇到不支持的算子：可以用 **HETERO** 插件把这部分算子自动 fallback 到 CPU/GPU 执行，具体机制见独立的"AUTO/HETERO/MULTI 插件调度"一文；
+- 遇到不支持的算子：可以用 **HETERO** 插件把这部分算子自动 fallback 到 CPU/GPU 执行，具体机制见 [AUTO/HETERO/MULTI 插件调度](0578_Tools_OV_OPs_PluginScheduling)；
 - 遇到动态 shape：优先看模型是否有官方提供的预编译定长版本，或者用固定的输入 shape（必要时做 padding）重新导出模型。
 
 ## Reference
