@@ -2,13 +2,41 @@
 Title | Tools Pytorch Tips
 -- | --
 Created @ | `2021-04-13T07:54:18Z`
-Last Modify @| `2022-12-25T04:12:25Z`
+Updated @| `2026-10-21T08:03:12Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/170)
 
 ---
-## Reference
-- []()
+# Pytorch Tips
+
+## 设备无关代码写法
+
+统一用 `torch.device` 控制运行设备，而不是在代码里到处写死 `.cuda()`，方便同一份代码在有/没有 GPU 的机器上都能跑：
+
+```python
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+model.to(device)
+inputs = inputs.to(device)
+```
+
+## 固定随机种子（保证实验可复现）
+
+```python
+import torch, random, numpy as np
+
+def set_seed(seed=42):
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
+```
+
+## 查看当前 PyTorch 版本
+
+```python
+import torch
+print(torch.__version__)
+```
 
 ## UseCase
 
@@ -26,6 +54,8 @@ print(torch.version.cuda)
 ```
 
 ### 查看 pytorch 编译环境
+
+> 下面两个命令现在依然适用，只是示例输出来自较早期的 PyTorch/CUDA 版本（仅作格式参考，不代表当前版本信息）。
 
 ```
 print(torch.__config__.show())
@@ -82,4 +112,7 @@ Versions of relevant libraries:
 [pip] Could not collect
 [conda] Could not collect
 ```
+
+## Reference
+- [Tools Pytorch](0168_Tools_Pytorch)
 
