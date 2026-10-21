@@ -98,7 +98,7 @@
     - [结构光3D Camera](/0308_3D_Camera_结构光)
       - [相移法重建](/0309_3D_Camera_结构光_相移法重建)
   - [3D Cloud 点云](/0423_3D_Cloud)
-    - [3D Cloud Features](/0424_3D_Cloud_Features)
+    - [3D Cloud Features 点云特征描述子](/0424_3D_Cloud_Features)
       - [3D Cloud Curvature 点云曲率](/0304_3D_Cloud_Features_Curvature)
       - [FPFH](/0299_3D_Cloud_Features_FPFH)
       - [ISS KeyPoint](/0302_3D_Cloud_Features_ISS)
@@ -106,7 +106,7 @@
     - [Merge](/0286_3D_Cloud_Merge)
     - [Rotation Matrix 旋转矩阵](/0234_3D_Cloud_RM)
     - [离群点移除](/0287_3D_Cloud_SOR)
-    - [降采样](/0285_3D_Cloud_Sampling)
+    - [降采样 (Point Cloud Downsampling)](/0285_3D_Cloud_Sampling)
   - [3D 算法](/0422_3D_Algos)
     - [3D 重建](/0305_3D_Algos_Reconstruction)
       - [KinectFusion](/0306_3D_Algos_Reconstruction_KinectFusion)
@@ -553,4 +553,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1122161021</sub></kbd>
+<kbd><sub>@1312041021</sub></kbd>
