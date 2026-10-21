@@ -3,7 +3,7 @@
 | Title     | 3D Algos Registration Super4PCS                       |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-10-21T06:25:34Z`                                |
-| Updated @ | `2026-10-21T06:25:34Z`                                |
+| Updated @ | `2026-10-21T06:29:07Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/590) |
 
@@ -11,10 +11,10 @@
 
 # Super4PCS
 
-Super4PCS 是对 3D Algos Registration 4PCS 的工程化加速版本——4PCS
-本身的算法思路（共面四点+仿射不变比例）没有变化，Super4PCS
-解决的是 4PCS 两个主要性能瓶颈：候选点对提取和非刚性候选的剔除，把算法的渐进复杂度从 $O(n^2)$ 降到
-$O(n)$。
+Super4PCS 是对 [4PCS](0589_3D_Algos_Registration_4PCS) 的工程化加速版本——4PCS
+本身的算法思路（共面四点+仿射不变比例）没有变化，Super4PCS 解决的是 4PCS
+两个主要性能瓶颈：候选点对提取和非刚性候选的剔除，把算法的渐进复杂度从
+$O(n^2)$ 降到 $O(n)$。
 
 ## 核心改进：智能索引（Smart Indexing）
 
