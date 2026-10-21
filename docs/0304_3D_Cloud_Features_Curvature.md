@@ -2,23 +2,13 @@
 Title | 3D Cloud Features Curvature
 -- | --
 Created @ | `2022-04-01T02:04:36Z`
-Updated @| `2026-10-21T05:11:08Z`
+Updated @| `2026-10-21T05:18:05Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/304)
 
 ---
 # 3D Cloud Curvature 点云曲率
 
-## Reference
-- [法曲率、主曲率、高斯曲率、平均曲率](https://zhuanlan.zhihu.com/p/149584374)
-- [Principal curvatures - MIT](http://web.mit.edu/hyperbook/Patrikalakis-Maekawa-Cho/node30.html)
-- [Principal curvatures - Wolfram MathWorld](https://mathworld.wolfram.com/PrincipalCurvatures.html)
-- [Gaussian Curvature](https://mathworld.wolfram.com/GaussianCurvature.html)
-- [Mean Curvature](https://mathworld.wolfram.com/MeanCurvature.html)
-- [3D Cloud Features PFH](0298_3D_Cloud_Features_PFH)
-- [3D Cloud Features ISS](0302_3D_Cloud_Features_ISS)
-
-## Brief
 
 Name | Description
 -- | --
@@ -55,4 +45,16 @@ Name | Description
 
 - [PFH](0298_3D_Cloud_Features_PFH) 需要的法向量，和这里曲率近似值来自**同一次 PCA 协方差矩阵特征值分解**——法向量是最小特征值对应的特征向量，曲率近似值是最小特征值归一化后的结果，两者是同一次计算的两个输出。
 - [ISS](0302_3D_Cloud_Features_ISS) 同样基于邻域协方差矩阵的特征值分解，但关注点不同：曲率用归一化的最小特征值衡量"弯曲程度"这个数值本身；ISS 用三个特征值之间的**比值**（$\lambda_2/\lambda_1$、$\lambda_3/\lambda_2$）衡量局部形状在三个方向上"散布程度"是否有显著差异，服务于关键点筛选而不是输出一个曲率数值——同样的协方差矩阵特征值分解，被两种不同的下游任务用出了两种不同的解读方式。
+
+
+
+## Reference
+- [法曲率、主曲率、高斯曲率、平均曲率](https://zhuanlan.zhihu.com/p/149584374)
+- [Principal curvatures - MIT](http://web.mit.edu/hyperbook/Patrikalakis-Maekawa-Cho/node30.html)
+- [Principal curvatures - Wolfram MathWorld](https://mathworld.wolfram.com/PrincipalCurvatures.html)
+- [Gaussian Curvature](https://mathworld.wolfram.com/GaussianCurvature.html)
+- [Mean Curvature](https://mathworld.wolfram.com/MeanCurvature.html)
+- [3D Cloud Features PFH](0298_3D_Cloud_Features_PFH)
+- [3D Cloud Features ISS](0302_3D_Cloud_Features_ISS)
+
 
