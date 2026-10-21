@@ -118,7 +118,7 @@
       - [PPF 粗配准](/0085_3D_Algos_Registration_PPF)
       - [SAC-IA](/0300_3D_Algos_Registration_SACIA)
     - [GreedyProjectionTriangulation](/0399_3D_Algos_triangulation)
-  - [DL](/0233_3D_DL)
+  - [3D 深度学习技术综述](/0233_3D_DL)
   - [3D Tools](/0419_3D_Tools)
     - [Point Cloud Library](/0077_3D_Tools_PCL)
       - [Install PCL](/0337_3D_Tools_PCL_Install)
@@ -553,4 +553,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1042321021</sub></kbd>
+<kbd><sub>@1122161021</sub></kbd>
