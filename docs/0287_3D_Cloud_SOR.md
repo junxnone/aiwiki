@@ -2,14 +2,13 @@
 Title | 3D Cloud SOR
 -- | --
 Created @ | `2022-02-08T02:03:37Z`
-Updated @| `2026-10-21T05:11:02Z`
+Updated @| `2026-10-21T05:21:45Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/287)
 
 ---
 # 离群点移除
 
-## Brief
 - StatisticalOutlierRemoval: 统计分布
 - ConditionalRemoval
 - RadiusOutlierRemoval
