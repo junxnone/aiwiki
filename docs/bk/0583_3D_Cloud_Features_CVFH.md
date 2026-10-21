@@ -3,7 +3,7 @@
 | Title     | 3D Cloud Features CVFH                                |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-10-21T05:35:49Z`                                |
-| Updated @ | `2026-10-21T05:35:49Z`                                |
+| Updated @ | `2026-10-21T05:39:01Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/583) |
 
@@ -11,9 +11,9 @@
 
 # CVFH - Clustered Viewpoint Feature Histogram
 
-  - CVFH 是对 3D Cloud Features VFH 的改进——核心思路是不再对整个物体簇算一个全局
-    VFH，而是先把物体表面切成若干个**平滑区域（Smooth
-    Region）**，每个区域单独算一个 VFH，解决 VFH 对部分遮挡/点云缺失敏感的问题。
+  - CVFH 是对 [VFH](0582_3D_Cloud_Features_VFH) 的改进——核心思路是不再对整个物体簇算一个全局
+    VFH，而是先把物体表面切成若干个**平滑区域（Smooth Region）**，每个区域单独算一个 VFH，解决 VFH
+    对部分遮挡/点云缺失敏感的问题。
 
 ## 算法流程
 
@@ -49,5 +49,5 @@ CVFH 相对 VFH 的优势场景。
   - Aldoma, A., Tombari, F., Rusu, R.B., Vincze, M. OUR-CVFH: Oriented,
     Unique and Repeatable Clustered Viewpoint Feature Histogram for
     Object Recognition and 6DOF Pose Estimation, LNCS 2012（后续改进版）
-  - 3D Cloud Features VFH
+  - [3D Cloud Features VFH](0582_3D_Cloud_Features_VFH)
   - [3D Cloud Features](0424_3D_Cloud_Features)
