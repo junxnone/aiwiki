@@ -471,20 +471,20 @@
 - [AI Tools](/0415_Tools)
   - [Numpy](/0328_Tools_Numpy)
   - [Pytorch](/0168_Tools_Pytorch)
-    - [Pipeline](/0173_Tools_Pytorch_Pipeline)
-    - [Optimizer](/0174_Tools_Pytorch_Optimizer)
+    - [Pytorch Pipeline](/0173_Tools_Pytorch_Pipeline)
+    - [Pytorch Optimizer](/0174_Tools_Pytorch_Optimizer)
     - [Early Stopping](/0172_Tools_Pytorch_ES)
     - [Visualization 可视化](/0171_Tools_Pytorch_VIS)
-    - [加速](/0169_Tools_Pytorch_Speed)
+    - [加速 Training/Inference](/0169_Tools_Pytorch_Speed)
       - [AMP - Automatic Mixed Precision](/0596_Tools_Pytorch_Speed_AMP)
       - [channels_last 内存格式](/0602_Tools_Pytorch_Speed_ChannelsLast)
       - [torch.compile](/0518_Tools_Pytorch_Speed_compile)
-    - [多 GPUs](/0338_Tools_Pytorch_mGPUs)
+    - [多 GPUs 训练](/0338_Tools_Pytorch_mGPUs)
       - [DDP - DistributedDataParallel 底层机制](/0597_Tools_Pytorch_mGPUs_DDP)
       - [FSDP2 - Fully Sharded Data Parallel](/0598_Tools_Pytorch_mGPUs_FSDP)
       - [张量并行 / 流水线并行](/0599_Tools_Pytorch_mGPUs_Parallelism)
-    - [Tips](/0170_Tools_Pytorch_Tips)
-    - [Data](/0359_Tools_Pytorch_Data)
+    - [Pytorch Tips](/0170_Tools_Pytorch_Tips)
+    - [Pytorch Data](/0359_Tools_Pytorch_Data)
     - [ExecuTorch](/0601_Tools_Pytorch_ExecuTorch)
     - [torch.export](/0600_Tools_Pytorch_Export)
     - [TorchScript](/0490_Tools_Pytorch_TorchScript)
@@ -574,4 +574,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1601131021</sub></kbd>
+<kbd><sub>@1604321021</sub></kbd>
