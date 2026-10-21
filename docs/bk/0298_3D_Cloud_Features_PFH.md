@@ -1,11 +1,11 @@
 -----
 
-| Title         | 3D Cloud Features PFH                                 |
-| ------------- | ----------------------------------------------------- |
-| Created @     | `2021-05-08T03:11:56Z`                                |
-| Last Modify @ | `2022-12-25T03:50:44Z`                                |
-| Labels        | \`\`                                                  |
-| Edit @        | [here](https://github.com/junxnone/aiwiki/issues/298) |
+| Title     | 3D Cloud Features PFH                                 |
+| --------- | ----------------------------------------------------- |
+| Created @ | `2021-05-08T03:11:56Z`                                |
+| Updated @ | `2026-10-21T05:11:04Z`                                |
+| Labels    | \`\`                                                  |
+| Edit @    | [here](https://github.com/junxnone/aiwiki/issues/298) |
 
 -----
 
@@ -17,6 +17,8 @@
   - [【点云局部特征描述子】PFH & FPFH](https://zhuanlan.zhihu.com/p/192343758)
   - [Aligning point cloud views using persistent feature
     histograms](https://ias.in.tum.de/_media/spezial/bib/rusu08iros-1.pdf)
+  - [3D Cloud Features Curvature](0304_3D_Cloud_Features_Curvature)
+  - [3D Cloud Merge](0286_3D_Cloud_Merge)
 
 ## Brief
 
@@ -63,4 +65,24 @@
 
 <img width=300px src="https://user-images.githubusercontent.com/2216970/158331260-618fb1e5-fb67-420b-b76e-af7118dd6f96.png">
 
+## 前置步骤：法向量从哪来
+
+PFH 的输入要求每个点都已经有法向量 $n\_1,
+n\_2$——这不是点云原始数据自带的，需要预先估计：对每个点取局部邻域，计算邻域点的协方差矩阵并做特征值分解，**最小特征值对应的特征向量就是该点的法向量**。这一次
+PCA 分解除了给出法向量，顺带也能算出该点的曲率近似值（见
+[曲率](0304_3D_Cloud_Features_Curvature)）——法向量估计和曲率估计本质上是同一次计算的两个副产品。
+
+## 为什么能用于配准：姿态无关性
+
+PFH 的 $(\\alpha, \\phi, \\theta, d)$
+四元组完全建立在**点对自身的局部坐标系**（$u,v,w$）和两点间的相对关系上，不依赖点云所在的全局坐标系——这意味着**同一块局部几何形状，不管点云整体怎么平移、旋转，算出来的
+PFH 直方图都应该是一样的**（姿态无关/位姿不变性）。这正是 PFH
+能用来做"找对应点"这件事的关键：两份点云哪怕朝向完全不同，只要局部几何形状相似，PFH
+直方图就会相似，从而建立起跨点云的对应关系。
+
 ## UseCase
+
+PFH 的典型用途是作为点云**粗配准**（Coarse Registration）阶段的特征描述子——为两份点云的每个点算出 PFH
+直方图，根据直方图相似度寻找对应点对，再据此求解初始变换矩阵。实践中更常用计算更快的简化版
+[FPFH](0299_3D_Cloud_Features_FPFH) 来完成这一步，具体配准流程见
+[点云拼接](0286_3D_Cloud_Merge)。
