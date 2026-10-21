@@ -477,7 +477,7 @@
   - [OpenVINO](/0185_Tools_OV)
     - [Model Optimizer (Converter)](/0181_Tools_OV_MO)
       - [OpenVINO BatchNorm 折叠（BN Folding）](/0564_Tools_OV_MO_BNFolding)
-      - [OpenVINO 算子融合（Operator Fusion）](/0563_Tools_OV_MO_Fusion)
+      - [OpenVINO 算子融合](/0563_Tools_OV_MO_Fusion)
       - [OpenVINO 布局重排（Layout Transformation）](/0565_Tools_OV_MO_Layout)
     - [Inference Engine](/0180_Tools_OV_IE)
     - [~~POT~~](/0177_Tools_OV_POT)
@@ -560,4 +560,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1346001021</sub></kbd>
+<kbd><sub>@1348291021</sub></kbd>
