@@ -3,7 +3,7 @@
 | Title     | Tools Pytorch mGPUs Parallelism                       |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-10-21T07:56:31Z`                                |
-| Updated @ | `2026-10-21T07:56:31Z`                                |
+| Updated @ | `2026-10-21T07:59:54Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/599) |
 
@@ -11,8 +11,8 @@
 
 # 张量并行 / 流水线并行
 
-当数据并行（DDP）+ 参数分片（FSDP2，见 Tools Pytorch mGPUs
-FSDP）仍然无法满足超大模型的训练需求时（通信开销成为瓶颈，或模型单层本身就大到一张卡放不下），需要引入**模型并行**——把模型本身（而不是数据）切开分布到不同设备上。最常见的两种模型并行策略是张量并行和流水线并行，两者经常和数据并行/FSDP2
+当数据并行（DDP）+ 参数分片（FSDP2，见
+[FSDP2](0598_Tools_Pytorch_mGPUs_FSDP)）仍然无法满足超大模型的训练需求时（通信开销成为瓶颈，或模型单层本身就大到一张卡放不下），需要引入**模型并行**——把模型本身（而不是数据）切开分布到不同设备上。最常见的两种模型并行策略是张量并行和流水线并行，两者经常和数据并行/FSDP2
 组合使用。
 
 ## 张量并行（Tensor Parallel）
@@ -66,4 +66,4 @@ TorchTitan）这几种并行策略是分层组合使用的：张量并行通信�
   - [torchtitan（PyTorch
     官方大模型训练参考实现）](https://github.com/pytorch/torchtitan)
   - [Tools Pytorch mGPUs](0338_Tools_Pytorch_mGPUs)
-  - Tools Pytorch mGPUs FSDP
+  - [Tools Pytorch mGPUs FSDP](0598_Tools_Pytorch_mGPUs_FSDP)
