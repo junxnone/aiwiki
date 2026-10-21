@@ -2,7 +2,7 @@
 Title | 3D Algos Registration 4PCS
 -- | --
 Created @ | `2026-10-21T06:25:31Z`
-Updated @| `2026-10-21T06:25:31Z`
+Updated @| `2026-10-21T06:29:05Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/589)
 
@@ -33,10 +33,11 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/589)
 
 ## 和其他方法的关系
 
-4PCS 的 $O(n^2)$ 复杂度瓶颈直接催生了后续的 3D Algos Registration Super4PCS（用空间索引把复杂度降到线性）；思路上 4PCS 和 RANSAC 是同一类"随机采样+一致性验证"框架，区别只在于最小子集的选取方式（4 个共面点+比例不变量 vs 纯随机 3 点），详见 3D Algos Registration RANSAC。
+4PCS 的 $O(n^2)$ 复杂度瓶颈直接催生了后续的 [Super4PCS](0590_3D_Algos_Registration_Super4PCS)（用空间索引把复杂度降到线性）；思路上 4PCS 和 RANSAC 是同一类"随机采样+一致性验证"框架，区别只在于最小子集的选取方式（4 个共面点+比例不变量 vs 纯随机 3 点），详见 [RANSAC](0595_3D_Algos_Registration_RANSAC)。
 
 ## Reference
 - Aiger, D., Mitra, N.J., Cohen-Or, D. 4-Points Congruent Sets for Robust Pairwise Surface Registration, ACM TOG 2008
 - [3D Algos Registration Metrics](0236_3D_Algos_Registration_Metrics)
 - [3D Algos Registration](0235_3D_Algos_Registration)
+
 
