@@ -496,6 +496,7 @@
     - OneDNN
       - [oneDNN Post-ops](/0577_Tools_OV_OneDNN_PostOps)
     - [OpenVINO 优化](/0509_Tools_OV_Optimizations)
+    - [OpenVINO 性能分析工具合集](/0580_Tools_OV_Profiling)
     - [Security](/0176_Tools_OV_Security)
     - [Tips](/0184_Tools_OV_Tips)
     - [Workbench](/0178_Tools_OV_Workbench)
@@ -551,4 +552,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0915431021</sub></kbd>
+<kbd><sub>@0917451021</sub></kbd>
