@@ -3,24 +3,13 @@
 | Title     | 3D Cloud Features PFH                                 |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2021-05-08T03:11:56Z`                                |
-| Updated @ | `2026-10-21T05:11:04Z`                                |
+| Updated @ | `2026-10-21T05:19:52Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/298) |
 
 -----
 
-## Reference
-
-  - [几何特征系列：Point Feature
-    Histogram（点特征直方图）](http://lemonc.me/point-feature-histogram.html)
-  - [PCL计算PFH源码computePairFeatures](https://blog.csdn.net/m0_49291417/article/details/110198763)
-  - [【点云局部特征描述子】PFH & FPFH](https://zhuanlan.zhihu.com/p/192343758)
-  - [Aligning point cloud views using persistent feature
-    histograms](https://ias.in.tum.de/_media/spezial/bib/rusu08iros-1.pdf)
-  - [3D Cloud Features Curvature](0304_3D_Cloud_Features_Curvature)
-  - [3D Cloud Merge](0286_3D_Cloud_Merge)
-
-## Brief
+# PFH
 
   - PFH - `Point Feature Histogram` - 点特征直方图
   - 通过数理统计的方法获得一个用于描述中心点邻域几何信息的直方图
@@ -86,3 +75,14 @@ PFH 的典型用途是作为点云**粗配准**（Coarse Registration）阶段�
 直方图，根据直方图相似度寻找对应点对，再据此求解初始变换矩阵。实践中更常用计算更快的简化版
 [FPFH](0299_3D_Cloud_Features_FPFH) 来完成这一步，具体配准流程见
 [点云拼接](0286_3D_Cloud_Merge)。
+
+## Reference
+
+  - [几何特征系列：Point Feature
+    Histogram（点特征直方图）](http://lemonc.me/point-feature-histogram.html)
+  - [PCL计算PFH源码computePairFeatures](https://blog.csdn.net/m0_49291417/article/details/110198763)
+  - [【点云局部特征描述子】PFH & FPFH](https://zhuanlan.zhihu.com/p/192343758)
+  - [Aligning point cloud views using persistent feature
+    histograms](https://ias.in.tum.de/_media/spezial/bib/rusu08iros-1.pdf)
+  - [3D Cloud Features Curvature](0304_3D_Cloud_Features_Curvature)
+  - [3D Cloud Merge](0286_3D_Cloud_Merge)
