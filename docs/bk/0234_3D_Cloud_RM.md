@@ -3,24 +3,13 @@
 | Title     | 3D Cloud RM                                           |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2021-05-11T03:41:25Z`                                |
-| Updated @ | `2026-10-21T05:10:59Z`                                |
+| Updated @ | `2026-10-21T05:21:17Z`                                |
 | Labels    | `index`                                               |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/234) |
 
 -----
 
 # Rotation Matrix 旋转矩阵
-
-## Reference
-
-  - [旋转矩阵](https://zh.wikipedia.org/wiki/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5)
-  - [三维空间刚体运动](https://blog.csdn.net/weixin_40883049/article/details/86567439)
-  - [三维空间变换](https://blog.csdn.net/weixin_43827285/article/details/106073977)
-  - [D欧式变换理论与实践](https://blog.csdn.net/u011178262/article/details/84479181)
-  - [PCL点云库——旋转平移矩阵](https://blog.csdn.net/fei_12138/article/details/110280338)
-  - [3D Cloud Merge](0286_3D_Cloud_Merge)
-
-## Brief
 
   - **pcl 旋转平移矩阵 (4x4)**
 
@@ -90,3 +79,12 @@
 是旋转（必须满足上面的正交性约束），最后一列是平移。拼接流程里先用粗配准得到一个初始的旋转平移矩阵，再用 ICP
 迭代精化这个矩阵，最终目的都是求出这样一个满足
 SO(3)/SE(3)（特殊欧氏群，旋转+平移）约束的变换，把源点云变换到目标点云所在的坐标系。
+
+## Reference
+
+  - [旋转矩阵](https://zh.wikipedia.org/wiki/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5)
+  - [三维空间刚体运动](https://blog.csdn.net/weixin_40883049/article/details/86567439)
+  - [三维空间变换](https://blog.csdn.net/weixin_43827285/article/details/106073977)
+  - [D欧式变换理论与实践](https://blog.csdn.net/u011178262/article/details/84479181)
+  - [PCL点云库——旋转平移矩阵](https://blog.csdn.net/fei_12138/article/details/110280338)
+  - [3D Cloud Merge](0286_3D_Cloud_Merge)
