@@ -2,7 +2,7 @@
 Title | 3D Cloud Features Harris
 -- | --
 Created @ | `2026-10-21T05:35:58Z`
-Updated @| `2026-10-21T05:35:58Z`
+Updated @| `2026-10-21T05:39:05Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/588)
 
@@ -24,11 +24,12 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/588)
 
 ## UseCase
 
-Harris 3D 和 NARF 是点云/网格关键点检测里两种互补思路（具体对比见 3D Cloud Features NARF 一文）：Harris 3D 更适合检测曲面上曲率变化剧烈的"角点"类关键点，常用于三维物体识别、局部配准前的关键点提取阶段，减少后续特征描述（PFH/FPFH 等）需要处理的点数。
+Harris 3D 和 NARF 是点云/网格关键点检测里两种互补思路（具体对比见 [NARF](0586_3D_Cloud_Features_NARF) 一文）：Harris 3D 更适合检测曲面上曲率变化剧烈的"角点"类关键点，常用于三维物体识别、局部配准前的关键点提取阶段，减少后续特征描述（PFH/FPFH 等）需要处理的点数。
 
 ## Reference
 - Sipiran, I., Bustos, B. Harris 3D: A Robust Extension of the Harris Operator for Interest Point Detection on 3D Meshes
 - [3D Cloud Features Curvature](0304_3D_Cloud_Features_Curvature)
 - [3D Cloud Features ISS](0302_3D_Cloud_Features_ISS)
 - [3D Cloud Features](0424_3D_Cloud_Features)
+
 
