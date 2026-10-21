@@ -3,7 +3,7 @@
 | Title     | Tools OV OneDNN PostOps                               |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-10-21T01:11:11Z`                                |
-| Updated @ | `2026-10-21T01:11:11Z`                                |
+| Updated @ | `2026-10-21T01:29:29Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/577) |
 
@@ -74,7 +74,8 @@ INT8）。
 
 ## 和 Snippets 的分工
 
-Post-ops 和 CPU 插件的 Snippets（见独立的 Snippets 一文）都在做"融合"，但覆盖的场景不同：
+Post-ops 和 CPU 插件的 [Snippets](0576_Tools_OV_OPs_CPUImpl_Snippets)
+都在做"融合"，但覆盖的场景不同：
 
   - **Post-ops**：针对 oneDNN 已经实现好的主算子（Convolution、MatMul
     等计算密集型算子），附加少量预定义类型的后处理操作，组合方式有限但执行效率极高（oneDNN
