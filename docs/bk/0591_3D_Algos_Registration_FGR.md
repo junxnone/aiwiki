@@ -3,7 +3,7 @@
 | Title     | 3D Algos Registration FGR                             |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-10-21T06:25:37Z`                                |
-| Updated @ | `2026-10-21T06:25:37Z`                                |
+| Updated @ | `2026-10-21T06:29:10Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/591) |
 
@@ -12,9 +12,8 @@
 # FGR - Fast Global Registration
 
 FGR 是一种跳过"采样-验证"循环、直接对一个鲁棒目标函数做优化的全局配准算法——和
-[SAC-IA](0300_3D_Algos_Registration_SACIA)/3D Algos Registration
-4PCS/RANSAC 这类"随机采样+一致性验证"的框架完全不同，FGR
-一步到位地在全部候选对应关系上做优化，不需要反复采样/验证/剔除候选对应，因此速度明显更快。
+[SAC-IA](0300_3D_Algos_Registration_SACIA)/[4PCS](0589_3D_Algos_Registration_4PCS)/[RANSAC](0595_3D_Algos_Registration_RANSAC)
+这类"随机采样+一致性验证"的框架完全不同，FGR 一步到位地在全部候选对应关系上做优化，不需要反复采样/验证/剔除候选对应，因此速度明显更快。
 
 ## 算法原理
 
