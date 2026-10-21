@@ -3,22 +3,13 @@
 | Title     | 3D Cloud Merge                                        |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2022-02-08T02:40:41Z`                                |
-| Updated @ | `2026-10-21T05:11:00Z`                                |
+| Updated @ | `2026-10-21T05:20:58Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/286) |
 
 -----
 
-## Reference
-
-  - [Smoothing and normal estimation based on polynomial
-    reconstruction](https://pcl.readthedocs.io/projects/tutorials/en/master/resampling.html)
-  - Rusu, R.B. et al. Fast Point Feature Histograms (FPFH) for 3D
-    Registration, ICRA 2009（SAC-IA 粗配准算法出处）
-  - [3D Cloud RM](0234_3D_Cloud_RM)
-  - [3D Cloud Features](0424_3D_Cloud_Features)
-
-## Brief
+# 3D 点云拼接
 
   - 绝对坐标系点云拼接
   - 靶点(定位点)点云拼接
@@ -89,3 +80,12 @@ ICP 根据第 2 步优化目标的不同，常见两个变种：
   - **[MLS](/Moving_Least_Squares)
     平滑重建**：融合后的点云在拼接边界处容易出现不连续的"接缝"，用移动最小二乘法（Moving
     Least Squares）对表面重新拟合/重采样，可以平滑掉这类拼接噪声。
+
+## Reference
+
+  - [Smoothing and normal estimation based on polynomial
+    reconstruction](https://pcl.readthedocs.io/projects/tutorials/en/master/resampling.html)
+  - Rusu, R.B. et al. Fast Point Feature Histograms (FPFH) for 3D
+    Registration, ICRA 2009（SAC-IA 粗配准算法出处）
+  - [3D Cloud RM](0234_3D_Cloud_RM)
+  - [3D Cloud Features](0424_3D_Cloud_Features)
