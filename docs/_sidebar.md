@@ -121,12 +121,12 @@
       - [4PCS - 4-Point Congruent Sets](/0589_3D_Algos_Registration_4PCS)
       - [FGR - Fast Global Registration](/0591_3D_Algos_Registration_FGR)
       - [ICP 精配准](/0086_3D_Algos_Registration_ICP)
-        - [GICP](/0296_3D_Algos_Registration_ICP_GICP)
+        - [GICP - Generalized ICP](/0296_3D_Algos_Registration_ICP_GICP)
         - [MBICP - Metric-Based ICP](/0592_3D_Algos_Registration_ICP_MBICP)
         - [NICP - Normal Iterative Closest Point](/0594_3D_Algos_Registration_ICP_NICP)
         - [PLICP - Point-to-Line ICP](/0593_3D_Algos_Registration_ICP_PLICP)
-      - [Metrics](/0236_3D_Algos_Registration_Metrics)
-      - [NDT Normal Distributions Transform](/0295_3D_Algos_Registration_NDT)
+      - [Registration Metrics 配准评价指标](/0236_3D_Algos_Registration_Metrics)
+      - [NDT Normal Distributions Transform 正态分布变换](/0295_3D_Algos_Registration_NDT)
       - [PPF 粗配准](/0085_3D_Algos_Registration_PPF)
       - [RANSAC - Random Sample Consensus](/0595_3D_Algos_Registration_RANSAC)
       - [SAC-IA](/0300_3D_Algos_Registration_SACIA)
@@ -567,4 +567,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1430281021</sub></kbd>
+<kbd><sub>@1432181021</sub></kbd>
