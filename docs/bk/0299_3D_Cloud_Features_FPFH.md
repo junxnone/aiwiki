@@ -3,20 +3,13 @@
 | Title     | 3D Cloud Features FPFH                                |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2022-03-14T06:33:33Z`                                |
-| Updated @ | `2026-10-21T05:11:06Z`                                |
+| Updated @ | `2026-10-21T05:18:52Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/299) |
 
 -----
 
-## Reference
-
-  - [三维点云课程---FPFH特征点描述](https://blog.csdn.net/qq_45369294/article/details/121125386)
-  - [Fast Point Feature Histograms (FPFH) for 3D
-    registration](https://www.cvl.iis.u-tokyo.ac.jp/class2016/2016w/papers/6.3DdataProcessing/Rusu_FPFH_ICRA2009.pdf)
-  - [3D Cloud Merge](0286_3D_Cloud_Merge)
-
-## Brief
+# FPFH
 
   - FPFH - `Fast Point Feature Histogram` - 快速 PFH
   - 基于 \[\[PFH\]\]
@@ -69,3 +62,10 @@ FPFH 最主要的实际用途，是作为 **SAC-IA（Sample Consensus Initial Al
 完整的两阶段配准流程（粗配准+精配准）详见 [点云拼接](0286_3D_Cloud_Merge)。和
 [PFH](0298_3D_Cloud_Features_PFH) 一样，FPFH
 同样建立在局部坐标系上，具备姿态（旋转/平移）无关性，这也是它能跨点云找对应点的前提。
+
+## Reference
+
+  - [三维点云课程---FPFH特征点描述](https://blog.csdn.net/qq_45369294/article/details/121125386)
+  - [Fast Point Feature Histograms (FPFH) for 3D
+    registration](https://www.cvl.iis.u-tokyo.ac.jp/class2016/2016w/papers/6.3DdataProcessing/Rusu_FPFH_ICRA2009.pdf)
+  - [3D Cloud Merge](0286_3D_Cloud_Merge)
