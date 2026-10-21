@@ -2,7 +2,7 @@
 Title | 3D Cloud Merge
 -- | --
 Created @ | `2022-02-08T02:40:41Z`
-Last Modify @| `2022-12-25T03:45:32Z`
+Updated @| `2026-10-21T05:11:00Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/286)
 
@@ -10,6 +10,9 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/286)
 ## Reference
 
 - [Smoothing and normal estimation based on polynomial reconstruction](https://pcl.readthedocs.io/projects/tutorials/en/master/resampling.html)
+- Rusu, R.B. et al. Fast Point Feature Histograms (FPFH) for 3D Registration, ICRA 2009（SAC-IA 粗配准算法出处）
+- [3D Cloud RM](0234_3D_Cloud_RM)
+- [3D Cloud Features](0424_3D_Cloud_Features)
 
 
 ## Brief
@@ -18,16 +21,53 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/286)
 - 三点定位标记拼接
 - **点云重叠配准拼接**
 - 深度学习
-  - PointNet/PointNet++/PointNetLK/DCP(DeepClosest Point)
+  - PointNet/PointNet++/PointNetLK/DCP(DeepClosest Point)，更系统的深度学习 3D 方法梳理见 [3D 深度学习技术综述](0233_3D_DL)
 - 同源配准/跨源配准(不同的采集设备)
 - [MLS](/Moving_Least_Squares) Surface reconstruction(smooth and resample noisy data)
 
-## 注册配准拼接
-- 对拼接点云重合度的要求？
-- Steps
-  - 有重叠部分的点云配准计算变换矩阵
-  - 根据转换矩阵转换点云
-  - 计算重叠点云区域
-  - 点云平滑/Smoothing
-- 融合(平均融合/去除重叠)
-- 去除重叠部分
+## 几种拼接方式的本质区别
+
+- **绝对坐标系拼接**：依赖外部定位系统（如机械臂编码器、全站仪、GPS/INS）提供每次采集时传感器的精确位姿，点云按已知位姿直接变换到统一坐标系，不需要点云本身参与计算——精度完全取决于外部定位系统，常见于工业产线的固定扫描站位。
+- **靶点/标记拼接**：在场景中放置已知形状的物理标记（球形靶标、棋盘格、ArUco 码等），通过识别标记在不同点云中的位置反推变换矩阵——不依赖外部定位设备，但需要人工布置标记，适合实验室/测量场景。
+- **点云重叠配准拼接**：不依赖任何外部辅助，纯粹利用两份点云重叠区域的几何相似性直接计算变换矩阵——这是三种方式里最通用、也是技术含量最高的一种，下面重点展开。
+
+## 注册配准拼接：两阶段流程
+
+点云重叠配准的标准做法是**粗配准（Coarse Registration）+ 精配准（Fine Registration）**两阶段，而不是直接对两份初始位姿随意的点云跑 ICP：
+
+### 第一步：粗配准——先求一个"差不多"的初始变换
+
+直接对两份点云跑精配准算法（如 ICP）有一个致命问题：ICP 本质是局部优化，**如果初始位姿相差太大，很容易收敛到错误的局部最优**（比如把两份点云的不同部位错误地对齐在一起）。粗配准的目标就是先求出一个大致正确的初始变换矩阵，常见方法：
+
+- **靶点/标记法**：如果场景里有标记物，直接用标记位置解方程求解变换，精度最高；
+- **基于特征描述子的 SAC-IA（Sample Consensus Initial Alignment）**：对两份点云分别计算 [FPFH](0299_3D_Cloud_Features_FPFH) 特征（也可以用 [PFH](0298_3D_Cloud_Features_PFH)，但 FPFH 更常用），用采样一致性（类似 RANSAC 的思路）在两份点云的特征空间里寻找匹配的对应点对，再据此估计出一个初始变换矩阵——不需要人工布置任何标记，是最通用的无人工干预粗配准方案。
+
+### 第二步：精配准——ICP 迭代最近点算法
+
+有了粗配准给出的初始变换后，用 **ICP（Iterative Closest Point，迭代最近点）** 算法做精细调整，基本迭代流程：
+
+1. 在当前变换下，为源点云的每个点在目标点云里找最近邻点，作为"假设对应点对"；
+2. 用这些对应点对，求解一个能让总体对应距离最小的旋转平移矩阵（经典解法是对协方差矩阵做 SVD 分解，见 [旋转矩阵](0234_3D_Cloud_RM)）；
+3. 用求解出的变换更新源点云位姿；
+4. 重复 1-3，直到变换量收敛到阈值以下或达到最大迭代次数。
+
+ICP 根据第 2 步优化目标的不同，常见两个变种：
+
+- **点到点 ICP（Point-to-Point）**：最小化对应点对之间的欧氏距离，实现简单，但在光滑表面上收敛较慢；
+- **点到面 ICP（Point-to-Plane）**：最小化源点到目标点所在切平面（需要先有法向量，见 [曲率](0304_3D_Cloud_Features_Curvature) 里提到的 PCA 法向量估计）的距离，对光滑表面收敛明显更快，是实践中更常用的变种。
+
+**完整配准流程串联**：FPFH 特征计算（[0299](0299_3D_Cloud_Features_FPFH)）→ SAC-IA 粗配准 → 点到面 ICP 精配准 → 得到最终变换矩阵（[0234](0234_3D_Cloud_RM)）。
+
+## 同源配准 vs 跨源配准
+
+- **同源配准**：两份点云来自同一类型/同一台设备（比如同一个激光雷达在不同时刻、不同角度的两次扫描），点密度、噪声特性接近，配准相对容易；
+- **跨源配准**：两份点云来自不同类型的采集设备（比如 RGB-D 相机 vs 激光雷达 vs 双目立体视觉），点密度、噪声分布、甚至坐标系尺度都可能不同，配准难度显著更高，往往需要专门针对跨源场景设计的特征/算法。
+
+## 融合
+
+配准求出变换矩阵、把两份点云对齐到同一坐标系后，还需要处理重叠区域：
+
+- **去除重叠**：简单地保留其中一份点云在重叠区域的数据，丢弃另一份——实现简单，但如果两份点云精度不同，可能丢失更精确的数据；
+- **平均融合**：对重叠区域的对应点做加权平均（如按距离传感器的远近/置信度加权），能综合两份数据的信息，但计算量更大；
+- **[MLS](/Moving_Least_Squares) 平滑重建**：融合后的点云在拼接边界处容易出现不连续的"接缝"，用移动最小二乘法（Moving Least Squares）对表面重新拟合/重采样，可以平滑掉这类拼接噪声。
+
