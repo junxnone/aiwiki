@@ -99,10 +99,17 @@
       - [相移法重建](/0309_3D_Camera_结构光_相移法重建)
   - [3D Cloud 点云](/0423_3D_Cloud)
     - [3D Cloud Features 点云特征描述子](/0424_3D_Cloud_Features)
+      - [3DSC - 3D Shape Context](/0587_3D_Cloud_Features_3DSC)
+      - [CVFH - Clustered Viewpoint Feature Histogram](/0583_3D_Cloud_Features_CVFH)
       - [3D Cloud Curvature 点云曲率](/0304_3D_Cloud_Features_Curvature)
       - [FPFH](/0299_3D_Cloud_Features_FPFH)
+      - [Harris 3D 关键点](/0588_3D_Cloud_Features_Harris)
       - [ISS KeyPoint](/0302_3D_Cloud_Features_ISS)
+      - [NARF - Normal Aligned Radial Feature](/0586_3D_Cloud_Features_NARF)
       - [PFH](/0298_3D_Cloud_Features_PFH)
+      - [RIFT - Rotation Invariant Feature Transform](/0584_3D_Cloud_Features_RIFT)
+      - [RSD - Radius-based Surface Descriptor](/0585_3D_Cloud_Features_RSD)
+      - [VFH - Viewpoint Feature Histogram](/0582_3D_Cloud_Features_VFH)
     - [3D 点云拼接](/0286_3D_Cloud_Merge)
     - [Rotation Matrix 旋转矩阵](/0234_3D_Cloud_RM)
     - [离群点移除](/0287_3D_Cloud_SOR)
@@ -553,4 +560,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1322081021</sub></kbd>
+<kbd><sub>@1337021021</sub></kbd>
