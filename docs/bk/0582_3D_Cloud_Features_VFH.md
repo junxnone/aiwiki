@@ -3,7 +3,7 @@
 | Title     | 3D Cloud Features VFH                                 |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-10-21T05:35:47Z`                                |
-| Updated @ | `2026-10-21T05:35:47Z`                                |
+| Updated @ | `2026-10-21T05:38:58Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/582) |
 
@@ -29,7 +29,8 @@
 
 VFH
 的两个分量都依赖对"整个物体簇"的全局统计（质心位置、整体法向量分布）——如果物体被部分遮挡、点云缺失一大块，算出来的质心会发生明显偏移，导致整个描述子失真。这是
-VFH 最大的弱点，后续的 Clustered VFH（CVFH）就是为了解决这个问题被提出的。
+VFH 最大的弱点，后续的 [Clustered VFH（CVFH）](0583_3D_Cloud_Features_CVFH)
+就是为了解决这个问题被提出的。
 
 ## UseCase
 
