@@ -491,6 +491,7 @@
         - [GPU Impl Reorder](/0529_Tools_OV_OPs_GPUImpl_Reorder)
       - [OpenVINO Ops Impl](/0533_Tools_OV_OPs_Impl)
       - [OPs NPU Impl](/0575_Tools_OV_OPs_NPUImpl)
+      - [AUTO / HETERO / MULTI 插件调度](/0578_Tools_OV_OPs_PluginScheduling)
     - OneDNN
       - [oneDNN Post-ops](/0577_Tools_OV_OneDNN_PostOps)
     - [OpenVINO 优化](/0509_Tools_OV_Optimizations)
@@ -549,4 +550,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0912121021</sub></kbd>
+<kbd><sub>@0913561021</sub></kbd>
