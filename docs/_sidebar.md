@@ -484,6 +484,7 @@
       - [NNCF Weight Compression](/0560_Tools_OV_NNCF_WC)
     - [OpenVINO Ops](/0528_Tools_OV_OPs)
       - [OPs CPU Impl](/0534_Tools_OV_OPs_CPUImpl)
+        - [Snippets（CPU 子图 JIT 编译器）](/0576_Tools_OV_OPs_CPUImpl_Snippets)
       - [OPs GPU Impl](/0531_Tools_OV_OPs_GPUImpl)
         - [GPU Impl Crop](/0530_Tools_OV_OPs_GPUImpl_Crop)
         - [GPU Impl Permute](/0532_Tools_OV_OPs_GPUImpl_Permute)
@@ -546,4 +547,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1700211020</sub></kbd>
+<kbd><sub>@0909381021</sub></kbd>
