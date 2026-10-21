@@ -2,14 +2,38 @@
 Title | 3D Cloud Features
 -- | --
 Created @ | `2023-06-17T15:37:42Z`
-Updated @| `2023-06-17T15:37:42Z`
+Updated @| `2026-10-21T05:10:52Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/424)
 
 ---
-# 3D Cloud Features
-- 曲率
-- PFH 
-- FPFH
-- ISS
-- ...
+# 3D Cloud Features 点云特征描述子
+
+> 点云特征描述子用一个（通常定长的）向量/直方图概括某个点的局部几何形状，是点云配准（Registration）、识别、分割等任务的基础输入。本文按"关键点检测 vs 特征描述"两类梳理，并对比各描述子的计算复杂度。
+
+## 两类任务：关键点检测 vs 特征描述
+
+- **关键点检测（Keypoint Detection）**：从稠密点云中挑出一小部分"有代表性"的点（比如局部几何显著的点），减少后续计算量——代表方法 [ISS](0302_3D_Cloud_Features_ISS)。
+- **特征描述（Feature Description）**：给定一个点（可以是关键点，也可以是普通点），计算一个向量描述它周围的局部几何形状，用于配准时的对应点匹配——代表方法 [PFH](0298_3D_Cloud_Features_PFH)、[FPFH](0299_3D_Cloud_Features_FPFH)。
+
+[曲率](0304_3D_Cloud_Features_Curvature) 本身既是最基础的局部几何量，也是 ISS 关键点检测、PFH/FPFH 计算法向量时共同依赖的基础构件。
+
+## 对比
+
+| 名称 | 类型 | 核心思路 | 复杂度 | 输出 |
+|---|---|---|---|---|
+| [曲率](0304_3D_Cloud_Features_Curvature) | 基础几何量 | 主曲率 $k_1,k_2$ 描述曲面弯曲程度 | 给定邻域协方差矩阵后 O(1) | 标量（或 $k_1,k_2$ 两个值） |
+| [PFH](0298_3D_Cloud_Features_PFH) | 特征描述 | 邻域内所有点两两配对，统计法向量角度差异的联合直方图 | $O(k^2)$（k 为邻域点数） | 125 维向量 |
+| [FPFH](0299_3D_Cloud_Features_FPFH) | 特征描述 | 只计算查询点与邻域点的简化直方图（SPFH），再加权累加邻域 SPFH 近似 PFH | $O(nk)$ | 33 维向量 |
+| [ISS](0302_3D_Cloud_Features_ISS) | 关键点检测 | 邻域协方差矩阵特征值比值筛选"显著"点 | 依赖邻域搜索，整体约 $O(n \log n)$ | 关键点掩码（布尔），不是描述向量 |
+
+**PFH → FPFH 的取舍**：FPFH 是 PFH 的工程化简化版——牺牲一部分精度（不再穷举邻域内所有点对，只计算查询点和邻域点的关系，再加权近似），换取从 $O(k^2)$ 降到 $O(nk)$ 的速度提升，是 PCL 等库里配准流程的默认实用选择。
+
+## 仓库里还没展开的描述子
+
+点云特征描述子家族还有不少经典方法本仓库尚未单独展开，先列在这里作为待扩展列表（出处见 [3D](0076_3D) 的点云特征小节）：VFH（Viewpoint Feature Histogram）、CVFH、RIFT、RSD、NARF、3DSC、Harris 3D 关键点。
+
+## Reference
+- [3D](0076_3D)
+- [3D Cloud](0423_3D_Cloud)
+
