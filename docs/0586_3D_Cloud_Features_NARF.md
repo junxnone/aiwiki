@@ -2,7 +2,7 @@
 Title | 3D Cloud Features NARF
 -- | --
 Created @ | `2026-10-21T05:35:55Z`
-Updated @| `2026-10-21T05:35:55Z`
+Updated @| `2026-10-21T05:39:03Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/586)
 
@@ -25,7 +25,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/586)
 
 ## 和 Harris 3D 的互补关系
 
-NARF 和 3D Cloud Features Harris 是点云关键点检测里两种常被放在一起比较的互补思路：NARF 专注于深度图上的**物体边界**附近的稳定点，Harris 3D 借鉴 2D 角点检测思路，专注于**曲率变化剧烈的角点**——两者关注的"显著性"定义不同，实践中常根据具体场景（边界敏感 vs 角点敏感）选择，或者两者结合使用增加关键点覆盖面。
+NARF 和 [Harris 3D](0588_3D_Cloud_Features_Harris) 是点云关键点检测里两种常被放在一起比较的互补思路：NARF 专注于深度图上的**物体边界**附近的稳定点，Harris 3D 借鉴 2D 角点检测思路，专注于**曲率变化剧烈的角点**——两者关注的"显著性"定义不同，实践中常根据具体场景（边界敏感 vs 角点敏感）选择，或者两者结合使用增加关键点覆盖面。
 
 ## UseCase
 
@@ -35,4 +35,5 @@ NARF 常用于机器人场景下深度图之间的配准/物体识别——因�
 - Steder, B., Rusu, R.B., Konolige, K., Burgard, W. NARF: 3D Range Image Features for Object Recognition（NARF 提出论文）
 - [PCL NarfDescriptor 文档](https://pointclouds.org/documentation/group__features.html)
 - [3D Cloud Features](0424_3D_Cloud_Features)
+
 
