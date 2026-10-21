@@ -2,7 +2,7 @@
 Title | Tools OV OPs PluginScheduling
 -- | --
 Created @ | `2026-10-21T01:12:55Z`
-Updated @| `2026-10-21T01:12:55Z`
+Updated @| `2026-10-21T01:31:13Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/578)
 
@@ -26,7 +26,7 @@ HETERO 解决的是"一张计算图里，不同算子分别在不同设备上执
 
 - **拆分依据**：按算子对每个设备的支持情况自动拆分计算图，重活交给加速器，加速器不支持的算子自动回退（fallback）到 CPU 执行；
 - **配置方式**：`"HETERO:GPU,CPU"` 这样指定设备优先级顺序——GPU 是主执行设备，CPU 是兜底设备；
-- **和 NPU 的典型配合**：NPU 支持的算子集合是三者里最窄的（见独立的 OPs NPU Impl 一文），遇到 NPU 不支持的算子，常见做法就是用 HETERO 把这部分自动分流给 CPU 或 GPU，而不是整个模型都放弃用 NPU。
+- **和 NPU 的典型配合**：NPU 支持的算子集合是三者里最窄的（见 [OPs NPU Impl](0575_Tools_OV_OPs_NPUImpl)），遇到 NPU 不支持的算子，常见做法就是用 HETERO 把这部分自动分流给 CPU 或 GPU，而不是整个模型都放弃用 NPU。
 
 ## MULTI：同一个模型多设备并行跑
 
