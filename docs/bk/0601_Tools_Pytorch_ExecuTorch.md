@@ -3,7 +3,7 @@
 | Title     | Tools Pytorch ExecuTorch                              |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-10-21T07:56:35Z`                                |
-| Updated @ | `2026-10-21T07:56:35Z`                                |
+| Updated @ | `2026-10-21T07:59:56Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/601) |
 
@@ -11,9 +11,10 @@
 
 # ExecuTorch
 
-ExecuTorch 是 PyTorch 官方推出的移动端/嵌入式设备推理运行时，是 Tools Pytorch TorchScript
-一文提到的"TorchScript 嵌入式运行时"的正式替代品，建立在 Tools Pytorch Export 介绍的
-`torch.export` 之上。
+ExecuTorch 是 PyTorch 官方推出的移动端/嵌入式设备推理运行时，是
+[TorchScript](0490_Tools_Pytorch_TorchScript) 一文提到的"TorchScript
+嵌入式运行时"的正式替代品，建立在
+[torch.export](0600_Tools_Pytorch_Export) 介绍的 `torch.export` 之上。
 
 ## 为什么需要一个新的嵌入式运行时
 
@@ -27,8 +28,8 @@ TorchScript 的嵌入式部署路径（trace/script 后用 LibTorch
 
 ## 整体流程：导出 → Edge 转换 → 后端委托 → 产出 .pte
 
-1.  **导出**：用 `torch.export` 把模型导出成 `ExportedProgram`（见 Tools Pytorch
-    Export）；
+1.  **导出**：用 `torch.export` 把模型导出成 `ExportedProgram`（见
+    [torch.export](0600_Tools_Pytorch_Export)）；
 2.  **Edge 转换（`to_edge`）**：把导出图进一步规范化成适合端侧执行的中间表示，补充完整的张量元信息（shape、dtype
     等）；
 3.  **后端委托（Delegate）**：针对特定硬件后端（比如移动 GPU/NPU），用对应的 **Partitioner**（如
@@ -55,5 +56,5 @@ TorchScript 嵌入式路径相比最大的架构升级。
     官方教程](https://docs.pytorch.org/executorch/stable/tutorials/export-to-executorch-tutorial.html)
   - ExecuTorch -- A Unified PyTorch Solution to Run AI Models
     On-Device（PyTorch 团队论文）
-  - Tools Pytorch Export
+  - [Tools Pytorch Export](0600_Tools_Pytorch_Export)
   - [Tools Pytorch TorchScript](0490_Tools_Pytorch_TorchScript)
