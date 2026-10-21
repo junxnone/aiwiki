@@ -103,7 +103,7 @@
       - [FPFH](/0299_3D_Cloud_Features_FPFH)
       - [ISS KeyPoint](/0302_3D_Cloud_Features_ISS)
       - [PFH](/0298_3D_Cloud_Features_PFH)
-    - [Merge](/0286_3D_Cloud_Merge)
+    - [3D 点云拼接](/0286_3D_Cloud_Merge)
     - [Rotation Matrix 旋转矩阵](/0234_3D_Cloud_RM)
     - [离群点移除](/0287_3D_Cloud_SOR)
     - [降采样 (Point Cloud Downsampling)](/0285_3D_Cloud_Sampling)
@@ -553,4 +553,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1312291021</sub></kbd>
+<kbd><sub>@1322081021</sub></kbd>
