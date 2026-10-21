@@ -478,6 +478,7 @@
     - [OpenVINO Debug](/0527_Tools_OV_Debug)
     - [DevCloud](/0179_Tools_OV_DevCloud)
     - [OpenVINO INT8 Model](/0182_Tools_OV_INT8Model)
+    - [LPT（Low Precision Transformations，低精度转换）](/0579_Tools_OV_LPT)
     - [NNCF - Neural Network Compression Framework](/0451_Tools_OV_NNCF)
       - [NNCF Post-training Quantization](/0561_Tools_OV_NNCF_PTQ)
       - [NNCF Training-time Optimization](/0562_Tools_OV_NNCF_TTOP)
@@ -550,4 +551,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0913561021</sub></kbd>
+<kbd><sub>@0915431021</sub></kbd>
