@@ -474,7 +474,7 @@
       - [OpenVINO 布局重排（Layout Transformation）](/0565_Tools_OV_MO_Layout)
     - [Inference Engine](/0180_Tools_OV_IE)
     - [~~POT~~](/0177_Tools_OV_POT)
-    - [Compile Tool](/0183_Tools_OV_CompileTool)
+    - [OpenVINO Blob](/0183_Tools_OV_CompileTool)
     - [OpenVINO Debug](/0527_Tools_OV_Debug)
     - [DevCloud](/0179_Tools_OV_DevCloud)
     - [OpenVINO INT8 Model](/0182_Tools_OV_INT8Model)
@@ -552,4 +552,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0930291021</sub></kbd>
+<kbd><sub>@1031181021</sub></kbd>
