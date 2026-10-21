@@ -2,7 +2,7 @@
 Title | 3D Algos Registration ICP PLICP
 -- | --
 Created @ | `2026-10-21T06:25:42Z`
-Updated @| `2026-10-21T06:25:42Z`
+Updated @| `2026-10-21T06:29:16Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/593)
 
@@ -25,7 +25,7 @@ PLICP 把标准 [ICP](0086_3D_Algos_Registration_ICP) 里"点到点"的误差度
 ## 缺点
 
 - **只在 2D/平面场景下有闭式解**，3D 情形没有对应的闭式解，限制了它的直接适用范围；
-- 对**大初始旋转误差的鲁棒性不如 MBICP**——论文本身也指出，PLICP 精度更高、迭代更少，但面对很大的初始位姿偏差时不如 3D Algos Registration ICP MBICP 稳健。
+- 对**大初始旋转误差的鲁棒性不如 MBICP**——论文本身也指出，PLICP 精度更高、迭代更少，但面对很大的初始位姿偏差时不如 [MBICP](0592_3D_Algos_Registration_ICP_MBICP) 稳健。
 
 ## 使用场景
 
@@ -35,4 +35,5 @@ PLICP 主要用于**2D 激光扫描匹配**（移动机器人里程计/SLAM 中�
 - Censi, A. An ICP Variant Using a Point-to-Line Metric, ICRA 2008
 - [3D Algos Registration ICP](0086_3D_Algos_Registration_ICP)
 - [3D Algos Registration](0235_3D_Algos_Registration)
+
 
