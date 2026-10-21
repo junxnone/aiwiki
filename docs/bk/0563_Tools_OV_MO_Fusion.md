@@ -3,13 +3,15 @@
 | Title     | Tools OV MO Fusion                                    |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-10-20T01:38:37Z`                                |
-| Updated @ | `2026-10-20T02:02:51Z`                                |
+| Updated @ | `2026-10-21T05:47:28Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/563) |
 
 -----
 
-# OpenVINO 算子融合（Operator Fusion）
+# OpenVINO 算子融合
+
+  - Operator Fusion
 
 > 本文是 OpenVINO Model Optimizer /
 > 模型转换总览的深入篇，专门展开**算子融合**——一种贯穿模型转换和设备编译两个阶段的图优化手段。
