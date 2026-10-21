@@ -118,12 +118,19 @@
     - [3D 重建](/0305_3D_Algos_Reconstruction)
       - [KinectFusion](/0306_3D_Algos_Reconstruction_KinectFusion)
     - [Registration 配准](/0235_3D_Algos_Registration)
+      - [4PCS - 4-Point Congruent Sets](/0589_3D_Algos_Registration_4PCS)
+      - [FGR - Fast Global Registration](/0591_3D_Algos_Registration_FGR)
       - [ICP 精配准](/0086_3D_Algos_Registration_ICP)
         - [GICP](/0296_3D_Algos_Registration_ICP_GICP)
+        - [MBICP - Metric-Based ICP](/0592_3D_Algos_Registration_ICP_MBICP)
+        - [NICP - Normal Iterative Closest Point](/0594_3D_Algos_Registration_ICP_NICP)
+        - [PLICP - Point-to-Line ICP](/0593_3D_Algos_Registration_ICP_PLICP)
       - [Metrics](/0236_3D_Algos_Registration_Metrics)
       - [NDT Normal Distributions Transform](/0295_3D_Algos_Registration_NDT)
       - [PPF 粗配准](/0085_3D_Algos_Registration_PPF)
+      - [RANSAC - Random Sample Consensus](/0595_3D_Algos_Registration_RANSAC)
       - [SAC-IA](/0300_3D_Algos_Registration_SACIA)
+      - [Super4PCS](/0590_3D_Algos_Registration_Super4PCS)
     - [GreedyProjectionTriangulation](/0399_3D_Algos_triangulation)
   - [3D 深度学习技术综述](/0233_3D_DL)
   - [3D Tools](/0419_3D_Tools)
@@ -560,4 +567,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1348291021</sub></kbd>
+<kbd><sub>@1426441021</sub></kbd>
