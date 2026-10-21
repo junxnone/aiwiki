@@ -491,6 +491,8 @@
         - [GPU Impl Reorder](/0529_Tools_OV_OPs_GPUImpl_Reorder)
       - [OpenVINO Ops Impl](/0533_Tools_OV_OPs_Impl)
       - [OPs NPU Impl](/0575_Tools_OV_OPs_NPUImpl)
+    - OneDNN
+      - [oneDNN Post-ops](/0577_Tools_OV_OneDNN_PostOps)
     - [OpenVINO 优化](/0509_Tools_OV_Optimizations)
     - [Security](/0176_Tools_OV_Security)
     - [Tips](/0184_Tools_OV_Tips)
@@ -547,4 +549,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0909381021</sub></kbd>
+<kbd><sub>@0912121021</sub></kbd>
