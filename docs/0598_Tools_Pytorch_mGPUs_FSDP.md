@@ -2,7 +2,7 @@
 Title | Tools Pytorch mGPUs FSDP
 -- | --
 Created @ | `2026-10-21T07:56:29Z`
-Updated @| `2026-10-21T07:56:29Z`
+Updated @| `2026-10-21T07:59:52Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/598)
 
@@ -30,10 +30,11 @@ FSDP2（`torch.distributed.fsdp.fully_shard`）的典型生命周期：
 
 ## 什么时候用 FSDP2
 
-官方给出的扩展路径很直接：模型单卡放得下，用 DDP；放不下，用 FSDP2；FSDP2（纯数据并行+参数分片）还不够用（通信开销成为瓶颈，或者模型大到分片后单次 All-Gather 出来的完整参数依然装不下）时，再考虑张量并行/流水线并行这类模型并行技术，具体对比见 Tools Pytorch mGPUs Parallelism。
+官方给出的扩展路径很直接：模型单卡放得下，用 DDP；放不下，用 FSDP2；FSDP2（纯数据并行+参数分片）还不够用（通信开销成为瓶颈，或者模型大到分片后单次 All-Gather 出来的完整参数依然装不下）时，再考虑张量并行/流水线并行这类模型并行技术，具体对比见 [张量并行/流水线并行](0599_Tools_Pytorch_mGPUs_Parallelism)。
 
 ## Reference
 - [Getting Started with Fully Sharded Data Parallel (FSDP2) — 官方教程](https://docs.pytorch.org/tutorials/intermediate/FSDP_tutorial.html)
 - [Rethinking PyTorch Fully Sharded Data Parallel (FSDP) from First Principles（PyTorch 团队设计文档）](https://dev-discuss.pytorch.org/t/rethinking-pytorch-fully-sharded-data-parallel-fsdp-from-first-principles/1019)
 - [Tools Pytorch mGPUs](0338_Tools_Pytorch_mGPUs)
+
 
