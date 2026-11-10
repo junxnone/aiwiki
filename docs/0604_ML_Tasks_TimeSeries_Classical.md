@@ -1,0 +1,763 @@
+---
+Title | ML Tasks TimeSeries Classical
+-- | --
+Created @ | `2026-11-10T09:17:20Z`
+Updated @| `2026-11-10T09:17:20Z`
+Labels | ``
+Edit @| [here](https://github.com/junxnone/aiwiki/issues/604)
+
+---
+# 经典统计时间序列模型：方法详解、理论骨架与发展脉络
+
+> 读者：想真正弄懂 ARIMA、指数平滑、状态空间这些"老方法"怎么用、为什么成立、边界在哪、如何被扩展、与深度学习怎么对接的工程师和研究者。配套文档：[survey](0603_ML_Tasks_TimeSeries)（总览）、[metrics](0610_ML_Tasks_TimeSeries_Metrics)（评估指标）、[timeline](0611_ML_Tasks_TimeSeries_Timeline)（时间线）。
+>
+> 公式用 LaTeX 书写，需要支持数学渲染的 Markdown 查看器。
+>
+> 标注：**[V]** 书目信息经 Crossref 或 arXiv API 核对（标题、作者、年份、期刊与 DOI 或编号；只核对书目，未重读全文）；**[经验]** 编者判断；**待核实** 凭记忆写出或书目信息核对不完全（例如 Crossref 命中的是后来的再版）。方法的数学形式与推导是标准内容，由编者归纳整理。文中例子的数字是为说明概念构造的。
+
+## 0. 先看全景
+
+经典统计模型回答的是同一个问题：**怎样用一个有结构、可估计参数的随机过程来描述一条序列，并从中推出预测与不确定性。** 不同方法的差别在于它们对"序列是怎么产生的"做了什么假设：
+
+| 假设（序列的结构） | 对应的方法族 | 一句话 |
+|---|---|---|
+| 当前值是过去值与过去噪声的线性组合 | AR / MA / ARMA / ARIMA | 描述**自相关** |
+| 水平、趋势、季节随时间缓慢演化 | 指数平滑（ETS）、Theta | 描述**成分的演化** |
+| 存在看不见的隐状态，观测是带噪的投影 | 状态空间、Kalman 滤波、结构时间序列 | 把上面两类**统一** |
+| 多个序列互相影响 | VAR、协整 / VECM | 描述**变量间动态** |
+| 方差随时间变化 | ARCH / GARCH | 描述**波动** |
+| 机制随状态切换 | TAR、Markov 切换 | 描述**非线性与状态** |
+| 需求时有时无 | Croston 类 | 描述**间歇性** |
+| 序列成层级汇总 | 层级预测与协调 | 描述**一致性** |
+| 单个模型都不稳 | 预测组合 | 描述**稳健性** |
+
+读完本文你应能回答：每一类方法在什么假设下是最优的？假设不成立时它怎么失效（理论骨架见 §1.5–§1.8）？它们之间是什么关系（很多是同一个模型的不同写法）？它们如何被扩展、与深度学习怎么对接（§3.14–§3.15、§5.5）？以及这 100 年的发展趋势是什么。
+
+---
+
+## 1. 基石概念
+
+### 1.1 平稳性与差分
+
+弱平稳要求均值恒定、方差有限且恒定、自协方差只依赖滞后 $k$ 而与 $t$ 无关。多数序列（有趋势或季节）不平稳，常用**差分**使其平稳：
+
+$$\nabla y_t=y_t-y_{t-1}=(1-B)y_t,\qquad \nabla_m y_t=y_t-y_{t-m}=(1-B^m)y_t$$
+
+其中 $B$ 是滞后算子，$By_t=y_{t-1}$，$m$ 为季节周期。
+
+**单位根检验**：ADF 检验（Dickey & Fuller 1979 [V]）用回归
+
+$$\Delta y_t=\alpha+\beta t+\gamma y_{t-1}+\sum_{i=1}^{p}\delta_i\Delta y_{t-i}+\varepsilon_t$$
+
+检验 $H_0:\gamma=0$（存在单位根，不平稳）。KPSS 检验的原假设相反（平稳），两者常配合使用（Kwiatkowski, Phillips, Schmidt & Shin 1992, *J. Econometrics* [V]）。
+
+### 1.2 自相关与偏自相关
+
+$$\rho_k=\frac{\mathrm{Cov}(y_t,y_{t-k})}{\mathrm{Var}(y_t)}$$
+
+ACF 给出各滞后的相关；PACF 是剔除中间滞后影响后的"直接"相关。两者的截尾/拖尾模式是 Box–Jenkins 识别阶数的依据（§3.4）。
+
+### 1.3 分解
+
+把序列拆成趋势、季节和余项：
+
+$$y_t=T_t+S_t+R_t\ (\text{加法}),\qquad y_t=T_t\times S_t\times R_t\ (\text{乘法})$$
+
+乘法形式取对数后变为加法。季节幅度随水平变大时用乘法。**STL**（Cleveland et al. 1990，*J. Official Statistics*，待核实）用局部加权回归（loess）做分解，允许季节成分随时间缓变、对离群点稳健，是现代分解的事实标准。
+
+### 1.4 残差诊断与信息准则
+
+好模型的残差应近似**白噪声**。Ljung–Box 检验（Ljung & Box 1978 [V]）检验前 $h$ 个滞后的联合自相关：
+
+$$Q=n(n+2)\sum_{k=1}^{h}\frac{\hat\rho_k^{2}}{n-k}$$
+
+在原假设下近似服从 $\chi^2$ 分布。比较不同阶数的模型用信息准则（Akaike 1974 [V：Crossref 命中为后来的文集再版，原刊待核实]；Schwarz 1978 [V]）：
+
+$$\mathrm{AIC}=-2\ln L+2k,\qquad \mathrm{AICc}=\mathrm{AIC}+\frac{2k(k+1)}{n-k-1},\qquad \mathrm{BIC}=-2\ln L+k\ln n$$
+
+$k$ 为参数个数，$L$ 为最大似然。AICc 对小样本做修正。注意：**不同差分阶数的模型，其似然不可比**，不能用 AIC 在 $d$ 之间做选择 [经验，标准做法]。
+
+**偏差–方差视角**：
+
+- AIC 在渐近意义上近似留一交叉验证的预测损失（Stone 1977，待核实），倾向选预测好的模型；BIC 在真模型落在候选集中时具有一致性，在预测任务上常偏简单。
+- **所有模型都是错设的**。预测的目标不是找到"真模型"，而是找到误差小、稳定的近似：
+  $$\text{预测误差}\approx\text{偏差}^2+\underbrace{\text{估计方差}}_{\text{随参数个数增加}}+\underbrace{\text{不可约噪声}}_{\text{任何模型都无法消除}}$$
+- **阻尼趋势**（§3.3）是一种**收缩**：把外推的斜率向零压缩，牺牲一点偏差换取更小的方差。这是"阻尼趋势在大量比较中稳"的统计解释（经验结论的出处待核实）[经验]。
+
+### 1.5 Wold 分解：线性模型的表示定理
+
+对任何协方差平稳的过程 $y_t$，Wold 分解定理（Wold 1938，专著，待核实）保证：
+
+$$y_t=\sum_{j=0}^{\infty}\psi_j\,\varepsilon_{t-j}+\kappa_t,\qquad \psi_0=1,\ \ \sum_{j}\psi_j^2<\infty$$
+
+其中 $\varepsilon_t$ 是**创新**（用过去信息做最优线性预测的误差，是白噪声），$\kappa_t$ 是完全可预测的确定性成分。
+
+**含义**：任何平稳序列都可写成"过去创新的线性加权和"。ARMA 模型就是用**有理函数**去逼近无穷多个系数：$\psi(B)=\theta(B)/\phi(B)$。线性模型好用，不是因为"世界是线性的"，而是因为它是任何平稳过程**二阶性质的完备表示**。同时这也划定了边界：Wold 分解只涉及一、二阶矩，**对非线性依赖（GARCH 的方差聚集、状态切换）不提供任何保证**，这正是 §3.8–§3.9 与后面各类扩展出现的原因。
+
+### 1.6 预测的最优性与预测方差
+
+均方误差下，最优点预测是条件均值 $\hat y_{T+h|T}=\mathbb E[y_{T+h}\mid y_{1:T}]$；线性模型下它就是对过去值的线性投影。利用 Wold 表示，$h$ 步预测误差方差为
+
+$$\mathrm{Var}\bigl(e_{T+h|T}\bigr)=\sigma^2\sum_{j=0}^{h-1}\psi_j^{2}$$
+
+| 模型 | $\psi_j$ | $h$ 步预测方差 | 形状 |
+|---|---|---|---|
+| 平稳 AR(1) | $\phi^{j}$ | $\sigma^2\dfrac{1-\phi^{2h}}{1-\phi^{2}}\ \to\ \dfrac{\sigma^2}{1-\phi^2}$ | 有上界，区间**变宽后趋平** |
+| 随机游走 | $1$ | $h\,\sigma^2$ | 无界，区间**一直变宽** |
+
+这解释了 §3.4 的结论：**差分阶数 $d$ 决定冲击是暂时的还是永久的**，也决定长期预测区间的形状。
+
+**一个常被忽略的点**：上面的公式把参数当作已知。实际参数是估计的，估计误差使真实不确定性大于公式给出的值，所以**由模型公式算出的预测区间通常偏窄**（常见经验结论，量级待核实）[经验]。这也是共形预测和 bootstrap 区间受欢迎的原因（§3.15）。
+
+### 1.7 估计：最小二乘、矩方法与最大似然
+
+| 方法 | 做法 | 特点 |
+|---|---|---|
+| 条件最小二乘 | 把前几个观测当作已知，最小化残差平方和 | AR 下是线性回归，闭式解；含 MA 项时非线性 |
+| Yule–Walker | 用样本自协方差解 AR 参数的线性方程组 | 快、保证平稳，小样本偏差较大 |
+| 最大似然 | 最大化高斯似然，常经**预测误差分解**计算 | 统计性质最好；非凸，可能有局部最优 |
+
+**预测误差分解**：任何线性高斯模型都可经 Kalman 滤波（§3.6）得到每步的一步预测误差 $v_t=y_t-\hat y_{t|t-1}$ 及其方差 $F_t$，对数似然为
+
+$$\ln L=-\frac12\sum_{t=1}^{n}\Bigl(\ln(2\pi F_t)+\frac{v_t^{2}}{F_t}\Bigr)$$
+
+这是"状态空间统一框架"在估计层面的实质：**ARMA、ETS、结构时序用同一套滤波加似然流程估计**，因此可用同一个信息准则比较（注意不同差分阶数的似然不可比）。
+
+**可识别性的例子**：MA(1) 的一阶自相关 $\rho_1=\dfrac{\theta}{1+\theta^2}$，对 $\theta$ 与 $1/\theta$ 取值相同，两组参数给出同样的二阶性质，所以必须加**可逆性约束**（$\lvert\theta\rvert<1$）才有唯一解。这类约束是 ARIMA 拟合偶尔"不收敛"的来源之一 [经验]。
+
+### 1.8 频域视角：同一个模型的另一种读法
+
+平稳 ARMA 的谱密度是有理函数：
+
+$$f(\omega)=\frac{\sigma^2}{2\pi}\left\lvert\frac{\theta(e^{-i\omega})}{\phi(e^{-i\omega})}\right\rvert^{2},\qquad \omega\in[-\pi,\pi]$$
+
+- 周期成分对应谱上的**尖峰**；AR 多项式在单位圆附近的复根产生准周期振荡。
+- **滤波器视角**：SES $\ell_t=\alpha y_t+(1-\alpha)\ell_{t-1}$ 的频率响应为
+  $$H(\omega)=\frac{\alpha}{1-(1-\alpha)e^{-i\omega}},\qquad H(0)=1$$
+  是一个**低通滤波器**；$\alpha$ 越小截止频率越低、平滑越强。"指数平滑 = 去噪"的精确含义即在此。
+- 傅里叶项季节（§3.11）、TimesNet 用 FFT 找主周期、FEDformer 的频域增强，是同一视角在不同模型中的体现 [经验]。
+
+---
+
+## 2. 发展脉络：100 年的主线
+
+下表按时代梳理。年份与出处凡标 [V] 者书目信息已核对；其余待核实。
+
+| 时代 | 事件 | 要点 |
+|---|---|---|
+| 1920–30 年代 | Yule（1927）提出自回归 AR；Slutsky（约 1937）提出滑动平均 MA；Wold（1938）分解定理 | 把"序列"看作随机过程的一次实现，奠定线性随机模型的数学基础（均待核实） |
+| 1950 年代 | Brown 的指数平滑（约 1956，库存与军工预测）；Holt（1957）加入趋势；Winters（1960）加入季节 | **从实践里长出来的算法**：简单、可递推、几乎不需要统计假设。Holt 原文 1957 年为研究报告，2004 年在 IJF 重印 [V：Holt 2004 重印，Winters 1960 *Management Science* [V]]；Brown 的出处待核实 |
+| 1960 | Kalman 滤波（*J. Basic Engineering*）[V] | 从控制工程来的线性高斯状态估计，后来成为统一框架 |
+| 1969–1970 | Bates & Granger（1969）预测组合 [V]；Box & Jenkins（1970）专著《Time Series Analysis: Forecasting and Control》 | **ARIMA 成为方法论**：识别→估计→诊断；组合预测提出"平均几个模型常优于单个" |
+| 1970 年代 | Croston（1972）间歇需求 [V]；Newbold & Granger（1974）大规模比较实验 [V]；Tong（1978，门限自回归 TAR，待核实） | 开始大规模实证比较；非线性和特殊数据形态出现 |
+| 1980 年代 | Sims（1980）VAR [V]；Engle（1982）ARCH [V]；Engle & Granger（1987）协整 [V]；Hamilton（1989）Markov 切换 [V]；Gardner（1985）指数平滑综述 [V]；Gardner & McKenzie（1985）阻尼趋势 [V]；Harvey（1989/1990）结构时间序列 [V] | **计量经济学时代**：多变量、波动率、协整、状态切换；指数平滑被系统化 |
+| 1990 年代 | Bollerslev（1986）GARCH [V] 在金融中成为标准；STL（1990）；M3 竞赛筹备 | 波动率建模成熟；分解与稳健方法完善 |
+| 1980–2002 | Granger & Joyeux（1980）、Hosking（1981）长记忆与分数差分 [V]；Litterman 的贝叶斯 VAR（1980 年代）；Forni et al.（2000）、Stock & Watson（2002）动态因子模型 [V] | 长记忆，以及高维多变量的**降维与收缩** |
+| 2000 | **M3 竞赛**（Makridakis & Hibon 2000）[V]；**Theta 方法**（Assimakopoulos & Nikolopoulos 2000）[V] | 实证发现：**简单方法往往不输复杂方法**；Theta 在 M3 中表现突出（待核实） |
+| 2002–2008 | Hyndman et al.（2002）指数平滑的**状态空间框架** [V]；Hyndman & Khandakar（2008）`auto.arima` / `ets` 自动预测 [V]；Hyndman & Koehler（2006）MASE [V] | **统一与自动化**：指数平滑有了似然、信息准则和预测区间；模型选择自动化；评估指标规范化 |
+| 2010 年代 | De Livera et al.（2011）TBATS 处理复杂季节 [V]；Wickramasuriya et al.（2019，在线 2018）MinT 层级协调 [V]；Taylor & Letham（2017/2018）Prophet [V：2017 PeerJ 预印本；正式期刊版待核实]；Bergmeir et al.（2018）时序交叉验证的有效性 [V] | 复杂季节、层级一致性、"分析师友好"的可加回归、评估方法论 |
+| 2011–2021 | Hyndman et al.（2011）层级最优组合 [V]；Kourentzes et al.（2014）MAPA [V]；Athanasopoulos et al.（2017）时间层级 [V]；Montero-Manso et al.（2020）FFORMA [V]；Xu & Xie（2020）、Gibbs & Candès（2021）时序共形预测 [V] | 层级与多尺度一致性、元学习选方法、**模型无关的不确定性量化** |
+| 2018–2022 | **M4**（Makridakis et al. 2020）[V]、**M5**（Makridakis et al. 2022）[V] 竞赛；Smyl（2020）ES-RNN [V] | 统计模型与机器学习**混合**成为赢家；M5 中梯度提升类方法表现突出（待核实）；统计方法成为所有后续基准的必备对照 |
+| 2020 年代 | 深度学习与基础模型出现 | 经典方法不被取代，而是**作为基线、组件和对照**，见 §5 |
+
+### 2.1 一张"谁是谁的特例"的关系图
+
+很多经典方法是同一个模型的不同写法，理解这一点能大幅降低记忆量：
+
+```
+线性高斯状态空间模型
+├── 局部水平模型  ≡ 简单指数平滑 SES ≡ ARIMA(0,1,1)
+├── 局部线性趋势  ≡ Holt 线性趋势    ≡ ARIMA(0,2,2)
+├── 加季节成分    ≡ Holt-Winters（ETS 的一部分，对应季节 ARIMA 的一个子族）
+└── ARMA / ARIMA 也可写成状态空间形式（Kalman 滤波可算其似然）
+
+Theta 方法 ≈ 带漂移的 SES（Hyndman & Billah 2003 [V]）
+```
+
+上述等价关系是 Hyndman 等人在状态空间框架（2002 [V]）与教材中的标准结果，编者依此归纳（具体的参数对应关系见 §3.3）。注意：**并非所有指数平滑模型都有 ARIMA 对应**（如乘法季节），这也是 ETS 作为独立族存在的原因。
+
+---
+
+## 3. 各类方法详解
+
+### 3.1 朴素基线
+
+| 方法 | 预测 | 何时是最优 |
+|---|---|---|
+| 均值法 | $\hat y_{T+h}=\bar y$ | 序列围绕常数波动 |
+| 朴素法（naive） | $\hat y_{T+h}=y_T$ | 随机游走 |
+| 季节朴素 | $\hat y_{T+h}=y_{T+h-m(k+1)}$，$k=\lfloor (h-1)/m\rfloor$ | 季节性强、其余几乎随机 |
+| 漂移法 | $\hat y_{T+h}=y_T+h\cdot\frac{y_T-y_1}{T-1}$ | 带恒定趋势的随机游走 |
+
+这些不是玩具：它们是**所有复杂模型必须击败的底线**，也是 MASE 的分母（见 [metrics 文档](0610_ML_Tasks_TimeSeries_Metrics)）。朴素法的 $h$ 步预测区间随 $\sqrt h$ 展开：$\hat y_{T+h}\pm z_{\alpha/2}\hat\sigma\sqrt h$。
+
+### 3.2 经典分解
+
+见 §1.3。工程用法：先分解，再对季节调整后的序列用非季节模型预测，最后把季节成分加回去。STL 加上 ETS 或 ARIMA 做趋势预测，是处理长周期、多季节问题的稳妥组合 [经验]。
+
+### 3.3 指数平滑（ETS）
+
+#### 简单指数平滑（SES）
+
+适用于无趋势无季节。水平 $\ell_t$ 以参数 $\alpha\in(0,1)$ 更新：
+
+$$\ell_t=\alpha y_t+(1-\alpha)\ell_{t-1},\qquad \hat y_{t+h|t}=\ell_t$$
+
+展开后 $\ell_t=\alpha\sum_{j\ge0}(1-\alpha)^jy_{t-j}+\ldots$：**过去观测的权重按几何级数衰减**，这就是"指数"一词的来源。$\alpha$ 大则反应快、噪声也大；$\alpha$ 小则平滑、反应慢。
+
+**算例**：$\ell_0=10$，$\alpha=0.5$，新观测 $y_1=12$，则 $\ell_1=0.5\times12+0.5\times10=11$；所有未来 $h$ 的预测都是 11（SES 的预测是水平线）。
+
+#### Holt 线性趋势与阻尼趋势
+
+加入斜率 $b_t$：
+
+$$\ell_t=\alpha y_t+(1-\alpha)(\ell_{t-1}+b_{t-1}),\qquad
+b_t=\beta^{*}(\ell_t-\ell_{t-1})+(1-\beta^{*})b_{t-1},\qquad
+\hat y_{t+h|t}=\ell_t+h\,b_t$$
+
+纯线性外推在长 horizon 往往过度乐观。**阻尼趋势**（Gardner & McKenzie 1985 [V]）引入 $\phi\in(0,1)$：
+
+$$\hat y_{t+h|t}=\ell_t+(\phi+\phi^2+\cdots+\phi^h)\,b_t$$
+
+趋势会逐渐"熄火"，长期趋近一条水平线。**阻尼趋势在大量经验比较中是很稳的默认选择**（M 系列的经验，待核实）[经验]。
+
+#### Holt–Winters（加法季节）
+
+季节周期 $m$，加入季节分量 $s_t$：
+
+$$\begin{aligned}
+\ell_t&=\alpha(y_t-s_{t-m})+(1-\alpha)(\ell_{t-1}+b_{t-1})\\
+b_t&=\beta^{*}(\ell_t-\ell_{t-1})+(1-\beta^{*})b_{t-1}\\
+s_t&=\gamma(y_t-\ell_{t-1}-b_{t-1})+(1-\gamma)s_{t-m}\\
+\hat y_{t+h|t}&=\ell_t+h\,b_t+s_{t+h-m(k+1)}
+\end{aligned}$$
+
+乘法季节把 $y_t-s_{t-m}$ 换成 $y_t/s_{t-m}$，预测中的加号换成乘号。Holt（1957/2004 重印 [V]）与 Winters（1960 [V]）是出处。
+
+#### ETS：状态空间统一（Hyndman et al. 2002 [V]）
+
+早期指数平滑只是**点预测的递推公式**，没有概率模型，无法给出似然和预测区间。2002 年的状态空间框架给每种方法配上一个误差项的生成过程，用三个字母标记 **（误差，趋势，季节）**，每个位置可取 N（无）、A（加法）、M（乘法）。以最简单的 ETS(A,N,N) 为例：
+
+$$y_t=\ell_{t-1}+\varepsilon_t,\qquad \ell_t=\ell_{t-1}+\alpha\varepsilon_t,\qquad \varepsilon_t\sim\mathcal N(0,\sigma^2)$$
+
+它与 ARIMA(0,1,1) 等价，$\theta=\alpha-1$（标准结果，编者归纳）。有了似然，就能用 AICc 在 ETS 的几十种组合中自动选型，并得到解析的预测区间。`ets()` 的自动选择见 Hyndman & Khandakar（2008）[V]。
+
+| | |
+|---|---|
+| **优点** | 参数少（2–4 个）、递推 $O(1)$ 更新、几乎不需要调参；趋势、季节分量**可解释**；M 系列中长期表现稳健；预测区间自带 |
+| **缺点** | 只有单序列；不能直接吃外生协变量；对突变与结构性断点反应慢（靠 $\alpha$ 追）；复杂多季节（日内加周内加年内）需扩展（TBATS） |
+| **适用** | 业务指标、库存、单序列中短期预测、作为基线 |
+
+### 3.4 ARIMA 与季节 ARIMA
+
+#### 模型
+
+用滞后算子写。AR($p$)、MA($q$) 多项式：
+
+$$\phi(B)=1-\phi_1B-\cdots-\phi_pB^p,\qquad \theta(B)=1+\theta_1B+\cdots+\theta_qB^q$$
+
+**ARIMA($p,d,q$)**：
+
+$$\phi(B)(1-B)^d y_t=c+\theta(B)\varepsilon_t,\qquad \varepsilon_t\sim\mathrm{WN}(0,\sigma^2)$$
+
+**季节 ARIMA** ARIMA($p,d,q$)($P,D,Q$)$_m$：
+
+$$\Phi(B^m)\,\phi(B)\,(1-B)^d(1-B^m)^D\,y_t=c+\Theta(B^m)\,\theta(B)\,\varepsilon_t$$
+
+- AR 平稳性：$\phi(z)=0$ 的根全在单位圆外；MA 可逆性：$\theta(z)=0$ 的根全在单位圆外。
+- AR 部分描述"当前值受过去值影响"；MA 部分描述"当前值受过去冲击影响"；$d$ 次差分去掉趋势。
+
+#### Box–Jenkins 三步（Box & Jenkins 1970，专著，待核实）
+
+1. **识别**：差分到平稳；看 ACF/PACF 定阶——AR($p$) 的 PACF 在 $p$ 后截尾、ACF 拖尾；MA($q$) 的 ACF 在 $q$ 后截尾、PACF 拖尾；混合模型两者都拖尾。
+2. **估计**：最大似然（或条件最小二乘）。
+3. **诊断**：残差应为白噪声（Ljung–Box，§1.4）；不通过则回到第 1 步。
+
+Hyndman & Khandakar（2008 [V]）的 `auto.arima` 把这个流程自动化：用单位根检验定 $d$，用 AICc 在 $p,q,P,Q$ 上做逐步搜索。
+
+#### 直觉：为什么预测会"回归均值"
+
+AR(1)：$y_t=\phi y_{t-1}+\varepsilon_t$（$c=0$）。点预测 $\hat y_{T+h}=\phi^h y_T$。若 $\phi=0.8$，$y_T=10$，则预测为 $8,\ 6.4,\ 5.12,\ \dots\to0$：**越远越趋近均值**。而 ARIMA(0,1,0)（随机游走）的预测恒为 $y_T$，**永不回归**。选 $d$ 等于在断言"冲击的影响是暂时的还是永久的"，这个断言直接决定长 horizon 的预测形状。
+
+| | |
+|---|---|
+| **优点** | 理论完备；能捕捉各种自相关结构；覆盖面比 ETS 更广（如 AR 振荡）；可加外生回归项（ARIMAX / 动态回归）；有解析预测区间 |
+| **缺点** | 线性、对数据长度有要求（数十个点起）；识别阶数靠经验或自动搜索，搜索空间大；每条序列单独拟合；强季节与长周期（如 $m=365$）时参数爆炸；对结构突变敏感 |
+| **适用** | 自相关结构明显的单序列；有少量协变量时 |
+
+#### ETS 与 ARIMA 怎么选
+
+两者是**互补的两个族**，而非前者对后者的替代。ETS 直接建模"水平/趋势/季节怎么演化"，ARIMA 建模"自相关结构"。实践中常**两者都拟合然后平均**（见 §3.13）。
+
+### 3.5 Theta 方法
+
+Assimakopoulos & Nikolopoulos（2000 [V]）。核心思想：把序列 $y_t$ 通过 $\theta$ 改变其"局部曲率"：
+
+$$Z_t(\theta)=\theta\,y_t+(1-\theta)(a+bt)$$
+
+其中 $a+bt$ 是对时间做线性回归得到的趋势线。$\theta=0$ 得到线性趋势线，$\theta=2$ 把局部曲率放大一倍。**经典 Theta 取 $\theta=0$ 与 $\theta=2$ 两条线分别外推（前者用线性外推，后者用 SES），再等权平均**。
+
+后来的理论工作表明，这等价于"带漂移的 SES"，漂移项为线性趋势斜率的一半（Hyndman & Billah 2003, *IJF* [V]；书目已核对，具体等价形式以原文为准）。它在 M3 中成绩突出（待核实），之所以重要，是因为它说明：**一个极其简单、几乎无参数的方法就能与复杂方法竞争**。
+
+| | |
+|---|---|
+| **优点** | 简单、几乎免调参、速度快、对短序列稳健 |
+| **缺点** | 本质上是单序列外推；功能单一；无协变量 |
+| **适用** | 作为强基线、大规模批量预测 |
+
+### 3.6 状态空间与 Kalman 滤波
+
+一般线性高斯状态空间模型：
+
+$$x_t=F\,x_{t-1}+w_t,\quad w_t\sim\mathcal N(0,Q);\qquad y_t=H\,x_t+v_t,\quad v_t\sim\mathcal N(0,R)$$
+
+$x_t$ 是看不见的隐状态（水平、斜率、季节、AR 状态……），$y_t$ 是带噪观测。**Kalman 滤波**（Kalman 1960 [V]）递推给出 $x_t$ 的最优估计：
+
+$$\begin{aligned}
+&\text{预测：}\ \hat x_{t|t-1}=F\hat x_{t-1|t-1},\quad P_{t|t-1}=FP_{t-1|t-1}F^{\top}+Q\\
+&\text{增益：}\ K_t=P_{t|t-1}H^{\top}\bigl(HP_{t|t-1}H^{\top}+R\bigr)^{-1}\\
+&\text{更新：}\ \hat x_{t|t}=\hat x_{t|t-1}+K_t\bigl(y_t-H\hat x_{t|t-1}\bigr),\quad P_{t|t}=(I-K_tH)P_{t|t-1}
+\end{aligned}$$
+
+**最简例子——局部水平模型**：$y_t=\mu_t+\varepsilon_t$，$\mu_t=\mu_{t-1}+\eta_t$。其稳态 Kalman 增益就是 SES 的 $\alpha$，也就是说 SES 是该模型的最优滤波器。这是理解"指数平滑、ARIMA(0,1,1)、局部水平模型三位一体"的最好入口。
+
+**结构时间序列**（Harvey 1989/1990 [V]）把序列显式分解为水平、趋势、季节、回归项等分量，每个分量是一个子状态，组合成大状态空间模型。优点是：
+
+- **缺失值**天然处理（缺观测时只做预测步，不做更新）；
+- **在线更新**：每来一个点只需一次矩阵运算；
+- **灵活组合**分量与协变量；
+- 噪声方差 $Q,R$ 可用最大似然估计。
+
+局限：线性高斯假设；非线性或非高斯需扩展卡尔曼（EKF）、无迹卡尔曼（UKF）或粒子滤波；状态维数高时计算重。教材：Durbin & Koopman 的 *Time Series Analysis by State Space Methods*（Crossref 命中 2012 第二版 [V]）。
+
+### 3.7 多变量：VAR 与协整
+
+#### VAR
+
+$k$ 个变量，$p$ 阶向量自回归（Sims 1980 [V]）：
+
+$$y_t=c+A_1y_{t-1}+\cdots+A_py_{t-p}+\varepsilon_t,\qquad y_t\in\mathbb R^k,\ \varepsilon_t\sim\mathcal N(0,\Sigma)$$
+
+每个变量由所有变量的过去值解释。参数个数约为 $k+pk^2$（加协方差），**随变量数平方增长**，所以只适合变量较少（几个到十几个）的场景；高维时需要收缩（岭、LASSO、贝叶斯先验）。VAR 常配合**脉冲响应**与**格兰杰因果**做结构分析。
+
+#### 协整与 VECM
+
+若若干个各自不平稳（有单位根）的序列的某个线性组合是平稳的，就称它们**协整**（Engle & Granger 1987 [V]），例如两种相关商品价格，各自随机游走，但价差平稳。此时对差分后的 VAR 会丢失长期均衡信息，应使用**向量误差修正模型**：
+
+$$\Delta y_t=\Pi\,y_{t-1}+\sum_{i=1}^{p-1}\Gamma_i\Delta y_{t-i}+\varepsilon_t,\qquad \Pi=\alpha\beta^{\top}$$
+
+$\beta$ 的列是协整向量（长期均衡关系），$\alpha$ 是向均衡回拉的速度。Johansen 检验（Johansen 1988, *J. Economic Dynamics and Control* [V]）用于判定协整秩。
+
+| | |
+|---|---|
+| **优点** | 刻画变量间的动态相互影响；结构分析工具齐全；协整给出可解释的长期均衡 |
+| **缺点** | 参数随变量数平方增长；线性；平稳性与协整的判定对样本敏感 |
+| **适用** | 少量宏观经济/金融变量、需要因果或政策分析的场合 |
+
+#### 长记忆与伪回归
+
+- **伪回归**：两条独立的随机游走做回归，常得到"显著"的虚假关系（Granger & Newbold 1974，待核实）。在非平稳变量间直接回归前必须先检验单位根。
+- **长记忆**：自相关衰减得比 ARMA 的指数衰减更慢。ARFIMA 引入分数阶差分：
+
+  $$(1-B)^{d}=\sum_{k=0}^{\infty}\binom{d}{k}(-B)^{k},\qquad 0<d<\tfrac12$$
+
+  此时 $\rho_k\sim C\,k^{2d-1}$（双曲衰减）。出处：Granger & Joyeux 1980（Crossref 命中 2003 年文集再版 [V：原刊待核实]）、Hosking 1981, *Biometrika* [V]。常见于波动率绝对值、水文、网络流量等序列 [经验]。
+
+#### 高维：动态因子模型与大型贝叶斯 VAR
+
+VAR 参数随变量数平方增长，两条主要出路：
+
+**动态因子模型**：假设 $N$ 个序列由少数 $r\ll N$ 个共同因子驱动，
+
+$$y_t=\Lambda f_t+e_t,\qquad f_t=\Phi f_{t-1}+\eta_t$$
+
+参数从 $O(N^2)$ 降为 $O(Nr)$。出处：Stock & Watson 2002, *JASA*（用主成分从大量预测变量中提取因子）[V]；Forni et al. 2000, *Rev. Econ. Stat.*（广义动态因子模型）[V]。
+
+**贝叶斯收缩的大型 VAR**：用先验把参数拉向简单结构。经典的 **Minnesota 先验**（Litterman 的工作，Crossref 命中为 1985 年联储工作论文 [V：1986 期刊版待核实]）的思想是：各变量先验上近似独立的随机游走（自身一阶滞后先验均值为 1，其余为 0），且滞后越远的系数先验方差越小（具体参数化形式待核实）。大型 BVAR 的系统研究见 Bańbura et al.（Crossref 命中为 2008 年 SSRN 论文 [V：期刊版待核实]）。
+
+**共同点**：都是"**用结构或先验换方差**"，与 §1.4 的偏差–方差逻辑一致，也与深度模型里的参数共享（通道独立、patch）同构 [经验]。
+
+### 3.8 波动率：ARCH / GARCH
+
+很多序列（金融收益）本身近似无自相关，但**方差随时间成团**（大波动后常跟大波动）。令 $\varepsilon_t=\sigma_tz_t$，$z_t\sim\mathcal N(0,1)$。
+
+**ARCH($q$)**（Engle 1982, *Econometrica* [V]）：
+
+$$\sigma_t^2=\omega+\sum_{i=1}^{q}\alpha_i\varepsilon_{t-i}^2$$
+
+**GARCH(1,1)**（Bollerslev 1986, *J. Econometrics* [V]）：
+
+$$\sigma_t^2=\omega+\alpha\,\varepsilon_{t-1}^2+\beta\,\sigma_{t-1}^2,\qquad \omega>0,\ \alpha,\beta\ge0$$
+
+$\alpha+\beta<1$ 时方差平稳，$\alpha+\beta$ 越接近 1，波动冲击持续越久。GARCH 预测的是**二阶矩（条件方差）**，用于风险度量（VaR）、期权定价；它不预测均值方向。常见扩展：EGARCH、GJR-GARCH（刻画"坏消息比好消息波动更大"的杠杆效应，扩展细节待核实）。
+
+### 3.9 非线性与状态切换
+
+- **门限自回归 TAR**（Tong & Lim 1980, *JRSS B* [V]；Tong 1978 的首次提出待核实）：根据 $y_{t-d}$ 是否超过门限 $r$ 切换两套 AR：
+
+$$y_t=\begin{cases}\phi_0^{(1)}+\sum_i\phi_i^{(1)}y_{t-i}+\varepsilon_t,& y_{t-d}\le r\\[2pt]\phi_0^{(2)}+\sum_i\phi_i^{(2)}y_{t-i}+\varepsilon_t,& y_{t-d}>r\end{cases}$$
+
+可产生极限环、非对称等线性模型做不到的行为。
+
+- **Markov 切换模型**（Hamilton 1989 [V]）：隐状态 $s_t\in\{1,\dots,K\}$ 按转移概率切换，每个状态有自己的参数：
+
+$$y_t=\mu_{s_t}+\sum_i\phi_{i,s_t}\,y_{t-i}+\varepsilon_t,\qquad \Pr(s_t=j\mid s_{t-1}=i)=p_{ij}$$
+
+经典用途是识别经济周期的"扩张/衰退"两种机制。
+
+局限：参数识别难、样本需求大、多步预测需模拟；在纯预测精度上相对线性模型的增益在经验比较中并不稳定（待核实）[经验]。
+
+### 3.10 间歇需求：Croston 类
+
+备件、低频商品的需求大量为 0，MAPE 等指标和 SES 都不适用。Croston（1972 [V]）把需求拆成两部分：**需求量** $z$ 与**需求间隔** $p$，**仅在有需求发生时**才各自做 SES 更新：
+
+$$\hat z_t=\hat z_{t-1}+\alpha(z_t-\hat z_{t-1}),\qquad \hat p_t=\hat p_{t-1}+\alpha(p_t-\hat p_{t-1}),\qquad \hat y_{t+h}=\frac{\hat z_t}{\hat p_t}$$
+
+预测是**每期的期望需求率**，不是某一期的取值。后续工作指出原始 Croston 有偏，提出修正（如 SBA，乘以 $1-\alpha/2$ 的偏差修正，细节待核实）。评估这类需求要用 MASE、分位数损失，并注意指标在零值下的表现（见 [metrics 文档](0610_ML_Tasks_TimeSeries_Metrics)）。
+
+### 3.11 复杂季节、协变量与 Prophet
+
+#### 复杂季节
+
+日内加周内加年内，且周期不是整数（如 365.25 天）时，ETS/ARIMA 难以直接表达。两条路线：
+
+- **傅里叶项做季节（动态谐波回归）**：用少量 $\sin/\cos$ 项表示一个季节周期，再用 ARIMA 建模误差；
+- **TBATS**（De Livera et al. 2011 [V]）：Box–Cox 变换 + 趋势 + 傅里叶季节 + ARMA 误差，处理多重非整数季节。
+
+季节项的傅里叶表示：
+
+$$s(t)=\sum_{n=1}^{N}\Bigl(a_n\cos\tfrac{2\pi nt}{P}+b_n\sin\tfrac{2\pi nt}{P}\Bigr)$$
+
+#### Prophet
+
+Taylor & Letham（2017 PeerJ 预印本 [V]；2018 *The American Statistician* 正式版 [V]）提出可加回归：
+
+$$y(t)=g(t)+s(t)+h(t)+\varepsilon_t$$
+
+$g(t)$ 是分段线性或饱和增长趋势（含自动变点检测），$s(t)$ 是傅里叶季节，$h(t)$ 是节假日效应。设计目标是**分析师友好**：参数含义直观，可手工干预变点与节假日，能直接吃缺失值与离群点。需要注意：它的优势是**易用与可解释**，而在大规模公开基准上的精度表现并不总是胜过 ETS/ARIMA 等强基线（相关实证比较待核实）[经验]。
+
+### 3.12 层级预测与协调
+
+业务数据常按层级汇总（总量 = 各区域之和 = 各门店之和）。对每个节点独立预测，各层之和**不一致**。协调的思路：先对所有节点独立生成**基础预测** $\hat y$，再线性映射为一致的预测：
+
+$$\tilde y=S\,G\,\hat y$$
+
+$S$ 是描述汇总关系的矩阵，$G$ 决定如何利用各层信息。**MinT**（Wickramasuriya et al. 2019 [V]）选择使协调预测误差方差之迹最小的 $G$：
+
+$$G=(S^{\top}W^{-1}S)^{-1}S^{\top}W^{-1}$$
+
+$W$ 是基础预测误差的协方差矩阵（实践中需估计）。协调**同时**提高一致性与精度（常见经验，待核实），是零售、能源和需求规划中的标准工具。起点工作：Hyndman et al. 2011, *CSDA*（层级最优组合）[V]。
+
+#### 协调的几何含义
+
+设底层序列向量 $b_t$，全部节点 $y_t=S\,b_t$。协调预测 $\tilde y=SG\hat y$：
+
+- **无偏性条件**：若基础预测无偏，要求 $SGS=S$。
+- **OLS 协调**：$G=(S^\top S)^{-1}S^\top$，此时 $SG$ 是向"相干子空间"（$S$ 的列空间）的**正交投影**。
+- **MinT**：在无偏约束下使协调后误差方差之迹最小，等价于用误差协方差 $W$ 做**加权**投影。
+
+直觉：协调是把不一致的预测"拉回"一致的空间，**误差协方差给出拉回时各节点的信任度**，因此往往同时提升精度（经验结论，待核实）。
+
+#### 时间维度的层级与多尺度
+
+同一序列在不同聚合尺度（日→周→月）下结构不同：高频噪声大，低频趋势清晰。**MAPA**（Kourentzes et al. 2014, *IJF* [V]）在多个时间聚合尺度估计结构成分后融合；**时间层级预测**（Athanasopoulos et al. 2017, *EJOR* [V]）把不同时间尺度的预测作为层级做协调。协调与组合的思想不仅用于横截面（门店/区域），也用于时间维度。
+
+### 3.13 预测组合
+
+Bates & Granger（1969 [V]）：多个模型的预测加权平均往往优于其中任何单个：
+
+$$\hat y^{\text{comb}}_{t+h}=\sum_{i=1}^{M}w_i\,\hat y^{(i)}_{t+h},\qquad \sum_iw_i=1$$
+
+**简单等权平均**在经验上惊人地难被击败（"forecast combination puzzle"，说法待核实）。原因粗略可理解为：各模型的错误来源不同，平均抵消了一部分；而估计最优权重本身引入新的估计误差。常见组合：ETS + ARIMA + Theta 的平均（M4 中类似的组合基线表现强，待核实）。
+
+#### 组合的理论
+
+设两个预测误差的标准差为 $\sigma_1,\sigma_2$，相关系数 $\rho$。对组合误差 $e=w\,e_1+(1-w)\,e_2$，使方差最小的权重为（Bates & Granger 1969 [V]，推导为标准结果）：
+
+$$w^{*}=\frac{\sigma_2^{2}-\rho\,\sigma_1\sigma_2}{\sigma_1^{2}+\sigma_2^{2}-2\rho\,\sigma_1\sigma_2}$$
+
+等权（$w=\tfrac12$）时误差方差为 $\dfrac{\sigma_1^{2}+\sigma_2^{2}+2\rho\,\sigma_1\sigma_2}{4}$。
+
+**算例**：$\sigma_1=\sigma_2=1$，$\rho=0.5$，等权误差方差 $=\dfrac{1+1+1}{4}=0.75<1$，**优于任一单个预测**，且此时等权恰为最优。
+
+**组合谜题**（Smith & Wallis 2009, *Oxford Bull. Econ. Stat.* [V]；Claeskens et al. 2016 [V：Crossref 命中为 SSRN 工作论文，IJF 正式版待核实]）：理论上最优权重应优于等权，实践中等权却常更好。一类解释是**最优权重本身需要估计，估计误差抬高了方差**，在样本有限时抵消甚至超过理论增益。这与 §1.4 的偏差–方差逻辑一致：简单模型与简单平均之所以稳，是因为省下了估计方差。
+
+#### 元学习：学一个组合权重
+
+**FFORMA**（Montero-Manso et al. 2020, *IJF* [V]）：从序列提取统计特征，训练元模型输出各候选统计模型的**组合权重**。思想是不同序列适合不同方法，与其选一个，不如学一个权重，这与现代的混合专家（MoE）同构 [经验]。
+
+### 3.14 贝叶斯结构时间序列与高斯过程
+
+- **BSTS**（Scott & Varian，Crossref 命中为 2013 年 SSRN 论文 [V：期刊版待核实]）：在结构时序上做贝叶斯推断，加入带 spike-and-slab 先验的回归项自动选协变量，得到后验预测分布。
+- **因果推断应用**（Brodersen et al. 的 CausalImpact，Crossref 命中为 CRAN 包条目 [V：原论文 *AoAS* 2015 待核实]）：用干预前的数据拟合"反事实"预测，干预后的差异即处置效应，是预测用于**因果评估**的典型做法。
+- **高斯过程（GP）**：把函数看作随机过程，由核函数描述平滑性与周期性；Roberts et al. 2013, *Phil. Trans. R. Soc. A* [V] 给出了在时序建模中使用 GP 的系统介绍。局部水平模型、各类周期核都能在 GP 框架中表达。精确 GP 推断的 $O(n^3)$ 复杂度是长序列的瓶颈，部分核可转化为状态空间形式后线性时间求解（此说法待核实）。
+
+### 3.15 预测不确定性：区间、bootstrap 与共形预测
+
+指标定义见 [metrics 文档 §2](0610_ML_Tasks_TimeSeries_Metrics)，这里讲区间怎么来。
+
+1. **模型自带区间**：ETS 的两类状态空间模型给出解析区间（Hyndman et al. 2005, *J. Forecasting* [V]）；ARIMA 的区间来自 §1.6 的公式。
+2. **bootstrap 区间**：对模型残差重采样、重新生成未来路径。不依赖正态假设，但仍把参数当作已知。
+3. **评分规则**：用 proper scoring rule（如 CRPS）评价整个分布（Gneiting & Raftery 2007，Crossref 命中为 2005 年技术报告 [V：JASA 2007 版待核实]；综述见 Gneiting & Katzfuss 2014, *Annu. Rev. Stat. Appl.* [V]）。
+4. **共形预测（conformal prediction）**：不假设分布，用历史预测残差的分位数构造区间：
+
+   $$s_t=\lvert y_t-\hat y_t\rvert,\qquad C_t=\bigl[\hat y_t-\hat q_{1-\alpha},\ \hat y_t+\hat q_{1-\alpha}\bigr]$$
+
+   其中 $\hat q_{1-\alpha}$ 是历史得分 $\{s_t\}$ 的经验分位数。标准理论要求数据**可交换**，时序一般不满足。两个改进：
+   - **EnbPI**（*Conformal prediction for time series*，[arXiv:2010.09107](https://arxiv.org/abs/2010.09107)）[V]：把共形思想用到时序，用集成预测器的留出残差，不需要数据可交换；
+   - **自适应共形推断 ACI**（*Adaptive Conformal Inference Under Distribution Shift*，[arXiv:2106.00170](https://arxiv.org/abs/2106.00170)）[V]：随分布漂移在线调整名义水平，更新思想为
+     $$\alpha_{t+1}=\alpha_t+\gamma\,\bigl(\alpha-\mathrm{err}_t\bigr),\qquad \mathrm{err}_t=\mathbf 1\{y_t\notin C_t\}$$
+     （公式依原文思想，细节待核实）：覆盖不足就收紧水平，覆盖过度就放宽。
+
+**意义**：共形方法与具体预测模型**解耦**，可套在 ETS、ARIMA、深度模型、基础模型之上，在其假设下给出长期覆盖率保证。这是统计思想与现代模型最自然的接口之一 [经验]。
+
+---
+
+## 4. 方法总览对比
+
+| 方法 | 处理的结构 | 协变量 | 多变量 | 概率预测 | 数据量要求 | 典型局限 |
+|---|---|---|---|---|---|---|
+| 朴素 / 季节朴素 | 无 | 否 | 否 | 简单区间 | 极低 | 无学习 |
+| ETS / Holt–Winters | 水平、趋势、季节 | 否（基础形式） | 否 | 是（状态空间） | 低 | 单序列；突变慢 |
+| ARIMA / SARIMA | 自相关 | 可（回归项） | 否 | 是 | 中 | 阶数选择；长季节周期 |
+| Theta | 趋势 + 平滑 | 否 | 否 | 有限 | 低 | 功能单一 |
+| 状态空间 / 结构时序 | 任意分量组合 | 可 | 可 | 是 | 中 | 线性高斯；建模成本 |
+| BSTS / 高斯过程 | 分量加后验不确定性 / 平滑与周期核 | 可 | 可 | 是（后验） | 中；GP 长序列需近似 | 计算重 |
+| VAR / VECM | 变量间动态 | 可 | 是 | 是 | 中到大 | 参数随变量数平方增长 |
+| 因子模型 / 大型 BVAR | 高维变量依赖 | 可 | 是（高维） | 是 | 中到大 | 因子数与先验需选择 |
+| GARCH 族 | 条件方差 | 可 | 多元版本复杂 | 方差为核心 | 中到大 | 不预测均值 |
+| ARFIMA | 长记忆 | 可 | 否 | 是 | 大 | 估计与识别较难 |
+| TAR / Markov 切换 | 非线性、状态切换 | 可 | 少 | 需模拟 | 大 | 识别难、增益不稳定 |
+| Croston 类 | 间歇需求 | 否 | 否 | 有限 | 低 | 偏差与评估困难 |
+| TBATS / 谐波回归 | 复杂季节 | 可（回归） | 否 | 是 | 中 | 计算较慢 |
+| Prophet | 趋势变点 + 季节 + 节假日 | 可 | 否 | 是（贝叶斯） | 低到中 | 精度不保证强 |
+| 层级协调 | 一致性 | 取决于基础预测 | 层级结构 | 取决于基础预测 | 取决于基础预测 | 需估计协方差 |
+| 预测组合 | 稳健性 | 取决于成员 | 取决于成员 | 取决于成员 | 取决于成员 | 额外计算 |
+
+---
+
+## 5. 发展趋势：从经典方法到今天
+
+把这一百年看成几条交织的主线，比按年份背方法更有用。
+
+### 5.1 从"手艺"到"自动"
+
+Box–Jenkins 的识别、估计、诊断需要专家反复试错；Hyndman & Khandakar（2008 [V]）的自动化让**同一套流程在成千上万条序列上批量运行**。趋势上：统计模型的竞争力不再取决于"调得多好"，而取决于"自动选型是否可靠、能否大规模跑"。这条线的延伸就是今天的 AutoML 与基础模型的零样本预测——**目标一致：免人工调参**。
+
+### 5.2 从"点预测"到"预测分布"
+
+经典指数平滑只有递推公式；状态空间化（2002 [V]）使其有了似然与预测区间。此后统计预测的评价重心逐步转向**概率预测**（分位数、CRPS）与校准，这与深度模型和基础模型的概率输出（见 [综述 §5](0603_ML_Tasks_TimeSeries)）是同一方向；区间的模型无关"外挂"（共形预测）见 §3.15。
+
+### 5.3 从"一条序列"到"一族序列"
+
+经典方法是局部模型，一条序列一套参数。M4、M5 与业务现实（成千上万的 SKU）推动了两个方向：
+- **层级协调**（MinT [V]）：利用序列间的汇总关系；
+- **全局模型**：跨序列共享参数（ES-RNN [V]、梯度提升、深度模型、基础模型）。
+
+经典方法在序列少而长时依然有优势；序列多而短时，全局方法更合适 [经验]。
+
+### 5.4 从"互相取代"到"互相融合"
+
+- **混合**：ES-RNN（Smyl 2020 [V]）把指数平滑的分层参数与 RNN 结合，是 M4 的亮点（待核实具体名次）；
+- **组合**：把统计模型与机器学习预测加权平均（M4 的经验，待核实）；
+- **特征与元学习**：用统计特征预测"哪个方法最适合这条序列"（如 FFORMA，待核实）；
+- **分类坐标**：Januschowski et al. 2020, *IJF*（*Criteria for classifying forecasting methods*）[V] 主张用一组准则而非"统计 vs ML"的二分法描述预测方法，例如**局部还是全局**、**模型驱动还是数据驱动**、是否输出概率、能否处理协变量与大规模数据。经典方法与深度方法的真正区别是这些设计维度，而不是"是否神经网络" [经验]；
+- **统计结构嵌入神经网络**：N-BEATS 的趋势/季节基函数、PatchTST 的分解、DLinear 的移动平均分解，都是把**分解**这个经典思想放进深度模型 [经验]。
+
+### 5.5 与现代方法的对接：同一批想法，换了写法
+
+很多"新"模型的内核是经典概念。下表给出对应关系（对应关系是编者的归纳，用来帮助理解，不是原论文的措辞）。
+
+| 经典概念 | 现代对应 | 说明 |
+|---|---|---|
+| AR($p$)：用过去 $p$ 个值的线性组合预测 | **DLinear / NLinear**（[arXiv:2205.13504](https://arxiv.org/abs/2205.13504) [V]） | 直接多步线性映射 $\hat y_{T+1:T+H}=W\,y_{T-L+1:T}$ 就是向量化的线性自回归；DLinear 再加移动平均分解 |
+| 经典分解（趋势 + 季节 + 余项） | DLinear 的分解、Autoformer 的序列分解、N-BEATS 的趋势/季节基函数、TimeMixer 的可分解混合 | 分解被做成网络的内置模块 |
+| 指数平滑 $\ell_t=\alpha y_t+(1-\alpha)\ell_{t-1}$ | **线性 RNN / 泄漏积分器** | 固定衰减的线性递推，是"有固定遗忘门的一阶 RNN"；ES-RNN（Smyl 2020 [V]）把它与 RNN 结合 |
+| Kalman 滤波的线性递推 | **深度状态空间模型**：S4（[2111.00396](https://arxiv.org/abs/2111.00396) [V]）、Mamba（[2312.00752](https://arxiv.org/abs/2312.00752) [V]）、LRU（*Resurrecting RNNs*，[2303.06349](https://arxiv.org/abs/2303.06349) [V]） | 都用**线性递推 + 非线性读出**；Mamba 让参数随输入变化（"选择性"） |
+| 非线性状态空间 | **Deep Kalman Filters**（[1511.05121](https://arxiv.org/abs/1511.05121) [V]） | 用神经网络参数化转移与观测 |
+| 深度状态空间预测 | Rangapuram et al. 2018（*Deep State Space Models for Time Series Forecasting*，NeurIPS，本次未核对，待核实） | 神经网络输出状态空间的参数，兼具结构与灵活性 |
+| ARCH/GARCH：方差依赖过去 | DeepAR 等的**分布参数输出**（尺度项随上下文变化） | 异方差由网络学得，不再用固定公式 |
+| 全局模型 + 协变量（ARIMAX 的推广） | TFT、TimeXer、LightGBM | 跨序列共享参数、显式处理协变量 |
+| 层级协调 | 概率层级一致预测、可微协调层（相关工作，待核实） | 在网络输出端保持一致性 |
+| 预测组合 / FFORMA | 混合专家（Time-MoE）、模型集成 | 学一个路由或权重 |
+| 滚动起点评估、MASE | TFB、GIFT-Eval 等基准 | 评估范式继承自经典预测研究 |
+
+**两个"看穿"的例子**：
+1. *为什么 DLinear 能打败许多 Transformer？* 在许多基准上，主要结构是**平稳的趋势加季节**，线性自回归加分解已能抓住大部分信号；Transformer 额外的表达力在这些数据上用不上，反而增加估计方差（解释依据 §1.4、§3.13；DLinear 论文本身只报告了实验现象，并猜测自注意力的置换不变性会损失时序信息，见 [V] 摘要）。
+2. *Mamba 的新意在哪？* 线性递推与 Kalman/ETS 同族；新意在于**输入依赖的参数**（选择性）与**硬件友好的并行扫描**。从理论位置看，它是**可学习、可随输入自适应的线性状态空间模型**。
+
+### 5.6 "简单方法难被击败"的反复印证
+
+从 Newbold & Granger（1974 [V]）、M3（2000 [V]）到 M4（2020 [V]），一再出现同一模式：精心设计的复杂模型并不稳定胜过简单方法或简单组合。这条规律在今天仍然有效：DLinear 对 Transformer 的质疑、TFB 对"传统方法刻板偏见"的批评（见 [综述](0603_ML_Tasks_TimeSeries) 与 [metrics 文档 §5.2](0610_ML_Tasks_TimeSeries_Metrics)）。教训是**评估要严谨、基线要充分**。统计解释见 §1.4（偏差–方差）与 §3.13（组合理论）。
+
+### 5.7 评估方法论本身在演进
+
+指标从 MAPE/sMAPE 走向 MASE（2006 [V]）；评估从单次留出走向滚动起点；Bergmeir et al.（2018 [V]）讨论了交叉验证用于时序预测的有效性。这些让不同方法的比较更可信。另有 Tashman 2000, *IJF*（样本外检验综述）[V]、Bergmeir & Benítez 2012, *Information Sciences*（时序交叉验证）[V]；Hewamalage et al.（*Forecast Evaluation for Data Scientists: Common Pitfalls and Best Practices*，[arXiv:2203.10716](https://arxiv.org/abs/2203.10716)）[V] 系统总结了常见陷阱。深度学习论文中的许多评估问题（单次切分、标准化泄漏等，见 [metrics 文档 §5](0610_ML_Tasks_TimeSeries_Metrics)）在这些文献里早有讨论。
+
+### 5.8 更多趋势（历史事实与趋势判断分开标注）
+
+- **统计结构与神经网络继续融合**：事实是 ES-RNN、深度 SSM（S4、Mamba、LRU）、Deep Kalman Filters、分解型深度模型都在把经典结构嵌进可学习的网络。判断：**可微的状态空间/递推结构**会继续是长序列与在线推断的重要选择，因其同时给出线性复杂度与可解释的状态 [经验]。
+- **不确定性量化成为标配，共形方法成为"外挂"**：事实是从 ETS 区间（2005）、proper scoring rule 的普及到时序共形预测（EnbPI、ACI）。判断：**"模型 + 校准层"**会取代"模型自带区间"成为部署的默认结构 [经验]。
+- **层级、时间层级与一致性**：事实是从 Hyndman et al. 2011 到 MinT 到时间层级。判断：业务预测里"各层数字对不上"是持续痛点，一致性约束会继续出现在深度与基础模型的输出端（相关工作待核实）[经验]。
+- **大规模、低成本的经典方法**：事实是 statsforecast 等库用编译加速让 ETS、ARIMA、Theta 能在百万条序列上批量运行（具体性能数字待核实）。判断：在"序列极多但每条很短或资源受限"的场景，加速后的统计模型加全局模型仍有强竞争力，也是与基础模型对比时必须的强基线 [经验]。
+- **评估与实验设计规范化**：从样本外检验综述、MASE、时序交叉验证到 Hewamalage 等的陷阱总结；基准层面有 TFB、GIFT-Eval（见 [metrics 文档 §5](0610_ML_Tasks_TimeSeries_Metrics)）。判断：**统计基线的完整对比会成为论文与产品评审的门槛** [经验]。
+- **因果与干预**：BSTS 与 CausalImpact 的思路（§3.14）是把预测用于估计干预效应。判断：预测会越来越服务于"如果做了某个决策会怎样"，推动对协变量、反事实和不确定性的更严格处理 [经验]。
+- **经典方法与基础模型并列为"免训练基线"**：基础模型的零样本预测（见 [总览 §7](0603_ML_Tasks_TimeSeries)）与 ETS/Theta/季节朴素构成一组几乎不需训练的基线，应同时跑两类，选在自己的滚动评估下更好的一方 [经验]。
+
+### 5.9 经典方法的今天与未来位置
+
+| 位置 | 说明 |
+|---|---|
+| **基线** | 任何新模型都必须先对比 ETS / ARIMA / Theta / 季节朴素 |
+| **组件** | 分解、差分、归一化（如 RevIN 一类）、滞后特征都来自经典思想 |
+| **工业主力** | 中小规模、需要可解释性与概率区间、需要快速上线的场景仍首选 |
+| **在线与低资源** | Kalman 与指数平滑的 $O(1)$ 递推适合在线、边缘、嵌入式 |
+| **理论语言** | 平稳性、协整、状态空间等概念仍是理解深度模型"为什么在某些数据上失败"的工具 |
+
+可预期的方向 [经验，趋势判断，需持续观察]：**统计结构与神经网络进一步融合**（可微状态空间、深度 Kalman）、**概率预测与校准成为标配**、**基础模型零样本与经典方法并列作为强基线**、评估协议继续规范化。
+
+**尚未被深度学习取代的领域**
+
+| 领域 | 为什么经典方法仍有优势 |
+|---|---|
+| 小样本（数十到数百点）、单序列 | 参数少，估计方差小 |
+| 需要严格可解释的分量与参数 | 状态空间/ETS 的分量有明确含义 |
+| 波动率与金融风险（GARCH 族） | 理论成熟、监管与实务接受度高 |
+| 宏观经济多变量（VAR、协整、因子模型） | 结构分析、因果解释与政策模拟的工具齐全 |
+| 在线与嵌入式 | $O(1)$ 递推，内存极小 |
+| 长记忆、平稳性分析 | ARFIMA、单位根等理论工具直接对应 |
+
+### 5.10 开放问题
+
+1. 如何在**非平稳与分布漂移**下给出有保证的区间（ACI 是起点，但覆盖保证依赖的假设仍有限）；
+2. 统计结构嵌入深度模型后，**可解释性与精度能否同时保住**；
+3. **基础模型是否真的稳定优于调好的经典方法**，需要无泄漏、覆盖面广、协议公平的评估（GIFT-Eval 一类基准是方向）；
+4. **高维、混合频率、含缺失与不规则采样**的统一统计框架；
+5. 概率层级预测与大规模一致性的高效实现。
+
+### 5.11 怎样判断一个"新方法"新在哪
+
+遇到一个新的时序模型，可以依次问：
+
+1. 它在**表示什么结构**？（自相关 / 分量演化 / 隐状态 / 变量依赖 / 方差 / 状态切换）对应哪一类经典模型？
+2. 相比对应的经典方法，它**多出了什么**？（非线性、跨序列共享、更长依赖、协变量、概率输出）
+3. 多出来的部分是否真由**数据规模或结构复杂度**所需？还是在小而平稳的数据上白增了方差？（§1.4、§3.13）
+4. 评估是否做了**滚动起点、强基线、多种子、泄漏检查**？（[metrics 文档 §5](0610_ML_Tasks_TimeSeries_Metrics)）
+5. 不确定性是否被诚实表达？区间**校准**了吗？（§3.15）
+
+经典统计模型留下的不只是一批方法，更是一套**问问题的方式**：先问结构，再问方差，再问基线，最后才问模型有多大。
+
+---
+
+## 6. 实践建议 [经验]
+
+**推荐流程**
+
+1. 画图，看趋势、季节、离群点、结构断点、缺失；
+2. 先做**朴素与季节朴素**，记录基线分数；
+3. 拟合 **ETS** 与 **ARIMA**（自动选型），做残差诊断（§1.4）；
+4. 试 **Theta**，再看 **ETS + ARIMA + Theta 的平均**；
+5. 如果有重要协变量：动态回归（ARIMAX）或梯度提升；
+6. 序列成层级：做协调；
+7. 用**滚动起点**评估，指标用 MASE 与分位数损失（见 [metrics 文档](0610_ML_Tasks_TimeSeries_Metrics)）；
+8. 只有上述在滚动评估下仍有明显差距，再投入深度模型或基础模型。
+
+**常见错误**
+
+- 忽略平稳性直接对非平稳序列做 ARMA；
+- 用 AIC 比较不同差分阶数的模型（似然不可比）；
+- 只看样本内拟合，不做滚动评估；
+- 季节周期设错（如周期为 7 的日数据当成无季节）；
+- 对间歇需求使用 MAPE；
+- 忘记预测区间在长 horizon 上会急剧变宽，应展示给决策者；
+- 把模型公式算出的区间当作全部不确定性（忽略参数估计误差，实际覆盖率常偏低），应用 bootstrap 或共形预测校准（§1.6、§3.15）。
+
+**工具**（版本与接口以官方文档为准，待核实）
+
+| 语言 | 库 |
+|---|---|
+| Python | statsmodels、statsforecast、sktime、darts |
+| R | forecast、fable（Hyndman 团队的教材 *Forecasting: Principles and Practice* 与配套包） |
+
+---
+
+## 7. 经典方法的局限
+
+- **线性与平稳性假设**：对强非线性、突变、结构断点力不从心；
+- **单序列局部模型**：无法借用其他序列的信息，冷启动序列无法预测；
+- **协变量支持弱**：ETS 基础形式没有协变量；ARIMAX 只能线性引入；
+- **高维多变量**：VAR 参数爆炸；
+- **长周期、复杂多季节**：需要扩展与技巧；
+- **非线性依赖**：Wold 分解只保证二阶性质（§1.5），方差聚集、状态切换需 GARCH、TAR 等专门模型；
+- **需要人工检查**：自动选型并非万无一失，残差诊断仍重要。
+
+这些局限正是机器学习、深度学习和基础模型出场的空间，但并不改变"先跑经典基线"的建议。
+
+---
+
+## 来源与核对状态
+
+**[V]：书目信息经 Crossref API（2026-11-06、2026-11-10）与 arXiv API（2026-11-10）核对**，下表 DOI 为 Crossref 命中的条目。注意"核对"仅指标题、作者、年份、期刊与 DOI 与我所引用的一致，没有重读全文；其中若命中的是后来的再版或文集，已在正文标注。
+
+| 文献 | DOI |
+|---|---|
+| Hyndman & Koehler 2006, *IJF*（MASE） | 10.1016/j.ijforecast.2006.03.001 |
+| Hyndman, Koehler, Snyder, Grose 2002, *IJF*（ETS 状态空间） | 10.1016/s0169-2070(01)00110-8 |
+| Hyndman & Khandakar 2008, *J. Stat. Software*（forecast 包） | 10.18637/jss.v027.i03 |
+| Assimakopoulos & Nikolopoulos 2000, *IJF*（Theta） | 10.1016/s0169-2070(00)00066-2 |
+| Kalman 1960, *J. Basic Engineering* | 10.1115/1.3662552 |
+| Taylor & Letham 2017, PeerJ Preprints（Prophet） | 10.7287/peerj.preprints.3190v1 |
+| Taylor & Letham 2018, *The American Statistician*（Prophet 正式版） | 10.1080/00031305.2017.1380080 |
+| Engle 1982, *Econometrica*（ARCH） | 10.2307/1912773 |
+| Bollerslev 1986, *J. Econometrics*（GARCH） | 10.1016/0304-4076(86)90063-1 |
+| Johansen 1988, *J. Econ. Dynamics and Control* | 10.1016/0165-1889(88)90041-3 |
+| Tong & Lim 1980, *JRSS B*（TAR） | 10.1111/j.2517-6161.1980.tb01126.x |
+| Hyndman & Billah 2003, *IJF*（Unmasking the Theta method） | 10.1016/s0169-2070(01)00143-1 |
+| Kwiatkowski, Phillips, Schmidt, Shin 1992, *J. Econometrics*（KPSS） | 10.1016/0304-4076(92)90104-y |
+| Engle & Granger 1987, *Econometrica*（协整） | 10.2307/1913236 |
+| Sims 1980, *Econometrica*（VAR） | 10.2307/1912017 |
+| Hamilton 1989, *Econometrica*（Markov 切换） | 10.2307/1912559 |
+| Gardner 1985, *J. Forecasting*（指数平滑综述） | 10.1002/for.3980040103 |
+| Gardner & McKenzie 1985, *Management Science*（阻尼趋势） | 10.1287/mnsc.31.10.1237 |
+| Croston 1972, *Oper. Res. Quarterly* | 10.2307/3007885 |
+| De Livera, Hyndman, Snyder 2011, *JASA*（TBATS） | 10.1198/jasa.2011.tm09771 |
+| Wickramasuriya, Athanasopoulos, Hyndman（JASA，在线 2018）（MinT） | 10.1080/01621459.2018.1448825 |
+| Makridakis, Spiliotis, Assimakopoulos 2020, *IJF*（M4） | 10.1016/j.ijforecast.2019.04.014 |
+| Makridakis, Spiliotis, Assimakopoulos 2022, *IJF*（M5） | 10.1016/j.ijforecast.2021.11.013 |
+| Makridakis & Hibon 2000, *IJF*（M3） | 10.1016/s0169-2070(00)00057-1 |
+| Smyl 2020, *IJF*（ES-RNN） | 10.1016/j.ijforecast.2019.03.017 |
+| Winters 1960, *Management Science* | 10.1287/mnsc.6.3.324 |
+| Holt, *IJF* 2004 重印 | 10.1016/j.ijforecast.2003.09.015 |
+| Dickey & Fuller 1979, *JASA*（ADF） | 10.2307/2286348 |
+| Ljung & Box 1978, *Biometrika* | 10.1093/biomet/65.2.297 |
+| Schwarz 1978, *Annals of Statistics*（BIC） | 10.1214/aos/1176344136 |
+| Newbold & Granger 1974, *JRSS A* | 10.2307/2344546 |
+| Bates & Granger 1969, *Operational Research Quarterly*（Crossref 容器名显示为 OR） | 10.2307/3008764 |
+| Bergmeir, Hyndman, Benítez 2018, *CSDA*（时序交叉验证） | 10.1016/j.csda.2017.11.003 |
+| Harvey 1990, *Forecasting, Structural Time Series Models and the Kalman Filter* | 10.1017/cbo9781107049994 |
+| Durbin & Koopman, *Time Series Analysis by State Space Methods*（2012 第二版） | 10.1093/acprof:oso/9780199641178.001.0001 |
+| Hosking 1981, *Biometrika*（分数差分） | 10.1093/biomet/68.1.165 |
+| Stock & Watson 2002, *JASA*（主成分预测） | 10.1198/016214502388618960 |
+| Forni, Hallin, Lippi, Reichlin 2000, *Rev. Econ. Stat.*（广义动态因子） | 10.1162/003465300559037 |
+| Gneiting & Katzfuss 2014, *Annu. Rev. Stat. Appl.*（概率预测综述） | 10.1146/annurev-statistics-062713-085831 |
+| Roberts et al. 2013, *Phil. Trans. R. Soc. A*（GP 时序建模） | 10.1098/rsta.2011.0550 |
+| Smith & Wallis 2009, *Oxford Bull. Econ. Stat.*（组合谜题） | 10.1111/j.1468-0084.2008.00541.x |
+| Montero-Manso et al. 2020, *IJF*（FFORMA） | 10.1016/j.ijforecast.2019.02.011 |
+| Januschowski et al. 2020, *IJF*（预测方法分类准则） | 10.1016/j.ijforecast.2019.05.008 |
+| Hyndman, Koehler, Ord, Snyder 2005, *J. Forecasting*（ETS 预测区间） | 10.1002/for.938 |
+| Kourentzes, Petropoulos, Trapero 2014, *IJF*（MAPA） | 10.1016/j.ijforecast.2013.09.006 |
+| Athanasopoulos et al. 2017, *EJOR*（时间层级） | 10.1016/j.ejor.2017.02.046 |
+| Hyndman, Ahmed, Athanasopoulos, Shang 2011, *CSDA*（层级最优组合） | 10.1016/j.csda.2011.03.006 |
+| Bergmeir & Benítez 2012, *Information Sciences*（时序交叉验证） | 10.1016/j.ins.2011.12.028 |
+| Tashman 2000, *IJF*（样本外检验综述） | 10.1016/s0169-2070(00)00065-0 |
+
+**Crossref 命中为工作论文或再版**（正文已逐条标注）：Granger & Joyeux（2003 文集再版，原刊 1980 待核实）、Litterman（1985 联储工作论文，1986 期刊版待核实）、Bańbura et al.（2008 SSRN，期刊版待核实）、Gneiting & Raftery（2005 技术报告，JASA 2007 版待核实）、Scott & Varian（2013 SSRN，期刊版待核实）、Claeskens et al.（SSRN，IJF 版待核实）、Brodersen et al.（CRAN 包条目，*AoAS* 2015 原论文待核实）。
+
+**arXiv 编号经 API 核对**：[2010.09107](https://arxiv.org/abs/2010.09107)（Conformal prediction for time series）、[2106.00170](https://arxiv.org/abs/2106.00170)（Adaptive Conformal Inference Under Distribution Shift）、[1511.05121](https://arxiv.org/abs/1511.05121)（Deep Kalman Filters）、[2303.06349](https://arxiv.org/abs/2303.06349)（Resurrecting RNNs）、[2203.10716](https://arxiv.org/abs/2203.10716)（Forecast Evaluation for Data Scientists）。综述性延伸阅读：Petropoulos et al. 2022，*Forecasting: theory and practice*，[arXiv:2012.03854](https://arxiv.org/abs/2012.03854) [V]；Benidis et al.，*Deep Learning for Time Series Forecasting: Tutorial and Literature Survey*，ACM Computing Surveys 2022，DOI 10.1145/3533382 [V]，arXiv:2004.10240 [V]；Lim & Zohren，*Time Series Forecasting With Deep Learning: A Survey*，arXiv:2004.13408 [V]。Mamba、S4、DLinear 的编号见[总览核对表](0603_ML_Tasks_TimeSeries)。
+
+**Crossref 命中为再版或文集，原刊年份待核实**：Akaike 1974（原刊 IEEE Trans. Automatic Control，待核实）。Engle、Bollerslev、Johansen、Tong & Lim、KPSS、Taylor & Letham 2018、Hyndman & Billah 的原刊已在 2026-11-10 补充核对（见上表）。
+
+**待核实（未核对或无法确认）**：Stone 1977、Granger & Newbold 1974（伪回归）、Minnesota 先验的具体参数化形式、ACI 更新公式细节、"部分 GP 核可转为状态空间"的说法、"参数估计使区间偏窄"的量级、Rangapuram et al. 2018、可微层级协调与概率层级预测的相关工作、statsforecast 的性能数字、Box & Jenkins 1970 专著、Yule 1927、Slutsky、Wold 1938、Brown 的指数平滑原始出处、STL（Cleveland et al. 1990；本次检索未命中原文）、Theta 等价结果的具体形式、SBA 偏差修正、FFORMA、GJR/EGARCH 细节、"组合谜题"的说法、M3/M4/M5 中各方法的具体名次与结论、Prophet 的精度比较、各工具库的当前版本与接口、阻尼趋势在比较中表现稳健的具体研究。
+
+**例子**：SES 的 $\ell_1=11$、AR(1) 的 $\phi=0.8$ 预测序列、组合预测算例（$\sigma=1,\rho=0.5$，方差 0.75）是为说明概念构造的或为教科书结论的数值化演示。
+
