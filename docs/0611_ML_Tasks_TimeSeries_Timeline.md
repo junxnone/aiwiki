@@ -2,7 +2,7 @@
 Title | ML Tasks TimeSeries Timeline
 -- | --
 Created @ | `2026-11-10T09:17:45Z`
-Updated @| `2026-11-10T09:29:00Z`
+Updated @| `2026-11-10T09:36:17Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/611)
 
@@ -194,7 +194,4 @@ decoder-only 的预测基础模型。[arXiv:2310.10688](https://arxiv.org/abs/23
 面向通用与基础模型的预测基准。[arXiv:2410.10393](https://arxiv.org/abs/2410.10393)
 
 
-
-## Reference
-- [timelinemd 格式说明](https://github.com/junxnone/jstools/blob/main/timelinemd/README.md)
 
