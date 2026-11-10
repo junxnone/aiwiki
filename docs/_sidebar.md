@@ -273,6 +273,15 @@
       - [Specular Highlight Removal](/0540_ML_Tasks_Image_SHR)
     - [Motion Detection 运动侦测](/0243_ML_Tasks_MD)
     - [MetricLearning](/0157_ML_Tasks_MetricLearning)
+    - [时间序列模型综述：从 ARIMA 到时序基础模型](/0603_ML_Tasks_TimeSeries)
+      - [时间序列异常检测：方法详解、评估与发展脉络](/0609_ML_Tasks_TimeSeries_Anomaly)
+      - [经典统计时间序列模型：方法详解、理论骨架与发展脉络](/0604_ML_Tasks_TimeSeries_Classical)
+      - [深度学习时间序列模型：方法详解、原理与发展脉络](/0606_ML_Tasks_TimeSeries_Deep)
+      - [时间序列基础模型：方法详解、原理与发展脉络](/0608_ML_Tasks_TimeSeries_Foundation)
+      - [生成式时间序列模型：方法详解、原理与发展脉络](/0607_ML_Tasks_TimeSeries_Generative)
+      - [机器学习时间序列模型：方法详解、原理与发展脉络](/0605_ML_Tasks_TimeSeries_ML)
+      - [时间序列模型评估指标：公式、历史与现行评估方式、优缺点](/0610_ML_Tasks_TimeSeries_Metrics)
+      - [经典统计与机器学习](/0611_ML_Tasks_TimeSeries_Timeline)
   - [Op](/0366_ML_Op)
     - [Activation Function 激活函数](/0279_ML_Op_AF)
       - [sigmoid](/0280_ML_Op_AF_Sigmoid)
@@ -574,4 +583,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@2249331028</sub></kbd>
+<kbd><sub>@1718301110</sub></kbd>
