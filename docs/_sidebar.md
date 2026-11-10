@@ -284,6 +284,7 @@
       - [经典统计与机器学习](/0611_ML_Tasks_TimeSeries_Timeline)
   - [Op](/0366_ML_Op)
     - [Activation Function 激活函数](/0279_ML_Op_AF)
+      - [ML Op AF ReLU 系与现代激活函数](/0616_ML_Op_AF_ReLU)
       - [sigmoid](/0280_ML_Op_AF_Sigmoid)
       - [Softmax](/0335_ML_Op_AF_Softmax)
     - [Convolution](/0009_ML_Op_Convolution)
@@ -292,10 +293,19 @@
       - [卷积 数学定义](/0010_ML_Op_Convolution_Math)
     - [Dropout](/0258_ML_Op_Dropout)
       - [Multi-Sample Dropout](/0259_ML_Op_Dropout_MS)
+    - [ML Op Elementwise 与 Reduce](/0620_ML_Op_Elementwise)
+    - [ML Op Embedding](/0617_ML_Op_Embedding)
+    - [ML Op Linear](/0612_ML_Op_Linear)
+    - [ML Op Normalization 总览](/0613_ML_Op_Norm)
+      - [ML Op BatchNorm](/0614_ML_Op_Norm_BatchNorm)
+      - [ML Op Norm LayerNorm](/0615_ML_Op_Norm_LayerNorm)
     - [Pooling 池化](/0268_ML_Op_Pooling)
       - [Global Average Pooling](/0267_ML_Op_Pooling_GAP)
       - [Spatial Pyramid Pooling - 空间金字塔池化](/0365_ML_Op_Pooling_SPP)
+    - [ML Op Recurrent](/0618_ML_Op_Recurrent)
     - [Regularization  正则化](/0252_ML_Op_Regularization)
+    - [ML Op Resize 与上采样相关算子](/0619_ML_Op_Resize)
+    - [ML Op Shape 与数据搬运](/0621_ML_Op_Shape)
   - [Metrics 评价指标](/0138_ML_Metrics)
     - [Metrics for Classification](/0137_ML_Metrics_Classification)
     - [CrossValidation 交叉验证](/0249_ML_Metrics_CrossValidation)
@@ -583,4 +593,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1718301110</sub></kbd>
+<kbd><sub>@1751211110</sub></kbd>
