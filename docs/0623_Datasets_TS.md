@@ -2,12 +2,12 @@
 Title | Datasets TS
 -- | --
 Created @ | `2026-11-11T07:47:25Z`
-Updated @| `2026-11-11T07:47:25Z`
+Updated @| `2026-11-11T07:54:58Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/623)
 
 ---
-# Datasets TS
+# 时间序列数据集
 
 时间序列（Time Series，TS）数据集按**任务**划分最清晰：预测、分类、异常检测、填补，以及近两年为基础模型准备的**大规模预训练语料**。本文汇总常用数据集的来源、规模和用法，并指出使用时的常见陷阱。模型与方法见 [时序模型总览](0603_ML_Tasks_TimeSeries)，评估见 [评估指标](0610_ML_Tasks_TimeSeries_Metrics)，异常检测的评估问题见 [异常检测](0609_ML_Tasks_TimeSeries_Anomaly)。同系列的其他模态数据集见 [Datasets Audio](0020_Datasets_Audio)、[Datasets NLP](0021_Datasets_NLP)。
 
