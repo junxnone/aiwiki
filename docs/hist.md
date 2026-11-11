@@ -406,7 +406,7 @@
 - 2020-10-19&nbsp;&nbsp; [Edge Detection](/0098_Datasets_Image2D_EdgeDetection)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:EdgeDetection
 - 2020-09-30&nbsp;&nbsp; [AIDE](/0270_ML_AL_Tools_AIDE)&nbsp;&nbsp; :bookmark:ML :bookmark:AL :bookmark:Tools :bookmark:AIDE
 - 2020-09-24&nbsp;&nbsp; [distanceTransform 处理区域粘连](/0346_OpenCV_IP_misc_distanceTransform)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:misc :bookmark:distanceTransform
-- 2020-09-10&nbsp;&nbsp; [Object Counting](/0239_Datasets_Image2D_OC)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:OC
+- 2020-09-10&nbsp;&nbsp; [Object Counting 计数数据集](/0239_Datasets_Image2D_OC)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:OC
 - 2020-08-20&nbsp;&nbsp; [多 GPUs 训练](/0338_Tools_Pytorch_mGPUs)&nbsp;&nbsp; :bookmark:Tools :bookmark:Pytorch :bookmark:mGPUs
 - 2020-08-19&nbsp;&nbsp; [Pytorch Pipeline](/0173_Tools_Pytorch_Pipeline)&nbsp;&nbsp; :bookmark:Tools :bookmark:Pytorch :bookmark:Pipeline
 - 2020-07-28&nbsp;&nbsp; [CHAOS](/0096_Datasets_Image2D_Segmentation_CHAOS)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:Segmentation :bookmark:CHAOS
@@ -418,7 +418,7 @@
 - 2020-07-20&nbsp;&nbsp; [NASwRL](/0390_ML_AutoML_NAS_NASwRL)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:NAS :bookmark:NASwRL
 - 2020-07-17&nbsp;&nbsp; [NAS Metrics](/0394_ML_AutoML_NAS_Metrics)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:NAS :bookmark:Metrics
 - 2020-07-17&nbsp;&nbsp; [One-Shot](/0393_ML_AutoML_NAS_OneShot)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:NAS :bookmark:OneShot
-- 2020-07-17&nbsp;&nbsp; [AutoML](/0244_Datasets_Image2D_AutoML)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:AutoML
+- 2020-07-17&nbsp;&nbsp; [AutoML 基准数据集](/0244_Datasets_Image2D_AutoML)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:AutoML
 - 2020-07-17&nbsp;&nbsp; [Search Space](/0392_ML_AutoML_NAS_SearchSpace)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:NAS :bookmark:SearchSpace
 - 2020-07-10&nbsp;&nbsp; [AutoAugment](/0256_ML_PreP_DataAug_AutoAugment)&nbsp;&nbsp; :bookmark:ML :bookmark:PreP :bookmark:DataAug :bookmark:AutoAugment
 - 2020-07-10&nbsp;&nbsp; [Feature Engineering](/0206_ML_AutoML_FE)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:FE
@@ -450,7 +450,7 @@
 - 2020-05-08&nbsp;&nbsp; [TextRecognitionDataGenerator](/0187_ML_Tasks_Image_OCR_Tools_TextRecognitionDataGenerator)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Tools :bookmark:TextRecognitionDataGenerator
 - 2020-05-08&nbsp;&nbsp; [Sliding Windows CNN CTC](/0188_ML_Tasks_Image_OCR_SW)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:SW
 - 2020-05-07&nbsp;&nbsp; [OCR](/0200_ML_Tasks_Image_OCR)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR
-- 2020-05-07&nbsp;&nbsp; [OCR](/0240_Datasets_Image2D_OCR)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:OCR
+- 2020-05-07&nbsp;&nbsp; [OCR 文字检测与识别数据集](/0240_Datasets_Image2D_OCR)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:OCR
 - 2020-05-07&nbsp;&nbsp; [CAFCN](/0186_ML_Tasks_Image_OCR_CAFCN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:CAFCN
 - 2020-04-26&nbsp;&nbsp; [ONNX 可视化工具](/0134_Tools_VIS_ONNX)&nbsp;&nbsp; :bookmark:Tools :bookmark:VIS :bookmark:ONNX
 - 2020-04-22&nbsp;&nbsp; [LVIS](/0094_Datasets_Image2D_Segmentation_LVIS)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:Segmentation :bookmark:LVIS
@@ -479,8 +479,8 @@
 - 2020-01-13&nbsp;&nbsp; [YOLO V1](/0054_ML_Tasks_Image_Detection_YOLO_V1)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Detection :bookmark:YOLO :bookmark:V1
 - 2020-01-06&nbsp;&nbsp; [Visualization 可视化](/0171_Tools_Pytorch_VIS)&nbsp;&nbsp; :bookmark:Tools :bookmark:Pytorch :bookmark:VIS
 - 2020-01-06&nbsp;&nbsp; [Pytorch Optimizer](/0174_Tools_Pytorch_Optimizer)&nbsp;&nbsp; :bookmark:Tools :bookmark:Pytorch :bookmark:Optimizer
-- 2019-12-18&nbsp;&nbsp; [Image Classification Datasets](/0028_Datasets_Image2D_Classification)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:Classification
-- 2019-12-18&nbsp;&nbsp; [Detection](/0237_Datasets_Image2D_Detection)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:Detection
+- 2019-12-18&nbsp;&nbsp; [图像分类数据集](/0028_Datasets_Image2D_Classification)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:Classification
+- 2019-12-18&nbsp;&nbsp; [Image Object Detection Datasets](/0237_Datasets_Image2D_Detection)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:Detection
 - 2019-12-17&nbsp;&nbsp; [AutoEncoder](/0209_ML_AE)&nbsp;&nbsp; :bookmark:ML :bookmark:AE
 - 2019-12-11&nbsp;&nbsp; [FastRCNN](/0058_ML_Tasks_Image_Detection_FastRCNN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Detection :bookmark:FastRCNN
 - 2019-12-11&nbsp;&nbsp; [RCNN](/0057_ML_Tasks_Image_Detection_RCNN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Detection :bookmark:RCNN
@@ -521,7 +521,7 @@
 - 2019-04-10&nbsp;&nbsp; [Data Augmentation 数据增强](/0255_ML_PreP_DataAug)&nbsp;&nbsp; :bookmark:ML :bookmark:PreP :bookmark:DataAug
 - 2019-04-08&nbsp;&nbsp; [Image Anomaly Detection](/0277_ML_Tasks_Image_Anomaly)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Anomaly
 - 2019-04-08&nbsp;&nbsp; [Loss Function 损失函数](/0281_ML_Arch_Func_LossFunction)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:Func :bookmark:LossFunction
-- 2019-04-01&nbsp;&nbsp; [Defect/Anomaly Dataset](/0245_Datasets_Image2D_Defect)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:Defect
+- 2019-04-01&nbsp;&nbsp; [Defect/Anomaly Dataset 缺陷与异常检测数据集](/0245_Datasets_Image2D_Defect)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:Defect
 - 2019-03-28&nbsp;&nbsp; [Segmentation](/0159_ML_Tasks_Image_Segmentation)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Segmentation
 - 2019-03-21&nbsp;&nbsp; [Video 视频](/0036_Media_Video)&nbsp;&nbsp; :bookmark:Media :bookmark:Video
 - 2019-03-18&nbsp;&nbsp; [GridSearch](/0205_ML_AutoML_HPO_GridSearch)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:HPO :bookmark:GridSearch
@@ -530,10 +530,10 @@
 - 2019-03-14&nbsp;&nbsp; [Focal Loss](/0284_ML_Arch_Func_LossFunction_FocalLoss)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:Func :bookmark:LossFunction :bookmark:FocalLoss
 - 2019-03-13&nbsp;&nbsp; [Activation Function 激活函数](/0279_ML_Op_AF)&nbsp;&nbsp; :bookmark:ML :bookmark:Op :bookmark:AF
 - 2019-03-12&nbsp;&nbsp; [Momentum](/0150_ML_Arch_GD_Momentum)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:GD :bookmark:Momentum
-- 2019-03-10&nbsp;&nbsp; [Retrieval](/0241_Datasets_Image2D_Retrieval)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:Retrieval
-- 2019-03-10&nbsp;&nbsp; [Face](/0238_Datasets_Image2D_Face)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:Face
-- 2019-03-10&nbsp;&nbsp; [Segmentation](/0097_Datasets_Image2D_Segmentation)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:Segmentation
-- 2019-03-10&nbsp;&nbsp; [KeyPoint](/0248_Datasets_Image2D_KeyPoint)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:KeyPoint
+- 2019-03-10&nbsp;&nbsp; [Image Retrieval 图像检索数据集](/0241_Datasets_Image2D_Retrieval)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:Retrieval
+- 2019-03-10&nbsp;&nbsp; [Face 人脸数据集](/0238_Datasets_Image2D_Face)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:Face
+- 2019-03-10&nbsp;&nbsp; [Segmentation 分割数据集](/0097_Datasets_Image2D_Segmentation)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:Segmentation
+- 2019-03-10&nbsp;&nbsp; [KeyPoint 关键点 / 姿态数据集](/0248_Datasets_Image2D_KeyPoint)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:KeyPoint
 - 2019-03-10&nbsp;&nbsp; [NNI](/0016_ML_AutoML_Tools_NNI)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:Tools :bookmark:NNI
 - 2019-03-05&nbsp;&nbsp; [Tips](/0261_Tools_Darknet_AlexeyAB)&nbsp;&nbsp; :bookmark:Tools :bookmark:Darknet :bookmark:AlexeyAB
 - 2019-03-02&nbsp;&nbsp; [Dropout](/0258_ML_Op_Dropout)&nbsp;&nbsp; :bookmark:ML :bookmark:Op :bookmark:Dropout
@@ -552,7 +552,7 @@
 - 2019-01-24&nbsp;&nbsp; [Oxford-IIIT Pets](/0029_Datasets_Image2D_Classification_Pets)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:Classification :bookmark:Pets
 - 2019-01-24&nbsp;&nbsp; [Instance Segmentation 实例分割](/0167_ML_Tasks_Image_Segmentation_Instance)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Segmentation :bookmark:Instance
 - 2019-01-18&nbsp;&nbsp; [VIA VGG Image Annotator](/0075_Tools_Label_VGG)&nbsp;&nbsp; :bookmark:Tools :bookmark:Label :bookmark:VGG
-- 2019-01-18&nbsp;&nbsp; [Mnist](/0030_Datasets_Image2D_Classification_mnist)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:Classification :bookmark:mnist
+- 2019-01-18&nbsp;&nbsp; [MNIST](/0030_Datasets_Image2D_Classification_mnist)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:Classification :bookmark:mnist
 - 2019-01-17&nbsp;&nbsp; [ImageNet](/0031_Datasets_Image2D_Classification_ImageNet)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:Classification :bookmark:ImageNet
 - 2019-01-16&nbsp;&nbsp; [Detection](/0230_ML_Metrics_Detection)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection
 - 2018-12-26&nbsp;&nbsp; [UNet](/0161_ML_Tasks_Image_Segmentation_UNet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Segmentation :bookmark:UNet
@@ -586,5 +586,5 @@
 - 2018-09-25&nbsp;&nbsp; [直方图均衡](/0341_OpenCV_CLAHE)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:CLAHE
 - 2018-09-12&nbsp;&nbsp; [Data Normalization 数据标准化](/0251_ML_PreP_DataNorm)&nbsp;&nbsp; :bookmark:ML :bookmark:PreP :bookmark:DataNorm
 - 2018-09-06&nbsp;&nbsp; [Darknet](/0260_Tools_Darknet)&nbsp;&nbsp; :bookmark:Tools :bookmark:Darknet
-- 2018-08-29&nbsp;&nbsp; [Cifar](/0032_Datasets_Image2D_Classification_Cifar)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:Classification :bookmark:Cifar
+- 2018-08-29&nbsp;&nbsp; [CIFAR](/0032_Datasets_Image2D_Classification_Cifar)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:Classification :bookmark:Cifar
 - 2018-08-26&nbsp;&nbsp; [OpenVINO](/0185_Tools_OV)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV
