@@ -180,7 +180,7 @@
     - [DTD-Synthetic](/0482_Datasets_Image2D_DTDSynthetic)
     - [Edge Detection](/0098_Datasets_Image2D_EdgeDetection)
     - [PascalVOC](/0092_Datasets_Image2D_PascalVOC)
-  - [3D](/0087_Datasets_3D)
+  - [3D 数据集](/0087_Datasets_3D)
   - [Audio](/0020_Datasets_Audio)
   - [BOP](/0544_Datasets_BOP)
   - [NLP](/0021_Datasets_NLP)
@@ -595,4 +595,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1715001111</sub></kbd>
+<kbd><sub>@1718041111</sub></kbd>
