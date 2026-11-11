@@ -2,12 +2,12 @@
 Title | Datasets Image2D
 -- | --
 Created @ | `2021-09-08T06:25:00Z`
-Last Modify @| `2022-12-24T16:04:46Z`
+Updated @| `2026-11-11T09:14:02Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/18)
 
 ---
-# 2D Images
+# 图像数据集
 
 - [Classification](./Datasets_Image_Classification)
 - [Object Detection/Recognition](/Datasets_Image_Object_Detection)
