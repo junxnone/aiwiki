@@ -3,7 +3,7 @@
 | Title     | ML Op Convolution Math                               |
 | --------- | ---------------------------------------------------- |
 | Created @ | `2019-06-09T07:26:18Z`                               |
-| Updated @ | `2023-02-02T09:00:38Z`                               |
+| Updated @ | `2026-11-11T01:07:12Z`                               |
 | Labels    | \`\`                                                 |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/10) |
 
@@ -11,26 +11,27 @@
 
 # 卷积 数学定义
 
-## Reference
-
-  - [Convolution - Wikipedia](https://en.wikipedia.org/wiki/Convolution)
-  - [Spatial
-    convolution](https://graphics.stanford.edu/courses/cs178/applets/convolution.html)
-  - [如何通俗易懂地解释卷积？](https://www.zhihu.com/question/22298352)
-
-## Brief
-
   - 两个函数 `f(x)` & `g(x)` 之间的数学操作产生一个新的函数: `f(x)*g(x)`
   - f & g 翻转平移后重叠部分乘积的积分
+  - 工程应用与实现见 [Convolution](0009_ML_Op_Convolution)，深度学习中的用法见 [Conv
+    DL](0011_ML_Op_Convolution_DL)
 
 ## 单变量 & 双变量的数学公式定义
 
-| 函数       | 定义                                                           |
-| -------- | ------------------------------------------------------------ |
-| 单变量连续域函数 | ![image](media/50d460ec9dad1675e4d6c41a10f7e9a7e0072400.png) |
-| 单变量离散域函数 | ![image](media/365ac20677cd7d99145daee4a67b2b486c2ebe50.png) |
-| 双变量连续函数  | ![image](media/555cdb4b778a224ed13e9fba011c31107dc99543.png) |
-| 双变量离散函数  | ![image](media/8af8d568c49bb796a7c4b93c12419de710385528.png) |
+| 函数       | 定义                                                           | LaTeX                                                                                 |
+| -------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------- |
+| 单变量连续域函数 | ![image](media/50d460ec9dad1675e4d6c41a10f7e9a7e0072400.png) | $(f\*g)(t)=\\int\_{-\\infty}^{\\infty}f(\\tau),g(t-\\tau),d\\tau$                     |
+| 单变量离散域函数 | ![image](media/365ac20677cd7d99145daee4a67b2b486c2ebe50.png) | $(f\*g)\[n\]=\\sum\_{m=-\\infty}^{\\infty}f\[m\],g\[n-m\]$                            |
+| 双变量连续函数  | ![image](media/555cdb4b778a224ed13e9fba011c31107dc99543.png) | $(f\*g)(x,y)=\\iint f(\\tau\_1,\\tau\_2),g(x-\\tau\_1,y-\\tau\_2),d\\tau\_1d\\tau\_2$ |
+| 双变量离散函数  | ![image](media/8af8d568c49bb796a7c4b93c12419de710385528.png) | $(f\*g)\[i,j\]=\\sum\_{m}\\sum\_{n}f\[m,n\],g\[i-m,j-n\]$                             |
+
+## 性质
+
+  - 交换律 $f*g=g*f$；结合律 $(f*g)*h=f*(g*h)$；分配律 $f\*(g+h)=f*g+f*h$
+  - 平移不变（线性时不变系统的输出等于输入与冲激响应的卷积）
+  - 卷积定理：$\\mathcal{F}{f\*g}=\\mathcal{F}{f}\\cdot\\mathcal{F}{g}$，时域卷积等于频域乘积，是
+    FFT 卷积加速的基础
+  - 长度为 $L\_f$ 与 $L\_g$ 的有限序列完整卷积长度为 $L\_f+L\_g-1$
 
 ## 一维卷积过程
 
@@ -40,6 +41,13 @@
   - 得到新的函数 (8)
 
 ![image](media/af89d324e67d17e7bfc4e2db2e0d2d82cd16b557.png)
+
+数值例子：$f=\[1,2,3\]$，$g=\[0,1,0.5\]$，则 $f\*g=\[0,1,2.5,4,1.5\]$。
+
+``` python
+import numpy as np
+print(np.convolve([1, 2, 3], [0, 1, 0.5]))   # [0.  1.  2.5 4.  1.5]
+```
 
 ## 系统理解
 
@@ -59,4 +67,18 @@
   - Cross-correlation 互相关 - 两个变量的相似性度量
   - Autocorrelation 自相关 - 变量不同时间的相关性
 
+$$ (f\\star g)\[n\]=\\sum\_{m}f\[m\],g\[n+m\]=(\\tilde f \*
+g)\[n\],\\quad \\tilde f\[m\]=f\[-m\] $$
+
+互相关等价于翻转其中一个函数后的卷积；$f\\star f$ 即自相关。深度学习框架中的 "卷积"
+实际计算的是互相关（不翻转核），因核是学出来的，翻转与否不影响表达能力，见
+[Conv DL](0011_ML_Op_Convolution_DL)。
+
 ![image](media/977a957a768c7ea9f2a2dde07baea203ffe2d823.png)
+
+## Reference
+
+  - [Convolution - Wikipedia](https://en.wikipedia.org/wiki/Convolution)
+  - [Spatial
+    convolution](https://graphics.stanford.edu/courses/cs178/applets/convolution.html)
+  - [如何通俗易懂地解释卷积？](https://www.zhihu.com/question/22298352)
