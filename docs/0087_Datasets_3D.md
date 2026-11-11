@@ -2,14 +2,12 @@
 Title | Datasets 3D
 -- | --
 Created @ | `2021-07-27T05:32:49Z`
-Updated @| `2026-11-11T09:07:58Z`
+Updated @| `2026-11-11T09:08:12Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/87)
 
 ---
-# 3D Images
-
-- 点云？
+# 3D 
 
 Name | Description
 -- | --
