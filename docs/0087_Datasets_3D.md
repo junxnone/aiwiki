@@ -1,8 +1,8 @@
 ---
-Title | Datasets Image3D
+Title | Datasets 3D
 -- | --
 Created @ | `2021-07-27T05:32:49Z`
-Updated @| `2025-05-28T06:54:49Z`
+Updated @| `2026-11-11T09:07:58Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/87)
 
