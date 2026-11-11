@@ -481,6 +481,7 @@
   - [SAA+](/0469_paper_SAAplus)
   - [STFPM](/0324_paper_STFPM)
   - [SpecularityNet-PSD](/0538_paper_SpecularityNet)
+  - [TimesNet](/0622_paper_TimesNet)
   - [Tip-Adapter](/0475_paper_TipAdapter)
   - [Uformer](/0539_paper_Uformer)
   - [VPT - Visual Prompt Tuning](/0477_paper_VPT)
@@ -593,4 +594,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0908251111</sub></kbd>
+<kbd><sub>@1512251111</sub></kbd>
