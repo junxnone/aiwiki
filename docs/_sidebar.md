@@ -287,8 +287,8 @@
       - [ML Op AF ReLU 系与现代激活函数](/0616_ML_Op_AF_ReLU)
       - [sigmoid](/0280_ML_Op_AF_Sigmoid)
       - [Softmax](/0335_ML_Op_AF_Softmax)
-    - [Convolution](/0009_ML_Op_Convolution)
-      - [ConvFlops](/0396_ML_Op_Convolution_ConvFlops)
+    - [ML Op Convolution](/0009_ML_Op_Convolution)
+      - [Convolution Flops](/0396_ML_Op_Convolution_ConvFlops)
       - [卷积在 DL 中的应用](/0011_ML_Op_Convolution_DL)
       - [卷积 数学定义](/0010_ML_Op_Convolution_Math)
     - [Dropout](/0258_ML_Op_Dropout)
@@ -303,7 +303,7 @@
       - [Global Average Pooling](/0267_ML_Op_Pooling_GAP)
       - [Spatial Pyramid Pooling - 空间金字塔池化](/0365_ML_Op_Pooling_SPP)
     - [ML Op Recurrent](/0618_ML_Op_Recurrent)
-    - [Regularization  正则化](/0252_ML_Op_Regularization)
+    - [Regularization 正则化](/0252_ML_Op_Regularization)
     - [ML Op Resize 与上采样相关算子](/0619_ML_Op_Resize)
     - [ML Op Shape 与数据搬运](/0621_ML_Op_Shape)
   - [Metrics 评价指标](/0138_ML_Metrics)
@@ -593,4 +593,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1751211110</sub></kbd>
+<kbd><sub>@0908251111</sub></kbd>
