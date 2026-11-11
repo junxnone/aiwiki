@@ -2,16 +2,13 @@
 Title | Datasets Image2D OC
 -- | --
 Created @ | `2020-09-10T01:49:17Z`
-Last Modify @| `2022-12-24T16:18:51Z`
+Updated @| `2026-11-11T09:23:59Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/239)
 
 ---
-## Reference
-- [Awesome Crowd Counting - datasets](https://github.com/gjy3035/Awesome-Crowd-Counting/blob/master/src/Datasets.md)
-- [kaggle - counting dataset](https://www.kaggle.com/search?q=counting+in%3Adatasets)
+# Object Counting
 
-## Brief
 ## Crowd Counting
 
 - [The NWPU-Crowd Dataset](https://crowdbenchmark.com/nwpucrowdloc.html)
@@ -36,3 +33,9 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/239)
 - [VGG Cells](http://www.robots.ox.ac.uk/~vgg/research/counting/index_org.html) -- [Github](https://github.com/ieee8023/countception/blob/master/cells.zip)
 - [MBM Cells](https://github.com/ieee8023/countception/blob/master/MBM_data.zip)
 - [Adipocyte Cells](https://github.com/ieee8023/countception/blob/master/adipocyte_data.zip)
+
+## Reference
+- [Awesome Crowd Counting - datasets](https://github.com/gjy3035/Awesome-Crowd-Counting/blob/master/src/Datasets.md)
+- [kaggle - counting dataset](https://www.kaggle.com/search?q=counting+in%3Adatasets)
+
+
