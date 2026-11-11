@@ -92,7 +92,7 @@
   - [OpenCV 数据结构](/0364_OpenCV_data)
   - [js](/0339_OpenCV_js)
 - [3D](/0076_3D)
-  - [Camera](/0040_3D_Camera)
+  - [3D Camera](/0040_3D_Camera)
     - [双目](/0307_3D_Camera_双目)
     - [Reference](/0354_3D_Camera_激光测量)
     - [结构光3D Camera](/0308_3D_Camera_结构光)
@@ -595,4 +595,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1725081111</sub></kbd>
+<kbd><sub>@1730461111</sub></kbd>
