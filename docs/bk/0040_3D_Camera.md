@@ -1,25 +1,15 @@
 -----
 
-| Title         | 3D Camera                                            |
-| ------------- | ---------------------------------------------------- |
-| Created @     | `2021-07-27T03:09:10Z`                               |
-| Last Modify @ | `2022-12-27T03:32:12Z`                               |
-| Labels        | `index`                                              |
-| Edit @        | [here](https://github.com/junxnone/aiwiki/issues/40) |
+| Title     | 3D Camera                                            |
+| --------- | ---------------------------------------------------- |
+| Created @ | `2021-07-27T03:09:10Z`                               |
+| Updated @ | `2026-11-11T09:29:38Z`                               |
+| Labels    | `index`                                              |
+| Edit @    | [here](https://github.com/junxnone/aiwiki/issues/40) |
 
 -----
 
-## Reference
-
-  - [三维扫描系列
-    点云绪论](https://blog.csdn.net/qq_32171789/article/details/114818081)
-  - [ROS 3D Camera Survey](https://rosindustrial.org/3d-camera-survey)
-  - [A Survey on 3D Cameras: Metrological Comparison of Time-of-Flight,
-    Structured-Light and Active Stereoscopy
-    Technologies](https://www.researchgate.net/publication/325866790_State-of-the-Art_Devices_Comparison)
-  - [内参、外参、畸变参数三种参数与相机的标定方法与相机坐标系的理解](https://blog.csdn.net/tap880507/article/details/79670210)
-
-## Brief
+# 3D Camera
 
   - 线阵相机/面阵相机
   - 光学: TOF/结构光/双目
@@ -88,3 +78,13 @@
 ![image](media/2f57a8fab1cc375334ea0c961c61657e091deadf.png)
 
 ![image](media/919dc7eb7a595a8b8e4b5dbd194e7fdb679f84a5.png)
+
+## Reference
+
+  - [三维扫描系列
+    点云绪论](https://blog.csdn.net/qq_32171789/article/details/114818081)
+  - [ROS 3D Camera Survey](https://rosindustrial.org/3d-camera-survey)
+  - [A Survey on 3D Cameras: Metrological Comparison of Time-of-Flight,
+    Structured-Light and Active Stereoscopy
+    Technologies](https://www.researchgate.net/publication/325866790_State-of-the-Art_Devices_Comparison)
+  - [内参、外参、畸变参数三种参数与相机的标定方法与相机坐标系的理解](https://blog.csdn.net/tap880507/article/details/79670210)
