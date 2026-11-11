@@ -174,7 +174,7 @@
     - [KeyPoint](/0248_Datasets_Image2D_KeyPoint)
     - [Defect/Anomaly Dataset](/0245_Datasets_Image2D_Defect)
     - [AutoML](/0244_Datasets_Image2D_AutoML)
-    - [OC](/0239_Datasets_Image2D_OC)
+    - [Object Counting](/0239_Datasets_Image2D_OC)
     - [COCO](/0247_Datasets_Image2D_COCO)
     - [DTD - Describable Textures Dataset](/0481_Datasets_Image2D_DTD)
     - [DTD-Synthetic](/0482_Datasets_Image2D_DTDSynthetic)
@@ -595,4 +595,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1718041111</sub></kbd>
+<kbd><sub>@1725081111</sub></kbd>
