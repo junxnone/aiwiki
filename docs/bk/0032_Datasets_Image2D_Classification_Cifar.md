@@ -3,32 +3,42 @@
 | Title     | Datasets Image2D Classification Cifar                |
 | --------- | ---------------------------------------------------- |
 | Created @ | `2018-08-29T09:54:48Z`                               |
-| Updated @ | `2024-05-20T09:01:30Z`                               |
+| Updated @ | `2026-11-11T09:36:32Z`                               |
 | Labels    | \`\`                                                 |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/32) |
 
 -----
 
-# Cifar
+# CIFAR
 
-  - 由加拿大高级研究所（Canadian Institute for Advanced Research）收集和整理的
-  - [Cifar10](#Cifar10) 常见的 10种物体
-  - [Cifar100](#Cifar100) 更精细的 100 类物体
+CIFAR-10 / CIFAR-100 是 [80 Million Tiny
+Images](http://groups.csail.mit.edu/vision/TinyImages/) 的带标签子集，由 Alex
+Krizhevsky、Vinod Nair、Geoffrey Hinton 收集标注，名称来自资助机构加拿大高级研究所（Canadian
+Institute for Advanced Research, CIFAR）。是小规模彩色图像分类最常用的基准。所属分类汇总见
+[Classification](0028_Datasets_Image2D_Classification)。
 
-## Cifar10
+## 规模统计
 
-  - 60000 张 32x32 彩色图片
-  - 10 个种类，每种 6000 张图片
-  - 50000 用于 Training，10000 张用于 Test
+| 项目          | CIFAR-10              | CIFAR-100                   |
+| ----------- | --------------------- | --------------------------- |
+| 图像数         | 60,000                | 60,000                      |
+| 分辨率         | 32×32 RGB             | 32×32 RGB                   |
+| 类别数         | 10                    | 100 细类（fine）/ 20 超类（coarse） |
+| 每类图像        | 6,000                 | 600                         |
+| 划分          | 50,000 训练 + 10,000 测试 | 每类 500 训练 + 100 测试          |
+| Python 版压缩包 | 约 163 MB（待核实）         | 约 161 MB（待核实）               |
+
+CIFAR-10 的 10
+类：airplane、automobile、bird、cat、deer、dog、frog、horse、ship、truck；类别互斥（automobile
+为轿车类，truck 为大卡车，不含 pickup）。
+
+## CIFAR-10 样例
 
 ![image](media/9f25205a7599c917e79e4028dc619cc1c06639ba.png)
 
-## Cifar100
+## CIFAR-100 超类与子类
 
-  - 总体有 20 类，20 类细分为 100 子类
-  - 100 个子类，每类 600 张图片
-  - 每类 500 张 Training，100 张 Test
-  - `fine` 指子类，`coarse` 指父类
+20 个超类细分为 100 个子类（统计见上表）；标签中 `fine` 指子类，`coarse` 指父类，各超类下的子类如下：
 
 | Superclass                     | Classes                                               |
 | ------------------------------ | ----------------------------------------------------- |
@@ -53,11 +63,66 @@
 | vehicles 1                     | bicycle, bus, motorcycle, pickup truck, train         |
 | vehicles 2                     | lawn-mower, rocket, streetcar, tank, tractor          |
 
-## Issues
+## 目录结构与解析
 
-#### 使用 tensorflow keras api `tensorflow.keras.datasets.cifar10.load_data()` 下载数据集时特别慢
+Python 版（pickle）：
 
-  - 手动下载数据集，并复制为 `~/.keras/datasets/cifar-10-batches-py.tar.gz`
+    cifar-10-batches-py/
+      data_batch_1 ... data_batch_5   # 各 10,000 张
+      test_batch
+      batches.meta                    # label_names
+    cifar-100-python/
+      train, test, meta               # 键：data, fine_labels, coarse_labels
+
+``` python
+import pickle, numpy as np
+with open("cifar-10-batches-py/data_batch_1", "rb") as f:
+    d = pickle.load(f, encoding="bytes")
+X = d[b"data"].reshape(-1, 3, 32, 32).transpose(0, 2, 3, 1)  # N,H,W,C
+y = d[b"labels"]
+```
+
+data 为 uint8 的 N×3072 数组，按 R(1024)、G(1024)、B(1024) 行优先排列。
+
+torchvision：
+
+``` python
+from torchvision import datasets, transforms
+tf = transforms.Compose([transforms.ToTensor(),
+     transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2470, 0.2435, 0.2616))])
+train = datasets.CIFAR10("data", train=True, download=True, transform=tf)
+train100 = datasets.CIFAR100("data", train=True, download=True, transform=tf)
+```
+
+## 下载与许可
+
+官网 <http://www.cs.toronto.edu/~kriz/cifar.html> 提供 Python / Matlab /
+Binary 三种版本；官方要求引用技术报告 "Learning Multiple Layers of Features from Tiny
+Images"（2009）；未声明开源许可，用于研究。
+
+## 评测与基线
+
+  - 指标：Top-1 准确率（错误率）。
+  - 常见水平（约值，待核实）：简单 CNN 约 75–80%；ResNet 系列在 CIFAR-10 约
+    93–95%；配合强数据增强/预训练的新模型 CIFAR-10 可到 99%
+    左右，CIFAR-100 通常低 5–15 个点。
+
+## 常见坑
+
+  - 使用 tensorflow keras api
+    `tensorflow.keras.datasets.cifar10.load_data()`
+    下载数据集时特别慢：手动下载数据集，并复制为
+    `~/.keras/datasets/cifar-10-batches-py.tar.gz`。
+  - Python 版 pickle 的键是 bytes（b"data"、b"labels"），需 `encoding="bytes"`。
+  - 展平顺序是通道优先（CHW），直接 reshape 成 32×32×3 会花屏。
+  - 图像仅 32×32，直接喂 ImageNet 预训练模型需 resize 到 224。
+  - 测试集中存在少量重复/近重复图像（待核实），严格评测可参考 CIFAR-10.1 等复现测试集。
+
+## 相关
+
+  - [Classification
+    汇总](0028_Datasets_Image2D_Classification)、[MNIST](0030_Datasets_Image2D_Classification_mnist)、[ImageNet](0031_Datasets_Image2D_Classification_ImageNet)
+  - 总入口：[Datasets Image2D](0018_Datasets_Image2D)
 
 ## Reference
 
