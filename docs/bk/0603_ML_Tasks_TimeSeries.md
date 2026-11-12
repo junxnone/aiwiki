@@ -3,7 +3,7 @@
 | Title     | ML Tasks TimeSeries                                   |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-10T09:17:17Z`                                |
-| Updated @ | `2026-11-10T09:33:18Z`                                |
+| Updated @ | `2026-11-12T07:58:30Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/603) |
 
@@ -513,8 +513,8 @@ MSE 会把概率模型的价值埋没。指标定义与例子见 [metrics
 
 -----
 
-[junxnone
-website](https://junxnone.github.io/jstools/timelinemd/?md=https://raw.githubusercontent.com/junxnone/aiwiki/refs/heads/main/docs/0611_ML_Tasks_TimeSeries_Timeline.md ":include :type=iframe width=100% height=500px")
+[ts
+timeline](https://junxnone.github.io/jstools/timelinemd/?md=https://raw.githubusercontent.com/junxnone/aiwiki/refs/heads/main/docs/0611_ML_Tasks_TimeSeries_Timeline.md ":include :type=iframe width=100% height=500px")
 
 ## 附：论文核对表（均经 arXiv API 核对编号、标题、年份）
 

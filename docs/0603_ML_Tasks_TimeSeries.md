@@ -2,7 +2,7 @@
 Title | ML Tasks TimeSeries
 -- | --
 Created @ | `2026-11-10T09:17:17Z`
-Updated @| `2026-11-10T09:33:18Z`
+Updated @| `2026-11-12T07:58:30Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/603)
 
@@ -428,7 +428,7 @@ Bai 等人的实证研究 [V: 1803.01271] 表明，因果膨胀卷积的通用 T
 
 ---
 
-[junxnone website](https://junxnone.github.io/jstools/timelinemd/?md=https://raw.githubusercontent.com/junxnone/aiwiki/refs/heads/main/docs/0611_ML_Tasks_TimeSeries_Timeline.md
+[ts timeline](https://junxnone.github.io/jstools/timelinemd/?md=https://raw.githubusercontent.com/junxnone/aiwiki/refs/heads/main/docs/0611_ML_Tasks_TimeSeries_Timeline.md
  ':include :type=iframe width=100% height=500px')
 
 
