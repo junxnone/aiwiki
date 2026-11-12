@@ -1,0 +1,81 @@
+/* TOC toggle: a single "TOC" button; when collapsed only the button is shown.
+   Same size and column as the edit / prev / next / back-to-top buttons
+   (35px, right 15px, 40px pitch); it sits right above the edit button. */
+#toc-toggle {
+  position: fixed;
+  right: 15px;
+  bottom: 260px;
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  box-sizing: border-box;
+  z-index: 1000000;
+  font: bold 12px/31px sans-serif;
+  text-align: center;
+  color: #434343;
+  background: transparent;
+  border: 2px solid #434343;
+  border-radius: 4px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: none;
+}
+
+#toc-toggle:hover {
+  opacity: 0.7;
+}
+
+/* expanded: filled button */
+body:not(.toc-collapsed) #toc-toggle {
+  color: #fff;
+  background: #434343;
+}
+
+/* expanded: the list sits to the left of the button column, flush with the
+   bottom of the screen and growing upwards */
+body aside.toc-nav {
+  top: auto !important;
+  bottom: 0 !important;
+  right: 60px !important;
+  margin-right: 0 !important;
+  max-height: calc(100% - 90px) !important;
+  /* as wide as the longest title, within [100px, 250px] */
+  width: max-content !important;
+  min-width: 100px !important;
+  max-width: 250px !important;
+}
+
+/* collapsed: hide the list and give the width back to the content */
+body.toc-collapsed aside.toc-nav {
+  display: none !important;
+}
+
+body.toc-collapsed section.content,
+body.toc-empty section.content {
+  padding-right: 0 !important;
+}
+
+/* a page without headings: no list at all */
+body.toc-empty aside.toc-nav {
+  display: none !important;
+}
+
+/* wide screens: reserve room for the list plus the button column */
+@media only screen and (min-width: 1300px) {
+  body:not(.toc-collapsed) section.content {
+    padding-right: calc(var(--toc-w, 250px) + 60px);
+  }
+}
+
+/* narrow screens: the plugin shrinks the list to a 45px strip; when the user
+   expands it, show the full list instead of the hover strip */
+@media only screen and (max-width: 1299px) {
+  body:not(.toc-collapsed) aside.toc-nav {
+    opacity: 1 !important;
+    background: var(--base-background-color, #fff) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+}
