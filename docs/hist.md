@@ -14,7 +14,7 @@
 - 2026-11-10&nbsp;&nbsp; [ML Op Shape 与数据搬运](/0621_ML_Op_Shape)&nbsp;&nbsp; :bookmark:ML :bookmark:Op :bookmark:Shape
 - 2026-11-10&nbsp;&nbsp; [ML Op Recurrent](/0618_ML_Op_Recurrent)&nbsp;&nbsp; :bookmark:ML :bookmark:Op :bookmark:Recurrent
 - 2026-11-10&nbsp;&nbsp; [经典统计时间序列模型：方法详解、理论骨架与发展脉络](/0604_ML_Tasks_TimeSeries_Classical)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Classical
-- 2026-11-10&nbsp;&nbsp; [经典统计与机器学习](/0611_ML_Tasks_TimeSeries_Timeline)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Timeline
+- 2026-11-10&nbsp;&nbsp; [时间序列模型发展时间线](/0611_ML_Tasks_TimeSeries_Timeline)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Timeline
 - 2026-11-10&nbsp;&nbsp; [ML Op Resize 与上采样相关算子](/0619_ML_Op_Resize)&nbsp;&nbsp; :bookmark:ML :bookmark:Op :bookmark:Resize
 - 2026-11-10&nbsp;&nbsp; [ML Op Embedding](/0617_ML_Op_Embedding)&nbsp;&nbsp; :bookmark:ML :bookmark:Op :bookmark:Embedding
 - 2026-11-10&nbsp;&nbsp; [时间序列基础模型：方法详解、原理与发展脉络](/0608_ML_Tasks_TimeSeries_Foundation)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Foundation
@@ -357,7 +357,7 @@
 - 2021-04-13&nbsp;&nbsp; [Pytorch Tips](/0170_Tools_Pytorch_Tips)&nbsp;&nbsp; :bookmark:Tools :bookmark:Pytorch :bookmark:Tips
 - 2021-04-12&nbsp;&nbsp; [知识蒸馏](/0207_MO_KD)&nbsp;&nbsp; :bookmark:MO :bookmark:KD
 - 2021-04-12&nbsp;&nbsp; [KD History](/0336_MO_KD_History)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:History
-- 2021-04-06&nbsp;&nbsp; [History](/0149_ML_Arch_GD_History)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:GD :bookmark:History
+- 2021-04-06&nbsp;&nbsp; [梯度下降及其优化器的发展时间线](/0149_ML_Arch_GD_History)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:GD :bookmark:History
 - 2021-04-06&nbsp;&nbsp; [GD 原理推导](/0151_ML_Arch_GD_原理)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:GD :bookmark:原理
 - 2021-03-30&nbsp;&nbsp; [TPE](/0221_ML_AutoML_HPO_BO_TPE)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:HPO :bookmark:BO :bookmark:TPE
 - 2021-03-30&nbsp;&nbsp; [Decision Tree 决策树](/0113_ML_OML_DecisionTree)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:DecisionTree

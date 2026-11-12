@@ -199,7 +199,7 @@
         - [Dice Loss](/0283_ML_Arch_Func_LossFunction_DiceLoss)
         - [Focal Loss](/0284_ML_Arch_Func_LossFunction_FocalLoss)
     - [Gradient Descent & Optimizer](/0147_ML_Arch_GD)
-      - [History](/0149_ML_Arch_GD_History)
+      - [梯度下降及其优化器的发展时间线](/0149_ML_Arch_GD_History)
       - [Momentum](/0150_ML_Arch_GD_Momentum)
       - [BGD SGD MBGD](/0148_ML_Arch_GD_xGD)
       - [GD 原理推导](/0151_ML_Arch_GD_原理)
@@ -282,7 +282,7 @@
       - [生成式时间序列模型：方法详解、原理与发展脉络](/0607_ML_Tasks_TimeSeries_Generative)
       - [机器学习时间序列模型：方法详解、原理与发展脉络](/0605_ML_Tasks_TimeSeries_ML)
       - [时间序列模型评估指标：公式、历史与现行评估方式、优缺点](/0610_ML_Tasks_TimeSeries_Metrics)
-      - [经典统计与机器学习](/0611_ML_Tasks_TimeSeries_Timeline)
+      - [时间序列模型发展时间线](/0611_ML_Tasks_TimeSeries_Timeline)
   - [Op](/0366_ML_Op)
     - [Activation Function 激活函数](/0279_ML_Op_AF)
       - [ML Op AF ReLU 系与现代激活函数](/0616_ML_Op_AF_ReLU)
@@ -595,4 +595,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1738321111</sub></kbd>
+<kbd><sub>@0929141112</sub></kbd>
