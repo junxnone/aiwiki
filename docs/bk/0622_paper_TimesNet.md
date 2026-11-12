@@ -3,7 +3,7 @@
 | Title     | paper TimesNet                                        |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-11T07:11:23Z`                                |
-| Updated @ | `2026-11-11T07:11:23Z`                                |
+| Updated @ | `2026-11-12T06:21:14Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/622) |
 
@@ -55,6 +55,14 @@ block）建模。它的定位是一个**任务通用**的时序骨干，同时�
   - 不同周期给出不同的二维变换，天然形成**模块化**设计：每个周期对应一个二维张量，分别处理再融合。
   - 对没有明显周期性的序列，论文提到变化将由趋势等主导（原文此处被截断，细节以论文为准）。
 
+<img width="1786" height="540" alt="image" src="https://github.com/user-attachments/assets/6bbf9882-5841-48d2-9829-66ee3e1262e7" />
+
+  - 一条混合多种周期的复杂 1D 波形，图中标注出 3 种显著周期
+    Period‑1、Period‑2、Period‑3；时序上每个时间点同时受周期内、跨周期两种变化共同影响，图中虚线连接
+    “不同周期相同相位” 的点，示意跨周期依赖关系。
+  - intraperiod‑variation: 存储一个完整周期内全部时间点, 周期内变化
+  - interperiod‑variation: 存储不同周期同一相位的时间点, 跨周期变化
+
 ## 方法
 
 ### 1D → 2D 变换
@@ -83,7 +91,19 @@ $$\\mathbf{X}^{i}*{2D}=\\operatorname{Reshape}*{p\_i,f\_i}\\big(\\operatorname{P
   - $\\operatorname{Padding}$：在时间维末尾补零，使长度能被整除地 reshape。
   - 按论文记号，$p\_i$ 是 2D 张量的行数，$f\_i$ 是列数；列对应周期内变化，行对应周期间变化。
 
+<img width="1875" height="694" alt="image" src="https://github.com/user-attachments/assets/67aa7534-b1d9-420d-abd7-c460841027f1" />
+
+  - 原始一维时序，经 FFT 频域分析，提取 Top-k 主频率（周期），并按每个周期分别做 Reshape（折叠），得到各自独立的 2D
+    张量
+      - 先做 padding 补齐长度，保证可以整齐折叠；
+      - 折叠成二维矩阵：维度 = 周期长度 $p\_i$ × 周期个数 $s\_i$
+      - 列方向：intraperiod-variation（周期内变化）：一列就是一个完整周期内所有时刻
+      - 行方向：interperiod-variation（跨周期变化）：同一行 = 不同周期里相同相位的时间点
+  - 送入 2D 卷积核（2D kernels）提取特征
+
 ### TimesBlock
+
+<img width="1895" height="604" alt="image" src="https://github.com/user-attachments/assets/f5e41c2f-e440-4324-95f7-f57262e6efab" />
 
 模型先用嵌入层把输入映射成
 $\\mathbf{X}^0\_{1D}=\\operatorname{Embed}(\\mathbf{X}*{1D})\\in\\mathbb{R}^{T\\times
