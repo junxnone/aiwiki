@@ -275,6 +275,8 @@
     - [Motion Detection 运动侦测](/0243_ML_Tasks_MD)
     - [MetricLearning](/0157_ML_Tasks_MetricLearning)
     - [时间序列模型综述：从 ARIMA 到时序基础模型](/0603_ML_Tasks_TimeSeries)
+      - Algos
+        - [ARIMA](/0624_ML_Tasks_TimeSeries_Algos_ARIMA)
       - [时间序列异常检测：方法详解、评估与发展脉络](/0609_ML_Tasks_TimeSeries_Anomaly)
       - [经典统计时间序列模型：方法详解、理论骨架与发展脉络](/0604_ML_Tasks_TimeSeries_Classical)
       - [深度学习时间序列模型：方法详解、原理与发展脉络](/0606_ML_Tasks_TimeSeries_Deep)
@@ -595,4 +597,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0929141112</sub></kbd>
+<kbd><sub>@1212191113</sub></kbd>
