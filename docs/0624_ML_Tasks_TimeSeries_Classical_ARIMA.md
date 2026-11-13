@@ -1,8 +1,8 @@
 ---
-Title | ML Tasks TimeSeries Algos ARIMA
+Title | ML Tasks TimeSeries Classical ARIMA
 -- | --
 Created @ | `2026-11-13T04:11:25Z`
-Updated @| `2026-11-13T04:11:25Z`
+Updated @| `2026-11-13T05:06:28Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/624)
 
