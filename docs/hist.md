@@ -1,6 +1,6 @@
 # Wiki History
 
-- 2026-11-18&nbsp;&nbsp; [ML Tasks TimeSeries Deep DeepAR](/0625_ML_Tasks_TimeSeries_Deep_DeepAR)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:DeepAR
+- 2026-11-18&nbsp;&nbsp; [DeepAR](/0625_ML_Tasks_TimeSeries_Deep_DeepAR)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:DeepAR
 - 2026-11-13&nbsp;&nbsp; [ARIMA](/0624_ML_Tasks_TimeSeries_Classical_ARIMA)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Classical :bookmark:ARIMA
 - 2026-11-11&nbsp;&nbsp; [时间序列数据集](/0623_Datasets_TS)&nbsp;&nbsp; :bookmark:Datasets :bookmark:TS
 - 2026-11-11&nbsp;&nbsp; [TimesNet](/0622_paper_TimesNet)&nbsp;&nbsp; :bookmark:paper :bookmark:TimesNet
