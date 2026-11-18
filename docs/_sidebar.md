@@ -280,6 +280,7 @@
         - [ARIMA](/0624_ML_Tasks_TimeSeries_Classical_ARIMA)
       - [深度学习时间序列模型：方法详解、原理与发展脉络](/0606_ML_Tasks_TimeSeries_Deep)
         - [DeepAR](/0625_ML_Tasks_TimeSeries_Deep_DeepAR)
+        - [TCN](/0626_ML_Tasks_TimeSeries_Deep_TCN)
       - [时间序列基础模型：方法详解、原理与发展脉络](/0608_ML_Tasks_TimeSeries_Foundation)
       - [生成式时间序列模型：方法详解、原理与发展脉络](/0607_ML_Tasks_TimeSeries_Generative)
       - [机器学习时间序列模型：方法详解、原理与发展脉络](/0605_ML_Tasks_TimeSeries_ML)
@@ -597,4 +598,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1732361118</sub></kbd>
+<kbd><sub>@1751251118</sub></kbd>
