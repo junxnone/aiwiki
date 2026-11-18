@@ -2,12 +2,12 @@
 Title | ML Tasks TimeSeries Deep DeepAR
 -- | --
 Created @ | `2026-11-18T09:27:05Z`
-Updated @| `2026-11-18T09:27:05Z`
+Updated @| `2026-11-18T09:31:31Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/625)
 
 ---
-# ML Tasks TimeSeries Deep DeepAR
+# DeepAR
 
 DeepAR 是 Amazon 提出的**概率时间序列预测**模型（论文 *DeepAR: Probabilistic Forecasting with Autoregressive Recurrent Networks*，Salinas, Flunkert, Gasthaus, Januschowski，arXiv 2017，后发表于 International Journal of Forecasting 2020）。它用一个**自回归 RNN（多层 LSTM）**，在**大量相关时间序列上联合训练一个全局模型**，每一步不输出单个预测值，而是输出**目标分布的参数**，从而直接得到预测区间。
 
