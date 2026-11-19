@@ -1,5 +1,13 @@
 # Wiki History
 
+- 2026-11-19&nbsp;&nbsp; [Moirai](/0657_ML_Tasks_TimeSeries_Foundation_Moirai)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Foundation :bookmark:Moirai
+- 2026-11-19&nbsp;&nbsp; [Timer](/0656_ML_Tasks_TimeSeries_Foundation_Timer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Foundation :bookmark:Timer
+- 2026-11-19&nbsp;&nbsp; [TTM](/0655_ML_Tasks_TimeSeries_Foundation_TTM)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Foundation :bookmark:TTM
+- 2026-11-19&nbsp;&nbsp; [TimesFM](/0654_ML_Tasks_TimeSeries_Foundation_TimesFM)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Foundation :bookmark:TimesFM
+- 2026-11-19&nbsp;&nbsp; [Lag-Llama](/0653_ML_Tasks_TimeSeries_Foundation_Lag_Llama)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Foundation :bookmark:Lag :bookmark:Llama
+- 2026-11-19&nbsp;&nbsp; [TimeGPT-1](/0652_ML_Tasks_TimeSeries_Foundation_TimeGPT_1)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Foundation :bookmark:TimeGPT :bookmark:1
+- 2026-11-19&nbsp;&nbsp; [Time-LLM](/0651_ML_Tasks_TimeSeries_Foundation_Time_LLM)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Foundation :bookmark:Time :bookmark:LLM
+- 2026-11-19&nbsp;&nbsp; [GPT4TS](/0650_ML_Tasks_TimeSeries_Foundation_GPT4TS)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Foundation :bookmark:GPT4TS
 - 2026-11-19&nbsp;&nbsp; [TranAD](/0649_ML_Tasks_TimeSeries_Anomaly_TranAD)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Anomaly :bookmark:TranAD
 - 2026-11-19&nbsp;&nbsp; [Anomaly Transformer](/0648_ML_Tasks_TimeSeries_Anomaly_AnomalyTransformer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Anomaly :bookmark:AnomalyTransformer
 - 2026-11-19&nbsp;&nbsp; [CSDI](/0647_ML_Tasks_TimeSeries_Generative_CSDI)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Generative :bookmark:CSDI

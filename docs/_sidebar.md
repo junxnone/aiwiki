@@ -291,6 +291,17 @@
         - [TimeMixer](/0633_ML_Tasks_TimeSeries_Deep_TimeMixer)
         - [TimesNet](/0631_ML_Tasks_TimeSeries_Deep_TimesNet)
       - [时间序列基础模型：方法详解、原理与发展脉络](/0608_ML_Tasks_TimeSeries_Foundation)
+        - [GPT4TS](/0650_ML_Tasks_TimeSeries_Foundation_GPT4TS)
+        - Lag
+          - [Lag-Llama](/0653_ML_Tasks_TimeSeries_Foundation_Lag_Llama)
+        - [Moirai](/0657_ML_Tasks_TimeSeries_Foundation_Moirai)
+        - [TTM](/0655_ML_Tasks_TimeSeries_Foundation_TTM)
+        - Time
+          - [Time-LLM](/0651_ML_Tasks_TimeSeries_Foundation_Time_LLM)
+        - TimeGPT
+          - [TimeGPT-1](/0652_ML_Tasks_TimeSeries_Foundation_TimeGPT_1)
+        - [Timer](/0656_ML_Tasks_TimeSeries_Foundation_Timer)
+        - [TimesFM](/0654_ML_Tasks_TimeSeries_Foundation_TimesFM)
       - [生成式时间序列模型：方法详解、原理与发展脉络](/0607_ML_Tasks_TimeSeries_Generative)
         - [CSDI](/0647_ML_Tasks_TimeSeries_Generative_CSDI)
         - [TS2Vec](/0646_ML_Tasks_TimeSeries_Generative_TS2Vec)
@@ -624,4 +635,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1028281119</sub></kbd>
+<kbd><sub>@1043101119</sub></kbd>

@@ -5365,6 +5365,51 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki ML Tasks TimeSeries Foundation GPT4TS",
+      "group": 5,
+      "title": "GPT4TS",
+      "url": "https://junxnone.github.io/aiwiki/#/0650_ML_Tasks_TimeSeries_Foundation_GPT4TS",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Tasks TimeSeries Foundation TimesFM",
+      "group": 5,
+      "title": "TimesFM",
+      "url": "https://junxnone.github.io/aiwiki/#/0654_ML_Tasks_TimeSeries_Foundation_TimesFM",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Tasks TimeSeries Foundation TTM",
+      "group": 5,
+      "title": "TTM",
+      "url": "https://junxnone.github.io/aiwiki/#/0655_ML_Tasks_TimeSeries_Foundation_TTM",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Tasks TimeSeries Foundation Timer",
+      "group": 5,
+      "title": "Timer",
+      "url": "https://junxnone.github.io/aiwiki/#/0656_ML_Tasks_TimeSeries_Foundation_Timer",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Tasks TimeSeries Foundation Moirai",
+      "group": 5,
+      "title": "Moirai",
+      "url": "https://junxnone.github.io/aiwiki/#/0657_ML_Tasks_TimeSeries_Foundation_Moirai",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Tasks Image Classification MobileNet V1",
       "group": 6,
       "title": "MobileNet V1",
@@ -5531,6 +5576,33 @@
       "group": 6,
       "title": "S-Mamba",
       "url": "https://junxnone.github.io/aiwiki/#/0644_ML_Tasks_TimeSeries_Transformer_S_Mamba",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Tasks TimeSeries Foundation Time LLM",
+      "group": 6,
+      "title": "Time-LLM",
+      "url": "https://junxnone.github.io/aiwiki/#/0651_ML_Tasks_TimeSeries_Foundation_Time_LLM",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Tasks TimeSeries Foundation TimeGPT 1",
+      "group": 6,
+      "title": "TimeGPT-1",
+      "url": "https://junxnone.github.io/aiwiki/#/0652_ML_Tasks_TimeSeries_Foundation_TimeGPT_1",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Tasks TimeSeries Foundation Lag Llama",
+      "group": 6,
+      "title": "Lag-Llama",
+      "url": "https://junxnone.github.io/aiwiki/#/0653_ML_Tasks_TimeSeries_Foundation_Lag_Llama",
       "visible": true,
       "expand": true,
       "childLinks": []
@@ -9572,6 +9644,41 @@
     {
       "source": "aiwiki ML Tasks TimeSeries Generative",
       "target": "aiwiki ML Tasks TimeSeries Generative CSDI",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks TimeSeries Foundation",
+      "target": "aiwiki ML Tasks TimeSeries Foundation GPT4TS",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks TimeSeries Foundation",
+      "target": "aiwiki ML Tasks TimeSeries Foundation TimesFM",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks TimeSeries Foundation",
+      "target": "aiwiki ML Tasks TimeSeries Foundation TTM",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks TimeSeries Foundation",
+      "target": "aiwiki ML Tasks TimeSeries Foundation Timer",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks TimeSeries Foundation",
+      "target": "aiwiki ML Tasks TimeSeries Foundation Moirai",
       "value": 5,
       "visible": true,
       "expand": true
