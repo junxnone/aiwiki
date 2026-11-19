@@ -2,7 +2,7 @@
 Title | ML Tasks TimeSeries Deep DeepAR
 -- | --
 Created @ | `2026-11-18T09:27:05Z`
-Updated @| `2026-11-19T09:48:29Z`
+Updated @| `2026-11-19T09:48:57Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/625)
 
@@ -134,8 +134,7 @@ $$
 \nu_i = 1 + \frac{1}{t_0} \sum_{t=1}^{t_0} z_{i,t} \qquad \text{（条件区间内的均值 + 1）}
 $$
 
-其中：$
-u_i$ 是第 $i$ 条序列的尺度；$t_0$ 是预测起点，求和遍及条件区间内的观测；$z_{i,t}$ 是目标值；加 1 避免全零序列的尺度为 0。
+其中：$\nu_i$ 是第 $i$ 条序列的尺度；$t_0$ 是预测起点，求和遍及条件区间内的观测；$z_{i,t}$ 是目标值；加 1 避免全零序列的尺度为 0。
 
 $$
 \text{输入：}\quad \frac{z_{i,t-1}}{\nu_i}
@@ -401,6 +400,7 @@ PatchTST 等 | Transformer | 否 | 是 | 长序列预测
 - [GluonTS - DeepAR 源码](https://github.com/awslabs/gluonts/tree/dev/src/gluonts/torch/model/deepar)
 - [Amazon SageMaker DeepAR](https://docs.aws.amazon.com/sagemaker/latest/dg/deepar.html)
 - [PyTorch Forecasting - DeepAR](https://pytorch-forecasting.readthedocs.io/en/stable/api/pytorch_forecasting.models.deepar.DeepAR.html)
+
 
 
 
