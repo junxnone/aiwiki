@@ -3,7 +3,7 @@
 | Title     | ML Tasks TimeSeries Classical ARIMA                   |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-13T04:11:25Z`                                |
-| Updated @ | `2026-11-13T05:06:28Z`                                |
+| Updated @ | `2026-11-19T09:46:54Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/624) |
 
@@ -22,6 +22,8 @@ ARIMA 讲清楚。更多经典方法（ETS、Theta、状态空间等）见
 $$\\text{ARIMA}(p,d,q)=\\underbrace{\\text{AR}(p)}*{\\text{过去的值}}+\\underbrace{\\text{I}(d)}*{\\text{差分
 }d\\text{ 次}}+\\underbrace{\\text{MA}(q)}\_{\\text{过去的误差}}$$
 
+其中：$p$ 是 AR 阶数；$d$ 是差分次数；$q$ 是 MA 阶数；括号下方标注分别说明三部分的含义，ARIMA 即这三者的组合。
+
 三个参数：
 
 | 参数  | 含义                 | 直觉                             |
@@ -29,6 +31,8 @@ $$\\text{ARIMA}(p,d,q)=\\underbrace{\\text{AR}(p)}*{\\text{过去的值}}+\\unde
 | $p$ | AR（自回归）阶数          | 用过去 $p$ 个**观测值**预测当前值          |
 | $d$ | 差分次数（I，Integrated） | 做 $d$ 次差分，把趋势去掉，变成平稳序列         |
 | $q$ | MA（滑动平均）阶数         | 用过去 $q$ 个\*\*预测误差（冲击）\*\*修正当前值 |
+
+表中：「参数」是 ARIMA 的三个阶数，「含义」是其名称，「直觉」解释其作用；三者分别对应上式的 AR、I、MA 三部分。
 
 ## 从 AR、MA 到 ARIMA
 
@@ -38,17 +42,27 @@ $$\\text{ARIMA}(p,d,q)=\\underbrace{\\text{AR}(p)}*{\\text{过去的值}}+\\unde
 
 $$y\_t=c+\\phi\_1y\_{t-1}+\\cdots+\\phi\_py\_{t-p}+\\varepsilon\_t$$
 
+其中：$y\_t$ 是 $t$ 时刻观测；$c$ 是常数项；$\\phi\_i$ 是第 $i$ 个 AR 系数，反映 $i$
+期前的观测对当前值的影响；$p$ 是 AR 阶数；$\\varepsilon\_t$ 是白噪声。
+
 例如 AR(1)：$y\_t=\\phi y\_{t-1}+\\varepsilon\_t$，$\\phi$ 越接近 1，序列“记忆”越长。
 
 **MA($q$)：当前值是过去噪声的线性组合**
 
 $$y\_t=\\mu+\\varepsilon\_t+\\theta\_1\\varepsilon\_{t-1}+\\cdots+\\theta\_q\\varepsilon\_{t-q}$$
 
+其中：$\\mu$ 是序列均值；$\\theta\_j$ 是第 $j$ 个 MA 系数，表示 $j$
+期前的冲击对当前值的影响；$\\varepsilon\_{t-j}$ 是 $j$
+期前的噪声；$q$ 是 MA 阶数。
+
 注意这里的 MA 和“滑动平均平滑”不是一回事：它是**对噪声的加权**，描述“一次冲击会影响之后几期”。
 
 **ARMA($p,q$)：两者合一**，适用于**平稳**序列：
 
 $$y\_t=c+\\sum\_{i=1}^{p}\\phi\_iy\_{t-i}+\\varepsilon\_t+\\sum\_{j=1}^{q}\\theta\_j\\varepsilon\_{t-j}$$
+
+其中：$y\_t$ 是 $t$ 时刻观测；$c$ 是常数项；$\\phi\_i$ 是第 $i$ 个 AR 系数；$\\theta\_j$ 是第
+$j$ 个 MA 系数；$\\varepsilon\_t$ 是当前噪声；$p,q$ 分别是 AR、MA 阶数。
 
 **ARIMA($p,d,q$)：先差分，再用 ARMA**。一阶差分 $\\nabla y\_t=y\_t-y\_{t-1}$，对差分后的序列
 $w\_t=\\nabla^d y\_t$ 套 ARMA($p,q$) 模型。
@@ -60,10 +74,17 @@ $w\_t=\\nabla^d y\_t$ 套 ARMA($p,q$) 模型。
 $$\\phi(B)=1-\\phi\_1B-\\cdots-\\phi\_pB^p,\\qquad
 \\theta(B)=1+\\theta\_1B+\\cdots+\\theta\_qB^q$$
 
+其中：$\\phi(B)$ 是 AR 多项式，系数 $\\phi\_1,\\dots,\\phi\_p$ 对应过去 $p$
+个观测；$\\theta(B)$ 是 MA 多项式，系数 $\\theta\_1,\\dots,\\theta\_q$ 对应过去
+$q$ 个冲击；二者阶数分别为 $p$ 与 $q$。
+
 则 ARIMA($p,d,q$) 可以紧凑地写成：
 
 $$\\phi(B),(1-B)^d,y\_t=c+\\theta(B),\\varepsilon\_t,\\qquad
 \\varepsilon\_t\\sim\\mathrm{WN}(0,\\sigma^2)$$
+
+其中：$B$ 是滞后算子；$(1-B)^d$ 表示 $d$ 次差分；$\\phi(B)$、$\\theta(B)$ 是 AR、MA
+多项式；$c$ 是常数项；$\\varepsilon\_t$ 是白噪声（WN），均值 0、方差 $\\sigma^2$。
 
   - 平稳性条件：$\\phi(z)=0$ 的根都在单位圆外。
   - 可逆性条件：$\\theta(z)=0$ 的根都在单位圆外（保证 MA 部分有唯一解，不然 $\\theta$ 与
@@ -79,6 +100,8 @@ $$\\phi(B),(1-B)^d,y\_t=c+\\theta(B),\\varepsilon\_t,\\qquad
 | 趋势（均值随时间漂移） | 一阶差分 $y\_t-y\_{t-1}$（$d=1$）；变化加速时再差一次（$d=2$） |
 | 季节性（周期 $m$） | 季节差分 $y\_t-y\_{t-m}$（见下面的 SARIMA）            |
 | 波动幅度随水平增大   | 先取对数或 Box–Cox 变换，再差分                         |
+
+表中：「现象」是序列的常见特征，「处理」是对应的变换或差分方法（$m$ 为季节周期）。
 
 **怎么判断是否平稳、要差几次：**
 
@@ -99,11 +122,17 @@ $$\\phi(B),(1-B)^d,y\_t=c+\\theta(B),\\varepsilon\_t,\\qquad
 | MA($q$)     | 在滞后 $q$ 之后**截尾** | 拖尾               |
 | ARMA($p,q$) | 拖尾               | 拖尾               |
 
+表中：「模型」是三类模型，「ACF /
+PACF」说明其自相关与偏自相关的典型形态：截尾指在某个滞后之后突然降到零附近，拖尾指逐渐衰减。据此可由截尾位置初定
+$p$ 与 $q$。
+
   - PACF 在 $p$ 之后截尾 → 取 AR($p$)；ACF 在 $q$ 之后截尾 → 取 MA($q$)。
   - 混合模型两者都拖尾，靠看图很难定阶，实践中更多用信息准则（AIC、AICc、BIC）在一组候选阶数里比较，选最小的。
   - 注意：**只有在差分阶数 $d$ 相同的前提下，才能比较不同模型的 AIC**，不同 $d$ 之间的似然不可比。
 
 ## 建模流程（Box–Jenkins）
+
+下图概括 Box–Jenkins 的迭代建模流程。
 
 ``` mermaid
 graph TD
@@ -116,6 +145,16 @@ graph TD
     F -->|否| D
     F -->|是| G[预测 + 预测区间]
 ```
+
+图中：
+
+  - 方框是步骤，菱形是判断，箭头是流程方向。
+  - 流程从原始序列出发：先判断是否平稳（图、ADF、KPSS），不平稳则做变换加差分确定 $d$，并回到判断，直到平稳。
+  - 平稳后看 ACF/PACF 初定 $p,q$，用最大似然估计参数，再检查残差是否为白噪声（Ljung–Box /
+    ACF）：不是则回到定阶，是则进入预测与区间。
+  - 关键结论：Box–Jenkins 是"识别 → 估计 → 诊断"的迭代循环，诊断不通过就重新定阶。
+
+<!-- end list -->
 
 1.  **识别**：差分到平稳，看 ACF/PACF 或用准则搜索，得到候选 $(p,d,q)$。
 2.  **估计**：通常用最大似然（也可用条件最小二乘）。含 MA
@@ -133,6 +172,9 @@ $h$ 步预测是
 
 $$\\hat y\_{T+h}=\\phi^h,y\_T$$
 
+其中：$\\hat y\_{T+h}$ 是在时刻 $T$ 对未来第 $h$ 步的预测；$\\phi$ 是 AR(1)
+系数，$\\lvert\\phi\\rvert\<1$；$\\phi^h$ 随 $h$ 增大而衰减；$y\_T$ 是最后一个观测。
+
 若 $\\phi=0.8$，$y\_T=10$，预测依次为 $8,\\ 6.4,\\ 5.12,\\
 \\dots\\to0$：**越远越趋近均值**。
 
@@ -145,6 +187,10 @@ y\_{T+h}=y\_T$，**永不回归**。
 | -------- | ---------------- | ---------------------------------------------------------------------------- | ----- |
 | 平稳 AR(1) | $\\phi^{j}$，逐渐消失 | $\\sigma^2\\dfrac{1-\\phi^{2h}}{1-\\phi^2}\\to\\dfrac{\\sigma^2}{1-\\phi^2}$ | 变宽后趋平 |
 | 随机游走     | 1，永久             | $h,\\sigma^2$                                                                | 一直变宽  |
+
+表中：「模型」是对比的两种过程，「冲击的长期影响」说明一次冲击随时间的作用（$\\phi^{j}$ 为第 $j$ 期后的残余影响），「$h$
+步预测误差方差」给出方差公式（$\\sigma^2$ 是噪声方差，$\\phi$ 是 AR(1) 系数，$h$
+是预测步长），「区间」是长期形状。结论：平稳过程区间趋平，随机游走区间持续变宽。
 
 另外要注意：模型给出的预测区间默认把估计出来的参数当作真值，所以**实际不确定性比区间显示的更大，区间通常偏窄**；并且区间还依赖残差正态的假设。
 
@@ -162,6 +208,9 @@ y\_{T+h}=y\_T$，**永不回归**。
 | 简单指数平滑（SES） | (0,1,1)     | $\\theta=\\alpha-1$，即 $\\alpha=1+\\theta$ |
 | Holt 线性趋势   | (0,2,2)     | 近似对应，是教材里的标准结论                            |
 
+表中：「模型」是常见模型，「ARIMA 写法」是对应的 $(p,d,q)$，「说明」解释其含义；SES 一行中 $\\theta$ 是
+MA(1) 系数，$\\alpha$ 是 SES 平滑系数。结论：ARIMA 覆盖了朴素预测、AR、MA 与指数平滑等一大族方法。
+
 这说明 ARIMA 与指数平滑（ETS）是**互补的两个族**，并不是一个替代另一个：ETS 直接建模“水平、趋势、季节怎么演化”，ARIMA
 建模“自相关结构”。实践中常把两者都拟合，再平均。
 
@@ -171,6 +220,11 @@ y\_{T+h}=y\_T$，**永不回归**。
 ARIMA($p,d,q$)($P,D,Q$)$\_m$：
 
 $$\\Phi(B^m),\\phi(B),(1-B)^d(1-B^m)^D,y\_t=c+\\Theta(B^m),\\theta(B),\\varepsilon\_t$$
+
+其中：$B$ 是滞后算子，$B^m$ 表示滞后 $m$ 期；$\\phi(B)$、$\\theta(B)$ 是非季节 AR、MA
+多项式；$\\Phi(B^m)$、$\\Theta(B^m)$ 是季节 AR、MA 多项式，阶数分别为
+$P$、$Q$；$d$、$D$ 分别是非季节与季节差分次数；$m$ 是季节周期；$c$ 是常数项；$\\varepsilon\_t$
+是白噪声。
 
   - 大写 $P,D,Q$ 是**季节部分**的阶数：季节自回归、季节差分次数、季节滑动平均，作用在滞后 $m,2m,\\dots$ 上。
   - 典型的月度模型：ARIMA(1,1,1)(1,1,1)$\_{12}$。
@@ -251,6 +305,8 @@ sf = StatsForecast(models=[AutoARIMA(season_length=12)], freq="MS")
 | pmdarima      | `auto_arima`        | 自动选阶（对应 R 的 `auto.arima`），底层调用 statsmodels，适合单条序列 |
 | statsforecast | `AutoARIMA`         | 自动选阶，编译加速，适合成千上万条序列                               |
 
+表中：「库」与「函数」是三个常见接口，「定位」说明其适用场景：单条序列手动分析、单条序列自动选阶、海量序列批量选阶。
+
 ### statsmodels：`ARIMA`
 
 签名见
@@ -273,6 +329,9 @@ ARIMA(endog, exog=None, order=(0, 0, 0), seasonal_order=(0, 0, 0, 0), trend=None
 | `enforce_invertibility` | `True`      | 要求 MA 参数对应可逆过程                                                        |
 | `concentrate_scale`     | `False`     | 把噪声方差从似然里“集中”掉，少估计一个参数                                                |
 | `missing`               | `'none'`    | 缺失值处理：`'none'` 不检查、`'drop'` 丢弃、`'raise'` 报错                           |
+
+表中：「参数」是 `ARIMA` 构造参数，「默认值」是其默认取值，「说明」解释含义；其中 `trend` 与 `order`
+的联动最容易出错（见下文）。
 
 **`trend` 的默认规则最容易踩坑**：不指定时，没有差分的模型默认 `'c'`（带常数），**有差分的模型默认
 `'n'`（不带趋势项）**，见 [trend
@@ -301,6 +360,8 @@ Kalman 滤波计算似然后做最大似然）。可选的方法：
 | `'hannan_rissanen'`      | 两步回归估计，不做最大似然  | 速度快，也支持固定参数                                     |
 | `'burg'`、`'yule_walker'` | AR 的矩估计        | 只能用于纯 AR 模型                                     |
 
+表中：「`method`」是估计方法，「做法」概述其原理，「备注」给出适用范围与限制；默认 `statespace` 最通用。
+
 #### 结果对象常用成员
 
 | 成员                                                                   | 用途                                                             |
@@ -317,6 +378,9 @@ Kalman 滤波计算似然后做最大似然）。可选的方法：
 | `test_serial_correlation`、`test_normality`、`test_heteroskedasticity` | 残差的自相关、正态性、异方差检验                                               |
 | `simulate(nsimulations)`                                             | 按拟合的模型模拟样本路径                                                   |
 | `append`、`extend`、`apply`                                            | 加入新数据：`append` 可以重新拟合，`extend` 保持参数不变，`apply` 在新数据上应用已有参数      |
+
+表中：「成员」是拟合结果对象的方法或属性，「用途」说明其作用；常用诊断依赖 `summary()`、`resid` 与
+`plot_diagnostics()`。
 
 ### pmdarima：`auto_arima`
 
@@ -336,6 +400,9 @@ Kalman 滤波计算似然后做最大似然）。可选的方法：
 | `with_intercept`                    | `'auto'`        | 是否带截距：`'auto'` 时，差分总次数 $d+D$ 为 0 或 1 就带，否则不带，见 [源码](https://github.com/alkaline-ml/pmdarima/blob/4c2dfccb28f64d2c00a5e10b59c1d1a3e16576a9/pmdarima/arima/auto.py#L623-L624) |
 | `n_jobs`                            | 1               | 并行数；注意逐步搜索不能并行                                                                                                                                                              |
 | `trace`                             | `False`         | 打印每个候选模型的结果，调试时很有用                                                                                                                                                          |
+
+表中：「参数」是 `auto_arima` 的关键参数，「默认值」是其默认取值，「说明」解释含义；注意 `stepwise` 与
+`max_order` 决定搜索范围与耗时。
 
 自动确定 $d$ 的代码在
 [这几行](https://github.com/alkaline-ml/pmdarima/blob/4c2dfccb28f64d2c00a5e10b59c1d1a3e16576a9/pmdarima/arima/auto.py#L544-L560)：先用
@@ -360,6 +427,9 @@ R 的 `auto.arima`。关键参数：
 | `blambda`、`biasadj`                         | `None`、`False`    | Box–Cox 变换的 $\\lambda$（可设 `'auto'`），以及反变换时是否修正偏差 |
 | `prediction_intervals`                      | `None`            | 用共形预测（`ConformalIntervals`）给预测区间                 |
 
+表中：「参数」是 `AutoARIMA` 的构造参数，「默认值」是其默认取值，「说明」解释含义（$d,D$ 为差分阶数，$\\lambda$ 为
+Box–Cox 参数）。
+
 ### 同一个阶数，不同库的结果为什么不一样
 
 | 差异点  | 说明                                                                                                                                                        |
@@ -368,6 +438,8 @@ R 的 `auto.arima`。关键参数：
 | 信息准则 | `auto_arima` 默认 AIC，statsforecast 默认 AICc；小样本时两者选出的阶数可能不同                                                                                                 |
 | 差分检验 | 三者默认都用 KPSS，但检验的实现和显著性水平有细微差别，可能得到不同的 $d$                                                                                                                 |
 | 估计算法 | 初值、优化器和收敛判据不同，同样的 $(p,d,q)$ 参数估计会有小差别                                                                                                                     |
+
+表中：「差异点」是不同库结果出现差别的原因，「说明」给出各库的默认行为。对比时要先对齐阶数、趋势项与信息准则。
 
 所以**比较不同库的结果时，要先把阶数、趋势项和信息准则对齐**，否则差异可能只是默认值造成的。
 
@@ -378,6 +450,8 @@ R 的 `auto.arima`。关键参数：
 statsmodels 为主线，再看自动选阶函数在它之上多做了什么。每一步都附源码 permalink（点链接后的 `▸ 代码` 展开）。
 
 ### statsmodels：从 `ARIMA(y, ...)` 到预测
+
+下图概括 statsmodels 从构造 `ARIMA` 到预测的完整流程。
 
 ``` mermaid
 graph TD
@@ -390,6 +464,15 @@ graph TD
     F --> G["forecast / get_forecast<br/>Kalman 预测 + 预测区间"]
 ```
 
+图中：
+
+  - 方框是流程步骤，菱形（花括号）是分支判断，箭头表示执行顺序。
+  - 构造 `ARIMA` 后先确定趋势默认值并校验（$d\>0$ 不能带常数）；然后按 `fit(method)` 分支：默认的
+    `statespace` 走 MLE 迭代，其他方法走"手动差分 → 矩/回归估计"。
+  - 两条路径汇合到 `ARIMAResults`（参数、协方差、残差、信息准则），再由 `forecast / get_forecast`
+    用 Kalman 预测得到预测值和区间。
+  - 关键结论：默认路径把差分放进状态向量并用 Kalman 滤波似然估计；其他路径才会手动差分。
+
 | 步骤          | 做了什么                                                                                           | 源码                                                                                                                                                                                                                                                                                                     |
 | ----------- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | 1\. 构造      | 按 $d$ 决定默认趋势，并检查“差分模型不能带低阶趋势项”（如 $d=1$ 不能带常数）                                                  | [model.py L151-L190](https://github.com/statsmodels/statsmodels/blob/27e747596049cc1a9b06e113af739fdeec59cecc/statsmodels/tsa/arima/model.py#L151-L190)                                                                                                                                                |
@@ -400,6 +483,10 @@ graph TD
 | 6\. 算似然     | 把参数写进状态空间矩阵，再用 Kalman 滤波得到每一步的预测误差，累加成对数似然                                                     | [mlemodel.py L1066-L1077](https://github.com/statsmodels/statsmodels/blob/27e747596049cc1a9b06e113af739fdeec59cecc/statsmodels/tsa/statespace/mlemodel.py#L1066-L1077)                                                                                                                                 |
 | 7\. 优化      | 默认 L-BFGS、最多 50 次迭代，对数似然是非凸的，所以可能收敛到局部最优或不收敛                                                   | [mlemodel.py L532-L551](https://github.com/statsmodels/statsmodels/blob/27e747596049cc1a9b06e113af739fdeec59cecc/statsmodels/tsa/statespace/mlemodel.py#L532-L551)                                                                                                                                     |
 | 8\. 非状态空间方法 | 先手动差分（并发出警告），再用 Yule–Walker、Burg、Hannan–Rissanen 等估计，检查平稳性与可逆性，最后用估计出的参数跑一遍 `smooth` 建结果对象     | [model.py L418-L441](https://github.com/statsmodels/statsmodels/blob/27e747596049cc1a9b06e113af739fdeec59cecc/statsmodels/tsa/arima/model.py#L418-L441)、[L473-L515](https://github.com/statsmodels/statsmodels/blob/27e747596049cc1a9b06e113af739fdeec59cecc/statsmodels/tsa/arima/model.py#L473-L515) |
+
+表中：「步骤」是 statsmodels 拟合 `ARIMA` 的内部环节，「做了什么」说明其作用，「源码」是对应的
+permalink。主线：构造 → 选估计方法 → 建状态空间表示 → 起始参数 → 参数变换 → Kalman 滤波算似然
+→ 优化；非状态空间方法走手动差分的另一条路径。
 
 **几个值得记住的点：**
 
@@ -424,6 +511,8 @@ ARMA、ETS、结构时序模型能用同一套流程估计。
 `auto_arima` 把“选 $d$、选 $D$、搜索 $(p,q,P,Q)$”做成一条流水线，每个候选模型最终仍然交给
 statsmodels 拟合，最后按信息准则挑出最优的。
 
+下图概括 `auto_arima` 的流水线：先定差分阶数，再逐步搜索最优阶数。
+
 ``` mermaid
 graph TD
     A["auto_arima(y, ...)"] --> B["ndiffs: 单位根检验定 d<br/>nsdiffs: 季节检验定 D"]
@@ -440,6 +529,12 @@ graph TD
 | 3\. 初始模型  | 先拟合几个固定的“种子”模型：起始阶数 $(p,d,q)$、全零模型、基本 AR(1)、基本 MA(1)，有截距时再试一次不带常数的全零模型，把当前最优的更新为起点         | [\_auto\_solvers.py L287-L315](https://github.com/alkaline-ml/pmdarima/blob/4c2dfccb28f64d2c00a5e10b59c1d1a3e16576a9/pmdarima/arima/_auto_solvers.py#L287-L315)                                                                                                                                              |
 | 4\. 邻域搜索  | 循环地把 $p,q,P,Q$ 各加 1 或减 1（以及它们的组合）、切换常数，只要找到信息准则更小的模型就以它为新起点继续；一轮没有改进就停止                    | [\_auto\_solvers.py L317-L337](https://github.com/alkaline-ml/pmdarima/blob/4c2dfccb28f64d2c00a5e10b59c1d1a3e16576a9/pmdarima/arima/_auto_solvers.py#L317-L337)                                                                                                                                              |
 | 5\. 比较与缓存 | 每个 `(order, seasonal_order, constant)` 只拟合一次并缓存；新模型的信息准则更小就替换最优；最多拟合 100 次（`max_steps` 可改） | [\_auto\_solvers.py L220-L271](https://github.com/alkaline-ml/pmdarima/blob/4c2dfccb28f64d2c00a5e10b59c1d1a3e16576a9/pmdarima/arima/_auto_solvers.py#L220-L271)、[L206-L208](https://github.com/alkaline-ml/pmdarima/blob/4c2dfccb28f64d2c00a5e10b59c1d1a3e16576a9/pmdarima/arima/_auto_solvers.py#L206-L208) |
+
+图中：
+
+  - 每个方框是 `auto_arima` 流水线的一个阶段，箭头表示执行顺序。
+  - 先用单位根检验定 $d$、季节检验定 $D$，再根据 $d+D$ 决定是否带截距。
+  - 之后进入 Hyndman–Khandakar 逐步搜索：逐个拟合候选模型并比较信息准则，最后返回最优模型。
 
 这套逐步搜索是**贪心**的：只沿着“信息准则变小”的方向走，不保证找到全局最优，但能把需要拟合的模型数控制在很小的范围（`stepwise=False`
 才会遍历所有组合，慢很多）。
@@ -458,6 +553,9 @@ statsmodels。需要注意它**默认会用近似来提速**：
 | 4\. 漂移与均值   | 仅当 $d+D=1$ 才允许漂移、仅当 $d+D=0$ 才允许均值                                                 | [arima.py L2413-L2415](https://github.com/Nixtla/statsforecast/blob/40323391bb3548447aea740b0a654ceeebc1f8ba/python/statsforecast/arima.py#L2413-L2415)                                                                                                                                                                                                                                                                                               |
 | 5\. 逐步搜索    | 循环拟合邻域模型，直到没有改进或试满 `nmodels` 个（默认 94）                                             | [arima.py L2541-L2542](https://github.com/Nixtla/statsforecast/blob/40323391bb3548447aea740b0a654ceeebc1f8ba/python/statsforecast/arima.py#L2541-L2542)                                                                                                                                                                                                                                                                                               |
 
+表中：「步骤」是 AutoARIMA 的内部环节，「做了什么」说明其作用，「源码」是对应的 permalink；关键点是默认用 CSS
+近似加速、搜索后对最优模型重新精确拟合。
+
 **三者的流水线对比：**
 
 |       | statsmodels `ARIMA` | pmdarima `auto_arima`           | statsforecast `AutoARIMA` |
@@ -466,6 +564,9 @@ statsmodels。需要注意它**默认会用近似来提速**：
 | 拟合引擎  | Kalman 滤波 + 最大似然    | 调用 statsmodels                  | 自己实现的似然，必要时用 CSS 近似       |
 | 速度    | 单个模型较慢              | 多个候选 × 单个较慢                     | 为海量序列优化                   |
 | 搜索方式  | 无                   | Hyndman–Khandakar 逐步搜索，最多 100 次 | 同样的逐步搜索，最多 `nmodels` 个    |
+
+表中：对比三种实现的流水线。「阶数从哪来」说明是手动还是自动；「拟合引擎」是估计似然的实现；「速度」是量级对比；「搜索方式」是自动选阶的方法。结论：statsmodels
+适合单条序列的精细分析，pmdarima 提供自动选阶，statsforecast 为海量序列优化。
 
 ## 常见问题
 
@@ -481,6 +582,8 @@ statsmodels。需要注意它**默认会用近似来提速**：
 | 缺失值和不规则间隔   | 先插补或重采样到规则频率（如 `asfreq`）                                |
 | 数据太短        | 一般至少需要几十个点，样本很少时参数估计不稳定                                 |
 
+表中：「问题」是实践中常见的现象，「原因与对策」解释成因并给出处理办法；遇到异常结果时可先按此表排查。
+
 ## 优缺点与适用场景
 
 |        |                                                         |
@@ -488,6 +591,8 @@ statsmodels。需要注意它**默认会用近似来提速**：
 | **优点** | 理论完备；能刻画各种自相关结构；可加外生变量；有解析预测区间；可解释（参数有明确含义）；常常是很难被击败的基线 |
 | **缺点** | 线性模型；每条序列单独拟合；识别阶数靠经验或搜索；对结构突变敏感；强季节和长周期时代价高            |
 | **适用** | 自相关明显的单条序列；业务指标、库存的中短期预测；作为任何新模型的**对比基线**               |
+
+表中：空表头的两列分别是评价维度（优点 / 缺点 / 适用）和对应说明，概括 ARIMA 的特点；可与 ETS、Theta 的同类表对照。
 
 ## 评估
 
