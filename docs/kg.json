@@ -5410,6 +5410,33 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki ML Tasks TimeSeries Foundation TimeLLM",
+      "group": 5,
+      "title": "Time-LLM",
+      "url": "https://junxnone.github.io/aiwiki/#/0651_ML_Tasks_TimeSeries_Foundation_TimeLLM",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Tasks TimeSeries Foundation TimeGPT1",
+      "group": 5,
+      "title": "TimeGPT-1",
+      "url": "https://junxnone.github.io/aiwiki/#/0652_ML_Tasks_TimeSeries_Foundation_TimeGPT1",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Tasks TimeSeries Foundation LagLlama",
+      "group": 5,
+      "title": "Lag-Llama",
+      "url": "https://junxnone.github.io/aiwiki/#/0653_ML_Tasks_TimeSeries_Foundation_LagLlama",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Tasks TimeSeries Foundation TimesFM",
       "group": 5,
       "title": "TimesFM",
@@ -5639,33 +5666,6 @@
       "group": 6,
       "title": "YOLO V5",
       "url": "https://junxnone.github.io/aiwiki/#/0379_ML_Tasks_Image_Detection_YOLO_V5",
-      "visible": true,
-      "expand": true,
-      "childLinks": []
-    },
-    {
-      "id": "aiwiki ML Tasks TimeSeries Foundation Time LLM",
-      "group": 6,
-      "title": "Time-LLM",
-      "url": "https://junxnone.github.io/aiwiki/#/0651_ML_Tasks_TimeSeries_Foundation_Time_LLM",
-      "visible": true,
-      "expand": true,
-      "childLinks": []
-    },
-    {
-      "id": "aiwiki ML Tasks TimeSeries Foundation TimeGPT 1",
-      "group": 6,
-      "title": "TimeGPT-1",
-      "url": "https://junxnone.github.io/aiwiki/#/0652_ML_Tasks_TimeSeries_Foundation_TimeGPT_1",
-      "visible": true,
-      "expand": true,
-      "childLinks": []
-    },
-    {
-      "id": "aiwiki ML Tasks TimeSeries Foundation Lag Llama",
-      "group": 6,
-      "title": "Lag-Llama",
-      "url": "https://junxnone.github.io/aiwiki/#/0653_ML_Tasks_TimeSeries_Foundation_Lag_Llama",
       "visible": true,
       "expand": true,
       "childLinks": []
@@ -9742,6 +9742,27 @@
     {
       "source": "aiwiki ML Tasks TimeSeries Foundation",
       "target": "aiwiki ML Tasks TimeSeries Foundation GPT4TS",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks TimeSeries Foundation",
+      "target": "aiwiki ML Tasks TimeSeries Foundation TimeLLM",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks TimeSeries Foundation",
+      "target": "aiwiki ML Tasks TimeSeries Foundation TimeGPT1",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks TimeSeries Foundation",
+      "target": "aiwiki ML Tasks TimeSeries Foundation LagLlama",
       "value": 5,
       "visible": true,
       "expand": true

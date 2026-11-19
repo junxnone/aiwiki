@@ -293,16 +293,13 @@
         - [Chronos](/0660_ML_Tasks_TimeSeries_Foundation_Chronos)
         - [GPT4TS](/0650_ML_Tasks_TimeSeries_Foundation_GPT4TS)
         - [LLM 对时序预测有用吗](/0661_ML_Tasks_TimeSeries_Foundation_LLMUseful)
-        - Lag
-          - [Lag-Llama](/0653_ML_Tasks_TimeSeries_Foundation_Lag_Llama)
+        - [Lag-Llama](/0653_ML_Tasks_TimeSeries_Foundation_LagLlama)
         - [MOMENT](/0659_ML_Tasks_TimeSeries_Foundation_MOMENT)
         - [Moirai](/0657_ML_Tasks_TimeSeries_Foundation_Moirai)
         - [Sundial](/0663_ML_Tasks_TimeSeries_Foundation_Sundial)
         - [TTM](/0655_ML_Tasks_TimeSeries_Foundation_TTM)
-        - Time
-          - [Time-LLM](/0651_ML_Tasks_TimeSeries_Foundation_Time_LLM)
-        - TimeGPT
-          - [TimeGPT-1](/0652_ML_Tasks_TimeSeries_Foundation_TimeGPT_1)
+        - [TimeGPT-1](/0652_ML_Tasks_TimeSeries_Foundation_TimeGPT1)
+        - [Time-LLM](/0651_ML_Tasks_TimeSeries_Foundation_TimeLLM)
         - [Time-MoE](/0662_ML_Tasks_TimeSeries_Foundation_TimeMoE)
         - [Timer](/0656_ML_Tasks_TimeSeries_Foundation_Timer)
         - [TimesFM](/0654_ML_Tasks_TimeSeries_Foundation_TimesFM)
@@ -640,4 +637,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1418071119</sub></kbd>
+<kbd><sub>@1418571119</sub></kbd>
