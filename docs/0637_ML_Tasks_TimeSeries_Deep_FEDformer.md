@@ -1,8 +1,8 @@
 ---
-Title | ML Tasks TimeSeries Transformer FEDformer
+Title | ML Tasks TimeSeries Deep FEDformer
 -- | --
 Created @ | `2026-11-19T01:59:57Z`
-Updated @| `2026-11-19T02:24:34Z`
+Updated @| `2026-11-19T06:20:49Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/637)
 
