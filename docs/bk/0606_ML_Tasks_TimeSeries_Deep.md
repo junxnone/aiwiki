@@ -3,7 +3,7 @@
 | Title     | ML Tasks TimeSeries Deep                              |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-10T09:17:24Z`                                |
-| Updated @ | `2026-11-10T09:17:24Z`                                |
+| Updated @ | `2026-11-19T09:43:31Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/606) |
 
@@ -36,6 +36,8 @@
 | 表示学习 / 自监督       | 对比或掩码重构得到通用表示         | TS2Vec、CoST、TF-C、SimMTM                                 | §3.6 |
 | 异常检测             | 重构、预测、关联差异            | Anomaly Transformer、TranAD                              | §3.7 |
 
+表中：「架构」是模型类别，「归纳偏置」是网络结构里写入的先验假设，「代表」是典型模型，「本文章节」指向详解位置。读法：偏置越强（如线性、分解）越适合小而规律的数据，偏置越弱（如注意力）越依赖数据量。
+
 一句话定位：**深度路线的优势是端到端、可处理复杂依赖、可跨序列共享并扩展到大数据；代价是对小而平稳的数据容易"白增方差"**。近几年最重要的认识是：在长期预测的常用基准上，**简单的线性/MLP
 模型常与复杂 Transformer 打平**，所以设计新模型前必须先问"这个复杂度买到了什么"。
 
@@ -54,6 +56,8 @@
 $$X\\in\\mathbb R^{L\\times C}\\ \\longrightarrow\\ \\hat Y\\in\\mathbb
 R^{H\\times C}$$
 
+其中：$X$ 是输入窗口；$\\hat Y$ 是预测窗口；$L$ 是回看长度；$H$ 是预测步长；$C$ 是通道（变量）数。
+
 训练在滑窗样本上用小批量随机梯度（常用 Adam，Kingma & Ba，arXiv:1412.6980 \[V\]）。多数现代深度预测模型是
 **MIMO**：一次输出整个 $H$ 步，没有递归累积（对比[机器学习篇
 §1.2](0605_ML_Tasks_TimeSeries_ML)）；自回归模型（DeepAR）则逐步采样。
@@ -65,6 +69,8 @@ R^{H\\times C}$$
 | 点预测  | MSE、MAE、Huber    | 长期预测基准多用 MSE 与 MAE，且在标准化后的尺度上计算（见 [metrics §5.2](0610_ML_Tasks_TimeSeries_Metrics)） |
 | 概率预测 | 负对数似然（NLL）、分位数损失 | DeepAR 输出分布参数；TFT 输出分位数                                                             |
 | 业务指标 | 对齐评估的自定义损失       | 例如 MASE 型加权                                                                         |
+
+表中：「目标」是想估计的量，「损失」是对应的训练损失，「说明」给出使用场景与特点。
 
 ### 1.3 可逆实例归一化（RevIN）
 
@@ -81,6 +87,10 @@ y\_t^{(k)}-\\beta\_k}{\\gamma\_k}+\\mu^{(k)}$$
 是可学习的仿射参数。它让网络只学习"去掉水平和尺度之后的形状"，再把水平和尺度加回去，等价于一种**针对每个窗口的水平与尺度自适应**。PatchTST、DLinear
 的变体（NLinear 的"减去最后一个值"思想与之同源）等许多模型采用类似做法 \[经验\]。
 
+补充说明：$\\tilde x\_t^{(k)}$ 是第 $k$ 个通道在 $t$ 时刻归一化后的输入；$\\epsilon$
+是防止除零的小常数；$\\tilde y\_t^{(k)}$ 是网络对归一化空间的输出，$\\hat
+y\_t^{(k)}$ 是反归一化后的最终预测；$t$ 是时间索引。
+
 对机制的理论分析见 Li et al.（*Revisiting Long-term Time Series Forecasting: An
 Investigation on Linear
 Mapping*，[arXiv:2305.10721](https://arxiv.org/abs/2305.10721)）\[V\]：摘要报告可逆归一化显著改善趋势预测，因为它把非周期趋势变换成"类周期"形态。
@@ -91,6 +101,10 @@ Mapping*，[arXiv:2305.10721](https://arxiv.org/abs/2305.10721)）\[V\]：摘要
 
 $$X\_{\\text{trend}}=\\mathrm{AvgPool}\\bigl(\\mathrm{Padding}(X)\\bigr),\\qquad
 X\_{\\text{seasonal}}=X-X\_{\\text{trend}}$$
+
+其中：$X$ 是输入窗口；$\\mathrm{Padding}$ 在两端填充以保持长度；$\\mathrm{AvgPool}$
+是滑动平均池化，提取缓变的趋势；$X\_{\\text{trend}}$
+是趋势分量；$X\_{\\text{seasonal}}$ 是减去趋势后的季节（余项）分量。
 
 DLinear、Autoformer（序列分解块）、FEDformer、TimeMixer 都内置这类分解（具体实现细节待核实）。
 
@@ -104,6 +118,9 @@ Transformer 需要把序列变成 token 序列：
 | patch token | 连续若干时间点组成一个 patch       | PatchTST            |
 | 变量 token    | 每个变量的整条序列一个 token       | iTransformer        |
 
+表中：「做法」是三种 token 化方式，「token 是什么」说明每个 token
+对应的内容，「代表」是采用该做法的模型；选择决定了注意力作用在时间、局部片段还是变量之间。
+
 注意力本身对输入顺序**置换不变**，所以需要位置编码；DLinear 论文（arXiv:2205.13504
 \[V\]）的论断是：自注意力的置换不变性会造成时序信息的损失，即使使用位置编码和子序列
 token 也只能保留一部分顺序信息。
@@ -114,6 +131,8 @@ token 也只能保留一部分顺序信息。
 | ----------------- | -------------------- | ---------------------------------- | ------------ |
 | **通道独立（CI）**      | 每个变量作为一条独立序列，共享同一套参数 | PatchTST（摘要明确使用通道独立 \[V\]）、DLinear | 完全忽略变量间关系    |
 | **通道混合 / 依赖（CD）** | 显式建模变量间交互            | iTransformer、TSMixer、Crossformer 等 | 变量多时易过拟合、成本高 |
+
+表中：「策略」是多变量处理方式，「做法」解释设计，「代表」是典型模型，「风险」是代价。结论与总览一致：没有绝对优劣，应以验证集为准。
 
 \[经验\] 变量数多、各序列相对独立时 CI 更稳；变量间有明确物理耦合时值得试 CD；无论哪种，用自己的验证集决定。
 
@@ -127,6 +146,9 @@ token 也只能保留一部分顺序信息。
 | patch 注意力（patch 长 $P$） | $O\\bigl((L/P)^2D\\bigr)$ | PatchTST 摘要指出 patch 使注意力图的计算与内存"quadratically reduced" \[V\] |
 | 线性映射                   | $O(LH)$ 参数与计算             | DLinear 一类，窗口越长参数越多                                          |
 | SSM（Mamba）             | $O(L,D)$（线性）              | 摘要称"linear-time" \[V\]                                       |
+
+表中：「结构」是网络类型，「时间复杂度」是对序列长度 $L$、隐维 $D$ 的计算量级（$k$ 为卷积核大小，$P$ 为 patch
+长度，$H$ 为预测步数），「说明」给出特点。结论：注意力随长度二次增长，patch、线性映射与 SSM 可显著降低成本。
 
 **回看窗口的作用**：窗口越长，原则上信息越多，但噪声与过拟合风险也上升，且部分 Transformer
 随窗口变长性能反而下降（iTransformer 摘要即指出 Transformer
@@ -160,6 +182,9 @@ Forecasting*，[arXiv:2405.15124](https://arxiv.org/abs/2405.15124)）\[V\]
 | 2023      | TSMixer（arXiv:2303.06053）\[V\]；**iTransformer**（arXiv:2310.06625）\[V\]；Mamba（arXiv:2312.00752）\[V\]；Koopa（arXiv:2305.18803）\[V\]；FITS、RLinear（arXiv:2307.03756、2305.10721）\[V\]；SimMTM（arXiv:2302.00861）\[V\]                      | 全 MLP；倒置的 Transformer；选择性 SSM；轻量线性与频域模型；掩码预训练 |
 | 2024      | TimeMixer（arXiv:2405.14616）\[V\]；TimeXer（arXiv:2402.19072）\[V\]；SOFTS（arXiv:2404.14197）\[V\]；S-Mamba（arXiv:2403.11144）\[V\]；TimeMachine（arXiv:2403.09898）\[V\]；SparseTSF（arXiv:2405.00946）\[V\]；Scaling law（arXiv:2405.15124）\[V\] | 多尺度混合；外生变量；系列核心融合；Mamba 类预测；极小参数量；扩展规律        |
 
+表中：「时代」是时间段，「事件」是代表性模型及编号，「要点」概括其贡献。主线：门控 RNN → 卷积与全局概率 RNN → MLP 与协变量
+Transformer → 高效注意力与状态空间 → 线性模型的挑战与 patch 设计 → 轻量化与扩展规律。
+
 -----
 
 ## 3\. 各类方法详解
@@ -177,6 +202,15 @@ c\_t&=\\tanh(W\_c\[h\_{t-1},x\_t\]+b\_c),\\quad c\_t=f\_t\\odot
 c\_{t-1}+i\_t\\odot\\tilde c\_t,\\quad h\_t=o\_t\\odot\\tanh(c\_t)
 \\end{aligned}$$
 
+其中：
+
+  - $x\_t$：输入；$h\_t$：隐状态（输出）；$c\_t$：细胞状态；$\[h\_{t-1},x\_t\]$：拼接
+  - $f\_t,i\_t,o\_t$：遗忘门、输入门、输出门，取值 $(0,1)$，分别控制保留多少旧信息、写入多少新信息、输出多少
+  - $\\tilde
+    c\_t$：候选新状态；$W\_\\cdot,b\_\\cdot$：各门的权重与偏置；$\\sigma$：sigmoid；$\\odot$：逐元素乘
+  - GRU 中 $z\_t$ 是更新门（决定新旧状态混合比例），$r\_t$ 是重置门（决定遗忘多少旧状态），$\\tilde h\_t$
+    是候选隐状态
+
 细胞状态 $c\_t$ 以**加性**路径传递，缓解梯度消失。GRU（Cho et al. 2014 \[V\]）合并为更新门 $z\_t$
 与重置门 $r\_t$：$h\_t=(1-z\_t)\\odot h\_{t-1}+z\_t\\odot\\tilde h\_t$。
 
@@ -190,6 +224,11 @@ x\_{i,t}\\bigr),\\qquad \\theta\_{i,t}=\\mathrm{proj}(h\_{i,t}),\\qquad
 \\mathcal L=-\\sum\_{i,t}\\log
 \\ell\\bigl(y\_{i,t}\\mid\\theta\_{i,t}\\bigr)$$
 
+其中：$i$ 是序列编号，$t$ 是时间；$h\_{i,t}$ 是 RNN 隐状态；$y\_{i,t-1}$ 是上一步观测；$\\mathbf
+x\_{i,t}$ 是协变量；$\\theta\_{i,t}$ 是该步分布参数（如高斯的均值与标准差），由 $\\mathrm{proj}$
+从隐状态投影得到；$\\ell(\\cdot\\mid\\theta)$ 是似然；$\\mathcal L$
+是负对数似然，对所有序列、所有时间求和。
+
 $\\ell$ 为选定的似然（高斯、负二项、Student-t
 等）。预测时对未来逐步**祖先采样**，把采样值喂回，得到多条样本路径，由此求分位数。输入按序列自身的尺度做缩放（具体缩放公式待核实）。
 
@@ -201,6 +240,8 @@ $\\ell$ 为选定的似然（高斯、负二项、Student-t
 | **缺点** | 顺序计算难并行；自回归采样有**误差累积**与"暴露偏差"；超长依赖建模不如注意力/线性模型 \[经验\] |
 | **适用** | 序列条数多的业务预测（需求、容量）、需要预测分布的场景                           |
 
+表中：「优点 / 缺点 / 适用」三行概括 RNN 类模型（含 DeepAR）的特点。
+
 **ES-RNN**（Smyl, *IJF* 2020 \[V\]）把指数平滑的分层参数与 RNN 结合，是 M4
 的亮点（具体名次待核实），属于"统计结构 + 神经网络"的早期代表。
 
@@ -211,6 +252,10 @@ $\\ell$ 为选定的似然（高斯、负二项、Student-t
 **因果膨胀卷积**：对输入 $x$，膨胀系数 $d$、核大小 $k$ 的因果卷积为
 
 $$F(s)=\\sum\_{i=0}^{k-1}f(i)\\cdot x\_{s-d,i}$$
+
+其中：$F(s)$ 是位置 $s$ 的输出；$x$ 是输入序列；$f(i)$ 是第 $i$ 个卷积核权重；$k$ 是核大小；$d$
+是膨胀系数，间隔 $d$ 取样以扩大感受野；$\\ell$ 是层号，$N$ 是总层数；$x\_{s-d,i}$ 只取
+$s$ 及之前的点，保证因果性。
 
 只看过去，不泄漏未来。逐层令 $d=2^{\\ell}$，$\\ell=0,1,\\dots,N-1$，则感受野为
 $1+(k-1)(2^{N}-1)$，随深度**指数**增长。Bai et al.（*An Empirical Evaluation of
@@ -233,6 +278,12 @@ $$A=\\mathrm{Avg}\\bigl(\\mathrm{Amp}(\\mathrm{FFT}(X))\\bigr),\\qquad
 {f\_1,\\dots,f\_k}=\\arg\\mathrm{Top}\\text{-}k(A),\\qquad
 p\_i=\\Bigl\\lceil\\frac{T}{f\_i}\\Bigr\\rceil$$
 
+其中：$X$ 是输入序列；$\\mathrm{FFT}$ 是快速傅里叶变换，$\\mathrm{Amp}$
+取幅值，$\\mathrm{Avg}$ 对通道取平均，得到各频率的强度
+$A$；$\\mathrm{Top}\\text{-}k$ 取强度最大的 $k$ 个频率 $f\_1,\\dots,f\_k$；$T$
+是序列长度；$p\_i=\\lceil T/f\_i\\rceil$ 是第 $i$ 个频率对应的周期长度，据此把序列折叠成
+$p\_i$ 列的二维张量。
+
 再对 $k$ 个周期对应的二维表示做自适应聚合（按幅值加权）。
 
 #### 优缺点
@@ -242,6 +293,8 @@ p\_i=\\Bigl\\lceil\\frac{T}{f\_i}\\Bigr\\rceil$$
 | **优点** | 可并行；感受野可控；参数量适中；对局部形状（尖峰、周期形态）敏感 |
 | **缺点** | 感受野固定，难建模超长依赖；对变长输入和不规则采样需额外处理   |
 | **适用** | 高采样率信号的分类与异常检测、周期性明显的预测          |
+
+表中：「优点 / 缺点 / 适用」三行概括卷积类模型的特点与适用场景。
 
 ### 3.3 MLP 与线性模型
 
@@ -257,6 +310,10 @@ y\_\\ell=\\mathrm{Block}*\\ell(x*\\ell),\\qquad
 x\_{\\ell+1}=x\_\\ell-\\hat x\_\\ell,\\qquad \\hat y=\\sum\_{\\ell}\\hat
 y\_\\ell$$
 
+其中：$\\ell$ 是块序号；$x\_\\ell$ 是第 $\\ell$ 块的输入；$\\hat x\_\\ell$
+是该块对输入的重构（backcast），从输入中扣除后传给下一块（残差 1）；$\\hat
+y\_\\ell$ 是该块对未来的预测（forecast），所有块的预测相加得到最终预测 $\\hat y$（残差 2）。
+
 可解释版本（依原文印象，细节待核实）把块输出约束为**多项式基**（趋势）与**傅里叶基**（季节），使分解可读。N-HiTS（arXiv:2201.12886
 \[V\]）加入多速率输入池化与层级插值：不同块处理不同频率，低频块输出缩短后插值到完整 $H$，降低长 horizon
 的计算量。NBEATSx（arXiv:2104.05522 \[V\]）扩展到外生变量，以电价预测为应用。
@@ -270,6 +327,10 @@ simple"的**单层线性模型**（LTSF-Linear）。DLinear 先分解再线性�
 $$X\_t=\\mathrm{AvgPool}\\bigl(\\mathrm{Padding}(X)\\bigr),\\quad
 X\_s=X-X\_t,\\qquad \\hat Y=W\_s X\_s+W\_t X\_t,\\qquad
 W\_s,W\_t\\in\\mathbb R^{H\\times L}$$
+
+其中：$X\\in\\mathbb R^{L\\times C}$ 是输入窗口；$X\_t$、$X\_s$
+是趋势与季节余项；$W\_t,W\_s\\in\\mathbb R^{H\\times L}$
+是两个线性层的权重，把长度 $L$ 的历史映射到长度 $H$ 的未来；$\\hat Y$ 是预测。
 
 权重对所有通道共享（通道独立）。NLinear 先减去窗口最后一个值、线性映射后再加回（依原文印象）。参数量约
 $2LH$。该文摘要报告：这些线性模型在其选用的长期预测基准上优于当时的 Transformer
@@ -302,11 +363,17 @@ $1$k，摘要称其性能与最先进相当或更优。
 | **缺点** | 回看窗口越长参数越多（线性映射）；对非周期、强非线性、跨变量复杂交互的表达有限；在复杂协变量场景需 TSMixer 一类结构 |
 | **适用** | 长期预测基线；资源受限场景；先验认为"趋势 + 季节"占主导的数据                              |
 
+表中：「优点 / 缺点 / 适用」三行概括 MLP 与线性模型的特点；结论是它们应作为复杂模型的必备对照基线。
+
 ### 3.4 Transformer
 
 #### 注意力
 
 $$\\mathrm{Attn}(Q,K,V)=\\mathrm{softmax}\!\\Bigl(\\frac{QK^{\\top}}{\\sqrt{d\_k}}\\Bigr)V$$
+
+其中：$Q,K,V$ 分别是查询、键、值矩阵；$d\_k$ 是键的维度，除以 $\\sqrt{d\_k}$
+防止点积过大；$\\mathrm{softmax}$ 把相似度归一化为注意力权重；$L$ 是序列长度，$d$
+是隐维，$QK^\\top$ 产生 $L\\times L$ 的注意力矩阵，故复杂度为 $O(L^2d)$。
 
 （Vaswani et al.，arXiv:1706.03762 \[V\]）复杂度 $O(L^2d)$，对长序列昂贵。
 
@@ -318,6 +385,12 @@ $$\\mathrm{Attn}(Q,K,V)=\\mathrm{softmax}\!\\Bigl(\\frac{QK^{\\top}}{\\sqrt{d\_k
 | **Informer**（arXiv:2012.07436 \[V\]）   | **ProbSparse** 自注意力：只保留"最活跃"的查询，复杂度降到约 $O(L\\log L)$；自注意力蒸馏；一次性生成式解码器（细节待核实）。稀疏度度量大致为 $M(q\_i,K)=\\ln\\sum\_j e^{q\_ik\_j^\\top/\\sqrt d}-\\frac1L\\sum\_j\\frac{q\_ik\_j^\\top}{\\sqrt d}$（依原文印象，待核实） |
 | **Autoformer**（arXiv:2106.13008 \[V\]） | 序列分解模块内置于网络；**自相关**机制取代点积注意力：用自相关系数挑出 top-$k$ 的时间延迟并做延迟聚合；自相关可经 FFT 计算 $\\mathcal R=\\mathcal F^{-1}\\bigl(\\mathcal F(x),\\overline{\\mathcal F(x)}\\bigr)$（依 Wiener–Khinchin 定理，细节待核实）               |
 | **FEDformer**（arXiv:2201.12740 \[V\]）  | 在**频域**做增强的分解 Transformer，利用傅里叶或小波变换在频域保留少量模式                                                                                                                                                          |
+
+表中：「模型」是第一阶段降低注意力复杂度的代表工作，「要点」概括其核心机制。$M(q\_i,K)$ 是 ProbSparse
+的稀疏度度量，$q\_i$ 是第 $i$ 个查询，$k\_j$ 是键，$d$
+是维度，值越大说明该查询越"活跃"；$\\mathcal R$
+是自相关函数，$\\mathcal F$ 是傅里叶变换，$\\overline{\\mathcal F(x)}$
+是其复共轭，经 Wiener–Khinchin 定理可用 FFT 高效计算。
 
 #### 转折：DLinear 质疑
 
@@ -334,6 +407,9 @@ token 的方式**，而不是继续改注意力本身。
     
     $$N=\\Bigl\\lfloor\\frac{L-P}{S}\\Bigr\\rfloor+2$$
     
+    其中：$N$ 是 patch 个数；$L$ 是回看长度；$P$ 是 patch 长度；$S$ 是相邻 patch 的步长；末尾 $+2$
+    来自 $+1$ 的向下取整基数加上末端填充的一个 patch。
+    
     该文同样用于**自监督预训练**，摘要称在大数据集上微调优于有监督训练，并可跨数据集迁移掩码预训练表示。
 
   - **iTransformer**（arXiv:2310.06625 \[V\]）：不改动 Transformer
@@ -344,6 +420,12 @@ token 的方式**，而不是继续改注意力本身。
     \\mathbf h^{\\ell+1}=\\mathrm{TrmBlock}\\bigl(\\mathbf
     h^{\\ell}\\bigr),\\quad \\hat Y\_{:,c}=\\mathrm{Proj}\\bigl(\\mathbf
     h\_c^{L}\\bigr)$$
+    
+    其中：$X\_{:,c}$ 是第 $c$ 个变量的整条历史序列；$\\mathrm{Embed}$ 把它映射为一个变量 token
+    $\\mathbf h\_c^{0}$；$\\mathrm{TrmBlock}$ 是 Transformer
+    块（注意力作用于变量之间，前馈网络作用于每个变量 token
+    内的时间表示），$\\ell$ 是层号、$L$ 在此处表示最后一层；$\\mathrm{Proj}$
+    是投影层；$\\hat Y\_{:,c}$ 是第 $c$ 个变量的预测。
     
     动机（摘要）：时间点 token 把不同物理含义的变量混在一个嵌入里，可能导致"meaningless attention
     maps"，并且在较大回看窗口下性能退化。
@@ -366,17 +448,27 @@ token 的方式**，而不是继续改注意力本身。
 | **缺点** | 在许多长期预测基准上相对线性模型的增益有限（\[V\] DLinear）；数据小时易过拟合；注意力成本随长度增长；对 token 设计敏感 |
 | **适用** | 变量多且相关明确、数据量充足、需要协变量与可解释性（TFT）或长依赖的场景                                 |
 
+表中：「优点 / 缺点 / 适用」三行概括 Transformer 类预测模型的特点；缺点一栏说明其在长期预测基准上相对线性模型的增益有限。
+
 ### 3.5 状态空间模型（SSM）与 Mamba
 
 #### 连续时间 SSM 与离散化
 
 $$x'(t)=Ax(t)+Bu(t),\\qquad y(t)=Cx(t)$$
 
+其中：$u(t)$ 是输入信号；$x(t)$ 是隐状态，$x'(t)$ 是其时间导数；$y(t)$ 是输出；$A$
+是状态矩阵，决定状态如何演化；$B$ 是输入矩阵，决定输入如何写入状态；$C$
+是输出矩阵，决定状态如何读出。
+
 按步长 $\\Delta$ 做零阶保持（ZOH）离散化（标准结果，细节以原文为准，待核实）：
 
 $$\\bar A=e^{\\Delta A},\\qquad \\bar B=(\\Delta
 A)^{-1}\\bigl(e^{\\Delta A}-I\\bigr)\\Delta B,\\qquad x\_k=\\bar A
 x\_{k-1}+\\bar B u\_k,\\quad y\_k=C x\_k$$
+
+其中：$\\Delta$ 是离散化步长；$\\bar A,\\bar B$ 是离散化后的状态转移与输入矩阵；$x\_k$ 是第 $k$
+步状态；$u\_k$ 是输入；$y\_k$ 是输出；$C$ 是输出矩阵；$I$ 是单位矩阵；$K$ 是等价的卷积核，第 $j$
+项为 $C\\bar A^{j}\\bar B$，表示一个输入对 $j$ 步之后输出的影响。
 
 这是[经典篇 §3.6](0604_ML_Tasks_TimeSeries_Classical)
 的**线性状态空间模型**的深度版本：状态递推、线性观测。线性使得它同时有**两种等价形式**：
@@ -411,6 +503,8 @@ $u$
 | **缺点** | 在时序预测基准上相对强线性/MLP/Transformer 基线的稳定优势**仍待更多独立验证** \[经验\]；实现依赖专门算子；离散化与初始化敏感 |
 | **适用** | 超长序列、需要在线递推推理的场合                                                            |
 
+表中：「优点 / 缺点 / 适用」三行概括 SSM 类模型的特点；关键结论是线性复杂度与可递推推理是优势，但相对强基线的稳定增益仍待验证。
+
 ### 3.6 表示学习与自监督
 
 **目的**：在标签稀缺时，从无标签序列学到通用表示，再用于分类、预测、异常检测。
@@ -423,12 +517,22 @@ $u$
 | **SimMTM**（arXiv:2302.00861 \[V\]） | 掩码时序建模的预训练框架                                           |
 | **PatchTST 自监督**（\[V\]）            | patch 级掩码重构预训练                                         |
 
+表中：「方法」是表示学习方法，「思想」概括其预训练目标（对比学习、季节-趋势解耦、时频一致性、掩码重构）。
+
 两类基本目标（标准形式）：
 
 $$\\mathcal
 L\_{\\text{InfoNCE}}=-\\log\\frac{\\exp\\bigl(\\mathrm{sim}(z,z^{+})/\\tau\\bigr)}{\\exp\\bigl(\\mathrm{sim}(z,z^{+})/\\tau\\bigr)+\\sum\_{z^{-}}\\exp\\bigl(\\mathrm{sim}(z,z^{-})/\\tau\\bigr)},\\qquad
 \\mathcal L\_{\\text{mask}}=\\frac{1}{\\lvert\\mathcal
 M\\rvert}\\sum\_{t\\in\\mathcal M}\\lVert x\_t-\\hat x\_t\\rVert^2$$
+
+其中：
+
+  - $z$：锚样本的表示；$z^{+}$：正样本（同一序列的另一视图）的表示；$z^{-}$：负样本的表示；$\\mathrm{sim}(\\cdot,\\cdot)$：相似度（如余弦相似度）；$\\tau$：温度系数，控制分布的尖锐程度。$\\mathcal
+    L\_{\\text{InfoNCE}}$ 越小，说明正样本对越近、负样本对越远。
+  - $\\mathcal M$：被掩码的时间点集合，$\\lvert\\mathcal M\\rvert$ 是其个数；$x\_t$
+    是真实值，$\\hat x\_t$ 是模型重构值；$\\mathcal L\_{\\text{mask}}$
+    是被掩码位置上的平均重构误差。
 
 **风险**：对比学习中"正样本对"的构造（如何增强才不破坏时间语义）高度依赖数据；预训练收益与数据量、与下游任务的匹配度强相关
 \[经验\]。这条线是通往[基础模型](0608_ML_Tasks_TimeSeries_Foundation)的桥梁。
@@ -441,6 +545,9 @@ M\\rvert}\\sum\_{t\\in\\mathcal M}\\lVert x\_t-\\hat x\_t\\rVert^2$$
 | **预测类**       | 预测下一步或下一段，看偏差                                                                                                                            | $\\lVert x\_{t+1}-\\hat x\_{t+1}\\rVert$ |
 | **关联类**       | **Anomaly Transformer**（arXiv:2110.02642 \[V\]）提出**关联差异**：异常点难以与整条序列建立强关联，而更多关注邻近点；通过比较"先验关联"与"序列关联"的差异定义分数（具体公式，如两个分布间的对称 KL，依原文印象，待核实） |                                          |
 | **对抗 / 自条件类** | **TranAD**（arXiv:2201.07284 \[V\]）：深度 Transformer 加对抗训练与自条件机制处理多变量异常                                                                     |                                          |
+
+表中：「类型」是异常检测思路，「做法」概述方法，「异常分数」给出得分形式（$x$ 为输入窗口，$\\hat x$
+为重构或预测值，分数越大越异常）。
 
 **证据与评估**：
 
@@ -472,6 +579,10 @@ point-adjust 的结果。
 | S4 / Mamba 类                         | 线性递推（选择性）        | 可   | 可              | 否           | 线性           | 优势待独立验证                |
 | TS2Vec / SimMTM 等                    | 对比 / 掩码表示学习      | 可   | —              | —           | 视骨干          | 增强与数据依赖                |
 | Anomaly Transformer / TranAD         | 关联差异 / 对抗自条件     | 可   | 否              | 分数          | 注意力          | 评估协议敏感                 |
+
+表中：「归纳偏置」是网络结构里写入的先验；「多变量 / 协变量 / 概率输出」表示是否支持（CI = 通道独立，CD =
+通道依赖，"—"不适用）；「复杂度」是随序列长度的计算量级（$L$ 为长度，$P$ 为 patch
+长，$H$ 为预测步数）；「典型局限」是主要短板。可按任务需求（协变量、概率输出、长序列）横向筛选。
 
 -----
 
@@ -542,6 +653,8 @@ point-adjust 的结果。
 | 损失  | 与评估指标对齐；需要区间时用分位数或分布 NLL             |
 | 评估  | 滚动起点；报告 MASE/WAPE 等业务可读指标，不只用标准化 MSE |
 
+表中：「项」是训练环节，「建议」是对应的做法，核心是严格按时间切分、避免统计量泄漏、对每个模型独立搜索回看窗口并用业务可读指标评估。
+
 **常见错误**
 
   - 只在 ETT 一类小基准上比较，把噪声内的差距当作改进；
@@ -557,6 +670,8 @@ point-adjust 的结果。
 | 概率预测  | GluonTS（arXiv:1906.05264 \[V\]）、PyTorch Forecasting    |
 | 统一预测库 | Darts、NeuralForecast                                   |
 | 基准与复现 | Time-Series-Library（TSLib）、TFB（arXiv:2403.20150 \[V\]） |
+
+表中：「用途」是类别，「库」是对应的常用工具，可按需求选用。
 
 -----
 
@@ -594,6 +709,9 @@ point-adjust 的结果。
 | Oreshkin et al. 2021, AAAI（N-BEATS 的元学习扩展版，Crossref 命中的是该扩展论文） | 10.1609/aaai.v35i10.17115        |
 | Wen et al. 2023, IJCAI（Transformers in Time Series: A Survey）  | 10.24963/ijcai.2023/759          |
 | Benidis et al. 2022, *ACM Comput. Surv.*（深度预测教程与综述）            | 10.1145/3533382                  |
+
+表中：「文献」是引用的论文，「DOI」是 Crossref 命中的标识符（可通过 `https://doi.org/<DOI>`
+访问）；N-BEATS 一行命中的是其元学习扩展论文，已在表中注明。
 
 **arXiv 编号经 API
 核对**：[1412.6980](https://arxiv.org/abs/1412.6980)（Adam）、[1706.03762](https://arxiv.org/abs/1706.03762)（Attention
