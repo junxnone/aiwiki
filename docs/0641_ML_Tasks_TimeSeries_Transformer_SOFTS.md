@@ -1,8 +1,8 @@
 ---
-Title | SOFTS
+Title | ML Tasks TimeSeries Transformer SOFTS
 -- | --
 Created @ | `2026-11-19T02:00:06Z`
-Updated @| `2026-11-19T02:00:06Z`
+Updated @| `2026-11-19T02:24:43Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/641)
 
