@@ -1,8 +1,8 @@
 ---
-Title | ML Tasks TimeSeries Transformer S-Mamba
+Title | ML Tasks TimeSeries Transformer SMamba
 -- | --
 Created @ | `2026-11-19T02:27:26Z`
-Updated @| `2026-11-19T02:27:26Z`
+Updated @| `2026-11-19T06:17:25Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/644)
 
