@@ -1,8 +1,8 @@
 ---
-Title | ML Tasks TimeSeries Foundation TimeGPT-1
+Title | ML Tasks TimeSeries Foundation TimeGPT1
 -- | --
 Created @ | `2026-11-19T02:42:12Z`
-Updated @| `2026-11-19T02:42:12Z`
+Updated @| `2026-11-19T06:18:09Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/652)
 
