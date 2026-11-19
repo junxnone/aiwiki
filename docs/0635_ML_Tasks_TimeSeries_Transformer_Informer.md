@@ -2,7 +2,7 @@
 Title | ML Tasks TimeSeries Transformer Informer
 -- | --
 Created @ | `2026-11-19T01:59:53Z`
-Updated @| `2026-11-19T02:24:29Z`
+Updated @| `2026-11-19T02:27:19Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/635)
 
@@ -13,7 +13,7 @@ Informer 出自 Zhou 等人的论文 *Informer: Beyond Efficient Transformer for
 
 一句话概括：用 **ProbSparse 自注意力**把注意力的时间与内存降到 $O(L\log L)$，用**自注意力蒸馏**（self-attention distilling）逐层把序列长度减半，再用**生成式 decoder** 一次前向直接输出整段预测，从而同时解决 Transformer 做长序列预测时的三个瓶颈。
 
-论文脚注称 ETT 数据集由作者收集并发布。`[经验]` 它是 Transformer 系长序列预测的代表作之一，后续的 Autoformer、FEDformer、PatchTST 等常以它为基线。`[待核实]` 它获得 AAAI 2021 最佳论文的说法来自任务说明，不在论文 PDF 中，未核对。综述见 [时间序列总览](/0603_ML_Tasks_TimeSeries) 与 [深度学习方法](/0606_ML_Tasks_TimeSeries_Deep)。
+论文脚注称 ETT 数据集由作者收集并发布。`[经验]` 它是 Transformer 系长序列预测的代表作之一，后续的 Autoformer、FEDformer、PatchTST 等常以它为基线。`[待核实]` 它获得 AAAI 2021 最佳论文的说法不在论文 PDF 中，未核对。综述见 [时间序列总览](/0603_ML_Tasks_TimeSeries) 与 [深度学习方法](/0606_ML_Tasks_TimeSeries_Deep)。
 
 ## 解决什么问题
 
@@ -345,4 +345,5 @@ def probsparse_attn(Q, K, V, c=5):
 - 官方代码（论文中给出）：[zhouhaoyi/Informer2020](https://github.com/zhouhaoyi/Informer2020)
 - ETT 数据集（论文脚注给出）：[zhouhaoyi/ETDataset](https://github.com/zhouhaoyi/ETDataset)
 - DLinear：[arXiv:2205.13504](https://arxiv.org/abs/2205.13504)
+
 

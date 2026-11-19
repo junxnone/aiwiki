@@ -3,7 +3,7 @@
 | Title     | ML Tasks TimeSeries Transformer Informer              |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-19T01:59:53Z`                                |
-| Updated @ | `2026-11-19T02:24:29Z`                                |
+| Updated @ | `2026-11-19T02:27:19Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/635) |
 
@@ -23,7 +23,7 @@ distilling）逐层把序列长度减半，再用**生成式 decoder**
 
 论文脚注称 ETT 数据集由作者收集并发布。`[经验]` 它是 Transformer 系长序列预测的代表作之一，后续的
 Autoformer、FEDformer、PatchTST 等常以它为基线。`[待核实]` 它获得 AAAI 2021
-最佳论文的说法来自任务说明，不在论文 PDF 中，未核对。综述见
+最佳论文的说法不在论文 PDF 中，未核对。综述见
 [时间序列总览](/0603_ML_Tasks_TimeSeries) 与
 [深度学习方法](/0606_ML_Tasks_TimeSeries_Deep)。
 
