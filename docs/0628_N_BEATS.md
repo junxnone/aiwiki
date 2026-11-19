@@ -2,7 +2,7 @@
 Title | N-BEATS
 -- | --
 Created @ | `2026-11-19T01:28:47Z`
-Updated @| `2026-11-19T01:28:47Z`
+Updated @| `2026-11-19T02:00:18Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/628)
 
@@ -11,7 +11,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/628)
 
 N-BEATS（Neural Basis Expansion Analysis for Interpretable Time Series Forecasting）是 Oreshkin、Carpov、Chapados、Bengio（Element AI / Mila）提出的**纯全连接**时间序列预测架构，发表于 ICLR 2020（arXiv:1905.10437）。一句话概括：用一摞带"回看补偿（backcast）+ 预测（forecast）"双输出的全连接块，通过**双重残差**把输入信号逐块"剥洗"、把各块的局部预测相加成最终预测；块末端的基函数层可以是学出来的（generic），也可以固定为多项式（趋势）与傅里叶（季节）基（interpretable）。
 
-论文的问题设定是**单变量点预测**：给定长度为 `T` 的历史，预测未来 `H` 步；模型输入是以最后观测值结尾、长度 `t ≤ T` 的回看窗口 `x = [y_{T-t+1}, ..., y_T]`。它不处理多变量、协变量和概率预测（这些是后续扩展，如 NBEATSx，见 [深度学习总览](/0606_ML_Tasks_TimeSeries_Deep)）。本文所有数字、公式来自论文原文；非论文内容均以 `[经验]` / `[解读]` / `[待核实]` 标注。相关背景见 [时间序列总览](/0603_ML_Tasks_TimeSeries)、[经典方法](/0604_ML_Tasks_TimeSeries_Classical)、[深度方法](/0606_ML_Tasks_TimeSeries_Deep)。
+论文的问题设定是**单变量点预测**：给定长度为 $T$ 的历史，预测未来 $H$ 步；模型输入是以最后观测值结尾、长度 $t \le T$ 的回看窗口 $x = [y_{T-t+1}, ..., y_T]$。它不处理多变量、协变量和概率预测（这些是后续扩展，如 NBEATSx，见 [深度学习总览](/0606_ML_Tasks_TimeSeries_Deep)）。本文所有数字、公式来自论文原文；非论文内容均以 `[经验]` / `[解读]` / `[待核实]` 标注。相关背景见 [时间序列总览](/0603_ML_Tasks_TimeSeries)、[经典方法](/0604_ML_Tasks_TimeSeries_Classical)、[深度方法](/0606_ML_Tasks_TimeSeries_Deep)。
 
 ## 动机：为什么要做纯深度模型
 
@@ -24,29 +24,31 @@ N-BEATS（Neural Basis Expansion Analysis for Interpretable Time Series Forecast
 
 ### 基本块（Block）
 
-第 `ℓ` 个块接收输入 `x_ℓ`（首块为模型输入窗口，其余为前一块的残差），输出两个向量：`x̂_ℓ`（backcast，对 `x_ℓ` 的最佳重构）与 `ŷ_ℓ`（长度 `H` 的局部 forecast）。块内分两部分：
+第 $\ell$ 个块接收输入 $x_\ell$（首块为模型输入窗口，其余为前一块的残差），输出两个向量：$\hat x_\ell$（backcast，对 $x_\ell$ 的最佳重构）与 $\hat y_\ell$（长度 $H$ 的局部 forecast）。块内分两部分：
 
-```
-h_{ℓ,1} = FC_{ℓ,1}(x_ℓ)        # FC = Linear + ReLU
-h_{ℓ,2} = FC_{ℓ,2}(h_{ℓ,1})
-h_{ℓ,3} = FC_{ℓ,3}(h_{ℓ,2})
-h_{ℓ,4} = FC_{ℓ,4}(h_{ℓ,3})
-θ^b_ℓ = LINEAR_b(h_{ℓ,4}),   θ^f_ℓ = LINEAR_f(h_{ℓ,4})      # 展开系数 (式 1)
+$$\begin{aligned}
+h_{\ell,1} &= \mathrm{FC}_{\ell,1}(x_\ell) && \text{FC = Linear + ReLU}\\
+h_{\ell,2} &= \mathrm{FC}_{\ell,2}(h_{\ell,1})\\
+h_{\ell,3} &= \mathrm{FC}_{\ell,3}(h_{\ell,2})\\
+h_{\ell,4} &= \mathrm{FC}_{\ell,4}(h_{\ell,3})\\
+\theta^b_\ell &= \mathrm{LINEAR}_b(h_{\ell,4}),\quad \theta^f_\ell = \mathrm{LINEAR}_f(h_{\ell,4}) && \text{展开系数 (式 1)}
+\end{aligned}$$
 
-ŷ_ℓ = Σ_i θ^f_{ℓ,i} · v^f_i       # 前向基层 g^f
-x̂_ℓ = Σ_i θ^b_{ℓ,i} · v^b_i       # 后向基层 g^b
-```
+$$\begin{aligned}
+\hat y_\ell &= \sum_i \theta^f_{\ell,i}\cdot v^f_i && \text{前向基层 } g^f\\
+\hat x_\ell &= \sum_i \theta^b_{\ell,i}\cdot v^b_i && \text{后向基层 } g^b
+\end{aligned}$$
 
-- 第一部分是 4 层 FC 加两个线性投影头，预测前向系数 `θ^f` 与后向系数 `θ^b`。
-- 第二部分是基层 `g^b`、`g^f`：把系数投影到一组基向量 `{v_i}` 上得到输出。基向量可以学习，也可以固定为特定函数形式——这是 generic 与 interpretable 的核心区别。
-- 窗口长度取预测长度的整数倍：论文中输入长度 `2H ~ 7H`。
+- 第一部分是 4 层 FC 加两个线性投影头，预测前向系数 $\theta^f$ 与后向系数 $\theta^b$。
+- 第二部分是基层 $g^b$、$g^f$：把系数投影到一组基向量 $\{v_i\}$ 上得到输出。基向量可以学习，也可以固定为特定函数形式——这是 generic 与 interpretable 的核心区别。
+- 窗口长度取预测长度的整数倍：论文中输入长度 $2H \sim 7H$。
 
 ### 双重残差堆叠（Doubly Residual Stacking）
 
-```
-x_ℓ = x_{ℓ-1} - x̂_{ℓ-1}          # backcast 分支：逐块扣除"已被解释"的部分
-ŷ   = Σ_ℓ ŷ_ℓ                    # forecast 分支：各块局部预测求和
-```
+$$\begin{aligned}
+x_\ell &= x_{\ell-1} - \hat x_{\ell-1} && \text{backcast 分支：逐块扣除"已被解释"的部分}\\
+\hat y &= \sum_\ell \hat y_\ell && \text{forecast 分支：各块局部预测求和}
+\end{aligned}$$
 
 ```
  窗口 x ──► Block1 ──(x - x̂1)──► Block2 ──(...)──► ... ──► BlockK
@@ -62,23 +64,21 @@ x_ℓ = x_{ℓ-1} - x̂_{ℓ-1}          # backcast 分支：逐块扣除"已被
 
 ### 两种配置
 
-**Generic（N-BEATS-G）**：`g^b`、`g^f` 就是对 `θ` 的线性投影，`ŷ = V^f θ^f + b^f`，`x̂ = V^b θ^b + b^b`，矩阵 `V` 由网络学习（`V^f` 形状为 `H × dim(θ^f)`）。论文观察到学出来的"波形"没有可见结构，因此局部预测不可解释。
+**Generic（N-BEATS-G）**：$g^b$、$g^f$ 就是对 $\theta$ 的线性投影，$\hat y = V^f \theta^f + b^f$，$\hat x = V^b \theta^b + b^b$，矩阵 $V$ 由网络学习（$V^f$ 形状为 $H \times \dim(\theta^f)$）。论文观察到学出来的"波形"没有可见结构，因此局部预测不可解释。
 
 **Interpretable（N-BEATS-I）**：在 stack 层面固定基函数，整个模型是**趋势 stack + 季节 stack** 两个 stack 串联。
 
-- 趋势基：`t = [0, 1, ..., H-1]^T / H`，`ŷ^{tr}_{s,ℓ} = Σ_{i=0}^{p} θ_{s,ℓ,i} t^i = T θ`，`p` 取小的值（如 2 或 3）使其只能表达缓变/单调的趋势。
+- 趋势基：$t = [0, 1, ..., H-1]^T / H$，$\hat y^{tr}_{s,\ell} = \sum_{i=0}^{p} \theta_{s,\ell,i}\, t^i = T \theta$，$p$ 取小的值（如 2 或 3）使其只能表达缓变/单调的趋势。
 - 季节基（傅里叶）：
 
-```
-ŷ^{seas}_{s,ℓ} = Σ_{i=0}^{⌊H/2⌋-1} [ θ_{s,ℓ,i} cos(2π i t) + θ_{s,ℓ,i+⌊H/2⌋} sin(2π i t) ]  =  S θ
-```
+$$\hat y^{seas}_{s,\ell} = \sum_{i=0}^{\lfloor H/2\rfloor-1} \left[ \theta_{s,\ell,i} \cos(2\pi i t) + \theta_{s,\ell,i+\lfloor H/2\rfloor} \sin(2\pi i t) \right] = S \theta$$
 
 - 因为趋势 stack 在前，趋势成分先从输入窗口被扣除，再进入季节 stack；两个 stack 的输出各自可读。
 - 每个 stack 有 3 个块；stack 内各块共享固定的基；论文还发现**stack 内所有权重共享**时验证集表现更好。
 
 ### 一个小例子：信息怎么流过去（示意）
 
-`[解读]` 下面的数字是为说明信息流自拟的，不是论文结果。设 `H = 4`，输入窗口 `x` 含"上升趋势 + 周期 2 的锯齿"，interpretable 版本两个 stack：
+`[解读]` 下面的数字是为说明信息流自拟的，不是论文结果。设 $H = 4$，输入窗口 `x` 含"上升趋势 + 周期 2 的锯齿"，interpretable 版本两个 stack：
 
 ```
 输入 x      = [10, 13, 14, 17, 18, 21, 22, 25]      # 约每步 +2，叠加 ±1 的锯齿
@@ -105,30 +105,30 @@ OWA 结果见后文消融表：默认方案最好，纯前馈最差。
 
 ### 评估指标（论文 §2）
 
-```
-sMAPE = (200/H) Σ |y - ŷ| / (|y| + |ŷ|)
-MASE  = (1/H) Σ |y - ŷ| / [ (1/(T+H-m)) Σ_{j=m+1}^{T+H} |y_j - y_{j-m}| ]     # m 为季节周期
-MAPE  = (100/H) Σ |y - ŷ| / |y|
-OWA   = ( sMAPE/sMAPE_Naive2 + MASE/MASE_Naive2 ) / 2      # M4 专用，Naive2 的 OWA = 1
-```
+$$\begin{aligned}
+\mathrm{sMAPE} &= \frac{200}{H}\sum \frac{\lvert y - \hat y\rvert}{\lvert y\rvert + \lvert\hat y\rvert}\\
+\mathrm{MASE} &= \frac{1}{H}\sum \frac{\lvert y - \hat y\rvert}{\frac{1}{T+H-m}\sum_{j=m+1}^{T+H}\lvert y_j - y_{j-m}\rvert} && m \text{ 为季节周期}\\
+\mathrm{MAPE} &= \frac{100}{H}\sum \frac{\lvert y - \hat y\rvert}{\lvert y\rvert}\\
+\mathrm{OWA} &= \frac{1}{2}\left(\frac{\mathrm{sMAPE}}{\mathrm{sMAPE}_{\text{Naive2}}} + \frac{\mathrm{MASE}}{\mathrm{MASE}_{\text{Naive2}}}\right) && \text{M4 专用，Naive2 的 OWA = 1}
+\end{aligned}$$
 
 `[解读]` 这三个指标都是尺度无关的，这是 N-BEATS 能"不做输入缩放"、并把三种指标当作集成多样性来源的前提。
 
 ## 训练与推理
 
-- **数据采样**：每次更新取 batch=1024，在该 horizon 子集中均匀有放回地抽 1024 条序列；对每条序列，在其训练部分末尾前长度 `L_H · H` 的历史范围内随机选一个预测起点；起点之后的 `H` 个点作目标，之前 `2H ~ 7H` 之一长度的历史作输入。越界的点补 0 并在训练时 mask。
-- `L_H` 是交叉验证出的超参：序列很多的子集小（M4 Yearly / Monthly / Quarterly 为 1.5），序列较少的子集大（M4 Weekly / Daily / Hourly 为 10）。
+- **数据采样**：每次更新取 batch=1024，在该 horizon 子集中均匀有放回地抽 1024 条序列；对每条序列，在其训练部分末尾前长度 $L_H \cdot H$ 的历史范围内随机选一个预测起点；起点之后的 $H$ 个点作目标，之前 $2H \sim 7H$ 之一长度的历史作输入。越界的点补 0 并在训练时 mask。
+- $L_H$ 是交叉验证出的超参：序列很多的子集小（M4 Yearly / Monthly / Quarterly 为 1.5），序列较少的子集大（M4 Weekly / Daily / Hourly 为 10）。
 - **优化**：Adam（默认设置），初始学习率 0.001；基于验证集早停并确定 batch 数。用 sMAPE 作损失时，对分母**停止梯度**以保证数值稳定。
 - **每个 horizon 单独训一个模型**（模型内部跨序列共享参数），但架构与超参数在不同 horizon、不同数据集间保持一致。论文把"每条序列是一个任务"联系到多任务学习 / 元学习。
 - **无缩放、无特征工程**：论文设计原则之一是不依赖输入缩放。`[解读]` 损失（sMAPE/MAPE/MASE）本身是尺度无关的，这样可行；若换成 MSE 等有量纲损失，是否需要归一化，论文未讨论。
 - **训练耗时**：论文称 GPU 上训练 M4 全集的一个集成成员需要 30 分钟到 2 小时，取决于网络设置和硬件。
 - **集成（Ensembling）**：论文发现集成是比 dropout、L2 更强的正则手段（dropout/L2 能改善单模型，却会伤害集成）。多样性来源三个：
   1. 三种损失：sMAPE、MASE、MAPE（只用真值作分母的 sMAPE 变体）；
-  2. 六种输入窗口长度：2H、3H、...、7H；
+  2. 六种输入窗口长度：$2H$、$3H$、...、$7H$；
   3. 不同随机初始化的 bagging。
 
   报告测试集结果时共用 **180 个模型**，聚合函数取**中位数**。`[解读]` 180 = 3 种损失 × 6 种窗口 × 10 个随机种子：论文只写了三项多样性来源和总数 180，"10 个种子"是反推；佐证是消融里集成规模取 18 / 36 / 90 / 180（均为 18 的倍数），而 18 个模型的消融集成正好对应"3 × 6 各一个"。TOURISM 只用 MAPE 一种损失（验证集上最佳）。
-- **推理**：给定最后 `t` 个观测值，所有块前向一次，直接输出长度 `H` 的整段预测（**直接多步**，不递归）。
+- **推理**：给定最后 $t$ 个观测值，所有块前向一次，直接输出长度 $H$ 的整段预测（**直接多步**，不递归）。
 
 ### 超参（论文附录 Table 18，M4/M3/TOURISM 通用设置）
 
@@ -140,15 +140,15 @@ OWA   = ( sMAPE/sMAPE_Naive2 + MASE/MASE_Naive2 ) / 2      # M4 专用，Naive2 
 块数 | 趋势 3、季节 3 | 每 stack 1（共 30 个块）
 趋势多项式次数 | 2 | -
 权重共享 | stack 内共享 | 不共享
-batch / 窗口 | 1024；`2H ~ 7H` | 同左
+batch / 窗口 | 1024；$2H \sim 7H$ | 同左
 
-以上数字已对照 Table 18 渲染图核实。各子集上变化的只有 `L_H`、训练 batch 数（Iterations）和损失：
+以上数字已对照 Table 18 渲染图核实。各子集上变化的只有 $L_H$、训练 batch 数（Iterations）和损失：
 
 配置 | 项目 | M4 Yly / Qly / Mly | M4 Wly / Dly / Hly | M3 Yly / Qly / Mly / Other | TOURISM Yly / Qly / Mly
 -- | -- | -- | -- | -- | --
-N-BEATS-I | `L_H` | 1.5 / 1.5 / 1.5 | 10 / 10 / 10 | 20 / 5 / 5 / 20 | 20 / 10 / 20
+N-BEATS-I | $L_H$ | 1.5 / 1.5 / 1.5 | 10 / 10 / 10 | 20 / 5 / 5 / 20 | 20 / 10 / 20
 N-BEATS-I | Iterations | 15K / 15K / 15K | 5K / 5K / 5K | 50 / 6K / 6K / 250 | 30 / 500 / 300
-N-BEATS-G | `L_H` | 1.5 / 1.5 / 1.5 | 10 / 10 / 10 | 20 / 20 / 20 / 10 | 5 / 10 / 20
+N-BEATS-G | $L_H$ | 1.5 / 1.5 / 1.5 | 10 / 10 / 10 | 20 / 20 / 20 / 10 | 5 / 10 / 20
 N-BEATS-G | Iterations | 15K / 15K / 15K | 5K / 5K / 5K | 20 / 250 / 10K / 250 | 30 / 100 / 100
 
 - 损失：M4、M3 为 sMAPE/MAPE/MASE 三种混合；TOURISM 仅 MAPE。
@@ -209,7 +209,7 @@ N-BEATS-DRESS（默认） | 0.803 | 0.800
 
 ## 元学习视角（论文 §6，推测性讨论）
 
-论文把 N-BEATS 类比为元学习：外循环是用梯度下降学习整个网络参数；内循环是各块依次修改展开系数 `θ^f`，每个块像一次"更新步"，把一段历史看作训练集。消融中"块数 / stack 数越多泛化越好"被解释为"内循环迭代更多"。结论部分明确写的是"我们**推测**（speculate）"性能部分来自元学习，留作未来研究，**不是已验证的结论**。
+论文把 N-BEATS 类比为元学习：外循环是用梯度下降学习整个网络参数；内循环是各块依次修改展开系数 $\theta^f$，每个块像一次"更新步"，把一段历史看作训练集。消融中"块数 / stack 数越多泛化越好"被解释为"内循环迭代更多"。结论部分明确写的是"我们**推测**（speculate）"性能部分来自元学习，留作未来研究，**不是已验证的结论**。
 
 ## 优缺点与局限
 
@@ -222,9 +222,9 @@ N-BEATS-DRESS（默认） | 0.803 | 0.800
 `[经验]` / `[解读]` 局限：
 
 - **仅单变量**：原模型不支持多变量依赖、协变量（未来已知变量如促销、节假日）与概率输出；仓库综述也将其归为协变量支持有限（NBEATSx 是外生变量扩展）。
-- **固定输入窗口与固定 horizon**：每个 horizon 要单独训练一个模型，窗口长度必须是 `H` 的倍数且训练时固定；`[解读]` `H` 很长时，输出向量和 FC 参数量随 `H` 增长（后续 N-HiTS 针对长 horizon 的计算量做了改进，另文介绍）。
+- **固定输入窗口与固定 horizon**：每个 horizon 要单独训练一个模型，窗口长度必须是 $H$ 的倍数且训练时固定；`[解读]` $H$ 很长时，输出向量和 FC 参数量随 $H$ 增长（后续 N-HiTS 针对长 horizon 的计算量做了改进，另文介绍）。
 - **集成成本**：论文最佳结果依赖 180 个模型的中位数集成；Figure 3 显示缩到 18 个模型 OWA 仅损失不到 0.5%，但单个模型的精度论文正文未单独给出。
-- **解释性的边界**：趋势 / 季节是被"结构约束"出来的分解，不是从数据里发现的因果因素；`[解读]` 季节基按 `H` 的整数倍频率展开，对周期与 `H` 不对齐的序列表达是否理想，论文没有专门讨论。
+- **解释性的边界**：趋势 / 季节是被"结构约束"出来的分解，不是从数据里发现的因果因素；`[解读]` 季节基按 $H$ 的整数倍频率展开，对周期与 $H$ 不对齐的序列表达是否理想，论文没有专门讨论。
 - **实验范围**：论文主要在竞赛类（M4/M3/TOURISM）数据集上验证，序列较短、频率较低；长序列、多变量长期预测的基准（如 ETT、Weather 等）不在论文范围内，不能由此推断。
 
 ## 与相关方法对比
@@ -239,7 +239,7 @@ Smyl ES-RNN（M4 冠军） | Holt-Winters + 扩张 LSTM 混合 | 否 | 否 | 部
 N-HiTS | 在 N-BEATS 上加多速率池化与层级插值 | 否 | 否 | 有限 | 同系列后续工作，另文介绍
 DLinear / TSMixer / TimeMixer | MLP / 线性路线 | 视模型而定 | 否 | 视模型而定 | 同批其他文章另述
 
-`[解读]` 与 N-HiTS 的区别（N-HiTS 的细节来自仓库综述，不是本文这篇论文）：N-BEATS 每个块都吃完整输入窗口并输出完整长度 `H` 的预测；N-HiTS 让不同块对输入做不同强度的池化、输出缩短的预测再插值到 `H`，使块分工于不同频率并降低长 horizon 计算量。与 DeepAR 的区别：DeepAR 是自回归的概率模型（输出分布参数，靠采样生成多步），N-BEATS 直接输出整段点预测、没有分布假设；二者都是跨序列共享参数的"全局模型"。
+`[解读]` 与 N-HiTS 的区别（N-HiTS 的细节来自仓库综述，不是本文这篇论文）：N-BEATS 每个块都吃完整输入窗口并输出完整长度 $H$ 的预测；N-HiTS 让不同块对输入做不同强度的池化、输出缩短的预测再插值到 $H$，使块分工于不同频率并降低长 horizon 计算量。与 DeepAR 的区别：DeepAR 是自回归的概率模型（输出分布参数，靠采样生成多步），N-BEATS 直接输出整段点预测、没有分布假设；二者都是跨序列共享参数的"全局模型"。
 
 `[解读]` N-BEATS 可视为"把经典的分解思想（STL 的趋势 + 季节）装进可学习的基函数展开，再用深度网络预测系数"。上表中"多变量 / 协变量""解释性"两列除 N-BEATS 外均为 `[经验]` 性概括，非论文结论。
 
@@ -282,10 +282,11 @@ class NBeatsG(nn.Module):
         return forecast
 ```
 
-`[经验]` 实践要点（非论文结论）：窗口长度取 `H` 的 2 到 7 倍并多取几个做集成；损失用 sMAPE / MASE 一类尺度无关指标时可不做归一化，用其他损失时建议自行做归一化并评估；需要未来协变量或多变量时优先考虑 NBEATSx 或其他模型。
+`[经验]` 实践要点（非论文结论）：窗口长度取 $H$ 的 2 到 7 倍并多取几个做集成；损失用 sMAPE / MASE 一类尺度无关指标时可不做归一化，用其他损失时建议自行做归一化并评估；需要未来协变量或多变量时优先考虑 NBEATSx 或其他模型。
 
 ## Reference
 
 - Oreshkin, Carpov, Chapados, Bengio. *N-BEATS: Neural basis expansion analysis for interpretable time series forecasting*. ICLR 2020. [arXiv:1905.10437](https://arxiv.org/abs/1905.10437)
 - 仓库相关综述：[时间序列总览](/0603_ML_Tasks_TimeSeries)、[深度学习](/0606_ML_Tasks_TimeSeries_Deep)
+
 
