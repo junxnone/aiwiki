@@ -1,41 +1,73 @@
 -----
 
-| Title         | ML Transformer DeiT                                   |
-| ------------- | ----------------------------------------------------- |
-| Created @     | `2021-02-18T07:42:25Z`                                |
-| Last Modify @ | `2022-12-24T15:49:38Z`                                |
-| Labels        | \`\`                                                  |
-| Edit @        | [here](https://github.com/junxnone/aiwiki/issues/253) |
+| Title     | ML Transformer DeiT                                   |
+| --------- | ----------------------------------------------------- |
+| Created @ | `2021-02-18T07:42:25Z`                                |
+| Updated @ | `2026-11-19T09:39:00Z`                                |
+| Labels    | \`\`                                                  |
+| Edit @    | [here](https://github.com/junxnone/aiwiki/issues/253) |
 
 -----
 
-## Reference
+# DeiT
 
-  - 2020-12 **\[DeiT\]** Training data-efficient image transformers &
-    distillation through attention
-    \[[Paper](https://arxiv.org/abs/2012.12877)\]
-    \[[Code](https://github.com/facebookresearch/deit)\]
-  - [timm
-    code](https://github.com/rwightman/pytorch-image-models/blob/e8a64fb88108b592da192e98054095b1ee25e96e/timm/models/vision_transformer.py#L242)
-
-## Brief
-
-  - KD - Knowledge Distillation
-      - **经典**
-          - **Soft**: softmax output vector
-          - **Hard**: output label with maximum scores
-      - **Distillation Token**
-          - 类似于 `Class Token`
+DeiT（Data-efficient image Transformers）只用 ImageNet-1k 训练（无需
+[ViT](/0223_ML_Transformer_ViT) 依赖的 JFT-300M 预训练），在单台 8 GPU 机器上约 3
+天即可训得有竞争力的纯 Transformer 分类模型。关键技术是：强数据增强/正则化的训练配方 + 通过
+Attention 做知识蒸馏的 **Distillation Token**。
 
 ## Motivation
 
   - 背景/存在的问题
-      - ViT 很难Training 需要资源巨大
+      - ViT 很难 Training，需要资源巨大
       - 需要 Google 内部数据集 JFT-300M pretrain
   - 做了什么尝试/分别有什么效果
-      - \+KD
-      - 相比 ViT 不需要 在 JFT-300M 上 pretrain/训练资源减少
-  - 应用领域
+      - 重新设计训练策略（Rand-Augment、Mixup、CutMix、Random Erasing、Stochastic
+        Depth、Repeated Augmentation 等）
+      - \+KD（Knowledge Distillation）
+      - 相比 ViT 不需要在 JFT-300M 上 pretrain，训练资源减少
+
+## Knowledge Distillation
+
+  - **经典**
+      - **Soft**: softmax output vector
+      - **Hard**: output label with maximum scores
+  - **Distillation Token**
+      - 类似于 `Class Token`，与 patch token 一起输入网络，通过 self-attention 与其它
+        token 交互
+      - 最后一层的输出对应 teacher 的预测目标，`Class Token` 的输出对应真实标签
+
+设 $`Z_s`$、$`Z_t`$ 为 student / teacher 的 logits，$`\psi`$ 为 softmax，$`y`$
+为真实标签，$`y_t = \arg\max_c Z_t(c)`$：
+
+$$ \\mathcal{L}*{soft} = (1-\\lambda),\\mathcal{L}*{CE}(\\psi(Z\_s), y)
++ \\lambda\\tau^2,\\mathrm{KL}\\big(\\psi(Z\_s/\\tau),,
+\\psi(Z\_t/\\tau)\\big) $$
+
+$$ \\mathcal{L}*{hard} = \\tfrac{1}{2},\\mathcal{L}*{CE}(\\psi(Z\_s), y)
++ \\tfrac{1}{2},\\mathcal{L}\_{CE}(\\psi(Z\_s), y\_t) $$
+
+符号说明：
+
+  - $`\mathcal{L}_{CE}`$ 是交叉熵损失；$`\mathrm{KL}(p, q)`$ 是 KL
+    散度，衡量两个分布的差异，值越小说明 student 的分布越接近
+    teacher
+  - $`\lambda \in [0,1]`$ 平衡真实标签损失和蒸馏损失
+  - $`\tau`$ 是温度：logits 除以 $`\tau`$ 后再 softmax，$`\tau>1`$ 时分布更平滑，能保留
+    teacher 对"非正确类别"的相对偏好（dark knowledge）；乘上 $`\tau^2`$
+    是为了抵消温度使梯度变小的影响，让两项损失量级可比
+  - soft：student 拟合 teacher 的**完整概率分布**；hard：直接把 teacher 的 $`\arg\max`$
+    当作第二个"真实标签" $`y_t`$，没有 $`\lambda`$、$`\tau`$ 这两个超参，权重固定各占一半
+
+**为什么 hard 更好**：teacher 的类别预测有时与真实标签不同（例如被强数据增强裁剪后目标已不在图中），hard label
+会随增强后的图像动态变化，能纠正这种不一致；而且形式简单无需调超参。
+
+**Distillation Token 的作用**：两个损失分别作用在两个 token 的输出上——`Class Token` 的输出用
+$`\mathcal{L}_{CE}(\psi(Z_s), y)`$，`Distillation Token` 的输出 $`Z_s`$ 用
+$`\mathcal{L}_{CE}(\psi(Z_s), y_t)`$，二者共用同一套权重，只是目标不同，所以训练后两个 token
+的表示相似但不完全一致，推理时取平均。
+
+论文最终使用 hard distillation，效果优于 soft distillation。
 
 ## Diff with ViT
 
@@ -43,12 +75,19 @@
 | ------------------ | ---------------------------------------------- | -------------------- |
 | 训练策略               | Pretrain on JFT-300M<br> Fine-tune on ImageNet | Training on ImageNet |
 | Head               | MLP                                            | Linear Classifier    |
-| Distillation Token | ✅                                              | :x:                  |
+| Distillation Token | :x:                                            | ✅                    |
 
 ## Arch
 
-  - DeiT 的不同重量级的结构 DeiT-tiny/DeiT-Small/Deit-Base
+  - DeiT 的不同重量级的结构 DeiT-tiny/DeiT-Small/Deit-Base，网络结构与 ViT 基本一致，仅增加
+    distillation token
   - Inference 时 模型输出值 取 ` (Class Token + Distillation Token) / 2  `
+
+| Name    | Layers | Dim | Heads | Params | ImageNet Top-1 | w/ Distillation |
+| ------- | ------ | --- | ----- | ------ | -------------- | --------------- |
+| DeiT-Ti | 12     | 192 | 3     | 5M     | 72.2           | 74.5            |
+| DeiT-S  | 12     | 384 | 6     | 22M    | 79.8           | 81.2            |
+| DeiT-B  | 12     | 768 | 12    | 86M    | 81.8           | 83.4            |
 
 | ![image](media/699025b100bc8ab2670fd218ee88ef0c0d23530f.png) | ![image](media/e42b9d8b7ab8a41e0b4917283423ddfeabd3496e.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -58,6 +97,7 @@
   - **Evaluation 1: Teacher Model**
       - CNN 网络 比 Transformer 作为 `Teacher Model` 取得了更好的性能
       - **Teacher Model**: `RegNetY-16GF` 和 DeiT 同样的 `Data` & `Aug`
+      - 解释：student 可以从 CNN teacher 继承归纳偏置（局部性等）
   - **Evaluation 2: soft vs hard/class vs distill**
       - `hard distillation` \> `soft distillation`
       - `class + distillation` \> `distill emedding` \> `class
@@ -90,3 +130,12 @@
 
   - \[deit issues - facebookresearch - deit - 45) show that they were
     not using the distillation signal and doing a classic fine-tuning
+
+## Reference
+
+  - 2020-12 **\[DeiT\]** Training data-efficient image transformers &
+    distillation through attention
+    \[[Paper](https://arxiv.org/abs/2012.12877)\]
+    \[[Code](https://github.com/facebookresearch/deit)\]
+  - [timm
+    code](https://github.com/rwightman/pytorch-image-models/blob/e8a64fb88108b592da192e98054095b1ee25e96e/timm/models/vision_transformer.py#L242)
