@@ -1,8 +1,8 @@
 ---
-Title | TimesNet
+Title | ML Tasks TimeSeries Deep TimesNet
 -- | --
 Created @ | `2026-11-19T01:28:53Z`
-Updated @| `2026-11-19T01:59:43Z`
+Updated @| `2026-11-19T02:24:19Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/631)
 
