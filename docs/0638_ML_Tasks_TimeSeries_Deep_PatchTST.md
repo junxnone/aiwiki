@@ -1,8 +1,8 @@
 ---
-Title | ML Tasks TimeSeries Transformer PatchTST
+Title | ML Tasks TimeSeries Deep PatchTST
 -- | --
 Created @ | `2026-11-19T01:59:59Z`
-Updated @| `2026-11-19T02:24:36Z`
+Updated @| `2026-11-19T06:20:45Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/638)
 
