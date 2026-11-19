@@ -5410,6 +5410,60 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki ML Tasks TimeSeries ML GBDT",
+      "group": 5,
+      "title": "GBDT",
+      "url": "https://junxnone.github.io/aiwiki/#/0658_ML_Tasks_TimeSeries_ML_GBDT",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Tasks TimeSeries Foundation MOMENT",
+      "group": 5,
+      "title": "MOMENT",
+      "url": "https://junxnone.github.io/aiwiki/#/0659_ML_Tasks_TimeSeries_Foundation_MOMENT",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Tasks TimeSeries Foundation Chronos",
+      "group": 5,
+      "title": "Chronos",
+      "url": "https://junxnone.github.io/aiwiki/#/0660_ML_Tasks_TimeSeries_Foundation_Chronos",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Tasks TimeSeries Foundation LLMUseful",
+      "group": 5,
+      "title": "LLM 对时序预测有用吗",
+      "url": "https://junxnone.github.io/aiwiki/#/0661_ML_Tasks_TimeSeries_Foundation_LLMUseful",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Tasks TimeSeries Foundation TimeMoE",
+      "group": 5,
+      "title": "Time-MoE",
+      "url": "https://junxnone.github.io/aiwiki/#/0662_ML_Tasks_TimeSeries_Foundation_TimeMoE",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Tasks TimeSeries Foundation Sundial",
+      "group": 5,
+      "title": "Sundial",
+      "url": "https://junxnone.github.io/aiwiki/#/0663_ML_Tasks_TimeSeries_Foundation_Sundial",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Tasks Image Classification MobileNet V1",
       "group": 6,
       "title": "MobileNet V1",
@@ -9586,6 +9640,13 @@
       "expand": true
     },
     {
+      "source": "aiwiki ML Tasks TimeSeries ML",
+      "target": "aiwiki ML Tasks TimeSeries ML GBDT",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
       "source": "aiwiki ML Tasks TimeSeries Deep",
       "target": "aiwiki ML Tasks TimeSeries Deep DeepAR",
       "value": 5,
@@ -9679,6 +9740,41 @@
     {
       "source": "aiwiki ML Tasks TimeSeries Foundation",
       "target": "aiwiki ML Tasks TimeSeries Foundation Moirai",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks TimeSeries Foundation",
+      "target": "aiwiki ML Tasks TimeSeries Foundation MOMENT",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks TimeSeries Foundation",
+      "target": "aiwiki ML Tasks TimeSeries Foundation Chronos",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks TimeSeries Foundation",
+      "target": "aiwiki ML Tasks TimeSeries Foundation LLMUseful",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks TimeSeries Foundation",
+      "target": "aiwiki ML Tasks TimeSeries Foundation TimeMoE",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks TimeSeries Foundation",
+      "target": "aiwiki ML Tasks TimeSeries Foundation Sundial",
       "value": 5,
       "visible": true,
       "expand": true

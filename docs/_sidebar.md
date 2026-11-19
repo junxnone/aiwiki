@@ -291,15 +291,20 @@
         - [TimeMixer](/0633_ML_Tasks_TimeSeries_Deep_TimeMixer)
         - [TimesNet](/0631_ML_Tasks_TimeSeries_Deep_TimesNet)
       - [时间序列基础模型：方法详解、原理与发展脉络](/0608_ML_Tasks_TimeSeries_Foundation)
+        - [Chronos](/0660_ML_Tasks_TimeSeries_Foundation_Chronos)
         - [GPT4TS](/0650_ML_Tasks_TimeSeries_Foundation_GPT4TS)
+        - [LLM 对时序预测有用吗](/0661_ML_Tasks_TimeSeries_Foundation_LLMUseful)
         - Lag
           - [Lag-Llama](/0653_ML_Tasks_TimeSeries_Foundation_Lag_Llama)
+        - [MOMENT](/0659_ML_Tasks_TimeSeries_Foundation_MOMENT)
         - [Moirai](/0657_ML_Tasks_TimeSeries_Foundation_Moirai)
+        - [Sundial](/0663_ML_Tasks_TimeSeries_Foundation_Sundial)
         - [TTM](/0655_ML_Tasks_TimeSeries_Foundation_TTM)
         - Time
           - [Time-LLM](/0651_ML_Tasks_TimeSeries_Foundation_Time_LLM)
         - TimeGPT
           - [TimeGPT-1](/0652_ML_Tasks_TimeSeries_Foundation_TimeGPT_1)
+        - [Time-MoE](/0662_ML_Tasks_TimeSeries_Foundation_TimeMoE)
         - [Timer](/0656_ML_Tasks_TimeSeries_Foundation_Timer)
         - [TimesFM](/0654_ML_Tasks_TimeSeries_Foundation_TimesFM)
       - [生成式时间序列模型：方法详解、原理与发展脉络](/0607_ML_Tasks_TimeSeries_Generative)
@@ -307,6 +312,7 @@
         - [TS2Vec](/0646_ML_Tasks_TimeSeries_Generative_TS2Vec)
         - [TimeGrad](/0645_ML_Tasks_TimeSeries_Generative_TimeGrad)
       - [机器学习时间序列模型：方法详解、原理与发展脉络](/0605_ML_Tasks_TimeSeries_ML)
+        - [GBDT](/0658_ML_Tasks_TimeSeries_ML_GBDT)
         - [ROCKET](/0627_ML_Tasks_TimeSeries_ML_ROCKET)
       - [时间序列模型评估指标：公式、历史与现行评估方式、优缺点](/0610_ML_Tasks_TimeSeries_Metrics)
       - [时间序列模型发展时间线](/0611_ML_Tasks_TimeSeries_Timeline)
@@ -635,4 +641,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1043101119</sub></kbd>
+<kbd><sub>@1125161119</sub></kbd>

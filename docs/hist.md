@@ -1,5 +1,11 @@
 # Wiki History
 
+- 2026-11-19&nbsp;&nbsp; [Sundial](/0663_ML_Tasks_TimeSeries_Foundation_Sundial)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Foundation :bookmark:Sundial
+- 2026-11-19&nbsp;&nbsp; [Time-MoE](/0662_ML_Tasks_TimeSeries_Foundation_TimeMoE)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Foundation :bookmark:TimeMoE
+- 2026-11-19&nbsp;&nbsp; [LLM 对时序预测有用吗](/0661_ML_Tasks_TimeSeries_Foundation_LLMUseful)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Foundation :bookmark:LLMUseful
+- 2026-11-19&nbsp;&nbsp; [Chronos](/0660_ML_Tasks_TimeSeries_Foundation_Chronos)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Foundation :bookmark:Chronos
+- 2026-11-19&nbsp;&nbsp; [MOMENT](/0659_ML_Tasks_TimeSeries_Foundation_MOMENT)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Foundation :bookmark:MOMENT
+- 2026-11-19&nbsp;&nbsp; [GBDT](/0658_ML_Tasks_TimeSeries_ML_GBDT)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:ML :bookmark:GBDT
 - 2026-11-19&nbsp;&nbsp; [Moirai](/0657_ML_Tasks_TimeSeries_Foundation_Moirai)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Foundation :bookmark:Moirai
 - 2026-11-19&nbsp;&nbsp; [Timer](/0656_ML_Tasks_TimeSeries_Foundation_Timer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Foundation :bookmark:Timer
 - 2026-11-19&nbsp;&nbsp; [TTM](/0655_ML_Tasks_TimeSeries_Foundation_TTM)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Foundation :bookmark:TTM
