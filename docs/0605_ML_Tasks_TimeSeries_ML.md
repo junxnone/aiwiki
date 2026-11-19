@@ -2,7 +2,7 @@
 Title | ML Tasks TimeSeries ML
 -- | --
 Created @ | `2026-11-10T09:17:22Z`
-Updated @| `2026-11-10T09:17:22Z`
+Updated @| `2026-11-19T09:42:43Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/605)
 
@@ -29,6 +29,8 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/605)
 | 特征提取 | 大规模计算统计特征，再筛选 | tsfresh、catch22 | §3.5 |
 | 异常检测 | 滑窗后用通用异常检测器；或基于子序列相似度 | Isolation Forest、One-Class SVM、LOF、Matrix Profile | §3.6 |
 
+表中：「任务」是时序任务类型，「机器学习的做法」概述把任务转成什么学习问题，「代表方法」是典型算法，「本文章节」指向详解位置。
+
 一句话定位：**机器学习路线是"带协变量的、跨序列共享参数的、不需要手工建模型结构"的预测方式**。它在序列条数多、协变量丰富的业务场景里（零售销量、需求预测）长期是主力；在分类上，以随机卷积核为代表的方法给出了很强且极快的基线。
 
 读完本文你应能回答：滑窗怎么构造、多步预测有哪几种策略；为什么树模型不会外推趋势；全局模型为什么能借用其他序列的信息；分类里 ROCKET 为什么既快又准；异常检测里"简单方法不输深度模型"的证据是什么。
@@ -42,6 +44,12 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/605)
 设回看长度 $L$、协变量 $\mathbf z_t$。在每个预测起点 $t$ 构造一个训练样本：
 
 $$\mathbf x_t=\bigl[\,y_t,\,y_{t-1},\dots,y_{t-L+1},\ \mathbf z_{t+1},\dots,\mathbf z_{t+H},\ \mathbf s\,\bigr],\qquad \text{标签 } y_{t+h}\ (h=1,\dots,H)$$
+
+其中：
+
+- $\mathbf x_t$：预测起点 $t$ 的输入特征向量；$L$：回看窗口长度；$y_t,\dots,y_{t-L+1}$：最近 $L$ 个观测
+- $\mathbf z_{t+1},\dots,\mathbf z_{t+H}$：未来 $H$ 步的已知协变量；$H$：预测步数
+- $\mathbf s$：静态特征；$y_{t+h}$：第 $h$ 步的预测标签
 
 其中 $\mathbf s$ 是静态特征（序列 ID 编码、品类、地点），$\mathbf z_{t+1:t+H}$ 是**已知未来协变量**（节假日、计划促销、价格），这是机器学习路线相对经典模型的主要优势之一（经典模型的协变量支持见[经典篇 §3.4](0604_ML_Tasks_TimeSeries_Classical)）。
 
@@ -64,6 +72,8 @@ $$\mathbf x_t=\bigl[\,y_t,\,y_{t-1},\dots,y_{t-L+1},\ \mathbf z_{t+1},\dots,\mat
 | 直接 | 无误差累积，每个步长直接优化 | 要训 $H$ 个模型；各步长之间预测不保证一致 |
 | MIMO | 保留步长间的依赖，一个模型 | 需要支持多输出的学习器；GBDT 不原生支持，需包装 |
 
+表中：以上两张表分别给出四种策略的做法/公式，以及三种主要策略的优缺点（$f,f_h,F$ 是学习器，$\hat y$ 是预测值，$L$ 是回看长度，$\mathbf z$ 是协变量，$H$ 是预测步数，$h$ 是步长）。结论：递归省模型但会累积误差，直接避免累积但模型多，MIMO 折中。
+
 [经验] 用 GBDT 做业务预测，**直接策略**（每个 $h$ 一个模型，或把 $h$ 作为一个特征）是常见做法；递归策略在 $H$ 很长时误差累积明显。深度模型天然是 MIMO。
 
 ### 1.3 特征工程：把"时间结构"写成列
@@ -77,6 +87,8 @@ $$\mathbf x_t=\bigl[\,y_t,\,y_{t-1},\dots,y_{t-L+1},\ \mathbf z_{t+1},\dots,\mat
 | 傅里叶项 | $\sin\frac{2\pi kt}{P},\cos\frac{2\pi kt}{P}$ | 平滑的周期表示（与[经典篇 §3.11](0604_ML_Tasks_TimeSeries_Classical)同源） |
 | 协变量 | 价格、促销、天气、库存 | 外生驱动 |
 | 静态 / 编码 | 门店、SKU、品类（类别编码） | 区分个体，借用同类信息 |
+
+表中：「特征类型」是把时间结构写成列的方式，「例子」给出具体写法，「作用」说明捕捉的信息（$P$ 为周期，$k$ 为傅里叶阶数，$\bar y_{t-28:t}$ 为近 28 天均值）。
 
 **为什么要把目标做变换**：树模型的预测是叶子上训练目标的平均，**不会超出训练集目标的取值范围**（§1.6），所以直接对水平值回归的树模型无法外推趋势。常见处理有三种：对目标做差分 $\Delta y_t$、除以近期均值得到相对量 $y_t/\bar y_{t-L:t-1}$、或先用统计模型去趋势再让树拟合残差 [经验]。
 
@@ -104,6 +116,8 @@ $$\mathbf x_t=\bigl[\,y_t,\,y_{t-1},\dots,y_{t-L+1},\ \mathbf z_{t+1},\dots,\mat
 
 $$\hat y(\mathbf x)=\sum_{j=1}^{J}w_j\,\mathbf 1\{\mathbf x\in R_j\}$$
 
+其中：$\hat y(\mathbf x)$ 是模型对特征 $\mathbf x$ 的预测；$R_j$ 是树划分出的第 $j$ 个区域，共 $J$ 个；$w_j$ 是该区域内训练目标的平均（常数）；$\mathbf 1\{\cdot\}$ 是指示函数，样本落入哪个区域就取哪个 $w_j$。
+
 集成（随机森林、GBDT）是这些分段常数函数的平均或加权和，仍是分段常数函数，其取值**不超过训练目标的范围**（对 GBDT 严格而言，在步长 $\eta$ 与损失下取值有界性取决于具体设置，常见经验结论是它不能像线性模型那样外推趋势 [经验]）。含义：
 
 - 序列有持续上升的趋势、测试期水平高于训练期时，**直接回归水平值会系统性低估**；
@@ -121,6 +135,8 @@ $$\hat y(\mathbf x)=\sum_{j=1}^{J}w_j\,\mathbf 1\{\mathbf x\in R_j\}$$
 | 计数、间歇需求 | Poisson / Tweedie / 负二项 | 非负、有大量零值；M5 的不确定性赛道分析指出，直接用平方损失的 GBM 难以处理数据的过度离散与零需求（arXiv:2107.06675 [V]） |
 | 业务指标 | 自定义（如 WRMSSE 的加权形式） | 训练目标尽量对齐评估指标 |
 
+表中：「目标」是想估计的量，「损失」是对应的训练损失，「说明」给出特点。选择原则是让训练损失与最终业务评估指标尽量一致。
+
 ---
 
 ## 2. 发展脉络
@@ -136,6 +152,8 @@ $$\hat y(\mathbf x)=\sum_{j=1}^{J}w_j\,\mathbf 1\{\mathbf x\in R_j\}$$
 | 2016 | XGBoost（arXiv:1603.02754）[V]；Matrix Profile（Yeh et al., ICDM）[V] | 可扩展的提升树；子序列相似度的统一工具 |
 | 2017 | LightGBM（NIPS 2017，Crossref 命中为 CRAN 包条目，原论文待核实）；The Great Time Series Classification Bake Off（arXiv:1602.01711）[V] | 更快的 GBDT；分类算法大规模对比与分类体系 |
 | 2018 | tsfresh（Christ et al., *Neurocomputing*）[V]；Makridakis et al., *PLOS ONE*（统计与 ML 方法的问题）[V] | 假设检验筛选的特征提取；早期实证中机器学习方法相对统计方法并无优势（结论细节待核实） |
+
+表中：「时代」是时间段，「事件」是代表性工作及年份，「要点」说明意义。主线：通用学习器（GBDT、随机森林）→ 异常检测与多步策略 → 可扩展提升与子序列工具 → 随机卷积核分类 → 表格基础模型。
 | 2019 | ROCKET（arXiv:1910.13051，*DMKD* 2020）[V]；catch22（arXiv:1901.10200）[V]；NGBoost（arXiv:1910.03225）[V] | 随机卷积核分类；22 个典型特征；概率提升 |
 | 2020–2021 | MiniRocket（arXiv:2012.08791）[V]；M5 竞赛 [V]；HIVE-COTE 2.0（arXiv:2104.07551）[V]；InceptionTime（arXiv:1909.04939）[V] | 分类上"快且准"的组合；M5 中提升树类方法表现突出（具体名次待核实） |
 | 2022 | HYDRA（arXiv:2203.13652）[V]；Januschowski et al., *Forecasting with trees*（*IJF*）[V]；Audibert et al.（arXiv:2204.01637）[V] | 字典与卷积方法的融合；树模型预测的系统总结；异常检测中传统/ML/深度方法的对比 |
@@ -153,15 +171,25 @@ $$\hat y(\mathbf x)=\sum_{j=1}^{J}w_j\,\mathbf 1\{\mathbf x\in R_j\}$$
 
 $$F_m(\mathbf x)=F_{m-1}(\mathbf x)+\eta\,h_m(\mathbf x),\qquad h_m\ \text{拟合伪残差}\ r_{im}=-\left.\frac{\partial L\bigl(y_i,F(\mathbf x_i)\bigr)}{\partial F(\mathbf x_i)}\right|_{F=F_{m-1}}$$
 
+其中：$F_m$ 是第 $m$ 轮后的模型；$\eta$ 是学习率，越小越稳；$h_m$ 是第 $m$ 棵树；$L$ 是损失函数；$r_{im}$ 是样本 $i$ 的伪残差，即损失关于当前预测的负梯度。
+
 $\eta$ 为学习率，$h_m$ 是一棵小树。MSE 损失下伪残差就是普通残差，所以直觉上是"每棵新树去修正前面所有树还没拟合好的部分"。
 
 **XGBoost**（arXiv:1603.02754 [V]）用二阶泰勒展开并加正则项：
 
 $$\mathcal L=\sum_i l\bigl(y_i,\hat y_i\bigr)+\sum_k\Omega(f_k),\qquad \Omega(f)=\gamma\,T+\tfrac12\lambda\lVert w\rVert^2$$
 
+其中：$\mathcal L$ 是总目标；$l(y_i,\hat y_i)$ 是单样本损失；$f_k$ 是第 $k$ 棵树，$\Omega(f_k)$ 是其复杂度惩罚；$T$ 是叶子数，$w$ 是叶子权重向量；$\gamma$、$\lambda$ 分别惩罚叶子数与叶子权重大小。
+
 给定树结构，叶子 $j$ 的最优权重与划分增益为（标准结果，$G,H$ 分别是该叶子内一阶、二阶梯度之和）：
 
 $$w_j^{*}=-\frac{G_j}{H_j+\lambda},\qquad \text{Gain}=\frac12\Bigl[\frac{G_L^2}{H_L+\lambda}+\frac{G_R^2}{H_R+\lambda}-\frac{(G_L+G_R)^2}{H_L+H_R+\lambda}\Bigr]-\gamma$$
+
+其中：
+
+- $w_j^{*}$：叶子 $j$ 的最优输出值；$G_j,H_j$：该叶子内样本的一阶、二阶梯度之和
+- $\lambda$：叶子权重的 $L_2$ 正则强度，防止过拟合；$\gamma$：每增加一个叶子的复杂度惩罚
+- $G_L,H_L,G_R,H_R$：候选划分后左、右子节点的梯度和；$\text{Gain}$：划分带来的目标下降量，为正且越大越值得划分
 
 该文摘要强调稀疏感知算法与加权分位数草图，使系统"scales beyond billions of examples using far fewer resources than existing systems" [V]。**LightGBM** 以基于直方图的算法与 leaf-wise 生长、GOSS（单侧梯度采样）、EFB（互斥特征捆绑）等技术提速，细节待核实（本次未核对原文）。
 
@@ -183,6 +211,8 @@ $$w_j^{*}=-\frac{G_j}{H_j+\lambda},\qquad \text{Gain}=\frac12\Bigl[\frac{G_L^2}{
 | **缺点** | 不外推趋势（需目标变换）；特征工程依赖人；多步预测需策略选择且各步长间不保证一致；输出默认为点预测；对结构突变与长历史依赖不如专门的序列模型 |
 | **适用** | 序列条数多、协变量丰富的业务预测（零售、需求、能源节点）；需要快速上线、可解释的场景 |
 
+表中：空表头的两列分别是评价维度（优点 / 缺点 / 适用）和对应说明，概括 GBDT 用于时序预测的特点。
+
 ### 3.2 其他通用学习器
 
 | 方法 | 做法 | 说明 |
@@ -191,6 +221,8 @@ $$w_j^{*}=-\frac{G_j}{H_j+\lambda},\qquad \text{Gain}=\frac12\Bigl[\frac{G_L^2}{
 | **岭回归 / LASSO** | $\min_w\lVert y-Xw\rVert^2+\lambda\lVert w\rVert^2$ | 在滞后特征上的线性回归就是**带正则的自回归**，可外推趋势；是[经典 AR 模型](0604_ML_Tasks_TimeSeries_Classical)与深度线性模型（DLinear）之间的桥梁 |
 | **SVR** | $\varepsilon$-不敏感损失加核函数 | 小样本非线性回归；核与超参选择较敏感；大规模序列不友好 |
 | **kNN 类比预测** | 在历史中找与当前窗口最相似的 $k$ 个窗口，用它们的后续值平均 | 直观；距离度量与窗口长度敏感；可结合 DTW |
+
+表中：「方法」是通用学习器，「做法」概述其原理，「说明」给出特点与适用条件（$w$ 是回归系数，$\lambda$ 是正则强度）。
 
 **岭回归的作用**：线性模型的外推能力使它常被拿来与树模型**组合或做残差建模**（线性项抓趋势，树抓非线性与协变量交互）[经验]。
 
@@ -218,11 +250,16 @@ $$w_j^{*}=-\frac{G_j}{H_j+\lambda},\qquad \text{Gain}=\frac12\Bigl[\frac{G_L^2}{
 | 深度 | 学到的表示 | InceptionTime 等 |
 | 集成 | 多类别组合 | HIVE-COTE 2.0 |
 
+表中：「类别」是 Bake off 体系中的算法类型，「提取的特征」是该类别从序列中提取的信息，「代表」是典型算法；从上到下是从整体相似度到局部形状、频率、卷积再到深度与集成。
+
 #### 动态时间规整（DTW）
 
 对两条序列 $x_{1:n},y_{1:m}$，累积代价递推：
 
 $$D(i,j)=d(x_i,y_j)+\min\{D(i-1,j),\ D(i,j-1),\ D(i-1,j-1)\},\qquad \mathrm{DTW}(x,y)=D(n,m)$$
+
+
+其中：$x_i,y_j$ 是两条序列的第 $i$、$j$ 个点；$d(x_i,y_j)$ 是点间距离（如平方差）；$D(i,j)$ 是对齐前 $i$ 与前 $j$ 个点的最小累积代价；三个 $\min$ 项分别对应沿时间轴的"拉伸、压缩、一一对应"；$\mathrm{DTW}(x,y)=D(n,m)$ 是整条序列的距离，越小越相似。
 
 允许在时间轴上弹性对齐，因此对相位偏移和速度变化稳健。朴素实现是 $O(nm)$。**kNN-DTW** 长期是分类的基准线，也是 Bake off 中的参照（待核实具体设置）。
 
@@ -231,6 +268,9 @@ $$D(i,j)=d(x_i,y_j)+\min\{D(i-1,j),\ D(i,j-1),\ D(i-1,j-1)\},\qquad \mathrm{DTW}
 **ROCKET**（arXiv:1910.13051 [V]；Dempster et al. 2020, *DMKD* [V]）用**大量随机卷积核**变换序列，对每个核的输出取两个汇总特征，再接线性分类器。设核 $w$（随机长度、权重、偏置、膨胀、填充），卷积输出 $z=x*w+b$：
 
 $$\mathrm{PPV}=\frac1n\sum_{i=1}^{n}\mathbf 1\{z_i>0\},\qquad \max(z)$$
+
+
+其中：$z_i$ 是卷积输出序列的第 $i$ 个值（$n$ 个值）；$\mathbf 1\{z_i>0\}$ 是指示函数，$z_i>0$ 时为 1；PPV（proportion of positive values）是正值占比；$\max(z)$ 是输出的最大值，反映最强响应。
 
 PPV 是"正值比例"。每个核贡献这两个特征，默认核数为 10,000 量级（待核实），特征拼接后用岭回归分类器。
 
@@ -248,6 +288,8 @@ HIVE-COTE 是分层投票的**异构集成**，成员来自不同的表示域。
 | **优点** | ROCKET 系训练极快、精度强、几乎不需调参，是分类的首选基线；对多种序列形态通用；可在边缘设备部署 [经验] |
 | **缺点** | 随机特征可解释性弱；对**极长序列、变长序列、多变量依赖**的处理需要看具体变体；基准（UCR）上的排名不等于你的工业数据上的排名 |
 | **适用** | 振动、心电、传感器波形等定长窗口的分类；样本数较小而不想训练深度模型的场合 |
+
+表中：「优点 / 缺点 / 适用」三行概括 ROCKET 系分类方法的特点与适用范围。
 
 **数据泄漏提醒**：同一设备或同一病人的窗口同时出现在训练与测试集，会让分类指标虚高；应按**个体**划分（见 [metrics §4.1](0610_ML_Tasks_TimeSeries_Metrics)）。
 
@@ -271,6 +313,13 @@ HIVE-COTE 是分层投票的**异构集成**，成员来自不同的表示域。
 | **LOF**（Breunig et al. 2000 [V]） | 局部密度相对其邻居更低则为异常 | $\mathrm{LOF}_k(\mathbf x)=\frac{1}{\lvert N_k\rvert}\sum_{o\in N_k}\frac{\mathrm{lrd}(o)}{\mathrm{lrd}(\mathbf x)}$ |
 | **Matrix Profile**（Yeh et al. 2016 [V]） | 每个子序列与其最近的非平凡邻居的距离；该距离大的子序列是"discord"（异常） | $P_i=\min_{j\notin\mathrm{excl}(i)}d\bigl(\mathbf T_{i,m},\mathbf T_{j,m}\bigr)$，$d$ 为 z-归一化欧氏距离，$\mathrm{excl}(i)$ 是 $i$ 附近的"平凡匹配"排除区 |
 
+表中：「方法」是检测器及出处，「原理」是直觉，「公式 / 要点」给出评分形式。符号说明：
+
+- Isolation Forest：$h(\mathbf x)$ 是样本被孤立所需的路径长度，$E[h(\mathbf x)]$ 是其在多棵树上的期望，$n$ 是样本数，$c(n)$ 是路径长度的归一化常数，$H$ 是调和数；$s\in(0,1)$，越接近 1 越异常。
+- One-Class SVM：$w,\rho$ 是超平面参数，$\Phi$ 是核特征映射，$\xi_i$ 是松弛变量，$\nu\in(0,1]$ 控制被允许落在边界外的样本比例上界。
+- LOF：$N_k$ 是 $\mathbf x$ 的 $k$ 近邻集合，$\mathrm{lrd}$ 是局部可达密度；LOF 远大于 1 表示该点密度明显低于邻居。
+- Matrix Profile：$\mathbf T_{i,m}$ 是从位置 $i$ 开始、长度 $m$ 的子序列，$P_i$ 是它到最近非平凡邻居的距离，越大越异常（discord）。
+
 #### 重要的实证结论
 
 Audibert et al.（*Do Deep Neural Networks Contribute to Multivariate Time Series Anomaly Detection?*，arXiv:2204.01637）[V]：在 5 个真实开放数据集上比较 16 种传统、机器学习和深度神经网络方法，结论是"**no family of methods outperforms the others**"，作者呼吁在多变量异常检测基准中重新纳入三类方法。这条证据说明：**深度异常检测模型并没有稳定胜过传统与机器学习方法**，部署前先跑 Isolation Forest、Matrix Profile 一类基线是合理的 [经验]。
@@ -282,6 +331,8 @@ Audibert et al.（*Do Deep Neural Networks Contribute to Multivariate Time Serie
 | **优点** | 无需标签；计算便宜；多数能 CPU 运行；结果相对易解释（如 Matrix Profile 直接指出"哪一段与历史任何位置都不相似"） |
 | **缺点** | 窗口长度敏感；无法利用长程依赖与协变量；阈值难定；评估协议（尤其 point-adjust）问题多，见 [metrics §3](0610_ML_Tasks_TimeSeries_Metrics) |
 | **适用** | 无标签的初筛；作为深度异常检测的强基线 |
+
+表中：「优点 / 缺点 / 适用」三行概括异常检测类机器学习方法的长处、短板与适用场景。
 
 ---
 
@@ -300,6 +351,8 @@ Audibert et al.（*Do Deep Neural Networks Contribute to Multivariate Time Serie
 | tsfresh / catch22 | 特征提取 | — | 可 | — | — | 小到中 | 特征冗余/选择 |
 | Isolation Forest / OCSVM / LOF | 异常检测 | 否 | 可（窗口化） | 分数 | — | 中 | 窗口长度、阈值 |
 | Matrix Profile | 异常检测 / 模式发现 | 否 | 有多维变体 | 分数 | — | 中 | 子序列长度 $m$ 敏感 |
+
+表中：「任务」是方法主要解决的问题；「协变量 / 多变量 / 概率输出 / 外推趋势」四列表示是否支持外生变量、多变量输入、概率输出和外推趋势（"—"表示该维度不适用）；「数据量要求」是大致样本需求；「典型局限」是主要短板（$m$ 为子序列长度，$n,m$ 为序列长度）。可按自己的任务与数据特征横向筛选。
 
 ---
 
@@ -369,6 +422,8 @@ Audibert et al.（*Do Deep Neural Networks Contribute to Multivariate Time Serie
 | 特征提取 | tsfresh、catch22（pycatch22） |
 | 异常检测 | scikit-learn（IsolationForest、OneClassSVM、LocalOutlierFactor）、stumpy（Matrix Profile） |
 
+表中：「用途」是任务类别，「库」是对应的常用 Python 库，可按任务直接选用。
+
 ---
 
 ## 7. 机器学习路线的局限
@@ -408,9 +463,12 @@ Audibert et al.（*Do Deep Neural Networks Contribute to Multivariate Time Serie
 | Bergmeir & Benítez 2012, *Information Sciences* | 10.1016/j.ins.2011.12.028 |
 | Bergmeir, Hyndman, Benítez 2018, *CSDA* | 10.1016/j.csda.2017.11.003 |
 
+表中：「文献」是引用的论文（作者、年份、期刊与主题），「DOI」是 Crossref 命中的标识符，可通过 `https://doi.org/<DOI>` 访问。
+
 **arXiv 编号经 API 核对**：[1603.02754](https://arxiv.org/abs/1603.02754)（XGBoost）、[1901.10200](https://arxiv.org/abs/1901.10200)（catch22）、[1610.07717](https://arxiv.org/abs/1610.07717)（tsfresh 的 arXiv 版）、[1910.13051](https://arxiv.org/abs/1910.13051)（ROCKET）、[2012.08791](https://arxiv.org/abs/2012.08791)（MiniRocket）、[2102.00457](https://arxiv.org/abs/2102.00457)（MultiRocket）、[2203.13652](https://arxiv.org/abs/2203.13652)（HYDRA）、[2104.07551](https://arxiv.org/abs/2104.07551)（HIVE-COTE 2.0）、[1909.04939](https://arxiv.org/abs/1909.04939)（InceptionTime）、[1602.01711](https://arxiv.org/abs/1602.01711)（Bake off）、[2304.13029](https://arxiv.org/abs/2304.13029)（Bake off redux）、[1910.03225](https://arxiv.org/abs/1910.03225)（NGBoost）、[2204.01637](https://arxiv.org/abs/2204.01637)（Audibert 等）、[2211.05244](https://arxiv.org/abs/2211.05244)（深度时序异常检测综述）、[2207.08815](https://arxiv.org/abs/2207.08815)（树模型与表格深度学习）、[2501.02945](https://arxiv.org/abs/2501.02945)（TabPFN-TS）、[2107.06675](https://arxiv.org/abs/2107.06675)（M5 不确定性赛道的数据特征分析）。
 
 **待核实**：LightGBM 原论文（NIPS 2017）及其 GOSS/EFB 的具体表述（Crossref 命中为 CRAN 包条目）；ROCKET 的默认核数；kNN-DTW 在 Bake off 中的具体设置；Makridakis et al. 2018 的结论细节；M5 中各方法的具体名次；早期（1990–2000 年代）机器学习预测文献；各工具库的当前版本与接口；mlforecast、aeon、stumpy 等库的功能细节。
 
 **构造的例子**：§3.1 的外推失败算例（水平范围 80–120 与 130–170）是为说明概念构造的，不是实测结果。
+
 
