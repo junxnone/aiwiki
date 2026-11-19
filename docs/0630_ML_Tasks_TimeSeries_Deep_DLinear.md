@@ -1,8 +1,8 @@
 ---
-Title | DLinear
+Title | ML Tasks TimeSeries Deep DLinear
 -- | --
 Created @ | `2026-11-19T01:28:51Z`
-Updated @| `2026-11-19T01:59:40Z`
+Updated @| `2026-11-19T02:24:17Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/630)
 
