@@ -3,7 +3,7 @@
 | Title     | TSMixer                                               |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-19T01:28:55Z`                                |
-| Updated @ | `2026-11-19T01:28:55Z`                                |
+| Updated @ | `2026-11-19T01:59:46Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/632) |
 
@@ -15,8 +15,8 @@ TSMixer（Time-Series Mixer）出自 Google Cloud AI Research 的论文 *TSMixer
 All-MLP Architecture for Time Series Forecasting*（Si-An Chen、Chun-Liang
 Li、Nathanael C. Yoder、Sercan Ö. Arik、Tomas Pfister；发表于 TMLR，2023 年 9
 月；arXiv:2303.06053）。**一句话概括：只用 MLP，沿"时间维"与"特征（变量）维"交替做混合（time-mixing
-/ feature-mixing），在保留线性模型时间建模能力的同时，让参数随 L 与 C 近似相加增长（论文写作 O(L+C)，而非
-O(LC)）来利用跨变量信息；并提供可吃静态特征与未来已知特征的扩展版 TSMixer-Ext。**
+/ feature-mixing），在保留线性模型时间建模能力的同时，让参数随 L 与 C 近似相加增长（论文写作 $O(L+C)$，而非
+$O(LC)$）来利用跨变量信息；并提供可吃静态特征与未来已知特征的扩展版 TSMixer-Ext。**
 
 > 注意区分：本文只讲上述 Google 论文的 TSMixer。IBM 的 Tiny Time Mixers（TTM）的摘要提到基于"轻量
 > TSMixer"，但那是另一篇论文，不在本文范围内。名字相近的 TimeMixer 也是另一种方法，这里只提名字，不展开。
@@ -47,19 +47,25 @@ M5 零售数据上，跨变量信息和辅助特征带来明显收益，TSMixer 
 
 ## 线性模型为何适合做时间建模（论文第 3 节）
 
-**记号**：历史观测 `X ∈ R^(L×Cx)`（L 为回看窗口长度，Cx 为变量数），预测目标 `Y ∈ R^(T×Cy)`（T
-为预测步数）。时间线性模型学习 `A ∈ R^(T×L)`、`b ∈ R^(T×1)`：
+**记号**：历史观测 $X\\in\\mathbb R^{L\\times C\_x}$（$L$ 为回看窗口长度，$C\_x$
+为变量数），预测目标 $Y\\in\\mathbb R^{T\\times C\_y}$（$T$
+为预测步数）。时间线性模型学习 $A\\in\\mathbb R^{T\\times
+L}$、$b\\in\\mathbb R^{T\\times 1}$：
 
-    Ŷ = A X ⊕ b  ∈ R^(T×Cx)        (⊕ 为按列加偏置；A 沿时间维作用，各变量共享)
+$$ \\hat Y = A X \\oplus b \\ \\in \\mathbb R^{T\\times C\_x} $$
+
+（$\\oplus$ 为按列加偏置；$A$ 沿时间维作用，各变量共享）
 
 **理论洞察**：
 
-  - 若序列严格周期 `x(t) = x(t-P)`（P \< L），存在取值为 0/1 的 `A`（`A_ij = 1` 当 `j =
-    L-P+(i mod P)`，否则为 0，`b=0`）可完美预测；仿射周期 `x(t) = a·x(t-P)+c` 时把 1 换成
-    a、`b_i = c` 同样成立。
-  - **Theorem 3.1**：若 `x(t) = g(t) + f(t)`，g 为周期 P 的周期信号，f 为 Lipschitz
-    常数 K 的光滑函数，则存在回看窗口 `L ≥ P+1` 的线性模型，使 `|y_i - ŷ_i| ≤ K(i + min(i,
-    P))`，`i = 1..T`（证明见论文附录 A）。
+  - 若序列严格周期 $x(t)=x(t-P)$（$P\<L$），存在取值为 0/1 的 $A$（$A\_{ij}=1$ 当
+    $j=L-P+(i \\bmod P)$，否则为 0，$b=0$）可完美预测；仿射周期 $x(t)=a\\cdot x(t-P)+c$
+    时把 1 换成 $a$、$b\_i=c$ 同样成立。
+  - **Theorem 3.1**：若 $x(t)=g(t)+f(t)$，$g$ 为周期 $P$ 的周期信号，$f$ 为 Lipschitz
+    常数 $K$ 的光滑函数，则存在回看窗口 $L\\ge P+1$ 的线性模型，使下式成立（证明见论文附录 A）：
+
+$$ \\lvert y\_i-\\hat y\_i\\rvert \\le K\\big(i+\\min(i,P)\\big),\\quad
+i=1,\\dots,T $$
 
 **time-step-dependent vs data-dependent**：线性模型对输入序列各时间步的权重固定（只依赖位置），论文称为
 time-step-dependent；RNN 的门控、Transformer 的注意力则是
@@ -68,15 +74,16 @@ data-dependent（权重是输入的函数）。论文的观点是后者表达力
 **论文自述的局限**：该分析针对单变量、周期 + 光滑的假设；真实数据若高波动、非周期非光滑，仅依赖历史时间模式可能不够，Lipschitz
 之外的情形留作未来工作。
 
-**一个小例子**（`[解读]`，按论文式 (2) 的构造）：设日度数据周期 P=7、回看窗口 L=28，预测 T=3 步。令 `A_ij
-= 1` 当 `j = L-P+(i mod P)`，即第 i 个预测步只"抄"回看窗口里恰好一个周期之前的同位置那个点（i=1 抄第 22
-个点，i=2 抄第 23 个，i=3 抄第 24 个），其余权重为
+**一个小例子**（`[解读]`，按论文式 (2) 的构造）：设日度数据周期 $P=7$、回看窗口 $L=28$，预测 $T=3$ 步。令
+$A\_{ij}=1$ 当 $j=L-P+(i \\bmod P)$，即第 $i$
+个预测步只"抄"回看窗口里恰好一个周期之前的同位置那个点（$i=1$
+抄第 22 个点，$i=2$ 抄第 23 个，$i=3$ 抄第 24 个），其余权重为
 0，就能完美外推周期序列。要点：这类"按位置取值"的规则只依赖时间步位置，与输入数值无关，线性层正好能直接学到；而注意力要靠数据去算出这种固定位置关系，更容易被噪声带偏。
 
-**为什么 L 越长越要靠线性/MLP**：定理要求 `L ≥ P+1`，且误差界随 `i + min(i, P)` 增长；`[解读]`
-周期较长时需要足够长的窗口才能覆盖一整个周期，论文实验里取 L=512（沿用 PatchTST），并在 Fig. 5
-中验证了线性模型随 L 从 96 增到 336 明显变好、720 附近趋于收敛。时间混合每层只有 L×L 权重，增大 L
-的代价是平方而非 L×C 的乘积。
+**为什么 L 越长越要靠线性/MLP**：定理要求 $L\\ge P+1$，且误差界随 $i+\\min(i,P)$ 增长；`[解读]`
+周期较长时需要足够长的窗口才能覆盖一整个周期，论文实验里取 $L=512$（沿用 PatchTST），并在 Fig. 5
+中验证了线性模型随 $L$ 从 96 增到 336 明显变好、720 附近趋于收敛。时间混合每层只有 $L\\times
+L$ 权重，增大 $L$ 的代价是平方而非 $L\\times C$ 的乘积。
 
 `[解读]` 这一节可以理解为：先论证"沿时间维做全连接"是个好的归纳偏置，再在此基础上加非线性、加深、加跨变量混合——TSMixer
 的结构是这条思路的自然延伸。
@@ -94,7 +101,7 @@ data-dependent（权重是输入的函数）。论文的观点是后者表达力
 
 ### 输入布局与各组件
 
-输入是一个 `L × C` 的矩阵：行是时间步，列是变量。
+输入是一个 $L\\times C$ 的矩阵：行是时间步，列是变量。
 
     输入 X (L×C)
       │
@@ -121,23 +128,31 @@ data-dependent（权重是输入的函数）。论文的观点是后者表达力
 
 ### 关键公式（论文附录 B.3，符号做了转写）
 
-    Temporal Projection:  TP_{L→T}(X)[:,i] = W1 · X[:,i] + b1            W1 ∈ R^(L×T)
-    Time Mixing:          TM(X)[:,i]  = Norm( X[:,i] + Drop( σ( TP_{L→L}(X)[:,i] ) ) )
-    Feature Mixing:       U[j,:]      = Drop( σ( W2 · X[j,:] + b2 ) )
-                          FM(X)[j,:]  = Norm( X[j,:] + Drop( W3 · U[j,:] + b3 ) )
-    Mixer Layer:          Mix(X) = FM( TM(X) )
-    基础 TSMixer:          O1 = Mix(X);  Ok = Mix(O_{k-1});  Ŷ = TP_{L→T}(O_K)
+$$ \\begin{aligned} \\text{Temporal Projection:}\\quad &
+\\mathrm{TP}*{L\\to T}(X)\[:,i\] = W\_1\\cdot X\[:,i\] + b\_1, \\qquad
+W\_1\\in\\mathbb R^{L\\times T}\\ \\text{Time Mixing:}\\quad &
+\\mathrm{TM}(X)\[:,i\] = \\mathrm{Norm}\\Big(X\[:,i\] +
+\\mathrm{Drop}\\big(\\sigma(\\mathrm{TP}*{L\\to
+L}(X)\[:,i\])\\big)\\Big)\\ \\text{Feature Mixing:}\\quad & U\[j,:\] =
+\\mathrm{Drop}\\big(\\sigma(W\_2\\cdot X\[j,:\] + b\_2)\\big)\\ &
+\\mathrm{FM}(X)\[j,:\] = \\mathrm{Norm}\\Big(X\[j,:\] +
+\\mathrm{Drop}\\big(W\_3\\cdot U\[j,:\] + b\_3\\big)\\Big)\\
+\\text{Mixer Layer:}\\quad & \\mathrm{Mix}(X) =
+\\mathrm{FM}\\big(\\mathrm{TM}(X)\\big)\\ \\text{基础 TSMixer:}\\quad &
+O\_1=\\mathrm{Mix}(X);\\quad O\_k=\\mathrm{Mix}(O\_{k-1});\\quad \\hat
+Y=\\mathrm{TP}\_{L\\to T}(O\_K) \\end{aligned} $$
 
 附录补充的实现细节：
 
-  - 对长序列预测任务，为提高容量，FM 的隐层加宽（`W2 ∈ R^(H×C)`、`W3 ∈ R^(C×H)`，H 为超参）；
+  - 对长序列预测任务，为提高容量，FM 的隐层加宽（$W\_2\\in\\mathbb R^{H\\times
+    C}$、$W\_3\\in\\mathbb R^{C\\times H}$，$H$ 为超参）；
   - 长序列基准用 **pre-normalization**（保持输入尺度）；
   - Norm 作用在整个矩阵上（时间与特征两维），而不是逐行。
 
 ### 张量形状走查
 
-以长序列基准的设置为例（`[解读]` 数字为本文自己的演算，用来帮助理解形状，非论文数据）：ETT 取 L=512、C=7、T=96，隐层
-H=64。
+以长序列基准的设置为例（`[解读]` 数字为本文自己的演算，用来帮助理解形状，非论文数据）：ETT 取
+$L=512$、$C=7$、$T=96$，隐层 $H=64$。
 
     输入                       X           (B, 512, 7)
     Time-mixing:  转置          (B, 7, 512)   Linear(512→512) 沿最后一维，7 个变量共用同一组权重
@@ -147,23 +162,25 @@ H=64。
     重复 N 个 Mixer Layer       形状不变
     Temporal Projection: 转置 (B,7,512) → Linear(512→96) → (B,7,96) → 转置 (B,96,7)
 
-  - 一个 time-mixing 的权重约 512×512 + 512 ≈ 26.3 万；一个 feature-mixing 约
-    7×64×2 ≈ 900（不计偏置）。把整个 `512×7` 展平后直接映射到 `96×7` 的全连接需要约 3584×672 ≈
-    241 万个权重，且 L 或 C 一变就整体放大。
+  - 一个 time-mixing 的权重约 $512\\times 512+512\\approx$ 26.3 万；一个
+    feature-mixing 约 $7\\times 64\\times 2\\approx 900$（不计偏置）。把整个
+    $512\\times 7$ 展平后直接映射到 $96\\times 7$ 的全连接需要约 $3584\\times
+    672\\approx$ 241 万个权重，且 $L$ 或 $C$ 一变就整体放大。
   - 注意这里 feature-mixing 的两层是 C→H→C，而 time-mixing 保持 L→L；变量之间只在
     feature-mixing 里交互，时间步之间只在 time-mixing 与 Temporal Projection
     里交互。这就是"交替混合"的含义。
 
 ### 参数规模
 
-时间混合只有 L×L 的权重，特征混合只有 C×C（或 C×H）的权重，因此参数随 L、C 近似**相加**增长（论文写作 O(L+C)）；若把
-`L×C` 展平后用全连接 MLP，则是 O(LC)。这使 TSMixer 可以使用较长的回看窗口而不至于参数爆炸。
+时间混合只有 $L\\times L$ 的权重，特征混合只有 $C\\times C$（或 $C\\times H$）的权重，因此参数随
+$L$、$C$ 近似**相加**增长（论文写作 $O(L+C)$）；若把 $L\\times C$ 展平后用全连接 MLP，则是
+$O(LC)$。这使 TSMixer 可以使用较长的回看窗口而不至于参数爆炸。
 
 ### TSMixer-Ext：加入辅助信息（论文第 4.2 节）
 
-设静态特征 `S ∈ R^(1×Cs)`（如门店位置）、未来已知的时变特征 `Z ∈
-R^(T×Cz)`（如未来几周促销）。TSMixer-Ext 分 **align（对齐）** 与
-**mixing（混合）** 两阶段：
+设静态特征 $S\\in\\mathbb R^{1\\times C\_s}$（如门店位置）、未来已知的时变特征 $Z\\in\\mathbb
+R^{T\\times C\_z}$（如未来几周促销）。TSMixer-Ext 分 **align（对齐）** 与 **mixing（混合）**
+两阶段：
 
     align:   历史特征 (L×Cx) --Temporal Projection + 特征混合--> 隐表示（附录公式中为 T×H）
              未来特征 Z (T×Cz) --特征混合--> (T×H)
@@ -201,14 +218,16 @@ TSMixer-Ext。论文称据其所知，MLP-Mixer 类架构此前未被用于时�
 
 ## 训练与推理
 
-  - **长序列基准**（论文第 5 节与附录 C）：回看窗口 `L = 512`（沿用 PatchTST），预测长度 `T ∈
-    {96, 192, 336, 720}`；Adam 优化，MSE 损失；评估指标 MSE、MAE；使用 reversible
+  - **长序列基准**（论文第 5 节与附录 C）：回看窗口 $L=512$（沿用 PatchTST），预测长度
+    $T\\in{96,192,336,720}$；Adam 优化，MSE 损失；评估指标 MSE、MAE；使用 reversible
     instance normalization（RevIN）以便与 PatchTST 公平比较；每个变量独立标准化；最多 100
     epoch，验证损失 5 个 epoch 不提升则早停。
-  - **M5**：数据处理主要沿用 GluonTS 示例，预测长度 `T = 28`（与竞赛一致），回看长度 `L
-    = 35`；优化**负二项分布对数似然**；按竞赛协议在多层级聚合后用 **WRMSSE** 评估；最多 300
-    epoch，30 个 epoch 不提升早停；为稳定结果，对所有模型取验证 WRMSSE 最好的 8 组超参再各多训练 4 次（共 5
-    次），按平均验证 WRMSSE 选超参，在测试集报告。论文还注意到优化其他目标函数时 WRMSSE 可能明显更差。
+  - **M5**：数据处理主要沿用 GluonTS 示例，预测长度 $T=28$（与竞赛一致），回看长度
+    $L=35$；优化**负二项分布对数似然**；按竞赛协议在多层级聚合后用 **WRMSSE**
+    评估；最多 300 epoch，30 个 epoch 不提升早停；为稳定结果，对所有模型取验证 WRMSSE 最好的 8
+    组超参再各多训练 4 次（共 5 次），按平均验证 WRMSSE
+    选超参，在测试集报告。论文还注意到优化其他目标函数时
+    WRMSSE 可能明显更差。
   - **推理**：Temporal Projection 把 L 直接映射到 T，一次前向输出整个预测区间，不是自回归逐步生成。`[解读]`
     因此推理很快；论文 Table 6 也显示推理速度接近线性模型。
   - **超参搜索空间**（附录 Table 8，长序列基准）：学习率 {0.001, 0.0001}，mixer 块数 {1, 2, 4,
@@ -226,15 +245,15 @@ TSMixer-Ext。论文称据其所知，MLP-Mixer 类架构此前未被用于时�
 
 对比：多变量模型 TFT、FEDformer、Autoformer、Informer；单变量模型 LTSF-Linear、PatchTST，以及
 TMix-Only。FEDformer/Autoformer/Informer/PatchTST 的数字取自 Nie et al.
-(2023)。下面摘取论文 Table 3 的部分数字（MSE，L=512）：
+(2023)。下面摘取论文 Table 3 的部分数字（MSE，$L=512$）：
 
-| 数据集         | TSMixer T=96 | PatchTST T=96 | Linear T=96 | TSMixer T=720 | PatchTST T=720 | Linear T=720 |
-| ----------- | ------------ | ------------- | ----------- | ------------- | -------------- | ------------ |
-| ETTh1       | 0.361        | 0.370         | 0.368       | 0.463         | 0.447          | 0.481        |
-| ETTm2       | 0.163        | 0.166         | 0.170       | 0.420         | 0.362          | 0.435        |
-| Weather     | 0.145        | 0.149         | 0.170       | 0.320         | 0.314          | 0.318        |
-| Electricity | 0.131        | 0.129         | 0.135       | 0.197         | 0.197          | 0.199        |
-| Traffic     | 0.376        | 0.360         | 0.395       | 0.444         | 0.432          | 0.454        |
+| 数据集         | TSMixer $T=96$ | PatchTST $T=96$ | Linear $T=96$ | TSMixer $T=720$ | PatchTST $T=720$ | Linear $T=720$ |
+| ----------- | -------------- | --------------- | ------------- | --------------- | ---------------- | -------------- |
+| ETTh1       | 0.361          | 0.370           | 0.368         | 0.463           | 0.447            | 0.481          |
+| ETTm2       | 0.163          | 0.166           | 0.170         | 0.420           | 0.362            | 0.435          |
+| Weather     | 0.145          | 0.149           | 0.170         | 0.320           | 0.314            | 0.318          |
+| Electricity | 0.131          | 0.129           | 0.135         | 0.197           | 0.197            | 0.199          |
+| Traffic     | 0.376          | 0.360           | 0.395         | 0.444           | 0.432            | 0.454          |
 
 论文表末一行给出 TSMixer 相对其他方法的平均 MSE
 改进：51.94%、16.69%、24.51%、62.40%、-0.66%、6.77%、-1.53%。按渲染页面核对，它们依次对应
@@ -247,7 +266,7 @@ PatchTST 为负值，表示 TSMixer 略差）。
   - TSMixer 显著优于其他多变量模型，与单变量的 PatchTST 相当（上表可见互有胜负，如 ETTm2 的 T=720 上
     PatchTST 明显更好）；论文称 TSMixer 是唯一能与单变量模型持平的多变量模型；
   - TSMixer 与 TMix-Only 表现相近，说明在这些基准上 feature-mixing 并无帮助；
-  - **回看窗口**（L ∈ {96, 336, 512, 720}，Fig. 5）：线性模型在 96→336 提升明显，720
+  - **回看窗口**（$L\\in{96,336,512,720}$，Fig. 5）：线性模型在 96→336 提升明显，720
     附近趋于收敛；TSMixer 在 336 或 512 最好，增到 720 保持相近水平；论文引用 Nie et
     al. 指出多种多变量 Transformer 在窗口超过 192 后不再受益且易过拟合。
 
@@ -332,7 +351,8 @@ MLP 计算开销最高且比 TSMixer 和 CNN 都差；CNN 在 Weather 上与 TSM
 **`[经验]` / `[解读]`**
 
   - `[解读]` 时间混合的权重按位置固定，回看长度 L 在训练时固定，对变长输入不如注意力结构灵活。
-  - `[解读]` Feature-mixing 的 C×C 权重让参数随变量数 C 平方增长，C 很大（如数千个变量）时仍可能成为负担。
+  - `[解读]` Feature-mixing 的 $C\\times C$ 权重让参数随变量数 $C$ 平方增长，C
+    很大（如数千个变量）时仍可能成为负担。
   - `[经验]` 全 MLP 结构的效果依赖归一化（RevIN、2D
     norm）与回看窗口的选择；不同数据集的最优超参差异明显（见论文超参表），需要调参。
   - `[待核实]` 本文未核对该论文发表后的后续独立复现或对比结果；若要引用"优于某新模型"之类说法，应查对应论文。
@@ -351,12 +371,12 @@ MLP 计算开销最高且比 TSMixer 和 CNN 都差；CNN 在 Weather 上与 TSM
 
 按"权重如何依赖输入"与"是否混合变量"再拆一次（`[解读]`，综合论文第 3 节与 Table 1 的分类）：
 
-| 方法类型                        | 对时间步的权重                 | 变量处理                                   | 参数随 L、C 的增长               |
-| --------------------------- | ----------------------- | -------------------------------------- | ------------------------- |
-| 线性（LTSF-Linear）             | 固定（time-step-dependent） | 各变量独立，共享时间权重                           | 约 L×T                     |
-| PatchTST                    | 注意力（data-dependent）     | 变量并入 batch 维，独立处理                      | 取决于 patch 与模型宽度           |
-| 多变量 Transformer（Informer 等） | 注意力（data-dependent）     | 各时间步的变量向量一起嵌入，联合建模                     | 嵌入层与注意力宽度相关               |
-| TSMixer                     | 固定（time-step-dependent） | time-mixing 变量共享；feature-mixing 显式混合变量 | 近似 L×L + C×C（论文写作 O(L+C)） |
+| 方法类型                        | 对时间步的权重                 | 变量处理                                   | 参数随 L、C 的增长                               |
+| --------------------------- | ----------------------- | -------------------------------------- | ----------------------------------------- |
+| 线性（LTSF-Linear）             | 固定（time-step-dependent） | 各变量独立，共享时间权重                           | 约 $L\\times T$                            |
+| PatchTST                    | 注意力（data-dependent）     | 变量并入 batch 维，独立处理                      | 取决于 patch 与模型宽度                           |
+| 多变量 Transformer（Informer 等） | 注意力（data-dependent）     | 各时间步的变量向量一起嵌入，联合建模                     | 嵌入层与注意力宽度相关                               |
+| TSMixer                     | 固定（time-step-dependent） | time-mixing 变量共享；feature-mixing 显式混合变量 | 近似 $L\\times L+C\\times C$（论文写作 $O(L+C)$） |
 
 在综述里的位置见 [Deep 学习路线](/0606_ML_Tasks_TimeSeries_Deep)（MLP /
 线性一类）与[总览](/0603_ML_Tasks_TimeSeries)；基础模型方向中基于"轻量
@@ -398,7 +418,7 @@ class TSMixerSketch(nn.Module):
         return self.proj(self.blocks(x).transpose(1, 2)).transpose(1, 2)
 ```
 
-  - `[经验]` 论文设置里回看窗口较长（长序列基准 L=512）、变量独立标准化并配合可逆实例归一化；带协变量的 M5 类任务需用
+  - `[经验]` 论文设置里回看窗口较长（长序列基准 $L=512$）、变量独立标准化并配合可逆实例归一化；带协变量的 M5 类任务需用
     TSMixer-Ext，并选择合适的输出分布与损失。
 
 ## Reference
