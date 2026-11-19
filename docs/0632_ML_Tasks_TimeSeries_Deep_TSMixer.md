@@ -1,8 +1,8 @@
 ---
-Title | TSMixer
+Title | ML Tasks TimeSeries Deep TSMixer
 -- | --
 Created @ | `2026-11-19T01:28:55Z`
-Updated @| `2026-11-19T01:59:46Z`
+Updated @| `2026-11-19T02:24:22Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/632)
 
