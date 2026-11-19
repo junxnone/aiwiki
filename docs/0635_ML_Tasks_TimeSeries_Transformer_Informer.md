@@ -1,8 +1,8 @@
 ---
-Title | Informer
+Title | ML Tasks TimeSeries Transformer Informer
 -- | --
 Created @ | `2026-11-19T01:59:53Z`
-Updated @| `2026-11-19T01:59:53Z`
+Updated @| `2026-11-19T02:24:29Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/635)
 
