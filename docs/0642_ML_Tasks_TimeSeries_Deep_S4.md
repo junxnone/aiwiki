@@ -1,8 +1,8 @@
 ---
-Title | ML Tasks TimeSeries Transformer S4
+Title | ML Tasks TimeSeries Deep S4
 -- | --
 Created @ | `2026-11-19T02:27:22Z`
-Updated @| `2026-11-19T02:27:22Z`
+Updated @| `2026-11-19T06:20:30Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/642)
 
