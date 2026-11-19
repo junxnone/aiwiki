@@ -1,8 +1,8 @@
 ---
-Title | TFT
+Title | ML Tasks TimeSeries Transformer TFT
 -- | --
 Created @ | `2026-11-19T01:59:51Z`
-Updated @| `2026-11-19T01:59:51Z`
+Updated @| `2026-11-19T02:24:27Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/634)
 
