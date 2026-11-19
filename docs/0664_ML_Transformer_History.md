@@ -2,12 +2,14 @@
 Title | ML Transformer History
 -- | --
 Created @ | `2026-11-19T05:16:38Z`
-Updated @| `2026-11-19T05:16:38Z`
+Updated @| `2026-11-19T06:11:51Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/664)
 
 ---
 # Transformer History
+
+> [Transformer 发展时间线](https://junxnone.github.io/jstools/timelinemd/?md=https://raw.githubusercontent.com/junxnone/aiwiki/main/docs/0664_ML_Transformer_History.md)
 
 ## NLP
 
