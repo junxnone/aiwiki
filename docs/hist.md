@@ -20,7 +20,7 @@
 - 2026-11-19&nbsp;&nbsp; [CSDI](/0647_ML_Tasks_TimeSeries_Generative_CSDI)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Generative :bookmark:CSDI
 - 2026-11-19&nbsp;&nbsp; [TS2Vec](/0646_ML_Tasks_TimeSeries_Generative_TS2Vec)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Generative :bookmark:TS2Vec
 - 2026-11-19&nbsp;&nbsp; [TimeGrad](/0645_ML_Tasks_TimeSeries_Generative_TimeGrad)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Generative :bookmark:TimeGrad
-- 2026-11-19&nbsp;&nbsp; [S-Mamba](/0644_ML_Tasks_TimeSeries_Transformer_S_Mamba)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Transformer :bookmark:S :bookmark:Mamba
+- 2026-11-19&nbsp;&nbsp; [S-Mamba](/0644_ML_Tasks_TimeSeries_Transformer_SMamba)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Transformer :bookmark:SMamba
 - 2026-11-19&nbsp;&nbsp; [Mamba](/0643_ML_Tasks_TimeSeries_Transformer_Mamba)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Transformer :bookmark:Mamba
 - 2026-11-19&nbsp;&nbsp; [S4](/0642_ML_Tasks_TimeSeries_Transformer_S4)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Transformer :bookmark:S4
 - 2026-11-19&nbsp;&nbsp; [SOFTS](/0641_ML_Tasks_TimeSeries_Transformer_SOFTS)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Transformer :bookmark:SOFTS
@@ -35,8 +35,8 @@
 - 2026-11-19&nbsp;&nbsp; [TSMixer](/0632_ML_Tasks_TimeSeries_Deep_TSMixer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:TSMixer
 - 2026-11-19&nbsp;&nbsp; [TimesNet](/0631_ML_Tasks_TimeSeries_Deep_TimesNet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:TimesNet
 - 2026-11-19&nbsp;&nbsp; [DLinear](/0630_ML_Tasks_TimeSeries_Deep_DLinear)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:DLinear
-- 2026-11-19&nbsp;&nbsp; [N-HiTS](/0629_ML_Tasks_TimeSeries_Deep_N_HiTS)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:N :bookmark:HiTS
-- 2026-11-19&nbsp;&nbsp; [N-BEATS](/0628_ML_Tasks_TimeSeries_Deep_N_BEATS)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:N :bookmark:BEATS
+- 2026-11-19&nbsp;&nbsp; [N-HiTS](/0629_ML_Tasks_TimeSeries_Deep_NHiTS)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:NHiTS
+- 2026-11-19&nbsp;&nbsp; [N-BEATS](/0628_ML_Tasks_TimeSeries_Deep_NBEATS)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:NBEATS
 - 2026-11-19&nbsp;&nbsp; [ROCKET](/0627_ML_Tasks_TimeSeries_ML_ROCKET)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:ML :bookmark:ROCKET
 - 2026-11-18&nbsp;&nbsp; [TCN](/0626_ML_Tasks_TimeSeries_Deep_TCN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:TCN
 - 2026-11-18&nbsp;&nbsp; [DeepAR](/0625_ML_Tasks_TimeSeries_Deep_DeepAR)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:DeepAR

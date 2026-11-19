@@ -283,9 +283,8 @@
       - [深度学习时间序列模型：方法详解、原理与发展脉络](/0606_ML_Tasks_TimeSeries_Deep)
         - [DLinear](/0630_ML_Tasks_TimeSeries_Deep_DLinear)
         - [DeepAR](/0625_ML_Tasks_TimeSeries_Deep_DeepAR)
-        - N
-          - [N-BEATS](/0628_ML_Tasks_TimeSeries_Deep_N_BEATS)
-          - [N-HiTS](/0629_ML_Tasks_TimeSeries_Deep_N_HiTS)
+        - [N-BEATS](/0628_ML_Tasks_TimeSeries_Deep_NBEATS)
+        - [N-HiTS](/0629_ML_Tasks_TimeSeries_Deep_NHiTS)
         - [TCN](/0626_ML_Tasks_TimeSeries_Deep_TCN)
         - [TSMixer](/0632_ML_Tasks_TimeSeries_Deep_TSMixer)
         - [TimeMixer](/0633_ML_Tasks_TimeSeries_Deep_TimeMixer)
@@ -322,9 +321,8 @@
         - [Informer](/0635_ML_Tasks_TimeSeries_Transformer_Informer)
         - [Mamba](/0643_ML_Tasks_TimeSeries_Transformer_Mamba)
         - [PatchTST](/0638_ML_Tasks_TimeSeries_Transformer_PatchTST)
-        - S
-          - [S-Mamba](/0644_ML_Tasks_TimeSeries_Transformer_S_Mamba)
         - [S4](/0642_ML_Tasks_TimeSeries_Transformer_S4)
+        - [S-Mamba](/0644_ML_Tasks_TimeSeries_Transformer_SMamba)
         - [SOFTS](/0641_ML_Tasks_TimeSeries_Transformer_SOFTS)
         - [TFT](/0634_ML_Tasks_TimeSeries_Transformer_TFT)
         - [TimeXer](/0640_ML_Tasks_TimeSeries_Transformer_TimeXer)
@@ -642,4 +640,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1317311119</sub></kbd>
+<kbd><sub>@1418071119</sub></kbd>

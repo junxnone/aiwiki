@@ -5203,6 +5203,24 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki ML Tasks TimeSeries Deep NBEATS",
+      "group": 5,
+      "title": "N-BEATS",
+      "url": "https://junxnone.github.io/aiwiki/#/0628_ML_Tasks_TimeSeries_Deep_NBEATS",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Tasks TimeSeries Deep NHiTS",
+      "group": 5,
+      "title": "N-HiTS",
+      "url": "https://junxnone.github.io/aiwiki/#/0629_ML_Tasks_TimeSeries_Deep_NHiTS",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Tasks TimeSeries Deep DLinear",
       "group": 5,
       "title": "DLinear",
@@ -5324,6 +5342,15 @@
       "group": 5,
       "title": "Mamba",
       "url": "https://junxnone.github.io/aiwiki/#/0643_ML_Tasks_TimeSeries_Transformer_Mamba",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Tasks TimeSeries Transformer SMamba",
+      "group": 5,
+      "title": "S-Mamba",
+      "url": "https://junxnone.github.io/aiwiki/#/0644_ML_Tasks_TimeSeries_Transformer_SMamba",
       "visible": true,
       "expand": true,
       "childLinks": []
@@ -5612,33 +5639,6 @@
       "group": 6,
       "title": "YOLO V5",
       "url": "https://junxnone.github.io/aiwiki/#/0379_ML_Tasks_Image_Detection_YOLO_V5",
-      "visible": true,
-      "expand": true,
-      "childLinks": []
-    },
-    {
-      "id": "aiwiki ML Tasks TimeSeries Deep N BEATS",
-      "group": 6,
-      "title": "N-BEATS",
-      "url": "https://junxnone.github.io/aiwiki/#/0628_ML_Tasks_TimeSeries_Deep_N_BEATS",
-      "visible": true,
-      "expand": true,
-      "childLinks": []
-    },
-    {
-      "id": "aiwiki ML Tasks TimeSeries Deep N HiTS",
-      "group": 6,
-      "title": "N-HiTS",
-      "url": "https://junxnone.github.io/aiwiki/#/0629_ML_Tasks_TimeSeries_Deep_N_HiTS",
-      "visible": true,
-      "expand": true,
-      "childLinks": []
-    },
-    {
-      "id": "aiwiki ML Tasks TimeSeries Transformer S Mamba",
-      "group": 6,
-      "title": "S-Mamba",
-      "url": "https://junxnone.github.io/aiwiki/#/0644_ML_Tasks_TimeSeries_Transformer_S_Mamba",
       "visible": true,
       "expand": true,
       "childLinks": []
@@ -9672,6 +9672,20 @@
     {
       "source": "aiwiki ML Tasks TimeSeries Deep",
       "target": "aiwiki ML Tasks TimeSeries Deep TCN",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks TimeSeries Deep",
+      "target": "aiwiki ML Tasks TimeSeries Deep NBEATS",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks TimeSeries Deep",
+      "target": "aiwiki ML Tasks TimeSeries Deep NHiTS",
       "value": 5,
       "visible": true,
       "expand": true
