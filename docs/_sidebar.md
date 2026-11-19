@@ -385,6 +385,7 @@
     - [Bottleneck Transformers](/0228_ML_Transformer_BT)
     - [DeiT](/0253_ML_Transformer_DeiT)
     - [Efficient Attention](/0225_ML_Transformer_EfficientAttention)
+    - [Transformer History](/0664_ML_Transformer_History)
     - [Linformer](/0224_ML_Transformer_Linformer)
     - [T2TViT](/0227_ML_Transformer_T2TViT)
     - [Transformer in Transformer](/0360_ML_Transformer_TiT)
@@ -641,4 +642,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1125161119</sub></kbd>
+<kbd><sub>@1317311119</sub></kbd>

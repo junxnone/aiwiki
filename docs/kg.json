@@ -3088,6 +3088,15 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki ML Transformer History",
+      "group": 3,
+      "title": "Transformer History",
+      "url": "https://junxnone.github.io/aiwiki/#/0664_ML_Transformer_History",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Op Convolution Math",
       "group": 4,
       "title": "卷积 数学定义",
@@ -7367,6 +7376,13 @@
     {
       "source": "aiwiki ML Transformer",
       "target": "aiwiki ML Transformer TiT",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Transformer",
+      "target": "aiwiki ML Transformer History",
       "value": 3,
       "visible": true,
       "expand": true
