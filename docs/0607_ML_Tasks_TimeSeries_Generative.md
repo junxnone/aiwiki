@@ -2,7 +2,7 @@
 Title | ML Tasks TimeSeries Generative
 -- | --
 Created @ | `2026-11-10T09:17:26Z`
-Updated @| `2026-11-10T09:17:26Z`
+Updated @| `2026-11-19T09:44:15Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/607)
 
@@ -28,6 +28,8 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/607)
 | 合成数据 | 无条件生成与真实序列同分布的序列 | TimeVAE、TimeGAN、Diffusion-TS、TSDiff | §3.2、§3.3、§3.5、§3.8 |
 | 异常检测 | 以密度或重构误差作为异常分数 | 重构类生成模型 | §3.7 |
 
+表中：「任务」是时序任务类型，「生成式的做法」概述如何利用生成模型，「代表方法」是典型模型，「本文章节」指向详解位置。
+
 一句话定位：**生成式的价值不在点预测更准，而在表达复杂的分布与依赖结构，并支持采样**。代价是训练更难、采样更慢、评估更复杂。很多业务只需要"几个分位数"，此时分位数回归加共形校准往往已足够（§6）。
 
 读完本文你应能回答：为什么概率预测需要生成式模型、五类生成模型（参数化分布、VAE、GAN、流、扩散）各自的原理与代价、TimeGrad 与 CSDI 的区别、什么时候该用扩散而不是分位数回归、合成数据怎么评估。
@@ -49,10 +51,15 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/607)
 
 $$p(\mathbf y_{1:T})=\prod_{t=1}^{T}p\bigl(\mathbf y_t\mid \mathbf y_{<t}\bigr)$$
 
+
+其中：$\mathbf y_{1:T}$ 是长度为 $T$ 的整条序列；$\mathbf y_t$ 是 $t$ 时刻观测；$\mathbf y_{<t}$ 是 $t$ 之前的全部历史；$p(\mathbf y_t\mid\mathbf y_{<t})$ 是给定历史的一步条件分布；连乘 $\prod$ 把条件分布合成联合分布。
+
 | 方式 | 做法 | 代表 |
 |---|---|---|
 | **自回归** | 每步一个条件分布，逐步采样 | DeepAR、TimeGrad |
 | **非自回归 / 整段生成** | 一次生成整个预测窗口或整条序列 | CSDI、TSDiff、Diffusion-TS、条件流（对整窗） |
+
+表中：「方式」是联合分布的两种建模方式，「做法」解释采样过程，「代表」是典型模型。
 
 自回归容易训练、可处理任意长度，但有**误差累积**，且逐步采样慢；整段生成避免累积，但需要为整个窗口的联合分布建模。
 
@@ -69,6 +76,8 @@ $$p(\mathbf y_{1:T})=\prod_{t=1}^{T}p\bigl(\mathbf y_t\mid \mathbf y_{<t}\bigr)$
 | 填补 | 被遮盖位置的 MAE/RMSE，概率填补用 CRPS | 遮盖方式要模拟真实缺失（连续缺段，见 [metrics §4.2](0610_ML_Tasks_TimeSeries_Metrics)） |
 | 合成数据 | **相似性**（判别式得分：训练一个分类器区分真假，准确率越接近 0.5 越好）、**可用性**（TSTR：在合成数据上训练、在真实数据上测试预测任务的误差）、多样性与可视化 | 指标选择与实现不统一，论文间不一定可比 [经验]；具体定义依各论文，待核实 |
 
+表中：「任务」是应用类型，「指标」是常用评估方式，「说明」给出注意事项（如先看校准再看锐度、遮盖方式要贴近真实缺失）。
+
 样本数 $S$ 对 CRPS 估计有影响（样本估计公式见[经典篇 §3.15](0604_ML_Tasks_TimeSeries_Classical) 与 [metrics §2.2](0610_ML_Tasks_TimeSeries_Metrics)），比较模型时需固定 $S$ 并报告。
 
 ### 1.5 常见困难
@@ -80,6 +89,8 @@ $$p(\mathbf y_{1:T})=\prod_{t=1}^{T}p\bigl(\mathbf y_t\mid \mathbf y_{<t}\bigr)$
 | **似然不可得或难算** | 无法直接比较样本的对数似然 | GAN、扩散（需变分下界） |
 | **训练不稳定** | 对抗训练、扩散的噪声调度 | GAN、扩散 |
 | **评估不统一** | 合成数据的"好"缺乏统一标准 | 所有生成模型 |
+
+表中：「问题」是生成模型常见困难，「含义」解释其表现，「常见于」指出主要出现的模型族。
 
 ---
 
@@ -98,6 +109,8 @@ $$p(\mathbf y_{1:T})=\prod_{t=1}^{T}p\bigl(\mathbf y_t\mid \mathbf y_{<t}\bigr)$
 | 2024 | Diffusion-TS（arXiv:2403.01742）[V]；Timer（arXiv:2402.02368）[V] | 可解释的扩散生成；把预测、填补、异常检测统一为生成任务 |
 | 2025 | Sundial（arXiv:2502.00816）[V] | 以**流匹配**训练的连续值基础模型，摒弃离散化 tokenization |
 
+表中：「时代」是年份，「事件」是代表性工作及编号，「要点」概括其贡献。主线：参数化分布 → VAE/GAN/流 → 扩散进入时序（TimeGrad、CSDI）→ 与结构化骨干结合 → 流匹配基础模型。
+
 ---
 
 ## 3. 各类方法详解
@@ -110,6 +123,9 @@ $$p(\mathbf y_{1:T})=\prod_{t=1}^{T}p\bigl(\mathbf y_t\mid \mathbf y_{<t}\bigr)$
 
 $$\mathcal L=-\sum_{t}\log p\bigl(y_t\mid\theta_t\bigr)$$
 
+
+其中：$\mathcal L$ 是训练损失；$y_t$ 是 $t$ 时刻观测；$\theta_t=g(h_t)$ 是分布参数（如均值、方差），由网络 $g$ 从隐状态 $h_t$ 映射得到；$p(y_t\mid\theta_t)$ 是对应分布的概率密度；对所有时间求和，最大化观测的似然。
+
 常见分布：高斯、Student-t（重尾）、负二项（计数）。DeepAR（[V]）采用这种方式（见[深度篇 §3.1](0606_ML_Tasks_TimeSeries_Deep)）。多变量时需要建模变量间相关：低秩高斯 copula 等做法（待核实）。
 
 | | |
@@ -117,11 +133,16 @@ $$\mathcal L=-\sum_{t}\log p\bigl(y_t\mid\theta_t\bigr)$$
 | **优点** | 训练稳定；似然显式；分位数可解析计算 |
 | **缺点** | 受分布族限制（单峰、对称等）；多变量联合需额外结构；分布选错会严重失真 |
 
+表中：「优点 / 缺点」两行概括参数化分布输出的特点。
+
 #### 隐式分位数网络（IQN）
 
 Probabilistic Time Series Forecasting with Implicit Quantile Networks（arXiv:2107.03743 [V]）把自回归 RNN 与**隐式分位数网络**结合：网络以分位水平 $\tau\sim U(0,1)$ 作为输入，输出对应的分位数，以 pinball 损失训练：
 
 $$\mathcal L=\mathbb E_{\tau\sim U(0,1)}\Bigl[L_\tau\bigl(y,\hat q_\tau\bigr)\Bigr]$$
+
+
+其中：$\tau\in(0,1)$ 是分位水平，训练时随机采样；$\hat q_\tau$ 是网络在水平 $\tau$ 的分位数预测；$L_\tau$ 是 pinball（分位数）损失；$y$ 是真实值；$\mathbb E_\tau$ 表示对所有分位水平取平均。
 
 由于 CRPS 等于对所有分位数 pinball loss 的积分（见[经典篇 §3.15](0604_ML_Tasks_TimeSeries_Classical)），这等于直接优化 CRPS。摘要称其在逐点预测精度与估计底层时间分布两方面都有优势。
 
@@ -132,6 +153,9 @@ $$\mathcal L=\mathbb E_{\tau\sim U(0,1)}\Bigl[L_\tau\bigl(y,\hat q_\tau\bigr)\Bi
 引入潜变量 $z$，用编码器 $q_\phi(z\mid x)$ 近似后验，以**证据下界**训练：
 
 $$\mathcal L_{\mathrm{ELBO}}=\mathbb E_{q_\phi(z\mid x)}\bigl[\log p_\theta(x\mid z)\bigr]-\mathrm{KL}\bigl(q_\phi(z\mid x)\,\Vert\,p(z)\bigr)$$
+
+
+其中：$x$ 是观测序列；$z$ 是潜变量；$q_\phi(z\mid x)$ 是编码器（近似后验）；$p_\theta(x\mid z)$ 是解码器；$p(z)$ 是先验（通常为标准高斯）；$\mathrm{KL}$ 是 KL 散度，衡量近似后验与先验的差距；$\mathcal L_{\mathrm{ELBO}}$ 是证据下界，越大越好。
 
 第一项是重构，第二项把潜变量分布拉向先验。生成时从先验采样 $z$，由解码器得到序列。
 
@@ -146,6 +170,8 @@ $$\mathcal L_{\mathrm{ELBO}}=\mathbb E_{q_\phi(z\mid x)}\bigl[\log p_\theta(x\mi
 | **缺点** | 样本常偏模糊、方差被低估（"降噪"倾向）；KL 项与重构项的权衡敏感；单个高斯潜变量对复杂分布表达有限 |
 | **适用** | 合成数据的快速基线、需要潜表示或可解释分量的场景 |
 
+表中：「优点 / 缺点 / 适用」三行概括 VAE 的特点。
+
 ### 3.3 生成对抗网络（GAN）
 
 #### 原理
@@ -153,6 +179,9 @@ $$\mathcal L_{\mathrm{ELBO}}=\mathbb E_{q_\phi(z\mid x)}\bigl[\log p_\theta(x\mi
 生成器 $G$ 与判别器 $D$ 对抗：
 
 $$\min_G\max_D\ \mathbb E_{x\sim p_{\text{data}}}\bigl[\log D(x)\bigr]+\mathbb E_{z\sim p_z}\bigl[\log\bigl(1-D(G(z))\bigr)\bigr]$$
+
+
+其中：$G$ 是生成器，把噪声 $z$ 映射为样本；$D$ 是判别器，输出 $[0,1]$ 内的"真实概率"；$p_{\text{data}}$ 是真实数据分布；$p_z$ 是噪声先验分布；$\min_G\max_D$ 表示 $D$ 努力区分真假、$G$ 努力欺骗 $D$。
 
 时序 GAN（如 TimeGAN，NeurIPS 2019，待核实）在对抗目标之外，通常加入保持时间动态的监督损失与嵌入空间（依原文印象，待核实）。
 
@@ -162,6 +191,8 @@ $$\min_G\max_D\ \mathbb E_{x\sim p_{\text{data}}}\bigl[\log D(x)\bigr]+\mathbb E
 | **缺点** | **训练不稳定**；**模式坍塌**；无显式似然，难以评估；条件概率预测不如扩散与流自然 |
 | **适用** | 合成数据；目前在概率预测上被扩散和流超越的趋势明显 [经验] |
 
+表中：「优点 / 缺点 / 适用」三行概括 GAN 的特点；其对抗训练使样本逼真、采样快，但不稳定且缺少似然。
+
 ### 3.4 归一化流
 
 #### 原理
@@ -169,6 +200,9 @@ $$\min_G\max_D\ \mathbb E_{x\sim p_{\text{data}}}\bigl[\log D(x)\bigr]+\mathbb E
 用一系列**可逆变换** $f$ 把简单分布（如标准高斯）变成复杂分布，对数似然由变量替换公式**精确**给出：
 
 $$\log p_X(x)=\log p_Z\bigl(f^{-1}(x)\bigr)+\log\Bigl\lvert\det\frac{\partial f^{-1}(x)}{\partial x}\Bigr\rvert$$
+
+
+其中：$X$ 是数据变量，$Z$ 是服从简单分布（如标准高斯）的潜变量；$f$ 是可逆变换，$f^{-1}(x)$ 把数据映回潜空间；$p_Z$ 是潜变量的概率密度；$\det\frac{\partial f^{-1}(x)}{\partial x}$ 是雅可比行列式，其绝对值的对数补偿变换造成的体积变化。
 
 #### 时序应用
 
@@ -180,6 +214,8 @@ $$\log p_X(x)=\log p_Z\bigl(f^{-1}(x)\bigr)+\log\Bigl\lvert\det\frac{\partial f^
 | **缺点** | 变换必须可逆且雅可比易算，限制了网络结构；表达力在高维下仍有限；训练需要调结构 |
 | **适用** | 需要精确似然、高维多变量联合预测的场景 |
 
+表中：「优点 / 缺点 / 适用」三行概括归一化流的特点；核心优势是精确似然与一次前向采样，代价是结构受限。
+
 ### 3.5 扩散模型
 
 #### 原理（DDPM）
@@ -188,15 +224,25 @@ DDPM（arXiv:2006.11239 [V]）定义一个逐步加噪的**前向过程**，再�
 
 $$q(x_n\mid x_{n-1})=\mathcal N\bigl(\sqrt{1-\beta_n}\,x_{n-1},\ \beta_n I\bigr),\qquad x_n=\sqrt{\bar\alpha_n}\,x_0+\sqrt{1-\bar\alpha_n}\,\epsilon,\ \ \bar\alpha_n=\prod_{i=1}^{n}(1-\beta_i),\ \epsilon\sim\mathcal N(0,I)$$
 
+
+其中：$x_0$ 是原始数据；$x_n$ 是第 $n$ 步加噪结果；$\beta_n\in(0,1)$ 是第 $n$ 步的噪声强度（噪声调度），$I$ 是单位矩阵；$\bar\alpha_n=\prod_{i=1}^{n}(1-\beta_i)$ 是累计保留系数，随 $n$ 增大趋于 0，使 $x_n$ 趋近纯噪声；$\epsilon$ 是标准高斯噪声；第二个等式表示可一步直接从 $x_0$ 得到任意 $x_n$。
+
 网络 $\epsilon_\theta$ 学习预测所加的噪声，训练目标是：
 
 $$\mathcal L=\mathbb E_{n,x_0,\epsilon}\Bigl[\bigl\lVert\epsilon-\epsilon_\theta\bigl(x_n,n,\mathbf c\bigr)\bigr\rVert^2\Bigr]$$
+
+
+其中：$n$ 是随机抽取的扩散步；$x_0$ 是干净样本；$\epsilon$ 是真实所加噪声；$x_n$ 是加噪后的样本；$\epsilon_\theta$ 是预测噪声的网络，参数为 $\theta$；$\mathbf c$ 是条件信息（如观测值、历史）；目标是让预测噪声与真实噪声的均方误差最小。
 
 采样时从 $x_N\sim\mathcal N(0,I)$ 出发逐步去噪：
 
 $$x_{n-1}=\frac{1}{\sqrt{\alpha_n}}\Bigl(x_n-\frac{\beta_n}{\sqrt{1-\bar\alpha_n}}\,\epsilon_\theta(x_n,n,\mathbf c)\Bigr)+\sigma_n z,\qquad \alpha_n=1-\beta_n,\ z\sim\mathcal N(0,I)$$
 
+
+其中：$x_N$ 是纯噪声起点，$N$ 是总去噪步数；$x_{n-1}$ 是去噪一步后的结果；$\alpha_n=1-\beta_n$；$\epsilon_\theta(x_n,n,\mathbf c)$ 是网络预测的噪声，用来估计并扣除噪声成分；$\sigma_n$ 是采样噪声强度；$z$ 是标准高斯噪声，保证采样的随机性。
+
 $\mathbf c$ 是条件信息。Score-based SDE 的统一视角（arXiv:2011.13456 [V]）把加噪与去噪看作连续时间的随机微分方程。**代价**：采样需要迭代 $N$ 步（常为数十到上千步），比 GAN、流慢得多。
+
 
 #### 时序中的代表方法
 
@@ -209,6 +255,8 @@ $\mathbf c$ 是条件信息。Score-based SDE 的统一视角（arXiv:2011.13456
 | **Diffusion-TS**（arXiv:2403.01742 [V]） | 编码器-解码器 Transformer 加**解耦的时间表示**（分解引导），训练时直接**重构样本**而非噪声，并结合傅里叶损失项；可无需改动扩展到预测与填补 | 无条件合成，兼条件任务 |
 | 综述 | *Diffusion Models for Time Series Applications: A Survey*（arXiv:2305.00624 [V]） | 预测、填补、生成三类任务的系统梳理 |
 
+表中：「方法」是扩散类代表工作及其 arXiv 编号，「做法」概括其核心设计，「任务」是主要应用。TimeGrad 一行中 $\mathbf x_t^0$ 是第 $t$ 步干净（未加噪）的多变量观测，$h_{t-1}$ 是 RNN 隐状态，$\prod_t$ 表示按时间自回归连乘。
+
 #### 优缺点
 
 | | |
@@ -217,11 +265,16 @@ $\mathbf c$ 是条件信息。Score-based SDE 的统一视角（arXiv:2011.13456
 | **缺点** | **采样慢**（多步迭代）；训练与调参成本高；似然仅有下界；对短序列、小数据易过拟合；对预测校准需要单独检验 [经验] |
 | **适用** | 需要复杂联合分布、多模态未来、概率填补、合成数据；对延迟不敏感的离线场景 |
 
+表中：「优点 / 缺点 / 适用」三行概括扩散模型的特点；关键权衡是样本质量与多样性好但采样慢。
+
 ### 3.6 流匹配与连续值生成
 
 **流匹配**（flow matching）是扩散之后的一类训练范式：不逐步加噪，而是学一个**向量场** $v_\theta$，把噪声分布沿连续路径输运到数据分布。常用的条件流匹配形式（标准形式，细节以各论文为准，待核实）：
 
 $$x_t=(1-t)\,x_0+t\,x_1,\ \ x_0\sim\mathcal N(0,I),\ x_1\sim p_{\text{data}},\qquad \mathcal L=\mathbb E_{t,x_0,x_1}\bigl\lVert v_\theta(x_t,t,\mathbf c)-(x_1-x_0)\bigr\rVert^2$$
+
+
+其中：$t\in[0,1]$ 是路径时间；$x_0$ 是噪声样本，$x_1$ 是真实数据样本，$x_t$ 是二者的线性插值；$v_\theta(x_t,t,\mathbf c)$ 是网络预测的向量场（速度）；$x_1-x_0$ 是该直线路径的目标速度；$\mathbf c$ 是条件信息；$\dot x$ 是 $x$ 对时间的导数，沿速度积分即可从噪声到达数据。
 
 采样时从噪声出发，对常微分方程 $\dot x=v_\theta(x,t)$ 积分，步数通常比扩散少。
 
@@ -231,6 +284,8 @@ $$x_t=(1-t)\,x_0+t\,x_1,\ \ x_0\sim\mathcal N(0,I),\ x_1\sim p_{\text{data}},\qq
 |---|---|
 | **优点** | 无需离散化；采样步数通常少于扩散；可输出多样的预测样本 |
 | **缺点** | 较新，独立验证有限；训练目标与路径设计影响大 [经验] |
+
+表中：「优点 / 缺点」两行概括流匹配方法的特点。
 
 ### 3.7 生成式异常检测
 
@@ -242,6 +297,8 @@ $$x_t=(1-t)\,x_0+t\,x_1,\ \ x_0\sim\mathcal N(0,I),\ x_1\sim p_{\text{data}},\qq
 | 密度（流、似然） | $-\log p(x)$ |
 | 预测分布的偏离 | 真实值在预测分布中的分位位置、负对数似然 |
 
+表中：「做法」是利用生成模型检测异常的方式，「异常分数」是得分形式（$x$ 为输入，$\hat x$ 为重构，$p(x)$ 为模型密度）；分数越大越异常。
+
 [经验] 生成式异常检测的优势是**对复杂正常模式的刻画**，风险与其他深度异常检测相同：评估协议（point-adjust）与基线问题（见 [metrics §3.3](0610_ML_Tasks_TimeSeries_Metrics)、[深度篇 §3.7](0606_ML_Tasks_TimeSeries_Deep)、[机器学习篇 §3.6](0605_ML_Tasks_TimeSeries_ML)）。Audibert et al.（arXiv:2204.01637 [V]）的结论提示：不能默认生成式或深度方法优于传统方法。
 
 ### 3.8 合成数据：用途与评估
@@ -252,6 +309,8 @@ $$x_t=(1-t)\,x_0+t\,x_1,\ \ x_0\sim\mathcal N(0,I),\ x_1\sim p_{\text{data}},\qq
 | **隐私共享** | 用合成数据代替敏感原始数据（需单独评估泄漏风险，本文不展开） |
 | **压力测试与模拟** | 生成多种可能的未来场景用于决策仿真 |
 | **预训练数据** | 为基础模型补充多样性（见[基础模型篇](0608_ML_Tasks_TimeSeries_Foundation)） |
+
+表中：「用途」是合成数据的应用场景，「说明」给出具体含义与注意事项。
 
 评估见 §1.4。TSDiff 的摘要报告：**用 TSDiff 合成的样本训练的下游预测器**，表现可超过在其他合成数据上训练的预测器（具体比较对象以原文为准）[V]。**重要提醒**：合成数据看起来逼真，不等于对下游任务有用，要用 TSTR 一类"可用性"指标验证 [经验]。
 
@@ -268,6 +327,8 @@ $$x_t=(1-t)\,x_0+t\,x_1,\ \ x_0\sim\mathcal N(0,I),\ x_1\sim p_{\text{data}},\qq
 | 归一化流 | 条件流预测 | 精确 | 快 | 中 | **精确** | 高维联合预测 | 结构受限 |
 | 扩散 | TimeGrad、CSDI、SSSD、TSDiff、Diffusion-TS | 灵活 | **慢** | 较稳 | 下界 | 预测、填补、合成 | 采样慢 |
 | 流匹配 | Sundial | 灵活 | 较快 | 中 | 无显式 | 基础模型的概率输出 | 较新 |
+
+表中：「方法族」与「代表」是生成方式及典型模型；「联合分布」是对多时间点/多变量联合依赖的表达方式；「采样速度」「训练稳定性」「似然」是工程维度（粗体表示突出的优势或劣势）；「典型用途」与「典型局限」说明适用场景与短板。阅读方式：先按任务（预测/填补/合成）选，再按延迟与稳定性要求筛。
 
 ---
 
@@ -315,6 +376,8 @@ $$x_t=(1-t)\,x_0+t\,x_1,\ \ x_0\sim\mathcal N(0,I),\ x_1\sim p_{\text{data}},\qq
 | 需要精确似然 | 归一化流、参数化分布 |
 | 对延迟敏感 | 避免多步扩散；用参数化分布、流或流匹配 |
 
+表中：「需求」是业务问题，「建议」是对应的方法选择。结论：只需要几个分位数时优先用低成本方案，需要路径级依赖、整段缺失填补或合成数据时才使用生成式模型。
+
 **推荐流程**
 
 1. 先做分位数基线（[机器学习篇 §3.3](0605_ML_Tasks_TimeSeries_ML)）和 DeepAR 一类参数化分布基线；
@@ -338,6 +401,8 @@ $$x_t=(1-t)\,x_0+t\,x_1,\ \ x_0\sim\mathcal N(0,I),\ x_1\sim p_{\text{data}},\qq
 | 概率预测 | GluonTS（arXiv:1906.05264 [V]）、PyTorch Forecasting |
 | 扩散类 | 各论文开源实现（如 CSDI 的 GitHub 仓库，摘要给出） |
 
+表中：「用途」是类别，「库」是对应的常用工具或实现来源。
+
 ---
 
 ## 7. 生成式路线的局限
@@ -360,4 +425,5 @@ $$x_t=(1-t)\,x_0+t\,x_1,\ \ x_0\sim\mathcal N(0,I),\ x_1\sim p_{\text{data}},\qq
 **待核实**：TimeGAN（NeurIPS 2019）、基于 copula 的多变量预测（NeurIPS 2019）的书目与内部机制；TimeGrad、GP-VAE、条件流预测等的**内部结构描述**（仅摘要层面核对）；合成数据评估指标（判别式得分、TSTR、多变量 CRPS 求和形式）的具体定义；流匹配的标准形式与 Sundial 的 TimeFlow Loss 的精确定义；"TSDiff 合成数据的下游优势"的比较对象；各工具库的版本与接口。
 
 **构造的例子与标准结果**：VAE 的 ELBO、GAN 的目标、流的变量替换公式、DDPM 的前向与反向公式为标准形式，由编者整理；"路径级依赖"的说明为概念性例子。
+
 
