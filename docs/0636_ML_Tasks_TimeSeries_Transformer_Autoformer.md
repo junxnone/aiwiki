@@ -1,8 +1,8 @@
 ---
-Title | Autoformer
+Title | ML Tasks TimeSeries Transformer Autoformer
 -- | --
 Created @ | `2026-11-19T01:59:55Z`
-Updated @| `2026-11-19T01:59:55Z`
+Updated @| `2026-11-19T02:24:32Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/636)
 
