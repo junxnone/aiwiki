@@ -2,7 +2,7 @@
 Title | ML Tasks TimeSeries Foundation
 -- | --
 Created @ | `2026-11-10T09:17:29Z`
-Updated @| `2026-11-10T09:17:29Z`
+Updated @| `2026-11-19T09:44:44Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/608)
 
@@ -32,6 +32,8 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/608)
 | **表格基础模型** | 把预测当作表格回归，复用预训练的表格模型 | TabPFN-TS | §3.9 |
 | **复用 LLM** | 冻结或少量微调预训练语言模型，加输入输出适配 | One Fits All（GPT4TS）、Time-LLM、LLMTime、TEMPO、LLM4TS | §3.10 |
 
+表中：「路线」是基础模型的技术路线，「做法」概述其核心设计，「代表」是典型模型，「本文章节」指向详解位置。
+
 一句话定位：**零样本基础模型是"几乎免训练的强基线"，而不是必然的赢家**。它在冷启动、历史短、没有精力为每个场景训练模型时很有价值，但必须与调好的经典与机器学习基线在**同一滚动评估**下比较，且要核对**预训练数据泄漏**。
 
 读完本文你应能回答：零样本、少样本、微调有何区别；连续值 patch 与量化 token 是两种什么设计；各主流模型在 tokenization、架构、输出头、多变量/协变量支持上有何不同；为什么"复用 LLM"的路线被质疑；评估基础模型有哪些陷阱；什么时候该用基础模型。
@@ -50,11 +52,16 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/608)
 | **少样本 / 微调** | 用目标域少量或全部数据更新全部或部分参数 | $\theta'=\arg\min_\theta\sum\ell\bigl(f_\theta(\cdot),\mathbf y\bigr)$，以 $\theta^{*}$ 初始化 |
 | **上下文学习（ICL）** | 不更新参数，在输入里放入**多条相关序列示例** | Chronos-2 的"组注意力"、TimesFM-ICF（§3.2、§3.1） |
 
+表中：「模式」是三种适配方式，「做法」说明是否更新参数，「公式」给出形式化表达（$f_{\theta^{*}}$ 是预训练模型，$\mathbf y_{t-L+1:t}$ 是长度 $L$ 的历史，$H$ 是预测步长，$\ell$ 是损失，$\theta'$ 是微调后的参数）。区别在于是否更新参数以及适配信息放在参数里还是输入里。
+
 ### 1.2 预训练目标
 
 绝大多数基础模型采用**下一个 patch（或 token）预测**，即自回归式地最大化未来片段的条件分布，或最小化其预测损失：
 
 $$\min_\theta\ \sum_{i}\sum_{t}\ \ell\Bigl(f_\theta\bigl(\mathbf y_{i,\le t}\bigr),\ \mathbf y_{i,t+1:t+P}\Bigr)$$
+
+
+其中：$\theta$ 是模型参数；$i$ 是预训练语料中的序列编号；$t$ 是预测起点；$\mathbf y_{i,\le t}$ 是序列 $i$ 在 $t$ 之前的历史；$\mathbf y_{i,t+1:t+P}$ 是其后 $P$ 步的真实片段；$f_\theta$ 是模型；$\ell$ 是损失函数（由输出头决定，如交叉熵、分位数损失、流匹配损失）。
 
 $i$ 遍历预训练语料中的序列，$P$ 是输出 patch 长度，$\ell$ 取决于输出头（§1.5）。预测长于 $P$ 的 horizon 时，用**滚动解码**：把预测结果拼回上下文，重复 $\lceil H/P\rceil$ 次。MOMENT 等采用**掩码重构**（MOMENT 摘要未写明目标细节，待核实）。
 
@@ -75,6 +82,8 @@ $i$ 遍历预训练语料中的序列，$P$ 是输出 patch 长度，$\ell$ 取�
 | TabPFN-TS | **无需时序专用预训练**，复用 TabPFN-v2 |
 | TTM | **仅用公开数据集**训练 |
 
+表中：「模型」是名称，「语料信息（摘要）」是摘要中给出的预训练数据来源与规模（B 为十亿）。注意各语料规模不可直接比较质量，应关注覆盖领域与是否泄漏测试集。
+
 **合成数据**（高斯过程、各类模拟信号）用于补充多样性；GIFT-Eval 提供**不泄漏测试集的预训练语料**，约 2300 亿个数据点（[V]，见 §1.7）。
 
 ### 1.4 Tokenization：连续值 patch 与量化 token
@@ -83,11 +92,17 @@ $i$ 遍历预训练语料中的序列，$P$ 是输出 patch 长度，$\ell$ 取�
 
 $$\mathbf e_j=W\,\mathbf y_{(j-1)P+1:jP}+\mathbf b,\qquad j=1,\dots,N,\ \ N=\Bigl\lceil\frac{L}{P}\Bigr\rceil$$
 
+
+其中：$\mathbf y_{(j-1)P+1:jP}$ 是第 $j$ 个 patch 的原始值（长度 $P$）；$W,\mathbf b$ 是可学习的线性投影权重与偏置；$\mathbf e_j$ 是该 patch 的嵌入；$L$ 是上下文长度；$N=\lceil L/P\rceil$ 是 patch 个数，向上取整表示不足一个 patch 的尾部也按一个处理。
+
 TimesFM、Moirai、Timer、Time-MoE、Sundial 等采用这类（各自的输入输出 patch 设置不同，细节待核实）。
 
 **2. 量化为离散 token（Chronos）**：Chronos（arXiv:2403.07815 [V]）"tokenizes time series values using scaling and quantization into a fixed vocabulary"，并用现成的语言模型架构、**交叉熵损失**训练。其基本做法（依原文印象，细节待核实）：先按序列的尺度缩放（如除以窗口内绝对值的均值），再把缩放后的值映射到 $B$ 个分箱之一：
 
 $$\tilde x_t=\frac{x_t}{s},\ \ s=\frac1L\sum_{i=1}^{L}\lvert x_i\rvert,\qquad \mathrm{tok}_t=\mathrm{bin}(\tilde x_t)\in\{1,\dots,B\},\qquad \mathcal L=-\sum_t\log p_\theta\bigl(\mathrm{tok}_{t+1}\mid\mathrm{tok}_{\le t}\bigr)$$
+
+
+其中：$x_t$ 是原始值，$L$ 是上下文长度，$s$ 是窗口内绝对值的均值，用作缩放因子，使不同尺度的序列处于相近数量级；$\tilde x_t$ 是缩放后的值；$\mathrm{bin}(\cdot)$ 把连续值映射到 $B$ 个分箱之一，$\mathrm{tok}_t$ 是 $t$ 时刻的离散 token；$p_\theta(\mathrm{tok}_{t+1}\mid\mathrm{tok}_{\le t})$ 是语言模型预测下一个 token 的分布；$\mathcal L$ 是交叉熵损失。
 
 预测时对 token 采样，反量化并乘回尺度，得到样本路径。**含义**：把回归问题改成**分类**问题，天然给出任意形状的预测分布（含多峰），代价是量化带来精度损失，且 token 序列更长。
 
@@ -104,6 +119,8 @@ $$\tilde x_t=\frac{x_t}{s},\ \ s=\frac1L\sum_{i=1}^{L}\lvert x_i\rvert,\qquad \m
 | **参数化分布** | 如 Student-t | Lag-Llama（摘要：概率预测；具体分布待核实） |
 | **流匹配样本** | 生成多条预测 | Sundial（TimeFlow Loss，见[生成式篇 §3.6](0607_ML_Tasks_TimeSeries_Generative)） |
 
+表中：「输出方式」是预测输出的形式，「说明」解释其含义，「代表」是采用该方式的模型；混合分布一行的 $p(y)=\sum_kw_kp_k(y)$ 中，$p_k$ 是第 $k$ 个分量分布，$w_k$ 是其混合权重（非负且和为 1）。
+
 分位数的评估指标见 [metrics §2](0610_ML_Tasks_TimeSeries_Metrics)。
 
 ### 1.6 架构与稀疏专家
@@ -115,9 +132,14 @@ $$\tilde x_t=\frac{x_t}{s},\ \ s=\frac1L\sum_{i=1}^{L}\lvert x_i\rvert,\qquad \m
 | 编码器-解码器 | T5 系 | Chronos（摘要：T5 系，20M–710M 参数） |
 | MLP-Mixer | 无注意力 | TTM（摘要：基于轻量 TSMixer，参数量从 1M 起） |
 
+表中：「架构」是网络类型，「说明」概述其注意力形式，「代表」是采用该架构的模型（括号内为摘要给出的信息）。
+
 **稀疏混合专家（MoE）**：每个 token 只激活少数几个专家，以较低的推理成本扩大容量：
 
 $$\mathbf y=\sum_{i\in\mathrm{TopK}(g(\mathbf x))}g_i(\mathbf x)\,E_i(\mathbf x)$$
+
+
+其中：$\mathbf x$ 是输入 token 的表示；$g(\mathbf x)$ 是路由器给出的各专家得分；$\mathrm{TopK}(\cdot)$ 选出得分最高的 $K$ 个专家，其余专家不被激活；$g_i(\mathbf x)$ 是第 $i$ 个被选专家的权重；$E_i(\mathbf x)$ 是第 $i$ 个专家（通常是小型前馈网络）的输出；$\mathbf y$ 是被激活专家输出的加权和。因每个 token 只激活 $K$ 个专家，推理成本远低于总参数量。
 
 $g$ 是路由器，$E_i$ 是第 $i$ 个专家。Time-MoE（arXiv:2409.16040 [V]）是仅解码器 MoE，摘要称首次把时序基础模型扩展到 **24 亿**参数；Moirai-MoE（arXiv:2410.10469 [V]）用单一输入/输出投影层，把多样时序的建模交给稀疏 MoE。
 
@@ -141,6 +163,8 @@ $g$ 是路由器，$E_i$ 是第 $i$ 个专家。Time-MoE（arXiv:2409.16040 [V]�
 | **GIFT-Eval**（arXiv:2410.10393 [V]） | 23 个数据集，超过 14.4 万条序列、1.77 亿个数据点，覆盖 7 个领域、10 种频率、多变量输入和短到长期预测长度；提供**不泄漏的预训练数据集**（约 2300 亿数据点）；分析了 17 个基线（统计、深度学习与基础模型） |
 | **fev-bench**（arXiv:2509.26468 [V]） | 100 个预测任务、7 个领域，其中 **46 个带协变量**；配套轻量库 fev；用**带自助法置信区间的聚合**报告**胜率**与**技能分数**两个维度，以判断差异是真实改进还是随机波动 |
 | Chronos Benchmark II | 见 Chronos-2 摘要（与 fev-bench、GIFT-Eval 并列的三个评测之一，具体内容待核实） |
+
+表中：「基准」是评测集合，「摘要给出的要点」列出规模、领域覆盖与评测方法。结论：新基准都强调无泄漏、协变量任务和带置信区间的聚合，以便判断差异是否真实。
 
 **评估陷阱** [经验]：
 
@@ -177,6 +201,8 @@ $g$ 是路由器，$E_i$ 是第 $i$ 个专家。Time-MoE（arXiv:2409.16040 [V]�
 | 2025-09 | **fev-bench**（2509.26468）[V] | 带协变量任务、带置信区间的聚合 |
 | 2025-10 | **Chronos-2**（2510.15821）[V] | 单变量到通用：多变量、协变量、组注意力 ICL |
 | 2025-11 | **Moirai 2.0**（2511.11698）[V] | 简化为仅解码器、单 patch、分位数损失 |
+
+表中：「日期」是 arXiv 首次提交年月，「事件」是模型或基准及编号，「要点」概括其贡献。主线：复用 LLM（2023 年初）→ 首批从头预训练的基础模型（2023–2024 年）→ 量化 token、MoE 与评测基准 → 协变量、ICL 与"小而快"（2025 年）。
 
 ---
 
@@ -249,7 +275,12 @@ $g$ 是路由器，$E_i$ 是第 $i$ 个专家。Time-MoE（arXiv:2409.16040 [V]�
 | **LLMTime**（arXiv:2310.07820 [V]） | 把时序编码为数字字符串，视为文本的下一 token 预测；摘要称 GPT-3、LLaMA-2 零样本外推的水平可与专门训练的时序模型相当或更优；并指出这源于 LLM 对多峰分布的自然表示，以及对简单性与重复性的偏置；还能处理缺失（用非数字文本）并接受文本旁路信息 |
 | **TEMPO**（arXiv:2310.04948）、**LLM4TS**（arXiv:2308.08469）、**S²IP-LLM**（arXiv:2403.05798）、*Time Series Forecasting with LLMs: Understanding and Enhancing Model Capabilities*（arXiv:2402.10835） | 以上均已核对标题与编号 [V]；内部机制未读，待核实 |
 
+表中：「方法」是复用 LLM 的代表工作及编号，「做法（摘要）」概括其适配方式（冻结骨干、重编程、数字文本化等）；最后一行为若干仅核对了标题的相关工作。
+
 结构通常是：$\hat{\mathbf y}=W_o\ \mathrm{LLM}_{\text{frozen}}\bigl(W_i\ \mathrm{patches}(\mathbf y)\bigr)$，$W_i,W_o$ 为可学习的输入投影与输出头。
+
+
+其中：$\mathbf y$ 是输入时序；$\mathrm{patches}(\cdot)$ 把序列切成 patch；$W_i$ 是可学习的输入投影，把 patch 对齐到 LLM 的嵌入空间；$\mathrm{LLM}_{\text{frozen}}$ 是参数冻结的预训练语言模型；$W_o$ 是可学习的输出头，把 LLM 输出映射回预测值 $\hat{\mathbf y}$。
 
 #### 质疑
 
@@ -285,6 +316,8 @@ $g$ 是路由器，$E_i$ 是第 $i$ 个专家。Time-MoE（arXiv:2409.16040 [V]�
 | TabPFN-TS | 表格基础模型（11M） | 时间特征化 | 待核实 | **协变量** | 无时序专用预训练 |
 | TimeGPT-1 | 待核实 | 待核实 | 待核实 | 待核实 | 商业 API |
 | One Fits All / Time-LLM / LLMTime | 冻结 LLM + 适配 | patch / 文本原型 / 数字文本 | 待核实 | 待核实 | 受质疑（[V] 2406.16964） |
+
+表中：「模型」是名称；「架构 / tokenization / 输出 / 多变量与协变量」四列依次是网络结构、输入表示、预测输出形式、对多变量或协变量的支持；「备注」摘取摘要中的要点。"待核实"表示摘要未写明，不是"不支持"；粗体标出该模型最突出的设计。读法：先看你需要的输出形式（点/分位数/分布）与协变量支持，再看规模与部署成本。
 
 ---
 
@@ -342,6 +375,8 @@ $g$ 是路由器，$E_i$ 是第 $i$ 个专家。Time-MoE（arXiv:2409.16040 [V]�
 | 对延迟、成本敏感 | 小模型或统计模型；避免大模型逐条推理 |
 | 数据不能出内网 | 避免商业 API；用可本地部署的开源模型 |
 
+表中：「场景」是业务特征，「建议」是对应的模型选择。结论：基础模型适合冷启动与快速基线；有重要协变量、延迟敏感或数据不能出内网时，应优先考虑支持协变量的方案、小模型或本地开源模型。
+
 **推荐流程**
 
 1. 先做经典、机器学习与线性/MLP 深度基线（[经典篇 §6](0604_ML_Tasks_TimeSeries_Classical)、[机器学习篇 §6](0605_ML_Tasks_TimeSeries_ML)、[深度篇 §6](0606_ML_Tasks_TimeSeries_Deep)）；
@@ -366,6 +401,8 @@ $g$ 是路由器，$E_i$ 是第 $i$ 个专家。Time-MoE（arXiv:2409.16040 [V]�
 |---|---|
 | 模型权重 | 多数开源模型通过 Hugging Face 发布（MOMENT、Toto 摘要给出 Hugging Face 路径；Moirai 摘要给出 uni2ts 仓库） |
 | 评测 | GIFT-Eval、fev-bench 的配套库 fev（[V] 摘要） |
+
+表中：「用途」是类别，「说明」是对应的资源或工具来源，可按需获取模型权重与评测库。
 
 ---
 
@@ -393,4 +430,5 @@ $g$ 是路由器，$E_i$ 是第 $i$ 个专家。Time-MoE（arXiv:2409.16040 [V]�
 **待核实**：各模型的内部结构细节（TimesFM 的概率头与输入输出 patch 长度、Moirai 的混合分布族、Lag-Llama 的分布、Chronos 的缩放公式与词表大小、Time-MoE 的 tokenization、MOMENT 的预训练目标、Sundial 的输入 patch）；TimeGPT-1 的交付形式；Chronos Benchmark II 的内容；各模型的最新版本与开源许可；TSPulse、UniTS、TEMPO、LLM4TS、S²IP-LLM 的方法描述；各工具与评测库的当前版本与接口。
 
 **构造的例子与标准结果**：滚动解码步数 $\lceil H/P\rceil$、MoE 路由公式、patch 数、零样本与微调的形式化为标准或概念性表述，由编者整理。
+
 
