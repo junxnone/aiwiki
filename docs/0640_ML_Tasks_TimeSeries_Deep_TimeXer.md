@@ -1,8 +1,8 @@
 ---
-Title | ML Tasks TimeSeries Transformer TimeXer
+Title | ML Tasks TimeSeries Deep TimeXer
 -- | --
 Created @ | `2026-11-19T02:00:04Z`
-Updated @| `2026-11-19T02:24:41Z`
+Updated @| `2026-11-19T06:20:39Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/640)
 
