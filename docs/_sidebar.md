@@ -276,6 +276,8 @@
     - [MetricLearning](/0157_ML_Tasks_MetricLearning)
     - [时间序列模型综述：从 ARIMA 到时序基础模型](/0603_ML_Tasks_TimeSeries)
       - [时间序列异常检测：方法详解、评估与发展脉络](/0609_ML_Tasks_TimeSeries_Anomaly)
+        - [Anomaly Transformer](/0648_ML_Tasks_TimeSeries_Anomaly_AnomalyTransformer)
+        - [TranAD](/0649_ML_Tasks_TimeSeries_Anomaly_TranAD)
       - [经典统计时间序列模型：方法详解、理论骨架与发展脉络](/0604_ML_Tasks_TimeSeries_Classical)
         - [ARIMA](/0624_ML_Tasks_TimeSeries_Classical_ARIMA)
       - [深度学习时间序列模型：方法详解、原理与发展脉络](/0606_ML_Tasks_TimeSeries_Deep)
@@ -290,6 +292,9 @@
         - [TimesNet](/0631_ML_Tasks_TimeSeries_Deep_TimesNet)
       - [时间序列基础模型：方法详解、原理与发展脉络](/0608_ML_Tasks_TimeSeries_Foundation)
       - [生成式时间序列模型：方法详解、原理与发展脉络](/0607_ML_Tasks_TimeSeries_Generative)
+        - [CSDI](/0647_ML_Tasks_TimeSeries_Generative_CSDI)
+        - [TS2Vec](/0646_ML_Tasks_TimeSeries_Generative_TS2Vec)
+        - [TimeGrad](/0645_ML_Tasks_TimeSeries_Generative_TimeGrad)
       - [机器学习时间序列模型：方法详解、原理与发展脉络](/0605_ML_Tasks_TimeSeries_ML)
         - [ROCKET](/0627_ML_Tasks_TimeSeries_ML_ROCKET)
       - [时间序列模型评估指标：公式、历史与现行评估方式、优缺点](/0610_ML_Tasks_TimeSeries_Metrics)
@@ -298,7 +303,11 @@
         - [Autoformer](/0636_ML_Tasks_TimeSeries_Transformer_Autoformer)
         - [FEDformer](/0637_ML_Tasks_TimeSeries_Transformer_FEDformer)
         - [Informer](/0635_ML_Tasks_TimeSeries_Transformer_Informer)
+        - [Mamba](/0643_ML_Tasks_TimeSeries_Transformer_Mamba)
         - [PatchTST](/0638_ML_Tasks_TimeSeries_Transformer_PatchTST)
+        - S
+          - [S-Mamba](/0644_ML_Tasks_TimeSeries_Transformer_S_Mamba)
+        - [S4](/0642_ML_Tasks_TimeSeries_Transformer_S4)
         - [SOFTS](/0641_ML_Tasks_TimeSeries_Transformer_SOFTS)
         - [TFT](/0634_ML_Tasks_TimeSeries_Transformer_TFT)
         - [TimeXer](/0640_ML_Tasks_TimeSeries_Transformer_TimeXer)
@@ -615,4 +624,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1025301119</sub></kbd>
+<kbd><sub>@1028281119</sub></kbd>

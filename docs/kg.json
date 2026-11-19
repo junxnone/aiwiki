@@ -5302,6 +5302,69 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki ML Tasks TimeSeries Transformer S4",
+      "group": 5,
+      "title": "S4",
+      "url": "https://junxnone.github.io/aiwiki/#/0642_ML_Tasks_TimeSeries_Transformer_S4",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Tasks TimeSeries Transformer Mamba",
+      "group": 5,
+      "title": "Mamba",
+      "url": "https://junxnone.github.io/aiwiki/#/0643_ML_Tasks_TimeSeries_Transformer_Mamba",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Tasks TimeSeries Generative TimeGrad",
+      "group": 5,
+      "title": "TimeGrad",
+      "url": "https://junxnone.github.io/aiwiki/#/0645_ML_Tasks_TimeSeries_Generative_TimeGrad",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Tasks TimeSeries Generative TS2Vec",
+      "group": 5,
+      "title": "TS2Vec",
+      "url": "https://junxnone.github.io/aiwiki/#/0646_ML_Tasks_TimeSeries_Generative_TS2Vec",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Tasks TimeSeries Generative CSDI",
+      "group": 5,
+      "title": "CSDI",
+      "url": "https://junxnone.github.io/aiwiki/#/0647_ML_Tasks_TimeSeries_Generative_CSDI",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Tasks TimeSeries Anomaly AnomalyTransformer",
+      "group": 5,
+      "title": "Anomaly Transformer",
+      "url": "https://junxnone.github.io/aiwiki/#/0648_ML_Tasks_TimeSeries_Anomaly_AnomalyTransformer",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Tasks TimeSeries Anomaly TranAD",
+      "group": 5,
+      "title": "TranAD",
+      "url": "https://junxnone.github.io/aiwiki/#/0649_ML_Tasks_TimeSeries_Anomaly_TranAD",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Tasks Image Classification MobileNet V1",
       "group": 6,
       "title": "MobileNet V1",
@@ -5459,6 +5522,15 @@
       "group": 6,
       "title": "N-HiTS",
       "url": "https://junxnone.github.io/aiwiki/#/0629_ML_Tasks_TimeSeries_Deep_N_HiTS",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Tasks TimeSeries Transformer S Mamba",
+      "group": 6,
+      "title": "S-Mamba",
+      "url": "https://junxnone.github.io/aiwiki/#/0644_ML_Tasks_TimeSeries_Transformer_S_Mamba",
       "visible": true,
       "expand": true,
       "childLinks": []
@@ -9479,6 +9551,41 @@
     {
       "source": "aiwiki ML Tasks TimeSeries Deep",
       "target": "aiwiki ML Tasks TimeSeries Deep TimeMixer",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks TimeSeries Generative",
+      "target": "aiwiki ML Tasks TimeSeries Generative TimeGrad",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks TimeSeries Generative",
+      "target": "aiwiki ML Tasks TimeSeries Generative TS2Vec",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks TimeSeries Generative",
+      "target": "aiwiki ML Tasks TimeSeries Generative CSDI",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks TimeSeries Anomaly",
+      "target": "aiwiki ML Tasks TimeSeries Anomaly AnomalyTransformer",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks TimeSeries Anomaly",
+      "target": "aiwiki ML Tasks TimeSeries Anomaly TranAD",
       "value": 5,
       "visible": true,
       "expand": true

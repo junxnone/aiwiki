@@ -1,5 +1,13 @@
 # Wiki History
 
+- 2026-11-19&nbsp;&nbsp; [TranAD](/0649_ML_Tasks_TimeSeries_Anomaly_TranAD)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Anomaly :bookmark:TranAD
+- 2026-11-19&nbsp;&nbsp; [Anomaly Transformer](/0648_ML_Tasks_TimeSeries_Anomaly_AnomalyTransformer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Anomaly :bookmark:AnomalyTransformer
+- 2026-11-19&nbsp;&nbsp; [CSDI](/0647_ML_Tasks_TimeSeries_Generative_CSDI)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Generative :bookmark:CSDI
+- 2026-11-19&nbsp;&nbsp; [TS2Vec](/0646_ML_Tasks_TimeSeries_Generative_TS2Vec)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Generative :bookmark:TS2Vec
+- 2026-11-19&nbsp;&nbsp; [TimeGrad](/0645_ML_Tasks_TimeSeries_Generative_TimeGrad)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Generative :bookmark:TimeGrad
+- 2026-11-19&nbsp;&nbsp; [S-Mamba](/0644_ML_Tasks_TimeSeries_Transformer_S_Mamba)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Transformer :bookmark:S :bookmark:Mamba
+- 2026-11-19&nbsp;&nbsp; [Mamba](/0643_ML_Tasks_TimeSeries_Transformer_Mamba)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Transformer :bookmark:Mamba
+- 2026-11-19&nbsp;&nbsp; [S4](/0642_ML_Tasks_TimeSeries_Transformer_S4)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Transformer :bookmark:S4
 - 2026-11-19&nbsp;&nbsp; [SOFTS](/0641_ML_Tasks_TimeSeries_Transformer_SOFTS)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Transformer :bookmark:SOFTS
 - 2026-11-19&nbsp;&nbsp; [TimeXer](/0640_ML_Tasks_TimeSeries_Transformer_TimeXer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Transformer :bookmark:TimeXer
 - 2026-11-19&nbsp;&nbsp; [iTransformer](/0639_ML_Tasks_TimeSeries_Transformer_iTransformer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Transformer :bookmark:iTransformer
