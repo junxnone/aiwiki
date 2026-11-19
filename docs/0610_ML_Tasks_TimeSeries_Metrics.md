@@ -2,7 +2,7 @@
 Title | ML Tasks TimeSeries Metrics
 -- | --
 Created @ | `2026-11-10T09:17:33Z`
-Updated @| `2026-11-10T09:17:33Z`
+Updated @| `2026-11-19T09:46:06Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/610)
 
@@ -30,6 +30,8 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/610)
 | 在尺度不同的多条序列间比较 | 尺度无关指标：MASE、RMSSE、WAPE |
 | 告警 | 精确率、召回率、事件级指标，同时看误报率与延迟 |
 
+表中：「决策」是预测要支持的业务问题，「该关心的指标」是对应的评估指标。核心思想是指标应与决策代价匹配。
+
 指标本身是一个假设：不同指标会给出不同名次，用单一指标（尤其是 MSE）排所有模型是常见错误。
 
 ---
@@ -42,34 +44,61 @@ $$\mathrm{MAE}=\frac1n\sum_{t=1}^{n}\lvert y_t-\hat y_t\rvert,\qquad
 \mathrm{MSE}=\frac1n\sum_{t=1}^{n}(y_t-\hat y_t)^2,\qquad
 \mathrm{RMSE}=\sqrt{\mathrm{MSE}}$$
 
+
+其中：$n$ 是评估点数；$y_t$ 是 $t$ 时刻的真实值；$\hat y_t$ 是点预测；MAE 是平均绝对误差，MSE 是均方误差，RMSE 是其平方根（与数据同量纲）。
+
 $$\mathrm{MAPE}=\frac1n\sum_{t=1}^{n}\frac{\lvert y_t-\hat y_t\rvert}{\lvert y_t\rvert},\qquad
 \mathrm{sMAPE}=\frac1n\sum_{t=1}^{n}\frac{2\,\lvert y_t-\hat y_t\rvert}{\lvert y_t\rvert+\lvert\hat y_t\rvert}$$
 
+
+其中：MAPE 是平均绝对百分比误差，每点误差除以真实值的绝对值，$y_t=0$ 时无定义；sMAPE 是对称版本，分母取真实值与预测值的绝对值之和（因子 2 使其落在 $[0,2]$，即 0–200%）。
+
 $$\mathrm{WAPE}=\frac{\sum_{t}\lvert y_t-\hat y_t\rvert}{\sum_{t}\lvert y_t\rvert}$$
+
+
+其中：分子是所有点绝对误差之和；分母是所有真实值绝对值之和；所以 WAPE 相当于以总量归一的总误差，零值多时仍可用。
 
 **MASE**（Hyndman & Koehler 2006，待核实）：以训练集上季节朴素预测的平均绝对误差为尺度，
 
 $$\mathrm{MASE}=\frac{\frac1n\sum_{t=1}^{n}\lvert y_t-\hat y_t\rvert}{\frac{1}{T-m}\sum_{t=m+1}^{T}\lvert y_t-y_{t-m}\rvert}$$
 
+
+其中：$n$ 是测试点数；$T$ 是训练集长度；$m$ 是季节周期；分子是模型的平均绝对误差；分母是训练集上季节朴素预测（用 $m$ 步前的值预测）的平均绝对误差，作为尺度；$\mathrm{MASE}<1$ 表示优于季节朴素预测。
+
 **RMSSE**（M5 比赛点预测所用的尺度化 RMSE，待核实）：
 
 $$\mathrm{RMSSE}=\sqrt{\frac{\frac1n\sum_{t=1}^{n}(y_t-\hat y_t)^2}{\frac{1}{T-1}\sum_{t=2}^{T}(y_t-y_{t-1})^2}}$$
+
+
+其中：$n$ 是测试点数；$T$ 是训练集长度；分子是模型的均方误差；分母是训练集上"一步朴素预测"的均方误差，用来去除序列的尺度；$\mathrm{RMSSE}<1$ 表示优于一步朴素预测。
 
 **决定系数**：
 
 $$R^2=1-\frac{\sum_t(y_t-\hat y_t)^2}{\sum_t(y_t-\bar y)^2}$$
 
+
+其中：$R^2$ 是决定系数；$\hat y_t$ 是预测值；$\bar y$ 是真实值的均值；分子是模型残差平方和，分母是总变差；取值最大为 1，可为负（比用均值预测还差）。
+
 **Theil's U**（以朴素预测为参照的相对误差，历史上常用，待核实）：
 
 $$U_2=\sqrt{\frac{\sum_t\left(\frac{\hat y_{t+1}-y_{t+1}}{y_t}\right)^2}{\sum_t\left(\frac{y_{t+1}-y_t}{y_t}\right)^2}}$$
+
+
+其中：$y_t$ 是 $t$ 时刻真实值；$\hat y_{t+1}$ 是对 $t+1$ 时刻的预测；分子衡量模型预测的相对误差，分母衡量"下期等于本期"的朴素预测的相对误差；$U_2<1$ 表示优于朴素预测。
 
 **OWA**（M4 比赛的综合指标，把 sMAPE 与 MASE 都相对 Naive2 归一后平均，待核实）：
 
 $$\mathrm{OWA}=\frac12\left(\frac{\mathrm{sMAPE}}{\mathrm{sMAPE}_{\text{Naive2}}}+\frac{\mathrm{MASE}}{\mathrm{MASE}_{\text{Naive2}}}\right)$$
 
+
+其中：$\mathrm{sMAPE}$、$\mathrm{MASE}$ 是被评估模型的指标；$\mathrm{sMAPE}_{\text{Naive2}}$、$\mathrm{MASE}_{\text{Naive2}}$ 是 Naive2（季节调整后的朴素预测）基线的同类指标；两项各自相对基线归一后取平均，$\mathrm{OWA}<1$ 表示优于基线。
+
 **WRMSSE**（M5 的层级加权指标：对 12 个层级聚合序列各算 RMSSE，按近期销售额权重加权，待核实）：
 
 $$\mathrm{WRMSSE}=\sum_{i}w_i\cdot\mathrm{RMSSE}_i,\qquad \sum_i w_i=1$$
+
+
+其中：$i$ 是层级聚合序列的编号；$\mathrm{RMSSE}_i$ 是第 $i$ 个序列的 RMSSE；$w_i$ 是其权重（按近期销售额），非负且和为 1。
 
 ### 1.2 优缺点
 
@@ -87,6 +116,8 @@ $$\mathrm{WRMSSE}=\sum_{i}w_i\cdot\mathrm{RMSSE}_i,\qquad \sum_i w_i=1$$
 | OWA | 综合两个指标，M4 时代可横向比较 | 依赖 Naive2 的具体实现；sMAPE 的缺陷被继承 |
 | WRMSSE | 贴近零售层级与销售额的业务价值 | 权重与层级是 M5 数据特有的，不能直接移植 |
 
+表中：「指标」是点预测指标，「优点」「缺点 / 陷阱」说明其特点与使用风险。读法：先看缺点栏的适用边界（零值、跨序列、离群点），再选指标。
+
 ### 1.3 例子：同一组预测，指标给出不同结论
 
 真实值 $y=(10,10,10,10,10)$。模型 A 预测 $(9,11,9,11,9)$，每点误差 1；模型 B 预测 $(10,10,10,10,5)$，前四点完美、最后一点误差 5。
@@ -95,6 +126,8 @@ $$\mathrm{WRMSSE}=\sum_{i}w_i\cdot\mathrm{RMSSE}_i,\qquad \sum_i w_i=1$$
 |---|---|---|
 | A | 1.0 | 1.0 |
 | B | 1.0 | $\sqrt5\approx2.24$ |
+
+表中：「MAE / RMSE」是两个误差指标，A、B 是两个模型。A 每点误差 1，故 MAE 与 RMSE 都是 1；B 只有一点误差 5，MAE 为 $5/5=1$，RMSE 为 $\sqrt{25/5}=\sqrt5\approx2.24$。结论：RMSE 对集中的大误差更敏感。
 
 MAE 认为两者一样，RMSE 认为 A 明显更好。若"偶尔大错"代价很高（负荷骤降），选 RMSE；若关心典型误差，选 MAE。没有对错，只有与代价是否匹配。
 
@@ -117,11 +150,17 @@ MASE 的算例：训练集上季节朴素（用上周同一天预测）的平均
 $$L_\tau(y,\hat q)=\begin{cases}\tau\,(y-\hat q), & y\ge\hat q\\[2pt](1-\tau)\,(\hat q-y), & y<\hat q\end{cases}
 =\max\{\tau(y-\hat q),\,(\tau-1)(y-\hat q)\}$$
 
+
+其中：$L_\tau(y,\hat q)$ 是 pinball 损失；$y$ 是真实值；$\hat q$ 是预测的 $\tau$ 分位数；$\tau\in(0,1)$ 是分位数水平；$\tau(y-\hat q)$ 是低估时的损失，$(1-\tau)(\hat q-y)$ 是高估时的损失，二者权重不对称。
+
 直觉：$\tau=0.9$ 时低估（实际高于预测）罚得更重，逼模型把 $\hat q$ 抬高，使 90% 的真实值落在其下。最小化它得到条件 $\tau$ 分位数。
 
 **加权分位数损失（wQL）**：对一组分位数 $\mathcal T$ 汇总并按总量归一，
 
 $$\mathrm{wQL}=\frac{1}{\lvert\mathcal T\rvert}\sum_{\tau\in\mathcal T}\frac{2\sum_t L_\tau(y_t,\hat q_t^{\tau})}{\sum_t\lvert y_t\rvert}$$
+
+
+其中：$\mathcal T$ 是评估的分位数水平集合，$\lvert\mathcal T\rvert$ 是其个数；$L_\tau$ 是 pinball loss；$\hat q_t^{\tau}$ 是 $t$ 时刻 $\tau$ 分位数预测；分母 $\sum_t\lvert y_t\rvert$ 是真实值总量，用于去除尺度。
 
 （系数 2 与归一化细节在不同实现中不完全一致，待核实。）M5 不确定性赛道的尺度化版本称 WSPL（待核实）。
 
@@ -134,15 +173,24 @@ $$\mathrm{wQL}=\frac{1}{\lvert\mathcal T\rvert}\sum_{\tau\in\mathcal T}\frac{2\s
 $$\mathrm{CRPS}(\hat F,y)=\int_{-\infty}^{\infty}\bigl(\hat F(z)-\mathbf 1\{z\ge y\}\bigr)^2\,dz
 =2\int_0^1 L_\tau\bigl(y,\hat F^{-1}(\tau)\bigr)\,d\tau$$
 
+
+其中：$\hat F$ 是模型的预测累积分布函数；$y$ 是真实值；$z$ 是积分变量；$\mathbf 1\{z\ge y\}$ 是真实值对应的阶跃分布函数；第一式衡量预测分布与阶跃函数的平方距离；$\hat F^{-1}(\tau)$ 是 $\tau$ 分位数；$L_\tau$ 是 pinball loss（见 §2.1）。CRPS 越小越好。
+
 第二个等号说明 CRPS 是对所有分位数 pinball loss 的积分。若 $\hat F$ 退化为点预测 $\hat y$，则 $\mathrm{CRPS}=\lvert y-\hat y\rvert$，因此可与点预测在同一尺度比较。模型输出样本 $\{x_i\}_{i=1}^{S}$ 时可用样本估计：
 
 $$\widehat{\mathrm{CRPS}}=\frac1S\sum_i\lvert x_i-y\rvert-\frac{1}{2S^2}\sum_{i,j}\lvert x_i-x_j\rvert$$
+
+
+其中：$S$ 是样本数；$x_i,x_j$ 是模型输出的第 $i$、$j$ 个预测样本；$y$ 是真实值；第一项衡量样本与真值的平均距离，第二项衡量样本之间的离散度并作为修正，使分布过窄时不被奖励。
 
 出处：Gneiting & Raftery 2007（proper scoring rule，待核实）。
 
 ### 2.3 对数得分（NLL）
 
 $$\mathrm{LS}=-\log\hat p(y_t)$$
+
+
+其中：$\mathrm{LS}$ 是对数得分，$\hat p(y_t)$ 是模型在真实值 $y_t$ 处给出的预测概率密度；密度越高、得分越低，越好。
 
 用于输出参数化分布的模型（DeepAR 等训练时即最大化似然）。
 
@@ -153,9 +201,15 @@ $$\mathrm{LS}=-\log\hat p(y_t)$$
 $$\mathrm{Coverage}=\frac1n\sum_t\mathbf 1\{l_t\le y_t\le u_t\},\qquad
 \mathrm{Width}=\frac1n\sum_t(u_t-l_t)$$
 
+
+其中：$\mathrm{Coverage}$ 是经验覆盖率，应接近名义覆盖率 $1-\alpha$（校准）；$\mathrm{Width}$ 是平均区间宽度（锐度），越窄越有信息；$\mathbf 1\{\cdot\}$ 是指示函数，真实值落入区间取 1，否则取 0。
+
 **区间分数（Winkler / interval score）**把宽度与未覆盖惩罚合成一个数：
 
 $$\mathrm{IS}_\alpha=(u-l)+\frac2\alpha(l-y)\,\mathbf 1\{y<l\}+\frac2\alpha(y-u)\,\mathbf 1\{y>u\}$$
+
+
+其中：$[l,u]$ 是预测区间的下界与上界；$y$ 是真实值；$\alpha$ 是名义错误率（$1-\alpha$ 为名义覆盖率）；$(u-l)$ 是区间宽度；后两项在真实值落在区间之外时分别施加惩罚，系数 $2/\alpha$ 使惩罚随目标覆盖率提高而增大；$\mathbf 1\{\cdot\}$ 是指示函数。分数越小越好。
 
 ### 2.5 优缺点
 
@@ -166,6 +220,8 @@ $$\mathrm{IS}_\alpha=(u-l)+\frac2\alpha(l-y)\,\mathbf 1\{y<l\}+\frac2\alpha(y-u)
 | NLL | proper，理论性质好 | 对尾部极端敏感，分布族选错会严重失真；非参数模型（输出样本）无法直接算 |
 | 覆盖率 | 直观检验校准 | 单看覆盖率会被"超宽区间"作弊 |
 | 区间分数 | 宽度与覆盖的折中 | 只评一个区间水平；$\alpha$ 的选择影响结论 |
+
+表中：「指标」是概率预测指标，「优点」「缺点 / 陷阱」说明其特点。结论：没有单个指标足够，评估概率预测应同时看校准（覆盖率）与锐度（宽度）。
 
 例：模型 A 的 80% 区间平均宽 10、覆盖 60%；模型 B 平均宽 20、覆盖 80%。A 看着精悍却不可信，B 才是校准的。**先看校准，再比锐度。**
 
@@ -179,6 +235,9 @@ $$\mathrm{IS}_\alpha=(u-l)+\frac2\alpha(l-y)\,\mathbf 1\{y<l\}+\frac2\alpha(y-u)
 
 $$P=\frac{TP}{TP+FP},\qquad R=\frac{TP}{TP+FN},\qquad F_1=\frac{2PR}{P+R}$$
 
+
+其中：$P$ 是精确率（报警中真异常的比例）；$R$ 是召回率（真异常中被检出的比例）；$TP,FP,FN$ 分别是真阳性、假阳性、假阴性个数；$F_1$ 是二者的调和平均，二者都高时才高。
+
 异常占比通常极低，准确率 $\frac{TP+TN}{n}$ 无意义：全判正常就能得 99%+。若用阈值，要说明**阈值怎么定**：用测试集标签选最优阈值得到的 $F_1$ 是理想上界，不代表部署效果。
 
 ### 3.2 不依赖阈值：AUC-ROC 与 AUC-PR
@@ -187,11 +246,17 @@ AUC-ROC 对类别极不平衡的数据偏乐观（大量真负例让假阳率看
 
 $$\mathrm{AP}=\sum_k(R_k-R_{k-1})\,P_k$$
 
+
+其中：$\mathrm{AP}$ 是平均精度；$k$ 是按分数降序排列后的阈值序号；$P_k,R_k$ 是第 $k$ 个阈值下的精确率与召回率；$(R_k-R_{k-1})$ 是召回的增量，AP 即以召回增量为权重对精确率求和，等价于 PR 曲线下的面积。
+
 ### 3.3 point-adjust（PA）及其替代
 
 异常常是连续区间。设真实异常段集合 $\{S_j\}$，PA 的规则是：只要段内任一点被判为异常，就把整段所有点改判为异常，再计算 $P/R/F_1$：
 
 $$\hat a'_t=\begin{cases}1,&\exists\,s\in S_j\ \text{with}\ \hat a_s=1,\ t\in S_j\\ \hat a_t,&\text{otherwise}\end{cases}$$
+
+
+其中：$S_j$ 是第 $j$ 个真实异常段（时间点集合）；$\hat a_t$ 是原始预测（1 为异常）；$\hat a'_t$ 是 PA 调整后的预测；条件表示只要段内存在一个被判异常的点 $s$，段内所有点 $t$ 都被改为异常；否则保持原判断。
 
 **PA 的问题**：Kim et al.（*Towards a Rigorous Evaluation of Time-series Anomaly Detection*, arXiv:2109.05257）[V] 理论与实验表明 PA 有很大可能高估性能，**随机的异常分数也能变成"SOTA"**，PA 下的排名会误导；而且在禁用 PA 时，一个未训练的模型即可取得与现有方法相当的检测性能。
 
@@ -207,6 +272,8 @@ $$\hat a'_t=\begin{cases}1,&\exists\,s\in S_j\ \text{with}\ \hat a_s=1,\ t\in S_
 | **affiliation 指标** | 以到最近真实异常/预测的距离定义局部精确率与召回率 | Huet et al., KDD 2022，待核实 |
 | **VUS-ROC / VUS-PR** | 对缓冲区长度与阈值同时积分的"曲面下体积"，对标注位置略偏更宽容 | Paparrizos et al., VLDB 2022，待核实 |
 | **NAB 得分** | 对越早的检出给越高权重，对误报给负分 | Lavin & Ahmad 2015，待核实 |
+
+表中：「方法」是替代 PA 的评估方案，「做法」概述其思想，「来源」是出处（"待核实"表示尚未核对原文）。共同目标是在评价"段内命中"的同时避免整段虚高。
 
 **分类综述**：*A Problem-Oriented Taxonomy of Evaluation Metrics for Time Series Anomaly Detection*（arXiv:2511.18739）[V] 把二十多种常用指标按六个维度重新归类：基础精度、时效奖励、对标注不精确的容忍、人工审核成本惩罚、对随机/虚高分数的稳健性、可跨数据集比较的免参数性，并在真实、随机、oracle 三种检测情形下检验指标行为。
 
@@ -230,6 +297,8 @@ $$\hat a'_t=\begin{cases}1,&\exists\,s\in S_j\ \text{with}\ \hat a_s=1,\ t\in S_
 | range / affiliation / VUS | 对标注偏移与区间更合理 | 实现复杂，数值难直观解读；不同实现细节不一致 |
 | 事件级 + 延迟 + 误报率 | 贴近运维实际 | 需要定义"检出"与时间窗；难汇成单一数字 |
 
+表中：「方法」是评估指标或协议，「优点」「缺点」说明其特点。结论：没有单一指标足够，PA 类指标易高估，事件级指标更贴近运维但难以汇成单个数字。
+
 例：一台设备 1 万个点，一次故障段 200 点；检测器 X 在故障段首点报警后沉默，另外误报 40 次。
 
 | 评估方式 | 结论 |
@@ -237,6 +306,8 @@ $$\hat a'_t=\begin{cases}1,&\exists\,s\in S_j\ \text{with}\ \hat a_s=1,\ t\in S_
 | PA 后 $F_1$ | 故障段全记检出，召回 100%，$F_1$ 很高 |
 | 点级 $F_1$ | 召回仅 $1/200$，$F_1$ 很低 |
 | 事件级 | 故障被检出（1/1），延迟 0 点，但 40 次误报/万点，运维上难以接受 |
+
+表中：「评估方式」是不同的评价口径，「结论」是同一检测结果在该口径下的表现。同一结果在三种口径下结论迥异，说明应同时报告多种指标。
 
 三个结论各说明一个侧面，要同时看。
 
@@ -250,11 +321,16 @@ $$\mathrm{Acc}=\frac{\sum_c TP_c}{n},\qquad
 \mathrm{Macro\text{-}F_1}=\frac1K\sum_{c=1}^{K}F_{1,c},\qquad
 \mathrm{BalAcc}=\frac1K\sum_{c=1}^{K}\frac{TP_c}{TP_c+FN_c}$$
 
+
+其中：$\mathrm{Acc}$ 是准确率，$n$ 是样本数，$TP_c$ 是类别 $c$ 的真阳性数；$K$ 是类别数；$F_{1,c}$ 是类别 $c$ 的 $F_1$，宏 $F_1$ 对各类取平均（各类同权）；$FN_c$ 是类别 $c$ 的假阴性数，$\dfrac{TP_c}{TP_c+FN_c}$ 是类别 $c$ 的召回率，平衡准确率是各类召回的平均。
+
 | 指标 | 优点 | 缺点 |
 |---|---|---|
 | 准确率 | 直观 | 类别不均衡时被多数类主导 |
 | 宏 $F_1$ | 各类同权 | 少数类样本极少时方差大 |
 | 平衡准确率 | 等价于各类召回的平均 | 不反映精确率 |
+
+表中：「指标」是分类指标，「优点」「缺点」说明其特点。结论：类别不均衡时应使用宏 $F_1$ 或平衡准确率，而非准确率。
 
 **划分方式比指标更关键**：同一设备/病人的窗口同时出现在训练和测试集会虚高指标，应按**个体**（病人、设备、轴承）划分，而非窗口随机划分 [经验]。
 
@@ -264,6 +340,9 @@ $$\mathrm{Acc}=\frac{\sum_c TP_c}{n},\qquad
 
 $$\mathrm{MAE}_{\mathcal M}=\frac{1}{\lvert\mathcal M\rvert}\sum_{(t,c)\in\mathcal M}\lvert y_{t,c}-\hat y_{t,c}\rvert,\qquad
 \mathrm{RMSE}_{\mathcal M}=\sqrt{\frac{1}{\lvert\mathcal M\rvert}\sum_{(t,c)\in\mathcal M}(y_{t,c}-\hat y_{t,c})^2}$$
+
+
+其中：$\mathcal M$ 是被人为遮盖的位置集合，$\lvert\mathcal M\rvert$ 是其个数；$(t,c)$ 是时间点与通道；$y_{t,c}$ 是被遮盖位置的真实值，$\hat y_{t,c}$ 是填补值；指标只在 $\mathcal M$ 上计算，避免把已知位置的误差计入。
 
 概率填补可用 CRPS（CSDI 一类生成式方法的论文中使用，待核实）。**缺点**：真实缺失往往非随机（传感器故障常成片缺失），人工随机遮盖得到的指标可能乐观；应尽量模拟真实缺失模式，如连续缺段 [经验]。
 
@@ -283,6 +362,8 @@ $$\mathrm{MAE}_{\mathcal M}=\frac{1}{\lvert\mathcal M\rvert}\sum_{(t,c)\in\mathc
 | M5（2020，沃尔玛层级销量） | 点预测用 WRMSSE，不确定性赛道用 WSPL | 层级加权与权重为数据特有；零值多（M5 数据的过度离散与间歇性见 arXiv:2107.06675 [V]）；数据代表性见 arXiv:2103.02941 [V] |
 | 机器学习时代的预测竞赛 / 论文 | 沿用滚动起点（rolling-origin）交叉验证 | 比单次切分稳，但计算量大 |
 
+表中：「时期」是评估方式出现的阶段，「做法」是当时的主要协议，「特点与缺陷」说明其局限。演进主线：样本内拟合 → 单次留出 + 百分比指标 → 尺度无关与层级加权指标 → 滚动起点。
+
 ### 5.2 现行协议之一：长期预测（LTSF）论文
 
 这条线从 Informer 起形成惯例，DLinear 论文（arXiv:2205.13504）[V] 在此协议上提出"Transformer 是否有效"的质疑。常见做法如下（具体数值与切分比例以各论文代码为准，待核实）：
@@ -294,6 +375,9 @@ $$\mathrm{MAE}_{\mathcal M}=\frac{1}{\lvert\mathcal M\rvert}\sum_{(t,c)\in\mathc
 $$\mathrm{MSE}_{\text{LTSF}}=\frac{1}{HC}\sum_{h=1}^{H}\sum_{c=1}^{C}\Bigl(\tfrac{y_{t+h,c}-\mu_c}{\sigma_c}-\tfrac{\hat y_{t+h,c}-\mu_c}{\sigma_c}\Bigr)^2$$
 
    MAE 同理，再对所有滑窗样本取平均。
+
+
+   其中：$H$ 是预测步长，$C$ 是通道数；$y_{t+h,c}$、$\hat y_{t+h,c}$ 是起点 $t$ 之后第 $h$ 步、第 $c$ 个通道的真实值与预测值；$\mu_c,\sigma_c$ 是该通道在训练集上的均值与标准差，用于 z-score 标准化，使不同量纲的通道可比。
 4. **预测步长**：$H\in\{96,192,336,720\}$（ILI 通常用 $\{24,36,48,60\}$）。
 5. **回看窗口（look-back）**：早期工作常固定为 96；PatchTST 一类给长回看（336、512）；有的论文只给自己搜索回看长度，造成不公平。
 6. **滑窗评估**：对测试集每个起点各预测一次，然后平均。
@@ -313,6 +397,9 @@ Chronos（arXiv:2403.07815）[V] 在由 42 个数据集构成的基准上比较�
 
 $$\mathrm{Agg}=\exp\!\Bigl(\frac1K\sum_{k=1}^{K}\ln\frac{S_k}{S_k^{\text{base}}}\Bigr)$$
 
+
+其中：$K$ 是数据集个数；$S_k$ 是模型在第 $k$ 个数据集上的得分（如 MASE 或 WQL）；$S_k^{\text{base}}$ 是基线（如季节朴素）在同一数据集上的得分；$\ln(S_k/S_k^{\text{base}})$ 是相对基线的对数比；$\mathrm{Agg}<1$ 表示总体优于基线。
+
 几何平均对每个数据集的比值同权，不被量纲大的数据集主导；还可补充**排名**（各数据集排名的平均）。待核实各论文的具体汇总细节。
 
 ### 5.4 协议优缺点
@@ -326,6 +413,8 @@ $$\mathrm{Agg}=\exp\!\Bigl(\frac1K\sum_{k=1}^{K}\ln\frac{S_k}{S_k^{\text{base}}}
 | 相对基线的几何平均（基础模型基准） | 跨数据集、尺度无关 | 对基线选择敏感；个别数据集可能主导比值 |
 | 零样本 / 训练集内 分开报告 | 防止把"见过的数据"当成泛化 | 需核对预训练集是否真的不含测试集（泄漏） |
 
+表中：「协议」是评估方式，「优点」「缺点」是各自的长处与风险。结论：单次留出简单但不稳，滚动起点更可靠；LTSF 的标准化指标方便对照论文但与业务脱节；几何平均适合跨数据集汇总，但需核对泄漏。
+
 ### 5.5 通用要点
 
 | 问题 | 做法 |
@@ -335,6 +424,8 @@ $$\mathrm{Agg}=\exp\!\Bigl(\frac1K\sum_{k=1}^{K}\ln\frac{S_k}{S_k^{\text{base}}}
 | 基线 | 至少包含**朴素预测**、**季节朴素**与一个统计模型；MASE 天然内置朴素基线 |
 | 回看窗口 | 对每个模型都搜索回看长度，不要只给自己的方法调参 |
 | 评估 | 滚动起点优于单次切分；按 horizon 分开报告 |
+
+表中：「问题」是评估中的常见风险，「做法」是对应的规避办法。
 
 滚动起点的例子：日数据共 2 年，要预测未来 14 天。单次切分只有一个测试窗口，可能刚好碰上春节而结论失真；滚动起点每隔 14 天向前移一个起点，共约 10–20 个窗口，分别预测再平均，还能看到误差随季节波动的分布。
 
@@ -354,6 +445,8 @@ $$\mathrm{Agg}=\exp\!\Bigl(\frac1K\sum_{k=1}^{K}\ln\frac{S_k}{S_k^{\text{base}}}
 | 分类（不均衡） | 宏 $F_1$、平衡准确率；按个体划分 | 按窗口随机划分 |
 | 填补 | 被遮盖位置的 MAE/RMSE，概率填补用 CRPS | 只在随机缺失下评估 |
 
+表中：「场景」是评估对象，「推荐」是适合的指标与做法，「避免」是常见误用。读法：先按场景找到行，再按"推荐"选指标，同时避开右列的做法。
+
 ---
 
 ## 来源与核对状态
@@ -369,4 +462,5 @@ $$\mathrm{Agg}=\exp\!\Bigl(\frac1K\sum_{k=1}^{K}\ln\frac{S_k}{S_k^{\text{base}}}
 **待核实**：Hyndman & Koehler 2006（MASE）、Gneiting & Raftery 2007（CRPS）、Theil's $U$、M3/M4/M5 的官方指标定义（OWA、WRMSSE、WSPL）、Tatbul 2018、Huet 2022、Paparrizos 2022、Lavin & Ahmad 2015、PA%K 的原始出处、LTSF 各数据集的切分比例、GIFT-Eval 与 Chronos 的具体指标与汇总方式、wQL 的归一化系数。
 
 **构造的例子**：MAE/RMSE 对比、MASE 0.75、补货 3/1、PA 的 100 点异常、故障段 200/1 万点、覆盖率 60%/80% 等数值是为说明概念设计的，不是实测结果。
+
 
