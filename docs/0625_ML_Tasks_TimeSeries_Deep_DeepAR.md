@@ -2,7 +2,7 @@
 Title | ML Tasks TimeSeries Deep DeepAR
 -- | --
 Created @ | `2026-11-18T09:27:05Z`
-Updated @| `2026-11-19T01:59:20Z`
+Updated @| `2026-11-19T09:47:29Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/625)
 
@@ -25,6 +25,8 @@ DeepAR 是 Amazon 提出的**概率时间序列预测**模型（论文 *DeepAR: 
 需要人工做特征工程、季节性设定 | RNN 自动学习趋势、季节性，协变量直接输入
 各序列量级差异极大（几件 vs 几万件，呈幂律分布） | 按序列缩放（scale handling）+ 按量级加权采样
 计数型需求数据（非负整数、长尾） | 负二项（Negative Binomial）似然
+
+表中：「痛点」是传统逐条建模遇到的问题，「DeepAR 的做法」是对应的解决思路（如全局模型、概率输出、尺度处理、计数分布）。
 
 典型场景：零售需求预测、能源负荷、交通流量、云资源用量。
 
@@ -49,6 +51,8 @@ $$
 h_{i,t} = \mathrm{LSTM}\big( h_{i,t-1}, z_{i,t-1}, x_{i,t} \big) \qquad \text{（论文公式 1）}
 $$
 
+其中：$Q$ 是对预测区间内整条路径的联合分布；$z_{i,t_0:T}$ 是第 $i$ 条序列在预测区间的目标值；条件部分是已知历史 $z_{i,1:t_0-1}$ 与协变量 $x_{i,1:T}$；$\prod$ 表示逐步连乘；$\ell(\cdot\mid\theta)$ 是单步似然，$\theta(h_{i,t})$ 是由隐状态 $h_{i,t}$ 得到的分布参数；$\mathrm{LSTM}$ 是循环单元，其输入为上一步隐状态、上一步目标值和当前协变量。
+
 - **自回归**：把上一步目标值 $z_{i,t-1}$ 当作当前步输入
 - **循环**：上一步隐状态 $h_{i,t-1}$ 传入当前步
 - $\ell(z \mid \theta)$ 是固定形式的分布（高斯、负二项等），网络只负责输出参数 $\theta$
@@ -57,6 +61,9 @@ $$
 
 ### 训练与预测的输入区别
 
+
+下面用示意图对比训练与预测时 LSTM 每步的输入来源。
+
 ```
 训练（输入真实值）                         预测（输入上一步采样值）
 z(t-2) ─►[LSTM]─► θ(t-1)                   z(t0-2)  ─►[LSTM]─► ...
@@ -64,6 +71,13 @@ z(t-1) ─►[LSTM]─► θ(t)   ◄─ 用 z(t) 算 loss   z(t0-1)  ─►[LST
 z(t)   ─►[LSTM]─► θ(t+1) ◄─ 用 z(t+1) 算 loss ẑ(t0)    ─►[LSTM]─► θ(t0+1) ─► 采样 ẑ(t0+1)
           （每步 x(t) 也一并输入）                    ẑ(t0+1)  ─►[LSTM]─► θ(t0+2) ─► ...
 ```
+
+图中：
+
+- 左侧是训练：每一步的输入是**真实值** $z$（teacher forcing），LSTM 输出分布参数 $\theta$，再用下一时刻的真实值计算损失。
+- 右侧是预测：每一步的输入是**上一步的采样值** $\hat z$，LSTM 输出 $\theta$ 后采样得到下一步输入，如此递推。
+- `x(t)` 表示每步同时输入的协变量；`t0` 是预测起点。
+- 关键结论：训练用真实值、预测用采样值，这个差异在论文中未造成明显的精度问题。
 
 ### 输出分布（likelihood）
 
@@ -78,6 +92,8 @@ $$
 \end{aligned}
 $$
 
+其中：$h$ 是 LSTM 在该时刻的隐状态；$w_\mu,b_\mu$ 与 $w_\sigma,b_\sigma$ 是两个全连接层的权重与偏置；$\mu(h)$ 是预测均值；$\sigma(h)$ 是预测标准差；$\mathrm{softplus}(x)=\log(1+e^x)$ 把任意实数映射为正数，保证 $\sigma>0$。
+
 **负二项**（非负计数数据，如销量），用均值 $\mu$ 和形状参数 $\alpha$ 参数化：
 
 $$
@@ -88,6 +104,8 @@ $$
 \mathrm{Var}[z] &= \mu + \alpha \mu^2
 \end{aligned}
 $$
+
+其中：$z$ 是非负整数的观测值；$\mu$ 是分布均值；$\alpha$ 是形状（离散度）参数；$\Gamma(\cdot)$ 是伽马函数；$w_\mu,b_\mu,w_\alpha,b_\alpha$ 是全连接层的权重与偏置；$h$ 是 LSTM 隐状态；$\mathrm{softplus}$ 保证 $\mu,\alpha>0$；$\mathrm{Var}[z]$ 是方差，$\alpha\mu^2$ 项使方差大于均值（过度离散）。
 
 - $\alpha$ 控制方差相对均值的放大程度：$\alpha \to 0$ 退化为泊松，$\alpha$ 越大长尾越明显
 - 论文说明这种 $(\mu, \alpha)$ 参数化在预实验中收敛最快
@@ -116,9 +134,13 @@ $$
 \nu_i = 1 + \frac{1}{t_0} \sum_{t=1}^{t_0} z_{i,t} \qquad \text{（条件区间内的均值 + 1）}
 $$
 
+其中：$\nu_i$ 是第 $i$ 条序列的尺度；$t_0$ 是预测起点，条件区间为 $[1,t_0-1]$ 的求和范围按论文记作 $t=1,\dots,t_0$；$z_{i,t}$ 是目标值；加 1 避免全零序列的尺度为 0。
+
 $$
 \text{输入：}\quad \frac{z_{i,t-1}}{\nu_i}
 $$
+
+其中：$z_{i,t-1}$ 是上一步真实（或采样）值；除以尺度 $\nu_i$ 得到缩放后的自回归输入。
 
 $$
 \text{负二项：}\quad
@@ -129,6 +151,8 @@ $$
 $$
 
 （$o_\mu$、$o_\alpha$ 是网络对这两个参数的原始输出）
+
+其中：$\nu_i$ 是第 $i$ 条序列的尺度；$\mu$ 是缩放回原量级的负二项均值（与尺度成正比）；$\alpha$ 除以 $\sqrt{\nu_i}$，使方差随尺度的增长更合理；$\mathrm{softplus}$ 保证参数为正。
 
 - 对计数数据不能像实数那样直接在预处理阶段归一化，所以要用上面这种"输入缩小、输出放大"的方式
 - 对实数据，可以直接预处理缩放
@@ -144,6 +168,8 @@ $$
 $$
 \mathcal{L} = \sum_i \sum_{t=t_0}^{T} \log \ell\big( z_{i,t} \mid \theta(h_{i,t}) \big)
 $$
+
+其中：$\mathcal L$ 是要最大化的对数似然；$i$ 遍历序列，$t$ 遍历 $t_0$ 到 $T$ 的时刻；$z_{i,t}$ 是真实值；$\theta(h_{i,t})$ 是由 LSTM 隐状态得到的分布参数；$\ell(\cdot\mid\theta)$ 是似然函数；负的 $\mathcal L$ 即训练使用的损失。
 
 - 因为 $h_{i,t}$ 是输入的确定性函数，**没有隐变量，不需要推断**，直接用 SGD 即可（区别于状态空间模型）
 - 论文中 encoder 与 decoder 一致，所以对 conditioning range 的似然项也一并计入（相当于 $t_0 = 0$）
@@ -195,6 +221,8 @@ $$
 \text{输入缩放：}\quad z/\nu = [0.57,\ 0.86,\ 1.14]
 $$
 
+其中：$\nu$ 是该序列的尺度，等于条件区间观测之和除以 3 的均值再加 1；$z/\nu$ 是缩放后的输入，使不同量级序列的输入处于相近范围。
+
 **2) 训练（teacher forcing）**
 
 - $t=4$：输入 $\tilde z_3=8/7$、$x_4$、$h_3$ → LSTM → $h_4$ → 全连接层得到原始输出 $o_\mu = 0.2$、$o_\alpha = -0.5$
@@ -206,6 +234,8 @@ $$
 \mathrm{Var} &= \mu + \alpha \mu^2 \approx 5.59 + 0.179 \times 31.2 \approx 11.2 &&\text{（标准差约 3.3）}
 \end{aligned}
 $$
+
+其中：$o_\mu,o_\alpha$ 是网络的原始输出；$\mathrm{softplus}(x)=\log(1+e^x)$ 把实数映射为正数；$\nu=7$ 是前面算出的尺度；$\mu$ 是缩放回原量级后的均值；$\alpha$ 是形状参数；$\mathrm{Var}$ 是负二项分布的方差，标准差为其平方根。
 
 - 用真实的 $z_4$（比如 7）计算 $-\log \mathrm{NB}(7 \mid \mu, \alpha)$ 作为 $t=4$ 的损失
 - $t=5$：输入换成**真实的** $z_4 = 7$（再除以 $\nu$），重复上述过程
@@ -232,6 +262,8 @@ $$
 $$
 \rho\text{-risk} = \frac{\sum_i L_\rho(Z_i, \hat Z_i)}{\sum_i Z_i}
 $$
+
+其中：$L_\rho$ 是分位数损失；$Z$ 是区间 $[L,L+S)$ 内的真实总量；$\hat Z$ 是对每条样本路径求和后取到的 $\rho$ 分位数预测；$\rho\in(0,1)$ 是分位水平；$\mathbf 1[\cdot]$ 是指示函数；$i$ 是序列编号；分母 $\sum_i Z_i$ 把损失按真实总量归一，使不同量级的序列可比，$\rho$-risk 越小越好。
 
 - 论文常报告 $0.5$-risk（P50，类似归一化 MAE）和 $0.9$-risk
 - 点预测对比时还用 ND（Normalized Deviation）和 NRMSE
@@ -285,6 +317,8 @@ age 特征 | 内部自动添加 | 距序列起点的距离（取对数）
 实数静态特征 | `num_feat_static_real` | 直接拼接
 $\log(\text{scale})$ | 内部自动添加 | 把序列尺度也作为静态特征输入
 
+表中：「输入部分」是 RNN 每步输入的组成，「对应参数」是 GluonTS 中的参数名，「说明」解释其作用。注意输入不只包含上一步目标值，还包含多个滞后值、时间特征与静态特征。
+
 ### 与论文的差异
 
 项目 | 论文 | GluonTS (PyTorch)
@@ -295,6 +329,8 @@ $\log(\text{scale})$ | 内部自动添加 | 把序列尺度也作为静态特征
 层数 / 隐层 | 3 层 × 40 | 默认 `num_layers=2`、`hidden_size=40`
 预测样本数 | 200 | 默认 `num_parallel_samples=100`
 加权采样 | 按尺度加权 | 由 `train_sampler` 决定（默认是按位置均匀采样，不是论文的尺度加权）
+
+表中：「项目」是对比的设置项，「论文」是原论文取值，「GluonTS (PyTorch)」是该实现的默认取值；复现论文结果时需要手动对齐这些默认值。
 
 ### 示例
 
@@ -356,11 +392,14 @@ N-BEATS / N-HiTS | MLP 堆叠 | 否（点预测） | 是 | 非自回归，速度
 TFT | Transformer | 是（分位数） | 是 | 可解释的多步预测
 PatchTST 等 | Transformer | 否 | 是 | 长序列预测
 
+表中：「模型」是对比对象，「类型」是方法类别，「概率预测 / 全局模型」两列表示是否原生输出概率、是否跨序列共享参数，「说明」给出特点。结论：DeepAR 是全局的、自回归的概率预测模型，与 N-BEATS 等非自回归模型相比推理更慢但原生给出概率。
+
 ## Reference
 - [DeepAR: Probabilistic Forecasting with Autoregressive Recurrent Networks (arXiv 1704.04110)](https://arxiv.org/abs/1704.04110)
 - [GluonTS - DeepAR](https://ts.gluon.ai/stable/api/gluonts/gluonts.torch.model.deepar.html)
 - [GluonTS - DeepAR 源码](https://github.com/awslabs/gluonts/tree/dev/src/gluonts/torch/model/deepar)
 - [Amazon SageMaker DeepAR](https://docs.aws.amazon.com/sagemaker/latest/dg/deepar.html)
 - [PyTorch Forecasting - DeepAR](https://pytorch-forecasting.readthedocs.io/en/stable/api/pytorch_forecasting.models.deepar.DeepAR.html)
+
 
 
