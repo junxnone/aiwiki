@@ -163,6 +163,51 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki ROCKET",
+      "group": 1,
+      "title": "ROCKET",
+      "url": "https://junxnone.github.io/aiwiki/#/0627_ROCKET",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki DLinear",
+      "group": 1,
+      "title": "DLinear",
+      "url": "https://junxnone.github.io/aiwiki/#/0630_DLinear",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki TimesNet",
+      "group": 1,
+      "title": "TimesNet",
+      "url": "https://junxnone.github.io/aiwiki/#/0631_TimesNet",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki TSMixer",
+      "group": 1,
+      "title": "TSMixer",
+      "url": "https://junxnone.github.io/aiwiki/#/0632_TSMixer",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki TimeMixer",
+      "group": 1,
+      "title": "TimeMixer",
+      "url": "https://junxnone.github.io/aiwiki/#/0633_TimeMixer",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Tasks",
       "group": 2,
       "title": "ML/DL 常见任务",
@@ -1373,6 +1418,24 @@
       "group": 2,
       "title": "时间序列数据集",
       "url": "https://junxnone.github.io/aiwiki/#/0623_Datasets_TS",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki N BEATS",
+      "group": 2,
+      "title": "N-BEATS",
+      "url": "https://junxnone.github.io/aiwiki/#/0628_N_BEATS",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki N HiTS",
+      "group": 2,
+      "title": "N-HiTS",
+      "url": "https://junxnone.github.io/aiwiki/#/0629_N_HiTS",
       "visible": true,
       "expand": true,
       "childLinks": []
@@ -5445,6 +5508,41 @@
     {
       "source": "aiwiki",
       "target": "aiwiki MO",
+      "value": 1,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki",
+      "target": "aiwiki ROCKET",
+      "value": 1,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki",
+      "target": "aiwiki DLinear",
+      "value": 1,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki",
+      "target": "aiwiki TimesNet",
+      "value": 1,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki",
+      "target": "aiwiki TSMixer",
+      "value": 1,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki",
+      "target": "aiwiki TimeMixer",
       "value": 1,
       "visible": true,
       "expand": true

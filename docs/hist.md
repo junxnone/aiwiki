@@ -1,5 +1,12 @@
 # Wiki History
 
+- 2026-11-19&nbsp;&nbsp; [TimeMixer](/0633_TimeMixer)&nbsp;&nbsp; :bookmark:TimeMixer
+- 2026-11-19&nbsp;&nbsp; [TSMixer](/0632_TSMixer)&nbsp;&nbsp; :bookmark:TSMixer
+- 2026-11-19&nbsp;&nbsp; [TimesNet](/0631_TimesNet)&nbsp;&nbsp; :bookmark:TimesNet
+- 2026-11-19&nbsp;&nbsp; [DLinear](/0630_DLinear)&nbsp;&nbsp; :bookmark:DLinear
+- 2026-11-19&nbsp;&nbsp; [N-HiTS](/0629_N_HiTS)&nbsp;&nbsp; :bookmark:N :bookmark:HiTS
+- 2026-11-19&nbsp;&nbsp; [N-BEATS](/0628_N_BEATS)&nbsp;&nbsp; :bookmark:N :bookmark:BEATS
+- 2026-11-19&nbsp;&nbsp; [ROCKET](/0627_ROCKET)&nbsp;&nbsp; :bookmark:ROCKET
 - 2026-11-18&nbsp;&nbsp; [TCN](/0626_ML_Tasks_TimeSeries_Deep_TCN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:TCN
 - 2026-11-18&nbsp;&nbsp; [DeepAR](/0625_ML_Tasks_TimeSeries_Deep_DeepAR)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:DeepAR
 - 2026-11-13&nbsp;&nbsp; [ARIMA](/0624_ML_Tasks_TimeSeries_Classical_ARIMA)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Classical :bookmark:ARIMA
