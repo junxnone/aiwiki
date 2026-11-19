@@ -1,8 +1,8 @@
 ---
-Title | iTransformer
+Title | ML Tasks TimeSeries Transformer iTransformer
 -- | --
 Created @ | `2026-11-19T02:00:02Z`
-Updated @| `2026-11-19T02:00:02Z`
+Updated @| `2026-11-19T02:24:39Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/639)
 
