@@ -416,7 +416,7 @@
 - 2021-02-20&nbsp;&nbsp; [Linformer](/0224_ML_Transformer_Linformer)&nbsp;&nbsp; :bookmark:ML :bookmark:Transformer :bookmark:Linformer
 - 2021-02-18&nbsp;&nbsp; [DeiT](/0253_ML_Transformer_DeiT)&nbsp;&nbsp; :bookmark:ML :bookmark:Transformer :bookmark:DeiT
 - 2021-02-18&nbsp;&nbsp; [Bottleneck Transformers](/0228_ML_Transformer_BT)&nbsp;&nbsp; :bookmark:ML :bookmark:Transformer :bookmark:BT
-- 2021-02-18&nbsp;&nbsp; [T2TViT](/0227_ML_Transformer_T2TViT)&nbsp;&nbsp; :bookmark:ML :bookmark:Transformer :bookmark:T2TViT
+- 2021-02-18&nbsp;&nbsp; [T2T-ViT](/0227_ML_Transformer_T2TViT)&nbsp;&nbsp; :bookmark:ML :bookmark:Transformer :bookmark:T2TViT
 - 2021-02-07&nbsp;&nbsp; [YUV Color Model](/0121_Media_Image_Color_Model_YUV)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Color :bookmark:Model :bookmark:YUV
 - 2021-02-05&nbsp;&nbsp; [gst-inspect](/0112_Media_Tools_GStreamer_gstinspect)&nbsp;&nbsp; :bookmark:Media :bookmark:Tools :bookmark:GStreamer :bookmark:gstinspect
 - 2021-02-05&nbsp;&nbsp; [gst-discoverer](/0111_Media_Tools_GStreamer_gstdiscoverer)&nbsp;&nbsp; :bookmark:Media :bookmark:Tools :bookmark:GStreamer :bookmark:gstdiscoverer
@@ -424,7 +424,7 @@
 - 2021-02-01&nbsp;&nbsp; [ViT](/0223_ML_Transformer_ViT)&nbsp;&nbsp; :bookmark:ML :bookmark:Transformer :bookmark:ViT
 - 2021-02-01&nbsp;&nbsp; [DETR](/0165_paper_DETR)&nbsp;&nbsp; :bookmark:paper :bookmark:DETR
 - 2021-01-29&nbsp;&nbsp; [Position Encoding](/0213_ML_Attention_PE)&nbsp;&nbsp; :bookmark:ML :bookmark:Attention :bookmark:PE
-- 2021-01-27&nbsp;&nbsp; [Transformer 在视觉方面的应用](/0226_ML_Transformer_Vision)&nbsp;&nbsp; :bookmark:ML :bookmark:Transformer :bookmark:Vision
+- 2021-01-27&nbsp;&nbsp; [Vision](/0226_ML_Transformer_Vision)&nbsp;&nbsp; :bookmark:ML :bookmark:Transformer :bookmark:Vision
 - 2021-01-25&nbsp;&nbsp; [OpenVINO Blob](/0183_Tools_OV_CompileTool)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:CompileTool
 - 2020-12-09&nbsp;&nbsp; [Pytorch Data](/0359_Tools_Pytorch_Data)&nbsp;&nbsp; :bookmark:Tools :bookmark:Pytorch :bookmark:Data
 - 2020-12-09&nbsp;&nbsp; [Tips](/0184_Tools_OV_Tips)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:Tips

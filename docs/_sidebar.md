@@ -381,10 +381,10 @@
     - [Efficient Attention](/0225_ML_Transformer_EfficientAttention)
     - [Transformer History](/0664_ML_Transformer_History)
     - [Linformer](/0224_ML_Transformer_Linformer)
-    - [T2TViT](/0227_ML_Transformer_T2TViT)
+    - [T2T-ViT](/0227_ML_Transformer_T2TViT)
     - [Transformer in Transformer](/0360_ML_Transformer_TiT)
     - [ViT](/0223_ML_Transformer_ViT)
-    - [Transformer 在视觉方面的应用](/0226_ML_Transformer_Vision)
+    - [Vision](/0226_ML_Transformer_Vision)
   - [AutoML](/0012_ML_AutoML)
     - [Feature Engineering](/0206_ML_AutoML_FE)
     - [HPO](/0013_ML_AutoML_HPO)
@@ -637,4 +637,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1736221119</sub></kbd>
+<kbd><sub>@1739571119</sub></kbd>

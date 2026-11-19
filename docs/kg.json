@@ -1902,7 +1902,7 @@
     {
       "id": "aiwiki ML Transformer Vision",
       "group": 3,
-      "title": "Transformer 在视觉方面的应用",
+      "title": "Vision",
       "url": "https://junxnone.github.io/aiwiki/#/0226_ML_Transformer_Vision",
       "visible": true,
       "expand": true,
@@ -1911,7 +1911,7 @@
     {
       "id": "aiwiki ML Transformer T2TViT",
       "group": 3,
-      "title": "T2TViT",
+      "title": "T2T-ViT",
       "url": "https://junxnone.github.io/aiwiki/#/0227_ML_Transformer_T2TViT",
       "visible": true,
       "expand": true,
