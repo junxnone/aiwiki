@@ -3,7 +3,7 @@
 | Title     | ML Tasks TimeSeries Deep                              |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-10T09:17:24Z`                                |
-| Updated @ | `2026-11-19T09:43:31Z`                                |
+| Updated @ | `2026-11-19T09:43:45Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/606) |
 
@@ -407,8 +407,8 @@ token 的方式**，而不是继续改注意力本身。
     
     $$N=\\Bigl\\lfloor\\frac{L-P}{S}\\Bigr\\rfloor+2$$
     
-    其中：$N$ 是 patch 个数；$L$ 是回看长度；$P$ 是 patch 长度；$S$ 是相邻 patch 的步长；末尾 $+2$
-    来自 $+1$ 的向下取整基数加上末端填充的一个 patch。
+    其中：$N$ 是 patch 个数；$L$ 是回看长度；$P$ 是 patch 长度；$S$ 是相邻 patch 的步长；其中 $+2$
+    由第一个 patch 与末端填充得到的一个额外 patch 构成。
     
     该文同样用于**自监督预训练**，摘要称在大数据集上微调优于有监督训练，并可跨数据集迁移掩码预训练表示。
 
