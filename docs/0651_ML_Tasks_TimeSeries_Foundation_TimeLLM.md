@@ -1,8 +1,8 @@
 ---
-Title | ML Tasks TimeSeries Foundation Time-LLM
+Title | ML Tasks TimeSeries Foundation TimeLLM
 -- | --
 Created @ | `2026-11-19T02:42:10Z`
-Updated @| `2026-11-19T02:42:10Z`
+Updated @| `2026-11-19T06:18:04Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/651)
 
