@@ -1,8 +1,8 @@
 ---
-Title | ML Tasks TimeSeries Foundation Lag-Llama
+Title | ML Tasks TimeSeries Foundation LagLlama
 -- | --
 Created @ | `2026-11-19T02:42:14Z`
-Updated @| `2026-11-19T02:42:14Z`
+Updated @| `2026-11-19T06:17:45Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/653)
 
