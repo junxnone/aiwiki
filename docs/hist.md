@@ -1,20 +1,20 @@
 # Wiki History
 
-- 2026-11-19&nbsp;&nbsp; [SOFTS](/0641_SOFTS)&nbsp;&nbsp; :bookmark:SOFTS
-- 2026-11-19&nbsp;&nbsp; [TimeXer](/0640_TimeXer)&nbsp;&nbsp; :bookmark:TimeXer
-- 2026-11-19&nbsp;&nbsp; [iTransformer](/0639_iTransformer)&nbsp;&nbsp; :bookmark:iTransformer
-- 2026-11-19&nbsp;&nbsp; [PatchTST](/0638_PatchTST)&nbsp;&nbsp; :bookmark:PatchTST
-- 2026-11-19&nbsp;&nbsp; [FEDformer](/0637_FEDformer)&nbsp;&nbsp; :bookmark:FEDformer
-- 2026-11-19&nbsp;&nbsp; [Autoformer](/0636_Autoformer)&nbsp;&nbsp; :bookmark:Autoformer
-- 2026-11-19&nbsp;&nbsp; [Informer](/0635_Informer)&nbsp;&nbsp; :bookmark:Informer
-- 2026-11-19&nbsp;&nbsp; [TFT](/0634_TFT)&nbsp;&nbsp; :bookmark:TFT
-- 2026-11-19&nbsp;&nbsp; [TimeMixer](/0633_TimeMixer)&nbsp;&nbsp; :bookmark:TimeMixer
-- 2026-11-19&nbsp;&nbsp; [TSMixer](/0632_TSMixer)&nbsp;&nbsp; :bookmark:TSMixer
-- 2026-11-19&nbsp;&nbsp; [TimesNet](/0631_TimesNet)&nbsp;&nbsp; :bookmark:TimesNet
-- 2026-11-19&nbsp;&nbsp; [DLinear](/0630_DLinear)&nbsp;&nbsp; :bookmark:DLinear
-- 2026-11-19&nbsp;&nbsp; [N-HiTS](/0629_N_HiTS)&nbsp;&nbsp; :bookmark:N :bookmark:HiTS
-- 2026-11-19&nbsp;&nbsp; [N-BEATS](/0628_N_BEATS)&nbsp;&nbsp; :bookmark:N :bookmark:BEATS
-- 2026-11-19&nbsp;&nbsp; [ROCKET](/0627_ROCKET)&nbsp;&nbsp; :bookmark:ROCKET
+- 2026-11-19&nbsp;&nbsp; [SOFTS](/0641_ML_Tasks_TimeSeries_Transformer_SOFTS)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Transformer :bookmark:SOFTS
+- 2026-11-19&nbsp;&nbsp; [TimeXer](/0640_ML_Tasks_TimeSeries_Transformer_TimeXer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Transformer :bookmark:TimeXer
+- 2026-11-19&nbsp;&nbsp; [iTransformer](/0639_ML_Tasks_TimeSeries_Transformer_iTransformer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Transformer :bookmark:iTransformer
+- 2026-11-19&nbsp;&nbsp; [PatchTST](/0638_ML_Tasks_TimeSeries_Transformer_PatchTST)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Transformer :bookmark:PatchTST
+- 2026-11-19&nbsp;&nbsp; [FEDformer](/0637_ML_Tasks_TimeSeries_Transformer_FEDformer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Transformer :bookmark:FEDformer
+- 2026-11-19&nbsp;&nbsp; [Autoformer](/0636_ML_Tasks_TimeSeries_Transformer_Autoformer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Transformer :bookmark:Autoformer
+- 2026-11-19&nbsp;&nbsp; [Informer](/0635_ML_Tasks_TimeSeries_Transformer_Informer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Transformer :bookmark:Informer
+- 2026-11-19&nbsp;&nbsp; [TFT](/0634_ML_Tasks_TimeSeries_Transformer_TFT)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Transformer :bookmark:TFT
+- 2026-11-19&nbsp;&nbsp; [TimeMixer](/0633_ML_Tasks_TimeSeries_Deep_TimeMixer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:TimeMixer
+- 2026-11-19&nbsp;&nbsp; [TSMixer](/0632_ML_Tasks_TimeSeries_Deep_TSMixer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:TSMixer
+- 2026-11-19&nbsp;&nbsp; [TimesNet](/0631_ML_Tasks_TimeSeries_Deep_TimesNet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:TimesNet
+- 2026-11-19&nbsp;&nbsp; [DLinear](/0630_ML_Tasks_TimeSeries_Deep_DLinear)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:DLinear
+- 2026-11-19&nbsp;&nbsp; [N-HiTS](/0629_ML_Tasks_TimeSeries_Deep_N_HiTS)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:N :bookmark:HiTS
+- 2026-11-19&nbsp;&nbsp; [N-BEATS](/0628_ML_Tasks_TimeSeries_Deep_N_BEATS)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:N :bookmark:BEATS
+- 2026-11-19&nbsp;&nbsp; [ROCKET](/0627_ML_Tasks_TimeSeries_ML_ROCKET)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:ML :bookmark:ROCKET
 - 2026-11-18&nbsp;&nbsp; [TCN](/0626_ML_Tasks_TimeSeries_Deep_TCN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:TCN
 - 2026-11-18&nbsp;&nbsp; [DeepAR](/0625_ML_Tasks_TimeSeries_Deep_DeepAR)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:DeepAR
 - 2026-11-13&nbsp;&nbsp; [ARIMA](/0624_ML_Tasks_TimeSeries_Classical_ARIMA)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Classical :bookmark:ARIMA
