@@ -1,8 +1,8 @@
 ---
-Title | N-HiTS
+Title | ML Tasks TimeSeries Deep N-HiTS
 -- | --
 Created @ | `2026-11-19T01:28:49Z`
-Updated @| `2026-11-19T01:59:38Z`
+Updated @| `2026-11-19T02:24:14Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/629)
 
