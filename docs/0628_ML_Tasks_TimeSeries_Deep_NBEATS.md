@@ -1,8 +1,8 @@
 ---
-Title | ML Tasks TimeSeries Deep N-BEATS
+Title | ML Tasks TimeSeries Deep NBEATS
 -- | --
 Created @ | `2026-11-19T01:28:47Z`
-Updated @| `2026-11-19T02:24:12Z`
+Updated @| `2026-11-19T06:17:04Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/628)
 
