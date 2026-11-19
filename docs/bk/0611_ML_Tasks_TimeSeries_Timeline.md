@@ -3,7 +3,7 @@
 | Title     | ML Tasks TimeSeries Timeline                          |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-10T09:17:45Z`                                |
-| Updated @ | `2026-11-12T01:28:13Z`                                |
+| Updated @ | `2026-11-19T06:13:24Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/611) |
 
@@ -11,13 +11,7 @@
 
 # 时间序列模型发展时间线
 
-> 时间序列模型的发展时间线。正文按
-> [timelinemd](https://github.com/junxnone/jstools/tree/main/timelinemd)
-> 格式书写，可用 [timelinemd
-> 在线工具](https://junxnone.github.io/jstools/timelinemd/?md=https://raw.githubusercontent.com/junxnone/aiwiki/main/docs/0611_ML_Tasks_TimeSeries_Timeline.md)
-> 以交互式时间轴形式查看（页面顶部会多出同步脚本自动生成的 Title/Created/Updated
-> 表格，不影响下方时间轴正常解析渲染）。各方法详解见
-> [总览](0603_ML_Tasks_TimeSeries)、[经典统计模型](0604_ML_Tasks_TimeSeries_Classical)、[机器学习](0605_ML_Tasks_TimeSeries_ML)、[深度学习](0606_ML_Tasks_TimeSeries_Deep)、[生成式](0607_ML_Tasks_TimeSeries_Generative)、[基础模型](0608_ML_Tasks_TimeSeries_Foundation)、[异常检测](0609_ML_Tasks_TimeSeries_Anomaly)、[评估指标](0610_ML_Tasks_TimeSeries_Metrics)。
+> [时间序列模型的发展时间线](https://junxnone.github.io/jstools/timelinemd/?md=https://raw.githubusercontent.com/junxnone/aiwiki/main/docs/0611_ML_Tasks_TimeSeries_Timeline.md)
 
 ## 经典统计与机器学习
 
