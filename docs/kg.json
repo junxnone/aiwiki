@@ -208,6 +208,78 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki TFT",
+      "group": 1,
+      "title": "TFT",
+      "url": "https://junxnone.github.io/aiwiki/#/0634_TFT",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki Informer",
+      "group": 1,
+      "title": "Informer",
+      "url": "https://junxnone.github.io/aiwiki/#/0635_Informer",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki Autoformer",
+      "group": 1,
+      "title": "Autoformer",
+      "url": "https://junxnone.github.io/aiwiki/#/0636_Autoformer",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki FEDformer",
+      "group": 1,
+      "title": "FEDformer",
+      "url": "https://junxnone.github.io/aiwiki/#/0637_FEDformer",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki PatchTST",
+      "group": 1,
+      "title": "PatchTST",
+      "url": "https://junxnone.github.io/aiwiki/#/0638_PatchTST",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki iTransformer",
+      "group": 1,
+      "title": "iTransformer",
+      "url": "https://junxnone.github.io/aiwiki/#/0639_iTransformer",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki TimeXer",
+      "group": 1,
+      "title": "TimeXer",
+      "url": "https://junxnone.github.io/aiwiki/#/0640_TimeXer",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki SOFTS",
+      "group": 1,
+      "title": "SOFTS",
+      "url": "https://junxnone.github.io/aiwiki/#/0641_SOFTS",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Tasks",
       "group": 2,
       "title": "ML/DL 常见任务",
@@ -5543,6 +5615,62 @@
     {
       "source": "aiwiki",
       "target": "aiwiki TimeMixer",
+      "value": 1,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki",
+      "target": "aiwiki TFT",
+      "value": 1,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki",
+      "target": "aiwiki Informer",
+      "value": 1,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki",
+      "target": "aiwiki Autoformer",
+      "value": 1,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki",
+      "target": "aiwiki FEDformer",
+      "value": 1,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki",
+      "target": "aiwiki PatchTST",
+      "value": 1,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki",
+      "target": "aiwiki iTransformer",
+      "value": 1,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki",
+      "target": "aiwiki TimeXer",
+      "value": 1,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki",
+      "target": "aiwiki SOFTS",
       "value": 1,
       "visible": true,
       "expand": true

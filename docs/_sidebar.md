@@ -567,7 +567,9 @@
   - [Isaac Gym - Nvidia](/0452_Tools_IsaacGym)
   - [论文阅读相关](/0072_Tools_ReadPapers)
   - [Training & Inference Tools History](/0005_Tools_TIHistory)
+- [Autoformer](/0636_Autoformer)
 - [DLinear](/0630_DLinear)
+- [FEDformer](/0637_FEDformer)
 - [AI 热点](/0375_Hot)
   - [AIGC](/0374_Hot_AIGC)
     - [ChatGPT](/0373_Hot_AIGC_ChatGPT)
@@ -582,15 +584,21 @@
     - [Harness Skills](/0553_Hot_Harness_Skills)
   - [模型可解释性前沿状态](/0558_Hot_Interpretability)
   - [世界模型（World Model）](/0566_Hot_WorldModel)
+- [Informer](/0635_Informer)
 - [KnowledgeGraph](/0329_KnowledgeGraph)
 - N
   - [N-BEATS](/0628_N_BEATS)
   - [N-HiTS](/0629_N_HiTS)
+- [PatchTST](/0638_PatchTST)
 - [ROCKET](/0627_ROCKET)
 - [资源参考](/0380_Reference)
+- [SOFTS](/0641_SOFTS)
+- [TFT](/0634_TFT)
 - [TSMixer](/0632_TSMixer)
 - [TimeMixer](/0633_TimeMixer)
+- [TimeXer](/0640_TimeXer)
 - [TimesNet](/0631_TimesNet)
+- [iTransformer](/0639_iTransformer)
 - [x](/0418_x)
   - [Diffusion Model](/0512_x_DM)
     - [BLDM](/0514_x_DM_BLDM)
@@ -606,4 +614,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0929511119</sub></kbd>
+<kbd><sub>@1001041119</sub></kbd>

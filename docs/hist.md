@@ -1,5 +1,13 @@
 # Wiki History
 
+- 2026-11-19&nbsp;&nbsp; [SOFTS](/0641_SOFTS)&nbsp;&nbsp; :bookmark:SOFTS
+- 2026-11-19&nbsp;&nbsp; [TimeXer](/0640_TimeXer)&nbsp;&nbsp; :bookmark:TimeXer
+- 2026-11-19&nbsp;&nbsp; [iTransformer](/0639_iTransformer)&nbsp;&nbsp; :bookmark:iTransformer
+- 2026-11-19&nbsp;&nbsp; [PatchTST](/0638_PatchTST)&nbsp;&nbsp; :bookmark:PatchTST
+- 2026-11-19&nbsp;&nbsp; [FEDformer](/0637_FEDformer)&nbsp;&nbsp; :bookmark:FEDformer
+- 2026-11-19&nbsp;&nbsp; [Autoformer](/0636_Autoformer)&nbsp;&nbsp; :bookmark:Autoformer
+- 2026-11-19&nbsp;&nbsp; [Informer](/0635_Informer)&nbsp;&nbsp; :bookmark:Informer
+- 2026-11-19&nbsp;&nbsp; [TFT](/0634_TFT)&nbsp;&nbsp; :bookmark:TFT
 - 2026-11-19&nbsp;&nbsp; [TimeMixer](/0633_TimeMixer)&nbsp;&nbsp; :bookmark:TimeMixer
 - 2026-11-19&nbsp;&nbsp; [TSMixer](/0632_TSMixer)&nbsp;&nbsp; :bookmark:TSMixer
 - 2026-11-19&nbsp;&nbsp; [TimesNet](/0631_TimesNet)&nbsp;&nbsp; :bookmark:TimesNet
