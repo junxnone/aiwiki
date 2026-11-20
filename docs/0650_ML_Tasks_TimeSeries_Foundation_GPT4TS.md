@@ -2,7 +2,7 @@
 Title | ML Tasks TimeSeries Foundation GPT4TS
 -- | --
 Created @ | `2026-11-19T02:42:07Z`
-Updated @| `2026-11-19T02:42:07Z`
+Updated @| `2026-11-20T08:19:28Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/650)
 
@@ -27,6 +27,9 @@ GPT4TS 出自论文 *One Fits All: Power General Time Series Analysis by Pretrai
 
 ### 整体流程
 
+
+下图概括 FPT 从输入序列到输出的流程。
+
 ```
 单变量序列 x (长度 L)       # 多变量按通道拆成多条单变量序列（channel independence）
    |  实例归一化（减均值除标准差）
@@ -44,6 +47,12 @@ GPT-2 前 K 层（自注意力、FFN 冻结；LayerNorm 微调）
 输出
 ```
 
+图中：
+
+- 自上而下：单变量序列先做实例归一化，再切成 patch token，经线性输入嵌入映射到 768 维并加位置嵌入。
+- 然后送入 GPT-2 前 $K$ 层（自注意力与 FFN 冻结，LayerNorm 微调）。
+- 输出线性层得到预测值、分类 logits 或重构值，最后反归一化输出。
+
 论文对结构的描述（第 3 节）可归纳为下表：
 
 模块 | 做法 | 是否训练
@@ -56,6 +65,8 @@ LayerNorm | 沿用预训练的 LayerNorm | 微调
 数据归一化 | reverse instance norm（Kim et al., 2022）：用均值和方差归一化输入，再把它们加回输出 | 论文未说明是否含可学习参数
 Patching | 沿用 PatchTST 的 patching，在实例归一化之后做 | 无
 
+表中：「模块」是 FPT 的组成部分，「做法」说明其处理方式，「是否训练」说明参数是否更新。结论：自注意力与 FFN 冻结，只训练输入层、输出层、位置嵌入与 LayerNorm。
+
 论文给出的理由：自注意力层和 FFN 含有预训练语言模型学到的大部分知识，所以冻结；微调位置嵌入和 LayerNorm 是迁移学习的常规做法（引 Lu et al., 2022；Houlsby et al., 2019）。
 
 ### 实例归一化与 patching
@@ -63,6 +74,9 @@ Patching | 沿用 PatchTST 的 patching，在实例归一化之后做 | 无
 设输入序列为 $x\in\mathbb R^{L}$，均值与标准差为 $\mu,\sigma$，则归一化与反归一化为
 
 $$\tilde x=\frac{x-\mu}{\sigma},\qquad \hat y=\sigma\,\tilde y+\mu$$
+
+
+其中：$x$ 是输入序列；$\mu,\sigma$ 是其均值与标准差；$\tilde x$ 是归一化后的输入；$\tilde y$ 是模型在归一化空间的输出；$\hat y$ 是加回均值与标准差后的最终预测。
 
 [解读] 这是 RevIN 的通常写法（不含可学习仿射参数的简化形式）；论文只说"用均值和方差归一化输入，再加回到输出"。
 
@@ -102,6 +116,8 @@ patching 把 $\tilde x$ 切成长度 $P$、步长 $S$ 的片段，每个 patch �
 少样本 | 同长期预测 | 训练集只用 5% 或 10% | GPT2(6)
 零样本 | M4、M3、Tourism、Electricity | 源数据集训练、目标集直接预测 | GPT2(6)
 
+表中：「任务」是下游任务，「数据」是所用数据集，「论文设置」是实验设置，「使用层数」是 GPT-2 保留的层数。
+
 ### 主要数字
 
 填补（Table 1，四种掩码比例平均，MSE / MAE）：
@@ -112,6 +128,8 @@ GPT2(3) | 0.047 | 0.127
 TimesNet | 0.049 | 0.132
 PatchTST | 0.060 | 0.144
 DLinear | 0.119 | 0.224
+
+表中：「方法」是对比模型，「平均 MSE」「平均 MAE」是四种掩码比例平均的填补误差（越小越好）。结论：GPT2(3) 最优，但并非所有数据集都最优。
 
 论文称在 ETTh1 上相对 TimesNet 的 MSE 降低 11.5%，六个数据集平均降低 4.1%。不是处处最优：例如 ECL 上 PatchTST 的 MSE 为 0.072，低于 GPT2(3) 的 0.090。
 
@@ -124,6 +142,8 @@ DLinear | 0.119 | 0.224
 GPT2(6) | 86.89 | 82.45 | 72.88 | 94.23 | 97.13 | 86.72
 TimesNet（作者复现） | 84.61 | 81.84 | 69.39 | 93.02 | 97.34 | 85.24
 
+表中：「方法」是对比模型，各列是数据集上的 F1（%，越大越好），「平均」是五个数据集平均。结论：GPT2(6) 平均 F1 略高于 TimesNet。
+
 长期预测（Table 3，平均，MSE / MAE）：
 
 方法 | MSE | MAE
@@ -132,6 +152,8 @@ GPT2(6) | 0.516 | 0.407
 PatchTST | 0.446 | 0.386
 TimesNet | 0.596 | 0.433
 DLinear | 0.562 | 0.436
+
+表中：「方法」是对比模型，「MSE」「MAE」是长期预测各预测长度平均的误差（越小越好）。结论：GPT2(6) 与 PatchTST 相近，但平均上 PatchTST 更好。
 
 论文称 GPT2(6) 与 PatchTST "comparable"，并称相对 TimesNet 平均 MSE 降低 9.3%。表中平均值 PatchTST 更好；自拟重算：用 Table 3 的平均 MSE，GPT2(6) 相对 TimesNet 为 $(0.596-0.516)/0.596\approx13.4\%$；对 8 个数据集逐个算相对降幅再取平均，约 13.6%（同样自拟重算）；两种算法都与正文的 9.3% 对不上，论文未说明 9.3% 的口径（可能来自与表格不同的统计口径或旧版本）[待核实]；ILI 数据集上两者差距最大（GPT2(6) 的 MSE 为 1.925，PatchTST 为 1.443）。
 
@@ -149,6 +171,8 @@ PatchTST | 13.22 | 13.06 | 27.10 | 17.3 | 17.67
 DLinear | 15.33 | 14.03 | 28.51 | 17.6 | 18.86
 TimesNet | 13.55 | 14.17 | 28.84 | 19.3 | 18.96
 
+表中：「方法」是对比模型，各列是零样本预测的指标（sMAPE、MAPE、ND 均越小越好），「平均」是四列平均。结论：GPT4TS 优于其他非 N-BEATS 方法，但整体仍落后于 N-BEATS。
+
 源数据：Tourism、Electricity、M3 以 M4 为源；M4 以 M3 为源（N-BEATS 用 FRED）。论文承认零样本在若干数据集上仍落后于 N-BEATS，只在 Electricity 上超过它。
 
 ### 消融（Table 7，10% 数据，三个数据集 MSE）
@@ -159,6 +183,8 @@ GPT2(6) | 0.237 | 0.427 | 0.346
 GPT2(0)（零层） | 0.263 | 0.874 | 0.666
 No Freeze（全部微调） | 0.273 | 0.753 | 0.447
 No Pretrain（随机初始化） | 0.277 | 1.326 | 0.502
+
+表中：「变体」是消融设置（GPT2(0) 为零层，No Freeze 为全部微调，No Pretrain 为随机初始化），后三列是各数据集 MSE（越小越好）。结论：冻结预训练骨干效果最好，去掉预训练或不冻结都明显变差。
 
 附录文字：冻结相对全部微调带来 5% 数据 12.7%、10% 数据 11.5% 的相对 MSE 降低；预训练相对随机初始化分别为 21.2% 和 14.3%；随机初始化再冻结的结果很差（附录 H.2），说明预训练知识起作用。附录 H.3 称微调 LayerNorm 和位置嵌入有一定收益，长预测长度尤其明显。
 
@@ -180,13 +206,22 @@ GPT-2(6)-768 可训练参数 4M，占总参数 4.6%，训练一步 0.104 s，推
 
 $$P_{i,j}=\frac{\exp(x_i^\top A x_j)}{\sum_{k=1}^N\exp(x_i^\top A x_k)}$$
 
+
+其中：$P_{i,j}$ 是第 $i$ 个 token 对第 $j$ 个 token 的注意力权重；$x_i$ 是第 $i$ 个 token 的表示；$A=W_QW_K^\top$ 是由查询与键投影合成的矩阵；$N$ 是 token 数；分母对 $k$ 求和使每行权重和为 1。
+
 Lemma 8.1 给出雅可比矩阵范数的上界，其中含有项 $\sum_i\lVert x_i-\sum_j P_{i,j}x_j\rVert^2$。要让梯度范数小，就要让这一项小。在 $A$ 较小且输入中心化（$\sum_i x_i=0$）时，论文近似为
 
 $$\sum_{i=1}^N\lVert x_i-X^\top P_{i,:}\rVert^2\approx\sum_{i=1}^N\lVert x_i-X^\top XAx_i\rVert^2$$
 
+
+其中：$x_i$ 是第 $i$ 个 token；$P_{i,:}$ 是第 $i$ 行注意力权重；$X^\top P_{i,:}$ 是加权后的 value 聚合；右侧用 $X^\top XAx_i$ 近似（$A$ 较小且输入中心化时）；这一项越小，雅可比范数的上界越小，训练越稳定。
+
 Theorem 1：设 $W_Q,W_K$ 为 $D\times m$ 矩阵，$\lambda_1\ge\dots\ge\lambda_D$ 为 $X^\top X$ 的特征值，$v_i$ 为对应特征向量，则使上式最小的最优 $A$ 为
 
 $$A^*=\sum_{i=1}^m\frac{1}{\lambda_i}v_iv_i^\top$$
+
+
+其中：$A^*$ 是使近似目标最小的最优矩阵；$\lambda_i$ 与 $v_i$ 是 $X^\top X$ 的第 $i$ 大特征值与对应特征向量；$m$ 是保留的主方向数；形式上是 PCA 的主成分重构。
 
 即 $A$ 由 $X^\top X$ 的前 $m$ 个特征向量构成，这是 PCA 的形式。论文的结论是：通过把梯度推向零的训练，自注意力学到的函数与 PCA 密切相关。
 
@@ -218,6 +253,8 @@ PatchTST | 从头训练的 Transformer | 全部 | 同样用 patching 与 channel
 TimesNet | CNN（从头） | 全部 | 论文的主要对比对象
 DLinear | 线性层 | 全部 | 少样本对比对象
 N-BEATS | MLP 堆叠 | 全部 | 零样本最强对比
+
+表中：「方法」是对比对象，「骨干」是网络类型，「训练什么」说明可训练参数，「说明」给出特点。结论：GPT4TS 只训练少量适配参数，其余对手都是全部参数从头训练。
 
 Time-LLM 等其他复用 LLM 的方法只写名字，不展开。
 
@@ -251,4 +288,5 @@ class FPT(nn.Module):
 
 - 论文：https://arxiv.org/abs/2302.11939
 - 论文摘要中给出的代码：https://github.com/DAMO-DI-ML/One_Fits_All
+
 
