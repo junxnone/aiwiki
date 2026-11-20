@@ -2,7 +2,7 @@
 Title | ML Tasks TimeSeries ML ROCKET
 -- | --
 Created @ | `2026-11-19T01:28:45Z`
-Updated @| `2026-11-19T02:24:10Z`
+Updated @| `2026-11-20T08:08:10Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/627)
 
@@ -313,5 +313,6 @@ pred = clf.predict(transform(X_test, kernels))           # 测试集必须用同
 - 论文声明的代码仓库：https://github.com/angus924/rocket （仓库是否仍存在 `[待核实]`）
 - MiniRocket：arXiv:2012.08791；MultiRocket：arXiv:2102.00457；HYDRA：arXiv:2203.13652 （编号取自仓库 0605 综述，未重读原文）
 - 仓库内：[时间序列总览](/0603_ML_Tasks_TimeSeries)、[机器学习类方法](/0605_ML_Tasks_TimeSeries_ML)
+
 
 
