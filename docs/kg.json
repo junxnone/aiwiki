@@ -5599,6 +5599,15 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki ML Tasks TimeSeries Deep FreTS",
+      "group": 5,
+      "title": "FreTS",
+      "url": "https://junxnone.github.io/aiwiki/#/0673_ML_Tasks_TimeSeries_Deep_FreTS",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Tasks Image Classification MobileNet V1",
       "group": 6,
       "title": "MobileNet V1",
@@ -9919,6 +9928,13 @@
     {
       "source": "aiwiki ML Tasks TimeSeries Deep",
       "target": "aiwiki ML Tasks TimeSeries Deep Koopa",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks TimeSeries Deep",
+      "target": "aiwiki ML Tasks TimeSeries Deep FreTS",
       "value": 5,
       "visible": true,
       "expand": true

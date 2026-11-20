@@ -286,6 +286,7 @@
         - [DeepAR](/0625_ML_Tasks_TimeSeries_Deep_DeepAR)
         - [ETSformer](/0668_ML_Tasks_TimeSeries_Deep_ETSformer)
         - [FEDformer](/0637_ML_Tasks_TimeSeries_Deep_FEDformer)
+        - [FreTS](/0673_ML_Tasks_TimeSeries_Deep_FreTS)
         - [Informer](/0635_ML_Tasks_TimeSeries_Deep_Informer)
         - [Koopa](/0672_ML_Tasks_TimeSeries_Deep_Koopa)
         - [LightTS](/0667_ML_Tasks_TimeSeries_Deep_LightTS)
@@ -644,4 +645,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1705321120</sub></kbd>
+<kbd><sub>@1706451120</sub></kbd>
