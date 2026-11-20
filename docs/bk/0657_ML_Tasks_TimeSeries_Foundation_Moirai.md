@@ -3,7 +3,7 @@
 | Title     | ML Tasks TimeSeries Foundation Moirai                 |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-19T02:42:22Z`                                |
-| Updated @ | `2026-11-19T02:42:22Z`                                |
+| Updated @ | `2026-11-20T08:21:58Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/657) |
 
@@ -37,6 +37,8 @@ Any-variate Attention + 混合分布输出头，在 LOTSA（超过 27B 观测）
 | 分布差异                 | 不同数据集支撑集和分布性质不同，例如对恒正序列用 Normal / Student-t 这类对称分布并不合适；预先指定单一简单分布不够灵活 | 混合分布输出头                      |
 | 数据规模                 | 已有时序数据集规模不足以支撑这类模型                                                    | 构建 LOTSA                     |
 
+表中：「难点」是通用预测的挑战，「论文的说法」是其成因，「Moirai 的对策」是对应设计。
+
 ## 问题形式化
 
 论文把数据集写成 $\\mathcal D={(\\boldsymbol Y^{(i)},\\boldsymbol
@@ -54,10 +56,20 @@ Y\_{t:t+h}\\mid\\hat{\\boldsymbol\\phi}),\\qquad \\text{s.t. }\\
 \\hat{\\boldsymbol\\phi}=f\_{\\boldsymbol\\theta}(\\mathbf
 Y\_{t-l:t},\\mathbf Z\_{t-l:t+h})$$
 
+其中：$\\boldsymbol\\theta$ 是模型参数；$(\\mathbf Y,\\mathbf Z)$
+是目标序列与协变量，从数据集分布 $p(\\mathcal D)$
+中采样；$(t,l,h)$ 是预测起点、上下文长度与预测长度，从任务分布 $p(\\mathcal
+T\\mid\\mathcal D)$
+中采样；$\\hat{\\boldsymbol\\phi}=f\_{\\boldsymbol\\theta}(\\cdot)$
+是模型预测的分布参数；$\\log p(\\mathbf Y\_{t:t+h}\\mid\\hat{\\boldsymbol\\phi})$
+是预测窗口的对数似然。
+
 要点是：期望里除了"采哪条序列" $p(\\mathcal D)$，还有"采哪个任务" $p(\\mathcal T\\mid\\mathcal
 D)$，也就是上下文长度 $l$ 与预测长度 $h$ 都是**随机的**，这是它能在下游灵活使用不同长度的原因。
 
 ## 整体结构
+
+下图概括 Moirai 的数据流。
 
 ``` 
  每个变量切成不重叠 patch -> 所有变量的 patch 首尾相接，展平成一条序列
@@ -71,6 +83,14 @@ D)$，也就是上下文长度 $l$ 与预测长度 $h$ 都是**随机的**，这
           v
    [mask] 位置的输出 -> 混合分布参数 -> 负对数似然 / 采样
 ```
+
+图中：
+
+  - 上方：每个变量切成不重叠 patch，所有变量的 patch 首尾相接展平成一条序列；预测区间的 patch 被替换为可学习的
+    `[mask]`。
+  - 中间：按 patch 尺寸选择输入线性层得到 patch embedding，加上时间与变量标识，送入 Transformer
+    encoder（Any-variate Attention）。
+  - 下方：按 patch 尺寸选择输出线性层，`[mask]` 位置输出混合分布参数，用于负对数似然训练或采样预测。
 
 对应论文 Figure 2（3 个变量，变量 0、1 是预测目标，变量 2 是预测期内数值已知的动态协变量；patch 大小 64，每个变量切成
 3 个 token，预测区间对应的 patch 被替换为可学习的 `[mask]` embedding）。
@@ -99,7 +119,9 @@ B.1）：
 | Weekly, Daily     | 16, 32      |
 | Hourly            | 32, 64      |
 | Minute-level      | 32, 64, 128 |
-| Second-level      | 64, 128     |
+
+表中：「频率」是数据的采样频率，「可选 patch 尺寸」是该频率可使用的 patch 长度。结论：频率越高，使用越大的 patch，以控制
+token 数。 Second-level | 64, 128
 
 每个 patch 尺寸只学一套投影权重，在频率有重叠时共享，因此总共是 **5 个输入投影层和 5 个输出投影层**（尺寸
 8、16、32、64、128）。输入层把 patch 映射到隐状态，输出层把隐状态映射为分布参数。
@@ -139,6 +161,12 @@ Y\_{t:t+h}\\mid\\hat{\\boldsymbol\\phi})=\\sum\_{i=1}^{c}w\_i,p\_i(\\mathbf
 Y\_{t:t+h}\\mid\\hat{\\boldsymbol\\phi}\_i),\\qquad
 \\hat{\\boldsymbol\\phi}={w\_1,\\hat{\\boldsymbol\\phi}\_1,\\dots,w\_c,\\hat{\\boldsymbol\\phi}\_c}$$
 
+其中：$p(\\mathbf Y\_{t:t+h}\\mid\\hat{\\boldsymbol\\phi})$ 是预测窗口的混合分布；$c$
+是分量个数；$w\_i$ 是第 $i$ 个分量的混合权重（经 softmax，和为 1）；$p\_i$ 与
+$\\hat{\\boldsymbol\\phi}\_i$ 是第 $i$
+个分量的分布及其参数；$\\hat{\\boldsymbol\\phi}$
+是所有权重与分量参数的集合，由模型输出。
+
 混合权重经 softmax 约束在概率单纯形上。论文提出的四个分量（附录 B.2）：
 
 | 分量                     | 用途（论文说法）        | 参数与约束                                                                  |
@@ -148,9 +176,14 @@ Y\_{t:t+h}\\mid\\hat{\\boldsymbol\\phi}\_i),\\qquad
 | 对数正态（log-normal）       | 经济、自然现象中常见的右偏数据 | 预测 $\\mu$、$\\sigma\>0$（softplus）                                       |
 | 低方差正态                  | 高置信度预测          | 只预测 $\\mu$，固定 $\\sigma=10^{-3}$                                        |
 
+表中：「分量」是混合分布的四个组成，「用途（论文说法）」说明其适用的数据，「参数与约束」说明预测的参数及其约束。结论：不同分量覆盖对称、计数、右偏与高置信度等不同分布形态。
+
 Student's t 的密度为
 
 $$p(x;\\nu,\\mu,\\tau)=\\frac{\\Gamma\!\\left(\\frac{\\nu+1}{2}\\right)}{\\Gamma\!\\left(\\frac{\\nu}{2}\\right)\\sqrt{\\pi\\nu\\tau}}\\left(1+\\frac1\\nu\\Big(\\frac{x-\\mu}{\\tau}\\Big)^{2}\\right)^{-(\\nu+1)/2}$$
+
+其中：$x$ 是观测值；$\\nu$ 是自由度（越小尾部越重，下界取 2）；$\\mu$ 是位置参数；$\\tau$
+是尺度参数；$\\Gamma(\\cdot)$ 是伽马函数；该分布比正态分布尾部更重，对离群点更稳健。
 
 论文还强调：直接优化灵活分布的负对数似然，与直接优化目标指标相比有竞争力（引 Awasthi et al.,
 2022），因此预训练后可以用任何指标评估。
@@ -172,6 +205,9 @@ LOTSA（Large-scale Open Time Series Archive）把公开数据源整合进统一
 | Econ/Fin   | 23   | 24,919,596     | 0.10%  |
 | Healthcare | 6    | 1,594,281      | 0.01%  |
 
+表中：「领域」是 LOTSA 的九个领域，「数据集数」「观测数」是规模，「占比」是占总观测的比例。结论：能源领域占近
+60%，数据在领域上很不均衡，因此训练时需要对子数据集重采样。
+
 按频率看，（Multi）Hourly 占 71.893%，（Multi）Minute-level 占 25.370%，Daily 占
 2.565%，其余频率各不到 0.1%（论文 Table 3）。可见数据在领域与频率上都很不均衡，这是下面要做重采样的原因。
 
@@ -187,6 +223,11 @@ D\_k\\rvert}{\\sum\_{i=1}^{K}\\lvert\\boldsymbol D\_i\\rvert},\\
 \\epsilon\\Big),\\qquad p(\\boldsymbol
 D\_k)=\\frac{\\omega\_k}{\\sum\_{i=1}^{K}\\omega\_i},\\qquad
 \\lvert\\boldsymbol D\_k\\rvert=\\sum\_{i\\in\\boldsymbol D\_k}T\_i$$
+
+其中：$\\boldsymbol D\_k$ 是第 $k$ 个子数据集，$\\lvert\\boldsymbol D\_k\\rvert$
+是其总观测数（各序列长度 $T\_i$ 之和）；$K$ 是子数据集个数；$\\epsilon=0.001$
+是采样权重上限；$\\omega\_k$ 是截断后的权重，$p(\\boldsymbol D\_k)$
+是归一化后的采样概率；上限避免大数据集淹没小数据集。
 
   - **任务分布**：对每条序列，均匀采一个窗口，窗口长度从范围内均匀采样（每个变量最短 2，总序列长度最长
     512）；再把窗口切成回看与预测两段，预测长度占窗口的比例在
@@ -204,6 +245,9 @@ $n\\cdot\\frac{a}{a+b}=128\\times\\frac27\\approx36.6$，与论文"均值约 37"
 | Moirai-Small | 6  | 384                    | 1536                | 6  | 64                  | 14m  |
 | Moirai-Base  | 12 | 768                    | 3072                | 12 | 64                  | 91m  |
 | Moirai-Large | 24 | 1024                   | 4096                | 16 | 64                  | 311m |
+
+表中：「型号」是三种规模，其余列是层数、模型维度 $d\_{\\mathrm{model}}$、前馈维度
+$d\_{\\mathrm{ff}}$、头数、每头维度 $d\_{\\mathrm{kv}}$ 与参数量（m 为百万）。
 
   - 小模型训练 100,000 步，Base 与 Large 训练 1,000,000 步，batch size 256；
   - AdamW，学习率 $10^{-3}$，weight decay $10^{-1}$，$\\beta\_1=0.9,\\
@@ -249,6 +293,10 @@ full-shot 或简单基线；基线的 $\\pm$ 标准差省略）：
 | Istanbul Traffic | 0.173    | 0.116    | 0.112    | 0.112    | 0.110 | 0.110 | 0.108  | 0.589     | 0.257          |
 | Turkey Power     | 0.048    | 0.040    | 0.036    | 0.054    | 0.046 | 0.039 | 0.066  | 0.116     | 0.085          |
 
+表中：「数据集」是六个评测集，其余各列是 CRPS（越小越好）；Moirai 三列为零样本，PatchTST、TiDE、TFT、DeepAR
+为全量训练基线，AutoARIMA 与 Seasonal Naive 为简单基线。结论：Moirai-Base 与 Large
+在多数数据集上最优或次优。
+
 论文的文字结论：Base 与 Large 在除 Walmart 与 Istanbul Traffic
 外的所有数据集上取得最优或次优，即使在这两个数据集上也接近最优。
 
@@ -267,6 +315,10 @@ Table 6）：
 | Electricity | 0.233    | 0.188    | 0.188    | 0.178        | 0.193    | 0.216    | 0.212   |
 | Weather     | 0.242    | 0.238    | 0.259    | 0.258        | 0.259    | 0.259    | 0.265   |
 
+表中：「数据集」是长序列基准，其余各列是预测长度平均后的 MSE（越小越好）；Moirai
+三列为零样本，其余为全量训练的基线。结论：Moirai-Base
+在多数数据集上最优或次优，Large 略不稳定。
+
 论文的评语：Base 在各数据集上取得最优或次优；Large 不够稳定，略弱但仍有竞争力；性能与模型规模的关系在该设置下"微弱"，但这不构成反对
 scaling 的强证据，因为训练数据量与设置固定，需要更系统的 scaling law 研究。
 
@@ -281,6 +333,9 @@ scaling 的强证据，因为训练数据量与设置固定，需要更系统的
 | 去掉混合分布（改为 Student's t）                         | 0.740          |
 | 去掉 LOTSA（只用 GluonTS 与 Monash 训练）               | 0.809          |
 | 去掉 packing                                     | 0.785          |
+
+表中：「变体」是消融设置，「normalized MAE」是在 Monash 上相对 naive 预测归一后的
+MAE（越小越好）。结论：每个组件都有贡献，去掉多 patch 尺寸的影响最大。
 
 论文的解读：每个组件都有贡献；数据多样性在样本内评估上也关键；packing 在相同算力下提升约 16%。Figure 4 展示：对
 Traffic Hourly 的峰值，Student's t 的预测区间是对称的，不适合峰值，混合分布则更合适。
@@ -315,6 +370,9 @@ patch 数 × 变量数"，变量很多时注意力开销上升，与论文"高�
 | 架构             | 掩码编码器，一次前向出整个预测窗口                   | TimesFM 是 patch-based decoder-only，用更大的输出 patch 加速解码；Lag-Llama 用 LLaMA 结构加滞后特征；TTM 是轻量 mixer 结构                         |
 | 预训练数据          | LOTSA（\>27B，开源）                     | TimeGPT-1 数据未知（表中标 Unknown (100B)，闭源）；ForecastPFN 为合成数据；TimesFM 用 Wiki 与 Trends 等（\>100B）；Lag-Llama、TTM 用 Monash（\<1B）  |
 | 与 PatchTST 的关系 | 同样基于 patch，但不假设变量独立，且 patch 尺寸随频率变化 | PatchTST 逐变量独立（channel independent）、单一 patch 尺寸；论文长序列实验中还让 Moirai 在低维数据集上选择通道独立或通道混合策略                                  |
+
+表中：「对比点」是比较维度，「Moirai」与「相邻方法」两列说明各自做法。结论：Moirai
+是少数同时支持任意变量数、概率预测与开源大规模预训练数据的模型。
 
 与 [DeepAR](/0625_ML_Tasks_TimeSeries_Deep_DeepAR)
 的相同点是都预测分布参数并最大化似然；不同点是
