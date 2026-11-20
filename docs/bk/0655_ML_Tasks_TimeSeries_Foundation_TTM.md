@@ -3,7 +3,7 @@
 | Title     | ML Tasks TimeSeries Foundation TTM                    |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-19T02:42:18Z`                                |
-| Updated @ | `2026-11-19T02:42:18Z`                                |
+| Updated @ | `2026-11-20T08:21:18Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/655) |
 
@@ -47,6 +47,9 @@ TTM 由四个组件组成（论文 Figure 2(a)）：
 | Forecast head       | 线性头，输出预测                                  |
 | Exogenous mixer（可选） | 融合外生变量                                    |
 
+表中：「组件」是 TTM 的四个组成部分，「说明（论文）」概述其作用与规模。其中 decoder 与 forecast head 合称 TTM
+head，微调时只更新它。
+
 其中 decoder 与 forecast head 合称 TTM head，微调时只更新它。预处理沿用 PatchTST/TSMixer
 的做法：逐实例、逐通道归一化到零均值单位方差，最后输出处反归一化；再切成不重叠的 patch。
 
@@ -54,6 +57,9 @@ TTM 由四个组件组成（论文 Figure 2(a)）：
 
 $$X\\in\\mathbb R^{c\\times sl}\\ \\longrightarrow\\ \\hat Y\\in\\mathbb
 R^{c'\\times fl}\\qquad (c'\\le c)$$
+
+其中：$X$ 是输入（$c$ 个通道、上下文长度 $sl$）；$\\hat Y$ 是预测（$c'$ 个目标通道、预测长度
+$fl$）；$c'\\le c$，其余通道是外生变量。
 
 $fl$ 为预测长度，$c'$ 为需要预测的目标通道数，其余通道是外生变量。patch 后 $X\_p\\in\\mathbb
 R^{c\\times n\\times pl}$，其中 $pl$ 为 patch 长度，$n=sl/pl$（stride 等于
@@ -82,6 +88,10 @@ $$X\_h^{(i-1)}\\in\\mathbb R^{c\\times n\\times hf}\\ \\longrightarrow\\
 X\_h^{i}\\in\\mathbb R^{c\\times (n\\cdot K\_i)\\times
 (hf/K\_i)},\\qquad K\_i=2^{L-i}$$
 
+其中：$X\_h^{(i-1)}$ 是上一层输出，形状 $c\\times n\\times hf$（$c$ 通道、$n$ 个 patch、每个
+patch 隐维 $hf$）；$X\_h^i$ 是第 $i$ 个 level 重排后的张量；$K\_i=2^{L-i}$ 是切分系数，$L$ 是
+level 总数；patch 数增为 $n\\cdot K\_i$，每个 patch 维度缩为 $hf/K\_i$。
+
 并要求 $hf=m\\cdot 2^{L-1}$（$m$ 为整数）。TSMixer 在这个重排后的形状上工作，随后 patch merge
 把形状还原为 $c\\times n\\times hf$。level 每加一，patch 数减半、patch 维度翻倍。论文图
 2(b) 以 $L=3$、$M=2$ 为例。AP 只用于骨干，不用于 decoder。
@@ -94,6 +104,10 @@ $hf=fs\\cdot pl$，$fs=3$，故 $hf=192=48\\cdot 2^{2}$，即 $m=48$。$L=3$ 时
 | 1     | 4      | 32                     | 48                 |
 | 2     | 2      | 16                     | 96                 |
 | 3     | 1      | 8                      | 192                |
+
+表中：「level」是骨干的层级，「$K\_i$」是该层 patch 切分系数，「patch 数」与「patch
+维度」是重排后的形状。结论：level 每加一，patch 数减半、patch
+维度翻倍，总元素数不变。
 
 每层 $n\\cdot K\_i\\cdot hf/K\_i=8\\times192=1536$
 不变，只是切分粒度不同。（此处忽略了分辨率前缀额外占用的一个
@@ -131,6 +145,9 @@ context 很短时，模型难以自己判断分辨率，RPT 对此也有帮助�
 
 $$\\mathcal L=\\lVert Y-\\hat Y\\rVert\_2^2$$
 
+其中：$\\mathcal L$ 是预训练损失；$Y$ 是预测窗口的真实值，$\\hat Y$
+是模型预测；$\\lVert\\cdot\\rVert\_2^2$ 是平方误差；直接对预测窗口做回归，而非掩码重建。
+
   - 数据：从 Monash 与 LibCity 取约 1B 样本（Monash 约 250M，其余为 LibCity；一个样本是一对窗口
     $X\\in\\mathbb R^{1\\times sl}$、$Y\\in\\mathbb R^{1\\times
     fl}$）。评测用到的 Weather、Electricity、Traffic
@@ -146,6 +163,9 @@ $$\\mathcal L=\\lVert Y-\\hat Y\\rVert\_2^2$$
 | TTM-Base（TTMB）     | 1M  | 512  | 64   |
 | TTM-Enhanced（TTME） | 4M  | 1024 | 128  |
 | TTM-Advanced（TTMA） | 5M  | 1536 | 128  |
+
+表中：「变体」是 TTM 的三种规模，「参数量」是模型参数，$sl$ 是上下文长度，$pl$ 是 patch
+长度。结论：上下文越长，需要的参数与 patch 越大。
 
 此外还有 Quick TTM（TTMQ）：在 Monash 子集（约 250M 样本）上训练的二级实验变体，预训练仅需 4-6 小时，不启用
 RPT。论文说明直接法下参数量随预测长度变化，结果表里报告的是平均参数量（所以 Table 3 里 TTMB 写 0.8M，而其他表写 1M）。
@@ -205,6 +225,10 @@ Application（APP）、Service（SER）。
 | TTME（4M） | 7%，4X          | 1%，23X              | 6%，78X          | 16%，50X         |
 | TTMA（5M） | 10%，3X         | 4%，18X              | 9%，62X          | 19%，40X         |
 
+表中：「TTM 变体」是三个变体（括号内为参数量），后四列是相对 MoiraiS、MoiraiB、MoiraiL、TimesFM
+的结果，每格为「f-imp，s-imp」：f-imp 是 MSE 改进百分比，s-imp 是对方参数量与 TTM
+参数量之比（X 表示倍数）。结论：TTM 以小得多的参数量取得相当或更好的零样本精度。
+
 每格为 f-imp 与 s-imp。论文摘要概括为零/少样本预测优于已有基准 4%-40%，同时大幅降低计算需求。TimesFM 的
 Electricity 与 Weather 未报告（它们被用于其预训练）；Traffic 被 Moirai 和 TimesFM
 用于预训练，该表没有 Traffic 列。
@@ -224,6 +248,9 @@ Lag-Llama（3M）为 40%。论文还在附录称 TTM 相对 LLMTime 和 UniTime 
 | MoiraiS  | 205        | 14    | 0.1    | 1.4       |
 | ChronosT | 1389       | 8     | 2      | 2504      |
 | GPT4TS   | 13.9       | 87    | 1.34   | 0.3       |
+
+表中：「模型」是对比方法，后四列是推理的 GPU 时间（毫秒）、参数量（百万）、显存（GB）与 CPU 时间（秒）。结论：TTMB
+在所比较的预训练模型中时间与显存都最低。
 
 论文称在所比较的预训练模型中 TTM 推理时间与显存都最低。
 
@@ -289,6 +316,9 @@ $(96,24)$。
 | Chronos | T5 语言模型，序列量化为 token      | 自回归采样 token | 单变量                   | 8M-709M      |
 | Moment  | Transformer encoder      | 掩码重建        | 单变量                   | 348M         |
 | GPT4TS  | 微调 GPT 的输入/归一化/输出层       | 微调          | 论文称未建模通道相关            | 87M（Table 3） |
+
+表中：「方法」是对比模型，「骨架」「预训练目标」「通道处理」「规模」说明其网络、训练目标、对多通道的处理与参数量。结论：TTM
+参数量最小（1M–5M），预训练通道独立、微调才开启通道混合。
 
 （对比内容取自论文附录 B.2、B.3 与各表。）TTM 与 PatchTST 共享"patch + 通道独立 + 归一化"思路；N-HiTS
 的多尺度思想与 TTM 的多粒度 patching 有可类比之处 `[解读]`。
