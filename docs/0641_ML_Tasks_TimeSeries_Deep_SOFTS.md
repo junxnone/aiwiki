@@ -2,7 +2,7 @@
 Title | ML Tasks TimeSeries Deep SOFTS
 -- | --
 Created @ | `2026-11-19T02:00:06Z`
-Updated @| `2026-11-19T06:20:36Z`
+Updated @| `2026-11-20T08:14:55Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/641)
 
@@ -28,6 +28,8 @@ SOFTS 在 [时间序列总览](/0603_ML_Tasks_TimeSeries) 与 [深度学习方�
 注意力建模变量相关性 | iTransformer、Crossformer | 精度好 | 对变量数 $C$ 二次复杂度；"分布式"结构依赖每个变量的质量，遇到异常变量不稳
 MLP / Mixer 建模 | TSMixer 等 | 简单高效 | 变量很多时通常不及 SOTA Transformer 方法
 
+表中：「路线」是多变量预测的建模思路，「代表」是典型方法，「优点」与「论文指出的问题」说明其长处与缺点。SOFTS 的目标是同时拿到通道独立的鲁棒性、变量间信息交换与线性复杂度。
+
 SOFTS 的目标是同时拿到：CI 的鲁棒性、变量间的信息交换、对 $C$ / $L$ / $H$ 的线性复杂度。
 
 ## 核心思想与结构
@@ -35,6 +37,9 @@ SOFTS 的目标是同时拿到：CI 的鲁棒性、变量间的信息交换、�
 ### 中心化 vs 分布式交互
 
 论文借用软件工程里的星形（client-server）系统类比：注意力、GNN、Mixer 是**分布式**交互（变量两两直接比较）；STAR 是**中心化**交互——所有变量先汇总到一个"服务器"（core），再由 core 把全局信息发回每个变量，变量之间只通过 core **间接**交互。
+
+
+下图对比分布式与中心化的变量交互结构。
 
 ```
 分布式（Attention / GNN / Mixer）      中心化（STAR）
@@ -47,17 +52,32 @@ SOFTS 的目标是同时拿到：CI 的鲁棒性、变量间的信息交换、�
  C(C-1)/2 条两两连接                      C 条 "变量<->core" 连接
 ```
 
+图中：
+
+- 左侧是分布式交互：变量 $s_1\ldots s_4$ 两两相连，共 $C(C-1)/2$ 条连接。
+- 右侧是中心化交互（STAR）：每个变量只与中间的 core 相连，共 $C$ 条连接，变量间通过 core 间接交流。
+- 关键结论：连接数从二次降为线性，同时降低对单个变量质量的依赖。
+
 论文的论点：中心化既降低复杂度，也降低对单个变量质量的依赖（聚合了所有通道的统计量）。后一点是论文的论证加实验现象（见"实验"一节的噪声/T-SNE 实验），不是严格证明。
 
 ### 整体流程
 
 输入 $X\in\mathbb R^{C\times L}$（$C$ 个变量，回看窗口 $L$），输出 $\hat Y\in\mathbb R^{C\times H}$（$H$ 为预测长度）。
 
+
+下图概括 SOFTS 的整体计算流程。
+
 ```
 X --RevIN--> 序列嵌入 Linear(L->d) --> S0 (C×d)
   --> STAR × N 层 (S_i = STAR(S_{i-1})) --> S_N (C×d)
   --> Linear(d->H) --> 反归一化 --> Ŷ (C×H)
 ```
+
+图中：
+
+- 输入 $X$ 先经 RevIN 归一化，再经序列嵌入 Linear（$L\to d$）得到 $S_0$（$C\times d$）。
+- 然后经过 $N$ 层 STAR，每层 $S_i=\mathrm{STAR}(S_{i-1})$。
+- 最后 Linear（$d\to H$）输出并反归一化，得到预测 $\hat Y$（$C\times H$）。
 
 - **Reversible instance normalization**：每条序列去均值、缩放到单位方差，预测后反向还原。PEMS 数据集按效果选择性地使用（沿用 iTransformer 的做法）。
 - **Series embedding**：一个线性层把每个变量的整条回看序列映射为 d 维向量（相当于 patch 长度取整条序列的极端情形），不产生额外的 patch 维度，所以比 patch embedding 更省。
@@ -74,6 +94,9 @@ o_i &= \mathrm{StochPool}\left(\mathrm{MLP}_1(S_{i-1})\right) && \text{聚合得
 F_i &= \mathrm{RepeatConcat}(S_{i-1},\,o_i) && \text{core 复制 } C \text{ 份拼到每个变量，} F_i\in\mathbb R^{C\times(d+d')} && (4)\\
 S_i &= \mathrm{MLP}_2(F_i)+S_{i-1} && \text{融合 + 残差，} S_i\in\mathbb R^{C\times d} && (5)
 \end{aligned}
+
+
+其中：$S_{i-1}\in\mathbb R^{C\times d}$ 是上一层的变量表示（$C$ 个变量、$d$ 维）；$\mathrm{StochPool}$ 是沿通道维的随机池化，把 $C$ 个向量压成 core $o_i$；$\mathrm{RepeatConcat}$ 把 core 复制 $C$ 份并与各变量表示拼接，得到 $F_i$；$\mathrm{MLP}_2$ 把拼接结果融合并投影回 $d$ 维，加上 $S_{i-1}$ 是残差；$d'$ 是 core 的维度。
 $$
 
 - $\mathrm{MLP}_1:\mathbb R^d\to\mathbb R^{d'}$：两层，隐藏维 $d$，GELU 激活。
@@ -91,17 +114,26 @@ $$
 p_{ij}=\frac{\exp(A_{ij})}{\sum_{k=1}^{C}\exp(A_{kj})}\tag{6}
 $$
 
+
+其中：$A_{ij}$ 是第 $i$ 个通道在第 $j$ 个特征维上的激活；$C$ 是通道数；$p_{ij}$ 是对通道维做 softmax 得到的概率，激活越大概率越高，同一特征维上各通道概率之和为 1。
+
 训练：按 $(p_{1j},\dots,p_{Cj})$ 采样一个通道 $c$，
 
 $$
 o_j=A_{cj}\tag{7}
 $$
 
+
+其中：$p_{\cdot j}$ 是上式的概率分布；$c$ 是按该分布随机采样出的通道；$A_{cj}$ 是该通道在特征维 $j$ 上的取值；$o_j$ 是 core 的第 $j$ 维（训练时直接取被采样通道的值）。
+
 测试（概率加权平均）：
 
 $$
 o_j=\sum_{i=1}^{C}p_{ij}\,A_{ij}\tag{8}
 $$
+
+
+其中：$A\in\mathbb R^{C\times d'}$ 是池化输入；$p_{ij}$ 是第 $j$ 个特征维上第 $i$ 个通道的选择概率；$o_j$ 是 core 的第 $j$ 维；测试时是各通道按概率加权的平均。
 
 训练时随机选一个通道、测试时加权平均，兼具 max（偏向大激活）和 mean（用到所有通道）的特点，训练时还带有随机正则的效果（`[解读]`：后一点是对 Zeiler & Fergus 原思想的转述）。
 
@@ -129,6 +161,8 @@ iTransformer | $O(C^2+CL+CH)$
 PatchTST | $O(CL^2+CH)$
 Transformer | $O(CL+L^2+HL+CH)$
 
+表中：「模型」是对比方法，「复杂度」是对变量数 $C$、回看窗口 $L$、预测长度 $H$ 的渐进复杂度（忽略模型维度 $d$）。结论：SOFTS 对 $C$、$L$、$H$ 均线性，iTransformer 对 $C$ 二次，PatchTST 对 $L$ 二次。
+
 ### 为什么 STAR 是线性的
 
 - 注意力要算 $C\times C$ 的相关矩阵：每对变量一个分数，$QK^\top$ 和 $AV$ 各约 $C^2d$ 次乘加。
@@ -148,6 +182,8 @@ $C$ | 注意力 $2C^2d$ | STAR 的 $\mathrm{MLP}_1$：$2Cd^2$ | 比值
 -- | -- | -- | --
 862（Traffic 的变量数） | $2\times862^2\times128\approx1.90\times10^8$ | $2\times862\times128^2\approx2.82\times10^7$ | $\approx 6.7$
 5000 | $2\times5000^2\times128=6.4\times10^9$ | $2\times5000\times128^2\approx1.64\times10^8$ | $\approx 39$
+
+表中：「$C$」是变量数，「注意力 $2C^2d$」与「STAR 的 $\mathrm{MLP}_1$：$2Cd^2$」是两种交互方式的粗略乘加次数（$d$ 为模型维度，取 128），「比值」是前者除以后者。结论：变量数越多，STAR 相对注意力节省的计算越多。
 
 重算检查：$862^2=743{,}044$，$\times256=190{,}219{,}264$；$862\times2\times16{,}384=28{,}246{,}016$；比 6.73。$5000^2\times256=6.4\times10^9$；$5000\times2\times16{,}384=163{,}840{,}000$；比 39.06。
 
@@ -182,6 +218,8 @@ PEMS04 | 0.102 / 0.208 | 0.111 / 0.221 | 0.145 / 0.249
 PEMS07 | 0.087 / 0.184 | 0.101 / 0.204 | 0.144 / 0.233
 PEMS08 | 0.138 / 0.219 | 0.150 / 0.226 | 0.200 / 0.275
 
+表中：「数据集」是评测集，其余三列是 SOFTS、iTransformer、PatchTST 在 $L=96$、各预测长度平均的 MSE / MAE（越小越好）。结论：SOFTS 在变量多的数据集（Traffic、PEMS）上优势明显，在变量少的数据集上差距很小。
+
 - 论文称 SOFTS 在 6 类数据集的平均上取得最好或次好。论文自己的例子：Traffic 平均 MSE 0.428 → 0.409（约 4.4%），PEMS07 0.101 → 0.087（约 13.9%）。
 - 并非处处第一：同一张表中 PEMS04 的 MSE/MAE 最优是 SCINet（0.092 / 0.202），ETTh1 的 MSE 最优是 FEDformer（0.440，SOFTS 为 0.449）。在 Weather、ETT 上差距很小（小数点后第三位），论文的结论主要体现在变量多的数据集（Traffic、PEMS）上。
 
@@ -199,6 +237,8 @@ Max | 0.180/0.270 | 0.406/0.271 | 0.259/0.280 | 0.246/0.269 | 0.379/0.401 | 0.11
 Weighted | 0.184/0.275 | 0.440/0.292 | 0.263/0.284 | 0.264/0.280 | 0.379/0.403 | 0.109/0.218
 Stochastic | 0.174/0.264 | 0.409/0.267 | 0.255/0.278 | 0.229/0.256 | 0.373/0.400 | 0.102/0.208
 
+表中：「方式」是通道间信息聚合的方式（w/o STAR 为不做通道交互的通道独立 MLP），其余列是各数据集的 MSE / MAE（越小越好）。结论：加入 STAR 总体优于不加，随机池化在多数数据集上最好。
+
 结论：任何池化方式加上 STAR 总体都比"没有 STAR 的 CI"好（个别格子持平或更差：如 Weighted 在 Weather 上 MSE 0.263 劣于 w/o STAR 的 0.261、在 Solar 上 0.264 劣于 0.247，论文说"consistent enhancement"在这些格子并不严格成立，`[解读]`）；Stochastic 在大多数数据集上最好，但 Traffic 的 MSE 上 Max（0.406）略优于 Stochastic（0.409）。
 
 ### STAR 的通用性（Table 4，MSE / MAE）
@@ -213,6 +253,8 @@ Crossformer† | Attention | 0.202/0.301 | 0.546/0.297 | 0.090/0.198 | 0.084/0.1
 Crossformer† | STAR | 0.198/0.292 | 0.549/0.292 | 0.087/0.194 | 0.080/0.175
 iTransformer | Attention | 0.178/0.270 | 0.428/0.282 | 0.111/0.221 | 0.101/0.204
 iTransformer | STAR | 0.174/0.264 | 0.409/0.267 | 0.102/0.208 | 0.087/0.184
+
+表中：「模型」是被替换注意力的基础模型，「组件」是使用注意力还是 STAR，其余列是各数据集的 MSE / MAE（越小越好，† 为论文改版的 Crossformer）。结论：用 STAR 替换注意力后，多数数据集持平或更好，且算力更少。
 
 （† 为论文改版的 Crossformer。Crossformer 在 Traffic 上 MSE 反而略差 0.546→0.549。）iTransformer + STAR 一行与 SOFTS 主结果相同——论文自己也说 SOFTS 可看作把 iTransformer 的通道注意力换成 STAR。论文结论：用更少算力的 STAR 替换注意力，在多个数据集上持平甚至更好。
 
@@ -245,6 +287,8 @@ PatchTST | 通道独立 + patch 内时间注意力 | 无通道交互 | 论文 Fi
 Crossformer | 跨维度注意力 | 论文未给出复杂度 | 论文用其做 STAR 替换实验
 TSMixer | MLP-Mixer 式混合 | 论文未给出 | 论文称变量很多时表现偏弱，资源占用低
 DLinear | 线性层 | 论文未给出 | 论文称资源占用低，但变量很多时表现差（Figure 3b）；是否通道独立 `[经验]` 属常识，非本文论据
+
+表中：「方法」是对比对象，「变量交互方式」说明变量间如何交流，「变量数复杂度」是对变量数 $C$ 的复杂度，「说明」给出论文的评价。结论：SOFTS 以单个 core 中转，复杂度对变量数线性。
 
 与 iTransformer 的关键区别（只写名字）：两者都把整条序列嵌入成变量 token，区别只在"变量之间怎么交流"——iTransformer 用 $C\times C$ 注意力矩阵，SOFTS 用单个 core 做中转。TSMixer、DLinear 见同系列文章，这里不链接。
 
@@ -285,4 +329,5 @@ class STAR(nn.Module):
 
 - 论文：[SOFTS: Efficient Multivariate Time Series Forecasting with Series-Core Fusion (arXiv:2404.14197)](https://arxiv.org/abs/2404.14197)，NeurIPS 2024
 - 官方代码（论文摘要给出）：[Secilia-Cxy/SOFTS](https://github.com/Secilia-Cxy/SOFTS)
+
 
