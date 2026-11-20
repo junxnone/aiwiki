@@ -283,6 +283,7 @@
         - [ARIMA](/0624_ML_Tasks_TimeSeries_Classical_ARIMA)
       - [深度学习时间序列模型：方法详解、原理与发展脉络](/0606_ML_Tasks_TimeSeries_Deep)
         - [Autoformer](/0636_ML_Tasks_TimeSeries_Deep_Autoformer)
+        - [Crossformer](/0685_ML_Tasks_TimeSeries_Deep_Crossformer)
         - [DLinear](/0630_ML_Tasks_TimeSeries_Deep_DLinear)
         - [DeepAR](/0625_ML_Tasks_TimeSeries_Deep_DeepAR)
         - [ETSformer](/0668_ML_Tasks_TimeSeries_Deep_ETSformer)
@@ -656,4 +657,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1723381120</sub></kbd>
+<kbd><sub>@1724581120</sub></kbd>
