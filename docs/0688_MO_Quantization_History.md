@@ -2,14 +2,14 @@
 Title | MO Quantization History
 -- | --
 Created @ | `2026-11-20T09:44:11Z`
-Updated @| `2026-11-20T09:44:11Z`
+Updated @| `2026-11-20T09:44:19Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/688)
 
 ---
 # 量化发展历史
 
-> 神经网络量化（Quantization）的发展时间线。正文按 [timelinemd](https://github.com/junxnone/jstools/tree/main/timelinemd) 格式书写，可用 [timelinemd 在线工具](https://junxnone.github.io/jstools/timelinemd/?md=https://raw.githubusercontent.com/junxnone/aiwiki/main/docs/XXXX_MO_Quantization_History.md) 以交互式时间轴查看（页面顶部会多出同步脚本自动生成的 Title/Created/Updated 表格，不影响下方时间轴解析）。日期均为 arXiv 首次提交日期（已通过 arXiv API 核对）。总览见 [量化](0312_MO_Quantization)。
+> 神经网络量化（Quantization）的发展时间线。正文按 [timelinemd](https://github.com/junxnone/jstools/tree/main/timelinemd) 格式书写，可用 [timelinemd 在线工具](https://junxnone.github.io/jstools/timelinemd/?md=https://raw.githubusercontent.com/junxnone/aiwiki/main/docs/0688_MO_Quantization_History.md) 以交互式时间轴查看（页面顶部会多出同步脚本自动生成的 Title/Created/Updated 表格，不影响下方时间轴解析）。日期均为 arXiv 首次提交日期（已通过 arXiv API 核对）。总览见 [量化](0312_MO_Quantization)。
 >
 > 按技术路线给条目归类：
 >
