@@ -3,7 +3,7 @@
 | Title     | ML Tasks TimeSeries Deep TimeFilter                   |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-20T09:15:55Z`                                |
-| Updated @ | `2026-11-20T09:15:55Z`                                |
+| Updated @ | `2026-11-20T09:16:13Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/678) |
 
@@ -26,7 +26,7 @@ GNN 聚合并线性投影得到预测。**
 
 本站相关：同属图方法的
 [MSGNet](/0675_ML_Tasks_TimeSeries_Deep_MSGNet)；通道独立与通道依赖路线的代表
-[PatchTST](/0638_ML_Tasks_TimeSeries_Deep_PatchTST)、[iTransformer](/0640_ML_Tasks_TimeSeries_Deep_iTransformer)；总览见
+[PatchTST](/0638_ML_Tasks_TimeSeries_Deep_PatchTST)、[iTransformer](/0639_ML_Tasks_TimeSeries_Deep_iTransformer)；总览见
 [深度学习方法](/0606_ML_Tasks_TimeSeries_Deep)。
 
 ## 1\. 解决什么问题
