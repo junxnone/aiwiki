@@ -2,7 +2,7 @@
 Title | ML Tasks TimeSeries Deep TimeMixer
 -- | --
 Created @ | `2026-11-19T01:28:57Z`
-Updated @| `2026-11-19T02:24:25Z`
+Updated @| `2026-11-20T08:11:36Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/633)
 
@@ -33,6 +33,8 @@ TimeMixer 是 ICLR 2024 的时间序列预测模型（Shiyu Wang、Haixu Wu 等�
 多周期分析 | N-BEATS、FiLM、TimesNet | 把序列拆成不同周期长度的分量
 多尺度混合（本文） | TimeMixer | 在多个采样尺度上分别提取，再混合
 
+表中：「思路」是已有的三种建模思路，「代表」是典型方法，「做法」概述其原理。TimeMixer 属于第三种：在多个采样尺度上分别提取再混合。
+
 论文也提到已有的时间多尺度设计，如 Pyraformer（金字塔注意力）和 SCINet（二叉下采样树），指出它们的未来预测没有同时利用过去观测在不同尺度上提取到的信息。TimeMixer 的两个关键点由此而来：
 
 1. **过去提取**：即使最粗尺度的序列，仍然同时含有季节性和趋势（论文 Figure 1 的观察），所以不能把每个尺度当成一个整体去混合，而要先分解再分别混合。
@@ -43,6 +45,9 @@ TimeMixer 是 ICLR 2024 的时间序列预测模型（Shiyu Wang、Haixu Wu 等�
 ### 整体流程
 
 符号：输入 $x\in\mathbb R^{P\times C}$（过去长度 $P$，$C$ 个变量），输出 $\hat x\in\mathbb R^{F\times C}$（未来长度 $F$）。
+
+
+下图概括 TimeMixer 从输入到预测的流程。
 
 ```
 输入 x (P×C)
@@ -59,6 +64,12 @@ X^L
   ▼
 预测 x̂ (F×C)
 ```
+
+图中：
+
+- 自上而下：输入 $x$（$P\times C$）经平均池化（每级缩短一半）得到 $M+1$ 个尺度，再嵌入为 $d_{\text{model}}$ 维。
+- 嵌入后的多尺度序列依次通过 $L$ 个 PDM 块，得到 $X^L$；最后 FMM 把各尺度的预测相加，输出预测 $\hat x$（$F\times C$）。
+- 关键结论：过去用 PDM 做可分解混合，未来用 FMM 集成多尺度预测。
 
 - $x_0=x$ 是原始输入，含最细的变化；$x_M$ 最粗，对应宏观变化。
 - 尺度总数是 $M+1$。论文用平均池化得到各尺度；附录比较过用步长为 2 的 1D 卷积替代，效果略好，但综合性能和效率论文仍选平均池化。
@@ -80,6 +91,9 @@ X^l &= X^{l-1} + \mathrm{FeedForward}\big(\mathrm{S\text{-}Mix}(\{s^l_m\}) + \ma
 \tag{3}
 $$
 
+
+其中：$x^l_m$ 是第 $l$ 层尺度 $m$ 的表示；$\mathrm{SeriesDecomp}$ 是移动平均分解，输出季节项 $s^l_m$ 与趋势项 $t^l_m$；$\mathrm{S\text{-}Mix}$、$\mathrm{T\text{-}Mix}$ 分别是季节混合与趋势混合；$\mathrm{FeedForward}$ 沿通道维做信息交互；加上 $X^{l-1}$ 是残差连接；$M$ 是最粗尺度编号。
+
 其中 FeedForward 是两层线性层加中间 GELU，沿通道维做信息交互；S-Mix、T-Mix 分别是季节混合和趋势混合，沿时间维做线性映射。
 
 **季节混合：自底向上（fine → coarse）**
@@ -91,6 +105,9 @@ s_m = s_m + \mathrm{Bottom\text{-}Up\text{-}Mixing}(s_{m-1}),\quad m=1,\dots,M
 \tag{4}
 $$
 
+
+其中：$s_m$ 是尺度 $m$ 的季节项；$m$ 从 1 到 $M$；$\mathrm{Bottom\text{-}Up\text{-}Mixing}$ 把更细尺度（$m-1$）的季节项映射到当前尺度并加回，即把细节信息聚合到粗尺度。
+
 Bottom-Up-Mixing 是两层线性层加中间 GELU，沿时间维，输入维度 $\lfloor P/2^{m-1}\rfloor$，输出维度 $\lfloor P/2^m\rfloor$。
 
 **趋势混合：自顶向下（coarse → fine）**
@@ -101,6 +118,9 @@ $$
 t_m = t_m + \mathrm{Top\text{-}Down\text{-}Mixing}(t_{m+1}),\quad m=M-1,\dots,0
 \tag{5}
 $$
+
+
+其中：$t_m$ 是尺度 $m$ 的趋势项；$m$ 从 $M-1$ 递减到 0；$\mathrm{Top\text{-}Down\text{-}Mixing}$ 把更粗尺度（$m+1$）的趋势映射到当前尺度并加回，即用宏观趋势指导细尺度趋势。
 
 Top-Down-Mixing 同样是两层线性加 GELU，输入维度 $\lfloor P/2^{m+1}\rfloor$，输出维度 $\lfloor P/2^m\rfloor$。
 
@@ -119,6 +139,12 @@ ASCII 示意（$M=3$，箭头为混合方向）：
 
 上图只为表示方向：季节信息由细向粗流动，趋势信息由粗向细流动。
 
+图中：
+
+- 四行是尺度 0 到 3（括号内为序列长度 96/48/24/12），左列是季节项 $s_m$，右列是趋势项 $t_m$。
+- 季节项的箭头从细尺度指向粗尺度（自底向上），趋势项的箭头从粗尺度指向细尺度（自顶向下）。
+- 关键结论：季节信息由细向粗聚合，趋势信息由粗向细指导。
+
 论文 Figure 3 还画出了训练后的混合权重（ETTh1，输入 96 预测 96）：季节混合层的权重呈周期性（图中重复的条纹），趋势混合层以局部聚合为主（图中的对角线）。论文据此说明季节和趋势确实需要不同的混合方式。
 
 ### FMM：未来多预测器混合
@@ -129,6 +155,9 @@ $$
 \hat x_m = \mathrm{Predictor}_m(x^L_m),\quad m\in\{0,\dots,M\},\qquad \hat x = \sum_{m=0}^{M} \hat x_m
 \tag{6}
 $$
+
+
+其中：$\mathrm{Predictor}_m$ 是尺度 $m$ 的预测器，把该尺度的表示 $x^L_m$ 映射为长度 $F$ 的预测 $\hat x_m$；$M$ 是最粗尺度的编号；$\hat x$ 是各尺度预测之和，即最终预测。
 
 Predictor_m 先用**一层线性层**把长度 $\lfloor P/2^m\rfloor$ 的时间维直接回归到长度 $F$，再把 d_model 维的深层表示投影回 $C$ 个变量。
 
@@ -160,6 +189,8 @@ Solar-Energy | 3 | 2 | 128
 PEMS | 1 | 5 | 128
 M4 | 1 | 4 | 32
 
+表中：「数据集」是评测集，$M$ 是下采样尺度数，$L$ 是 PDM 块数，d_model 是隐层维度。长期预测用 $M=3$，短期预测用 $M=1$。
+
 上表已对照论文 Table 7 的渲染图核对。表中其余训练配置：batch size 在 ETT 和 Weather 上为 128，Electricity 和 Solar-Energy 为 32，Traffic 为 8，PEMS 为 32，M4 为 128；epoch 数在 ETT 和 PEMS 上为 10，Weather、Electricity、Solar-Energy、Traffic 为 20，M4 为 50。
 
 推理：给定过去 $P$ 个点，按上面的流程前向一次，直接一次性输出未来 $F$ 个点（direct multi-step，非自回归）。`[解读]` 这是由 FMM 中每个预测器直接线性回归到长度 F 决定的。
@@ -189,6 +220,8 @@ ETTh2 | 0.364 / 0.395 | 0.391 / 0.411 | 0.414 / 0.427
 ETTm1 | 0.381 / 0.395 | 0.406 / 0.407 | 0.400 / 0.406
 ETTm2 | 0.275 / 0.323 | 0.290 / 0.334 | 0.291 / 0.333
 
+表中：「数据集」是长期预测基准，其余三列是 TimeMixer、PatchTST、TimesNet 在输入 96、四个预测长度平均的 MSE / MAE（越小越好）。结论：TimeMixer 在所有数据集上最优。
+
 论文的结论：TimeMixer 在所有长期预测基准上取得最优（Table 2），相对 PatchTST，Weather 的 MSE 降低 9.4%，Solar-Energy 降低 24.7%。
 
 超参搜索设置下（附录 Table 14），相对 PatchTST 的优势变小：例如 Weather 平均 MSE 0.222 对 0.241，Solar-Energy 0.192 对 0.256，Electricity 0.156 对 0.159，Traffic 0.387 对 0.391，ETTh1 0.411 对 0.413，ETTm2 两者 MSE 都是 0.256（MAE 0.315 对 0.317）。论文自己也说，搜索设置下 TimeMixer 相对 PatchTST 的提升比统一设置下小，同时强调 TimeMixer 运行比 PatchTST 快得多。
@@ -210,6 +243,8 @@ ETTm2 | 0.275 / 0.323 | 0.290 / 0.334 | 0.291 / 0.333
 ④ 去掉趋势混合 | 12.911 / 1.655 / 0.941 | 22.91 / 15.02 / 37.04 | 0.405 / 0.414
 ⑦ 两个混合方向都反过来 | 13.012 / 1.657 / 0.954 | 22.27 / 15.14 / 34.67 | 0.412 / 0.429
 ⑩ 不分解且不混合 | 12.468 / 1.671 / 0.916 | 24.87 / 16.66 / 39.48 | 0.405 / 0.412
+
+表中：「设置」是消融设置（①为官方设计），后三列分别是 M4、PEMS04、ETTm1 上的指标（SMAPE/MASE/OWA、MAE/MAPE/RMSE、MSE/MAE 均越小越好）。结论：官方设计最好，去掉 FMM、季节混合、趋势混合或分解都会变差。
 
 论文的归纳：
 - 去掉 FMM 明显变差，说明混合多尺度的未来预测有用。
@@ -249,6 +284,8 @@ N-HiTS | `[待核实]`（论文只把它作为基线） | 无 | MLP | `[待核�
 PatchTST | 无（patch 化） | 无 | Transformer | 论文将它作为长期预测的 SOTA 基线
 TimesNet | 无，按 FFT 周期折成 2D | 周期分量 | CNN | 论文把它当作多周期分析代表
 Pyraformer / SCINet | 有（金字塔注意力 / 二叉下采样树） | 无 | 注意力 / 卷积 | 论文称其未来预测未同时利用多尺度信息
+
+表中：「方法」是对比对象；「多尺度」「分解」「骨干」「未来预测」四列说明其是否使用多尺度、如何分解、采用的网络骨干与预测方式（"待核实"表示论文未写明）。结论：TimeMixer 同时使用多尺度、分解与 MLP，并在未来阶段集成多个尺度的预测器。
 
 与 TSMixer（Google，arXiv:2303.06053）的区别：论文将它作为同期的 MLP 基线放在附录（Table 23 等，用其公开代码复现），并称 TimeMixer 仍优于它。`[解读]` `[待核实]` 两者都是 MLP；TSMixer 据我所知在时间维和特征维上交替混合（未对照其论文核实），而 TimeMixer 的混合发生在不同下采样尺度之间，并分别处理季节项和趋势项；论文自己说 TimeMixer 只做时间维混合。
 
@@ -298,5 +335,6 @@ class PDM(nn.Module):
 - 官方代码：[kwuking/TimeMixer](https://github.com/kwuking/TimeMixer)（论文第 7 节给出的地址，未另行访问核验）
 - 相关：[TSMixer: An All-MLP Architecture for Time Series Forecasting](https://arxiv.org/abs/2303.06053)（论文参考文献中给出的编号）
 - 站内：[时间序列总览](/0603_ML_Tasks_TimeSeries)、[深度学习预测](/0606_ML_Tasks_TimeSeries_Deep)
+
 
 
