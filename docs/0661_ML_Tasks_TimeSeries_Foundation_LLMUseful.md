@@ -2,7 +2,7 @@
 Title | ML Tasks TimeSeries Foundation LLMUseful
 -- | --
 Created @ | `2026-11-19T03:24:18Z`
-Updated @| `2026-11-19T03:24:18Z`
+Updated @| `2026-11-20T08:23:48Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/661)
 
@@ -25,6 +25,8 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/661)
 时序 --(instance norm)--> patching/token 化 --> 编码/对齐 --> [ 预训练 LLM ] --> 线性投影 --> 预测
 ```
 
+图中：时序依次经实例归一化、patching/token 化、编码与对齐，再送入预训练 LLM，最后经线性投影得到预测。关键问题是精度提升来自中间的 LLM 还是前后的编码与投影。
+
 问题在于：精度提升究竟来自中间那块 LLM，还是来自它前后的编码（patching、对齐、投影）。所以实验设计的核心是**只动 LLM 这一块、其余原样保留**。
 
 论文围绕六个研究问题（RQ）展开：
@@ -38,6 +40,8 @@ RQ4 | LLM 能表示时序里的序列依赖吗？ | 打乱输入
 RQ5 | LLM 对少样本预测有帮助吗？ | 只用 10% 训练数据
 RQ6 | 性能到底来自哪里？ | 对编码器结构的探索（PAttn 等）
 
+表中：「RQ」是研究问题编号，「问题」是要回答的问题，「对应实验」是所用实验。
+
 ## 被检验的三种方法
 
 论文称所选三种方法发表于 2023 年 12 月到 2024 年 5 月之间且较为流行，用 GPT-2 或 LLaMA 作基座，对齐与微调策略各不相同：
@@ -47,6 +51,8 @@ RQ6 | 性能到底来自哪里？ | 对编码器结构的探索（PAttn 等）
 OneFitsAll（GPT4TS） | GPT-2 | Add&Norm | 微调
 Time-LLM | LLaMA | 无（冻结） | 冻结
 CALF | GPT-2 | LoRA | 微调
+
+表中：「方法」是被检验的三种方法，「基座模型」是所用语言模型，「LLM 中可学习的部分」「位置编码」说明其微调策略。结论：三者在对齐与微调方式上各不相同。
 
 论文对三者的描述（节选）：
 
@@ -66,6 +72,8 @@ CALF | GPT-2 | LoRA | 微调
 `LLM2Attn` | 把语言模型换成**一个随机初始化的多头注意力层**
 `LLM2Trsf` | 把语言模型换成**一个随机初始化的 Transformer block**
 
+表中：「消融」是三种修改，「做法」说明如何替换语言模型。LLM 之外的部分保持不变且可训练。
+
 示意（OneFitsAll 为例，ASCII 示意图为本文所绘）：
 
 ```
@@ -75,6 +83,8 @@ LLM2Attn  : encode -> [1 层 MHA, 随机初始化] ----> projection
 LLM2Trsf  : encode -> [1 个 Transformer block] -> projection
 ```
 
+图中：四行分别对应原方法与三种消融：保留预训练 GPT-2；去掉 LLM，编码结果直接送入输出投影；换成一层随机初始化多头注意力；换成一个随机初始化 Transformer block。关键结论：只改动 LLM 这一块，其余保持不变。
+
 消融后参数量大幅下降（论文 Table 3 的 `#Parameters` 行）：
 
 方法 | 原方法 | w/o LLM | LLM2Attn | LLM2Trsf
@@ -82,6 +92,8 @@ LLM2Trsf  : encode -> [1 个 Transformer block] -> projection
 Time-LLM | 6651.82M | 0.55M | 0.55M | 0.66M
 CALF | 180.25M | 8.17M | 10.5M | 13.68M
 OneFitsAll | 91.36M | 9.38M | 10.71M | 13.54M
+
+表中：「方法」是被检验的方法，后四列是各模型的参数量（M 为百万）。结论：去掉 LLM 后参数量下降约一到三个数量级（Time-LLM 从 6651.82M 降到约 0.55M）。
 
 ### 复现与公平性
 
@@ -95,6 +107,9 @@ OneFitsAll | 91.36M | 9.38M | 10.71M | 13.54M
 - 指标为 MAE 与 MSE，$D$ 为测试集元素，$c_i$、$\hat c_i$ 为真值与预测：
 
 $$\mathrm{MAE}=\frac{1}{\lvert D\rvert}\sum_{i\in D}\lvert c_i-\hat c_i\rvert,\qquad \mathrm{MSE}=\frac{1}{\lvert D\rvert}\sum_{i\in D}(c_i-\hat c_i)^2$$
+
+
+其中：$D$ 是测试集元素集合，$\lvert D\rvert$ 是其个数；$c_i$ 是第 $i$ 个真实值，$\hat c_i$ 是预测值；MAE 是平均绝对误差，MSE 是均方误差。
 
 - 论文还给出各结果的 95% bootstrap 置信区间。
 
@@ -121,6 +136,8 @@ OneFitsAll / Illness | 0.852 | 0.924 | 0.829 | 0.850
 OneFitsAll / Electricity | 0.262 | 0.254 | 0.250 | 0.245
 OneFitsAll / Exchange Rate | 0.378 | 0.361 | 0.376 | 0.393
 
+表中：「方法 / 数据集」是评测设置，后四列是 MAE（越小越好，对各预测长度取平均）：原方法与三种消融。结论：消融版在多数格子里不比原方法差，但并非处处更好。
+
 按 Table 3 的 `# Wins`（每个数据集每个指标在四个模型中取最优）：
 
 方法 | 原方法 | w/o LLM | LLM2Attn | LLM2Trsf
@@ -128,6 +145,8 @@ OneFitsAll / Exchange Rate | 0.378 | 0.361 | 0.376 | 0.393
 Time-LLM | 0 | 12 | 2 | 12
 CALF | 4 | 7 | 4 | 11
 OneFitsAll | 7 | 11 | 3 | 5
+
+表中：「方法」是被检验的方法，后四列是在 13 个数据集 × 2 个指标共 26 次比较中取得四个模型中最优的次数（# Wins）。结论：多数方法下去掉 LLM 的消融版最优次数更多。
 
 [解读] 从上表也能看到并非"消融处处更好"：OneFitsAll 在 ETTh1 上原方法最优（论文 Figure 2 也指出这点，但与 `w/o LLM` 的 bootstrap 置信区间仍有大量重叠）；Illness 上 `w/o LLM` 在 Time-LLM、OneFitsAll 下反而更差。论文的论点是"LLM 没有**令人信服**的优势"，而不是"消融在每个格子都赢"。
 
@@ -144,6 +163,8 @@ Weather | Time-LLM | 3003 | 1.91 | 2.22 | 2.38
 Weather | OneFitsAll | 152 | 16 | 21 | 24
 Weather | CALF | 12 | 2.32 | 2.14 | 1.89
 
+表中：「数据集」「方法」是评测设置，后四列是总训练时间（分钟，预测长度 96）。结论：去掉 LLM 后训练时间下降一到三个数量级。
+
 自拟算术：Weather 上 Time-LLM 对 `w/o LLM` 的训练时间比为 $3003/1.91\approx 1572$ 倍，约三个数量级，与论文摘要所说"最多约三个数量级"相符；ETTh1 上 $181/0.99\approx 183$ 倍。
 
 推理时间（除以最大 batch size 估算每个样本的耗时）：论文称 Time-LLM、OneFitsAll、CALF 平均分别比修改后的模型慢 28.2、2.3、1.2 倍。论文 Figure 3 把推理时间与 MAE 画在一起，消融版（绿色）通常在左下方，即更快且误差更低。
@@ -158,6 +179,8 @@ Pre+FT | 预训练 + 微调（原方法，LoRA） | 3
 woPre+FT | 随机初始化 + 训练 | 8
 Pre+woFT | 预训练 + 冻结（不学 LoRA） | 5
 woPre+woFT | 随机初始化 + 冻结，等价于一个随机投影 | 0
+
+表中：「组合」是四种预训练与微调的组合，「含义」说明其设置，「最优次数」是在 8 个数据集 × 2 个指标共 16 次比较中取得最优的次数。结论：随机初始化并训练的版本最常最优，语言预训练没有明显帮助。
 
 论文的解读：随机初始化并从头训练的 LLM 比预训练版更常最优，说明语言知识对预测帮助"非常有限"；而 Pre+woFT 赢 5 次、随机初始化+冻结赢 0 次，论文据此认为语言知识在微调过程中没有发挥有意义的作用。[解读] 这一推论较弱：冻结的预训练 LLM 优于冻结的随机 LLM，说明预训练权重作为固定变换并非全无作用；论文的重点是，一旦允许训练，随机初始化并不吃亏。
 
@@ -178,6 +201,8 @@ woPre+woFT | 随机初始化 + 冻结，等价于一个随机投影 | 0
 ```
 输入 -> instance norm -> patching（通道独立）-> 线性投影 -> 单层 self-attention -> 线性投影 -> 预测
 ```
+
+图中：PAttn 的流程依次为：输入经实例归一化、patching（通道独立）、线性投影、单层自注意力、线性投影，输出预测。关键结论：仅有 patching 与一层注意力，没有位置编码和前馈层，就能与 LLM 方法相当。
 
 PAttn 与 PatchTST 的区别：**没有位置编码和前馈层**，Transformer encoder 被替换为单层注意力。此外还有 `LTrsf`（CALF 的编码器去掉跨模态注意力）以及它们加上分解（把序列分解成三条子序列分别预测再线性组合）的 `D-LTrsf`、`D-PAttn`。
 
@@ -227,4 +252,5 @@ def make_backbone(kind, d_model, llm=None):
 
 - Mingtian Tan, Mike A. Merrill, Vinayak Gupta, Tim Althoff, Thomas Hartvigsen. *Are Language Models Actually Useful for Time Series Forecasting?* NeurIPS 2024. [arXiv:2406.16964](https://arxiv.org/abs/2406.16964)
 - 论文附带的复现资源：[BennyTMT/LLMsForTimeSeries](https://github.com/BennyTMT/LLMsForTimeSeries)（论文脚注给出；论文称贡献以 MIT License 发布）
+
 
