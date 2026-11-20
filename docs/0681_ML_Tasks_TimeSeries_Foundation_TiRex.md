@@ -2,7 +2,7 @@
 Title | ML Tasks TimeSeries Foundation TiRex
 -- | --
 Created @ | `2026-11-20T09:18:39Z`
-Updated @| `2026-11-20T09:18:39Z`
+Updated @| `2026-11-20T09:18:51Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/681)
 
@@ -152,7 +152,7 @@ $$
 
 ## Reference
 
-- Auer A, Podest P, Klotz D, Böck S, Klambauer G, Hochreiter S. TiRex: Zero-Shot Forecasting Across Long and Short Horizons with Enhanced In-Context Learning. NeurIPS 2025. arXiv:2505.23719 `[作者列表待核实]`
+- Auer A, Podest P, Klotz D, Böck S, Klambauer G, Hochreiter S. TiRex: Zero-Shot Forecasting Across Long and Short Horizons with Enhanced In-Context Learning. NeurIPS 2025. arXiv:2505.23719
 - Beck M 等. xLSTM: Extended Long Short-Term Memory. NeurIPS 2024.
 - Ansari A F 等. Chronos: Learning the Language of Time Series. TMLR 2024.
 - Aksu T 等. GIFT-Eval: A Benchmark for General Time Series Forecasting Model Evaluation. 2024.
