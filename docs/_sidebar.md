@@ -307,6 +307,7 @@
         - [TFT](/0634_ML_Tasks_TimeSeries_Deep_TFT)
         - [TSMixer](/0632_ML_Tasks_TimeSeries_Deep_TSMixer)
         - [TiDE](/0671_ML_Tasks_TimeSeries_Deep_TiDE)
+        - [TimeFilter](/0678_ML_Tasks_TimeSeries_Deep_TimeFilter)
         - [TimeMixer](/0633_ML_Tasks_TimeSeries_Deep_TimeMixer)
         - [TimeXer](/0640_ML_Tasks_TimeSeries_Deep_TimeXer)
         - [TimesNet](/0631_ML_Tasks_TimeSeries_Deep_TimesNet)
@@ -649,4 +650,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1715561120</sub></kbd>
+<kbd><sub>@1717091120</sub></kbd>
