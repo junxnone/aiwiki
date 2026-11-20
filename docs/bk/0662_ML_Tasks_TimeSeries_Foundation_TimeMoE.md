@@ -3,7 +3,7 @@
 | Title     | ML Tasks TimeSeries Foundation TimeMoE                |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-19T03:24:20Z`                                |
-| Updated @ | `2026-11-19T03:24:20Z`                                |
+| Updated @ | `2026-11-20T08:24:15Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/662) |
 
@@ -51,6 +51,8 @@ $$X\_{1:T}=(x\_1,\\dots,x\_T)\\in\\mathbb R^{T}\\ \\longrightarrow\\
 $T$ 是上下文长度，$H$ 是预测长度，二者在推理时都可以变化。多变量输入按 channel independence
 拆成多条单变量序列分别预测，所以模型本身可处理任意变量数。
 
+下图概括 Time-MoE 的整体结构。
+
     时间点序列 x_1 ... x_T
        |  (1) 点级 tokenization：每个时间点一个 token
        v
@@ -63,6 +65,11 @@ $T$ 是上下文长度，$H$ 是预测长度，二者在推理时都可以变化
        v
     输出头 W_{p_1} ... W_{p_P}，默认 p = {1, 8, 32, 64}
        |  (5) 推理：按贪心调度组合这些头，得到任意长度预测
+
+图中：自上而下：时间点序列经点级 tokenization 和 SwiGLU 嵌入得到 $h^0\_t$；经 $N$ 个 MoE
+Transformer 块（RMSNorm、带 RoPE 的因果多头自注意力、残差，再 RMSNorm、MoE
+层、残差）；训练时同时优化多个输出头（默认步长
+1、8、32、64）；推理时按贪心调度组合这些头得到任意长度预测。
 
 ### 输入嵌入：点级 tokenization
 
@@ -89,6 +96,11 @@ $$\\bar{\\mathbf u}\_t^l=\\mathrm{RMSNorm}(\\mathbf u\_t^l)$$
 $$\\mathbf h\_t^l=\\mathrm{Mixture}(\\bar{\\mathbf u}\_t^l)+\\mathbf
 u\_t^l$$
 
+其中：$\\mathbf h\_t^{l-1}$ 是第 $l-1$ 层在时间点 $t$ 的隐状态；$\\mathrm{SA}$
+是因果自注意力；$\\mathrm{RMSNorm}$ 是归一化；$\\mathbf u\_t^l$ 与
+$\\bar{\\mathbf u}\_t^l$ 是中间量；$\\mathrm{Mixture}$ 是 MoE 层，替代标准
+FFN；加上原输入是残差连接。
+
 $\\mathrm{SA}$ 是带因果掩码的自注意力，$\\mathrm{Mixture}$ 是 MoE 层，它替换了标准
 FFN。每个专家的结构都与一个（更小的）FFN 相同。
 
@@ -107,6 +119,11 @@ $$g\_{N+1,t}=\\mathrm{Sigmoid}(\\mathbf W\_{N+1}^l\\bar{\\mathbf
 u}\_t^l)$$
 
 $$s\_{i,t}=\\mathrm{Softmax}\_i(\\mathbf W\_i^l\\bar{\\mathbf u}\_t^l)$$
+
+其中：$\\mathrm{Mixture}$ 是 MoE 层输出；$\\mathrm{FFN}*i$ 是第 $i$
+个专家，$\\mathrm{FFN}*{N+1}$ 是共享专家；$g\_{i,t}$ 是时间点 $t$ 对专家 $i$
+的权重，只保留得分最大的 $K$ 个路由专家，其余为 0；$s\_{i,t}$ 是对全部路由专家做 Softmax
+得到的路由分数；共享专家的权重由 Sigmoid 给出，对每个 token 都参与。
 
 符号：$N$ 是非共享（路由）专家数，$K$ 是每个 token 激活的非共享专家数，$\\mathbf W\_i^l\\in\\mathbb
 R^{1\\times D}$ 是第 $i$ 个专家的路由参数。
@@ -158,6 +175,9 @@ Time-300B 由公开数据集构成，覆盖能源、零售、医疗、天气、�
 | Other      | 40,265     | 20.32 M   | 0.006%  |
 | Total      | 48,220,929 | 309.09 B  | 100%    |
 
+表中：「领域」是数据领域，「序列数」「观测数」是规模（K、M、B 分别为千、百万、十亿），「占比」是占总观测的比例。结论：Nature 占约
+90.5%，数据在领域上很不均衡，训练时按固定领域比例采样。
+
 可以看出 Nature 占了 90.5%（\[解读\] 论文附录提到 Weatherbench、CMIP6、ERA5
 等特别大的数据集，推测它们主要落在这一类，论文未逐一说明归属）。论文称对这几个数据集做了降采样以缓解不均衡与同质化，实际训练时用了
 Time-300B 中约 1170 亿个时间点，每个 batch 按固定的领域比例和观测值分布采样。
@@ -188,6 +208,10 @@ $$\\mathcal L\_{\\text{aux}}=N\\sum\_{i=1}^{N}f\_i r\_i,\\qquad
 f\_i=\\frac{1}{KT}\\sum\_{t=1}^{T}\\mathbb I(\\text{Time point }t\\text{
 selects Expert }i),\\qquad r\_i=\\frac1T\\sum\_{t=1}^{T}s\_{i,t}$$
 
+其中：$N$ 是路由专家个数；$K$ 是每个时间点激活的专家数；$T$ 是序列长度；$f\_i$ 是被分配给专家 $i$ 的 token
+比例（$\\mathbb I(\\cdot)$ 为指示函数）；$r\_i$ 是路由概率分给专家 $i$
+的平均值；$\\mathcal L\_{\\text{aux}}$ 惩罚负载不均衡。
+
 $f\_i$ 是分配给专家 $i$ 的 token 比例，$r\_i$ 是路由概率分给专家 $i$ 的比例。被分配 token
 多、路由分数又高的专家会产生更高的损失，从而惩罚"强者越强"。最终损失把所有多分辨率投影的自回归损失取平均，再加辅助损失：
 
@@ -204,6 +228,10 @@ $P$ 是投影个数，$p\_j$ 是第 $j$ 个投影的步长，默认 $\\alpha=0.0
 | Time-MoE-base  | 12 | 12 | 8   | 2   | 384                  | 1536              | 192                   | 50M  | 113M |
 | Time-MoE-large | 12 | 12 | 8   | 2   | 768                  | 3072              | 384                   | 200M | 453M |
 | Time-MoE-ultra | 36 | 16 | 8   | 2   | 1024                 | 4096              | 512                   | 1.1B | 2.4B |
+
+表中：「模型」是三种规格，其余列是层数、头数、专家数、每 token 激活的专家数 $K$、模型维度
+$d\_{\\text{model}}$、前馈维度 $d\_{\\text{ff}}$、单专家维度
+$d\_{\\text{expert}}$、激活参数与总参数（M 为百万，B 为十亿）。
 
 论文称 ultra 版本可在不足 8GB 显存的消费级 GPU 上推理；base 与 large 面向 CPU 上的快速推理。
 
@@ -252,6 +280,10 @@ Table 3 最后一行（Average，6 个数据集在各步长上的平均，已对
 | Moment         | 0.461 | 0.454 |
 | Chronos-large  | 0.416 | 0.405 |
 
+表中：「模型」是对比方法，两列是零样本预测在 6 个数据集上的平均 MSE 与 MAE（越小越好）；TimesFM
+的数据集覆盖与其他模型不同。结论：Time-MoE-ultra 的 MSE
+最低，规模越大越好。
+
 TimesFM 因预训练用到 Weather 数据，论文未在该数据集评测（表中为破折号），所以它的平均值与其他模型的数据集覆盖不同。另外
 base 与 large 的平均 MSE 同为 0.336（论文如此，未解释）。论文结论：Time-MoE 的平均 MSE
 相对最有竞争力的基线下降超过 20%；与最大的
@@ -279,6 +311,9 @@ Table 4 Average 行：
 | PatchTST       | 0.349 | 0.382 |
 | DLinear        | 0.387 | 0.416 |
 
+表中：「模型」是对比方法，两列是全样本（微调后）预测的平均 MSE 与 MAE（越小越好）。结论：Time-MoE 各规格均优于对照模型，平均
+MSE 降低约 24%。
+
 论文称平均 MSE 降低 24%。
 
 ### 消融
@@ -293,6 +328,9 @@ Table 4 Average 行：
 | 去掉 MoE（换成标准 FFN）          | 0.272  |
 | 去掉辅助损失                    | 0.275  |
 
+表中：「配置」是消融设置，「平均 MSE」是 6 个基准上预测长度 96
+的平均误差（越小越好）。结论：每个组件都有贡献，去掉辅助损失的影响最大。
+
 多分辨率头的配置：
 
 | 配置          | 平均 MSE | 推理速度         |
@@ -301,6 +339,10 @@ Table 4 Average 行：
 | {1,8,32}    | 0.273  | 0.130 s/iter |
 | {1,8}       | 0.320  | 0.411 s/iter |
 | {1}         | 1.382  | 2.834 s/iter |
+
+表中：「配置」是启用的输出头步长，「平均
+MSE」是误差（越小越好），「推理速度」是每次迭代耗时（越小越快）。结论：保留更多步长的头既提高精度又加速推理；只保留步长
+1 的头最差最慢。
 
 论文称去掉辅助损失后专家层会塌缩成一个较小的 FFN，因为最强专家的激活分数变得过强。
 
@@ -346,6 +388,9 @@ token 数与模型规模上的 scaling law。
 | encoder-decoder    | Chronos                 | 四种规模，最大 710M 参数                     |
 | decoder-only       | TimesFM、Lag-Llama、Timer | 最大模型约 200M 参数                       |
 | decoder-only + MoE | Time-MoE                | 最大 2.4B 参数（1.1B 激活），稀疏 MoE          |
+
+表中：「类别」是已有大模型的架构类型，「代表」是典型模型，「论文描述」给出预训练数据与参数规模。结论：Time-MoE 是
+decoder-only + MoE，总参数最大（2.4B），但每个 token 只激活 1.1B。
 
 论文把 Moirai-MoE 称为同期工作，最大 935M 参数，专家与路由设计不同。关于
 Timer，论文只在动机里提到其对任意输出长度原生支持有限，并在附录中把它作为零样本基线对比（Timer
