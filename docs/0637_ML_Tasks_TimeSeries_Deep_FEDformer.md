@@ -2,7 +2,7 @@
 Title | ML Tasks TimeSeries Deep FEDformer
 -- | --
 Created @ | `2026-11-19T01:59:57Z`
-Updated @| `2026-11-19T06:20:49Z`
+Updated @| `2026-11-20T08:13:19Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/637)
 
@@ -29,6 +29,9 @@ FEDformer（Frequency Enhanced Decomposed Transformer，Zhou, Ma, Wen, Wang, Sun
 
 ## 整体结构
 
+
+下图概括 FEDformer 的编码器与解码器结构。
+
 ```
 Encoder (N 层)                          Decoder (M 层)
 Input X_en^0 (I×D)                      Seasonal Init X_de^0 ((I/2+O)×D)   Trend Init T_de^0
@@ -42,6 +45,12 @@ Input X_en^0 (I×D)                      Seasonal Init X_de^0 ((I/2+O)×D)   Tre
                                         输出 = W_S · X_de^M + T_de^M
 ```
 
+图中：
+
+- 左侧是编码器：每层先经 FEB 加残差再 MOEDecomp，再经前馈加残差与 MOEDecomp，最终只保留季节分量。
+- 右侧是解码器：每个子层后分解出季节项 $S$ 与趋势项 $T$；FEA 以解码器的 $S^{l,1}$ 为查询、编码器输出为键值；各次趋势累加为 $T^l$。
+- 最终输出为季节分量经 $W_S$ 投影与累积趋势之和。
+
 符号：$I$ 为输入长度，$O$ 为预测长度，$D$ 为隐维度。编码器输入是 $I\times D$，解码器输入是 $(I/2+O)\times D$（Figure 2 中的 Seasonal Init / Trend Init，具体初始化细节论文正文未展开 [待核实]）。
 
 编码器第 $l$ 层（Eq. 1）：
@@ -54,6 +63,9 @@ X_{en}^{l} &= S_{en}^{l,2}
 \end{aligned}
 $$
 
+
+其中：$X_{en}^{l-1}$ 是编码器第 $l$ 层输入；$\mathrm{FEB}$ 是频率增强块；$\mathrm{MOEDecomp}$ 是混合专家式分解（编码器只保留季节项）；$\mathrm{FeedForward}$ 是前馈网络；$S_{en}^{l,1},S_{en}^{l,2}$ 是两次分解后的季节项；$X_{en}^{l}$ 是该层输出。
+
 解码器第 $l$ 层（Eq. 2）：
 
 $$
@@ -65,6 +77,9 @@ X_{de}^{l} &= S_{de}^{l,3}\\
 T_{de}^{l} &= T_{de}^{l-1} + W_{l,1} \cdot T_{de}^{l,1} + W_{l,2} \cdot T_{de}^{l,2} + W_{l,3} \cdot T_{de}^{l,3}
 \end{aligned}
 $$
+
+
+其中：$X_{de}^{l-1}$ 是解码器上一层输出；$S_{de}^{l,i}$、$T_{de}^{l,i}$ 是第 $l$ 层第 $i$ 次分解的季节项与趋势项；$X_{en}^{N}$ 是编码器输出；$\mathrm{FEB}$、$\mathrm{FEA}$ 是频率增强块与频率增强注意力；$W_{l,i}$ 是趋势投影；$T_{de}^{l}$ 是累积趋势。
 
 最终预测 = $W_S \cdot X_{de}^{M} + T_{de}^{M}$，其中 $W_S$ 把季节分量投影到目标维度。
 
@@ -84,6 +99,9 @@ Y &= \tilde Q \odot R, \qquad Y_{m,d_o} = \sum_{d_i} \tilde Q_{m,d_i}\, R_{d_i,d
 \end{aligned}
 $$
 
+
+其中：$x\in\mathbb R^{N\times D}$ 是输入（$N$ 个时间步、$D$ 维）；$w$ 是线性投影；$\mathcal F$ 是离散傅里叶变换，$\mathrm{Select}$ 保留随机选出的 $M$ 个频率模式；$R$ 是可学习复数核，对每个模式做通道混合；$\odot$ 表示逐频率的混合运算；$\mathrm{Padding}$ 补零后做逆变换 $\mathcal F^{-1}$ 回到时域。
+
 $R\in\mathbb{C}^{D\times D\times M}$ 是随机初始化的可学习核：**每个保留的频率模式 $m$ 有自己的 $D\times D$ 复数矩阵**，做通道混合。可以把它理解成"只在 $M$ 个频率上做的、逐频率不同的全连接"，类似 Fourier Neural Operator 里的谱卷积 [解读]（论文在相关工作中提到 FNO，但没有这样直接类比）。
 
 ## Frequency Enhanced Attention：FEA-f
@@ -96,6 +114,9 @@ $$
 &\text{FEA-f}(q,k,v) = \mathcal{F}^{-1}\Big(\mathrm{Padding}\big(\sigma(\tilde Q \tilde K^\top)\, \tilde V\big)\Big)
 \end{aligned}
 $$
+
+
+其中：$q$ 来自解码器，$k,v$ 来自编码器；$\mathcal F$ 是傅里叶变换，$\mathrm{Select}$ 在频域保留 $M$ 个模式；$\tilde Q,\tilde K,\tilde V\in\mathbb C^{M\times D}$ 是保留模式后的系数；$\sigma$ 是 softmax 或 tanh；$\tilde Q\tilde K^\top$ 是 $M\times M$ 注意力矩阵；$\mathrm{Padding}$ 补零后做逆变换 $\mathcal F^{-1}$ 回到时域。
 
 $\sigma$ 用 softmax 或 tanh（论文说两者在不同数据集上收敛表现不同；附录 F.4 称默认 tanh，并观察到 softmax 的注意力图更稀疏）。注意 $\tilde Q\tilde K^\top$ 是 **$M\times M$** 矩阵，它的大小只取决于保留的模式数 $M$，与序列长度无关——论文结论里称"频域增强结构把输入序列长度与注意力矩阵维度解耦"。
 
@@ -121,6 +142,8 @@ LogTrans | $O(L\log L)$ | $O(L^2)$ | 1
 Reformer | $O(L\log L)$ | $O(L\log L)$ | $L$
 LSTM | $O(L)$ | $O(L)$ | $L$
 
+表中：「模型」是对比方法，「训练时间」「训练显存」是对序列长度 $L$ 的复杂度量级，「测试步数」是推理所需解码步数。结论：FEDformer 的时间与显存为 $O(L)$，测试只需 1 步。
+
 小波版 FEDformer-w：递归分解步数固定为 $L$（默认 3，论文用同一个字母 $L$ 表示序列长度和分解步数，注意区分）、模式数固定同 -f 时，论文称复杂度同样是 $O(L)$。
 
 自拟示意算术（非论文数字，已手算）：设 $L=720$、$M=64$，则标准注意力矩阵有 $720^2 = 518400$ 个元素，而 FEA 的 $\tilde Q\tilde K^\top$ 有 $64^2 = 4096$ 个元素，约为 $518400/4096 \approx 126.6$ 倍之差。又设 $D=16$，则一个 FEB 的核 $R$ 有 $16\times 16\times 64 = 16384$ 个复数权重。再注意：当输入长度 $I=96$（论文主实验设置）时，$M=64$ 并不"远小于"序列长度，实序列 DFT 本身只有约一半独立频率 [解读]，因此在该设置下线性复杂度的实际收益有限；论文没有给出运行时间对比表 [待核实]。
@@ -139,6 +162,9 @@ LSTM | $O(L)$ | $O(L)$ | $L$
 $$
 \lVert A - P_{A'}(A) \rVert \le (1+\epsilon)\, \lVert A - A_k \rVert, \qquad s = O(k^2/\epsilon^2)
 $$
+
+
+其中：$A$ 是傅里叶系数矩阵；$A'$ 是随机选出 $s$ 列后的子矩阵，$P_{A'}(A)$ 是 $A$ 在 $A'$ 列空间上的投影；$A_k$ 是 $A$ 的秩 $k$ 最优近似；$\lVert\cdot\rVert$ 是矩阵范数；$\epsilon$ 是误差容忍度；$s$ 是选取的列数，$k$ 是 $A$ 的有效秩。
 
 （符号说明：论文把 $A$ 的行数写作 $m$、列数写作 $d$，定理中的 $n$ 指矩阵维度，论文未再逐一定义，证明细节见原文附录 C。）
 
@@ -172,6 +198,9 @@ $$
 X_{\text{trend}} = \mathrm{Softmax}(L(x)) \ast F(x) \qquad \text{(Eq. 10)}
 $$
 
+
+其中：$x$ 是输入序列；$F(x)$ 是一组不同窗口大小的平均池化滤波器（专家）输出的趋势；$L(x)$ 是线性层，给出数据相关的混合权重；$\mathrm{Softmax}$ 归一化权重；$\ast$ 表示加权混合；$X_{\text{trend}}$ 是提取的趋势项。
+
 $F(\cdot)$ 是一组窗口大小不同的平均池化滤波器（"专家"），$L(x)$ 是线性层，给出数据相关的混合权重。季节分量取 $x - X_{\text{trend}}$（这一减法论文正文未明确写出，由"分解"含义推出 [解读]）。
 
 自拟示意（非论文数字，已手算）：设两个专家得到的趋势分别为 $t_1$、$t_2$，权重 logits 为 $[0,\ \ln 3]$，则 softmax 权重为 $[1/(1+3),\ 3/(1+3)] = [0.25,\ 0.75]$，趋势为 $0.25\, t_1 + 0.75\, t_2$。
@@ -201,6 +230,8 @@ Traffic | 96 / 720 | 0.587 / 0.626 | 0.562 / 0.596 | 0.613 / 0.660
 Weather | 96 / 720 | 0.217 / 0.403 | 0.227 / 0.424 | 0.266 / 0.419
 ILI | 24 / 60 | 3.228 / 2.857 | 2.203 / 2.545 | 3.483 / 2.770
 
+表中：「数据集」是评测集，「预测长度」给出最短 / 最长预测长度，其余三列是各模型对应的 MSE（越小越好；斜线前后分别对应最短、最长预测长度）。结论：FEDformer 两个版本总体优于 Autoformer，且两者各有胜负。
+
 论文结论：FEDformer 在六个数据集所有预测长度上最优（每个格子取 -f 与 -w 中较好者），相对 Autoformer 平均 MSE 降低 14.8%，Exchange 和 ILI 上超过 20%；Exchange 没有明显周期性，FEDformer 仍有效。**注意版本**：上表 ILI 60 一列 FEDformer-f（2.857）反而比 Autoformer（2.770）差，ETTm2 的 720 列 -f 与 Autoformer 几乎持平，说明"全面优于"依赖于取 -f/-w 两者之一。
 
 **单变量结果**（Table 3）：论文称相对 Autoformer 平均 MSE 降低 22.6%，Traffic、Weather 上超过 30%。同样 -f 与 -w 在不同数据集上各有胜负，论文称二者互补。预测长度 96 的 MSE：Traffic 上 -f 0.207、-w 0.170、Autoformer 0.246；ETTm2 上 -f 0.072、-w 0.063、Autoformer 0.065——这里 -f 比 Autoformer 差，-w 更好。单变量表里也并非每格 FEDformer 都最好（例如 Weather 上 Informer 的若干数值更小）。
@@ -221,6 +252,8 @@ ILI | 24 / 60 | 3.228 / 2.857 | 2.203 / 2.545 | 3.483 / 2.770
 序列分解 | 论文 Section 3.4 称此前做法是固定窗口平均池化提趋势 | MOEDecomp，多窗口平均池化 + 数据相关权重（Section 3.4）
 复杂度（论文 Table 1） | $O(L\log L)$ | $O(L)$
 变体 | 单一 | -f、-w 两个版本
+
+表中：「项目」是对比维度，后两列是 Autoformer 与 FEDformer 在该维度的做法。结论：FEDformer 用频域模式与 MOE 分解取代自相关与固定窗口分解，复杂度降为 $O(L)$，并有 -f、-w 两个版本。
 
 ## 优缺点
 
@@ -257,4 +290,5 @@ def feb_f(x, w, R, idx):
 
 - Tian Zhou, Ziqing Ma, Qingsong Wen, Xue Wang, Liang Sun, Rong Jin. *FEDformer: Frequency Enhanced Decomposed Transformer for Long-term Series Forecasting*. ICML 2022. https://arxiv.org/abs/2201.12740
 - 官方代码：https://github.com/MAZiqing/FEDformer（见论文摘要）
+
 
