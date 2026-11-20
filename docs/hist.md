@@ -4,6 +4,7 @@
 
 #### **Created**
 
+- 2026-11-20&nbsp;&nbsp; [量化发展历史](/0688_MO_Quantization_History)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:History
 - 2026-11-20&nbsp;&nbsp; [MambaSingleLayer](/0687_ML_Tasks_TimeSeries_Deep_MambaSingleLayer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:MambaSingleLayer
 - 2026-11-20&nbsp;&nbsp; [MultiPatchFormer](/0686_ML_Tasks_TimeSeries_Deep_MultiPatchFormer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:MultiPatchFormer
 - 2026-11-20&nbsp;&nbsp; [Crossformer](/0685_ML_Tasks_TimeSeries_Deep_Crossformer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:Crossformer
@@ -423,7 +424,7 @@
 - 2021-04-25&nbsp;&nbsp; [Distilling the Knowledge in a Neural Network](/0208_MO_KD_s)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:s
 - 2021-04-13&nbsp;&nbsp; [Pytorch Tips](/0170_Tools_Pytorch_Tips)&nbsp;&nbsp; :bookmark:Tools :bookmark:Pytorch :bookmark:Tips
 - 2021-04-13&nbsp;&nbsp; [Traditional Image Segmentation 传统图像分割](/0158_CV_TIS)&nbsp;&nbsp; :bookmark:CV :bookmark:TIS
-- 2021-04-12&nbsp;&nbsp; [KD History](/0336_MO_KD_History)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:History
+- 2021-04-12&nbsp;&nbsp; [知识蒸馏发展历史](/0336_MO_KD_History)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:History
 - 2021-04-12&nbsp;&nbsp; [知识蒸馏](/0207_MO_KD)&nbsp;&nbsp; :bookmark:MO :bookmark:KD
 - 2021-04-06&nbsp;&nbsp; [GD 原理推导](/0151_ML_Arch_GD_原理)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:GD :bookmark:原理
 - 2021-04-06&nbsp;&nbsp; [梯度下降及其优化器的发展时间线](/0149_ML_Arch_GD_History)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:GD :bookmark:History
@@ -659,6 +660,7 @@
 
 #### **Updated**
 
+- 2026-11-20&nbsp;&nbsp; [量化发展历史](/0688_MO_Quantization_History)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:History
 - 2026-11-20&nbsp;&nbsp; [MambaSingleLayer](/0687_ML_Tasks_TimeSeries_Deep_MambaSingleLayer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:MambaSingleLayer
 - 2026-11-20&nbsp;&nbsp; [MultiPatchFormer](/0686_ML_Tasks_TimeSeries_Deep_MultiPatchFormer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:MultiPatchFormer
 - 2026-11-20&nbsp;&nbsp; [Crossformer](/0685_ML_Tasks_TimeSeries_Deep_Crossformer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:Crossformer
@@ -718,6 +720,7 @@
 - 2026-11-20&nbsp;&nbsp; [N-HiTS](/0629_ML_Tasks_TimeSeries_Deep_NHiTS)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:NHiTS
 - 2026-11-20&nbsp;&nbsp; [N-BEATS](/0628_ML_Tasks_TimeSeries_Deep_NBEATS)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:NBEATS
 - 2026-11-20&nbsp;&nbsp; [ROCKET](/0627_ML_Tasks_TimeSeries_ML_ROCKET)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:ML :bookmark:ROCKET
+- 2026-11-20&nbsp;&nbsp; [知识蒸馏发展历史](/0336_MO_KD_History)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:History
 - 2026-11-19&nbsp;&nbsp; [Needle](/0665_x_needle)&nbsp;&nbsp; :bookmark:x :bookmark:needle
 - 2026-11-19&nbsp;&nbsp; [Transformer History](/0664_ML_Transformer_History)&nbsp;&nbsp; :bookmark:ML :bookmark:Transformer :bookmark:History
 - 2026-11-19&nbsp;&nbsp; [TCN](/0626_ML_Tasks_TimeSeries_Deep_TCN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:TCN
@@ -911,7 +914,6 @@
 - 2026-10-19&nbsp;&nbsp; [Structure Tensor 结构张量](/0070_CV_StructureTensor)&nbsp;&nbsp; :bookmark:CV :bookmark:StructureTensor
 - 2026-10-19&nbsp;&nbsp; [边缘](/0065_CV_Edge)&nbsp;&nbsp; :bookmark:CV :bookmark:Edge
 - 2026-10-18&nbsp;&nbsp; [模型性能优化技术](/0471_MO)&nbsp;&nbsp; :bookmark:MO
-- 2026-10-18&nbsp;&nbsp; [KD History](/0336_MO_KD_History)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:History
 - 2026-10-18&nbsp;&nbsp; [量化](/0312_MO_Quantization)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization
 - 2026-10-18&nbsp;&nbsp; [知识蒸馏](/0207_MO_KD)&nbsp;&nbsp; :bookmark:MO :bookmark:KD
 - 2026-10-16&nbsp;&nbsp; [模型可解释性前沿状态](/0558_Hot_Interpretability)&nbsp;&nbsp; :bookmark:Hot :bookmark:Interpretability

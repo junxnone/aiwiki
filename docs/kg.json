@@ -2253,7 +2253,7 @@
     {
       "id": "aiwiki MO KD History",
       "group": 3,
-      "title": "KD History",
+      "title": "知识蒸馏发展历史",
       "url": "https://junxnone.github.io/aiwiki/#/0336_MO_KD_History",
       "visible": true,
       "expand": true,
@@ -3101,6 +3101,15 @@
       "group": 3,
       "title": "Transformer History",
       "url": "https://junxnone.github.io/aiwiki/#/0664_ML_Transformer_History",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki MO Quantization History",
+      "group": 3,
+      "title": "量化发展历史",
+      "url": "https://junxnone.github.io/aiwiki/#/0688_MO_Quantization_History",
       "visible": true,
       "expand": true,
       "childLinks": []
@@ -7611,6 +7620,13 @@
     {
       "source": "aiwiki Tools Darknet",
       "target": "aiwiki Tools Darknet cfgFiles",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki MO Quantization",
+      "target": "aiwiki MO Quantization History",
       "value": 3,
       "visible": true,
       "expand": true

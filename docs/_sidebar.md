@@ -496,9 +496,10 @@
   - [大模型分布图](/0498_LM_map)
 - [模型性能优化技术](/0471_MO)
   - [知识蒸馏](/0207_MO_KD)
-    - [KD History](/0336_MO_KD_History)
+    - [知识蒸馏发展历史](/0336_MO_KD_History)
     - [Distilling the Knowledge in a Neural Network](/0208_MO_KD_s)
   - [量化](/0312_MO_Quantization)
+    - [量化发展历史](/0688_MO_Quantization_History)
 - [RL 强化学习](/0290_RL)
   - [Advantage Actor Critic](/0460_RL_A2C)
   - [Actor Critic](/0459_RL_AC)
@@ -659,4 +660,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1728061120</sub></kbd>
+<kbd><sub>@1745171120</sub></kbd>
