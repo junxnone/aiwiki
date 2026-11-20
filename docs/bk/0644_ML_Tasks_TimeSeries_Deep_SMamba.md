@@ -3,7 +3,7 @@
 | Title     | ML Tasks TimeSeries Deep SMamba                       |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-19T02:27:26Z`                                |
-| Updated @ | `2026-11-19T06:20:24Z`                                |
+| Updated @ | `2026-11-20T08:15:56Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/644) |
 
@@ -61,6 +61,8 @@ $T$ 为预测步长。
 
 S-Mamba 由四层组成：
 
+下图概括 S-Mamba 的四层结构。
+
     输入 [B, L, V]
       │ 转置 → [B, V, L]
       ▼
@@ -76,6 +78,15 @@ S-Mamba 由四层组成：
       ▼
     Projection（线性 D → T）→ 转置 → [B, T, V]
 
+图中：
+
+  - 自上而下：输入 $\[B,L,V\]$ 转置后经 Linear Tokenization 得到每个变量一个
+    token（$\[B,V,D\]$）。
+  - 中间框是重复 $N$ 层的编码：先是 Mamba VC 编码层（正向与反向两个 Mamba block 相加并加残差），再是 FFN
+    TD 编码层（LayerNorm → Feed-Forward → LayerNorm）。
+  - 最后 Projection（线性 $D\\to T$）并转置，输出 $\[B,T,V\]$。关键结论：变量间相关由双向 Mamba
+    处理，时间依赖由 FFN 处理。
+
 其中 $B$ 为 batch 大小，$D$ 为隐藏维度，$N$ 为堆叠层数（论文 Algorithm 2 中的 Mamba Layers）。这与
 iTransformer 的骨架几乎一致，唯一的结构差异是 VC 编码层。
 
@@ -85,6 +96,10 @@ iTransformer 的骨架几乎一致，唯一的结构差异是 VC 编码层。
 
 $$U=\\mathrm{Linear}\\big(U\_{in}^{\\top}\\big)\\in\\mathbb R^{B\\times
 V\\times D}$$
+
+其中：$U\_{in}^{\\top}$ 是转置后的输入（每个变量一行，长度 $L$）；$\\mathrm{Linear}$ 把每个变量的
+$L$ 步历史映射为 $D$ 维 token；$U\\in\\mathbb R^{B\\times V\\times D}$ 是所有变量
+token，$B$ 是 batch，$V$ 是变量数。
 
 这样"序列长度"变成了变量数 $V$，后面 Mamba 扫描的是**变量序列**而不是时间序列。论文明确说这一步"与 iTransformer
 类似"。
@@ -99,6 +114,11 @@ $$\\overrightarrow Y=\\overrightarrow{\\mathrm{MambaBlock}}(U),\\qquad
 
 $$Y=\\overrightarrow Y+\\overleftarrow Y,\\qquad U'=Y+U$$
 
+其中：$U$ 是变量 token 序列；$\\overrightarrow{\\mathrm{MambaBlock}}$ 与
+$\\overleftarrow{\\mathrm{MambaBlock}}$ 是沿变量维正向与反向扫描的 Mamba
+block；$\\overrightarrow Y,\\overleftarrow Y$ 是两个方向的输出；$Y$ 是二者之和；$U'$
+是加上残差 $U$ 后的输出。
+
 论文用箭头区分两个方向的 block，图 3 中标为 "Mamba" 与 "Mamba (reversed)"。\[解读\] 反向 block
 即沿变量维度反向扫描，下文示意代码用翻转变量维度来实现，论文正文没有给出实现细节。
 
@@ -110,7 +130,15 @@ ED\\text{）}\\ x' &= \\mathrm{SiLU}\\big(\\mathrm{Conv1D}(x)\\big)\\ B,,C
 \\mathrm{Softplus}\\big(\\mathrm{Parameter}+\\mathrm{Broadcast}(\\mathrm{Linear}(x'))\\big)\\
 \\bar A,,\\bar B &= \\mathrm{discretize}(\\Delta,A,B)\\ y &=
 \\mathrm{SelectiveSSM}(\\bar A,\\bar B,C)(x')\\ y' &=
-y\\otimes\\mathrm{SiLU}(z)\\ O &= \\mathrm{Linear}(y') \\end{aligned} $$
+y\\otimes\\mathrm{SiLU}(z)\\ O &= \\mathrm{Linear}(y') \\end{aligned}
+
+其中：$X$ 是输入，$O$ 是输出；$x,z$ 是线性层把维度扩张到 $ED$（$E$
+为扩张因子）后的两路；$\\mathrm{Conv1D}$
+是一维卷积，$\\mathrm{SiLU}$ 是激活；$B,C$ 与 $\\Delta$
+是由输入产生的参数；$\\mathrm{discretize}$
+把连续参数离散化；$\\mathrm{SelectiveSSM}$
+是选择性状态空间扫描；$\\otimes$ 是逐元素乘，$\\mathrm{SiLU}(z)$
+作为门控。 $$
 
 其中离散化与递推（论文 Eq. 2）为：
 
@@ -118,6 +146,9 @@ $$h\_t=\\bar A h\_{t-1}+\\bar B x\_t,\\qquad y\_t=C h\_t$$
 
 $$\\bar A=\\exp(\\Delta A),\\qquad \\bar B=(\\Delta
 A)^{-1}\\big(\\exp(\\Delta A)-I\\big)\\cdot\\Delta B$$
+
+其中：$h\_t$ 是第 $t$ 步隐状态；$x\_t$ 是输入；$y\_t$ 是输出；$\\Delta$ 是离散化步长；$A,B,C$ 是
+SSM 参数；$I$ 是单位矩阵；$\\bar A,\\bar B$ 是离散化后的系数；$\\exp$ 是矩阵指数。
 
 论文给出 Mamba block 的三个超参：SSM 状态扩张因子 $N$（与上文层数 $N$ 重名，论文如此）、卷积核大小 $k$、块扩张因子
 $E$；$N$ 和 $E$ 越大，计算开销越高。
@@ -170,6 +201,8 @@ $D=512$（$D$ 仅为假设，论文正文未给出）：
 | ETT | ETTm1、ETTm2、ETTh1、ETTh2（7 个变量）                             | 变量少，规律性弱                                            |
 | 其他  | Electricity（321）、Exchange（8）、Weather（21）、Solar-Energy（137） | Electricity、Solar 变量多且多周期；Exchange、Weather 变量少且多非周期 |
 
+表中：「类别」是数据集分类，「数据集」列出各数据集及变量数，「特点（论文描述）」说明其周期性与变量数特征。
+
 9
 个基线：iTransformer、PatchTST、Crossformer、FEDformer、Autoformer、RLinear、TiDE、DLinear、TimesNet。
 
@@ -193,6 +226,10 @@ S-Mamba、iTransformer，以及该数据集上论文表中比两者更好的基�
 | Exchange     | 0.367 / 0.408 | 0.360 / 0.403 | DLinear MSE 0.354                            |
 | Weather      | 0.251 / 0.276 | 0.258 / 0.278 | 无                                            |
 | Solar-Energy | 0.240 / 0.273 | 0.233 / 0.262 | iTransformer 更优                              |
+
+表中：「数据集」是评测集，「S-Mamba」「iTransformer」是平均 MSE /
+MAE（越小越好），「论文表中更优的基线」列出表中比两者更好的方法。结论：S-Mamba
+在变量多且周期性强的数据集上较好，ETT、Exchange 与 PEMS03、Solar-Energy 上不占优。
 
 论文自己的归纳：
 
@@ -220,6 +257,9 @@ iTransformer（0.233 / 0.262）优于 S-Mamba（0.240 / 0.273）。PEMS03 同样
 | Traffic        | 2.91    | 4.66         | 3.67     | 5.4         | 0.88      | 0.94       | 0.06    |
 | ETTm1          | 0.05    | 0.04         | 0.05     | 0.35        | 0.6       | 0.37       | 0.02    |
 
+表中：「数据集」是评测设置，其余各列是各方法的显存（图中标注，单位为 GB；PEMS07 的 $T=12$ 为预测长度）。结论：变量多的数据集上
+S-Mamba 显存低于 iTransformer，变量少时略高。
+
 训练时间的具体数值在图上无法逐点读准，这里不写数值。论文结论是：S-Mamba 在 PEMS07、Electricity、Traffic
 上取得最好的 MSE，相对 Transformer 类模型通常训练时间短、显存低；RLinear
 显存和时间最少但精度不具竞争力。
@@ -243,6 +283,9 @@ iTransformer、PatchTST、Crossformer，在变量多的数据上成立。
 | Attention + FFN         | 0.148       | 0.395   | 0.174   | 0.203        | 0.297 |
 | bi-Mamba + 无 TD         | 0.141       | 0.380   | 0.167   | 0.210        | 0.298 |
 | 无 VC + FFN              | 0.169       | 0.437   | 0.183   | 0.228        | 0.299 |
+
+表中：「设计（VC 编码 + TD 编码）」是消融设置（VC 为变量间相关编码层，TD 为时间依赖编码层），其余列是各数据集预测长度 96 的
+MSE（越小越好）。结论：S-Mamba（bi-Mamba + FFN）整体最好，去掉 VC 层变化最大。
 
 预测长度 720 时，Electricity / Traffic 的 MSE 依次为：S-Mamba 0.204 / 0.460；TD 换
 uni-Mamba 0.210 / 0.621；TD 换 bi-Mamba 0.216 / 0.661；TD 换 Attention 0.213
@@ -278,6 +321,9 @@ iTransformer（回看 96、预测 96）：
 | 原始顺序      | 0.139 / 0.235      | 0.148 / 0.240           |
 | 非周期变量移到末尾 | 0.140 / 0.237      | 0.147 / 0.239           |
 | 非周期变量移到中部 | 0.139 / 0.235      | 0.148 / 0.239           |
+
+表中：「设置」是变量顺序的三种安排，后两列是 S-Mamba 与 iTransformer 在 Electricity 上的 MSE /
+MAE（越小越好）。结论：两个模型都基本不受变量顺序影响。
 
 论文结论是 S-Mamba 基本不受变量顺序影响，训练足够后能缓解 HiPPO 的初始偏置。只在 Electricity
 上做了该实验，论文称是因为只有它同时有大量周期与非周期变量。
@@ -331,6 +377,10 @@ PEMS03、PEMS04、Electricity、Weather、Traffic、Solar 上做了该实验，�
 | S-Mamba           | 双向 Mamba（变量 token 之间） | FFN                   | 近线性于 $V$      | 只换了 VC 编码器    |
 | PatchTST          | 论文称其通道独立（共享嵌入与权重）     | patch 化后的 Transformer | 不涉及           | 论文基线          |
 | DLinear / RLinear | 通道独立                  | 线性层                   | 线性            | 论文基线          |
+
+表中：「方法」是对比对象，「变量间交互」「时间依赖」说明其分别用什么处理变量相关与时间依赖，「对变量数 $V$
+的复杂度」是渐进复杂度，「说明」给出补充。结论：S-Mamba 只把
+iTransformer 的变量间注意力换成双向 Mamba，复杂度近线性。
 
 其中 iTransformer 与 S-Mamba 的差别最清晰：论文表 5 的 "Attention + FFN" 行就是
 iTransformer 的结构，S-Mamba 即把 Attention 换成 bi-Mamba。论文相关工作还提到另一个 Mamba
