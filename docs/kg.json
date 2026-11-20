@@ -5581,6 +5581,15 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki ML Tasks TimeSeries Deep TiDE",
+      "group": 5,
+      "title": "TiDE",
+      "url": "https://junxnone.github.io/aiwiki/#/0671_ML_Tasks_TimeSeries_Deep_TiDE",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Tasks Image Classification MobileNet V1",
       "group": 6,
       "title": "MobileNet V1",
@@ -9887,6 +9896,13 @@
     {
       "source": "aiwiki ML Tasks TimeSeries Deep",
       "target": "aiwiki ML Tasks TimeSeries Deep Reformer",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks TimeSeries Deep",
+      "target": "aiwiki ML Tasks TimeSeries Deep TiDE",
       "value": 5,
       "visible": true,
       "expand": true
