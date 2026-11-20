@@ -4,6 +4,7 @@
 
 #### **Created**
 
+- 2026-11-20&nbsp;&nbsp; [Koopa](/0672_ML_Tasks_TimeSeries_Deep_Koopa)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:Koopa
 - 2026-11-20&nbsp;&nbsp; [TiDE](/0671_ML_Tasks_TimeSeries_Deep_TiDE)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:TiDE
 - 2026-11-20&nbsp;&nbsp; [Reformer](/0670_ML_Tasks_TimeSeries_Deep_Reformer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:Reformer
 - 2026-11-20&nbsp;&nbsp; [Non-stationary Transformers](/0669_ML_Tasks_TimeSeries_Deep_NonstationaryTransformer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:NonstationaryTransformer
@@ -643,6 +644,7 @@
 
 #### **Updated**
 
+- 2026-11-20&nbsp;&nbsp; [Koopa](/0672_ML_Tasks_TimeSeries_Deep_Koopa)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:Koopa
 - 2026-11-20&nbsp;&nbsp; [TiDE](/0671_ML_Tasks_TimeSeries_Deep_TiDE)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:TiDE
 - 2026-11-20&nbsp;&nbsp; [Reformer](/0670_ML_Tasks_TimeSeries_Deep_Reformer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:Reformer
 - 2026-11-20&nbsp;&nbsp; [Non-stationary Transformers](/0669_ML_Tasks_TimeSeries_Deep_NonstationaryTransformer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:NonstationaryTransformer

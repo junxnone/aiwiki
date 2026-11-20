@@ -5590,6 +5590,15 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki ML Tasks TimeSeries Deep Koopa",
+      "group": 5,
+      "title": "Koopa",
+      "url": "https://junxnone.github.io/aiwiki/#/0672_ML_Tasks_TimeSeries_Deep_Koopa",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Tasks Image Classification MobileNet V1",
       "group": 6,
       "title": "MobileNet V1",
@@ -9903,6 +9912,13 @@
     {
       "source": "aiwiki ML Tasks TimeSeries Deep",
       "target": "aiwiki ML Tasks TimeSeries Deep TiDE",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks TimeSeries Deep",
+      "target": "aiwiki ML Tasks TimeSeries Deep Koopa",
       "value": 5,
       "visible": true,
       "expand": true

@@ -287,6 +287,7 @@
         - [ETSformer](/0668_ML_Tasks_TimeSeries_Deep_ETSformer)
         - [FEDformer](/0637_ML_Tasks_TimeSeries_Deep_FEDformer)
         - [Informer](/0635_ML_Tasks_TimeSeries_Deep_Informer)
+        - [Koopa](/0672_ML_Tasks_TimeSeries_Deep_Koopa)
         - [LightTS](/0667_ML_Tasks_TimeSeries_Deep_LightTS)
         - [Mamba](/0643_ML_Tasks_TimeSeries_Deep_Mamba)
         - [N-BEATS](/0628_ML_Tasks_TimeSeries_Deep_NBEATS)
@@ -643,4 +644,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1704061120</sub></kbd>
+<kbd><sub>@1705321120</sub></kbd>
