@@ -3,7 +3,7 @@
 | Title     | ML Tasks TimeSeries Deep iTransformer                 |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-19T02:00:02Z`                                |
-| Updated @ | `2026-11-19T06:20:42Z`                                |
+| Updated @ | `2026-11-20T08:14:06Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/639) |
 
@@ -62,12 +62,20 @@ R^T\\to\\mathbb R^D,\\ \\text{MLP})\\
 H^{l+1}&=\\mathrm{TrmBlock}(H^{l}),\\quad l=0,\\dots,L-1
 &&(H\\in\\mathbb R^{N\\times D},\\ N\\text{ 个变量 token})\\ \\hat
 Y\_{:,n}&=\\mathrm{Projection}(h\_n^{L}) &&(\\mathbb R^D\\to\\mathbb
-R^S,\\ \\text{MLP}) \\end{aligned} $$
+R^S,\\ \\text{MLP}) \\end{aligned}
+
+其中：$X\_{:,n}$ 是第 $n$ 个变量的整条序列；$h^l\_n$ 是第 $l$ 层第 $n$ 个变量
+token，$H^l\\in\\mathbb R^{N\\times D}$ 是所有变量
+token；$\\mathrm{Embedding}$ 与 $\\mathrm{Projection}$ 是 MLP，分别把 $T$
+维映射到 $D$ 维、把 $D$ 维映射到 $S$ 维；$\\mathrm{TrmBlock}$ 是 Transformer
+块；$L$ 是层数；$\\hat Y\_{:,n}$ 是第 $n$ 个变量的预测。 $$
 
 论文附录 Algorithm 1 的写法等价：先把 $X$ 转置成 $N\\times T$，用 MLP 作用在最后一维得到
 $H^0\\in\\mathbb R^{N\\times D}$；每个 block 内依次做
 $H=\\mathrm{LayerNorm}(H+\\mathrm{SelfAttn}(H))$、$H=\\mathrm{LayerNorm}(H+\\mathrm{FFN}(H))$；最后
 MLP 投影得到 $N\\times S$ 再转置回 $S\\times N$。
+
+下图概括 iTransformer 的 encoder-only 流程。
 
 ``` 
  原始序列 X (T×N)
@@ -90,6 +98,15 @@ MLP 投影得到 $N\\times S$ 再转置回 $S\\times N$。
  预测 Ŷ (S×N)
 ```
 
+图中：
+
+  - 自上而下：原始序列 $X$（$T\\times N$）转置后得到 $N$ 个变量，每个长度
+    $T$；Embedding（MLP，$T\\to D$）把每个变量变成一个 token。
+  - 中间框是 $L$ 个 TrmBlock：自注意力在变量 token 之间（$N\\times N$ 注意力图），后接 Add &
+    LayerNorm；FFN 对每个 token 共享权重，后接 Add & LayerNorm。
+  - 最后 Projection（MLP，$D\\to S$）输出预测 $\\hat Y$（$S\\times
+    N$）。关键结论：注意力管变量间相关，FFN 管单个变量的序列表示。
+
 ### 三个组件各自的"职责"被重新定位
 
 论文的核心论述是：Transformer 的三个组件在倒置后职责更清晰。
@@ -108,6 +125,10 @@ Figure 7 与附录 Figure 11，属定性展示）。
 $$
 \\mathrm{LayerNorm}(H)=\\frac{h\_n-\\mathrm{Mean}(h\_n)}{\\sqrt{\\mathrm{Var}(h\_n)}},\\quad
 n=1,\\dots,N \\tag{2} $$
+
+其中：$H$ 是变量 token 矩阵；$h\_n$ 是第 $n$ 个变量的 token；$\\mathrm{Mean}(h\_n)$ 与
+$\\mathrm{Var}(h\_n)$ 是该 token 在特征维上的均值与方差；$N$
+是变量数；该式对每个变量单独归一化，使各变量处于近似相同的分布。
 
 （式 2，即论文 Eq.2。）
 
@@ -145,6 +166,10 @@ FFN 神经元的排列里。
 | FFN 作用对象               | 每个时间步的 512 维向量                                          | 每个变量的 512 维序列表示                                                  |
 | LayerNorm 在哪个轴         | 每个时间步的特征向量（混合了各变量）                                      | 每个变量的特征向量                                                        |
 | 输出头                    | （需由 decoder 或线性头生成 $S$ 步）                               | `Linear(512→192)`：`[32,321,512]→[32,321,192]`，转置为 `[32,192,321]` |
+
+表中：「步骤」是处理环节，其余两列分别是普通 Transformer 与 iTransformer 在该环节的做法与张量形状（$B$ 为
+batch，$T$ 为回看长度，$N$ 为变量数，$D$ 为隐维，$S$ 为预测长度）。结论：倒置后 token 数由 $T$ 变为
+$N$，embedding 权重与 $N$ 无关，注意力图在变量多时更大。
 
 自行重算核对：$96\\times96 = 9216$，$321\\times321 = 103041$，注意力图元素数之比
 $103041/9216 \\approx 11.18$；也就是说**变量多时倒置后的注意力图更大**。当 $N$ 很小（如 $N=7$ 的
@@ -210,6 +235,10 @@ token 共享权重，模型可以在任意数量的变量上训练、再预测�
 | Exchange     | 0.360 / 0.403          | MAE 最优；MSE 次优（DLinear 0.354）                       |
 | ETT (Avg)    | 0.383 / 0.399          | 不是最优：RLinear 0.380 / 0.392，PatchTST 0.381 / 0.397  |
 
+表中：「数据集」是评测集，「iTransformer MSE /
+MAE」是各预测长度平均误差（越小越好），「说明」比较其与基线的名次。结论：在变量多的数据集上最优，ETT
+上并非最优。
+
 论文自己的描述是：iTransformer 尤其擅长高维时间序列预测；PatchTST 在 PEMS 上多处表现不好，论文推测是 PEMS
 序列剧烈波动，patch 可能难以关注局部；Crossformer 显式建模变量相关却仍不及
 iTransformer，论文认为是时间未对齐的 patch 之间的交互引入了噪声。此外论文还给出了蚂蚁集团
@@ -229,6 +258,9 @@ FlashAttention 的 Transformer）上，报告 MSE 的相对降低（Promotion）
 | Informer    | 0.311 → 0.216 | 0.764 → 0.662 | 0.634 → 0.271 | 28.5%     |
 | Flowformer  | 0.267 → 0.210 | 0.750 → 0.524 | 0.286 → 0.266 | 16.8%     |
 | Flashformer | 0.285 → 0.206 | 0.658 → 0.492 | 0.659 → 0.262 | 32.2%     |
+
+表中：「模型」是被套用倒置框架的 Transformer 变体，「ECL / Traffic / Weather」列给出原模型到倒置后的
+MSE（越小越好），「论文给出的平均提升」是 MSE 的相对降低。结论：倒置对各类 Transformer 均有显著提升。
 
 论文由此认为，倒置能一致地提升多种 Transformer，并且能搭配各类高效注意力。注意：这里"提升"是相对于**原 Transformer
 在其 Table 2 设置下**的结果，不是与 PatchTST 之类的强基线相比。
@@ -260,6 +292,10 @@ ECL 和 Traffic 上随回看增长误差总体下降（从图上读，ECL 的 iT
 | FFN        | FFN                           | 0.182   | 0.599       | 0.248       | 0.269     |
 | Attention  | 无                             | 0.189   | 0.456       | 0.261       | 0.258     |
 | 无          | FFN                           | 0.193   | 0.461       | 0.265       | 0.261     |
+
+表中：「Variate 维用」「Temporal 维用」是在变量维与时间维上使用的模块，后四列是各数据集的
+MSE（越小越好）。结论：iTransformer 排布（变量维注意力 + 时间维
+FFN）在变量多的数据上最好，Weather 变量少时其他排布略优。
 
 读法：iTransformer 排布在 ECL、Traffic、Solar-Energy 上最好；在变量只有 21 个的 Weather
 上，FFN+FFN（0.248）和 Attention+Attention（0.255）的 MSE
@@ -318,6 +354,10 @@ temporal-token 的 Transformer（token 数 96）反而比 iTransformer（token �
 | Crossformer                                  | patch，显式跨时间/跨变量 | 两个方向的注意力           | 有              | 论文归为同时改组件与架构的第三类 |
 | iTransformer                                 | 一个变量的整条序列       | 变量之间               | 有（attention 图） | 论文归为第四类，只改架构     |
 | DLinear                                      | 无（线性层）          | 时间维线性映射            | 无              | 线性基线             |
+
+表中：「方法」是对比对象，「token 是什么」「attention /
+混合发生在哪」「变量间交互」说明各方法的输入单元、混合位置与是否有变量间交互，「说明」给出论文的分类。结论：iTransformer
+的 token 是整条变量序列，注意力作用于变量之间。
 
 论文认为 iTransformer 是 patching 的极端情形（把 patch 长度拉到整条序列，见其 Figure 19）。
 
