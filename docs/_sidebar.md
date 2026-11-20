@@ -284,6 +284,7 @@
         - [Autoformer](/0636_ML_Tasks_TimeSeries_Deep_Autoformer)
         - [DLinear](/0630_ML_Tasks_TimeSeries_Deep_DLinear)
         - [DeepAR](/0625_ML_Tasks_TimeSeries_Deep_DeepAR)
+        - [ETSformer](/0668_ML_Tasks_TimeSeries_Deep_ETSformer)
         - [FEDformer](/0637_ML_Tasks_TimeSeries_Deep_FEDformer)
         - [Informer](/0635_ML_Tasks_TimeSeries_Deep_Informer)
         - [LightTS](/0667_ML_Tasks_TimeSeries_Deep_LightTS)
@@ -639,4 +640,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1700081120</sub></kbd>
+<kbd><sub>@1701011120</sub></kbd>

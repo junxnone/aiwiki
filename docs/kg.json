@@ -5554,6 +5554,15 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki ML Tasks TimeSeries Deep ETSformer",
+      "group": 5,
+      "title": "ETSformer",
+      "url": "https://junxnone.github.io/aiwiki/#/0668_ML_Tasks_TimeSeries_Deep_ETSformer",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Tasks Image Classification MobileNet V1",
       "group": 6,
       "title": "MobileNet V1",
@@ -9839,6 +9848,13 @@
     {
       "source": "aiwiki ML Tasks TimeSeries Deep",
       "target": "aiwiki ML Tasks TimeSeries Deep LightTS",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks TimeSeries Deep",
+      "target": "aiwiki ML Tasks TimeSeries Deep ETSformer",
       "value": 5,
       "visible": true,
       "expand": true

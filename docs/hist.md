@@ -4,6 +4,7 @@
 
 #### **Created**
 
+- 2026-11-20&nbsp;&nbsp; [ETSformer](/0668_ML_Tasks_TimeSeries_Deep_ETSformer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:ETSformer
 - 2026-11-20&nbsp;&nbsp; [LightTS](/0667_ML_Tasks_TimeSeries_Deep_LightTS)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:LightTS
 - 2026-11-20&nbsp;&nbsp; [SegRNN](/0666_ML_Tasks_TimeSeries_Deep_SegRNN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:SegRNN
 - 2026-11-19&nbsp;&nbsp; [Needle](/0665_x_needle)&nbsp;&nbsp; :bookmark:x :bookmark:needle
@@ -639,6 +640,7 @@
 
 #### **Updated**
 
+- 2026-11-20&nbsp;&nbsp; [ETSformer](/0668_ML_Tasks_TimeSeries_Deep_ETSformer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:ETSformer
 - 2026-11-20&nbsp;&nbsp; [LightTS](/0667_ML_Tasks_TimeSeries_Deep_LightTS)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:LightTS
 - 2026-11-20&nbsp;&nbsp; [SegRNN](/0666_ML_Tasks_TimeSeries_Deep_SegRNN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:SegRNN
 - 2026-11-20&nbsp;&nbsp; [Sundial](/0663_ML_Tasks_TimeSeries_Foundation_Sundial)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Foundation :bookmark:Sundial
