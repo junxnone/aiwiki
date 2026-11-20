@@ -286,6 +286,7 @@
         - [DeepAR](/0625_ML_Tasks_TimeSeries_Deep_DeepAR)
         - [FEDformer](/0637_ML_Tasks_TimeSeries_Deep_FEDformer)
         - [Informer](/0635_ML_Tasks_TimeSeries_Deep_Informer)
+        - [LightTS](/0667_ML_Tasks_TimeSeries_Deep_LightTS)
         - [Mamba](/0643_ML_Tasks_TimeSeries_Deep_Mamba)
         - [N-BEATS](/0628_ML_Tasks_TimeSeries_Deep_NBEATS)
         - [N-HiTS](/0629_ML_Tasks_TimeSeries_Deep_NHiTS)
@@ -638,4 +639,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1659101120</sub></kbd>
+<kbd><sub>@1700081120</sub></kbd>

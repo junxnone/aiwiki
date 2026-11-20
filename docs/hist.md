@@ -4,6 +4,7 @@
 
 #### **Created**
 
+- 2026-11-20&nbsp;&nbsp; [LightTS](/0667_ML_Tasks_TimeSeries_Deep_LightTS)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:LightTS
 - 2026-11-20&nbsp;&nbsp; [SegRNN](/0666_ML_Tasks_TimeSeries_Deep_SegRNN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:SegRNN
 - 2026-11-19&nbsp;&nbsp; [Needle](/0665_x_needle)&nbsp;&nbsp; :bookmark:x :bookmark:needle
 - 2026-11-19&nbsp;&nbsp; [Transformer History](/0664_ML_Transformer_History)&nbsp;&nbsp; :bookmark:ML :bookmark:Transformer :bookmark:History
@@ -638,6 +639,7 @@
 
 #### **Updated**
 
+- 2026-11-20&nbsp;&nbsp; [LightTS](/0667_ML_Tasks_TimeSeries_Deep_LightTS)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:LightTS
 - 2026-11-20&nbsp;&nbsp; [SegRNN](/0666_ML_Tasks_TimeSeries_Deep_SegRNN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:SegRNN
 - 2026-11-20&nbsp;&nbsp; [Sundial](/0663_ML_Tasks_TimeSeries_Foundation_Sundial)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Foundation :bookmark:Sundial
 - 2026-11-20&nbsp;&nbsp; [Time-MoE](/0662_ML_Tasks_TimeSeries_Foundation_TimeMoE)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Foundation :bookmark:TimeMoE
