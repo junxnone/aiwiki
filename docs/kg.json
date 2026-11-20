@@ -5626,6 +5626,15 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki ML Tasks TimeSeries Deep FiLM",
+      "group": 5,
+      "title": "FiLM",
+      "url": "https://junxnone.github.io/aiwiki/#/0676_ML_Tasks_TimeSeries_Deep_FiLM",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Tasks Image Classification MobileNet V1",
       "group": 6,
       "title": "MobileNet V1",
@@ -9967,6 +9976,13 @@
     {
       "source": "aiwiki ML Tasks TimeSeries Deep",
       "target": "aiwiki ML Tasks TimeSeries Deep MSGNet",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks TimeSeries Deep",
+      "target": "aiwiki ML Tasks TimeSeries Deep FiLM",
       "value": 5,
       "visible": true,
       "expand": true
