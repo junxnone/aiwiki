@@ -297,6 +297,7 @@
         - [PatchTST](/0638_ML_Tasks_TimeSeries_Deep_PatchTST)
         - [Reformer](/0670_ML_Tasks_TimeSeries_Deep_Reformer)
         - [S4](/0642_ML_Tasks_TimeSeries_Deep_S4)
+        - [SCINet](/0674_ML_Tasks_TimeSeries_Deep_SCINet)
         - [S-Mamba](/0644_ML_Tasks_TimeSeries_Deep_SMamba)
         - [SOFTS](/0641_ML_Tasks_TimeSeries_Deep_SOFTS)
         - [SegRNN](/0666_ML_Tasks_TimeSeries_Deep_SegRNN)
@@ -645,4 +646,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1706451120</sub></kbd>
+<kbd><sub>@1707591120</sub></kbd>

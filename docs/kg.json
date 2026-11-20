@@ -5608,6 +5608,15 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki ML Tasks TimeSeries Deep SCINet",
+      "group": 5,
+      "title": "SCINet",
+      "url": "https://junxnone.github.io/aiwiki/#/0674_ML_Tasks_TimeSeries_Deep_SCINet",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Tasks Image Classification MobileNet V1",
       "group": 6,
       "title": "MobileNet V1",
@@ -9935,6 +9944,13 @@
     {
       "source": "aiwiki ML Tasks TimeSeries Deep",
       "target": "aiwiki ML Tasks TimeSeries Deep FreTS",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks TimeSeries Deep",
+      "target": "aiwiki ML Tasks TimeSeries Deep SCINet",
       "value": 5,
       "visible": true,
       "expand": true
