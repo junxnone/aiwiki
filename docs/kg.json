@@ -5635,6 +5635,15 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki ML Tasks TimeSeries Deep WPMixer",
+      "group": 5,
+      "title": "WPMixer",
+      "url": "https://junxnone.github.io/aiwiki/#/0677_ML_Tasks_TimeSeries_Deep_WPMixer",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Tasks Image Classification MobileNet V1",
       "group": 6,
       "title": "MobileNet V1",
@@ -9983,6 +9992,13 @@
     {
       "source": "aiwiki ML Tasks TimeSeries Deep",
       "target": "aiwiki ML Tasks TimeSeries Deep FiLM",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks TimeSeries Deep",
+      "target": "aiwiki ML Tasks TimeSeries Deep WPMixer",
       "value": 5,
       "visible": true,
       "expand": true

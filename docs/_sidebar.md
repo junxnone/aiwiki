@@ -310,6 +310,7 @@
         - [TimeMixer](/0633_ML_Tasks_TimeSeries_Deep_TimeMixer)
         - [TimeXer](/0640_ML_Tasks_TimeSeries_Deep_TimeXer)
         - [TimesNet](/0631_ML_Tasks_TimeSeries_Deep_TimesNet)
+        - [WPMixer](/0677_ML_Tasks_TimeSeries_Deep_WPMixer)
         - [iTransformer](/0639_ML_Tasks_TimeSeries_Deep_iTransformer)
       - [时间序列基础模型：方法详解、原理与发展脉络](/0608_ML_Tasks_TimeSeries_Foundation)
         - [Chronos](/0660_ML_Tasks_TimeSeries_Foundation_Chronos)
@@ -648,4 +649,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1715101120</sub></kbd>
+<kbd><sub>@1715561120</sub></kbd>
