@@ -4,6 +4,7 @@
 
 #### **Created**
 
+- 2026-11-20&nbsp;&nbsp; [Reformer](/0670_ML_Tasks_TimeSeries_Deep_Reformer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:Reformer
 - 2026-11-20&nbsp;&nbsp; [Non-stationary Transformers](/0669_ML_Tasks_TimeSeries_Deep_NonstationaryTransformer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:NonstationaryTransformer
 - 2026-11-20&nbsp;&nbsp; [ETSformer](/0668_ML_Tasks_TimeSeries_Deep_ETSformer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:ETSformer
 - 2026-11-20&nbsp;&nbsp; [LightTS](/0667_ML_Tasks_TimeSeries_Deep_LightTS)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:LightTS
@@ -641,6 +642,7 @@
 
 #### **Updated**
 
+- 2026-11-20&nbsp;&nbsp; [Reformer](/0670_ML_Tasks_TimeSeries_Deep_Reformer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:Reformer
 - 2026-11-20&nbsp;&nbsp; [Non-stationary Transformers](/0669_ML_Tasks_TimeSeries_Deep_NonstationaryTransformer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:NonstationaryTransformer
 - 2026-11-20&nbsp;&nbsp; [ETSformer](/0668_ML_Tasks_TimeSeries_Deep_ETSformer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:ETSformer
 - 2026-11-20&nbsp;&nbsp; [LightTS](/0667_ML_Tasks_TimeSeries_Deep_LightTS)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:LightTS
