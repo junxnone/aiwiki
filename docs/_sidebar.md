@@ -292,6 +292,7 @@
         - [Informer](/0635_ML_Tasks_TimeSeries_Deep_Informer)
         - [Koopa](/0672_ML_Tasks_TimeSeries_Deep_Koopa)
         - [LightTS](/0667_ML_Tasks_TimeSeries_Deep_LightTS)
+        - [MICN](/0683_ML_Tasks_TimeSeries_Deep_MICN)
         - [MSGNet](/0675_ML_Tasks_TimeSeries_Deep_MSGNet)
         - [Mamba](/0643_ML_Tasks_TimeSeries_Deep_Mamba)
         - [N-BEATS](/0628_ML_Tasks_TimeSeries_Deep_NBEATS)
@@ -299,6 +300,7 @@
         - [Non-stationary Transformers](/0669_ML_Tasks_TimeSeries_Deep_NonstationaryTransformer)
         - [PAttn](/0679_ML_Tasks_TimeSeries_Deep_PAttn)
         - [PatchTST](/0638_ML_Tasks_TimeSeries_Deep_PatchTST)
+        - [Pyraformer](/0684_ML_Tasks_TimeSeries_Deep_Pyraformer)
         - [Reformer](/0670_ML_Tasks_TimeSeries_Deep_Reformer)
         - [S4](/0642_ML_Tasks_TimeSeries_Deep_S4)
         - [SCINet](/0674_ML_Tasks_TimeSeries_Deep_SCINet)
@@ -654,4 +656,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1721071120</sub></kbd>
+<kbd><sub>@1723381120</sub></kbd>

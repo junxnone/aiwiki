@@ -4,6 +4,8 @@
 
 #### **Created**
 
+- 2026-11-20&nbsp;&nbsp; [Pyraformer](/0684_ML_Tasks_TimeSeries_Deep_Pyraformer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:Pyraformer
+- 2026-11-20&nbsp;&nbsp; [MICN](/0683_ML_Tasks_TimeSeries_Deep_MICN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:MICN
 - 2026-11-20&nbsp;&nbsp; [Chronos2](/0682_ML_Tasks_TimeSeries_Foundation_Chronos2)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Foundation :bookmark:Chronos2
 - 2026-11-20&nbsp;&nbsp; [TiRex](/0681_ML_Tasks_TimeSeries_Foundation_TiRex)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Foundation :bookmark:TiRex
 - 2026-11-20&nbsp;&nbsp; [KANAD](/0680_ML_Tasks_TimeSeries_Anomaly_KANAD)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Anomaly :bookmark:KANAD
@@ -654,6 +656,8 @@
 
 #### **Updated**
 
+- 2026-11-20&nbsp;&nbsp; [Pyraformer](/0684_ML_Tasks_TimeSeries_Deep_Pyraformer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:Pyraformer
+- 2026-11-20&nbsp;&nbsp; [MICN](/0683_ML_Tasks_TimeSeries_Deep_MICN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:MICN
 - 2026-11-20&nbsp;&nbsp; [Chronos2](/0682_ML_Tasks_TimeSeries_Foundation_Chronos2)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Foundation :bookmark:Chronos2
 - 2026-11-20&nbsp;&nbsp; [TiRex](/0681_ML_Tasks_TimeSeries_Foundation_TiRex)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Foundation :bookmark:TiRex
 - 2026-11-20&nbsp;&nbsp; [KANAD](/0680_ML_Tasks_TimeSeries_Anomaly_KANAD)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Anomaly :bookmark:KANAD
