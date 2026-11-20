@@ -2,7 +2,7 @@
 Title | ML Tasks TimeSeries Foundation LagLlama
 -- | --
 Created @ | `2026-11-19T02:42:14Z`
-Updated @| `2026-11-19T06:17:45Z`
+Updated @| `2026-11-20T08:20:36Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/653)
 
@@ -30,6 +30,9 @@ Lag-Llama 是面向**单变量概率时间序列预测**的基础模型（论文
 
 $$p_\phi(x^i_{C+1:C+P}\mid x^i_{1:C},\,c^i_{1:C+P})=\prod_{t=C+1}^{C+P}p_\phi(x^i_t\mid x^i_{1:t-1},\,c^i_{1:t-1})$$
 
+
+其中：$p_\phi$ 是由网络参数 $\phi$ 给出的分布；$x^i$ 是第 $i$ 条序列，$C$ 是上下文长度，$P$ 是预测长度；$c^i$ 是协变量；右侧用概率链式法则把联合分布分解为逐步条件分布的乘积。
+
 其中 $\phi$ 是分布参数，由神经网络输出。
 
 ### Tokenization：滞后特征（lag features）
@@ -37,6 +40,9 @@ $$p_\phi(x^i_{C+1:C+P}\mid x^i_{1:C},\,c^i_{1:C+P})=\prod_{t=C+1}^{C+P}p_\phi(x^
 给定排序的正整数滞后索引集合 $\mathcal L=\{1,\dots,L\}$（$L$ 为最后一个，即最大的滞后索引），滞后算子把 $x_t$ 映射为向量 $\mathbf k_t\in\mathbb R^{|\mathcal L|}$，第 $j$ 个分量为：
 
 $$\mathbf k_t[j]=x_{t-\mathcal L[j]}$$
+
+
+其中：$\mathbf k_t\in\mathbb R^{|\mathcal L|}$ 是 $t$ 时刻的滞后向量；$\mathcal L[j]$ 是第 $j$ 个滞后索引；$x_{t-\mathcal L[j]}$ 是滞后 $\mathcal L[j]$ 步之前的取值；$|\mathcal L|$ 是滞后个数。
 
 在这些滞后值之外，再加上由时间戳 $t$ 构造的日期时间特征，覆盖语料中所有频率：second-of-minute、minute-of-hour、hour-of-day 等，直到 quarter-of-year。设共有 $F$ 个日期时间特征，则论文称每个 token 的大小是 $|\mathcal L|+F$；Figure 2 的说明里 token 的协变量还包括 summary statistics（见"数值缩放"）。
 
@@ -55,6 +61,8 @@ token_t = [ x_{t-L[1]}, x_{t-L[2]}, ..., x_{t-L[|L|]},   <- |L| 个滞后值
             mu, sigma ]                                     <- summary statistics
 ```
 
+图中：每个时间步的 token 由三部分拼成：$|\mathcal L|$ 个滞后值、$F$ 个日期时间特征（秒、分、小时直至月、季度）以及窗口统计量 $\mu,\sigma$。关键结论：模型不显式输入频率，而是从日期时间特征的变化模式中隐式推断。
+
 **自拟小例子**（示意，非论文数据）：取 $\mathcal L=\{1,2,3,7\}$，序列 $x_1,\dots,x_{10}=10,12,11,13,15,14,16,18,17,19$。在 $t=10$ 处，滞后向量为 $(x_9,x_8,x_7,x_3)=(17,18,16,11)$。最大滞后 7 意味着第一个能构造完整滞后向量的时间点是 $t=8$。
 
 ### 模型结构
@@ -65,6 +73,9 @@ Lag-Llama 基于 decoder-only 的 LLaMA 结构：
 2. 经过 $M$ 层带因果掩码（causally masked）的 Transformer decoder layer；每层沿用 LLaMA 的 **RMSNorm 预归一化**，并在 query 和 key 上使用 **RoPE** 旋转位置编码；
 3. 最后接**分布头**，输出**下一个时间步**的分布参数 $\phi$；训练目标是所有被预测时间步的**负对数似然**之和最小。
 
+
+下图概括 Lag-Llama 的数据流。
+
 ```
 x_{-L:C} + 协变量
    -> 构造 C 个 token（滞后值 + 日期时间特征 + mu/sigma）
@@ -73,6 +84,8 @@ x_{-L:C} + 协变量
    -> 分布头 -> Student's t 参数 (自由度, 均值, 尺度)
    -> 负对数似然
 ```
+
+图中：自上而下，输入序列与协变量构造成 $C$ 个 token（滞后值 + 日期时间特征 + $\mu/\sigma$），经线性投影后进入 $M$ 层因果 decoder（RMSNorm、RoPE），分布头输出 Student's t 的三个参数，以负对数似然训练。
 
 论文最终模型（超参搜索结果，Table 5）：8 层、9 个 head、每个 head 的 embedding 维度 16、context 长度 $C=32$，总参数量 2,449,299（约 245 万）。注意 Table 5 脚注：$C$ 只是每个窗口里被连续采样的 context 长度，实际由于使用滞后特征，窗口要大得多。
 
@@ -90,6 +103,9 @@ x_{-L:C} + 协变量
 - 实践中论文发现，预训练时下面的 **Robust Standardization** 比标准 scaler 更好：减去中位数、除以 IQR，对离群点稳健。
 
 $$x'_t=\frac{x_t-\mathrm{Med}(x_{1:C})}{\mathrm{IQR}(x_{1:C})},\qquad \mathrm{IQR}(x_{1:C})=\mathrm{Med}\big(\{x_{C/2:C}\}\big)-\mathrm{Med}\big(\{x_{1:C/2}\}\big)$$
+
+
+其中：$x_t$ 是窗口内第 $t$ 个值；$\mathrm{Med}(\cdot)$ 是中位数；$\mathrm{IQR}$ 是论文定义的稳健尺度，等于后半窗口的中位数减前半窗口的中位数；$C$ 是窗口长度；$x'_t$ 是稳健标准化后的值，对离群点不敏感。
 
 注意论文这里的 IQR 是**用后半窗口的中位数减去前半窗口的中位数**（即论文式 (4) 的写法），并非常见的 75% 分位减 25% 分位。
 
@@ -115,6 +131,8 @@ $$x'_t=\frac{x_t-\mathrm{Med}(x_{1:C})}{\mathrm{IQR}(x_{1:C})},\qquad \mathrm{IQ
 自然 | KDD Cup 2018、Sunspot
 空气质量 | Beijing Multisite、Air Quality UCI
 云运维 | Huawei 云的 6 个分钟级数据集（论文 Table 3 按数据集列出）：CPU Limit、CPU Usage、Function Delay、Instances、Memory Limit、Memory Usage
+
+表中：「领域」是语义领域，「预训练数据集」是该领域的预训练数据集列表；共 20 个预训练数据集，覆盖 6 个领域中的 5 个领域，云运维数据集分钟级采样。
 
 下游未见数据集：Weather、Pedestrian Counts、ETT-M2、Platform Delay（云）、Requests（云）、Beijing-PM2.5、Exchange Rate。
 
@@ -154,6 +172,8 @@ TFT | 0.151 | 0.268 | 0.030 | 0.099 | 0.015 | 0.156 | 0.008 | 5.000
 Lag-Llama 零样本 | 0.164 | 0.285 | 0.063 | 0.091 | 0.090 | 0.130 | 0.011 | 6.714
 Lag-Llama 微调 | 0.132 | 0.227 | 0.017 | 0.096 | 0.012 | 0.125 | 0.009 | 2.786
 
+表中：「模型」是对比方法，前七列是各未见数据集的 CRPS（越小越好），「平均排名」是在七个数据集上的平均名次。结论：Lag-Llama 零样本与监督基线相当，微调后平均排名最好。
+
 论文的结论：
 
 - **零样本**：与各监督基线"相当"，平均排名 6.714；在 platform-delay 和 weather 上尤其接近基线。
@@ -173,6 +193,8 @@ Lag-Llama 微调 | 0.132 | 0.227 | 0.017 | 0.096 | 0.012 | 0.125 | 0.009 | 2.786
 60% | 3.071 | 2.929 | 2.429 | 1.571
 80% | 3.429 | 2.714 | 2.429 | 1.429
 
+表中：「可用历史」是保留的训练历史比例，其余四列是各方法的平均排名（越小越好）。结论：Lag-Llama 在各比例下排名最好，历史越多优势越大。
+
 Lag-Llama 在各比例下平均排名都是最好；论文称随可用历史增加，Lag-Llama 的优势扩大。Exchange-rate 上 Lag-Llama 多数时候不及 TFT，论文解释为该数据集与预训练语料最不相似，需要更多历史才能适配。
 
 ### 预训练数据集上的表现（附录 C）
@@ -185,6 +207,9 @@ Lag-Llama 在各比例下平均排名都是最好；论文称随可用历史增�
 - **Scaling law**：论文用 Caballero et al. (2023) 的 broken neural scaling law 形式拟合验证损失（负对数似然）随预训练 epoch 数 $x$ 的变化（每个 epoch 100 个窗口，对 3 个种子取平均，60/20/20 划分拟合与外推）：
 
 $$y=a+\big(b\,x^{-c_0}\big)\prod_{i=1}^{n}\Big(1+\big(x/d_i\big)^{1/f_i}\Big)^{-c_i f_i}$$
+
+
+其中：$y$ 是验证损失（负对数似然）；$x$ 是已见的预训练 epoch 数；$a$ 是渐近损失；$b,c_0$ 控制幂律下降的幅度与速率；$n$ 是转折段数，$d_i$ 是第 $i$ 个转折点位置，$f_i$ 控制转折平滑度，$c_i$ 是转折后的斜率变化。该式用于拟合并外推训练曲线。
 
 拟合参数（$n=1$）：$a=-6.1167$，$b=8.01589$，$c_0=0.0155$，$c_1=-0.1043$，$d_1=1.6423\times10^{-36}$，$f_1=-36.4660$。验证损失随 epoch 数下降，曲线可外推预测更大数据量下的损失。论文称这是拟合"性能随预训练数据量"的 scaling law，横轴实际是已见的预训练 epoch 数，更像训练曲线的外推而非改变数据集规模的对照实验 [解读]；论文没有探索更大的模型尺寸，并把进一步放大模型列为未来方向。
 
@@ -214,6 +239,8 @@ $$y=a+\big(b\,x^{-c_0}\big)\prod_{i=1}^{n}\Big(1+\big(x/d_i\big)^{1/f_i}\Big)^{-
 训练方式 | 在目标数据集上训练 | 多领域大语料预训练，再零样本/微调
 目标 | 单个数据集内的多序列联合训练 | 跨数据集、跨频率的基础模型
 
+表中：「方面」是对比维度，后两列是 DeepAR 与 Lag-Llama 在该维度的做法。结论：二者都是自回归概率预测，区别在于骨干网络（RNN 与 Transformer）与使用范式（数据集专用与预训练迁移）。
+
 下表 DeepAR 一列依据本站 DeepAR 文章与 DeepAR 论文的常见设定 [经验]，Lag-Llama 一列依据其论文。
 
 联系：二者都是**自回归的概率预测**模型，都用**滞后值作为输入、每步输出分布参数、负对数似然训练、采样得到预测区间**，都依赖按序列的数值缩放来处理量级差异。区别主要是骨干网络（RNN vs. Transformer）和使用范式（数据集专用 vs. 预训练 + 迁移）。DeepAR 的细节见 [DeepAR](/0625_ML_Tasks_TimeSeries_Deep_DeepAR)。[解读] Lag-Llama 可以看作"把 DeepAR 的滞后特征 + 分布头思路换到 Transformer 骨干，并放大到跨数据集预训练"。
@@ -235,4 +262,5 @@ $$y=a+\big(b\,x^{-c_0}\big)\prod_{i=1}^{n}\Big(1+\big(x/d_i\big)^{1/f_i}\Big)^{-
 ## Reference
 
 - Kashif Rasul, Arjun Ashok, et al. *Lag-Llama: Towards Foundation Models for Probabilistic Time Series Forecasting*. [arXiv:2310.08278](https://arxiv.org/abs/2310.08278)
+
 
