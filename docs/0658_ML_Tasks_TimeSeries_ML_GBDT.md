@@ -2,7 +2,7 @@
 Title | ML Tasks TimeSeries ML GBDT
 -- | --
 Created @ | `2026-11-19T03:24:03Z`
-Updated @| `2026-11-19T03:24:03Z`
+Updated @| `2026-11-20T08:22:39Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/658)
 
@@ -44,11 +44,17 @@ GBDT（Gradient Boosted Decision Trees，梯度提升决策树，论文脚注称
 
 $$\hat y_i=\phi(\mathbf x_i)=\sum_{k=1}^{K}f_k(\mathbf x_i),\qquad f_k\in\mathcal F$$
 
+
+其中：$\hat y_i$ 是样本 $i$ 的预测；$\phi$ 是整个加法模型；$K$ 是树的个数；$f_k$ 是第 $k$ 棵回归树，$\mathcal F$ 是回归树的函数空间；预测是各树输出之和。
+
 $\mathcal F=\{f(\mathbf x)=w_{q(\mathbf x)}\}$（$q:\mathbb R^m\to\{1,\dots,T\}$，$w\in\mathbb R^T$）：$q$ 是树结构，把样本映射到叶子编号，$T$ 是叶子数，$w_j$ 是第 $j$ 个叶子上的连续得分。与普通决策树不同，每个叶子带的是连续分数，最终预测是样本所落叶子分数之和。
 
 学习的是下面的正则化目标：
 
 $$\mathcal L(\phi)=\sum_i l(\hat y_i,y_i)+\sum_k\Omega(f_k),\qquad \Omega(f)=\gamma T+\frac12\lambda\lVert w\rVert^2$$
+
+
+其中：$\mathcal L(\phi)$ 是总目标；$l$ 是损失函数；$\Omega(f)$ 是单棵树的复杂度惩罚；$\gamma$ 惩罚叶子数 $T$；$\lambda$ 是叶权重的 $L_2$ 正则强度；$w$ 是叶权重向量。
 
 $l$ 是可微的凸损失；$\Omega$ 惩罚叶子数 $T$ 与叶权重的平方范数。论文指出：正则项让最终学到的权重更平滑以避免过拟合；$\lambda$ 取 0 时退化为传统的梯度树提升；该目标比 RGF（regularized greedy forest）更简单、更易并行。
 
@@ -58,23 +64,41 @@ $l$ 是可微的凸损失；$\Omega$ 惩罚叶子数 $T$ 与叶权重的平方�
 
 $$\mathcal L^{(t)}=\sum_{i=1}^{n}l\bigl(y_i,\hat y_i^{(t-1)}+f_t(\mathbf x_i)\bigr)+\Omega(f_t)$$
 
+
+其中：$\mathcal L^{(t)}$ 是第 $t$ 轮目标；$l$ 是损失；$y_i$ 是真实值；$\hat y_i^{(t-1)}$ 是前 $t-1$ 轮的预测；$f_t$ 是新加的树；$\Omega(f_t)$ 是其复杂度惩罚。
+
 对 $l$ 做二阶泰勒展开：
 
 $$\mathcal L^{(t)}\simeq\sum_{i=1}^{n}\Bigl[l\bigl(y_i,\hat y^{(t-1)}\bigr)+g_if_t(\mathbf x_i)+\frac12h_if_t^2(\mathbf x_i)\Bigr]+\Omega(f_t)$$
+
+
+其中：$l(y_i,\hat y^{(t-1)})$ 是已有预测的损失（常数项）；$g_i,h_i$ 分别是损失对预测的一阶、二阶导；$f_t(\mathbf x_i)$ 是新树的输出；$\Omega(f_t)$ 是正则项；这是损失的二阶泰勒展开。
 
 其中 $g_i=\partial_{\hat y^{(t-1)}}\,l\bigl(y_i,\hat y^{(t-1)}\bigr)$、$h_i=\partial^2_{\hat y^{(t-1)}}\,l\bigl(y_i,\hat y^{(t-1)}\bigr)$ 是一阶、二阶梯度统计量。去掉常数项，第 $t$ 步的简化目标为：
 
 $$\tilde{\mathcal L}^{(t)}=\sum_{i=1}^{n}\Bigl[g_if_t(\mathbf x_i)+\frac12h_if_t^2(\mathbf x_i)\Bigr]+\Omega(f_t)$$
 
+
+其中：$g_i,h_i$ 是样本 $i$ 的一阶、二阶梯度；$f_t(\mathbf x_i)$ 是新树对样本 $i$ 的输出；$\Omega(f_t)$ 是新树的复杂度惩罚；去掉常数项后得到简化目标。
+
 记叶子 $j$ 上的样本集合 $I_j=\{i\mid q(\mathbf x_i)=j\}$，展开 $\Omega$ 后按叶子重组：
 
 $$\tilde{\mathcal L}^{(t)}=\sum_{j=1}^{T}\Bigl[\Bigl(\sum_{i\in I_j}g_i\Bigr)w_j+\frac12\Bigl(\sum_{i\in I_j}h_i+\lambda\Bigr)w_j^2\Bigr]+\gamma T$$
+
+
+其中：$j$ 是叶子编号，$T$ 是叶子数；$w_j$ 是叶子 $j$ 的权重；$I_j$ 是叶子 $j$ 内的样本集合；$g_i,h_i$ 是样本的一阶、二阶梯度；$\lambda,\gamma$ 是正则系数。
 
 这是关于每个 $w_j$ 的一元二次函数。固定树结构 $q$，最优叶权重与对应的最优目标值为：
 
 $$w_j^{*}=-\frac{\sum_{i\in I_j}g_i}{\sum_{i\in I_j}h_i+\lambda}$$
 
+
+其中：$w_j^{*}$ 是叶子 $j$ 的最优权重；$g_i,h_i$ 是样本的一阶、二阶梯度；$I_j$ 是叶子 $j$ 内的样本；$\lambda$ 是正则强度，使叶权重向 0 收缩。
+
 $$\tilde{\mathcal L}^{(t)}(q)=-\frac12\sum_{j=1}^{T}\frac{\bigl(\sum_{i\in I_j}g_i\bigr)^2}{\sum_{i\in I_j}h_i+\lambda}+\gamma T$$
+
+
+其中：$\tilde{\mathcal L}^{(t)}(q)$ 是树结构 $q$ 的最优目标值（越小越好）；$I_j$ 是叶子 $j$ 的样本集合；$T$ 是叶子数；$\gamma T$ 是叶子数惩罚；可作为树结构的打分函数。
 
 后者可当作树结构的打分函数，作用类似决策树的不纯度，但适用于更广的目标函数（得分越小越好）。
 
@@ -83,6 +107,9 @@ $$\tilde{\mathcal L}^{(t)}(q)=-\frac12\sum_{j=1}^{T}\frac{\bigl(\sum_{i\in I_j}g
 不可能枚举所有树结构，实际用贪心：从单个叶子出发迭代地加分支。设某节点样本集 $I=I_L\cup I_R$ 被分成左右两部分，损失下降量（论文 Eq. 7，实践中用来评估候选分裂）为：
 
 $$\mathcal L_{split}=\frac12\left[\frac{\bigl(\sum_{i\in I_L}g_i\bigr)^2}{\sum_{i\in I_L}h_i+\lambda}+\frac{\bigl(\sum_{i\in I_R}g_i\bigr)^2}{\sum_{i\in I_R}h_i+\lambda}-\frac{\bigl(\sum_{i\in I}g_i\bigr)^2}{\sum_{i\in I}h_i+\lambda}\right]-\gamma$$
+
+
+其中：$I_L,I_R,I$ 是左子节点、右子节点与父节点的样本集合；$g_i,h_i$ 是样本的一阶、二阶梯度；$\lambda$ 是叶权重的 $L_2$ 正则强度；$\gamma$ 是新增叶子的复杂度代价；该式为分裂后损失的下降量，越大越值得分裂。
 
 最后的 $-\gamma$ 是新增一个叶子的复杂度代价：增益不足 $\gamma$ 的分裂不值得做。
 
@@ -112,17 +139,29 @@ A 的增益更大，被选中。注意 $w^*$ 比"叶内均值"（2.5 与 8.5）�
 
 $$\sum_{i=1}^{n}\frac12h_i\Bigl(f_t(\mathbf x_i)-\frac{g_i}{h_i}\Bigr)^2+\Omega(f_t)+\text{constant}$$
 
+
+其中：$g_i,h_i$ 是一阶、二阶梯度；$f_t$ 是第 $t$ 棵树；$g_i/h_i$ 可看作标签、$h_i$ 是样本权重，因此该目标等价于加权平方损失；$\Omega(f_t)$ 是正则项。
+
 即标签为 $g_i/h_i$、权重为 $h_i$ 的加权平方损失，所以 $h_i$ 就是样本权重。对第 $k$ 个特征，令多重集 $\mathcal D_k=\{(x_{1k},h_1),\dots,(x_{nk},h_n)\}$，定义秩函数
 
 $$r_k(z)=\frac{1}{\sum_{(x,h)\in\mathcal D_k}h}\sum_{(x,h)\in\mathcal D_k,\ x<z}h$$
+
+
+其中：$\mathcal D_k$ 是第 $k$ 个特征的（取值，二阶梯度）多重集；$x_{ik}$ 是样本 $i$ 的第 $k$ 个特征值；$h_i$ 是其二阶梯度（样本权重）；$r_k(z)$ 是特征值小于 $z$ 的样本所占的加权比例。
 
 它表示特征值小于 $z$ 的样本所占的（加权）比例。候选点 $\{s_{k1},\dots,s_{kl}\}$ 要满足
 
 $$\lvert r_k(s_{k,j})-r_k(s_{k,j+1})\rvert<\epsilon,\qquad s_{k1}=\min_i x_{ik},\quad s_{kl}=\max_i x_{ik}$$
 
+
+其中：$s_{k,j}$ 是第 $k$ 个特征的第 $j$ 个候选分裂点；$r_k$ 是秩函数；$\epsilon$ 是近似因子；相邻候选点之间的加权占比差小于 $\epsilon$；首末候选点是特征的最小值与最大值。
+
 $\epsilon$ 是近似因子，大致对应 $1/\epsilon$ 个候选点。论文称当时没有适用于加权数据的分位数草图，它提出的结构支持 merge 与 prune 操作并给出可证明的精度保证（细节与证明在论文附录，本文不展开）。
 
 **稀疏感知分裂（§3.4, Alg. 3）**：输入稀疏有三类原因：缺失值、统计量里大量零、one-hot 之类特征工程的产物。做法是给每个树节点加一个**默认方向**：特征值缺失时样本走默认方向；对每个分裂，分别枚举"缺失值全走右"和"缺失值全走左"两种情形，取增益最大者，因此最优默认方向是从数据里学出来的。关键是只遍历非缺失项，复杂度与非缺失项个数成线性。论文在 Allstate-10K 上报告稀疏感知算法比朴素实现快 50 倍以上（Fig. 5）。
+
+
+下图示意带默认方向的树节点。
 
 ```
 树节点（示意，对应论文 Fig. 4；分裂条件：age < 20）
@@ -131,6 +170,8 @@ $\epsilon$ 是近似因子，大致对应 $1/\epsilon$ 个候选点。论文称�
    └─ 特征缺失 ──→ 走训练中学到的默认方向（左或右）
 ```
 
+图中：这是一个树节点的示意：按条件（如 age < 20）把样本分到"是"与"否"两个分支，特征缺失的样本走训练中学到的默认方向（左或右）。关键结论：默认方向由数据决定，使缺失值无需额外填补。
+
 ## 3. 系统设计（论文 §4）
 
 论文把算法和系统一起优化。要点：
@@ -138,6 +179,9 @@ $\epsilon$ 是近似因子，大致对应 $1/\epsilon$ 个候选点。论文称�
 **列块（column block）**：排序是树学习中最耗时的部分，所以数据以块为单位按 CSC 格式存放，每列按特征值预排序，只在训练前算一次、后续迭代复用。精确贪心把整个数据集放进一个块，对块做一次线性扫描就能同时收集所有叶子上的候选分裂统计量；近似算法可使用多个块（每块对应一部分行），块可分布到不同机器或放在磁盘上。块结构也便于列采样。复杂度分析（$d$ 为树的最大深度，$K$ 为树数，$\lVert\mathbf x\rVert_0$ 为训练数据中非缺失项个数）：
 
 $$O\bigl(Kd\lVert\mathbf x\rVert_0\log n\bigr)\ \longrightarrow\ O\bigl(Kd\lVert\mathbf x\rVert_0+\lVert\mathbf x\rVert_0\log n\bigr)$$
+
+
+其中：$K$ 是树的个数；$d$ 是树的最大深度；$\lVert\mathbf x\rVert_0$ 是训练数据中非缺失项个数；$n$ 是样本数；$q$ 是候选分裂点数；$B$ 是每个块的最大行数；箭头左侧是未预排序的复杂度，右侧是列块预排序后摊销 $\log$ 因子的复杂度。
 
 即精确贪心中省掉每棵树内的 $\log n$ 因子（预处理一次性摊销）；近似算法从 $O(Kd\lVert\mathbf x\rVert_0\log q)$ 降到 $O(Kd\lVert\mathbf x\rVert_0+\lVert\mathbf x\rVert_0\log B)$，$q$ 为候选点数（通常 32 到 100），$B$ 为每块最大行数。
 
@@ -158,6 +202,8 @@ Higgs Boson | 10 M | 28 | 事件分类
 Yahoo LTRC | 473K | 700 | 排序
 Criteo | 1.7 B | 67 | 点击率预测
 
+表中：「数据集」是四个评测集，$n$ 是样本数，$m$ 是特征数，「任务」是其应用类型；M 为百万，B 为十亿。
+
 **分类（Higgs-1M，500 棵树，精确贪心，论文 Table 3）**：
 
 方法 | 每棵树耗时（秒） | Test AUC
@@ -166,6 +212,8 @@ XGBoost | 0.6841 | 0.8304
 XGBoost（colsample=0.5） | 0.6401 | 0.8245
 scikit-learn | 28.51 | 0.8302
 R.gbm | 1.032 | 0.6224
+
+表中：「方法」是对比实现，「每棵树耗时（秒）」是训练时间，「Test AUC」是测试集 AUC（越大越好）。结论：XGBoost 与 scikit-learn 精度相近，XGBoost 快 10 倍以上；R.gbm 精度较低。
 
 论文的解读：XGBoost 与 scikit-learn 精度都好于 R 的 gbm（它只扩展树的一个分支，更快但可能精度更低），XGBoost 比 scikit-learn 快 10 倍以上；此数据集上列采样略差，论文猜测因为重要特征少。
 
@@ -176,6 +224,8 @@ R.gbm | 1.032 | 0.6224
 XGBoost | 0.826 | 0.7892
 XGBoost（colsample=0.5） | 0.506 | 0.7913
 pGBRT | 2.576 | 0.7915
+
+表中：「方法」是对比实现，「每棵树耗时（秒）」是每棵树的训练时间，NDCG@10 是排序指标（越大越好）。结论：XGBoost 速度更快，指标相当；此任务上列采样不仅更快还略提升了指标。
 
 论文称 XGBoost 更快，此任务上列采样不仅更快还略提升了指标。
 
@@ -195,6 +245,8 @@ pGBRT | 2.576 | 0.7915
 -- | --
 快、CPU 即可；对异构协变量、类别特征友好；能处理缺失值；特征重要性便于诊断；业务预测里长期是强基线 | 不外推趋势；特征工程依赖人；多步预测要选策略且各步长不保证一致；默认只给点预测；对结构突变与长历史依赖不如专门的序列模型
 
+表中：左列是 GBDT 用于时序预测的优点，右列是缺点。结论：它是快速稳健的强基线，但需要手工特征、不外推趋势、默认只给点预测。
+
 ## 6. 用于时序预测 [经验]
 
 本章内容论文里**没有**，全部标 [经验]，与[综述 §3.1](/0605_ML_Tasks_TimeSeries_ML)口径一致。
@@ -210,6 +262,8 @@ pGBRT | 2.576 | 0.7915
 递归 | 一个单步模型，把预测值作为下一步的滞后输入 | 只训一个模型；$H$ 长时误差累积明显
 直接 | 每个步长 $h$ 一个模型，或把 $h$ 当特征 | 业务预测常用做法，模型数多或表变大
 MIMO | 一个模型同时输出多步 | GBDT 不原生支持，需要包装
+
+表中：「策略」是多步预测方式，「做法」说明实现，「说明」比较误差累积与模型数量。结论：业务预测常用直接策略；递归策略在 $H$ 长时误差累积明显。
 
 ### 6.3 外推问题与目标变换
 
@@ -231,6 +285,8 @@ LightGBM | 另一个梯度提升树实现，不在本论文中 [待核实] | 同
 随机森林 | 论文借用其列采样 | 平均而非逐棵修正，同样不外推 [经验]
 [ARIMA](/0624_ML_Tasks_TimeSeries_Classical_ARIMA) | 局部、线性、可外推 | GBDT 是全局、非线性、需特征工程 [经验]
 [DeepAR](/0625_ML_Tasks_TimeSeries_Deep_DeepAR)、[TCN](/0626_ML_Tasks_TimeSeries_Deep_TCN) | 深度序列模型 | 自动学表示，需要更多数据与调参；对比需同等调参预算 [经验]
+
+表中：「方法」是对比对象，「定位」说明其性质，「与 GBDT 的关系」说明联系与区别。结论：GBDT 是全局、非线性、依赖特征工程的方法，与线性局部模型和深度序列模型互补。
 
 ## 8. 使用方式
 
@@ -264,4 +320,5 @@ for tr, va in TimeSeriesSplit(n_splits=5).split(X):
 - Tianqi Chen, Carlos Guestrin. *XGBoost: A Scalable Tree Boosting System*. [arXiv:1603.02754](https://arxiv.org/abs/1603.02754)
 - 论文给出的开源实现：[github.com/dmlc/xgboost](https://github.com/dmlc/xgboost)
 - 本站综述：[时间序列：机器学习方法](/0605_ML_Tasks_TimeSeries_ML)
+
 
