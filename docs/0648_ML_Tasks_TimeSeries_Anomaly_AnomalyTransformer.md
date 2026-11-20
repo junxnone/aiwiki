@@ -2,7 +2,7 @@
 Title | ML Tasks TimeSeries Anomaly AnomalyTransformer
 -- | --
 Created @ | `2026-11-19T02:27:35Z`
-Updated @| `2026-11-19T02:27:35Z`
+Updated @| `2026-11-20T08:18:26Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/648)
 
@@ -27,6 +27,8 @@ Anomaly Transformer 出自论文 *Anomaly Transformer: Time Series Anomaly Detec
 显式关联类（VAR、状态空间、图随机游走、子序列相似度） | 显式建模关联 | 难学到信息丰富的表示、难建模细粒度关联；GNN 学到的图只限于单个时间点；子序列方法抓不到每个点与整条序列的细粒度关联
 密度估计 / 聚类类（LOF、OC-SVM、Deep SVDD 等） | 密度或到簇中心的距离 | 经典方法不考虑时间信息，难泛化到未见场景
 
+表中：「类别」是已有方法类型，「判据」是其异常判据，「论文指出的不足」是其问题。
+
 核心观察（论文 Sec. 1）：
 
 1. 把 Transformer 用在时间序列上，每个时间点的 self-attention 权重是它对序列中所有时间点的**关联分布**，论文称为 **series-association**，能反映周期、趋势等动态模式。
@@ -47,6 +49,8 @@ $$\mathcal X^l=\text{Layer-Norm}\big(\text{Feed-Forward}(\mathcal Z^l)+\mathcal 
 
 其中 $\mathcal X^l\in\mathbb R^{N\times d_{\text{model}}}$，$\mathcal X^0=\text{Embedding}(\mathcal X)$ 是嵌入后的原序列；输入窗口 $\mathcal X\in\mathbb R^{N\times d}$（论文取窗口长度 $N=100$）。最后由堆叠输出经线性层得到重构 $\hat{\mathcal X}$（Figure 1 右侧 Reconstruction）。
 
+其中：$\mathcal Z^l$ 是注意力子层输出；$\text{Layer-Norm}$ 是层归一化；$\text{Anomaly-Attention}$ 是双分支注意力；$\text{Feed-Forward}$ 是前馈层；加上输入是残差连接。下图概括整体结构。
+
 ```
           X (N x d)
              |  Embedding
@@ -62,6 +66,8 @@ $$\mathcal X^l=\text{Layer-Norm}\big(\text{Feed-Forward}(\mathcal Z^l)+\mathcal 
         X_hat (重构)
 ```
 
+图中：输入 $X$ 经 Embedding 后进入 $L$ 层堆叠块，每层依次是 Anomaly-Attention（同时产出 $P^l,S^l$ 供关联差异使用）、残差与 LayerNorm、前馈层、残差与 LayerNorm；最后经线性层得到重构 $\hat X$。关键结论：与标准 Transformer 相比只换了注意力模块，且做窗口内重构。
+
 [解读] 与标准 Transformer 编码器相比，结构上只换了注意力模块，没有因果掩码；它不做预测而是做**窗口内重构**。
 
 ### Anomaly-Attention：先验关联与序列关联
@@ -70,9 +76,15 @@ $$\mathcal X^l=\text{Layer-Norm}\big(\text{Feed-Forward}(\mathcal Z^l)+\mathcal 
 
 $$\mathcal Q,\mathcal K,\mathcal V,\sigma=\mathcal X^{l-1}W^l_{\mathcal Q},\ \mathcal X^{l-1}W^l_{\mathcal K},\ \mathcal X^{l-1}W^l_{\mathcal V},\ \mathcal X^{l-1}W^l_{\sigma}$$
 
+
+其中：$\mathcal X^{l-1}$ 是上一层输出；$W^l_{\mathcal Q},W^l_{\mathcal K},W^l_{\mathcal V},W^l_{\sigma}$ 是各分支的投影矩阵；$\mathcal Q,\mathcal K,\mathcal V$ 是查询、键、值；$\sigma$ 是先验分支的尺度。
+
 **先验关联（Prior-Association）**，用以相对时间距离 $|j-i|$ 为变量的高斯核，每个时间点 $i$ 有自己的可学习尺度 $\sigma_i$：
 
 $$\mathcal P^l=\text{Rescale}\Big(\Big[\frac{1}{\sqrt{2\pi}\,\sigma_i}\exp\Big(-\frac{|j-i|^2}{2\sigma_i^2}\Big)\Big]_{i,j\in\{1,\dots,N\}}\Big)$$
+
+
+其中：$\mathcal P^l$ 是先验关联矩阵；$i,j$ 是时间点下标；$\sigma_i$ 是第 $i$ 点可学习的高斯尺度；$|j-i|$ 是相对时间距离；高斯核给出相邻集中的权重；$\text{Rescale}$ 把每行除以行和，使其成为概率分布。
 
 $\text{Rescale}(\cdot)$ 是把每一行除以行和，使每行成为离散分布。高斯核是单峰的，所以先验天然偏向相邻区域；$\sigma_i$ 可学习，使先验能适应不同长度的异常段等模式。
 
@@ -82,10 +94,15 @@ $$\mathcal S^l=\text{Softmax}\Big(\frac{\mathcal Q\mathcal K^{\top}}{\sqrt{d_{\t
 
 维度：$\mathcal Q,\mathcal K,\mathcal V\in\mathbb R^{N\times d_{\text{model}}}$，$\sigma\in\mathbb R^{N\times 1}$，$W^l_{\mathcal Q},W^l_{\mathcal K},W^l_{\mathcal V}\in\mathbb R^{d_{\text{model}}\times d_{\text{model}}}$，$W^l_{\sigma}\in\mathbb R^{d_{\text{model}}\times 1}$，$\mathcal P^l,\mathcal S^l\in\mathbb R^{N\times N}$。多头版本（论文实际使用）里 $\sigma\in\mathbb R^{N\times h}$，每个头有自己的 $\sigma$ 和 $\mathcal P$、$\mathcal S$，多头输出拼接后得到 $\hat{\mathcal Z}^l$。
 
+
+下图对比两个分支如何得到序列关联与先验关联。
+
 ```
  X^{l-1} --W_Q,W_K--> Q K^T / sqrt(d) --Softmax--> S  (序列关联, 学出来)  --> S V --> Z
          \--W_sigma--> sigma_i --高斯核 G(|j-i|; sigma_i)--Rescale--> P (先验关联, 相邻集中)
 ```
+
+图中：上支路由 $W_Q,W_K$ 得到查询与键，经缩放点积和 Softmax 得到序列关联 $S$（学出来的），再乘 $V$ 得到输出 $Z$；下支路由 $W_\sigma$ 得到每点的尺度 $\sigma_i$，经高斯核与 Rescale 得到先验关联 $P$（相邻集中）。关键结论：序列关联参与重构，先验关联只作对比参照。
 
 [解读] 只有序列关联分支参与重构（$\hat{\mathcal Z}^l=\mathcal S^l\mathcal V$）；先验分支不产出特征，只作为"相邻集中"的参照分布，为关联差异提供对比。论文没写 $\sigma$ 如何保证为正，这里不展开 [待核实：官方实现细节]。
 
@@ -94,6 +111,9 @@ $$\mathcal S^l=\text{Softmax}\Big(\frac{\mathcal Q\mathcal K^{\top}}{\sqrt{d_{\t
 论文把关联差异定义为先验与序列关联的**对称 KL 散度**，并在 $L$ 层上取平均，把多层特征的关联综合起来（式 (3)）：
 
 $$\text{AssDis}(\mathcal P,\mathcal S;\mathcal X)=\Big[\frac1L\sum_{l=1}^{L}\Big(\text{KL}\big(\mathcal P^l_{i,:}\,\Vert\,\mathcal S^l_{i,:}\big)+\text{KL}\big(\mathcal S^l_{i,:}\,\Vert\,\mathcal P^l_{i,:}\big)\Big)\Big]_{i=1,\dots,N}$$
+
+
+其中：$\mathcal P^l_{i,:},\mathcal S^l_{i,:}$ 是第 $l$ 层第 $i$ 个时间点的先验关联与序列关联（各为一行离散分布）；$\text{KL}$ 是 KL 散度，两个方向相加得到对称 KL；$L$ 是层数，对层取平均；结果是长度为 $N$ 的逐点关联差异。
 
 KL 是对 $\mathcal P^l$ 和 $\mathcal S^l$ 的**每一行**（对应一个时间点的离散分布）计算的，所以 $\text{AssDis}\in\mathbb R^{N\times1}$ 是逐点的。论文附录 Algorithm 2 的实现顺序是：先对头维度取平均得到每层的 $\mathcal P,\mathcal S$，再对每行算两个方向的 KL 并相加，最后对层维度取平均。
 
@@ -105,6 +125,9 @@ KL 是对 $\mathcal P^l$ 和 $\mathcal S^l$ 的**每一行**（对应一个时�
 
 $$\mathcal L_{\text{Total}}(\hat{\mathcal X},\mathcal P,\mathcal S,\lambda;\mathcal X)=\Vert\mathcal X-\hat{\mathcal X}\Vert_F^2-\lambda\times\Vert\text{AssDis}(\mathcal P,\mathcal S;\mathcal X)\Vert_1$$
 
+
+其中：$\mathcal X$ 是输入窗口，$\hat{\mathcal X}$ 是重构；$\Vert\cdot\Vert_F^2$ 是 Frobenius 范数的平方（重构误差）；$\lambda$ 是权重；$\Vert\text{AssDis}\Vert_1$ 是各点关联差异的 L1 范数；减号表示在重构的同时最大化关联差异。
+
 $\lambda>0$ 时优化方向是**增大**关联差异。因为先验是单峰高斯，增大差异会迫使序列关联更多地关注**非相邻**区域；在重构损失约束下，这对异常点更难做到（异常需要保持较大的相邻关联才能重构好），因而放大了正常与异常的可区分性。
 
 但论文指出，直接最大化关联差异会使高斯核的尺度参数急剧减小，先验关联变得没有意义。为此采用 **minimax 策略**（式 (5)，Figure 2）：
@@ -113,12 +136,17 @@ $$\text{Minimize 阶段：}\ \mathcal L_{\text{Total}}(\hat{\mathcal X},\mathcal
 
 $$\text{Maximize 阶段：}\ \mathcal L_{\text{Total}}(\hat{\mathcal X},\mathcal P_{\text{detach}},\mathcal S,\lambda;\mathcal X)$$
 
+
+其中：$\hat{\mathcal X}$ 是重构；$\mathcal P,\mathcal S$ 是先验关联与序列关联；$\lambda$ 是权重；$\ast_{\text{detach}}$ 表示该项不回传梯度（stop-gradient）。Minimize 阶段令关联差异项的权重为 $-\lambda$（只更新先验），Maximize 阶段为 $\lambda$（只更新序列关联）。
+
 其中 $\ast_{\text{detach}}$ 表示该关联不回传梯度（stop-gradient，Figure 1 的灰色箭头）。
 
 阶段 | 更新谁 | 关联差异项的符号 | 效果
 -- | -- | -- | --
 Minimize | 先验 $\mathcal P$（$\mathcal S$ 被 detach） | $-(-\lambda)=+\lambda$，即**最小化**关联差异 | 让先验的 $\sigma$ 去逼近当前学到的序列关联，先验适应各种时间模式
 Maximize | 序列关联 $\mathcal S$（$\mathcal P$ 被 detach） | $-\lambda$，即**最大化**关联差异 | 序列关联被推向非相邻区域；先验已贴近序列关联，所以这一阶段的约束更强
+
+表中：「阶段」是 minimax 的两个阶段，「更新谁」说明更新的关联（另一方 detach），「关联差异项的符号」说明优化方向，「效果」说明作用。结论：先验追逐序列关联，序列关联远离先验，二者博弈。
 
 两个阶段都同时包含重构项。论文附录 F 的说法是：minimize 阶段倾向于同时降低关联差异和重构误差，maximize 阶段倾向于增大关联差异并降低重构误差，并给出两项损失在五个真实数据集上都能收敛的曲线。
 
@@ -129,6 +157,9 @@ Maximize | 序列关联 $\mathcal S$（$\mathcal P$ 被 detach） | $-\lambda$�
 把归一化后的关联差异乘到逐点重构误差上，得到最终分数（式 (6)）：
 
 $$\text{AnomalyScore}(\mathcal X)=\text{Softmax}\big(-\text{AssDis}(\mathcal P,\mathcal S;\mathcal X)\big)\odot\Big[\Vert\mathcal X_{i,:}-\hat{\mathcal X}_{i,:}\Vert_2^2\Big]_{i=1,\dots,N}$$
+
+
+其中：$\text{AssDis}$ 是逐点的关联差异（窗口内 $N$ 个点）；$\text{Softmax}(-\text{AssDis})$ 是窗口内的归一化权重，差异越小权重越大；$\Vert\mathcal X_{i,:}-\hat{\mathcal X}_{i,:}\Vert_2^2$ 是第 $i$ 个点的重构误差；$\odot$ 是逐元素乘。分数越高越可能是异常。
 
 $\odot$ 是逐元素乘，Softmax 在窗口内的 $N$ 个时间点之间做。关联差异越小（越像异常），$-\text{AssDis}$ 越大，权重越高。论文解释：即使异常被重构得不错，它仍然倾向于降低关联差异，所以分数仍然会高；重构误差和关联差异在这里是**协作**关系。
 
@@ -155,6 +186,8 @@ THOC | 84.99 | 89.69 | 90.68 | 85.13 | 89.54
 InterFusion | 86.22 | 86.62 | 89.14 | 83.01 | 83.52
 Anomaly Transformer | 92.33 | 93.59 | 96.69 | 94.07 | 97.89
 
+表中：「方法」是对比模型，其余列是各数据集的 F1（%，point-adjust 后计算，越大越好）。结论：Anomaly Transformer 在五个数据集上均最优；注意其数字是 PA 协议下的结果。
+
 论文称 Anomaly Transformer 在所有基准上取得一致的 SOTA，并在 Figure 3 中给出 ROC 曲线，AUC 为：SMD 0.9866、MSL 0.9812、SMAP 0.9941、SWaT 0.9876、PSM 0.9946，均为对比方法中最高（Figure 3 的对比方法为 BeatGAN、Deep-SVDD、LSTM-VAE）。NeurIPS-TS 上 F1 为 71.31（Figure 4），同图里最高的其他方法为 67.45（BeatGAN）。
 
 **消融（Table 2，F1 %）**：
@@ -167,6 +200,8 @@ AT，AssDis，Learnable，Minimax | 87.57 | 90.50 | 90.98 | 93.21 | 95.47 | 91.5
 AT，Assoc，Fix，Max | 83.95 | 82.17 | 70.65 | 79.46 | 79.04 | 79.05
 AT，Assoc，Learnable，Max | 88.88 | 85.20 | 87.84 | 81.65 | 93.83 | 87.48
 AT final（Assoc，Learnable，Minimax） | 92.33 | 93.59 | 96.90 | 94.07 | 97.89 | 94.96
+
+表中：各行是消融设置（AT 指 Anomaly Transformer；Recon 为重构判据，AssDis 为关联差异，Assoc 为关联判据；Learnable/Fix 表示 $\sigma$ 可学习或固定；Max/Minimax 为优化策略），后几列是各数据集 F1（%）与平均。结论：关联判据、可学习先验与 minimax 都带来明显提升。
 
 其中 Recon 是纯重构判据，AssDis 是纯关联差异，Assoc 是式 (6) 的关联判据；Fix 指把 $\sigma$ 固定为 1.0。论文的结论：关联判据比重构判据平均 F1 绝对提升 18.76（76.20 到 94.96）；只用关联差异也有 91.55，超过 THOC 的 88.01（由 Table 1 算出）；可学习先验和 minimax 分别再带来 8.43 和 7.48 的平均提升。
 
@@ -181,6 +216,8 @@ MSL | 1.01 | 1.10 | 1.59
 SMAP | 1.05 | 1.08 | 1.43
 SWaT | 1.08 | 1.14 | 1.76
 PSM | 1.03 | 1.04 | 2.64
+
+表中：「数据集」是评测集，其余三列是不同训练方式下相邻关联权重（%）的对比度（异常 / 正常，越大越可区分）：Recon 只用重构，Max 直接最大化关联差异，Ours 为 minimax。结论：minimax 显著拉大了异常与正常的差别。
 
 这说明：只用重构时异常与正常点在相邻关联上几乎没差别（对比度接近 1），直接最大化略有改善，minimax 显著拉大。
 
@@ -219,6 +256,8 @@ THOC | 到多尺度簇中心的距离 | 否 | 论文称其与 InterFusion 是当
 GTA（Chen et al., 2021） | 图 + Transformer + 重构 | 是 | 论文相关工作中提到，仍是重构判据
 Anomaly Transformer | 关联差异 × 重构误差 | 是（改造为 Anomaly-Attention） | 判据来自注意力分布本身
 
+表中：「方法」是对比对象，「判据来源」说明异常判据，「是否用注意力」说明是否基于注意力机制，「说明」给出补充。结论：Anomaly Transformer 的判据直接来自注意力分布本身，并与重构误差结合。
+
 综述中还提到同属"关联 / 表示"路线的 DCdetector 与对抗训练的 TranAD（具体机理本文不展开）。
 
 ## 使用方式
@@ -247,4 +286,5 @@ def anomaly_score(P, S, err):
 - Jiehui Xu, Haixu Wu, Jianmin Wang, Mingsheng Long. *Anomaly Transformer: Time Series Anomaly Detection with Association Discrepancy*. ICLR 2022. [arXiv:2110.02642](https://arxiv.org/abs/2110.02642)
 - 官方代码：[thuml/Anomaly-Transformer](https://github.com/thuml/Anomaly-Transformer)
 - Kim et al. *Towards a Rigorous Evaluation of Time-series Anomaly Detection*（PA 的批评）. [arXiv:2109.05257](https://arxiv.org/abs/2109.05257)
+
 
