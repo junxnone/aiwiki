@@ -3,7 +3,7 @@
 | Title     | ML Tasks TimeSeries Deep TimesNet                     |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-19T01:28:53Z`                                |
-| Updated @ | `2026-11-19T02:24:19Z`                                |
+| Updated @ | `2026-11-20T08:10:42Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/631) |
 
@@ -48,6 +48,8 @@ variation）建模**，它被认为是各类时间序列分析任务共同的核
 
 ### 为什么折叠有用
 
+下图用一个小例子展示一维序列如何折叠成 2D。
+
     一维序列 (T=12，周期 p=4，共 3 个周期)
     
       x1 x2 x3 x4 | x5 x6 x7 x8 | x9 x10 x11 x12
@@ -63,6 +65,13 @@ variation）建模**，它被认为是各类时间序列分析任务共同的核
     
       沿列方向（同一个周期内）相邻  -> intraperiod-variation
       沿行方向（不同周期同一相位）相邻 -> interperiod-variation
+
+图中：
+
+  - 上方是一维序列（$T=12$，周期 $p=4$，共 3 个周期）；下方是折叠后的 2D
+    表：每列是一个周期，每行是同一相位（周期内位置）。
+  - 沿同一列的相邻元素是同一周期内的相邻时间点（周期内变化）；沿同一行的相邻元素是相邻周期的同相位点（周期间变化）。
+  - 关键结论：折叠后 2D 卷积核可同时覆盖两种变化。
 
 按论文 Figure 1
 的约定：每一**列**是一个周期内的时间点，每一**行**是不同周期中处于同一相位的时间点。折叠后，二维卷积核天然同时覆盖"周期内相邻点"和"相邻周期的同相位点"。（论文公式
@@ -80,6 +89,12 @@ A\\in\\mathbb R^{T}\\ \\text{（对 C 个通道取平均的幅值）}\\ {f\_1,\\
 \\right\\rceil,\\quad i=1,\\dots,k \\quad \\text{（对应的周期长度）}
 \\end{aligned} $$
 
+其中：$X\_{1D}\\in\\mathbb R^{T\\times C}$ 是输入（长度 $T$，$C$
+个变量）；$\\mathrm{FFT}$ 是快速傅里叶变换，$\\mathrm{Amp}$
+取幅值，$\\mathrm{Avg}$ 对通道取平均得到 $A$，$A\_j$ 是频率 $j$
+的强度；$\\arg\\mathrm{Topk}$ 取强度最大的 $k$ 个频率 $f\_i$；$p\_i$
+是对应周期长度，$\\lceil\\cdot\\rceil$ 为向上取整。
+
 要点：
 
   - $A\_j$ 表示频率为 $j$ 的周期基函数的强度，对应的周期长度是 $T/j$。
@@ -94,6 +109,10 @@ $$
 X\_{2D}^{i}=\\mathrm{Reshape}*{p\_i,f\_i}\\big(\\mathrm{Padding}(X*{1D})\\big),\\quad
 i=1,\\dots,k,\\qquad X\_{2D}^{i}\\in\\mathbb R^{p\_i\\times f\_i\\times
 C} $$
+
+其中：$X^{i}*{2D}$ 是第 $i$ 个周期对应的 2D 张量；$\\mathrm{Reshape}*{p\_i,f\_i}$
+把序列重排成 $p\_i$ 行 $f\_i$ 列；$p\_i$ 是周期长度（行数），$f\_i$ 是周期个数（列数）；$C$
+是变量数；$k$ 个周期各得一个张量。
 
 $\\mathrm{Padding}(\\cdot)$ 在时间维末尾补零，使长度能被整除（即补到 $p\_i\\times f\_i$）。结果是
 k 个 2D 张量，对应 k 种不同周期下的 2D 变化。
@@ -112,6 +131,10 @@ k 个 2D 张量，对应 k 种不同周期下的 2D 变化。
 | 2        | 48                         | 2.0            | 入选（第 2 名）    |
 | 4        | 24                         | 3.0            | 入选（第 1 名）    |
 | 8        | 12                         | 0.5            | 否            |
+
+表中：「频率索引 $f$」是 FFT 的频率序号，「周期 $p=\\lceil 96/f\\rceil$」是对应周期，「幅值
+$A\_f$（构造值）」是该频率的强度，「是否入选」表示在 $k=2$
+时是否被取为主周期。结论：幅值最大的两个频率（$f=4,2$）被选中。
 
 于是得到两个 2D 张量：
 
@@ -140,6 +163,8 @@ Period=72`、`Frequency=9 / Period=40`、`Frequency=15 / Period=24`，对应的 
 
 ### 整体
 
+下图概括 TimesNet 的整体结构。
+
 ``` 
  输入 X_1D ∈ R^{T×C}
      |
@@ -149,6 +174,13 @@ Period=72`、`Frequency=9 / Period=40`、`Frequency=15 / Period=24`，对应的 
      |
  任务相关的输出层（预测 / 填补 / 分类 / 异常检测）
 ```
+
+图中：
+
+  - 自上而下：输入 $X\_{1D}$（$T\\times C$）先经嵌入层得到 $X^0$（$T\\times
+    d\_{\\text{model}}$）。
+  - 接着是 $L$ 层 TimesBlock，每层输出加上输入做残差（公式 4）。
+  - 最后接任务相关的输出层，用于预测、填补、分类或异常检测。
 
 ### 一个 TimesBlock（公式 5、6）
 
@@ -165,10 +197,19 @@ i=1,\\dots,k && \\text{（折叠）}\\ \\hat X\_{2D}^{l,i} &=
 X*{2D}^{l,i}\\big)\\Big) && \\text{（展平并截断回长度 }T\\text{）} \\end{aligned}
 $$
 
+其中：$X^{l-1}*{1D}$ 是第 $l$ 层输入，形状 $T\\times d*{\\text{model}}$；$A,{f},{p}$
+是对其做 FFT 得到的幅值、top-$k$ 频率与对应周期；$X^{l,i}*{2D}$ 是第 $i$ 个周期折叠成的 2D
+张量；$\\mathrm{Inception}$ 是参数共享的多尺度 2D 卷积块；$\\mathrm{Trunc}$
+把补零后的长度截回 $T$；$\\mathrm{Reshape}*{1,(p\_i\\times f\_i)}$ 把
+2D 张量展平成一维。
+
 $$ \\begin{aligned} \\hat A\_{f\_1},\\dots,\\hat A\_{f\_k} &=
 \\mathrm{Softmax}\\big(A\_{f\_1}^{l-1},\\dots,A\_{f\_k}^{l-1}\\big) &&
 \\text{（幅值归一化为权重）}\\ X\_{1D}^{l} &= \\sum\_{i}\\hat A\_{f\_i}\\times
-\\hat X\_{1D}^{l,i} && \\text{（自适应聚合，公式 6）} \\end{aligned} $$
+\\hat X\_{1D}^{l,i} && \\text{（自适应聚合，公式 6）} \\end{aligned}
+
+其中：$\\hat A\_{f\_i}$ 是第 $i$ 个周期的权重，由各周期的幅值经 softmax 归一化得到；$\\hat
+X^{l,i}*{1D}$ 是第 $i$ 路周期处理后的一维表示；$X^{l}*{1D}$ 是第 $l$ 层输出，为各路表示按权重相加。 $$
 
 一层 TimesBlock 内的张量形状（按论文符号；`B` 为 batch，论文公式里未写，属 `[解读]`）：
 
@@ -180,6 +221,10 @@ $$ \\begin{aligned} \\hat A\_{f\_1},\\dots,\\hat A\_{f\_k} &=
 | Inception 之后 | $\\hat X\_{2D}^{l,i}$ | 同上（论文只写了展平回 1D 后截断到长度 T，Inception 前后形状不变是 `[解读]`）                                    |
 | 展平并截断        | $\\hat X\_{1D}^{l,i}$ | $B\\times T\\times d\_{\\text{model}}$                                               |
 | softmax 聚合   | $X\_{1D}^{l}$         | $B\\times T\\times d\_{\\text{model}}$                                               |
+
+表中：「步骤」是 TimesBlock 内的环节，「张量」是对应的变量，「形状」是其维度（$B$ 为 batch，$T$
+为序列长度，$d\_{\\text{model}}$ 为隐维，$p\_i$、$f\_i$ 为第 $i$
+路周期长度与周期个数）。结论：每层输入输出形状相同，因此可以做残差并堆叠。
 
 即每层输入输出形状相同，因此能直接做残差并堆叠。
 
@@ -241,6 +286,9 @@ $$ \\begin{aligned} \\hat A\_{f\_1},\\dots,\\hat A\_{f\_k} &=
 | 分类   | 序列级分类，UEA 10 个数据集                                            | 交叉熵 / 准确率                 |
 | 异常检测 | 无监督，重构，用重构误差判异常                                              | MSE / Precision、Recall、F1 |
 
+表中：「任务」是五类任务，「做法」概述其设置，「训练损失 / 评测指标」给出训练损失与评测指标（SMAPE、MASE、OWA
+为短期预测指标，F1 为异常检测综合指标）。
+
 填补、分类的具体输出头论文未细述 `[待核实]`。
 
 ## 训练与推理
@@ -255,6 +303,10 @@ $$ \\begin{aligned} \\hat A\_{f\_1},\\dots,\\hat A\_{f\_k} &=
 | 填补   | 3   | 2  | 64 / 128                    | 1e-3  | MSE   | 16         | 10    |
 | 分类   | 3   | 2  | 32 / 64                     | 1e-3  | 交叉熵   | 16         | 30    |
 | 异常检测 | 3   | 3  | 32 / 128                    | 1e-4  | MSE   | 128        | 10    |
+
+表中：「任务」是五类任务；$k$ 是选取的周期个数；「层数」是 TimesBlock 层数；$d\_{\\min}$ /
+$d\_{\\max}$ 是 $d\_{\\text{model}}$ 的上下限；「初始学习率」「损失」「batch
+size」「epoch」是训练设置。
 
 各任务的设置：
 
@@ -299,6 +351,10 @@ Transformer、Rocket、Flowformer 等）。注意"一致"是论文的措辞，�
 | Exchange    | 0.416 / 0.443 | DLinear 0.354 / 0.414                         |
 | ILI         | 2.139 / 0.931 | FEDformer 2.077 / 0.914                       |
 
+表中：「数据集」是长期预测基准，「TimesNet」列是四个预测长度平均的 MSE /
+MAE，「论文表中的有力对手」是表中最强的对比方法及其成绩。结论：TimesNet
+并非处处第一，ETTh1、Traffic、Exchange、ILI 上对手更好。
+
 论文正文称 TimesNet 在长期预测中"超过 80% 的情形"达到 SOTA（依据完整表 Table 13）。从 Table 2
 可见，ETTh1 的 MSE、Traffic 的 MSE、Exchange 和 ILI
 上它并不是最好的（对比数字取自上表，表中最优为加粗项）。
@@ -312,6 +368,9 @@ Transformer、Rocket、Flowformer 等）。注意"一致"是论文的措辞，�
 | N-BEATS   | 11.851 | 1.599 | 0.855 |
 | FEDformer | 12.840 | 1.701 | 0.918 |
 | DLinear   | 13.639 | 2.095 | 1.051 |
+
+表中：「模型」是 M4 数据集上的对比方法，SMAPE、MASE、OWA 都是越小越好。结论：TimesNet 最优，但与
+N-BEATS、N-HiTS 的差距很小。
 
 差距在三个专用方法之间很小（SMAPE 差 0.02\~0.1）。论文写明 M4 含有 10
 万条来自不同来源的序列。N-BEATS、N-HiTS
@@ -327,6 +386,8 @@ Transformer、Rocket、Flowformer 等）。注意"一致"是论文的措辞，�
 | ETTh2       | 0.049 / 0.146 | Stationary 0.053 / 0.152                       |
 | Electricity | 0.092 / 0.210 | Stationary 0.100 / 0.218                       |
 | Weather     | 0.030 / 0.054 | Autoformer 0.031 / 0.057                       |
+
+表中：「数据集」是评测集，「TimesNet」与「次优」两列是 MSE / MAE（越小越好）。结论：TimesNet 在六个数据集上都最好。
 
 六个数据集 TimesNet 都是最好。
 
@@ -346,6 +407,10 @@ TimesNet 73.6%，超过经典方法 Rocket（72.5%）和深度模型 Flowformer�
 | Autoformer                  | 85.11 | 79.05 | 71.12 | 92.74 | 93.29 | 84.26 |
 | Anomaly Transformer（重构误差判据） | 85.49 | 83.31 | 71.18 | 83.10 | 79.40 | 80.50 |
 | Transformer                 | 79.56 | 78.68 | 69.70 | 80.37 | 76.07 | 76.88 |
+
+表中：「模型」是对比方法（括号内为所用 2D 骨干或判据），SMD、MSL、SMAP、SWaT、PSM 是五个异常检测数据集，数值是
+F1（%，越高越好），「平均 F1」是五个数据集的平均。结论：TimesNet 平均 F1
+最高，周期性分析有助于突出违反周期的变化。
 
 论文的解释是：周期性分析有助于突出违反周期的变化，因此 TimesNet、FEDformer、Autoformer 都表现不错；vanilla
 attention 计算每对时间点的相似度，容易被占多数的正常点干扰（这是论文的推测）。
@@ -394,6 +459,9 @@ attention 计算每对时间点的相似度，容易被占多数的正常点干�
 | PatchTST                                        | 把序列切成 patch 当 token，Transformer 编码，通道独立 | 无显式周期            | `[经验]` 思路是"局部 patch 上的注意力"，TimesNet 是"按周期折叠的 2D 卷积"；TimesNet 论文的基线中没有 PatchTST（参考文献里未见） |
 | [DeepAR](/0625_ML_Tasks_TimeSeries_Deep_DeepAR) | 自回归 RNN，概率预测                            | 无                | 目标不同：DeepAR 输出分布，TimesNet 是点预测的通用骨干                                                     |
 | N-BEATS / N-HiTS                                | MLP 堆叠，残差                               | 无                | 短期预测的专用强基线，论文在 M4 上与它们的差距很小                                                             |
+
+表中：「方法」是对比对象，「建模方式」「对周期的处理」说明其机制，「与 TimesNet 的区别」点出差异。结论：TimesNet
+的特点是把周期折叠成 2D，再用 2D 卷积同时建模周期内与周期间变化。
 
 ## 使用方式
 
