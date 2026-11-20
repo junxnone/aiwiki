@@ -5716,6 +5716,15 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki ML Tasks TimeSeries Deep MultiPatchFormer",
+      "group": 5,
+      "title": "MultiPatchFormer",
+      "url": "https://junxnone.github.io/aiwiki/#/0686_ML_Tasks_TimeSeries_Deep_MultiPatchFormer",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Tasks Image Classification MobileNet V1",
       "group": 6,
       "title": "MobileNet V1",
@@ -10106,6 +10115,13 @@
     {
       "source": "aiwiki ML Tasks TimeSeries Deep",
       "target": "aiwiki ML Tasks TimeSeries Deep Crossformer",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks TimeSeries Deep",
+      "target": "aiwiki ML Tasks TimeSeries Deep MultiPatchFormer",
       "value": 5,
       "visible": true,
       "expand": true
