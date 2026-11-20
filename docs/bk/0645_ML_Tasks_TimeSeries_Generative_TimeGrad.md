@@ -3,7 +3,7 @@
 | Title     | ML Tasks TimeSeries Generative TimeGrad               |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-19T02:27:28Z`                                |
-| Updated @ | `2026-11-19T02:27:28Z`                                |
+| Updated @ | `2026-11-20T08:16:29Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/645) |
 
@@ -54,7 +54,17 @@ TimeGrad 把"每个时间步的输出分布"从高斯/流换成条件扩散模�
                                           (N 次去噪都以同一个 h_{t-1} 为条件)
 ```
 
+图中：
+
+  - 左侧是输入：历史观测 $x\_{1:t-1}$ 与协变量 $c$ 经 RNN 编码为隐状态 $h\_{t-1}$。
+
+  - 右侧是每个时间步的去噪链：从标准高斯噪声 $x\_t^N$ 出发，逐步经去噪网络 $\\epsilon\_\\theta$ 得到
+    $x\_t^{N-1},\\dots,x\_t^0$，所有 $N$ 次去噪都以同一个 $h\_{t-1}$ 为条件。
+
+  - 关键结论：RNN 负责时间上的条件，扩散模型负责每一步的 $D$ 维联合分布。
+
   - 联合分布按时间做自回归分解；
+
   - 每个因子 $p\_\\theta(\\mathbf x\_t^0\\mid\\mathbf h\_{t-1})$
     是一个**任意形状**的 $D$ 维分布，由扩散模型隐式给出，不需要写出协方差，也不需要可逆变换。
 
@@ -68,6 +78,10 @@ x^n\\mid\\mathbf x^{n-1}),\\qquad q(\\mathbf x^n\\mid\\mathbf
 x^{n-1})=\\mathcal N\\big(\\mathbf x^n;\\ \\sqrt{1-\\beta\_n},\\mathbf
 x^{n-1},\\ \\beta\_n\\mathbf I\\big)$$
 
+其中：$\\mathbf x^0$ 是干净数据，$\\mathbf x^n$ 是第 $n$ 步加噪后的样本，$N$
+是总扩散步数；$\\beta\_n$ 是第 $n$ 步的噪声强度（方差表）；$\\mathcal
+N(\\cdot;\\mu,\\Sigma)$ 是高斯分布；$\\mathbf I$ 是单位矩阵；前向过程是逐步缩小信号并加噪的马尔可夫链。
+
 记
 $\\alpha\_n=1-\\beta\_n$，$\\bar\\alpha\_n=\\prod\_{i=1}^n\\alpha\_i$（累乘），则任意噪声级别
 $n$ 可由 $\\mathbf x^0$ 一步闭式采样：
@@ -75,6 +89,11 @@ $n$ 可由 $\\mathbf x^0$ 一步闭式采样：
 $$q(\\mathbf x^n\\mid\\mathbf x^0)=\\mathcal N\\big(\\mathbf x^n;\\
 \\sqrt{\\bar\\alpha\_n},\\mathbf x^0,\\ (1-\\bar\\alpha\_n)\\mathbf
 I\\big)$$
+
+其中：$\\bar\\alpha\_n=\\prod\_{i=1}^n\\alpha\_i$ 是累乘保留系数，随 $n$ 增大趋于
+0；$\\sqrt{\\bar\\alpha\_n},\\mathbf x^0$
+是保留的信号，$(1-\\bar\\alpha\_n)\\mathbf I$
+是累计噪声方差；即可一步直接得到任意噪声级别的样本。
 
 等价地 $\\mathbf x^n=\\sqrt{\\bar\\alpha\_n},\\mathbf
 x^0+\\sqrt{1-\\bar\\alpha\_n},\\epsilon$，$\\epsilon\\sim\\mathcal
@@ -89,6 +108,10 @@ x^n),\\qquad p\_\\theta(\\mathbf x^{n-1}\\mid\\mathbf x^n)=\\mathcal
 N\\big(\\mathbf x^{n-1};\\ \\mu\_\\theta(\\mathbf x^n,n),\\
 \\Sigma\_\\theta(\\mathbf x^n,n)\\mathbf I\\big)$$
 
+其中：$p\_\\theta(\\mathbf x^{0:N})$ 是反向过程的联合分布；$p(\\mathbf x^N)$
+是起点标准高斯；$\\mu\_\\theta,\\Sigma\_\\theta$ 是网络预测的均值与方差，输入为
+$\\mathbf x^n$ 与扩散步 $n$；$\\mathbf I$ 是单位矩阵。
+
 其中 $\\mu\_\\theta,\\Sigma\_\\theta$ 都以 $\\mathbf x^n$ 和噪声索引 $n$
 为输入。$p\_\\theta(\\mathbf x^{n-1}\\mid\\mathbf x^n)$
 的作用就是"消去前向过程加的那一点噪声"。
@@ -100,6 +123,10 @@ p\_\\theta(\\mathbf x^0)\\big\]\\ \\le\\ \\min\_\\theta\\ \\mathbb
 E\_{q(\\mathbf x^{0:N})}\\big\[-\\log p\_\\theta(\\mathbf x^{0:N})+\\log
 q(\\mathbf x^{1:N}\\mid\\mathbf x^0)\\big\]$$
 
+其中：左侧是负对数似然的期望；右侧是其上界（由 Jensen 不等式得到）；$q(\\mathbf x^0)$
+是数据分布；$p\_\\theta(\\mathbf x^{0:N})$ 是反向过程的联合分布；$q(\\mathbf
+x^{1:N}\\mid\\mathbf x^0)$ 是前向过程。最小化右侧即最小化变分下界。
+
 利用马尔可夫性，该上界可写成 KL 散度之和：
 
 $$-\\log p\_\\theta(\\mathbf x^0\\mid\\mathbf
@@ -109,11 +136,19 @@ x^N)\\big)+\\sum\_{n=2}^{N}D\_{\\mathrm{KL}}\\big(q(\\mathbf
 x^{n-1}\\mid\\mathbf x^n,\\mathbf x^0),|,p\_\\theta(\\mathbf
 x^{n-1}\\mid\\mathbf x^n)\\big)$$
 
+其中：第一项是重构项 $-\\log p\_\\theta(\\mathbf x^0\\mid\\mathbf
+x^1)$；第二项是前向终点分布与标准高斯先验的 KL；求和项对每个扩散步比较真实后验
+$q(\\mathbf x^{n-1}\\mid\\mathbf x^n,\\mathbf x^0)$ 与学习的转移
+$p\_\\theta(\\mathbf x^{n-1}\\mid\\mathbf x^n)$。
+
 条件在 $\\mathbf x^0$ 上的前向后验是可解的高斯：
 
 $$q(\\mathbf x^{n-1}\\mid\\mathbf x^n,\\mathbf x^0)=\\mathcal
 N\\big(\\mathbf x^{n-1};\\ \\tilde\\mu\_n(\\mathbf x^n,\\mathbf x^0),\\
 \\tilde\\beta\_n\\mathbf I\\big)$$
+
+其中：$q(\\mathbf x^{n-1}\\mid\\mathbf x^n,\\mathbf x^0)$ 是已知干净数据 $\\mathbf
+x^0$ 时的前向后验；它是均值为 $\\tilde\\mu\_n$、方差为 $\\tilde\\beta\_n$ 的高斯分布。
 
 $$\\tilde\\mu\_n(\\mathbf x^n,\\mathbf
 x^0)=\\frac{\\sqrt{\\bar\\alpha\_{n-1}},\\beta\_n}{1-\\bar\\alpha\_n},\\mathbf
@@ -121,12 +156,20 @@ x^0+\\frac{\\sqrt{\\alpha\_n},(1-\\bar\\alpha\_{n-1})}{1-\\bar\\alpha\_n},\\math
 x^n,\\qquad
 \\tilde\\beta\_n=\\frac{1-\\bar\\alpha\_{n-1}}{1-\\bar\\alpha\_n},\\beta\_n$$
 
+其中：$\\tilde\\mu\_n$ 与 $\\tilde\\beta\_n$ 是前向后验的均值与方差，$\\mathbf x^0$ 与
+$\\mathbf x^n$ 的系数由方差表 $\\beta\_n$、$\\alpha\_n$、$\\bar\\alpha\_n$
+决定；该后验在已知 $\\mathbf x^0$ 时可以解析求得。
+
 两个高斯之间的 KL 只剩均值的平方误差（$C$ 与 $\\theta$ 无关）：
 
 $$D\_{\\mathrm{KL}}\\big(q(\\mathbf x^{n-1}\\mid\\mathbf x^n,\\mathbf
 x^0),|,p\_\\theta(\\mathbf x^{n-1}\\mid\\mathbf x^n)\\big)=\\mathbb
 E\_q\\Big\[\\frac1{2\\Sigma\_\\theta}\\big|\\tilde\\mu\_n(\\mathbf
 x^n,\\mathbf x^0)-\\mu\_\\theta(\\mathbf x^n,n)\\big|^2\\Big\]+C$$
+
+其中：$D\_{\\mathrm{KL}}$ 是 KL 散度；$\\tilde\\mu\_n$ 是真实后验均值；$\\mu\_\\theta$
+是网络预测的均值；$\\Sigma\_\\theta$ 是反向转移方差；$\\lVert\\cdot\\rVert^2$ 是平方范数；$C$
+是与 $\\theta$ 无关的常数。结论：KL 项化为均值的平方误差。
 
 **噪声预测参数化。** 利用 $\\mathbf x^n=\\sqrt{\\bar\\alpha\_n},\\mathbf
 x^0+\\sqrt{1-\\bar\\alpha\_n},\\epsilon$ 可把 $\\tilde\\mu\_n$ 改写成关于
@@ -138,11 +181,20 @@ x^n,n)=\\frac1{\\sqrt{\\alpha\_n}}\\Big(\\mathbf
 x^n-\\frac{\\beta\_n}{\\sqrt{1-\\bar\\alpha\_n}},\\epsilon\_\\theta(\\mathbf
 x^n,n)\\Big)$$
 
+其中：$\\mu\_\\theta(\\mathbf x^n,n)$ 是反向转移的均值；$\\epsilon\_\\theta(\\mathbf
+x^n,n)$ 是网络预测的噪声；$\\alpha\_n=1-\\beta\_n$；该式表示：从 $\\mathbf x^n$
+中扣除预测的噪声分量，得到更干净样本的均值。
+
 目标函数化简为（论文式 7）：
 
 $$\\mathbb E\_{\\mathbf
 x^0,\\epsilon}\\Big\[\\frac{\\beta\_n^2}{2\\Sigma\_\\theta,\\alpha\_n(1-\\bar\\alpha\_n)},\\big|\\epsilon-\\epsilon\_\\theta\\big(\\sqrt{\\bar\\alpha\_n},\\mathbf
 x^0+\\sqrt{1-\\bar\\alpha\_n},\\epsilon,\\ n\\big)\\big|^2\\Big\]$$
+
+其中：$\\beta\_n,\\alpha\_n,\\bar\\alpha\_n$ 是方差表相关系数；$\\Sigma\_\\theta$
+是反向转移的方差；前面的系数是该扩散步的权重；$\\epsilon$
+是真实噪声；$\\epsilon\_\\theta(\\cdot,n)$ 是网络预测的噪声，其输入是加噪样本与扩散步
+$n$。训练通常去掉权重系数，得到简化损失。
 
 论文指出它类似 Noise Conditional Score Networks 中的 score matching
 损失，并因此把推理采样描述为类似 Langevin dynamics。
@@ -160,6 +212,10 @@ x^0\_{1:t\_0-1},\\mathbf
 c\_{1:T}\\big)=\\prod\_{t=t\_0}^{T}q\_{\\mathcal X}\\big(\\mathbf
 x\_t^0\\mid\\mathbf x^0\_{1:t-1},\\mathbf c\_{1:T}\\big)$$
 
+其中：$q\_{\\mathcal X}$ 是真实的数据分布；$\\mathbf x^0\_{t\_0:T}$
+是预测区间的观测；$\\mathbf x^0\_{1:t\_0-1}$ 是上下文窗口；$\\mathbf
+c\_{1:T}$ 是协变量；右侧是按时间自回归的链式分解。
+
 每个因子用条件去噪扩散模型学习。
 
 **RNN 编码**（论文式 9，LSTM 或 GRU，多层，共享权重）：
@@ -168,10 +224,18 @@ $$\\mathbf h\_t=\\mathrm{RNN}*\\theta\\big(\\mathrm{concat}(\\mathbf
 x\_t^0,\\mathbf c\_t),\\ \\mathbf h*{t-1}\\big),\\qquad \\mathbf
 h\_0=\\mathbf 0$$
 
+其中：$\\mathbf h\_t$ 是第 $t$ 步隐状态；$\\mathrm{RNN}\_\\theta$ 是多层 LSTM 或
+GRU；$\\mathrm{concat}(\\mathbf x\_t^0,\\mathbf c\_t)$
+是观测与协变量的拼接；$\\mathbf h\_0=\\mathbf 0$ 是初始状态。
+
 于是式 8 被近似为（论文式 10）：
 
 $$\\prod\_{t=t\_0}^{T}p\_\\theta\\big(\\mathbf x\_t^0\\mid\\mathbf
 h\_{t-1}\\big)$$
+
+其中：$\\mathbf x\_t^0$ 是第 $t$ 步的 $D$ 维观测；$\\mathbf h\_{t-1}$ 是 RNN
+隐状态（编码了此前的观测与协变量）；$p\_\\theta$ 是由条件扩散模型给出的分布；连乘 $\\prod$
+对预测区间 $\[t\_0,T\]$ 的每个时间步相乘；$\\theta$ 包含 RNN 与去噪网络的权重。
 
 这里 $\\theta$ 同时包含 RNN 与去噪网络的权重。它之所以是自回归的，是因为 $\\mathbf h\_{t-1}$ 消费了
 $t-1$ 时刻的观测（推理时是上一步的采样值）。
@@ -192,6 +256,10 @@ $$\\mathbb E\_{\\mathbf
 x\_t^0,\\epsilon,n}\\Big\[\\big|\\epsilon-\\epsilon\_\\theta\\big(\\sqrt{\\bar\\alpha\_n},\\mathbf
 x\_t^0+\\sqrt{1-\\bar\\alpha\_n},\\epsilon,\\ \\mathbf h\_{t-1},\\
 n\\big)\\big|^2\\Big\]$$
+
+其中：$\\mathbf x\_t^0$ 是第 $t$ 步的干净观测；$\\epsilon$ 是所加噪声；$n$
+是随机抽取的扩散步；$\\epsilon\_\\theta$ 是噪声预测网络，输入加噪样本、RNN
+隐状态 $\\mathbf h\_{t-1}$ 与 $n$；损失是预测噪声与真实噪声的均方误差。
 
 Algorithm 1（每个时间步）：
 
@@ -220,6 +288,12 @@ I)$ 起，对 $n=N,\\dots,1$：
 $$\\mathbf x\_t^{n-1}=\\frac1{\\sqrt{\\alpha\_n}}\\Big(\\mathbf
 x\_t^n-\\frac{\\beta\_n}{\\sqrt{1-\\bar\\alpha\_n}},\\epsilon\_\\theta(\\mathbf
 x\_t^n,\\mathbf h\_{t-1},n)\\Big)+\\sqrt{\\Sigma\_\\theta},\\mathbf z$$
+
+其中：$\\mathbf x\_t^n$ 是第 $t$ 个时间步第 $n$
+个扩散步的样本；$\\alpha\_n=1-\\beta\_n$；$\\bar\\alpha\_n$
+是累乘；$\\epsilon\_\\theta(\\mathbf x\_t^n,\\mathbf h\_{t-1},n)$ 是以
+RNN 隐状态 $\\mathbf h\_{t-1}$ 与扩散步 $n$ 为条件的噪声预测网络；$\\Sigma\_\\theta$
+是采样噪声方差；$\\mathbf z$ 是标准高斯噪声。
 
 其中 $n\>1$ 时 $\\mathbf z\\sim\\mathcal N(\\mathbf 0,\\mathbf I)$，$n=1$ 时
 $\\mathbf z=\\mathbf 0$。返回 $\\mathbf x\_t^0$。论文训练时取
@@ -270,6 +344,9 @@ CRPS（Continuous Ranked Probability Score）衡量预测 CDF $F$ 与观测 $x$ 
 $$\\mathrm{CRPS}(F,x)=\\int\_{\\mathbb R}\\big(F(z)-\\mathbb I{x\\le
 z}\\big)^2,\\mathrm dz$$
 
+其中：$F$ 是预测的累积分布函数；$x$ 是观测值；$z$ 是积分变量；$\\mathbb I{x\\le z}$
+是指示函数，即观测值对应的阶跃分布函数；积分衡量预测分布与阶跃函数的平方距离，越小越好。
+
 它是适当评分规则（proper scoring function），预测分布等于数据分布时取最小。用 $S$ 个样本 $X\_s\\sim F$
 的经验 CDF $\\hat F(z)=\\frac1S\\sum\_{s=1}^S\\mathbb I{X\_s\\le z}$
 即可直接由采样计算。**CRPS-sum** 先把 $D$ 个维度求和（真值与样本都求和，得到 $\\hat
@@ -278,6 +355,10 @@ F\_{\\mathrm{sum}}(t)$），再对预测时间步取平均：
 $$\\mathrm{CRPS}*{\\mathrm{sum}}=\\mathbb
 E\_t\\Big\[\\mathrm{CRPS}\\Big(\\hat F*{\\mathrm{sum}}(t),\\ \\sum\_i
 x\_{i,t}^0\\Big)\\Big\]$$
+
+其中：$\\hat F\_{\\mathrm{sum}}(t)$ 是 $t$ 时刻对 $D$ 个维度求和后的预测分布的经验
+CDF；$\\sum\_i x^0\_{i,t}$ 是对应的真实总量；$\\mathbb E\_t$ 是对预测时间步取平均；CRPS
+越小，总量预测分布越好。
 
 论文给出的理由：CRPS-sum 也是 proper scoring function（引 de Bézenac et al.
 2020），并且对比的方法并非都有解析的预测分布，或者似然没有意义，所以用基于样本的指标，而不用基于似然的指标。
@@ -299,6 +380,8 @@ CRPS 也算 CRPS-sum，但 Table 2 只汇报 CRPS-sum。
 | Taxi        | 1,214  | 30 分钟 | 1,488  | 24   |
 | Wikipedia   | 2,000  | 天     | 792    | 30   |
 
+表中：「数据集」是评测集，「维度 $D$」是序列条数，「频率」是采样间隔，「总训练时间步」是训练长度，「预测步数」是预测窗口长度。
+
 **主结果**（论文 Table 2，测试集 CRPS-sum，越低越好；TimeGrad 为重新训练评估 10
 次的均值，省略了标准误；这里只摘录几行，数字与论文渲染页核对过）：
 
@@ -308,6 +391,8 @@ CRPS 也算 CRPS-sum，但 Table 2 只汇报 CRPS-sum。
 | GP-Copula            | 0.007    | 0.337 | 0.0245      | 0.078   | 0.208 | 0.086     |
 | Transformer-MAF      | 0.005    | 0.301 | 0.0207      | 0.056   | 0.179 | 0.063     |
 | TimeGrad             | 0.006    | 0.287 | 0.0206      | 0.044   | 0.114 | 0.0485    |
+
+表中：「方法」是对比模型，后六列是各数据集的 CRPS-sum（越小越好）。结论：TimeGrad 在除 Exchange 外的数据集上最优。
 
 论文的结论：TimeGrad 在除最小的 Exchange 数据集外的其余数据集上最优（Exchange 上
 VES、VAR、Transformer-MAF 均为 0.005，TimeGrad 为 0.006）。完整的
@@ -346,6 +431,10 @@ $24\\times100\\times100=240{,}000$ 次（$S$ 条轨迹彼此独立，可在 batc
 | 单步采样代价 | 一次前向加一次分布采样                   | $N$ 次去噪网络前向（论文用 $N=100$） |
 | 似然     | 解析可得                          | 只有下界，评估用 CRPS 类指标        |
 | 维间依赖   | 单变量发射分布不显式刻画                  | 联合分布由扩散模型刻画，无需写协方差       |
+
+表中：「维度」是对比项，后两列是 DeepAR 与 TimeGrad 在该项上的做法。结论：两者主线一致（自回归 + RNN +
+采样），区别在每步的输出分布：DeepAR 用单变量参数化分布，TimeGrad 用条件扩散模型刻画 $D$
+维联合分布，代价是单步采样需要 $N$ 次去噪。
 
 ## 与其他方法的对比
 
