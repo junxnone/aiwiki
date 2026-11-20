@@ -2,7 +2,7 @@
 Title | ML Tasks TimeSeries Deep Mamba
 -- | --
 Created @ | `2026-11-19T02:27:24Z`
-Updated @| `2026-11-19T06:20:27Z`
+Updated @| `2026-11-20T08:07:49Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/643)
 
@@ -43,17 +43,25 @@ S4 一类结构化 SSM 是**线性时间不变（LTI）**的：$(\Delta, A, B, C
 
 $$h'(t)=A\,h(t)+B\,x(t),\qquad y(t)=C\,h(t)$$
 
+其中：$x(t)$ 是输入；$h(t)\in\mathbb R^{N}$ 是隐状态，$h'(t)$ 是其导数；$y(t)$ 是输出；$A$ 决定状态如何演化，$B$ 决定输入如何写入状态，$C$ 决定状态如何读出。
+
 离散化（以步长 $\Delta$）把连续参数 $(\Delta, A, B)$ 变成 $(\bar A,\bar B)$。论文给出的零阶保持（ZOH）规则为：
 
 $$\bar A=\exp(\Delta A),\qquad \bar B=(\Delta A)^{-1}\bigl(\exp(\Delta A)-I\bigr)\cdot\Delta B$$
+
+其中：$\Delta$ 是离散化步长；$A$ 是状态矩阵；$B$ 是输入矩阵；$I$ 是单位矩阵；$\exp$ 是矩阵指数；$\bar A,\bar B$ 是离散化后的系数。$\Delta$ 越大，旧状态衰减得越多、新输入影响越大。
 
 之后可以用线性递推计算：
 
 $$h_t=\bar A\,h_{t-1}+\bar B\,x_t,\qquad y_t=C\,h_t$$
 
+其中：$h_t$ 是第 $t$ 步隐状态；$x_t$ 是输入；$y_t$ 是输出；$\bar A$ 控制保留多少旧状态，$\bar B$ 控制写入多少新输入，$C$ 把状态读出为输出。
+
 LTI 情形下，把递推展开等价于对 $x$ 做全局卷积，卷积核为：
 
 $$\bar K=\bigl(C\bar B,\ C\bar A\bar B,\ \dots,\ C\bar A^{k}\bar B,\ \dots\bigr),\qquad y=x*\bar K$$
+
+其中：$\bar K$ 是等效卷积核，第 $k$ 项 $C\bar A^{k}\bar B$ 表示 $k$ 步之前的输入对当前输出的影响；$*$ 是卷积；该形式只在参数不随时间变化（LTI）时成立。
 
 训练用卷积并行，推理用递推。这是 S4 的基本框架。
 
@@ -76,7 +84,11 @@ $\bar A,\bar B$ | $(\mathsf D,\mathsf N)$ | $(\mathsf B,\mathsf L,\mathsf D,\mat
 
 $$s_B(x)=\text{Linear}_{N}(x),\qquad s_C(x)=\text{Linear}_{N}(x)$$
 
+其中：$s_B(x),s_C(x)$ 是由输入 $x$ 产生 $B,C$ 的函数；$\text{Linear}_N$ 是输出维度为 $N$ 的线性层；$N$ 是状态维度。
+
 $$s_\Delta(x)=\text{Broadcast}_{D}\bigl(\text{Linear}_{1}(x)\bigr),\qquad \tau_\Delta=\text{softplus}$$
+
+其中：$\text{Linear}_1(x)$ 把输入投影到 1 维，$\text{Broadcast}_D$ 把它复制到 $D$ 个通道，使所有通道共用同一步长的选择；$\tau_\Delta=\text{softplus}$ 保证步长为正。
 
 这样，参数多了一个长度维 $L$，模型由时间不变变成**时间可变**，卷积等价性丢失。$\Delta$ 先投影到 1 维再广播到 $D$ 个通道，是因为"一个输入若应被完全忽略，所有通道都应忽略它"。论文还提到可推广为 $s_\Delta(x)=\text{Linear}_D(\text{Linear}_R(x))$（低秩投影，$R$ 取 $D$ 的一小部分）；$\Delta$ 的偏置项初始化为 $\tau_\Delta^{-1}\bigl(\text{Uniform}([0.001,0.1])\bigr)$。
 
@@ -86,9 +98,13 @@ $$s_\Delta(x)=\text{Broadcast}_{D}\bigl(\text{Linear}_{1}(x)\bigr),\qquad \tau_\
 
 $$g_t=\sigma\bigl(\text{Linear}(x_t)\bigr),\qquad h_t=(1-g_t)\,h_{t-1}+g_t\,x_t$$
 
+其中：$x_t$ 是第 $t$ 步输入；$g_t\in(0,1)$ 是门；$\sigma$ 是 sigmoid；$h_t$ 是状态；$g_t$ 大则状态被输入覆盖（重置），$g_t$ 小则保留旧状态。
+
 推导（论文附录 C）：连续系统 $h'(t)=-h(t)+x(t)$ 是 leaky integrator；$\Delta_t=\text{softplus}(\text{Linear}(x_t))$；ZOH 给出：
 
 $$\bar A_t=\exp(-\Delta_t)=\frac{1}{1+\exp(\text{Linear}(x_t))}=1-\sigma\bigl(\text{Linear}(x_t)\bigr),\qquad \bar B_t=1-\bar A_t=\sigma\bigl(\text{Linear}(x_t)\bigr)$$
+
+其中：$\bar A_t,\bar B_t$ 是第 $t$ 步离散化后的状态转移与输入系数；$\Delta_t$ 是第 $t$ 步的步长；$\sigma$ 是 sigmoid；$\text{Linear}(x_t)$ 是对输入的线性投影；两式说明保留系数 $\bar A_t$ 与写入系数 $\bar B_t$ 之和为 1，即选择机制等价于 RNN 的门。
 
 所以 $\Delta$ 起到**广义 RNN 门**的作用：大 $\Delta$ 重置状态并聚焦当前输入，小 $\Delta$ 保留状态并忽略当前输入。论文列出三种机理效果：
 
@@ -127,6 +143,8 @@ LTI 的高效来自卷积形式：不需要显式算出潜状态 $h$（形状 $(
 4. 乘并求和 C，只把输出 (B,L,D) 写回 HBM
 ```
 
+图中：这是融合 kernel 的四个执行步骤。步骤 1 把小的输入参数从慢速 HBM 读入快速 SRAM；步骤 2、3 在 SRAM 内完成离散化与并行扫描，大尺寸的 $(\bar A,\bar B)$ 与状态 $h$ 不落到 HBM；步骤 4 只把 $(B,L,D)$ 大小的输出写回。关键结论：IO 量降低约 $N$ 倍。
+
 这样 IO 降低一个 $O(N)$ 因子，论文称实际带来 20 到 40 倍加速。序列太长放不进 SRAM 时，按块（chunk）分段做融合扫描，并把上一块的中间状态带入下一块。
 
 **2. 并行扫描（parallel scan）。** 递推虽不是线性时间不变，但依然可用 work-efficient 的并行关联扫描并行化（论文引用 Blelloch 1990 等）。[解读] 其关键是把每步 $h_t=a_t h_{t-1}+b_t$ 视为仿射映射 $(a_t,b_t)$，两个映射先后作用的复合为 $(a_1,b_1)\circ(a_2,b_2)=(a_2a_1,\ a_2b_1+b_2)$，满足结合律，因此可用树状归约并行。
@@ -143,6 +161,13 @@ x ──┬── Linear(D→ED) ── Conv ── SiLU ── SSM(选择性) �
     └── Linear(D→ED) ── SiLU ──────────────────────────┘
 （外部：标准归一化 + 残差连接；block 同质重复）
 ```
+
+图中：
+
+- 输入 $x$ 分成两条分支，各经一个线性层把维度从 $D$ 扩展到 $ED$。
+- 上分支依次经过短卷积、SiLU 激活和选择性 SSM；下分支只经 SiLU，作为"门"。
+- 两分支逐元素相乘（$\times$），再经线性层降回 $D$ 输出；外部有归一化与残差连接，block 同质重复。
+- 关键结论：Mamba 把 H3 与 MLP 合并为单一 block，没有注意力。
 
 要点（论文 Figure 3 与 3.4 节）：
 
@@ -179,6 +204,8 @@ Hyena | H3 | Hyena | 30.1
 - | Mamba | Hyena | 28.4
 Mamba | Mamba | S6 | 99.8
 
+表中：「Model」是模型名，「Arch.」是外层架构，「Layer」是内层序列层，「Acc.」是准确率（%），「-」表示沿用上一行的模型名。结论：把内层换成选择性 S6 提升最大，结合 Mamba 架构达到最优。
+
 结论：门控架构（H3、Mamba block）只部分改善；把 S4 换成 S6（选择机制）才基本解决，与更强架构结合时最好。
 
 **Induction Heads（Table 2、Table 11）**：训练序列长度 $2^8=256$，词表大小 16，2 层模型；测试长度从 $2^6=64$ 到 $2^{20}=1048576$。Mamba（更准确地说是其选择性 SSM 层）可完美解决，并**完美泛化到百万长度，即训练长度的约 4000 倍**；论文称其他方法都不超过 2 倍。比较对象含 MHA（绝对位置编码、RoPE、xPos）、H3、Hyena。
@@ -201,6 +228,8 @@ Mamba-2.8B | 6.22 | 4.23 | 69.2 | 63.3
 Pythia-6.9B | 6.51 | 4.45 | 67.1 | 61.7
 RWKV-7.4B | 6.31 | 4.38 | 67.2 | 62.5
 
+表中：「Pile ppl」「LAMBADA ppl」是困惑度（越低越好），「LAMBADA acc」与「平均 acc」是准确率（越高越好）；同一规模下 Mamba 在各列上均优于 Pythia 与 RWKV，且与两倍大小的模型相当。
+
 Mamba-2.8B 的平均准确率 63.3 高于两倍以上规模的 Pythia-6.9B（61.7）；论文总结为"每个规模下 Mamba 在每项评估上都是同级最佳，且通常与两倍大小的基线持平"。
 
 ### DNA 与音频
@@ -217,6 +246,8 @@ DiffWave | 24.1M | - | 1.92
 DiffWave + SaShiMi | 23.0M | - | 1.42
 Mamba | 6.1M | 1.852 | 0.94
 Mamba | 24.3M | 1.860 | 0.67
+
+表中：「Params」是参数量，NLL 是负对数似然，FID 是生成质量指标（越低越好），「-」表示论文未给出。结论：Mamba 在更小参数量下取得更低的 FID。
 
 小 Mamba（6.1M）的 FID 为 0.94，低于表中所有基线；摘要称"把一个有挑战的语音生成数据集上的 FID 降低一半以上"（1.99 到 0.94）。Table 5 的消融显示 outer 与 center 都换成 Mamba 时 FID 最好（0.94）。
 
@@ -240,6 +271,8 @@ Mamba | S4（complex） | 10.54
 Mamba | S4（real） | 10.56
 Mamba | S6 | 8.69
 
+表中：「Arch.」是外层架构，「SSM Layer」是内层序列层，最后一列是困惑度（越低越好）。结论：换成选择性 S6 提升显著，而 LTI 各种参数化之间差异很小。
+
 LTI 的各种参数化彼此差异很小，换成选择性 S6 提升显著；Mamba block 与 H3 相当（用选择层时略好）但更简单。
 
 **哪些参数选择性（Table 7）**：
@@ -252,6 +285,8 @@ Selective $\Delta$ | Selective $B$ | Selective $C$ | Perplexity
 是 | 否 | 否 | 9.81
 是 | 是 | 是 | 8.71
 
+表中：前三列表示 $\Delta,B,C$ 是否选择性，最后一列是困惑度（越低越好）。结论：$\Delta$ 单独选择性收益最大，三者同时选择性效果最好。
+
 $\Delta$ 最重要，三者同时选择性有协同。
 
 **状态维度 $N$（Table 10）**：
@@ -263,6 +298,8 @@ $N$ | $B,C$ 为常数时的困惑度 | $B,C$ 选择性时的困惑度
 4 | 9.82 | 9.09
 8 | 9.82 | 8.84
 16 | 9.81 | 8.71
+
+表中：「$N$」是状态维度，后两列是 $B,C$ 固定与选择性两种情形下的困惑度（越低越好）。结论：只有 $B,C$ 选择性时，增大 $N$ 才显著降低困惑度。
 
 增大 $N$ 只有在 $B,C$ 也选择性时才显著有益：论文称此时仅增加约 1% 参数就带来超过 1.0 的困惑度改善，这验证了"更大状态 + 选择性"的动机。
 
@@ -291,6 +328,8 @@ S4 等 LTI SSM | 线性递推 | 否（LTI） | 全局卷积（FFT） | 常数 | 
 H3 / Hyena | S4 / 隐式长卷积 + 门控 | 否（门控不沿序列交互） | 卷积 | 常数 | 论文认为门控不是选择机制
 RWKV / RetNet | 线性注意力类循环 | RWKV 的 WKV 为 LTI 递推 | 并行形式 | 常数 | 论文用作 LM 基线
 Mamba（S6） | 选择性递推 | 是 | 融合并行扫描 | 常数 | 无注意力
+
+表中：「方法」是对比对象，「状态/递推」是其信息传递方式，「是否随内容变化」指动力学是否依赖输入，「训练并行方式」与「推理每步」是训练与推理的计算特点（$L$ 为序列长度），「备注」给出补充。结论：Mamba 是唯一同时具备"随内容选择 + 推理每步常数时间"的无注意力方案。
 
 **与 S4 的区别**（核心）：
 
@@ -347,4 +386,5 @@ def selective_scan_ref(x, delta, A, B, C):
 - 论文：Albert Gu, Tri Dao. *Mamba: Linear-Time Sequence Modeling with Selective State Spaces*. [arXiv:2312.00752](https://arxiv.org/abs/2312.00752)
 - 官方代码与预训练模型（论文给出）：[github.com/state-spaces/mamba](https://github.com/state-spaces/mamba)
 - 站内：[时间序列总览](/0603_ML_Tasks_TimeSeries)、[时序深度学习篇](/0606_ML_Tasks_TimeSeries_Deep)
+
 
