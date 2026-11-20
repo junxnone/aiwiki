@@ -2,7 +2,7 @@
 Title | ML Tasks TimeSeries Deep PAttn
 -- | --
 Created @ | `2026-11-20T09:16:47Z`
-Updated @| `2026-11-20T09:16:47Z`
+Updated @| `2026-11-20T09:18:36Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/679)
 
@@ -15,7 +15,7 @@ PAttn（Patching + one-layer Attention）出自论文 *Are Language Models Actua
 
 > 标注约定：未标注的内容来自论文原文；`[解读]` 是对论文的理解，`[经验]` 是一般经验，`[待核实]` 是未能确认的内容。
 
-本站相关：分块思想的来源 [PatchTST](/0638_ML_Tasks_TimeSeries_Deep_PatchTST)；线性基线 [DLinear](/0630_ML_Tasks_TimeSeries_Deep_DLinear)；总览见 [深度学习方法](/0606_ML_Tasks_TimeSeries_Deep)。
+本站相关：同一篇论文的整体解读见 [LLMUseful](/0661_ML_Tasks_TimeSeries_Foundation_LLMUseful)（本文聚焦其中提出的 PAttn 极简结构）；分块思想的来源 [PatchTST](/0638_ML_Tasks_TimeSeries_Deep_PatchTST)；线性基线 [DLinear](/0630_ML_Tasks_TimeSeries_Deep_DLinear)；总览见 [深度学习方法](/0606_ML_Tasks_TimeSeries_Deep)。
 
 ## 1. 解决什么问题
 
