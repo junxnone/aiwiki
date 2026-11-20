@@ -2,7 +2,7 @@
 Title | ML Tasks TimeSeries Foundation MOMENT
 -- | --
 Created @ | `2026-11-19T03:24:05Z`
-Updated @| `2026-11-19T03:24:05Z`
+Updated @| `2026-11-20T08:22:58Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/659)
 
@@ -36,6 +36,8 @@ Monash 预测档案 | 58 个短程预测数据集，共超过 10 万条序列
 UCR/UEA 分类档案 | 159 个分类数据集
 TSB-UAD 异常检测基准 | 1980 条带标注异常的单变量序列，来自 18 个数据集
 
+表中：「来源」是 Time Series Pile 的组成仓库，「内容（论文描述）」说明其包含的数据集与任务。
+
 整体规模（附录 E）：覆盖 13 个领域，约 20.085 GB、1300 万条不同的序列、12.3 亿个时间戳（含通道）。13 个领域包括 Healthcare、Human Body、Nature、Audio、Power、Economics、Traffic、Weather、Facilities、Web Services、Synthetic、Sensors、Gait。
 
 **防止数据泄漏的切分**：每个数据集严格划分 train / val / test。优先使用数据创建者给出的切分；没有的则随机取 60% 训练、10% 验证、30% 测试。长序列（长程预测、异常检测）按时间"横向"切；由许多短序列组成的数据集（短程预测、分类）则整条序列归属某一个切分。全程使用同一随机种子 13，预训练只见各数据集的训练切分。
@@ -55,6 +57,9 @@ MOMENT 接收单变量序列 $\mathcal T\in\mathbb R^{1\times T}$ 与掩码 $M\i
 
 序列被切成 $N$ 个互不重叠、长度为 $P$ 的 patch，本文模型取 $P=8$，$N=T/P=64$。patch 全部时间点都观测到时，用可训练的线性层映射为 $D$ 维嵌入；否则（有被遮/缺失的时间点）用一个可学习的 $[\mathrm{MASK}]\in\mathbb R^{1\times D}$ 嵌入替代。这 $N$ 个嵌入进入 Transformer encoder，encoder 内部保持形状不变，最后用一个轻量的重建头把每个嵌入映射回 patch 的原始维度，得到对所有 patch（被遮与未被遮）的重建。
 
+
+下图概括 MOMENT 的数据流。
+
 ```
  T=512 序列 --RevIN--> 64 个 patch (P=8)
         |
@@ -64,6 +69,8 @@ MOMENT 接收单变量序列 $\mathcal T\in\mathbb R^{1\times T}$ 与掩码 $M\i
         |
    重建头 (lightweight)                    N x P  -> 还原 512 点
 ```
+
+图中：长度 512 的序列经 RevIN 后切成 64 个 patch（$P=8$）；被遮的 patch 的嵌入替换为 [MASK]；经 Transformer encoder 得到 $N\times D$ 的表示，再由轻量重建头还原为 $N\times P$，对应 512 个点。
 
 ### encoder 结构
 
@@ -83,6 +90,8 @@ Small | 6 | 512 | 8 | 2048 | 约 40M
 Base | 12 | 768 | 12 | 3072 | 约 125M
 Large | 24 | 1024 | 16 | 4096 | 约 385M
 
+表中：「规格」是三种规模，其余列是层数、隐藏维度 $D$、注意力头数、FFN 维度与参数量。三者大致对应 T5-Small / Base / Large 的 encoder。
+
 三者大致对应 T5-Small / Base / Large 的 encoder 规模，所有权重随机初始化。
 
 ## 预训练：掩码时序建模
@@ -90,6 +99,9 @@ Large | 24 | 1024 | 16 | 4096 | 约 385M
 随机均匀地遮住 30% 的 patch，把它们的嵌入替换成 $[\mathrm{MASK}]$，用 encoder + 重建头重建原序列。损失是被遮 patch 上的 MSE：
 
 $$\mathcal L_{\text{pre}}=\frac{1}{\lvert\Omega\rvert}\sum_{i\in\Omega}\frac{1}{P}\lVert \hat{\mathbf x}_i-\mathbf x_i\rVert_2^2$$
+
+
+其中：$\mathcal L_{\text{pre}}$ 是预训练损失；$\Omega$ 是被遮 patch 的下标集合，$\lvert\Omega\rvert$ 是其个数；$P$ 是 patch 长度；$\mathbf x_i$ 与 $\hat{\mathbf x}_i$ 是第 $i$ 个 patch 的真值与重建；$\lVert\cdot\rVert_2^2$ 是平方误差。
 
 其中 $\Omega$ 是被遮 patch 的下标集合，$\mathbf x_i,\hat{\mathbf x}_i\in\mathbb R^{P}$ 为第 $i$ 个 patch 的真值与重建 [解读：论文只写"在被遮 patch 上平均的 MSE"，上式的归一化写法是本文的形式化]。
 
@@ -114,6 +126,8 @@ $$\mathcal L_{\text{pre}}=\frac{1}{\lvert\Omega\rvert}\sum_{i\in\Omega}\frac{1}{
 异常检测 | 保留重建头重建窗口（长 512），以观测与重建之间的 MSE 作为异常分数
 填补 | 只要 patch 内有未观测点就用 $[\mathrm{MASK}]$ 替换，用重建头补出缺失值
 
+表中：「任务」是下游任务，「做法」说明如何使用重建头、预测头或表示。结论：预测需要换预测头，其余任务可直接用重建头或表示。
+
 预测头的参数量可以自行核算 [解读]：$N\cdot D\cdot H=64\times1024\times96=6{,}291{,}456$，与论文 Table 33 中 ETTh1-96 上 MOMENT 的可训练参数 6.29M 吻合（对应 $D=1024$ 即 Large；但该表同时给出总参数 347.53M，与前述约 385M 不同，原因论文未说明 [待核实]）。
 
 论文附录 F.1 还提到短程预测的另一种免训练用法：在序列末尾追加被遮的 patch，用默认重建头直接预测。
@@ -129,6 +143,8 @@ $$\mathcal L_{\text{pre}}=\frac{1}{\lvert\Omega\rvert}\sum_{i\in\Omega}\frac{1}{
 分类 | 无监督表示学习（SVM） | UCR 分类档案 | Accuracy | GPT4TS、TimesNet、TS2Vec、T-Loss、TNC、TS-TCC、TST、若干监督深度模型、DTW
 异常检测 | Linear probing / zero-shot | UCR 异常档案 | Adjusted best F1、VUS-ROC | GPT4TS、TimesNet、Anomaly Transformer、DGHL、k-NN
 填补 | Linear probing / zero-shot | ETT 4 个子集、Electricity、Weather | MSE、MAE | GPT4TS、TimesNet、DGHL、线性 / 最近邻 / 三次样条插值
+
+表中：「任务」是五类下游任务，「监督设定」是使用方式（zero-shot 或 linear probing），「数据」「指标」是评测集与指标，「主要基线」是对比方法。结论：评测聚焦算力与监督受限的场景。
 
 设定细节：
 
@@ -154,6 +170,8 @@ ECL-96 | 0.136 / 0.233 | 0.129 / 0.222 | 0.139 / 0.238 | 0.131 / 0.228 | -
 Traffic-96 | 0.391 / 0.282 | 0.360 / 0.249 | 0.388 / 0.282 | 0.375 / 0.259 | -
 ILI-24 | 2.728 / 1.114 | 1.319 / 0.754 | 2.063 / 0.881 | 4.539 / 1.528 | 3.025 / 1.195
 
+表中：「数据集-horizon」是评测设置，其余各列是 MSE / MAE（越小越好，"-"表示未能运行）。结论：MOMENT 接近 PatchTST，但 ILI 上差距明显。
+
 论文结论：MOMENT 在多数数据集与 horizon 上接近 SOTA，仅次于通常 MSE 最低的 PatchTST；在不少设置下优于基于 LLM 的 Time-LLM 和 GPT4TS；N-BEATS 也胜过若干近期方法。[解读] 上表 ILI-24 一行显示 MOMENT 与 PatchTST 差距明显（MSE 2.728 对 1.319），"接近 SOTA"并非对所有数据集成立；ILI 序列很短，可能与此有关（未经论文验证）。
 
 ### 零样本短程预测（论文 Table 3，sMAPE，越低越好）
@@ -169,6 +187,8 @@ M4 Yearly | - / 14.84 | - / 14.18 | 16.19 | 14.04 | 14.06
 M4 Quarterly | - / 12.02 | - / 12.25 | 10.86 | 10.21 | 10.24
 M4 Monthly | - / 15.80 | - / 15.24 | 13.68 | 13.19 | 13.58
 
+表中：「数据集」是评测集，其余各列是 sMAPE（越小越好，"-"表示该设置不适用）；MOMENT 与 N-BEATS 两列给出两种源数据集（M4 或 FRED）的结果。结论：统计方法（Theta、ETS）整体优于深度模型。
+
 论文自己的结论是：这是所有任务中提升空间最大的一个，Theta、ETS 等统计方法优于深度模型；仅在部分数据集上 MOMENT（及 GPT4TS、N-BEATS）的 sMAPE 低于 ARIMA。
 
 ### 分类（论文 Table 4，UCR，91 个数据集，accuracy）
@@ -181,6 +201,8 @@ TS-TCC | 0.793 | 0.802 | 6.5
 TNC | 0.786 | 0.788 | 6.9
 TimesNet | 0.572 | 0.565 | 13.3
 GPT4TS | 0.566 | 0.583 | 13.3
+
+表中：「方法」是对比模型，「均值」「中位数」是 UCR 91 个数据集上准确率的均值与中位数，「平均排名」越小越好。结论：MOMENT 无需在各数据集上训练即可接近有监督方法，但 TS2Vec 等更好。
 
 表中 TS-TCC、TNC 的均值略低于 MOMENT（0.793、0.786 对 0.794）。论文称：无需在各数据集上训练，MOMENT 表示上的 SVM 优于除 4 个方法之外的所有方法（从 Table 4 看，均值与中位数都更高的是 TS2Vec、T-Loss、FCN、ResNet）；而 GPT4TS、TimesNet 即使在各数据集上有标签地训练，表现也较差。
 
@@ -196,6 +218,8 @@ Anomaly Transformer | 0.492 | 0.661
 DGHL | 0.425 | 0.646
 k-NN | 0.554 | 0.706
 
+表中：「方法」是对比模型，两列是 UCR 异常档案上的平均 Adj. best F1 与 VUS-ROC（越大越好）。结论：MOMENT-LP 在 Adj. F1 上最好，k-NN 在 VUS-ROC 上略高。
+
 `MOMENT-LP` 在 Adj. F1 上最好；k-NN 在 VUS-ROC 上略高，论文称 MOMENT"接近 SOTA"。
 
 ### 填补（论文 Table 6，MSE）
@@ -206,6 +230,8 @@ Weather | 0.082 | 0.035 | 0.031 | 0.036 | 0.065
 ETTh1 | 0.402 | 0.139 | 0.227 | 0.175 | 0.775
 ETTm2 | 0.078 | 0.031 | 0.052 | 0.112 | 0.062
 Electricity | 0.250 | 0.094 | 0.072 | 0.124 | 0.737
+
+表中：「数据集」是填补评测集，其余各列是 MSE（越小越好）。结论：MOMENT-LP 在 ETT 上最优，Weather 与 Electricity 上 GPT4TS 略好；零样本时优于线性插值之外的多数方法。
 
 论文称 `MOMENT-LP` 在所有 ETT 数据集上重建误差最低；zero-shot 时优于除线性插值外的统计插值方法。
 
@@ -261,4 +287,5 @@ model.init()
 - 论文：[MOMENT: A Family of Open Time-series Foundation Models](https://arxiv.org/abs/2402.03885)
 - 模型与数据（论文给出）：[AutonLab/MOMENT-1-large](https://huggingface.co/AutonLab/MOMENT-1-large)、[AutonLab/Timeseries-PILE](https://huggingface.co/datasets/AutonLab/Timeseries-PILE)
 - 研究代码（论文给出）：https://github.com/moment-timeseries-foundation-model/moment-research
+
 
