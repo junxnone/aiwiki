@@ -2,7 +2,7 @@
 Title | ML Tasks TimeSeries Foundation TimesFM
 -- | --
 Created @ | `2026-11-19T02:42:16Z`
-Updated @| `2026-11-19T02:42:16Z`
+Updated @| `2026-11-20T08:20:59Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/654)
 
@@ -25,6 +25,9 @@ TimesFM（Time-series Foundation Model）出自 Google Research（Abhimanyu Das�
 
 $$f:\ (y_{1:L})\ \longrightarrow\ \hat y_{L+1:L+H}$$
 
+
+其中：$y_{1:L}$ 是长度为 $L$ 的历史（上下文）；$\hat y_{L+1:L+H}$ 是对未来 $H$ 步的预测；$f$ 是通用预测映射，输入只含目标序列（单变量）。
+
 论文还认为，用 GPT-3、LLaMA-2 这类 LLM 做开箱即用预测（llmtime）参数量大、成本高，而从头只在时序数据上训练的小得多的模型零样本效果更好。
 
 ## 核心设计
@@ -44,11 +47,17 @@ $$f:\ (y_{1:L})\ \longrightarrow\ \hat y_{L+1:L+H}$$
 
 $$\text{steps}=\lceil H/h\rceil$$
 
+
+其中：$\text{steps}$ 是自回归步数；$H$ 是预测总长度；$h$ 是输出 patch 长度；$\lceil\cdot\rceil$ 是向上取整；输出 patch 越长，需要的自回归步数越少。
+
 其中 $h$ 为输出 patch 长度。例如（自拟示意，已重算）$H=256$，$h=128$ 时 $\lceil 256/128\rceil=2$；$h=32$ 时 $\lceil 256/32\rceil=8$，与论文例子一致。
 
 代价（论文自述）：输出 patch 太长，则难以处理长度短于输出 patch 的序列，例如预训练数据里的月度、年度序列。
 
 ### 结构
+
+
+下图概括 TimesFM 的数据流。
 
 ```
  原始序列 y_1 ... y_L  (按 p 个点切 patch，不重叠；不足整数倍时补零并把对应 mask 置 1)
@@ -63,9 +72,18 @@ $$\text{steps}=\lceil H/h\rceil$$
  y_hat[pj+1 : pj+h]      (j = 1..N，训练时全部位置并行计算损失)
 ```
 
+图中：
+
+- 原始序列按 $p$ 个点切成 patch（不足整数倍时补零并把掩码置 1），每个 patch 经 InputResidualBlock 并加位置编码，得到 token。
+- token 经若干层"多头因果自注意力 + FFN"得到输出 token，再经 OutputResidualBlock 为每个位置预测后续 $h$ 个点。
+- 训练时所有位置的预测并行计算损失。
+
 输入层（论文公式 (2)）：序列切成长度 $p$ 的 patch，第 $j$ 个 patch 为 $\tilde y_j=y_{p(j-1)+1:pj}$，掩码同样切成 $\tilde m_j$（1 表示该点被忽略）：
 
 $$t_j=\text{InputResidualBlock}\big(\tilde y_j\odot(1-\tilde m_j)\big)+PE_j$$
+
+
+其中：$t_j$ 是第 $j$ 个输入 token；$\tilde y_j$ 是第 $j$ 个 patch 的原始值，$\tilde m_j$ 是对应掩码（1 表示忽略该点）；$\odot$ 是逐元素乘，$(1-\tilde m_j)$ 屏蔽被忽略的点；$\text{InputResidualBlock}$ 是带跳连的 MLP；$PE_j$ 是位置编码。
 
 其中 Residual Block 本质上是一个带一个隐层和跳连的 MLP（论文说类似其引用的 TiDE 中的定义）；$PE_j$ 为原始 Transformer 的位置编码；token 数 $N=\lfloor L/p\rfloor$。
 
@@ -73,11 +91,17 @@ $$t_j=\text{InputResidualBlock}\big(\tilde y_j\odot(1-\tilde m_j)\big)+PE_j$$
 
 $$o_j=\text{StackedTransformer}\big((t_1,\dot m_1),\dots,(t_j,\dot m_j)\big)$$
 
+
+其中：$o_j$ 是第 $j$ 个输出 token；$t_1,\dots,t_j$ 是前 $j$ 个输入 token（因果注意力只看到这些）；$\dot m_j$ 是 token 级掩码；$\text{StackedTransformer}$ 是多层因果自注意力加前馈网络。
+
 其中 $\dot m_j=\min\{\mathbf m_{p(j-1)+1:pj}\}$：只要 patch 内有一个未被 mask 的点，该 token 就不算被 mask；整个 patch 都被 mask 的 token 不会被因果自注意力关注。
 
 输出层（公式 (4)）：另一个 Residual Block 把输出 token 映射为接下来 $h$ 个点的预测：
 
 $$\hat y_{pj+1:pj+h}=\text{OutputResidualBlock}(o_j)$$
+
+
+其中：$\hat y_{pj+1:pj+h}$ 是接下来 $h$ 个点的预测；$o_j$ 是第 $j$ 个输出 token，编码了 $y_{1:pj}$ 的信息；$p$ 是输入 patch 长度；$\text{OutputResidualBlock}$ 是把输出 token 映射为 $h$ 维预测的残差 MLP。
 
 即 $o_j$ 编码了 $y_{1:pj}$ 的全部信息，用它预测 $y_{pj+1:pj+h}$。
 
@@ -88,6 +112,8 @@ $$\hat y_{pj+1:pj+h}=\text{OutputResidualBlock}(o_j)$$
 200M | 20 | 1280 | 32 | 128 | 16 | 0.2
 70M | 10 | 1024 | 32 | 128 | 16 | 0.2
 17M | 10 | 512 | 32 | 128 | 16 | 0.2
+
+表中：「模型」是三种规模，其余列是层数、隐层维度、输入与输出 patch 长度、注意力头数与 dropout。三个模型仅在深度与宽度上不同，patch 设置相同。
 
 主模型为 200M 参数；Residual Block 和 FFN 的隐层维度都等于 model_dim；Transformer 层里保留 layer norm，Residual Block 里没有。
 
@@ -117,6 +143,8 @@ Wiki monthly | Monthly | 63,151,306 | 3,789,760,907
 Trends hourly | Hourly | 22,435 | 393,043,680
 M4 yearly | Yearly | 22,739 | 840,644
 
+表中：「数据」是数据来源，「粒度」是采样频率，「序列数」「时间点数」是数据规模。结论：Wikipedia 访问量占预训练数据的绝大部分，合成数据约 61 亿个时间点。
+
 ### 合成数据怎么造
 
 先造四种基础成分：分段线性趋势（段数在 2 到 8 之间随机）；ARMA(p, q)（$1\le p,q\le 8$，系数由多元高斯或均匀分布生成后归一化）；周期在 4 到"最大 context 长度的一半"之间随机的正弦和余弦波（含随机相位）。然后随机启用或关闭这四个成分，各生成长 2048 的序列，用均匀随机权重相加；趋势成分被选中时，有 50% 概率以乘性方式作用。
@@ -138,6 +166,9 @@ M4 yearly | Yearly | 22,739 | 840,644
 使用标准小批量梯度下降；损失为（公式 (5)）：
 
 $$\text{TrainLoss}=\frac1N\sum_{j=1}^{N}\text{MSE}\big(\hat y_{pj+1:pj+h},\,y_{pj+1:pj+h}\big)$$
+
+
+其中：$N$ 是输出 token 个数（即 patch 数）；$j$ 是 patch 序号；$\hat y_{pj+1:pj+h}$ 是第 $j$ 个位置预测的后续 $h$ 个点；$y_{pj+1:pj+h}$ 是真实值；$\text{MSE}$ 是均方误差；损失是各位置 MSE 的平均。
 
 学习率为余弦衰减，峰值 $5\times10^{-4}$。论文的缩放实验用全局 batch size 4096、训练到 1.5M 迭代；200M 模型在 16 核 TPUv5e 上 2 天跑完 1.5M 迭代。
 
@@ -167,6 +198,8 @@ DeepAR（监督） | 0.7477 | 1.1925
 llmtime（零样本，GPT-3） | 0.9715 | 1.0588
 Naive | 1.0000 | 1.0000
 
+表中：「模型」是对比方法，GM 与 AM 分别是 scaled MAE（相对 Naive 归一）的几何平均与算术平均（越小越好）。结论：GM 口径下 TimesFM 最好，AM 口径下 N-BEATS 略低，二者差距都很小。
+
 论文结论：图 2a（GM）中 TimesFM 是第一，略好于 N-BEATS 但在统计显著性之内，并优于 DeepAR 等深度监督模型，相对 llmtime 改善超过 25%（由上表 GM 重算：$(0.9715-0.6846)/0.9715\approx 29.5\%$）。附录图 4（AM 口径）中 N-BEATS 最低（0.7844 对 0.8005），论文说 TimesFM 在其显著性范围内。可见排名对聚合方式敏感，两者差距都很小。
 
 ### Darts
@@ -183,6 +216,8 @@ N-HiTS | 0.6936
 N-BEATS | 0.7316
 GP | 0.7509
 TCN | 0.7946
+
+表中：「模型」是对比方法，「GM」是 Darts 八个数据集上 scaled MAE 的几何平均（越小越好）。结论：TimesFM 与最优方法在统计显著性内无法区分，数据集少、误差棒宽。
 
 论文结论：TimesFM 与最优的 llmtime、季节 ARIMA 在统计显著性内无法区分；只有 8 条序列，误差棒很宽，无法给出清晰排序。论文还提醒：ARIMA 的季节性参数需要手工设定，且这些数据常被博客引用，llmtime 的数据污染"不能排除"。
 
@@ -202,6 +237,8 @@ ETTm2（96） | 0.24 | 0.23 | 0.29
 ETTm2（192） | 0.27 | 0.25 | 0.31
 平均 | 0.36 | 0.37 | 0.45
 
+表中：「数据集（horizon）」是评测设置，后三列是各方法的 MAE（越小越好），最后一行为平均。结论：TimesFM 平均最好，但逐项看并非处处最优，监督的 PatchTST 在统计显著性内与之相当。
+
 另外，论文表 5 里 FEDformer、Autoformer、Informer 的平均 MAE 分别为 0.53、0.53、0.99。论文结论：TimesFM 平均最好，监督 PatchTST 在显著性内与之相当。注意：这是在最后一个窗口上的结果，逐项看 TimesFM 并非处处最优（如 ETTh1 的 96 上它不如 PatchTST）。另外表 5 还列了用同一数据加载器预训练的 PatchTST(ZS)，其平均 MAE 为 0.35，略低于 TimesFM 的 0.36，而图 2c 未画出它。
 
 ### 微调（附录 A.3）
@@ -214,6 +251,8 @@ ETTh1 | 0.426 | 0.525
 ETTh2 | 0.410 | 0.421
 ETTm1 | 0.388 | 0.441
 ETTm2 | 0.334 | 0.335
+
+表中：「数据集」是 ETT 的四个子集，后两列是 10% 训练数据微调后的平均 MAE（越小越好）。结论：TimesFM 在 ETTh1、ETTh2、ETTm1 上优于 GPT4TS，ETTm2 上几乎持平。
 
 论文称在 ETTh1、ETTh2、ETTm1 上分别比 GPT4TS 好 18%、3%、12%（由上表平均 MAE 重算约为 18.9%、2.6%、12.0%）；ETTm2 上两者几乎持平；并称其 10% 数据微调的结果与多数用全量训练集的基线相当或更好。
 
@@ -250,6 +289,8 @@ N-BEATS / N-HiTS / TCN / DeepAR | 每个数据集监督训练 | 论文里作监�
 GPT4TS（One Fits All） | 微调预训练 GPT-2 | 论文微调实验里 TimesFM 的 MAE 更低
 TimeGPT-1 | 零样本基础模型 | 论文称其模型不公开访问，若干模型细节和基准数据集未披露
 
+表中：「方法」是对比对象，「训练范式」说明其训练方式，「与 TimesFM 的区别」说明差异。结论：TimesFM 是从头在时序数据上预训练的单一模型，可直接零样本预测，参数量远小于基于 LLM 的 llmtime。
+
 相关方法见 [深度学习预测方法](/0606_ML_Tasks_TimeSeries_Deep)、[DeepAR](/0625_ML_Tasks_TimeSeries_Deep_DeepAR)、[TCN](/0626_ML_Tasks_TimeSeries_Deep_TCN)，同系列文章还有 N-BEATS、N-HiTS、PatchTST。综述中提到的 TimesFM-ICF（上下文微调）属于论文之外的后续工作 [待核实]，本文不展开。
 
 ## 使用方式
@@ -280,4 +321,5 @@ def forecast(model, y, H, p=32, h=128, max_ctx=512):
 ## Reference
 
 - [A decoder-only foundation model for time-series forecasting, arXiv:2310.10688](https://arxiv.org/abs/2310.10688)
+
 
