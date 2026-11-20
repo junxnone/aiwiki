@@ -2,7 +2,7 @@
 Title | ML Tasks TimeSeries Foundation Chronos
 -- | --
 Created @ | `2026-11-19T03:24:17Z`
-Updated @| `2026-11-19T03:24:17Z`
+Updated @| `2026-11-20T08:23:21Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/660)
 
@@ -29,6 +29,9 @@ Chronos 的取向是"极简"：**不加任何时序专用的特征和结构，�
 
 ### 整体流程
 
+
+下图概括 Chronos 的训练与推理流程。
+
 ```
 训练:  序列 x_1..x_{C+H} ─均值缩放─> 量化为 token z_1..z_{C+H} (+EOS)
        ─> 语言模型, 预测下一个 token 的分布, 与真实 token 做交叉熵
@@ -38,11 +41,19 @@ Chronos 的取向是"极简"：**不加任何时序专用的特征和结构，�
        ─> 反量化 d(·) ─> 乘以 s ─> 多条样本路径 = 预测分布
 ```
 
+图中：
+
+- 训练流程：序列经均值缩放、量化为 token（末尾加 EOS），语言模型预测下一个 token 的分布，与真实 token 做交叉熵。
+- 推理流程：历史序列缩放（缩放因子 $s$）并量化，语言模型自回归采样多条轨迹，再反量化并乘以 $s$，得到多条样本路径，即预测分布。
+
 ### 缩放
 
 对每条序列，用历史上下文里绝对值的均值做缩放（仿射变换 $\tilde x_i=(x_i-m)/s$ 的特例，取 $m=0$）：
 
 $$\tilde x_i=\frac{x_i}{s},\qquad s=\frac1C\sum_{i=1}^{C}\lvert x_i\rvert$$
+
+
+其中：$x_i$ 是第 $i$ 个观测；$s$ 是上下文窗口内绝对值的均值，作为缩放因子；$C$ 是上下文长度；$\tilde x_i$ 是缩放后的值；缩放保留 0 值，并使不同量级的序列处于相近范围。
 
 论文选均值缩放的理由有二：它在实际使用的深度预测模型（如 DeepAR）里行之有效；它**保留 0 值**，而 0 常有语义（0 销量、夜间光伏发电为 0）。论文指出标准化、min-max 等其他缩放也可用，只需很小改动。
 
@@ -51,6 +62,9 @@ $$\tilde x_i=\frac{x_i}{s},\qquad s=\frac1C\sum_{i=1}^{C}\lvert x_i\rvert$$
 选 $B$ 个箱中心 $c_1<\dots<c_B$，以及 $B-1$ 个边界 $b_i$（$c_i<b_i<c_{i+1}$），量化函数 $q$ 与反量化函数 $d$ 为
 
 $$q(x)=\begin{cases}1 & -\infty\le x<b_1\\ 2 & b_1\le x<b_2\\ \vdots & \\ B & b_{B-1}\le x<\infty\end{cases}\qquad d(j)=c_j$$
+
+
+其中：$q(x)$ 把缩放后的实数 $x$ 映射到 token 编号；$b_i$ 是第 $i$ 个箱边界；$B$ 是箱个数；$d(j)=c_j$ 把 token 反量化为第 $j$ 个箱中心；箱边界之间的值被归入同一 token。
 
 分箱方式有两类：**分位数分箱**（数据相关，使每个箱里的训练点数大致相同）和**均匀分箱**（箱中心在 $[c_1,c_B]$ 内等距，边界取中点 $b_i=(c_i+c_{i+1})/2$）。论文选**均匀分箱**，理由是未见过的下游数据的取值分布可能与训练分布差别很大。
 
@@ -75,6 +89,9 @@ $$q(x)=\begin{cases}1 & -\infty\le x<b_1\\ 2 & b_1\le x<b_2\\ \vdots & \\ B & b_
 输出是 $\mathcal V_{ts}$ 上的类别分布 $p_\theta(z_{C+h+1}\mid z_{1:C+h})$，损失为分类交叉熵，对单条已 token 化的序列（含 EOS）：
 
 $$\ell(\theta)=-\sum_{h=1}^{H+1}\sum_{i=1}^{\lvert\mathcal V_{ts}\rvert}\mathbf 1_{(z_{C+h+1}=i)}\log p_\theta(z_{C+h+1}=i\mid z_{1:C+h})$$
+
+
+其中：$\ell(\theta)$ 是单条序列的损失；$C$ 是上下文长度，$H$ 是预测长度（多一个 EOS，故求和到 $H+1$）；$z$ 是量化后的 token；$\mathcal V_{ts}$ 是词表；$\mathbf 1_{(z_{C+h+1}=i)}$ 是指示函数；$p_\theta$ 是模型预测的 token 分布；这是标准的分类交叉熵。
 
 求和上界为 $H+1$ 是因为多了 EOS；实际训练时对 batch 取平均。
 
@@ -102,6 +119,9 @@ Chronos 天然是概率模型：对 $h=1,\dots,H$ 依次从 $p_\theta(z_{C+h+1}\
 把图像分类里的 Mixup 推广到**多于两条**的时间序列。先随机取 $k\sim\mathcal U\{1,K\}$ 条长度为 $l\sim\mathcal U\{l_{min},l_{max}\}$ 的序列（来自随机选的训练数据集），各自**先均值缩放**（使小值序列和大值序列在混合里同等重要），再做凸组合：
 
 $$\tilde x^{\text{TSMixup}}_{1:l}=\sum_{i=1}^{k}\lambda_i\,\tilde x^{(i)}_{1:l}$$
+
+
+其中：$\tilde x^{(i)}_{1:l}$ 是第 $i$ 条经均值缩放的序列；$\lambda_i$ 是第 $i$ 条的混合权重（非负且和为 1）；$k$ 是参与混合的序列条数；$l$ 是序列长度；该式是多条序列的凸组合。
 
 权重 $[\lambda_1,\dots,\lambda_k]$ 来自对称 Dirichlet 分布 $\mathrm{Dir}(\alpha)$。附录 Algorithm 1 的取值为：$K=3$，$\alpha=1.5$，$l_{min}=128$，$l_{max}=2048$。由于 $k=1$ 时就是原序列，原始序列会以 $1/3$ 的概率保留在增强集中（论文原话）。
 
@@ -134,6 +154,8 @@ $$\tilde x^{\text{TSMixup}}_{1:l}=\sum_{i=1}^{k}\lambda_i\,\tilde x^{(i)}_{1:l}$
 优化 | 200K 步，AdamW，weight decay 0.01，学习率从 0.001 线性退火到 0
 硬件 | AWS EC2，8 张 A100 40GB
 
+表中：「项」是训练配置项，右列是对应取值。
+
 ## 实验与结论
 
 ### 数据集与评测协议
@@ -145,6 +167,8 @@ $$\tilde x^{\text{TSMixup}}_{1:l}=\sum_{i=1}^{k}\lambda_i\,\tilde x^{(i)}_{1:l}$
 仅预训练 | 13 | 795,936 | 预训练
 Benchmark I | 15 | 97,272 | 预训练 + 域内（in-domain）评测
 Benchmark II | 27 | 190,674 | 仅零样本（zero-shot）评测
+
+表中：「数据子集」是数据集分组，「数据集数」「序列数」是规模，「用途」是其在训练与评测中的角色。结论：Benchmark I 既用于预训练也做域内评测，Benchmark II 只用于零样本评测。
 
 其中 Benchmark I 与仅预训练的数据集合计 28 个用于训练。评测时用每条序列最后 $H$ 个点做留出测试集，$H$ 因任务而异（任务 = 数据集 + 预测长度）。
 
@@ -171,6 +195,8 @@ PatchTST | 0.601 | 0.740
 Moirai-1.0-R (Large) | 0.670 | 0.806
 Seasonal Naive | 1.000 | 1.000
 
+表中：「模型」是对比方法，两列是 Benchmark I（域内）上的聚合相对 WQL 与 MASE（相对 Seasonal Naive 归一，越小越好）。结论：Chronos-T5 明显优于所有基线，最小的 Mini 也优于 Moirai-Large；注意这是域内结果。
+
 论文的结论：Chronos-T5 Base 和 Large 在这个 benchmark 上明显优于所有基线；最小的 Chronos-T5 Mini（20M）也优于最好的 Moirai-1.0-R（Large，311M），尽管后者训练语料大得多。注意：这是**域内**结果，Benchmark I 的数据在 Chronos 的训练语料里；对 Moirai 和 Lag-Llama，论文注明训练语料不同，部分数据集未见过或测试集被其训练见过，因此那一列只能作参考。
 
 ### Benchmark II（零样本）
@@ -186,6 +212,8 @@ Chronos-T5 (Small) | 0.667 | 0.841
 PatchTST（任务专用） | 0.684 | 0.810
 Moirai-1.0-R (Base) | 0.696 | 0.907
 Seasonal Naive | 1.000 | 1.000
+
+表中：「模型」是对比方法，两列是 Benchmark II（零样本）上的聚合相对 WQL 与 MASE（相对 Seasonal Naive，越小越好）。结论：Chronos 在零样本下与最好的任务专用模型相当，优于其他预训练模型。
 
 论文的结论：Chronos 明显优于本地统计模型；WQL 上 Chronos 占据第 2 到第 4 名，优于大多数在这些任务上训练过的专用模型；MASE 上 Chronos-T5 (Large) 排第 2，超过包括 SCUM 集成在内的多数基线；明显优于 Moirai-1.0-R、Lag-Llama、LLMTime、ForecastPFN，甚至优于对每个数据集微调 GPT-2 的 GPT4TS。论文同时说明：Moirai 在 Benchmark II 上的预训练语料覆盖了不少数据集，评测设置可能对它有利。总体论文表述为"与最好的任务专用深度模型相当"。
 
@@ -234,6 +262,8 @@ GPT4TS | 预训练 GPT-2 为骨干，patch 嵌入，按任务微调少量参数 
 Time-LLM | 将 patch 嵌入与文本原型对齐，冻结 LLM | 否 | 本文未列
 Lag-Llama / Moirai | 实值输入，含滞后项、patching 与实值分布头等（论文对这类同期工作的概述） | 是 | 实值分布头
 
+表中：「方法」是对比对象，「如何用时序数据喂模型」说明输入表示，「是否从头预训练」说明是否从头训练，「概率输出」说明输出形式。结论：Chronos 以缩放加量化把时序变成 token，直接复用语言模型，输出类别分布。
+
 （以上描述依据本论文第 2 节对相关工作的介绍。）**[解读]** 与 [DeepAR](/0625_ML_Tasks_TimeSeries_Deep_DeepAR) 相比，两者都用自回归采样给出概率预测，但 DeepAR 逐数据集训练、输出参数化分布；Chronos 预训练一次、输出 categorical 分布。关于 Chronos 在基础模型谱系中的位置，参见 [Foundation 综述](/0608_ML_Tasks_TimeSeries_Foundation)，评测指标参见 [Metrics 综述](/0610_ML_Tasks_TimeSeries_Metrics)。
 
 ## 使用方式
@@ -256,4 +286,5 @@ low, median, high = torch.quantile(samples[0], torch.tensor([0.1, 0.5, 0.9]), di
 - Ansari et al., *Chronos: Learning the Language of Time Series*, TMLR 2024, [arXiv:2403.07815](https://arxiv.org/abs/2403.07815)
 - 官方代码与预训练模型：[amazon-science/chronos-forecasting](https://github.com/amazon-science/chronos-forecasting)
 - 评测数据集：[autogluon/chronos_datasets](https://huggingface.co/datasets/autogluon/chronos_datasets)
+
 
