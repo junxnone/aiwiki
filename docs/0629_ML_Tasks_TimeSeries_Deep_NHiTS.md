@@ -2,7 +2,7 @@
 Title | ML Tasks TimeSeries Deep NHiTS
 -- | --
 Created @ | `2026-11-19T01:28:49Z`
-Updated @| `2026-11-19T06:16:56Z`
+Updated @| `2026-11-20T08:09:54Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/629)
 
@@ -38,6 +38,9 @@ N-HiTS（Neural Hierarchical Interpolation for Time Series Forecasting）是 Cha
 
 N-HiTS 由 $S$ 个 stack 组成，每个 stack 有 $B$ 个 block；每个 block 是一个带 ReLU 的 MLP。网络输入是目标序列自身的 $L$ 个滞后值 $y_{t-L:t}$。
 
+
+下图概括 N-HiTS 的 stack 与残差结构。
+
 ```
 Model input y_{t-L:t}
    |
@@ -55,6 +58,12 @@ Model input y_{t-L:t}
   ...  Stack S (最小的 k, 最大的 r) ------->  forecast_S --+
 ```
 
+图中：
+
+- 自上而下是 Stack 1 到 Stack S；每个 stack 内先对输入做 MaxPool（核 $k$），再经 MLP 得到前向系数 $\theta^f$ 与后向系数 $\theta^b$，分别插值为预测 $\hat y$ 与 backcast $\tilde y$。
+- 残差 $x\leftarrow x-\tilde y$ 传给下一个 stack；各 stack 的 forecast 在右侧相加，得到最终预测 $\hat y_{t+1:t+H}$。
+- 越往后的 stack 池化核 $k$ 越小、表达率 $r$ 越大，即从低频逐步细化到高频。
+
 与 N-BEATS 一致的部分（论文原文）：
 
 - 每个块的 MLP 学习 backcast 与 forecast 两组基系数；
@@ -66,6 +75,9 @@ Model input y_{t-L:t}
 在第 $\ell$ 个块的输入端先做一次 MaxPool，核大小为 $k_\ell$：
 
 $$y^{(p)}_{t-L:t,\ell}=\text{MaxPool}\big(y_{t-L:t,\ell},\,k_\ell\big)\qquad\text{(论文 Eq.1)}$$
+
+
+其中：$y_{t-L:t,\ell}$ 是块 $\ell$ 的输入序列（$L$ 个滞后值）；$k_\ell$ 是池化核大小，越大保留的细节越少；$\mathrm{MaxPool}$ 取每个窗口的最大值；$y^{(p)}_{t-L:t,\ell}$ 是池化后的较短序列。
 
 - $k_\ell$ 越大，越多高频/小时间尺度成分被截掉，该块被迫关注大尺度、低频内容，利于产生一致的长期预测。
 - 论文强调这也减少了大多数块的 MLP 输入宽度，降低内存、计算与参数量（缓解过拟合），同时"保持原有的感受野（receptive field）"。
@@ -87,11 +99,17 @@ h_\ell &= \text{MLP}\big(y^{(p)}_{t-L:t,\ell}\big)\\
 \theta^b_\ell &= \text{LINEAR}_b(h_\ell)
 \end{aligned}\qquad\text{(论文 Eq.2)}$$
 
+
+其中：$h_\ell\in\mathbb R^{N_h}$ 是块 $\ell$ 的隐向量，$N_h$ 是隐藏宽度；$y^{(p)}_{t-L:t,\ell}$ 是池化后的输入；$\mathrm{MLP}$ 是带 ReLU 的多层感知机；$\mathrm{LINEAR}_f$、$\mathrm{LINEAR}_b$ 是两个线性投影，分别输出前向系数 $\theta^f_\ell$ 与后向系数 $\theta^b_\ell$。
+
 ### 2.4 Hierarchical Interpolation（层级插值）
 
 关键点：$\theta^f$ 的维度不再等于 $H$，而是
 
 $$\lvert\theta^f_\ell\rvert=r_\ell\cdot H\qquad(r_\ell\ \text{为 expressiveness ratio，表达率})$$
+
+
+其中：$\theta^f_\ell$ 是块 $\ell$ 的前向系数向量；$r_\ell$ 是表达率（每单位输出时间对应的系数个数，越小输出越粗）；$H$ 是预测长度。
 
 即"每单位输出时间对应多少个参数"。再用插值函数 $g$ 把系数还原到原始采样率：
 
@@ -99,6 +117,9 @@ $$\begin{aligned}
 \hat y_{\tau,\ell} &= g(\tau,\theta^f_\ell),\quad \tau\in\{t+1,\dots,t+H\}\\
 \tilde y_{\tau,\ell} &= g(\tau,\theta^b_\ell),\quad \tau\in\{t-L,\dots,t\}
 \end{aligned}\qquad\text{(论文 Eq.3)}$$
+
+
+其中：$g(\tau,\theta)$ 是插值函数，按系数 $\theta$ 求时间点 $\tau$ 的值；$\hat y_{\tau,\ell}$ 是块 $\ell$ 在未来时间 $\tau$ 的预测；$\tilde y_{\tau,\ell}$ 是在历史时间 $\tau$ 的 backcast；$t$ 是预测起点，$H$ 是预测长度，$L$ 是输入长度。
 
 插值可以是最近邻、分段线性或三次（C0 / C1 / C2，论文附录 G 比较）。论文展示的线性插值：时间划分 $\mathcal T=\{t+1,\,t+1+1/r,\,\dots,\,t+H-1/r,\,t+H\}$，在相邻两个结点 $t_1$、$t_2=t_1+1/r$ 之间做线性插值（论文 Eq.4）。可以把 $\theta^f$ 看成"时间轴上每隔 $1/r$ 步放一个结点的取值"。
 
@@ -115,6 +136,9 @@ $$\begin{aligned}
 y_{t-L:t,\ell+1} &= y_{t-L:t,\ell}-\tilde y_{t-L:t,\ell}
 \end{aligned}$$
 
+
+其中：$\hat y_{t+1:t+H,\ell}$ 是块 $\ell$ 的预测，所有块相加得最终预测；$y_{t-L:t,\ell}$ 是块 $\ell$ 的输入；$\tilde y_{t-L:t,\ell}$ 是该块的 backcast，从输入中扣除后传给下一块。
+
 这样前面的块先把低频成分合成并从输入中扣除，后面的块专注于其余部分。论文消融（附录 G）称：**"先合成并去掉低频/大尺度成分，再细化高频"的顺序对结果影响显著，是最佳配置**。
 
 ### 2.4.1 输出头维度与参数量：一个带数字的例子
@@ -128,6 +152,8 @@ Block 2 | $720/12 = 60$ | $512\times60 = 30{,}720$ | 每 12 步一个结点
 Block 3 | $720/1 = 720$ | $512\times720 = 368{,}640$ | 每步一个值，无插值
 合计 | | $414{,}720$ | 
 对照：N-BEATSg 风格（每块都输出 720 维） | $720\times3$ | $3\times368{,}640 = 1{,}105{,}920$ | 无
+
+表中：「块」是三个块，「$\lvert\theta^f\rvert=r\cdot H$」是 forecast 系数个数，「forecast 输出层权重」是输出层权重数，「插值方式」是结点间隔。结论：N-HiTS 的输出层参数约为 N-BEATSg 风格的三分之一。
 
 （`[解读]` 上表是用论文公式 $\lvert\theta^f\rvert=rH$ 和 Table A3 的超参做的算术，论文未给出这张表；backcast 头同理，它的长度由输入长度 $L$ 决定而非 $H$。）
 
@@ -147,11 +173,16 @@ forecast 头维度 | $H$（$\lvert\theta^f\rvert=H$） | $r_\ell\cdot H$，靠�
 长 horizon 复杂度（论文 Table A2） | N-BEATSg $O(HB)$，N-BEATSi $O(H^2B)$ | $O\big(H(1-r^B)/(1-r)\big)$
 共同点 | MLP 块、doubly residual stacking、全局单变量模型、直接多步预测 | 同左
 
+表中：「项」是对比维度，后两列是 N-BEATS 与 N-HiTS 在该维度的做法。结论：N-HiTS 的改动集中在输入池化、输出头维度与插值合成，从而降低长 horizon 的复杂度。
+
 ### 2.5 为什么有效：效率与理论
 
 **复杂度**（论文附录 B 与 Table A2，设 $L=O(H)$，已对照渲染页核对）：块内由全连接层主导，复杂度 $O(H\cdot N_h)$（$N_h$ 视为常数）。N-BEATSg 的时间/内存为 $O(HB)$，N-BEATSi 为 $O(H^2B)$；N-HiTS 取 $r_\ell=r^\ell$（指数递增的表达率）时，空间复杂度为几何级数
 
 $$O\Big(\sum_{\ell=0}^{B}H\cdot r^\ell\Big)=O\Big(H\,\frac{1-r^B}{1-r}\Big)$$
+
+
+其中：$H$ 是预测长度；$B$ 是每 stack 的块数；$r$ 是表达率的底数，第 $\ell$ 块的表达率为 $r^\ell$；$H\cdot r^\ell$ 是第 $\ell$ 块的输出系数量；求和为各块系数量之和，等比级数在 $r<1$ 时随 $H$ 线性增长。
 
 Table A2 中时间复杂度也是同一形式。Table A2 同时列出 Transformer $O(H^2)$、Informer/Autoformer $O(H\log H)$ 等对照。`[解读]` 该式在 $r<1$ 时随 $H$ 线性、随 $B$ 收敛；这是渐近式，实际用的是 Table A3 的离散候选。
 
@@ -187,6 +218,8 @@ batch size | 256
 随机种子 | 1~10 的离散范围，用于逃出较差局部极小
 超参搜索 | HYPEROPT 贝叶斯优化，20 次迭代，按验证集 MAE 选择
 硬件 / 框架 | PyTorch，GeForce RTX 2080
+
+表中：「项」是训练设置，右列是对应取值或搜索范围（$S$ 为 stack 数，$B$ 为每 stack 块数，$N_h$ 为隐藏宽度，$m$ 为输入长度相对 $H$ 的倍数）。
 
 论文称"超参空间极小"：主要只调池化核、系数数和随机种子。Table A3 中 $[16,8,1]$、$[8,4,1]$ 这样的核组合说明典型配置是核递减到 1，即最后一个 stack 不做池化、输出分辨率最高。`[解读]` $1/r$ 取 168、24 与小时数据的周/日周期相呼应；论文称部分选项对应数据集的常见季节性。
 
@@ -226,6 +259,8 @@ Weather / 720 | 0.351 / 0.353 | 0.368 / 0.359 | 0.403 / 0.428 | 0.419 / 0.428
 ILI / 24 | 1.862 / 0.869 | 1.879 / 0.886 | 2.203 / 0.963 | 3.483 / 1.287
 ILI / 60 | 2.137 / 0.968 | 2.547 / 1.057 | 2.545 / 1.061 | 2.770 / 1.125
 
+表中：「数据集 / H」是数据集与预测长度 $H$，其余各列是各方法的「MSE / MAE」（越小越好）。结论：N-HiTS 在多数格子最优，长 horizon 优势更明显，个别格子由 N-BEATS 或 FEDformer 略优。
+
 读表要点：
 
 - 并非处处第一：ECL/96 与 TrafficL/96 上 N-BEATS 略优，ECL/720 的 MSE 上 FEDformer 略优（0.231 vs 0.243）。论文也承认在最短 horizon 上与最佳方法"可比"。
@@ -254,6 +289,8 @@ N-HiTS2（仅插值） | 0.498 | 0.450
 N-HiTS3（仅池化） | 0.518 | 0.454
 N-HiTS4（无，≈N-BEATSg） | 0.548 | 0.468
 N-BEATSi | 0.794 | 0.597
+
+表中：「模型」是消融变体，后两列是 horizon 720 上的平均 MSE 与 MAE（越小越好）。结论：多速率采样与层级插值互补，两者组合最好。
 
 （已对照渲染页核对；Table 2 中 N-HiTS 在 720 上两项指标均为最优，96 上 MSE 为 N-HiTS3 最优、N-HiTS 次优。）两个组件互补，组合最好；但在 horizon 96 上差别很小，个别指标上 N-HiTS3 甚至略好（MSE 0.192 vs 0.195）。论文还指出 N-BEATSi 的多项式/正弦基对长 horizon 是"有害的归纳偏置"。
 
@@ -286,6 +323,8 @@ Informer / Autoformer / FEDformer | encoder 注意力（稀疏/自相关/频域�
 [DeepAR](/0625_ML_Tasks_TimeSeries_Deep_DeepAR) | 自回归 RNN | 逐步采样，概率输出 | 无 | 概率预测，递归式
 [TCN](/0626_ML_Tasks_TimeSeries_Deep_TCN) | 因果膨胀卷积 | 视设计而定 | 无 | 以卷积获得大感受野
 
+表中：「方法」是对比对象，「输入处理」「输出合成」说明其读入与产出方式，「分解/可解释」说明是否可分解，「备注」给出特点。结论：N-HiTS 在输入端与输出端都做多尺度处理，使各块对应不同频段。
+
 `[解读]` 池化与膨胀卷积、小波分解有相通之处：都是用多尺度视角扩大感受野或分离频段。N-HiTS 的特点是在输出端也做多尺度，并用 backcast 残差把"已解释的频段"从输入中扣除。
 
 与综述 [时间序列总览](/0603_ML_Tasks_TimeSeries) 及 [深度学习方法](/0606_ML_Tasks_TimeSeries_Deep) 的说法（多速率输入池化 + 层级插值、不同块负责不同频率、降低长 horizon 计算量并改善精度）一致。
@@ -303,6 +342,8 @@ $S$、$B$ | stack 数、每 stack 块数 | 3、1
 $N_h$、MLP 层数 | 隐藏宽度、层数 | 512、2
 插值 $g$ | 插值函数 | Linear
 
+表中：「论文超参」是符号，「含义」解释其作用，「论文取值」是论文设置；可据此把论文设定映射到库参数。
+
 `[经验]` 实践要点：
 
 - 先用论文 Table A3 的候选组合（如池化核 $[8,4,1]$ / $[16,8,1]$）作为起点，再按数据的主周期调整 $1/r$；
@@ -315,5 +356,6 @@ $N_h$、MLP 层数 | 隐藏宽度、层数 | 512、2
 - 代码：[Nixtla/neuralforecast](https://github.com/Nixtla/neuralforecast)（论文摘要给出）
 - 前作：N-BEATS（Oreshkin et al., ICLR 2020，arXiv:1905.10437，论文引用文献与仓库综述均有记录）
 - 对比基线：Autoformer、Informer、FEDformer（[arXiv:2201.12740](https://arxiv.org/abs/2201.12740)）、DilRNN、ETSformer、Preformer
+
 
 
