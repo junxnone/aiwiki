@@ -293,6 +293,7 @@
         - [S4](/0642_ML_Tasks_TimeSeries_Deep_S4)
         - [S-Mamba](/0644_ML_Tasks_TimeSeries_Deep_SMamba)
         - [SOFTS](/0641_ML_Tasks_TimeSeries_Deep_SOFTS)
+        - [SegRNN](/0666_ML_Tasks_TimeSeries_Deep_SegRNN)
         - [TCN](/0626_ML_Tasks_TimeSeries_Deep_TCN)
         - [TFT](/0634_ML_Tasks_TimeSeries_Deep_TFT)
         - [TSMixer](/0632_ML_Tasks_TimeSeries_Deep_TSMixer)
@@ -637,4 +638,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1641221120</sub></kbd>
+<kbd><sub>@1659101120</sub></kbd>

@@ -4,6 +4,7 @@
 
 #### **Created**
 
+- 2026-11-20&nbsp;&nbsp; [SegRNN](/0666_ML_Tasks_TimeSeries_Deep_SegRNN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:SegRNN
 - 2026-11-19&nbsp;&nbsp; [Needle](/0665_x_needle)&nbsp;&nbsp; :bookmark:x :bookmark:needle
 - 2026-11-19&nbsp;&nbsp; [Transformer History](/0664_ML_Transformer_History)&nbsp;&nbsp; :bookmark:ML :bookmark:Transformer :bookmark:History
 - 2026-11-19&nbsp;&nbsp; [Sundial](/0663_ML_Tasks_TimeSeries_Foundation_Sundial)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Foundation :bookmark:Sundial
@@ -637,6 +638,7 @@
 
 #### **Updated**
 
+- 2026-11-20&nbsp;&nbsp; [SegRNN](/0666_ML_Tasks_TimeSeries_Deep_SegRNN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:SegRNN
 - 2026-11-20&nbsp;&nbsp; [Sundial](/0663_ML_Tasks_TimeSeries_Foundation_Sundial)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Foundation :bookmark:Sundial
 - 2026-11-20&nbsp;&nbsp; [Time-MoE](/0662_ML_Tasks_TimeSeries_Foundation_TimeMoE)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Foundation :bookmark:TimeMoE
 - 2026-11-20&nbsp;&nbsp; [LLM 对时序预测有用吗](/0661_ML_Tasks_TimeSeries_Foundation_LLMUseful)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Foundation :bookmark:LLMUseful
