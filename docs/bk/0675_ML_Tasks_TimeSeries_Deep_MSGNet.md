@@ -3,7 +3,7 @@
 | Title     | ML Tasks TimeSeries Deep MSGNet                       |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-20T09:07:50Z`                                |
-| Updated @ | `2026-11-20T09:07:50Z`                                |
+| Updated @ | `2026-11-20T09:16:04Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/675) |
 
@@ -26,7 +26,7 @@ GNN），无法描述这种随尺度变化的相关性。
 本站相关：同样用 FFT 找周期的
 [TimesNet](/0631_ML_Tasks_TimeSeries_Deep_TimesNet)；对比基线之一的
 [DLinear](/0630_ML_Tasks_TimeSeries_Deep_DLinear)、[Informer](/0635_ML_Tasks_TimeSeries_Deep_Informer)、[Autoformer](/0636_ML_Tasks_TimeSeries_Deep_Autoformer)；同属变量间建模路线的
-[iTransformer](/0639_ML_Tasks_TimeSeries_Deep_iTransformer)、[SOFTS](/0641_ML_Tasks_TimeSeries_Deep_SOFTS)、[TimeFilter](/XXXX_ML_Tasks_TimeSeries_Deep_TimeFilter)；总览见
+[iTransformer](/0639_ML_Tasks_TimeSeries_Deep_iTransformer)、[SOFTS](/0641_ML_Tasks_TimeSeries_Deep_SOFTS)、[TimeFilter](/0678_ML_Tasks_TimeSeries_Deep_TimeFilter)；总览见
 [深度学习方法](/0606_ML_Tasks_TimeSeries_Deep)。
 
 ## 1\. 解决什么问题

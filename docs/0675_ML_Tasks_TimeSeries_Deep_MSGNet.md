@@ -2,7 +2,7 @@
 Title | ML Tasks TimeSeries Deep MSGNet
 -- | --
 Created @ | `2026-11-20T09:07:50Z`
-Updated @| `2026-11-20T09:07:50Z`
+Updated @| `2026-11-20T09:16:04Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/675)
 
@@ -15,7 +15,7 @@ MSGNet 出自论文 *MSGNet: Learning Multi-Scale Inter-Series Correlations for 
 
 > 标注约定：未标注的内容来自论文原文；`[解读]` 是对论文的理解，`[经验]` 是一般经验，`[待核实]` 是未能确认的内容。
 
-本站相关：同样用 FFT 找周期的 [TimesNet](/0631_ML_Tasks_TimeSeries_Deep_TimesNet)；对比基线之一的 [DLinear](/0630_ML_Tasks_TimeSeries_Deep_DLinear)、[Informer](/0635_ML_Tasks_TimeSeries_Deep_Informer)、[Autoformer](/0636_ML_Tasks_TimeSeries_Deep_Autoformer)；同属变量间建模路线的 [iTransformer](/0639_ML_Tasks_TimeSeries_Deep_iTransformer)、[SOFTS](/0641_ML_Tasks_TimeSeries_Deep_SOFTS)、[TimeFilter](/XXXX_ML_Tasks_TimeSeries_Deep_TimeFilter)；总览见 [深度学习方法](/0606_ML_Tasks_TimeSeries_Deep)。
+本站相关：同样用 FFT 找周期的 [TimesNet](/0631_ML_Tasks_TimeSeries_Deep_TimesNet)；对比基线之一的 [DLinear](/0630_ML_Tasks_TimeSeries_Deep_DLinear)、[Informer](/0635_ML_Tasks_TimeSeries_Deep_Informer)、[Autoformer](/0636_ML_Tasks_TimeSeries_Deep_Autoformer)；同属变量间建模路线的 [iTransformer](/0639_ML_Tasks_TimeSeries_Deep_iTransformer)、[SOFTS](/0641_ML_Tasks_TimeSeries_Deep_SOFTS)、[TimeFilter](/0678_ML_Tasks_TimeSeries_Deep_TimeFilter)；总览见 [深度学习方法](/0606_ML_Tasks_TimeSeries_Deep)。
 
 ## 1. 解决什么问题
 
@@ -219,4 +219,5 @@ def mixhop(A, H, W_list, powers=(0, 1, 2)):           # A:[N,N]; H:[B,N,F]
 
 - Wanlin Cai, Yuxuan Liang, Xianggen Liu, Jianshuai Feng, Yuankai Wu. *MSGNet: Learning Multi-Scale Inter-Series Correlations for Multivariate Time Series Forecasting*. AAAI 2024. [arXiv:2401.00423](https://arxiv.org/abs/2401.00423)
 - 站内：[深度学习方法](/0606_ML_Tasks_TimeSeries_Deep)、[TimesNet](/0631_ML_Tasks_TimeSeries_Deep_TimesNet)、[iTransformer](/0639_ML_Tasks_TimeSeries_Deep_iTransformer)
+
 
