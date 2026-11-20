@@ -3,7 +3,7 @@
 | Title     | ML Tasks TimeSeries Deep NBEATS                       |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-19T01:28:47Z`                                |
-| Updated @ | `2026-11-19T06:17:04Z`                                |
+| Updated @ | `2026-11-20T08:09:29Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/628) |
 
@@ -51,9 +51,17 @@ $$\\begin{aligned} h\_{\\ell,1} &= \\mathrm{FC}*{\\ell,1}(x*\\ell) &&
 \\mathrm{LINEAR}*b(h*{\\ell,4}),\\quad \\theta^f\_\\ell =
 \\mathrm{LINEAR}*f(h*{\\ell,4}) && \\text{展开系数 (式 1)} \\end{aligned}$$
 
+其中：$x\_\\ell$ 是块输入；$\\mathrm{FC}$ 是全连接层加 ReLU，$h\_{\\ell,1\\ldots4}$
+是四层隐表示；$\\mathrm{LINEAR}*b$、$\\mathrm{LINEAR}*f$ 是两个线性投影头，输出后向系数
+$\\theta^b*\\ell$ 与前向系数 $\\theta^f*\\ell$。
+
 $$\\begin{aligned} \\hat y\_\\ell &= \\sum\_i \\theta^f\_{\\ell,i}\\cdot
 v^f\_i && \\text{前向基层 } g^f\\ \\hat x\_\\ell &= \\sum\_i
 \\theta^b\_{\\ell,i}\\cdot v^b\_i && \\text{后向基层 } g^b \\end{aligned}$$
+
+其中：$\\hat y\_\\ell$ 是块 $\\ell$ 的前向（forecast）输出，$\\hat x\_\\ell$
+是后向（backcast）输出；$\\theta^f\_{\\ell,i}$、$\\theta^b\_{\\ell,i}$
+是前向、后向展开系数；$v^f\_i$、$v^b\_i$ 是对应的基向量；二者是系数的加权和。
 
   - 第一部分是 4 层 FC 加两个线性投影头，预测前向系数 $\\theta^f$ 与后向系数 $\\theta^b$。
   - 第二部分是基层 $g^b$、$g^f$：把系数投影到一组基向量 ${v\_i}$
@@ -63,9 +71,15 @@ v^f\_i && \\text{前向基层 } g^f\\ \\hat x\_\\ell &= \\sum\_i
 
 ### 双重残差堆叠（Doubly Residual Stacking）
 
+下图概括块与块之间的双重残差连接。
+
 $$\\begin{aligned} x\_\\ell &= x\_{\\ell-1} - \\hat x\_{\\ell-1} &&
 \\text{backcast 分支：逐块扣除"已被解释"的部分}\\ \\hat y &= \\sum\_\\ell \\hat
 y\_\\ell && \\text{forecast 分支：各块局部预测求和} \\end{aligned}$$
+
+其中：$x\_\\ell$ 是第 $\\ell$ 块的输入；$\\hat x\_{\\ell-1}$ 是前一块的
+backcast，逐块扣除；$\\hat y\_\\ell$ 是第 $\\ell$ 块的局部预测，$\\hat y$
+是所有块预测之和。
 
 ``` 
  窗口 x ──► Block1 ──(x - x̂1)──► Block2 ──(...)──► ... ──► BlockK
@@ -75,10 +89,21 @@ y\_\\ell && \\text{forecast 分支：各块局部预测求和} \\end{aligned}$$
                       stack forecast ──► 多个 stack 再求和 ──► 全局预测 ŷ
 ```
 
+图中：
+
+  - 输入窗口 $x$ 依次经过 Block1 到 BlockK；每个块输出 backcast $\\hat
+    x\_\\ell$（从输入中扣除，传给下一块）和局部预测 $\\hat y\_\\ell$。
+
+  - 所有块的局部预测相加成为 stack forecast，多个 stack 再求和得到全局预测 $\\hat y$。
+
+  - 关键结论：有两条残差支路，一条沿 backcast 逐块扣除已被解释的部分，一条沿 forecast 逐块累加。
+
   - 与 ResNet（输出 = 输入 + 变换）和 DenseNet（所有层互连）不同：N-BEATS 有**两条**残差支路，一条沿
     backcast 做"逐块分析"，一条沿 forecast 做"逐块累加"。论文认为 ResNet / DenseNet
     的连接方式使网络难以解释，而该拓扑能让局部预测在 stack 层、再到全模型层分级聚合，形成层级分解。
+
   - 论文的直觉：前一块把自己能很好逼近的信号成分从输入里去掉，使下游块的预测任务更容易，同时梯度回传更顺畅。
+
   - `[解读]` 这很像"逐级拟合残差"的提升（boosting）思路：每块只负责当前残差里它擅长的部分。论文本身在 §6
     把它类比为元学习中的"内循环逐步更新展开系数"（见下）。
 
@@ -100,6 +125,11 @@ $$\\hat y^{seas}*{s,\\ell} = \\sum*{i=0}^{\\lfloor H/2\\rfloor-1}
 \\left\[ \\theta\_{s,\\ell,i} \\cos(2\\pi i t) +
 \\theta\_{s,\\ell,i+\\lfloor H/2\\rfloor} \\sin(2\\pi i t) \\right\] = S
 \\theta$$
+
+其中：$t$ 是归一化时间；$H$ 是预测长度；$\\theta\_{s,\\ell,i}$ 是 stack $s$ 的块 $\\ell$
+学到的第 $i$ 个傅里叶系数（余弦项与正弦项各占一半）；$\\cos(2\\pi it)$、$\\sin(2\\pi it)$
+是第 $i$ 个频率的基函数；$S$ 是由这些基函数组成的矩阵，$S\\theta$ 即季节分量；趋势项里 $T$
+是多项式基矩阵，$p$ 是多项式次数。
 
   - 因为趋势 stack 在前，趋势成分先从输入窗口被扣除，再进入季节 stack；两个 stack 的输出各自可读。
   - 每个 stack 有 3 个块；stack 内各块共享固定的基；论文还发现**stack 内所有权重共享**时验证集表现更好。
@@ -130,6 +160,9 @@ $$\\hat y^{seas}*{s,\\ell} = \\sum*{i=0}^{\\lfloor H/2\\rfloor-1}
 | LAST-FORWARD             | 逐块扣除 backcast                         | 只取最后一个块的 forecast（最接近经典 ResNet） |
 | NO-RESIDUAL-LAST-FORWARD | 无残差                                   | 只取最后块（纯超深前馈网络）                  |
 
+表中：「变体」是信息流的不同设计，「输入信息流」「输出信息流」说明输入如何传递、预测如何汇总。关键区别在于是否扣除 backcast
+以及是否累加各块预测。
+
 OWA 结果见后文消融表：默认方案最好，纯前馈最差。
 
 ### 评估指标（论文 §2）
@@ -144,6 +177,11 @@ y\\rvert}\\ \\mathrm{OWA} &=
 \\frac{1}{2}\\left(\\frac{\\mathrm{sMAPE}}{\\mathrm{sMAPE}*{\\text{Naive2}}}
 + \\frac{\\mathrm{MASE}}{\\mathrm{MASE}*{\\text{Naive2}}}\\right) &&
 \\text{M4 专用，Naive2 的 OWA = 1} \\end{aligned}$$
+
+其中：$y$、$\\hat y$ 是真实值与预测值，求和遍及预测步 $H$；sMAPE 是对称平均绝对百分比误差；MASE
+是平均绝对尺度误差，分母是训练期季节朴素预测的平均绝对误差，$T$ 是历史长度，$m$
+是季节周期；MAPE 是平均绝对百分比误差；OWA 是 M4 的综合指标，相对 Naive2 基线归一后取平均，小于 1
+表示优于基线。
 
 `[解读]` 这三个指标都是尺度无关的，这是 N-BEATS 能"不做输入缩放"、并把三种指标当作集成多样性来源的前提。
 
@@ -196,6 +234,9 @@ y\\rvert}\\ \\mathrm{OWA} &=
 | 权重共享       | stack 内共享                       | 不共享                      |
 | batch / 窗口 | 1024；$2H \\sim 7H$              | 同左                       |
 
+表中：「项目」是超参名称，后两列是 interpretable（I）与 generic（G）两个版本的设置。结论：I 版为两个固定基的
+stack，G 版是 30 个堆叠的块。
+
 以上数字已对照 Table 18 渲染图核实。各子集上变化的只有 $L\_H$、训练 batch 数（Iterations）和损失：
 
 | 配置        | 项目         | M4 Yly / Qly / Mly | M4 Wly / Dly / Hly | M3 Yly / Qly / Mly / Other | TOURISM Yly / Qly / Mly |
@@ -204,6 +245,10 @@ y\\rvert}\\ \\mathrm{OWA} &=
 | N-BEATS-I | Iterations | 15K / 15K / 15K    | 5K / 5K / 5K       | 50 / 6K / 6K / 250         | 30 / 500 / 300          |
 | N-BEATS-G | $L\_H$     | 1.5 / 1.5 / 1.5    | 10 / 10 / 10       | 20 / 20 / 20 / 10          | 5 / 10 / 20             |
 | N-BEATS-G | Iterations | 15K / 15K / 15K    | 5K / 5K / 5K       | 20 / 250 / 10K / 250       | 30 / 100 / 100          |
+
+表中：「配置」是模型版本，「项目」是超参（$L\_H$ 为采样历史长度倍数，Iterations 为训练 batch
+数），后几列是各数据集子集（Yly/Qly/Mly 为年/季/月，Wly/Dly/Hly
+为周/日/小时）的取值。
 
   - 损失：M4、M3 为 sMAPE/MAPE/MASE 三种混合；TOURISM 仅 MAPE。
   - M3 Yearly（I 仅 50 个 batch）、TOURISM Yearly（30 个 batch）等训练步数极少，`[解读]`
@@ -227,6 +272,9 @@ y\\rvert}\\ \\mathrm{OWA} &=
 | N-BEATS-G                                  | 11.168 | 0.797 |
 | N-BEATS-I                                  | 11.174 | 0.798 |
 | N-BEATS-I+G（两类模型集成）                        | 11.135 | 0.795 |
+
+表中：「方法」是 M4 竞赛参赛方法及 N-BEATS 各版本，sMAPE 与 OWA 都是越小越好。结论：N-BEATS 的 OWA
+低于冠军，且 I+G 集成最好。
 
 **M3**（3,003 条，平均 sMAPE）：Comb S-H-D 13.52、ForecastPro 13.19、Theta
 13.01、DOTM 12.90、EXP 12.71；N-BEATS-G 12.47、N-BEATS-I 12.43、N-BEATS-I+G
@@ -252,6 +300,9 @@ y\\rvert}\\ \\mathrm{OWA} &=
 | TOURISM Monthly   | 0.107  | 0.138     | 0.097     | 0.103     | 0.099       |
 | TOURISM Quarterly | 0.11   | 0.098     | 0.080     | 0.079     | 0.077       |
 
+表中：「数据集」是评测数据，后几列是各方法的 ND（Normalized Deviation，归一化偏差，越小越好）。结论：N-BEATS
+各版本在三个数据集上均优于 DeepAR 与 DeepState。
+
 附录 C.4 还在 ELECTRICITY、TRAFFIC 上与 MatFact、DeepAR、Deep State、Deep Factors
 比较（ND 指标）；具体数值本文未逐项核对，不引用。
 
@@ -275,6 +326,9 @@ y\\rvert}\\ \\mathrm{OWA} &=
 | LAST-FORWARD                    | 0.811       | 0.808             |
 | NO-RESIDUAL-LAST-FORWARD（纯前馈深网） | 1.030       | 0.922             |
 | N-BEATS-DRESS（默认）               | 0.803       | 0.800             |
+
+表中：「变体」是双重残差拓扑的消融变体，后两列是 generic 与 interpretable 配置下的平均 OWA（越小越好）。结论：默认的
+DRESS 最好，去掉残差与分块求和的纯前馈网络最差。
 
 结论：同时保留 backcast 残差与分块预测求和最好；把两者都去掉的纯深前馈网络明显更差（generic 上差异最大）。论文表中还有
 RESIDUAL-INPUT 变体，此处略。
@@ -323,6 +377,10 @@ $\\theta^f$，每个块像一次"更新步"，把一段历史看作训练集。�
 | Smyl ES-RNN（M4 冠军）                                               | Holt-Winters + 扩张 LSTM 混合 | 否         | 否      | 部分           | 需按 horizon 手工设计               |
 | N-HiTS                                                           | 在 N-BEATS 上加多速率池化与层级插值    | 否         | 否      | 有限           | 同系列后续工作，另文介绍                  |
 | DLinear / TSMixer / TimeMixer                                    | MLP / 线性路线                | 视模型而定     | 否      | 视模型而定        | 同批其他文章另述                      |
+
+表中：「方法」是对比对象，「结构」概述其网络设计，「多变量 /
+协变量」「概率输出」「解释性」三列说明能力，「备注」给出补充。结论：N-BEATS
+是直接多步的点预测模型，解释性可选，不支持协变量与概率输出。
 
 `[解读]` 与 N-HiTS 的区别（N-HiTS 的细节来自仓库综述，不是本文这篇论文）：N-BEATS
 每个块都吃完整输入窗口并输出完整长度 $H$ 的预测；N-HiTS
