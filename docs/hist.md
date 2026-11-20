@@ -4,6 +4,7 @@
 
 #### **Created**
 
+- 2026-11-20&nbsp;&nbsp; [TiRex](/0681_ML_Tasks_TimeSeries_Foundation_TiRex)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Foundation :bookmark:TiRex
 - 2026-11-20&nbsp;&nbsp; [KANAD](/0680_ML_Tasks_TimeSeries_Anomaly_KANAD)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Anomaly :bookmark:KANAD
 - 2026-11-20&nbsp;&nbsp; [PAttn](/0679_ML_Tasks_TimeSeries_Deep_PAttn)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:PAttn
 - 2026-11-20&nbsp;&nbsp; [TimeFilter](/0678_ML_Tasks_TimeSeries_Deep_TimeFilter)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:TimeFilter
@@ -652,6 +653,7 @@
 
 #### **Updated**
 
+- 2026-11-20&nbsp;&nbsp; [TiRex](/0681_ML_Tasks_TimeSeries_Foundation_TiRex)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Foundation :bookmark:TiRex
 - 2026-11-20&nbsp;&nbsp; [KANAD](/0680_ML_Tasks_TimeSeries_Anomaly_KANAD)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Anomaly :bookmark:KANAD
 - 2026-11-20&nbsp;&nbsp; [PAttn](/0679_ML_Tasks_TimeSeries_Deep_PAttn)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:PAttn
 - 2026-11-20&nbsp;&nbsp; [TimeFilter](/0678_ML_Tasks_TimeSeries_Deep_TimeFilter)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:TimeFilter

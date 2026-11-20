@@ -324,6 +324,7 @@
         - [Moirai](/0657_ML_Tasks_TimeSeries_Foundation_Moirai)
         - [Sundial](/0663_ML_Tasks_TimeSeries_Foundation_Sundial)
         - [TTM](/0655_ML_Tasks_TimeSeries_Foundation_TTM)
+        - [TiRex](/0681_ML_Tasks_TimeSeries_Foundation_TiRex)
         - [TimeGPT-1](/0652_ML_Tasks_TimeSeries_Foundation_TimeGPT1)
         - [Time-LLM](/0651_ML_Tasks_TimeSeries_Foundation_TimeLLM)
         - [Time-MoE](/0662_ML_Tasks_TimeSeries_Foundation_TimeMoE)
@@ -652,4 +653,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1718351120</sub></kbd>
+<kbd><sub>@1719511120</sub></kbd>
