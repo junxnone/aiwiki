@@ -2,7 +2,7 @@
 Title | ML Tasks TimeSeries Deep TFT
 -- | --
 Created @ | `2026-11-19T01:59:51Z`
-Updated @| `2026-11-19T06:20:55Z`
+Updated @| `2026-11-20T08:12:01Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/634)
 
@@ -27,11 +27,16 @@ TFT（Temporal Fusion Transformer）出自论文 *Temporal Fusion Transformers f
 已知输入 | 星期、节假日、促销 | $x_{i,t}$ | 是
 观测输入 | 历史客流、过去的目标值 | $z_{i,t}$ | 否，只到预测起点 $t$
 
+表中：「输入类型」是三类输入，「例子」「记号」说明其内容与符号，「未来是否已知」说明预测时能否获得未来值。这个划分决定了每类变量在网络中的处理方式。
+
 预测形式（论文式 1）：
 
 $$
 \hat y_i(q,t,\tau)=f_q\big(\tau,\ y_{i,t-k:t},\ z_{i,t-k:t},\ x_{i,t-k:t+\tau},\ s_i\big)\tag{1}
 $$
+
+
+其中：$\hat y_i(q,t,\tau)$ 是实体 $i$ 在时刻 $t$ 对 $\tau$ 步后第 $q$ 分位数的预测；$f_q$ 是模型；$y_{i,t-k:t}$ 是目标的历史；$z_{i,t-k:t}$ 是观测输入历史；$x_{i,t-k:t+\tau}$ 是已知输入（含未来）；$s_i$ 是静态协变量。
 
 $\hat y_i(q,t,\tau)$ 是在时刻 $t$ 对 $\tau$ 步之后的第 $q$ 分位数预测，$k$ 是回看窗口。一次性输出 $\tau\in\{1,\dots,\tau_{\max}\}$ 的全部 horizon，这是**直接式（direct）多 horizon** 预测。
 
@@ -65,6 +70,12 @@ TFT 的出发点是：给网络加上与多 horizon 预测匹配的**归纳偏�
                           线性层 ──► 每个 horizon 的 q=0.1/0.5/0.9
 ```
 
+图中：
+
+- 左上是静态变量路径：静态变量选择与四个 GRN 生成上下文 $c_s,c_e,c_c,c_h$，分别送往变量选择、静态增强层与 LSTM 初始状态。
+- 过去输入与未来已知输入各经变量选择后送入 LSTM 编码器与解码器，再经门控、残差与 LayerNorm，进入静态增强 GRN。
+- 之后依次是掩码可解释多头自注意力、位置前馈 GRN，以及跨过注意力块的门控残差，最后线性层输出各 horizon 的 0.1/0.5/0.9 分位数。
+
 ### GRN（Gated Residual Network）
 
 GRN 是 TFT 的基本积木，输入主向量 $a$ 与可选上下文 $c$（论文式 2-5）：
@@ -77,6 +88,9 @@ $$
 \mathrm{GLU}(\gamma)&=\sigma(W_4\gamma+b_4)\odot(W_5\gamma+b_5)
 \end{aligned}
 $$
+
+
+其中：$a$ 是主输入向量；$c$ 是可选上下文；$W_1\ldots W_5,b_1\ldots b_5$ 是线性层权重与偏置；$\eta_1,\eta_2$ 是中间量；$\mathrm{ELU}$ 是激活；$\mathrm{GLU}$ 是门控线性单元，$\sigma$ 是 sigmoid，$\odot$ 是逐元素乘；$\mathrm{LayerNorm}$ 是层归一化；残差项 $a$ 保证可"跳过"整个变换。
 
 - 无上下文时 $c=0$；$\eta_1,\eta_2\in\mathbb R^{d_{\text{model}}}$；$\odot$ 是逐元素乘。
 - 论文对 ELU 的解释：$W_2a+W_3c+b_2\gg0$ 时 ELU 近似恒等，$\ll0$ 时输出近似常数，整体表现为线性层。
@@ -102,6 +116,9 @@ v_t&=\mathrm{Softmax}\big(\mathrm{GRN}_v(\Xi_t,c_s)\big)\in\mathbb R^m\\
 \end{aligned}
 $$
 
+
+其中：$\Xi_t$ 是第 $t$ 步所有变量嵌入拼接成的向量；$c_s$ 是静态上下文；$v_t\in\mathbb R^m$ 是 $m$ 个变量的选择权重（Softmax 后和为 1）；$\xi_t^{(j)}$ 是第 $j$ 个变量的嵌入；$\mathrm{GRN}_j$ 是该变量自己的非线性处理；$\tilde\xi_t$ 是加权求和后的输出，用于解释各变量的重要性。
+
 静态、过去、未来三类输入各用**独立**的变量选择网络；静态那个不带 $c_s$（它本身就是静态信息的来源）。
 
 ### 静态协变量编码器
@@ -113,6 +130,8 @@ $$
 $c_s$ | 时间变量选择网络
 $c_c$、$c_h$ | 分别初始化第一层 LSTM 的 cell 状态和 hidden 状态（局部处理）
 $c_e$ | 静态增强层
+
+表中：「上下文」是四个静态上下文向量，「去向」是其被注入的位置。结论：静态信息条件化多个处理环节，而不是简单拼接。
 
 动机：静态信息（如门店属性）会影响整个时间动态，与其每步拼接，不如让它**条件化**多个处理环节。
 
@@ -141,6 +160,9 @@ $$
 \end{aligned}
 $$
 
+
+其中：$Q,K,V$ 是查询、键、值矩阵；$W_Q^{(h)},W_K^{(h)}$ 是第 $h$ 个头的查询、键投影；$W_V$ 是所有头共享的值投影；$d_{\text{attn}}$ 是注意力维度；$m_H$ 是头数；$\tilde A$ 是各头注意力矩阵的平均，可直接解读；$W_H$ 是输出投影。
+
 各头仍有不同的 $W_Q^{(h)},W_K^{(h)}$，可以学不同的时间模式，但都作用在同一组值上，因此可以看作对注意力权重的简单集成，得到单个矩阵 $\tilde A$，可直接读作"各位置对各位置的贡献"。论文取 $d_V=d_{\text{attn}}=d_{\text{model}}/m_H$，序列长度 $N=\tau_{\max}+k+1$。
 
 - **解码器掩码**：每个位置只能看它之前的位置，保持因果。
@@ -158,6 +180,9 @@ $$
 L&=\sum_{y_t\in\Omega}\sum_{q\in Q}\sum_{\tau=1}^{\tau_{\max}}\frac{\mathrm{QL}\big(y_t,\hat y(q,t-\tau,\tau),q\big)}{M\,\tau_{\max}}
 \end{aligned}
 $$
+
+
+其中：$\hat y(q,t,\tau)$ 是对 $\tau$ 步后第 $q$ 分位数的预测；$W_q,b_q$ 是线性输出层；$\tilde\psi$ 是解码器最终表示；$\mathrm{QL}$ 是分位数损失，$(x)_+=\max(0,x)$，低估与高估的罚权重分别为 $q$ 与 $1-q$；$\Omega$ 是训练样本集合，$Q$ 是分位数集合，$M$ 是样本数，$\tau_{\max}$ 是最大 horizon；$L$ 是总损失。
 
 $M$ 是训练样本数；论文实验取 $Q=\{0.1,0.5,0.9\}$。评估用归一化 q-Risk（式 26）：$q\text{-Risk}=\dfrac{2\sum\sum\mathrm{QL}\big(y_t,\hat y(q,t-\tau,\tau),q\big)}{\sum\sum\lvert y_t\rvert}$，求和遍历测试样本与 $\tau$，论文报告 $q=0.5$ 与 $0.9$（即 P50、P90）。
 
@@ -178,6 +203,8 @@ Minibatch | 64 | 128 | 128 | 64
 Learning rate | 0.001 | 0.001 | 0.001 | 0.01
 Max gradient norm | 0.01 | 100 | 100 | 0.01
 
+表中：「配置」是超参，其余四列是 Electricity、Traffic、Retail、Volatility（Vol.）四个数据集上的最优取值（State size 为隐层维度，Heads 为注意力头数，Max gradient norm 为梯度裁剪阈值）。
+
 - **推理**：给定回看窗口内的过去输入与未来已知输入，一次前向直接得到全部 $\tau$ 步的 10%/50%/90% 分位数，没有递归采样，也不需要未来的观测输入。
 - **算例**：注意力序列长度 $N=\tau_{\max}+k+1$，Electricity 为 $24+168+1=193$，Retail 为 $30+90+1=121$（自拟算术，已重算）。
 - **计算成本**（论文自述）：单张 NVIDIA V100 上，Electricity 最优模型训练略超 6 小时（每 epoch 约 52 分钟），对含 5 万样本的验证集批量推理约 8 分钟。
@@ -192,6 +219,8 @@ Electricity | UCI Electricity Load Diagrams，370 个用户，小时级 | 168 / 
 Traffic | UCI PEMS-SF，440 条旧金山湾区高速路的占有率，小时级 | 168 / 24 | 目标取值 [0,1]，分布严重偏斜
 Retail | Kaggle Favorita 杂货销量，日级，预测 log 销量 | 90 / 30 | 丰富静态元数据 + 观测输入
 Volatility | OMI realized library，指数已实现波动率，日级 | 252 / 5 | 数据量小、噪声大
+
+表中：「数据集」是评测集，「说明」是数据来源与规模，「$k$ / horizon」是回看窗口与预测步数，「特点」是数据特征。
 
 Electricity/Traffic 沿用 DeepAR 等工作的设置；Volatility 数据说明里写的是"31 个指数"，而论文 Table 1 实体数写 41，Retail 的 Table 1 写 130k 实体而 Appendix 写"超过 135k"，论文内部口径略有不一致，这里照录不作取舍。
 
@@ -216,6 +245,8 @@ Traffic | 0.223 | 0.236 | 0.186 | 0.161 | 0.167 | 0.122 | 0.105 | 0.117 | **0.09
 Volatility | 0.050 | 0.047 | 0.042 | 0.042 | **0.039**
 Retail | 0.574 | 0.429 | 0.411 | 0.379 | **0.354**
 
+表中：以上两张表是 P50 q-Risk（越小越好），列为对比方法（ARIMA、ETS、TRMF 为经典方法，DeepAR、DSSM、ConvTrans 为迭代式，Seq2Seq、MQRNN 为直接式），行为数据集，粗体为最优。结论：TFT 在四个数据集上均最优，且复杂数据集（Volatility、Retail）上只列出深度模型。
+
 P90：
 
 数据集 | ARIMA | ETS | TRMF | DeepAR | DSSM | ConvTrans | Seq2Seq | MQRNN | TFT
@@ -227,6 +258,8 @@ Traffic | 0.137 | 0.148 | - | 0.099 | 0.113 | 0.081 | 0.075 | 0.082 | **0.070**
 -- | -- | -- | -- | -- | --
 Volatility | 0.024 | 0.024 | 0.021 | 0.021 | **0.020**
 Retail | 0.230 | 0.192 | 0.157 | 0.152 | **0.147**
+
+表中：以上四张 P90 表与前面的 P50 表结构相同，数值是 P90 q-Risk（越小越好），「-」表示论文未给出；列为对比方法，行为数据集，粗体为最优。结论：TFT 在所有数据集的 P90 上也最优。
 
 （Volatility/Retail 小表里 ConvTrans 在论文中写作 "CovTrans"，应是笔误，此处统一写 ConvTrans。TRMF 的 P90 在论文中为 "-"。）
 
@@ -277,6 +310,8 @@ ConvTrans | 迭代式 Transformer + 卷积局部处理 | 递归 | 论文未展�
 TFT | 直接式，seq2seq + 注意力 | 一次性 | 分位数 | 静态/已知/观测分别处理
 [TCN](/0626_ML_Tasks_TimeSeries_Deep_TCN) | 因果膨胀卷积 | 视实现 | 视实现 | 视实现
 
+表中：「方法」是对比对象，「范式」「多 horizon」「输出」「协变量」说明其预测方式、多步生成方式、输出形式与对协变量的要求。结论：TFT 是直接式、输出分位数，并分别处理静态、已知与观测三类输入。
+
 （表中 DeepAR/MQRNN/ConvTrans 的描述来自论文 Sec. 2；TCN 一行为 `[解读]`，仅作位置参照。）
 
 ## 使用方式
@@ -310,4 +345,5 @@ tft = TemporalFusionTransformer.from_dataset(
 
 - [Temporal Fusion Transformers for Interpretable Multi-horizon Time Series Forecasting](https://arxiv.org/abs/1912.09363)
 - 论文脚注 3 给出的开源实现（`[待核实]` 当前是否仍可访问）：https://github.com/google-research/google-research/tree/master/tft
+
 
