@@ -2,7 +2,7 @@
 Title | ML Tasks TimeSeries Deep Informer
 -- | --
 Created @ | `2026-11-19T01:59:53Z`
-Updated @| `2026-11-19T06:20:33Z`
+Updated @| `2026-11-20T08:12:30Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/635)
 
@@ -37,6 +37,9 @@ Informer 出自 Zhou 等人的论文 *Informer: Beyond Efficient Transformer for
 
 整体结构仍是 encoder-decoder：
 
+
+下图概括 Informer 的 encoder-decoder 结构。
+
 ```
  长输入 X_en (L_x)                              X_de = {X_token, X_0}
       |                                               |
@@ -52,6 +55,12 @@ Informer 出自 Zhou 等人的论文 *Informer: Beyond Efficient Transformer for
  +------------------------+                       Y (整段 L_y 预测)
 ```
 
+图中：
+
+- 左侧是 Encoder：长输入经输入表示后依次通过 ProbSparse 注意力与蒸馏（序列长度每次减半），多个减半副本拼接成特征图。
+- 右侧是 Decoder（2 层）：输入是 start token 与零占位符的拼接，先做带掩码的 ProbSparse 自注意力，再对 encoder 特征图做多头注意力，最后全连接层一次前向输出整段预测 $Y$。
+- 关键结论：注意力复杂度降为 $O(L\log L)$，蒸馏降低内存，生成式解码避免逐步预测。
+
 ### Input Representation
 
 论文（附录 B）用统一的输入表示：标量值经 1-D 卷积（kernel width 3, stride 1）投影到 `d_model` 维，再加上固定位置编码（sin/cos）和**可学习的全局时间戳嵌入**（分钟、小时、周、月、节假日等，词表上限 60）：
@@ -59,6 +68,9 @@ Informer 出自 Zhou 等人的论文 *Informer: Beyond Efficient Transformer for
 $$
 X_{\text{feed}}[i]=\alpha u_i+\mathrm{PE}(\cdots)+\sum_p\mathrm{SE}(\cdots)_p\tag{8}
 $$
+
+
+其中：$X_{\text{feed}}[i]$ 是第 $i$ 个时间点输入网络的向量；$u_i$ 是经 1-D 卷积投影后的标量值；$\alpha$ 是平衡系数；$\mathrm{PE}$ 是固定位置编码；$\mathrm{SE}$ 是可学习的全局时间戳嵌入，$p$ 遍历不同的时间类别（分钟、小时、周、月、节假日等）。
 
 （论文 Eq.8；$\alpha$ 为平衡系数，输入已归一化时推荐 $\alpha=1$。）
 
@@ -75,6 +87,9 @@ k(q_i,k_j)&=\exp\!\left(\frac{q_ik_j^{\top}}{\sqrt d}\right)
 \end{aligned}
 $$
 
+
+其中：$A(q_i,K,V)$ 是第 $i$ 个 query 的注意力输出；$k(q_i,k_j)$ 是 query 与第 $j$ 个 key 的核函数（指数化的缩放点积）；$d$ 是维度；分母 $\sum_l k(q_i,k_l)$ 把权重归一化；$p(k_j\mid q_i)$ 是注意力分布，输出是 $v_j$ 在该分布下的期望。
+
 即 value 在分布 $p(k_j\mid q_i)$ 下的期望。
 
 **2. 动机：注意力呈长尾分布**。论文在 ETTh1 上训练 4 层标准 Transformer，看第 1 层的 softmax 分数（附录 C，Fig.7），发现少数点积对贡献了主要注意力，其余可忽略。如果某个 query 的 $p(\cdot\mid q_i)$ 接近均匀分布，则它的输出约等于对 $V$ 取平均，这样的 query 是"懒惰"的、对输入几乎没有加工；真正有信息的是分布远离均匀的"活跃" query。
@@ -84,6 +99,9 @@ $$
 $$
 M(q_i,K)=\ln\sum_{j=1}^{L_K}\exp\!\left(\frac{q_ik_j^{\top}}{\sqrt d}\right)-\frac{1}{L_K}\sum_{j=1}^{L_K}\frac{q_ik_j^{\top}}{\sqrt d}\tag{2}
 $$
+
+
+其中：$M(q_i,K)$ 是第 $i$ 个 query 的稀疏性度量；$L_K$ 是 key 个数；$q_ik_j^{\top}/\sqrt d$ 是缩放点积；第一项是对数和指数（Log-Sum-Exp），第二项是算术平均；二者之差越大，该 query 的注意力分布越偏离均匀。
 
 第一项是 Log-Sum-Exp，第二项是算术平均。$M$ 越大，注意力分布越"尖"，越可能含有长尾头部的主导点积对。
 
@@ -97,6 +115,9 @@ $$
 u=c\cdot\ln L_Q
 $$
 
+
+其中：$\bar Q$ 是只含 Top-$u$ 个活跃 query 的稀疏矩阵（与 $Q$ 同尺寸，其余行为 0）；$K,V$ 是键与值矩阵；$d$ 是维度；$u$ 是保留的 query 个数；$c$ 是采样因子常数；$L_Q$ 是 query 个数。
+
 （论文 Eq.3，$\bar Q$ 与 $Q$ 同尺寸，只含 Top-$u$ query；$c$ 为采样因子常数。）
 
 于是每次 query-key 查询只需约 $O(\ln L_Q)$ 次点积，每层内存 $O(L_K\ln L_Q)$。每个 head 选出的稀疏 query 不同，论文认为这样可避免严重的信息损失。（注意论文原文写的是"allowing each key to only attend to the u dominant queries"，按 Eq.3 与 Algorithm 1 的实际操作，应理解为 `[解读]` 只有 Top-$u$ 个 query 去 attend 全部 key。）
@@ -107,11 +128,17 @@ $$
 \ln L_K\ \le\ M(q_i,K)\ \le\ \max_j\left\{\frac{q_ik_j^{\top}}{\sqrt d}\right\}-\frac{1}{L_K}\sum_j\frac{q_ik_j^{\top}}{\sqrt d}+\ln L_K
 $$
 
+
+其中：$M(q_i,K)$ 是稀疏性度量；上下界分别对应均匀分布（$\ln L_K$）与 max-mean 上界；$q_i,k_j$ 是第 $i$ 个 query 与第 $j$ 个 key；$L_K$ 是 key 个数；$d$ 是向量维度。该引理说明 max-mean 可以作为 $M$ 的近似。
+
 于是提出 max-mean 度量：
 
 $$
 \bar M(q_i,K)=\max_j\left\{\frac{q_ik_j^{\top}}{\sqrt d}\right\}-\frac{1}{L_K}\sum_j\frac{q_ik_j^{\top}}{\sqrt d}\tag{4}
 $$
+
+
+其中：$\bar M(q_i,K)$ 是 max-mean 稀疏性度量，等于最大缩放点积减去平均缩放点积，值越大表示 query 越"活跃"；$k_j$ 是第 $j$ 个 key；$L_K$ 是 key 个数；$d$ 是维度。
 
 并在长尾假设下只随机采样 $U$ 个点积对来估计 $\bar M$（其余填 0），再从中选 Top-$u$。max 算子对 0 不敏感，数值稳定。论文在附录 D 的 Proposition 1 中给出了"Top-$u$ 范围近似成立"的论证（对 key 做高斯假设、用对数正态和近似；`[解读]` 属于启发式论证而非严格证明）。当 $L_Q=L_K=L$ 时，总时间与空间复杂度为 $O(L\ln L)$。
 
@@ -143,6 +170,8 @@ q2 | [2, 0, 0, 0] | [0.711, 0.096, 0.096, 0.096] | 1.841 | 1.5 | 0.454
 q3 | [1, 1, 0, 0] | [0.366, 0.366, 0.134, 0.134] | 1.506 | 0.5 | 0.120
 q4 | [3, 1, -1, -3] | [0.865, 0.117, 0.016, 0.002] | 3.145 | 3 | 1.759
 
+表中：「query」是 4 个示例 query，「缩放得分」是它对 4 个 key 的缩放点积，「softmax 权重 p」是对应注意力分布，「$M$」与「$\bar M$」是两种稀疏性度量，最后一列是与均匀分布的 KL 散度。结论：两种度量排序一致，分布越尖（如 q4）度量越大。
+
 手算过程（以 q4 为例）：$\sum\exp=e^{3}+e^{1}+e^{-1}+e^{-3}=20.086+2.718+0.368+0.050=23.221$，$\ln 23.221=3.145$，均值为 0，故 $M=3.145$；$\text{max-mean}=3-0=3$。再以 q3 为例：$\sum\exp=2e+2=7.437$，$\ln 7.437=2.006$，均值 0.5，$M=1.506$；用定义直接算 KL：$0.5\ln(0.25/0.3655)+0.5\ln(0.25/0.1345)=0.5\cdot(-0.380)+0.5\cdot0.620=0.120$，与 $M-\ln4=0.120$ 一致。
 
 要点：
@@ -160,6 +189,9 @@ $$
 X^{t}_{j+1}=\mathrm{MaxPool}\Big(\mathrm{ELU}\big(\mathrm{Conv1d}([X^t_j]_{\mathrm{AB}})\big)\Big)\tag{5}
 $$
 
+
+其中：$X^t_j$ 是第 $j$ 层的 encoder 输出；$[\cdot]_{\mathrm{AB}}$ 是 attention block；$\mathrm{Conv1d}$ 是沿时间维的一维卷积；$\mathrm{ELU}$ 是激活；$\mathrm{MaxPool}$ 是步长 2 的最大池化，使序列长度减半；$X^t_{j+1}$ 是下一层输入。
+
 $[\cdot]_{\mathrm{AB}}$ 是 attention block（含多头 ProbSparse 注意力和 FFN 等），`Conv1d` 在时间维上做 kernel width=3 的一维卷积，ELU 激活，再接 stride=2 的 max-pooling，使序列长度逐层减半。因为每层输入长度减半，总内存为 $O((2-\epsilon)L\log L)$（$\epsilon$ 为小量）。 `[自算]` 如 $L=96$ 时各层长度约 $96\to48\to24$，各层的内存之和是几何级数，小于首层的 2 倍，这就是 $(2-\epsilon)$ 的来源。
 
 为增强鲁棒性，论文再建**输入减半的副本 stack**，并逐个少用一层蒸馏，使各 stack 输出维度对齐，最后把所有 stack 的输出**拼接**得到 encoder 的最终表示（金字塔结构，原文 Fig.2/3）。实验中 encoder 为"3 层主 stack + 1 层（1/4 输入）stack"，decoder 为 2 层。
@@ -171,6 +203,9 @@ decoder 是标准的两层多头注意力结构，但输入改为：
 $$
 X_{\text{de}}=\mathrm{Concat}\big(X_{\text{token}},X_0\big)\in\mathbb R^{(L_{\text{token}}+L_y)\times d_{\text{model}}}\tag{6}
 $$
+
+
+其中：$X_{\text{de}}$ 是 decoder 的输入；$X_{\text{token}}$ 是从已知序列取出的 start token（长度 $L_{\text{token}}$）；$X_0$ 是目标时段的占位符，标量为 0 但带时间戳；$L_y$ 是预测长度；$d_{\text{model}}$ 是隐层维度。
 
 $X_{\text{token}}$ 是 start token，$X_0$ 是目标序列的占位符（标量置 0，但带有目标时刻的时间戳）。与 NLP 中用特定标记符不同，论文**直接从输入序列里取一段**（目标之前的一段已知序列）作为 token。论文例子：预测 168 点（7 天）时，取目标之前已知的 5 天作为 start token，$X_{\text{de}}=\{X_{5\mathrm{d}},X_0\}$。`[自算]` 若为小时粒度，则 token 120 点，decoder 输入长 $120+168=288$。
 
@@ -197,6 +232,8 @@ decoder 里的自注意力带 mask（把被屏蔽的点积置为 $-\infty$），
 重复 | 保留 10% 验证数据，沿时间做 5 次随机 train/val 划分，结果取 5 次平均
 硬件 | 单张 Nvidia V100 32GB
 
+表中：「项目」是训练设置，「论文设置」是对应取值（$h$ 为注意力头数，$d$ 为每头维度，$c$ 为 ProbSparse 采样因子）。
+
 推理：把 $X_{\text{token}}$（输入序列末尾附近的一段）和零占位符拼成 decoder 输入，**一次前向**输出整个预测窗口；评估时对整个测试集按 stride=1 滚动。论文强调 decoder 的预测只依赖时间戳，因而可以带偏移预测（见消融 Table 6）。
 
 ## 实验与结论
@@ -212,6 +249,8 @@ ETTm1 | 同类数据，15 分钟级 | 12/4/4 个月
 ECL | 321 个用户的用电量，转成 2 年的小时级，目标 `MT_320` | 15/3/4 个月
 Weather | 美国约 1600 个地点，2010~2013 共 4 年，小时级；目标 "wet bulb" + 11 个气候特征 | 28/10/10 个月
 
+表中：「数据集」是评测集，「内容」说明数据来源与目标变量，「划分」是训练/验证/测试的时间划分（ETT 等按月）。
+
 论文说"四个数据集"（ETT 算一个，含 3 个子集），实验表中共 5 列。预测窗口：ETTh、ECL、Weather 为 {1d, 2d, 7d, 14d, 30d, 40d}（表中为 24/48/168/336/720 点，ECL 为 48/168/336/720/960 点），ETTm 为 {6h, 12h, 24h, 72h, 168h}。指标为 MSE 与 MAE。
 
 基线：ARIMA、Prophet、LSTMa、LSTnet、DeepAR，以及 LogTrans（LogSparse 自注意力）、Reformer，和用标准注意力的变体 Informer†。
@@ -225,6 +264,8 @@ ETTh1 / 720 | 0.269 | 0.257 | 0.273 | 2.112 | 0.683 | 0.658 | 0.659 | 2.735
 ECL / 48 | 0.239 | 0.238 | 0.280 | 0.971 | 0.493 | 0.204 | 0.879 | 0.524
 ECL / 960 | 0.582 | 0.594 | 0.624 | 7.019 | 1.545 | 0.657 | 1.370 | 6.901
 
+表中：「数据集/预测长度」是评测设置，其余各列是各方法的单变量预测 MSE（越小越好）；Informer† 是用标准注意力的变体。结论：Informer 在多数设置下最优，ECL 的短预测上 DeepAR 更好。
+
 最后一行 Count（获得最优的次数，MSE 与 MAE 合计 50 项）：Informer 32，Informer† 12，DeepAR 6，其他为 0。
 
 ### 多变量结果（论文 Table 2，MSE，节选）
@@ -236,6 +277,8 @@ ETTh1 / 720 | 1.215 | 1.241 | 1.397 | 2.415 | 1.960 | 2.143
 ETTm1 / 672 | 1.192 | 1.231 | 1.669 | 2.187 | 2.736 | 1.917
 Weather / 720 | 0.831 | 0.834 | 0.885 | 2.726 | 1.536 | 0.851
 ECL / 960 | 0.460 | 0.492 | 0.477 | 2.141 | 1.591 | 0.605
+
+表中：「数据集/预测长度」是评测设置，其余各列是各方法的多变量预测 MSE（越小越好）。结论：Informer 在多数设置下最优，但多变量下的优势比单变量小。
 
 Count：Informer 33，Informer† 14，LogTrans 1，LSTnet 2，其余 0。
 
@@ -265,6 +308,8 @@ Count：Informer 33，Informer† 14，LogTrans 1，LSTnet 2，其余 0。
 720 / 1440 | 0.261 | OOM | OOM | 2.174
 720 / 2880 | 0.257 | OOM | OOM | 2.113
 
+表中：「预测长度 / 输入长度」是评测设置，其余四列是不同注意力在该设置下的 MSE（越小越好，OOM 表示内存溢出）。结论：输入较短时标准注意力略好，输入很长时只有 ProbSparse 能运行。
+
 读法：输入长度较短时，标准注意力略好（如 0.241 对 0.249），ProbSparse 的 MSE 与它相当（论文称"comparable"）；输入长到 1440 以上时标准注意力和 LogTrans 内存溢出，ProbSparse 仍能运行。论文说 LogTrans 溢出是因为其公开实现用对完整注意力加 mask，内存仍是 $O(L^2)$。
 
 **自注意力蒸馏（Table 5，MSE）**：论文正文称以标准注意力版本 Informer† 为基准来排除 ProbSparse 的影响，比较有无蒸馏。`[解读]` 但 Table 5 带蒸馏那一行（336 输入为 0.249/0.393）与 Table 3 的 ProbSparse 行相同，而非标准注意力行（0.241/0.383），说明论文各表的 † 符号含义不一致，这一行很可能就是完整 Informer。预测长度 336 时，该带蒸馏行的输入 336/480/720/960/1200 对应 MSE 为 0.249/0.208/0.225/0.199/0.186；去掉蒸馏的版本只有输入 336/480/720 能跑，分别是 0.229/0.215/0.204，更长输入内存溢出。预测长度 480 时，带蒸馏的 0.197/0.243/0.213/0.192/0.174，去掉蒸馏为 0.224/0.208/0.197 后同样溢出。`[解读]` 在两者都能跑的短输入上，有无蒸馏的 MSE 互有胜负，蒸馏的主要价值是让更长输入可行，进而在长输入下取得更低 MSE。论文的结论是"蒸馏值得采用，尤其是需要更长预测时"。
@@ -280,6 +325,8 @@ Transformer | $O(L^2)$ | $O(L^2)$ | $L$
 LogTrans | $O(L\log L)$ | $O(L^2)$ | 1*
 Reformer | $O(L\log L)$ | $O(L\log L)$ | $L$
 LSTM | $O(L)$ | $O(L)$ | $L$
+
+表中：「方法」是对比对象，「训练时间」「训练内存」是复杂度量级（$L$ 为序列长度），「测试步数」是推理需要的解码步数（带 * 的为套用 Informer decoder）。结论：Informer 的时间、内存均为 $O(L\log L)$，且测试只需 1 步。
 
 （* 表示给 LogTrans 套用了 Informer 的 decoder。）论文的 Fig.5 报告了多变量设定下的总运行时间：训练阶段 Informer 在 Transformer 类方法中最快，测试阶段因生成式解码远快于其他方法。该图只有曲线、没有可核对的具体数字，这里不引用数值。
 
@@ -309,6 +356,8 @@ LogTrans / LogSparse | 按指数步长的启发式稀疏，各 head 同一策略
 Reformer | LSH 注意力 $O(L\log L)$ | 动态解码 | 论文称仅在极长序列上有效，LSTF 表现差
 Linformer | 线性投影，$O(L)$ | - | 论文指出投影矩阵对真实长序列无法固定，可能退化到 $O(L^2)$
 Informer | ProbSparse（按 query 活跃度选择），数据驱动，每个 head 不同 | 一次前向生成 | 同时优化三个瓶颈
+
+表中：「方法」是对比对象，「注意力」说明其注意力机制与复杂度（$L$ 为序列长度），「解码方式」是动态解码还是一次前向，「备注」是论文的评价。结论：Informer 同时降低了注意力复杂度并避免了逐步解码。
 
 与本站其他深度预测方法的关系（`[解读]`）：[DeepAR](/0625_ML_Tasks_TimeSeries_Deep_DeepAR) 是自回归的概率预测，逐步解码；[TCN](/0626_ML_Tasks_TimeSeries_Deep_TCN) 靠膨胀卷积扩大感受野；Informer 靠稀疏注意力直接建模任意位置对的依赖，且是非自回归的点预测。后续的 Autoformer、FEDformer、PatchTST 等沿着"让 Transformer 更适合时间序列"的路线，改成自相关、频域、patch 等思路，具体以各自论文为准；相关的一般综述可看 [时间序列总览](/0603_ML_Tasks_TimeSeries)。
 
@@ -345,5 +394,6 @@ def probsparse_attn(Q, K, V, c=5):
 - 官方代码（论文中给出）：[zhouhaoyi/Informer2020](https://github.com/zhouhaoyi/Informer2020)
 - ETT 数据集（论文脚注给出）：[zhouhaoyi/ETDataset](https://github.com/zhouhaoyi/ETDataset)
 - DLinear：[arXiv:2205.13504](https://arxiv.org/abs/2205.13504)
+
 
 
