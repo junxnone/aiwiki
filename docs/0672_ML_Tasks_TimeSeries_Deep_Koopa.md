@@ -2,7 +2,7 @@
 Title | ML Tasks TimeSeries Deep Koopa
 -- | --
 Created @ | `2026-11-20T09:04:34Z`
-Updated @| `2026-11-20T09:04:34Z`
+Updated @| `2026-11-20T09:14:15Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/672)
 
@@ -15,7 +15,7 @@ Koopa 出自论文 *Koopa: Learning Non-stationary Time Series Dynamics with Koo
 
 > 标注约定：未标注的内容来自论文原文；`[解读]` 是对论文的理解，`[经验]` 是一般经验，`[待核实]` 是未能确认的内容。
 
-本站相关：非平稳性的另一种处理见 [Non-stationary Transformers](/0669_ML_Tasks_TimeSeries_Deep_NonstationaryTransformer)；同样用傅里叶/频域思想的 [FEDformer](/0637_ML_Tasks_TimeSeries_Deep_FEDformer)、[FiLM](/XXXX_ML_Tasks_TimeSeries_Deep_FiLM)；线性动力学视角与状态空间模型（[S4](/0642_ML_Tasks_TimeSeries_Deep_S4)、[Mamba](/0643_ML_Tasks_TimeSeries_Deep_Mamba)）相通；总览见 [深度学习方法](/0606_ML_Tasks_TimeSeries_Deep)。
+本站相关：非平稳性的另一种处理见 [Non-stationary Transformers](/0669_ML_Tasks_TimeSeries_Deep_NonstationaryTransformer)；同样用傅里叶/频域思想的 [FEDformer](/0637_ML_Tasks_TimeSeries_Deep_FEDformer)、[FiLM](/0676_ML_Tasks_TimeSeries_Deep_FiLM)；线性动力学视角与状态空间模型（[S4](/0642_ML_Tasks_TimeSeries_Deep_S4)、[Mamba](/0643_ML_Tasks_TimeSeries_Deep_Mamba)）相通；总览见 [深度学习方法](/0606_ML_Tasks_TimeSeries_Deep)。
 
 ## 1. 解决什么问题
 
@@ -213,4 +213,5 @@ def dmd_operator(Z):                               # Z: [B, N, D] 片段嵌入�
 
 - Yong Liu, Chenyu Li, Jianmin Wang, Mingsheng Long. *Koopa: Learning Non-stationary Time Series Dynamics with Koopman Predictors*. NeurIPS 2023. [arXiv:2305.18803](https://arxiv.org/abs/2305.18803)
 - 站内：[深度学习方法](/0606_ML_Tasks_TimeSeries_Deep)、[Non-stationary Transformers](/0669_ML_Tasks_TimeSeries_Deep_NonstationaryTransformer)、[TimesNet](/0631_ML_Tasks_TimeSeries_Deep_TimesNet)
+
 

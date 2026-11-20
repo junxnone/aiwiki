@@ -3,7 +3,7 @@
 | Title     | ML Tasks TimeSeries Deep Koopa                        |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-20T09:04:34Z`                                |
-| Updated @ | `2026-11-20T09:04:34Z`                                |
+| Updated @ | `2026-11-20T09:14:15Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/672) |
 
@@ -25,7 +25,7 @@ Koopman 预测器（Koopman Predictor, KP）在线性化的嵌入空间里向前
 
 本站相关：非平稳性的另一种处理见 [Non-stationary
 Transformers](/0669_ML_Tasks_TimeSeries_Deep_NonstationaryTransformer)；同样用傅里叶/频域思想的
-[FEDformer](/0637_ML_Tasks_TimeSeries_Deep_FEDformer)、[FiLM](/XXXX_ML_Tasks_TimeSeries_Deep_FiLM)；线性动力学视角与状态空间模型（[S4](/0642_ML_Tasks_TimeSeries_Deep_S4)、[Mamba](/0643_ML_Tasks_TimeSeries_Deep_Mamba)）相通；总览见
+[FEDformer](/0637_ML_Tasks_TimeSeries_Deep_FEDformer)、[FiLM](/0676_ML_Tasks_TimeSeries_Deep_FiLM)；线性动力学视角与状态空间模型（[S4](/0642_ML_Tasks_TimeSeries_Deep_S4)、[Mamba](/0643_ML_Tasks_TimeSeries_Deep_Mamba)）相通；总览见
 [深度学习方法](/0606_ML_Tasks_TimeSeries_Deep)。
 
 ## 1\. 解决什么问题
