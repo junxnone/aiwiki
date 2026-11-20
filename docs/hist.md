@@ -4,6 +4,7 @@
 
 #### **Created**
 
+- 2026-11-20&nbsp;&nbsp; [MSGNet](/0675_ML_Tasks_TimeSeries_Deep_MSGNet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:MSGNet
 - 2026-11-20&nbsp;&nbsp; [SCINet](/0674_ML_Tasks_TimeSeries_Deep_SCINet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:SCINet
 - 2026-11-20&nbsp;&nbsp; [FreTS](/0673_ML_Tasks_TimeSeries_Deep_FreTS)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:FreTS
 - 2026-11-20&nbsp;&nbsp; [Koopa](/0672_ML_Tasks_TimeSeries_Deep_Koopa)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:Koopa
@@ -646,6 +647,7 @@
 
 #### **Updated**
 
+- 2026-11-20&nbsp;&nbsp; [MSGNet](/0675_ML_Tasks_TimeSeries_Deep_MSGNet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:MSGNet
 - 2026-11-20&nbsp;&nbsp; [SCINet](/0674_ML_Tasks_TimeSeries_Deep_SCINet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:SCINet
 - 2026-11-20&nbsp;&nbsp; [FreTS](/0673_ML_Tasks_TimeSeries_Deep_FreTS)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:FreTS
 - 2026-11-20&nbsp;&nbsp; [Koopa](/0672_ML_Tasks_TimeSeries_Deep_Koopa)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:Koopa

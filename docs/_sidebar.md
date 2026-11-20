@@ -290,6 +290,7 @@
         - [Informer](/0635_ML_Tasks_TimeSeries_Deep_Informer)
         - [Koopa](/0672_ML_Tasks_TimeSeries_Deep_Koopa)
         - [LightTS](/0667_ML_Tasks_TimeSeries_Deep_LightTS)
+        - [MSGNet](/0675_ML_Tasks_TimeSeries_Deep_MSGNet)
         - [Mamba](/0643_ML_Tasks_TimeSeries_Deep_Mamba)
         - [N-BEATS](/0628_ML_Tasks_TimeSeries_Deep_NBEATS)
         - [N-HiTS](/0629_ML_Tasks_TimeSeries_Deep_NHiTS)
@@ -646,4 +647,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1707591120</sub></kbd>
+<kbd><sub>@1708381120</sub></kbd>
