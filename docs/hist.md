@@ -4,6 +4,7 @@
 
 #### **Created**
 
+- 2026-11-20&nbsp;&nbsp; [PAttn](/0679_ML_Tasks_TimeSeries_Deep_PAttn)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:PAttn
 - 2026-11-20&nbsp;&nbsp; [TimeFilter](/0678_ML_Tasks_TimeSeries_Deep_TimeFilter)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:TimeFilter
 - 2026-11-20&nbsp;&nbsp; [WPMixer](/0677_ML_Tasks_TimeSeries_Deep_WPMixer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:WPMixer
 - 2026-11-20&nbsp;&nbsp; [FiLM](/0676_ML_Tasks_TimeSeries_Deep_FiLM)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:FiLM
@@ -650,6 +651,7 @@
 
 #### **Updated**
 
+- 2026-11-20&nbsp;&nbsp; [PAttn](/0679_ML_Tasks_TimeSeries_Deep_PAttn)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:PAttn
 - 2026-11-20&nbsp;&nbsp; [TimeFilter](/0678_ML_Tasks_TimeSeries_Deep_TimeFilter)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:TimeFilter
 - 2026-11-20&nbsp;&nbsp; [WPMixer](/0677_ML_Tasks_TimeSeries_Deep_WPMixer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:WPMixer
 - 2026-11-20&nbsp;&nbsp; [FiLM](/0676_ML_Tasks_TimeSeries_Deep_FiLM)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:FiLM
