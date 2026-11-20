@@ -3,7 +3,7 @@
 | Title     | ML Tasks TimeSeries Foundation TimeLLM                |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-19T02:42:10Z`                                |
-| Updated @ | `2026-11-19T06:18:04Z`                                |
+| Updated @ | `2026-11-20T08:19:55Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/651) |
 
@@ -48,6 +48,9 @@ prototypes）通过多头交叉注意力重编程（reprogramming）成 LLM
 | (b) 模型微调   | 先预训练再微调。跨模态的例子有 GPT4TS（Zhou et al. 2023a，论文称其不改动 LLM 的 self-attention 与 FFN 层，并在多种时序任务上微调与评估）、LLM4TS（先在时序上做监督预训练，再做任务微调） | 不微调 LLM 主干，也不直接改输入序列 |
 | (c) 模型重编程  | 冻结源模型，学习输入端的适配，使其产出目标任务输出                                                                                                | 这是 Time-LLM 的路线      |
 
+表中：「路线」是已有思路的三种类型，「做法」概述其原理，「Time-LLM 的区别」说明与本文的差异。Time-LLM
+属于第三类：冻结源模型，学习输入端的适配。
+
 论文还对比了一种叫 **Patch-as-Prefix** 的做法（把 patch 放在前面，让 LLM 用自然语言"说出"下一个值，如
 "the next value is 0.6"），指出两个问题：
 
@@ -65,15 +68,29 @@ $\\hat Y\\in\\mathbb R^{N\\times H}$，整体目标是最小化 MSE：
 
 $$\\frac1H\\sum\_{h=1}^{H}\\lVert \\hat Y\_h-Y\_h\\rVert\_F^2$$
 
+其中：$H$ 是预测步数；$\\hat Y\_h$、$Y\_h$ 是第 $h$
+步的预测与真实值；$\\lVert\\cdot\\rVert\_F^2$ 是 Frobenius
+范数的平方（逐变量误差平方和）；整体损失是各预测步平均的 MSE。
+
 论文把方法分为三块：(1) 输入变换，(2) 预训练并冻结的 LLM，(3) 输出投影。多变量序列先拆成 $N$ 条单变量序列
 $X^{(i)}\\in\\mathbb R^{1\\times T}$，**各自独立**处理（沿用 PatchTST 的做法，即
 channel independence），每条得到 $\\hat Y^{(i)}\\in\\mathbb R^{1\\times H}$。
+
+下图概括 Time-LLM 的整体流程。
 
     X(i) -> RevIN -> Patching -> Patch Embedder(线性) -> Patch Reprogramming (与文本原型 E' 做多头交叉注意力) --+
                                                                                                             |
     <dataset description> ### Domain ### Instruction ### Input statistics --> LLM 词嵌入 --> prompt embeddings --+--> [冻结 LLM] --> 丢弃前缀 --> 展平 --> 线性 --> Y(i)
                                                            (提示放在前面，作为 prefix)
     可训练：Patch Embedder、重编程层、输出投影   冻结：LLM 主干与词嵌入
+
+图中：
+
+  - 上方是时序路径：单变量序列经 RevIN、patching、线性 Patch Embedder，再与文本原型 $E'$
+    做多头交叉注意力（Patch Reprogramming）。
+  - 下方是提示路径：数据集描述、领域、指令与输入统计量组成的文本经 LLM 词嵌入变成 prompt embeddings，作为前缀。
+  - 两路拼接后送入冻结的 LLM，丢弃前缀部分，再展平并经线性层得到预测 $Y^{(i)}$。可训练的是 Patch
+    Embedder、重编程层与输出投影，LLM 主干冻结。
 
 ### 输入嵌入
 
@@ -82,6 +99,10 @@ normalization，用来缓解分布漂移）归一化为零均值、单位标准�
 $L\_p$、步长 $S$ 的 patch（可重叠也可不重叠），patch 总数为
 
 $$P=\\left\\lfloor \\frac{T-L\_p}{S}\\right\\rfloor+2$$
+
+其中：$P$ 是 patch 个数；$T$ 是输入序列长度；$L\_p$ 是 patch 长度；$S$
+是步长；$\\lfloor\\cdot\\rfloor$ 是向下取整；$+2$ 来自首个 patch 与末尾补值产生的
+patch。
 
 论文给出切 patch 的两点动机：(1) 把局部信息聚合进每个 patch，更好地保留局部语义；(2) 起到 tokenization
 的作用，形成紧凑的输入 token 序列，降低计算量。再用一个简单的线性层把 $X\_P^{(i)}\\in\\mathbb
@@ -105,6 +126,9 @@ LLM 预训练过的词嵌入空间里：用骨干的词嵌入 $E\\in\\mathbb R^{
 
 $$E'\\in\\mathbb R^{V'\\times D},\\qquad V'\\ll V$$
 
+其中：$E'$ 是文本原型矩阵；$V'$ 是原型个数；$D$ 是 LLM 隐藏维度；$V$ 是完整词表大小；$V'\\ll V$
+表示用少量原型代表整个词表。
+
 论文附录 B.1 说明，这是学习一个矩阵 $W\\in\\mathbb R^{V'\\times V}$ 作为中介 \[解读：即
 $E'=WE$，$W$ 可训练、$E$ 冻结\]。原型可以理解为对词表的少量"可学习混合词"，Fig. 3 用 "short
 up"、"steady down" 举例：一个 patch 可由这些语言线索组合表示（如 "short up then down
@@ -115,16 +139,26 @@ steadily"），而表示始终没有离开 LLM 预训练时的空间。
 $$Q\_k^{(i)}=\\hat X\_P^{(i)}W\_k^Q,\\qquad K\_k^{(i)}=E'W\_k^K,\\qquad
 V\_k^{(i)}=E'W\_k^V$$
 
+其中：$\\hat X\_P^{(i)}$ 是第 $i$ 个变量嵌入后的 patch（$P\\times d\_m$）；$E'$
+是文本原型；$W\_k^Q,W\_k^K,W\_k^V$ 是第 $k$ 个头的投影矩阵；$Q\_k^{(i)}$
+是查询，$K\_k^{(i)},V\_k^{(i)}$ 是键与值；$K$ 是头数。
+
 其中 $W\_k^Q\\in\\mathbb R^{d\_m\\times d}$，$W\_k^K,W\_k^V\\in\\mathbb
 R^{D\\times d}$，$d=\\lfloor d\_m/K\\rfloor$。每个头里：
 
 $$Z\_k^{(i)}=\\mathrm{softmax}\!\\left(\\frac{Q\_k^{(i)}K\_k^{(i)\\top}}{\\sqrt{d\_k}}\\right)V\_k^{(i)}$$
+
+其中：$Z\_k^{(i)}$ 是第 $k$ 个头的输出；$Q,K,V$ 是查询（patch）、键与值（文本原型）；$d\_k$
+是每头维度；$\\mathrm{softmax}$ 把相似度归一化为对原型的权重，输出是原型的加权组合。
 
 论文式 (1) 里的缩放项写作 $\\sqrt{d\_k}$ \[解读：即每个头的维度 $d$\]。各头输出
 $Z\_k^{(i)}\\in\\mathbb R^{P\\times d}$ 拼接得 $Z^{(i)}\\in\\mathbb
 R^{P\\times d\_m}$，再线性投影到与骨干隐藏维度对齐，得到
 
 $$O^{(i)}\\in\\mathbb R^{P\\times D}$$
+
+其中：$O^{(i)}$ 是第 $i$ 个变量重编程后的输出，形状为 $P\\times D$（$P$ 个 patch token，$D$ 为
+LLM 隐藏维度），每个 token 位于 LLM 词嵌入空间中。
 
 直观上，每个 patch 是原型的一个**软选择加权组合**；因为 $V'$ 个原型都是词嵌入空间里的向量，$O^{(i)}$
 的每一行就是一个"看起来像词嵌入"的 token。
@@ -140,6 +174,8 @@ $$O^{(i)}\\in\\mathbb R^{P\\times D}$$
 | 数据集上下文（dataset context） | 提供输入序列的背景（不同领域特征不同）  | 数据集简介，如 ETT 的描述                                                                      |
 | 任务指令（task instruction）  | 指导 LLM 如何变换 patch 嵌入 | 如 "Predict the next `<H>` steps given the previous `<T>` steps information attached" |
 | 输入统计量（input statistics） | 帮助模式识别与推理            | 最小值、最大值、中位数、整体趋势（上升或下降）、top-5 lags                                                   |
+
+表中：「成分」是提示的三个组成，「作用」说明其用途，「内容」说明其具体写法。结论：数据集上下文、任务指令与输入统计量共同构成前缀，其中输入统计量最关键。
 
 统计量的计算方式（附录 B.1）：趋势取相邻时间步差值之和，大于 0 为上升，否则为下降；top-5 lags 通过 FFT
 计算自相关，选相关值最高的五个滞后。这些提示经 LLM 自带的词嵌入层变成 prompt
@@ -161,6 +197,9 @@ load"，`[Statistics]` 里的
 PatchTST 的做法展平成长度 $P\\times D$ 的一维向量，再经线性层得到
 
 $$\\hat Y^{(i)}\\in\\mathbb R^{H}$$
+
+其中：$\\hat Y^{(i)}$ 是第 $i$ 个变量的 $H$ 步预测；该向量由展平后的 LLM 输出（长度 $P\\times
+D$）经线性层得到，$H$ 是预测长度。
 
 > 自拟算术提示：如果 $D=4096$（Llama-7B 的隐藏维度，属常识 \[经验\]），上面示意的 $P=64$，则展平后长度为
 > $64\\times4096=262144$，直接接 $H=96$ 的线性层会有
@@ -194,6 +233,8 @@ $$\\hat Y^{(i)}\\in\\mathbb R^{H}$$
 | ILI                   | 16     | $10^{-2}$ | 16         | 50     |
 | M3-Quarterly / M4     | 32     | $10^{-4}$ | 32         | 50     |
 
+表中：「数据集」是评测集，$d\_m$ 是 patch 嵌入维度，其余列是学习率、批大小与训练轮数。
+
   - **推理**：对每条通道独立前向，LLM 不生成文本，直接由线性层读出 $H$ 步预测。
   - **实现**：PyTorch，实验在 NVIDIA A100-80G GPU 上进行，每个实验重复三次取平均（论文 B.1）。
 
@@ -220,6 +261,9 @@ N-HiTS、N-BEATS。
 | Traffic | 0.388 / 0.264      | 0.414 / 0.294 | 0.433 / 0.295 | 0.390 / 0.263 |
 | ILI     | 1.435 / 0.801      | 1.925 / 0.903 | 2.169 / 1.041 | 1.443 / 0.797 |
 
+表中：「数据集」是评测集，其余各列是各方法四个预测长度平均的 MSE / MAE（越小越好）。结论：Time-LLM 整体最优，但与
+PatchTST 差距很小，个别数据集上 PatchTST 更好。
+
 论文文字：平均相对 GPT4TS 提升 12%、相对 TimesNet 提升 20%；相对 PatchTST 平均 MSE 降低 1.4%；相对
 DLinear 超过 12%。**从表中看**，与 PatchTST 的差距很小，ETTh2 上 PatchTST 更好，Weather 的
 MSE 持平 \[解读\]。
@@ -245,6 +289,9 @@ M4 三行为各采样频率的加权平均。Time-LLM：SMAPE 11.983、MASE 1.59
 | ECL     | 0.175    | 0.176  | 0.180   | 0.180    |
 | Traffic | 0.429    | 0.440  | 0.447   | 0.430    |
 
+表中：「数据集」是评测集，其余各列是 10% 训练数据下四个预测长度平均的 MSE（越小越好）。结论：Time-LLM
+在多数数据集上最优，差距在大数据集上较小。
+
 自拟重算：对上表七个数据集的 MSE 取算术平均，Time-LLM 约 0.349，GPT4TS 约 0.371，降幅约 5.9%，与论文的
 "5%" 大体相符。论文文字：10% 设置下相对 GPT4TS 平均 MSE 降低 5%，5% 设置下超过 5%；相对
 PatchTST、DLinear、TimesNet 在 10% 设置下平均提升超过 8%、12%、33%。
@@ -264,6 +311,8 @@ PatchTST、DLinear、TimesNet 在 10% 设置下平均提升超过 8%、12%、33%
 | ETTm2 → ETTh2 | 0.354    | 0.435  | 0.992   | 0.455   | 0.409    | 0.435    |
 | ETTm2 → ETTm1 | 0.414    | 0.769  | 1.933   | 0.649   | 0.568    | 0.769    |
 
+表中：「迁移方向」是"训练集 → 测试集"，其余各列是各方法的零样本 MSE（越小越好）。结论：Time-LLM 在所有迁移方向上最优。
+
 论文文字：相对第二名 MSE 降低超过 14.2%；相对 GPT4TS，10% few-shot、5% few-shot、zero-shot
 的整体误差降幅分别为 7.7%、8.4%、22%（注意 §4.3 文字写的是"约 5%"和"超过 5%"，与这里的 7.7%、8.4%
 不完全一致，论文未解释口径 \[待核实\]）；相对同为 7B 量级骨干的 LLMTime 改进超过 75%。
@@ -280,6 +329,9 @@ PatchTST、DLinear、TimesNet 在 10% 设置下平均提升超过 8%、12%、33%
 | C.1 去掉数据集上下文               | 0.402    | 0.417     | 0.298    | 0.331     | 0.491             |
 | C.2 去掉任务指令                 | 0.388    | 0.420     | 0.285    | 0.327     | 0.476             |
 | C.3 去掉统计量                  | 0.391    | 0.419     | 0.279    | 0.347     | 0.483             |
+
+表中：「变体」是消融设置（A 为骨干，B 为核心模块，C 为提示成分），后几列是各数据集与预测长度下的
+MSE（越小越好）。结论：骨干越大越好，去掉重编程或提示成分都会变差，其中去掉统计量的伤害最大。
 
 注意标号：论文 4.5 节文字把"去掉输入统计量"写作 C.1，而 Table 6 里 C.1 是 w/o Dataset
 Context、C.3 是 w/o Statistical Context，两处标号对不上；下面按 Table 6 的名称理解
@@ -329,6 +381,10 @@ Series Forecasting?*（arXiv:2406.16964）对三种基于 LLM 的预测方法做
 | LLM4TS                     | 先监督预训练、再任务微调（两阶段微调）                    | 该论文未详述                       | 该论文未详述     |
 | LLMTime                    | 不训练，数字文本化后让 LLM 零样本续写（依据本站综述 0608 的描述） | 数字文本化                        | LLM 生成数字文本 |
 | PatchTST                   | 无 LLM                                  | patch + channel independence | 展平 + 线性    |
+
+表中：「方法」是对比对象，「与 LLM 的关系」说明是否使用与如何使用
+LLM，「输入处理」「预测方式」说明其输入与输出方式。结论：Time-LLM
+的输入输出结构与 PatchTST 相同，区别是中间多了"重编程 + 冻结 LLM"。
 
 Time-LLM 的输入端结构（RevIN、patching、channel independence、展平线性输出）与 PatchTST
 相同，区别是中间多了"重编程 + 冻结 LLM"。其余同系列方法见本站已发布的
