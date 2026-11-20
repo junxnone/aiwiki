@@ -2,7 +2,7 @@
 Title | ML Tasks TimeSeries Deep DLinear
 -- | --
 Created @ | `2026-11-19T01:28:51Z`
-Updated @| `2026-11-19T02:24:17Z`
+Updated @| `2026-11-20T08:10:18Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/630)
 
@@ -37,6 +37,8 @@ IMS 与 DMS 的区别（论文 §2）：
 IMS（迭代多步） | 学一个单步预测器，反复套用得到多步 | 自回归估计使方差较小，但有误差累积；适合单步预测器很准且 T 较小
 DMS（直接多步） | 一次性直接优化 T 步预测目标 | 单步无偏模型难得、或 T 很大时更准
 
+表中：「策略」是多步预测方式，「做法」解释其原理，「特点」比较误差累积与适用条件（$T$ 为预测步数）。
+
 作者另一个假设：不是所有时间序列都可预测（如混沌系统），长期预测只对"趋势与周期较清晰"的序列可行；线性模型已经能抽取这类信息。
 
 ## 2. 模型结构
@@ -52,10 +54,15 @@ $$\hat X_i = W\cdot X_i,\qquad W\in\mathbb R^{T\times L}$$
 - $W$ 是沿**时间轴**的线性层，把长度 $L$ 的历史直接映射到长度 $T$ 的未来（一次输出全部，即 DMS）；
 - 对每个变量 $i$ 分别应用，**所有变量共享同一个 $W$**，不建模变量之间的相关（channel-independent，通道独立）。
 
+
+下图示意基础 Linear 的输入输出映射。
+
 ```
  历史 L 步 (每个变量)               未来 T 步
  x_1 x_2 ... x_L   --[ W: T×L ]-->  x^_{L+1} ... x^_{L+T}
 ```
+
+图中：每个变量的历史 $L$ 步（$x_1\ldots x_L$）经一个 $T\times L$ 的矩阵 $W$ 直接映射为未来 $T$ 步（$\hat x_{L+1}\ldots\hat x_{L+T}$）；一次输出全部，没有递归。
 
 每个未来点是 $L$ 个历史点的加权和，没有激活函数，整个模型就是一个线性映射。
 
@@ -76,11 +83,20 @@ $$\hat X_i = W\cdot X_i,\qquad W\in\mathbb R^{T\times L}$$
 2. 两个独立的一层线性层分别作用于两部分；
 3. 两路输出**相加**得到最终预测：$\hat X=W_tX_t+W_sX_s$。
 
+
+下图概括 DLinear 的两支路结构。
+
 ```
           ┌── MovingAvg ──> X_t ──[Linear W_t]──┐
 X (L) ────┤                                      ├─ (+) ──> X^ (T)
           └── X - X_t ────> X_s ──[Linear W_s]──┘
 ```
+
+图中：
+
+- 输入 $X$（长度 $L$）分成两路：上路经移动平均得到趋势项 $X_t$，下路用 $X-X_t$ 得到残余项 $X_s$。
+- 两路各经一个独立的线性层（$W_t$、$W_s$），输出在 $(+)$ 处相加，得到预测 $\hat X$（长度 $T$）。
+- 关键结论：分解只是对线性映射加结构约束，整个模型仍是输入的线性函数。
 
 - 论文附录给出：移动平均核大小为 **25**（与 Autoformer 相同）；
 - 参数量：基础 Linear 与 NLinear 共 $T\cdot L$，DLinear 为 $2\cdot T\cdot L$（Appendix B.2）；
@@ -94,6 +110,9 @@ x &= [10, 12, 11, 13, 12, 14] &&(L=6\text{，单个变量})\\
 \text{趋势 }X_t &= [10.67, 11, 12, 12, 13, 13.33] &&(3\text{ 点滑动平均，长度仍为 }6)\\
 \text{残余 }X_s &= x - X_t = [-0.67, 1, -1, 1, -1, 0.67] &&(\text{围绕 }0\text{ 的"快变化"})
 \end{aligned}$$
+
+
+其中：$x$ 是长度为 $L=6$ 的输入；补齐后是边界复制的序列；$X_t$ 是 3 点滑动平均得到的趋势；$X_s$ 是残余，即原序列减趋势，围绕 0 波动。
 
 假设 $T=2$、第 1 个预测步的权重为：趋势支路 $W_t[1]=[0,0,0,0,0.5,0.5]$，残余支路 $W_s[1]=[0,0,0,0,-1,0]$（纯属举例的权重，不是训练结果），则
 $\hat x_7 = 0.5\times13 + 0.5\times13.33 + (-1)\times(-1) = 13.17 + 1 = 14.17$：趋势支路给出"水平约 13.2"，残余支路延续窗口内的交替波动。训练时 $W_t$、$W_s$ 的所有元素都是被学习的参数。
@@ -109,6 +128,9 @@ $\hat x_7 = 0.5\times13 + 0.5\times13.33 + (-1)\times(-1) = 13.17 + 1 = 14.17$�
 3. 再把被减去的那个值**加回**输出。
 
 $$\hat X = W\,(X - x_L) + x_L$$
+
+
+其中：$X$ 是输入窗口（长度 $L$）；$x_L$ 是窗口最后一个值；$W\in\mathbb R^{T\times L}$ 是线性层权重；$\hat X$ 是未来 $T$ 步的预测；先减 $x_L$ 再加回，使预测锚定在最近水平上。
 
 $x_L$ 是该变量历史窗口最后一个值（逐变量，加回时广播到 $T$ 个时间步）。论文把它称为"对输入序列的一个简单归一化"。
 
@@ -147,6 +169,8 @@ Table 5（shuffle） | 含 Linear，窗口论文未明写 | 同左
 Table 8（效率） | DLinear，96 | 96
 窗口扫描（Figure 4 / 6） | 小时/10 分钟粒度 12 个取值，ETTm 与 ILI 各 7 个 | 同样取值
 
+表中：「实验」是论文中的实验，「Linear 系列窗口」「Transformer 窗口」是各自使用的回看窗口长度。结论：主结果中线性模型用 336、Transformer 用 96，因此对比包含窗口差异。
+
 因此 Table 2 的 20%–50% 提升**包含窗口不同的影响**；而 Table 4 在同为 96 的窗口下 Informer 也被逐步简化的版本超过（Exchange 与 ETTh1 上），Figure 3 的定性图也是 $L=96$，说明论文结论不只依赖 336 这一设置。`[待核实]` 但 Table 2 中线性模型在 $L=96$ 下的完整数字论文未给出（本文未见）。
 
 `[待核实]` ILI 只有 966 个时间步，且附录对 ILI 的回看窗口扫描取的是 $\{26,\dots,208\}$；表 2 中 ILI 是否也用 $L=336$ 论文未明说，应以官方代码为准。
@@ -167,6 +191,8 @@ Exchange-Rate | 8 | 7,588 | 1 天
 Weather | 21 | 52,696 | 10 分钟
 ILI | 7 | 966 | 1 周
 
+表中：「数据集」是基准名，「变量数」是通道数，「时间步」是序列长度，「粒度」是采样间隔。
+
 预测步长 $T$：ILI 为 $\{24, 36, 48, 60\}$，其余为 $\{96, 192, 336, 720\}$。对比方法：FEDformer（Table 2 未标明所用版本，单变量 Table 9 同时列了 FEDformer-f / -w `[待核实]`）、Autoformer、Informer、Pyraformer、LogTrans，加上朴素基线 Closest Repeat（重复窗口最后一个值）。
 
 ### 4.2 主结果（Table 2，多变量，MSE）
@@ -184,6 +210,8 @@ ETTh1 | 96 / 720 | 0.375 / 0.472 | 0.376 / 0.506
 ETTh2 | 96 / 720 | 0.289 / 0.605 | 0.346 / 0.463
 ETTm1 | 96 / 720 | 0.299 / 0.425 | 0.379 / 0.543
 ETTm2 | 96 / 720 | 0.167 / 0.397 | 0.203 / 0.421
+
+表中：「数据集」「步长」给出评测设置（斜线前后分别是最短与最长步长），DLinear 与 FEDformer 两列是 MSE（越小越好）。结论：DLinear 在多数格子优于 FEDformer，个别格子（如 ETTh2 的 720 步、ETTh1 的 96 步）接近或较差。
 
 论文给出的结论与需要注意的细节：
 
@@ -213,6 +241,8 @@ FEDformer | Traffic | 0.631 | 0.645
 Autoformer | Electricity | 0.255 | 0.287
 Autoformer | Traffic | 0.677 | 0.675
 
+表中：「Close」是用紧邻预测区间的输入窗口，「Far」是用更早的输入窗口，数值是 MSE（越小越好）。结论：两者差别很小，说明 Transformer 主要抓取趋势与周期，而非远近关系。
+
 作者的解读：Transformer 性能只轻微下降，说明它们只是从邻近序列抓取到类似的信息，即长期预测主要依赖对**趋势与周期**的刻画；刻画数据本征特征不需要很多参数（"一个参数就能表示周期"），参数过多反而过拟合，这也"部分解释"了 LTSF-Linear 为何更好。（这是作者**假设**，论文并未直接检验参数量与过拟合的因果关系。）
 
 ### 4.4 对 Transformer 的消融（论文的"拆解"实验）
@@ -225,6 +255,8 @@ Exchange | 96 | 0.847 | 1.003 | 0.173 | 0.084
 Exchange | 720 | 2.478 | 2.102 | 2.026 | 0.763
 ETTh1 | 96 | 0.865 | 0.613 | 0.454 | 0.400
 ETTh1 | 720 | 1.181 | 0.902 | 1.051 | 0.515
+
+表中：「数据集」「步长」是评测设置，后四列是把 Informer 逐步简化后的 MSE（越小越好）。结论：模型越简化，MSE 总体越低，Linear 最好（个别格子非严格单调）。
 
 作者结论：随着简化，Informer 的性能**总体变好**，说明自注意力和其他复杂模块"至少在现有 LTSF 基准上"并非必要。细节上并非严格单调：Exchange 步长 96 上 Att.-Linear（1.003）比 Informer（0.847）更差；ETTh1 步长 720 上 Embed + Linear（1.051）比 Att.-Linear（0.902）更差。
 
@@ -252,6 +284,8 @@ embedding 有用吗 | Table 6 | 对 Informer 很关键，FED/Auto 依赖时间�
 数据量不足吗 | Table 7 | 不是主因
 效率重要吗 | Table 8 | 变体并未真正更省
 
+表中：「问题」是论文要检验的假设，「实验」是对应的表或图，「论文结论」是其结论。读法：每行是一个"拆解"实验，合起来支持论文对 Transformer 的质疑。
+
 **(e) 效率是否真是首要问题（Table 8，Electricity，L=96，T=720，Titan XP，5 次平均）**：
 
 模型 | MACs | 参数 | 推理时间 | 显存
@@ -260,6 +294,8 @@ DLinear | 0.04G | 139.7K | 0.4ms | 687MiB
 Transformer（改为同样的一次性解码） | 4.03G | 13.61M | 26.8ms | 6091MiB
 Informer | 3.93G | 14.39M | 49.3ms | 3869MiB
 FEDformer | 4.41G | 20.68M | 40.5ms | 4143MiB
+
+表中：「模型」是对比对象，「MACs」是乘加运算量（G 为十亿），「参数」是参数量（K 为千、M 为百万），「推理时间」与「显存」是实测开销。结论：DLinear 在运算量、参数、速度与显存上都比各 Transformer 低一到两个数量级。
 
 （论文表中还有 Autoformer、Pyraformer 等行，此处略。）论文结论：多数"高效 Transformer"变体相对 vanilla Transformer 的实际推理时间与参数并无优势甚至更差，vanilla 的显存对现有基准也并非不可接受，因此"优先做省内存的 Transformer"至少在现有基准上意义有限。`[解读]` DLinear 的 139.7K 参数与 $2\times720\times96 + 2\times720 = 139{,}680$ 吻合（本文核对计算，说明含偏置项）。
 
@@ -292,6 +328,8 @@ Autoformer | DMS | 自相关 + 序列分解块 | DLinear 的"核大小 25 的移
 [TCN](/0626_ML_Tasks_TimeSeries_Deep_TCN) | IMS 或 DMS | 因果膨胀卷积 | 论文附录仅在相关工作中提及
 [ARIMA](/0624_ML_Tasks_TimeSeries_Classical_ARIMA) | 递推 | 线性自回归 + 差分 | `[解读]` 窗口上的线性回归与 AR 思想相近，DLinear 可看作"多输出直接法的线性 AR + 分解"
 PatchTST | DMS | patch + Transformer，通道独立 | 后续工作，`[待核实]` 具体对比见其论文与综述 [深度学习方法](/0606_ML_Tasks_TimeSeries_Deep)
+
+表中：「方法」是对比对象，「预测方式」是 IMS（迭代多步）或 DMS（直接多步），「结构」是网络类型，「与 DLinear 的关系」说明联系与区别。结论：DLinear 沿用分解思想，但把模型简化为单层线性的直接多步预测。
 
 与综述（[时间序列总览](/0603_ML_Tasks_TimeSeries)、[深度学习方法](/0606_ML_Tasks_TimeSeries_Deep)）口径一致：DLinear 是对 Transformer 路线的反思，晚于 Informer 系列而早于 PatchTST；其论断是"在选用的基准上线性模型优于 Transformer"，作者归因于自注意力的置换不变性。
 
@@ -354,5 +392,6 @@ class NLinear(nn.Module):
 - 官方代码：论文摘要给出 <https://github.com/cure-lab/LTSFLinear>。
 - 论文所比较的 Informer、Autoformer、FEDformer、Pyraformer、LogTrans 的出处见该论文参考文献。
 - 本站相关：[时间序列总览](/0603_ML_Tasks_TimeSeries)、[深度学习方法](/0606_ML_Tasks_TimeSeries_Deep)、[DeepAR](/0625_ML_Tasks_TimeSeries_Deep_DeepAR)、[TCN](/0626_ML_Tasks_TimeSeries_Deep_TCN)、[ARIMA](/0624_ML_Tasks_TimeSeries_Classical_ARIMA)。
+
 
 
