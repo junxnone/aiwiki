@@ -291,6 +291,7 @@
         - [Mamba](/0643_ML_Tasks_TimeSeries_Deep_Mamba)
         - [N-BEATS](/0628_ML_Tasks_TimeSeries_Deep_NBEATS)
         - [N-HiTS](/0629_ML_Tasks_TimeSeries_Deep_NHiTS)
+        - [Non-stationary Transformers](/0669_ML_Tasks_TimeSeries_Deep_NonstationaryTransformer)
         - [PatchTST](/0638_ML_Tasks_TimeSeries_Deep_PatchTST)
         - [S4](/0642_ML_Tasks_TimeSeries_Deep_S4)
         - [S-Mamba](/0644_ML_Tasks_TimeSeries_Deep_SMamba)
@@ -640,4 +641,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1701011120</sub></kbd>
+<kbd><sub>@1701561120</sub></kbd>

@@ -5563,6 +5563,15 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki ML Tasks TimeSeries Deep NonstationaryTransformer",
+      "group": 5,
+      "title": "Non-stationary Transformers",
+      "url": "https://junxnone.github.io/aiwiki/#/0669_ML_Tasks_TimeSeries_Deep_NonstationaryTransformer",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Tasks Image Classification MobileNet V1",
       "group": 6,
       "title": "MobileNet V1",
@@ -9855,6 +9864,13 @@
     {
       "source": "aiwiki ML Tasks TimeSeries Deep",
       "target": "aiwiki ML Tasks TimeSeries Deep ETSformer",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks TimeSeries Deep",
+      "target": "aiwiki ML Tasks TimeSeries Deep NonstationaryTransformer",
       "value": 5,
       "visible": true,
       "expand": true
