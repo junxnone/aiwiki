@@ -3,7 +3,7 @@
 | Title     | ML Tasks TimeSeries Deep S4                           |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-19T02:27:22Z`                                |
-| Updated @ | `2026-11-19T06:20:30Z`                                |
+| Updated @ | `2026-11-20T08:15:26Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/642) |
 
@@ -49,6 +49,10 @@ SSM 把 1 维输入信号 $u(t)$ 经 $N$ 维隐状态 $x(t)$ 映射到 1 维输�
 
 $$x'(t)=Ax(t)+Bu(t),\\qquad y(t)=Cx(t)+Du(t)$$
 
+其中：$u(t)$ 是输入信号；$x(t)\\in\\mathbb R^{N}$ 是隐状态，$x'(t)$ 是其导数；$y(t)$
+是输出；$A\\in\\mathbb R^{N\\times N}$ 决定状态演化；$B$ 决定输入如何写入状态；$C$
+决定如何读出状态；$D$ 是直连项（论文取 $D=0$）。
+
 其中 $A\\in\\mathbb R^{N\\times N}$，$B,C,D$ 是参数，用梯度下降学习。论文后文设 $D=0$，因为
 $Du$ 只是 skip connection，容易计算。深度网络里的特征维是 $H$，S4 的做法是对 $H$ 个特征各自配一份独立的
 SSM（见"层结构"）。
@@ -60,6 +64,10 @@ HiPPO 理论给出一类 $A$，使状态 $x(t)$ 能够"记住"输入 $u(t)$ 的�
 
 $$A\_{nk}=-\\begin{cases}(2n+1)^{1/2}(2k+1)^{1/2}, & n\>k\\\[2pt\] n+1,
 & n=k\\\[2pt\] 0, & n\<k\\end{cases}$$
+
+其中：$A\_{nk}$ 是 HiPPO 矩阵第 $n$ 行第 $k$ 列的元素（下标从 0 起）；下三角（$n\>k$）元素为
+$-(2n+1)^{1/2}(2k+1)^{1/2}$，对角元（$n=k$）为 $-(n+1)$，上三角（$n\<k$）为
+0。该矩阵使状态能够"记住"输入的历史。
 
 论文引用 LSSL 的发现：仅仅把随机 $A$ 换成这个矩阵，sequential MNIST 上的性能就从 60% 提升到 98%。
 
@@ -78,10 +86,17 @@ A=\\Bigl(I-\\tfrac{\\Delta}{2}A\\Bigr)^{-1}\\Bigl(I+\\tfrac{\\Delta}{2}A\\Bigr),
 \\overline B=\\Bigl(I-\\tfrac{\\Delta}{2}A\\Bigr)^{-1}\\Delta B,\\qquad
 \\overline C=C$$
 
+其中：$\\Delta$ 是步长（输入的分辨率）；$A,B,C$ 是连续时间参数；$I$ 是单位矩阵；$\\overline
+A,\\overline B,\\overline C$ 是 bilinear 离散化后的参数；bilinear 方法比简单的欧拉法更稳定。
+
 得到离散 SSM，其状态方程就是一个 RNN 递推：
 
 $$x\_k=\\overline A,x\_{k-1}+\\overline B,u\_k,\\qquad y\_k=\\overline
 C,x\_k$$
+
+其中：$x\_k$ 是第 $k$ 步隐状态；$u\_k$ 是输入；$y\_k$ 是输出；$\\overline A$
+控制保留多少旧状态，$\\overline B$ 控制写入多少新输入，$\\overline C$
+把状态读出为输出；这就是一个线性 RNN 递推。
 
 ### 卷积视角
 
@@ -91,6 +106,10 @@ $$y\_k=\\overline C,\\overline A^{k}\\overline B,u\_0+\\overline
 C,\\overline A^{k-1}\\overline B,u\_1+\\cdots+\\overline C,\\overline
 A,\\overline B,u\_{k-1}+\\overline C,\\overline B,u\_k$$
 
+其中：$y\_k$ 是第 $k$ 步输出；$u\_0,\\dots,u\_k$ 是输入；$\\overline A,\\overline
+B,\\overline C$ 是离散 SSM 参数；设初始状态为 0，展开后每个输入以 $\\overline C\\overline
+A^{j}\\overline B$ 的权重影响输出。
+
 这是一次（非循环的）卷积 $y=\\overline K \* u$，卷积核为
 
 $$\\overline K\\in\\mathbb R^{L}:=\\mathcal K\_L(\\overline A,\\overline
@@ -98,6 +117,10 @@ B,\\overline C)=\\bigl(\\overline C,\\overline A^{i},\\overline
 B\\bigr)\_{i\\in\[L\]}=\\bigl(\\overline C\\overline B,\\ \\overline
 C\\overline A\\overline B,\\ \\dots,\\ \\overline C\\overline
 A^{L-1}\\overline B\\bigr)$$
+
+其中：$\\overline K\\in\\mathbb R^{L}$ 是长度 $L$ 的卷积核；$\\mathcal
+K\_L(\\cdot)$ 是由三元组生成卷积核的算子；第 $i$ 项 $\\overline C\\overline
+A^{i}\\overline B$ 表示 $i$ 步之前的输入对当前输出的影响；$L$ 是序列长度。
 
 只要 $\\overline K$ 已知，卷积可用 FFT 高效完成；难点是怎样快速算出 $\\overline K$，这是论文技术贡献的核心。
 
@@ -117,6 +140,8 @@ $O((N+L)\\log^2(N+L))$。论文给出共轭等价关系（Lemma 3.1）：
 
 $$(A,B,C)\\sim(V^{-1}AV,\\ V^{-1}B,\\ CV)$$
 
+其中：$(A,B,C)$ 是 SSM 参数；$V$ 是可逆变换矩阵；右侧是换状态基底后的参数；该等价关系说明换基底不改变输入到输出的映射。
+
 即换状态基底不改变 $u\\mapsto y$ 的映射。但 Lemma 3.2 指出，HiPPO 矩阵被
 $V\_{ij}=\\binom{i+j}{i-j}$ 对角化，且
 $V\_{3i,i}=\\binom{4i}{2i}\\approx2^{4i}$，因此 $V$ 的元素量级可达
@@ -129,6 +154,10 @@ $V$，而能被酉矩阵对角化的恰是正规矩阵，HiPPO 矩阵不是正�
 
 $$A=V\\Lambda
 V^{*}-PQ^{\\top}=V\\bigl(\\Lambda-(V^{*}P)(V^{*}Q)^{*}\\bigr)V^{\*}$$
+
+其中：$V\\in\\mathbb C^{N\\times N}$ 是酉矩阵；$\\Lambda$ 是对角矩阵；$V^{\*}$ 是 $V$
+的共轭转置；$P,Q\\in\\mathbb R^{N\\times r}$ 是低秩因子；$r$ 是秩；第二个等号是用酉矩阵 $V$
+做共轭变换后得到对角加低秩（DPLR）形式。
 
 其中 $V\\in\\mathbb C^{N\\times N}$ 酉，$\\Lambda$ 对角，$P,Q\\in\\mathbb
 R^{N\\times r}$（Theorem 1）。HiPPO 的 LegS、LegT、LagT 三类矩阵都满足 $r=1$ 或
@@ -155,6 +184,10 @@ $$\\hat{\\mathcal K}*L(z)=\\sum*{i=0}^{L-1}\\overline C^{*},\\overline
 A^{i},\\overline B,z^{i}=\\overline C^{*}\\bigl(I-\\overline
 A^{L}z^{L}\\bigr)\\bigl(I-\\overline Az\\bigr)^{-1}\\overline B$$
 
+其中：$\\hat{\\mathcal K}\_L(z)$ 是截断生成函数；$\\overline A,\\overline B$
+是离散化矩阵；$\\overline C^{\*}$ 是输出向量的共轭转置；$z$ 是复变量；$L$
+是序列长度；$I$ 是单位矩阵；第二个等号把等比级数求和化为一个矩阵的逆，使"矩阵的幂"变成"矩阵的逆"。
+
 （论文附录为了让 $C$ 与 $B,P,Q$ 形状相同，把 $C$ 取成列向量，输出写成 $C^{*}x$。）在单位根
 $z\\in\\Omega\_L$ 上 $z^{L}=1$，于是 $\\overline A^{L}z^{L}=\\overline
 A^{L}$，可以并入 $\\tilde C=(I-\\overline A^{L})^{*}C$（实现时直接学习 $\\tilde C$
@@ -164,6 +197,9 @@ A^{L}$，可以并入 $\\tilde C=(I-\\overline A^{L})^{*}C$（实现时直接学
 
 $$(A+UV^{*})^{-1}=A^{-1}-A^{-1}U\\bigl(I\_p+V^{*}A^{-1}U\\bigr)^{-1}V^{\*}A^{-1}$$
 
+其中：$A$ 是可逆矩阵（此处取对角矩阵）；$U,V$ 是低秩因子；$I\_p$ 是 $p$ 阶单位矩阵；左侧是"对角 +
+低秩"矩阵的逆，右侧把它化为对角矩阵的逆加一个小矩阵的逆，从而避免直接求高维逆。
+
 把低秩项修正掉，只剩对角矩阵的逆。把 bilinear 离散化代回去（Lemma C.3），对 $z\\in\\Omega\_L$：
 
 $$\\hat{\\mathcal K}\_L(z)=\\frac{2}{1+z}\\Bigl\[\\tilde
@@ -171,11 +207,21 @@ C^{*}R(z)B-\\tilde
 C^{*}R(z)P\\bigl(1+Q^{*}R(z)P\\bigr)^{-1}Q^{*}R(z)B\\Bigr\],\\qquad
 R(z;\\Lambda)=\\Bigl(\\frac{2}{\\Delta}\\frac{1-z}{1+z}-\\Lambda\\Bigr)^{-1}$$
 
+其中：$\\hat{\\mathcal K}\_L(z)$ 是卷积核的截断生成函数；$z$ 是单位根；$\\tilde C$
+是并入长度修正后的输出向量；$R(z;\\Lambda)$
+是对角矩阵的逆（预解算子）；$\\Lambda$ 是对角矩阵；$P,Q$
+是低秩项向量；$B$ 是输入向量；$\\Delta$ 是步长；括号中第二项是 Woodbury
+恒等式带来的低秩修正。
+
 **3. Cauchy 核。** $R(z;\\Lambda)$ 是对角阵，所以 $Q^{*}R(z)P$、$\\tilde
 C^{*}R(z)B$ 等项都是形如
 
 $$\\sum\_{j}\\frac{q\_j^{\*},p\_j}{g(\\omega\_i)-\\lambda\_j},\\qquad
 g(\\omega)=\\frac{2}{\\Delta}\\frac{1-\\omega}{1+\\omega}$$
+
+其中：$\\omega\_i$ 是第 $i$ 个单位根取值点；$\\lambda\_j$ 是对角矩阵 $\\Lambda$ 的第 $j$
+个元素；$q\_j^{\*}p\_j$ 是向量 $Q,P$ 的对应分量乘积；$g(\\omega)$ 是 bilinear
+变换下的频率映射，$\\Delta$ 是步长。这类和是 Cauchy 矩阵与向量的乘积，可用快速算法计算。
 
 的和，即 Cauchy 矩阵（$M\_{ij}=1/(\\omega\_i-\\zeta\_j)$）与向量的乘积。Cauchy
 矩阵-向量乘法是数值分析里研究得很透的问题：朴素算法 $O(MN)$；精确算术下有
@@ -201,6 +247,11 @@ Algorithm 1（论文给出的是 sketch）的步骤：
 
 $$\\overline A=A\_1A\_0,\\qquad \\overline B=2A\_1B,\\qquad
 x\_k=A\_1A\_0,x\_{k-1}+2A\_1B,u\_k$$
+
+其中：$\\overline A,\\overline B$ 是离散化后的状态矩阵与输入向量；$A\_0,A\_1$ 是用于分解的两个 DPLR
+矩阵（$A\_0$ 是 $\\tfrac2\\Delta I$ 加原矩阵，$A\_1$ 由 $D$ 与低秩修正得到）；$D$
+是对角矩阵的逆；$x\_k$ 是第 $k$ 步状态；$u\_k$ 是输入。每步只需对 $A\_0,A\_1$
+做矩阵-向量乘法，复杂度 $O(N)$。
 
 $A\_0,A\_1$ 都只通过矩阵-向量乘法使用，各为 $O(N)$；秩 1 时 $1+Q^{\*}DP$ 是标量。
 
@@ -251,6 +302,9 @@ GPU 上尚未实现。
 | Attention   | $H^2$ | $B(L^2H+LH^2)$                        | $B(L^2+HL)$ | 是  | $L^2H+H^2L$ |
 | S4          | $H^2$ | $BH(\\tilde H+\\tilde L)+B\\tilde LH$ | $BLH$       | 是  | $H^2$       |
 
+表中：「结构」是序列模型类型，后几列是参数量、训练计算、训练空间、是否并行、推理（单样本单步）的复杂度（$L$ 为序列长度，$B$ 为
+batch，$H$ 为隐藏维，波浪号表示省略对数因子）。结论：S4 在五项指标上都达到或并列理论最优。
+
 论文在每一行用粗体标出理论最优项，S4 在五项指标上均被标为最优（含并列），即兼具卷积的训练并行和递推的快速推理。
 
 ## 实验与结论
@@ -279,6 +333,10 @@ Table 4（论文用的是后续工作更新后的 S4 数字，原始版本见 Ta
 | Luna-256      | 37.25   | 64.57 | 79.29     | 47.38 | 77.72      | 不可行（随机） | 59.37 |
 | S4（original）  | 58.35   | 76.02 | 87.09     | 87.26 | 86.05      | 88.10   | 80.48 |
 | S4（updated）   | 59.60   | 86.82 | 90.90     | 88.65 | 94.20      | 96.35   | 86.09 |
+
+表中：「模型」是对比方法，各列是 LRA 的六个任务与平均（Avg）的准确率（%，越大越好），Path-X
+一列"不可行（随机）"表示该模型只能随机猜测；S4（original）与
+S4（updated）是同一模型的原始与更新结果。结论：S4 在所有任务上大幅领先，并首次解决 Path-X。
 
 论文引言和 4.2 节里的 "平均 80.48%"、"Path-X 88%" 对应 original 行，Table 4 与附录 D.5
 说明后来用后续工作（同一模型，仅超参小调整）更新为 updated 行。"训练与推理"一节中的 LRA 训练超参（N=64
@@ -328,6 +386,9 @@ $128\\times128$ 的图像可视化：低层核只看局部几行，高层核则�
 | ETTm1   | 0.292 / 0.466 | 0.512 / 0.644 | 2.437 / 1.352 |
 | Weather | 0.245 / 0.375 | 0.359 / 0.466 | 0.499 / 0.596 |
 | ECL     | 0.432 / 0.497 | 0.582 / 0.608 | 0.657 / 0.683 |
+
+表中：「数据集」是评测集，其余三列是 S4、Informer、DeepAR 在最长预测步长下的 MSE / MAE（越小越好）。结论：S4
+在这五个数据集上都优于对比基线。
 
 论文正文还说"预测 30 天天气数据时 MSE 降低 37%"。按 Table 9 的 Weather 一行（0.245 对
 0.359）自行计算约为 32%（多变量 Table 14 的 Weather 720 步 0.578 对 0.831 约为
@@ -379,6 +440,9 @@ NPLR/DPLR 的作用是让 HiPPO 初始化"算得动"，HiPPO 才是"学得好"�
 | LSSL                   | SSM + HiPPO，未结构化   | 并行       | 递推        | $O(N^2L)$ 计算、$O(NL)$ 空间                                     |
 | S4                     | SSM + HiPPO + DPLR | 并行（全局卷积） | $O(N)$ 递推 | 本文                                                          |
 | DeepAR                 | 自回归 RNN + 概率输出     | 串行       | 采样        | 见 [DeepAR](/0625_ML_Tasks_TimeSeries_Deep_DeepAR)，论文预测表中的基线 |
+
+表中：「方法」是对比对象，「长程依赖机制」说明其如何处理长依赖，「训练」「推理」说明并行性与推理开销，「备注」给出补充。结论：S4
+兼具全局卷积的训练并行与 $O(N)$ 递推推理。
 
 S4 与 TCN 的关系：论文把 deep S4 描述为"带全局卷积核的 depthwise-separable CNN"。\[解读\] 与
 TCN 用有限核长加膨胀来扩大感受野不同，S4 的核长等于序列长度，且由少量 SSM 参数（每个特征约 $5N$ 个）隐式生成，而不是逐点学习。
