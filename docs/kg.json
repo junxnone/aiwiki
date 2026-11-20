@@ -5680,6 +5680,15 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki ML Tasks TimeSeries Foundation Chronos2",
+      "group": 5,
+      "title": "Chronos2",
+      "url": "https://junxnone.github.io/aiwiki/#/0682_ML_Tasks_TimeSeries_Foundation_Chronos2",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Tasks Image Classification MobileNet V1",
       "group": 6,
       "title": "MobileNet V1",
@@ -10168,6 +10177,13 @@
     {
       "source": "aiwiki ML Tasks TimeSeries Foundation",
       "target": "aiwiki ML Tasks TimeSeries Foundation TiRex",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks TimeSeries Foundation",
+      "target": "aiwiki ML Tasks TimeSeries Foundation Chronos2",
       "value": 5,
       "visible": true,
       "expand": true

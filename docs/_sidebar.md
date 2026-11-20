@@ -317,6 +317,7 @@
         - [iTransformer](/0639_ML_Tasks_TimeSeries_Deep_iTransformer)
       - [时间序列基础模型：方法详解、原理与发展脉络](/0608_ML_Tasks_TimeSeries_Foundation)
         - [Chronos](/0660_ML_Tasks_TimeSeries_Foundation_Chronos)
+        - [Chronos2](/0682_ML_Tasks_TimeSeries_Foundation_Chronos2)
         - [GPT4TS](/0650_ML_Tasks_TimeSeries_Foundation_GPT4TS)
         - [LLM 对时序预测有用吗](/0661_ML_Tasks_TimeSeries_Foundation_LLMUseful)
         - [Lag-Llama](/0653_ML_Tasks_TimeSeries_Foundation_LagLlama)
@@ -653,4 +654,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1719511120</sub></kbd>
+<kbd><sub>@1721071120</sub></kbd>
