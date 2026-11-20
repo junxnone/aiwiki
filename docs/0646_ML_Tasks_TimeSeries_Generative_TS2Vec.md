@@ -2,7 +2,7 @@
 Title | ML Tasks TimeSeries Generative TS2Vec
 -- | --
 Created @ | `2026-11-19T02:27:30Z`
-Updated @| `2026-11-19T02:27:30Z`
+Updated @| `2026-11-20T08:17:17Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/646)
 
@@ -32,6 +32,9 @@ TS2Vec 出自论文 *TS2Vec: Towards Universal Representation of Time Series*（
 
 ## 整体结构
 
+
+下图概括 TS2Vec 的训练流程。
+
 ```
  输入 x_i (T x F)
      │  随机采两个重叠子序列 [a1,b1], [a2,b2]
@@ -49,6 +52,12 @@ TS2Vec 出自论文 *TS2Vec: Towards Universal Representation of Time Series*（
         然后 max pool(k=2) 沿时间轴缩短一半，重复，直到长度为 1
 ```
 
+图中：
+
+- 上方：对输入 $x_i$ 随机采两个重叠子序列，得到视图 1 与视图 2，各自独立采样时间戳掩码。
+- 中间：每个视图经输入投影层、时间戳掩码与 10 层膨胀卷积残差块，得到每个时间戳的表示 $r$ 与 $r'$，并在重叠段上逐时间戳对齐。
+- 下方：计算层次对比损失，每层包含时间对比与实例对比，然后沿时间轴 max pooling（kernel=2）缩短一半，重复直到长度为 1。
+
 编码器 $f$ 由三部分组成：
 
 1. **输入投影层**：一个全连接层，把 $x_{i,t}\in\mathbb R^{F}$ 映射到更高维的潜向量 $z_{i,t}$；
@@ -62,6 +71,9 @@ TS2Vec 出自论文 *TS2Vec: Towards Universal Representation of Time Series*（
 论文的解释（附录 B.1）：时间序列的取值范围可能无界，没法给原始值找一个"特殊 token"；若用 0 来掩码原始输入，一段全为 0 的真实序列就和掩码无法区分。所以先做线性投影：
 
 $$z_{i,t}=Wx_{i,t}+b,\qquad W\in\mathbb R^{F'\times F},\ b\in\mathbb R^{F'},\ F'>F$$
+
+
+其中：$x_{i,t}\in\mathbb R^F$ 是原始输入；$W,b$ 是线性投影的权重与偏置；$z_{i,t}\in\mathbb R^{F'}$ 是高维潜向量；$F'>F$，使得可以找到不在 $W$ 列空间内的偏置 $b$，从而让被掩码的 0 向量与任何真实输入的投影都可区分。
 
 再把被掩码时间戳的 $z_{i,t}$ 置为 0。由于 $F'>F$，$W$ 的列空间不可能充满 $\mathbb R^{F'}$，存在一组参数 $b\notin\mathrm{span}(W)$，使得对任意输入 $x$ 都有 $Wx+b\ne 0$（论文 Lemma B.1），网络因此有能力区分"被掩码"和"未被掩码"。论文 Table 6 的对比：掩码放在投影层之后平均准确率 0.829，放在投影层之前 0.822，不使用时间戳掩码 0.820（128 个 UCR 数据集）。
 
@@ -79,6 +91,9 @@ $$z_{i,t}=Wx_{i,t}+b,\qquad W\in\mathbb R^{F'\times F},\ b\in\mathbb R^{F'},\ F'
 
 $$0<a_1\le a_2\le b_1\le b_2\le T$$
 
+
+其中：$a_1,b_1$ 与 $a_2,b_2$ 是两个子序列的起止位置；$T$ 是序列长度；条件保证两个片段有重叠，重叠段为 $[a_2,b_1]$。
+
 在重叠段 $[a_2,b_1]$ 上，两个视图的表示应当一致。
 
 论文在附录 B.2 里还给出了随机裁剪的另一个作用：避免**表示坍塌**。卷积层会隐式编码位置信息；若没有裁剪，两个视图的时间戳位置完全对齐，模型可以直接输出"位置的 one-hot"来最小化时间对比损失，只学到位置、不学内容。论文用两个指标 $\alpha$（表示与"纯位置表示"的相似度）和 $\beta$（不同样本表示之间的偏离）在 ScreenType 数据集上画训练曲线：去掉随机裁剪后 $\alpha$ 接近 1、$\beta$ 显著下降（Figure 8）。
@@ -95,13 +110,22 @@ $$0<a_1\le a_2\le b_1\le b_2\le T$$
 
 $$\ell_{temp}^{(i,t)}=-\log\frac{\exp(r_{i,t}\cdot r'_{i,t})}{\sum_{t'\in\Omega}\left(\exp(r_{i,t}\cdot r'_{i,t'})+\mathbb 1_{[t\ne t']}\exp(r_{i,t}\cdot r_{i,t'})\right)}$$
 
+
+其中：$r_{i,t}$ 与 $r'_{i,t}$ 是样本 $i$ 在时间戳 $t$ 的两个视图表示，二者点积 $r_{i,t}\cdot r'_{i,t}$ 衡量相似度；$\Omega$ 是两个视图重叠部分的时间戳集合；$t'$ 遍历 $\Omega$；$\mathbb 1_{[t\ne t']}$ 是指示函数，排除自身；损失使同一时间戳的两个视图表示靠近，不同时间戳远离。
+
 **实例对比损失**：同一时间戳上，同一样本的两个视图为正样本，batch 内其他样本在该时间戳的表示为负样本。
 
 $$\ell_{inst}^{(i,t)}=-\log\frac{\exp(r_{i,t}\cdot r'_{i,t})}{\sum_{j=1}^{B}\left(\exp(r_{i,t}\cdot r'_{j,t})+\mathbb 1_{[i\ne j]}\exp(r_{i,t}\cdot r_{j,t})\right)}$$
 
+
+其中：$i,j$ 是样本下标，$B$ 是 batch 大小；$r_{i,t}$ 与 $r'_{i,t}$ 是样本 $i$ 在时间戳 $t$ 的两个视图表示；分子是正样本对的相似度；分母遍历 batch 内所有样本，$\mathbb 1_{[i\ne j]}$ 是指示函数，使同一样本的自身项不计入同视图负样本。
+
 两者合起来：
 
 $$\mathcal L_{dual}=\frac1{NT}\sum_i\sum_t\left(\ell_{temp}^{(i,t)}+\ell_{inst}^{(i,t)}\right)$$
+
+
+其中：$N$ 是样本数，$T$ 是时间戳数；$\ell_{temp}^{(i,t)}$ 与 $\ell_{inst}^{(i,t)}$ 分别是样本 $i$ 在时间戳 $t$ 的时间对比与实例对比损失；$\mathcal L_{dual}$ 是对所有样本与时间戳取平均。
 
 论文对二者分工的说明：以多用户用电数据为例，实例对比可能学到用户特有的特征，时间对比则挖掘随时间变化的动态趋势，二者互补。
 
@@ -122,6 +146,9 @@ procedure HierLoss(r, r'):
 ```
 
 $$\mathcal L_{hier}=\frac1d\sum_{k=0}^{d-1}\mathcal L_{dual}\bigl(r^{(k)},r'^{(k)}\bigr),\qquad r^{(k)}\ \text{为第}\ k\ \text{次池化后的表示}$$
+
+
+其中：$d$ 是池化层数（含原始层）；$r^{(k)}$、$r'^{(k)}$ 是两个视图经 $k$ 次池化后的表示；$\mathcal L_{dual}$ 是时间对比与实例对比之和；$\mathcal L_{hier}$ 是各层 $\mathcal L_{dual}$ 的平均。
 
 自拟示意（非论文数据）：若重叠段长度为 8，各层的时间长度依次为 $8\to4\to2\to1$，共 $d=4$ 层，$\mathcal L_{hier}$ 是这 4 层 $\mathcal L_{dual}$ 的平均。越往上，一个位置覆盖的原始时间范围越大；到最顶层长度为 1，就只剩实例级对比。论文的说法是，最高语义层的对比使模型学到实例级表示。[解读] 最顶层时间轴上只有一个时间戳，$\ell_{temp}$ 的分子与分母相同，损失为 0，不提供梯度。
 
@@ -151,13 +178,21 @@ $$\mathcal L_{hier}=\frac1d\sum_{k=0}^{d-1}\mathcal L_{dual}\bigl(r^{(k)},r'^{(k
 预测 | 最后一个时间戳的表示 $r_t$ | 带 L2 惩罚的线性回归（ridge），直接输出未来 $H$ 步；多变量时输出维度为 $F\cdot H$；正则系数在验证集上从 $\{0.1,0.2,0.5,1,2,5,10,20,50,100,200,500,1000\}$ 里网格搜索
 异常检测 | 最后一个时间戳在"掩码"与"不掩码"两次前向下的表示 | 无需额外训练，直接计算表示距离
 
+表中：「任务」是下游任务，「用到的表示」是从时间戳表示得到的特征，「下游模型（论文设置）」是在表示之上训练的简单模型（SVM、岭回归，或不需训练）。结论：同一个编码器通过不同的轻量下游模型服务多种任务。
+
 ### 异常检测的细节
 
 论文采用流式评估：给定切片 $x_1,\dots,x_t$，判断最后一点 $x_t$ 是否异常。推理时前向两次：第一次只把最后一个观测 $x_t$ 掩码掉，第二次不掩码，两次得到的最后时间戳表示记为 $r_t^m$ 与 $r_t^u$，异常分数为 L1 距离：
 
+
+其中：$r_t^u$ 与 $r_t^m$ 分别是最后一个时间戳在"不掩码"与"掩码"两次前向下的表示；$\lVert\cdot\rVert_1$ 是 L1 距离；距离越大，说明该点难以由上下文推出，越可能异常。
+
 $$\alpha_t=\lVert r_t^u-r_t^m\rVert_1$$
 
 为避免漂移，用前 $Z$ 个点的局部均值做调整：
+
+
+其中：$\alpha_t$ 是第 $t$ 点的异常分数；$Z$ 是用于局部均值的前序点个数；$\bar\alpha_t$ 是前 $Z$ 个点分数的均值；$\alpha_t^{adj}$ 是相对局部均值调整后的分数，用来抵消漂移。
 
 $$\bar\alpha_t=\frac1Z\sum_{i=t-Z}^{t-1}\alpha_i,\qquad \alpha_t^{adj}=\frac{\alpha_t-\bar\alpha_t}{\bar\alpha_t}$$
 
@@ -184,6 +219,8 @@ TS-TCC | 0.757 | 3.38 | 0.682 | 3.53
 T-Loss | 0.806 | 2.73 | 0.675 | 3.12
 TS2Vec | 0.830 | 1.82 | 0.712 | 2.40
 
+表中：「方法」是对比模型，后四列是 UCR（125 个单变量数据集）与 UEA（29 个多变量数据集）上的平均准确率与平均排名（准确率越大越好，排名越小越好）。结论：TS2Vec 在两类数据集上均排名第一。
+
 论文称相对最优对比方法，UCR 平均提升 2.4%、UEA 提升 3.0%（从表中数字看是绝对准确率差，0.830-0.806=0.024，0.712-0.682=0.030）。表中还给出各方法表示学习的总训练时间，TS2Vec 在 UCR 上 0.9 小时，TS-TCC 1.1 小时，T-Loss 38.0 小时，TNC 228.4 小时；论文把原因归于一个 batch 内同时做多粒度对比（RTX 3090）。
 
 ### 预测（ETT 三个数据集 + Electricity）
@@ -201,6 +238,8 @@ Electricity / 24 | 0.260 | 0.251 | 0.427 | 0.263
 Electricity / 720 | 0.861 | 1.182 | 1.548 | 1.263
 平均 | 0.209 | 0.310 | 0.399 | 0.338
 
+表中：「数据集 / $H$」是评测设置（$H$ 为预测步长），其余列是各方法的单变量 MSE（越小越好），最后一行为平均。结论：TS2Vec 在多数设置下最优，平均 MSE 明显低于对比方法。
+
 论文称单变量平均 MSE 下降 32.6%、多变量下降 28.2%（基准论文未明说）。[解读] 上表中 Informer 的平均 MSE 0.310 到 0.209 的相对降幅恰好是 32.6%，说明基准大概率是平均表现最好的 Informer；多变量（论文附录 Table 8）平均 MSE 为 TS2Vec 0.828、Informer 1.154，(1.154-0.828)/1.154 约为 28.2%，同样以 Informer 为基准。Electricity 的 $H=24$ 是论文自己表里 Informer 更好的一个例子（0.251 对 0.260），所以"新的 SOTA"只是"大多数情形"（论文原话 in most of the cases）。
 
 效率（论文 Table 3，ETTm1 多变量，秒）：TS2Vec 的表示训练固定为 60.42 秒，之后每个 $H$ 再加训练线性回归，$H=24$ 时是 60.42 + 2.47，$H=672$ 时是 60.42 + 21.38；Informer 对应为 402.31 与 938.36。推理阶段 TS2Vec 为 3.01 + 0.01 到 3.01 + 0.21，Informer 为 4.85 到 28.49（$H=24$ 时 15.91，$H=48$ 时 4.85）。
@@ -217,6 +256,8 @@ Electricity / 720 | 0.861 | 1.182 | 1.548 | 1.263
 正常 | TS2Vec | 0.745 | 0.677
 冷启动 | SR | 0.529 | 0.666
 冷启动 | TS2Vec$^\dagger$ | 0.726 | 0.676
+
+表中：「设置」是评估设置（正常与冷启动），「方法」是对比模型，「Yahoo F1」「KPI F1」是两个数据集上的 F1（越大越好）；TS2Vec$^\dagger$ 表示编码器在其他数据集上训练后直接迁移。结论：TS2Vec 在两种设置下均优于对比方法。
 
 Yahoo 含 367 条小时级序列，KPI 是 AIOps 挑战赛的分钟级 KPI 曲线。正常设置：每条序列按时间分两半，前半无监督训练、后半评估。冷启动设置（Luminol、Twitter-AD、FFT 不需要训练数据，所以与 SR 一起放在此设置下比较）：所有序列全部用于测试，TS2Vec$^\dagger$ 的编码器是在 UCR 的 FordA 数据集上训练后直接迁移，没有在 Yahoo/KPI 上训练。论文称正常设置下 F1 提升 18.2%（Yahoo）、5.5%（KPI），冷启动提升 19.7%、1.0%——对照上表是相对 SR 的绝对 F1 差（0.745-0.563=0.182 等）。
 
@@ -238,6 +279,8 @@ Yahoo 含 367 条小时级序列，KPI 是 AIOps 挑战赛的分钟级 KPI 曲�
 加 Jitter / Scaling / Permutation 增强 | 0.814 / 0.814 / 0.796
 骨干换成 LSTM | 0.779（-5.0%）
 骨干换成 Transformer | 0.647（-18.2%）
+
+表中：「变体」是消融设置，「平均准确率」是 128 个 UCR 数据集上的平均准确率（括号内为相对完整模型的绝对变化）。结论：层次对比、随机裁剪与上下文一致性的正样本选取最关键；换成 LSTM 或 Transformer 骨干明显变差。
 
 骨干对比里 LSTM、Transformer 的参数量与膨胀卷积相近（论文原话 similar parameter size）。
 
@@ -273,6 +316,8 @@ TNC | 相邻片段（时间一致性） | 在某一个粒度上鼓励时间局�
 TS-TCC | 同一样本的不同数据增强（变换一致性） | 只在时间戳层面做实例对比
 TS2Vec | 同一时间戳在两个增强上下文中的表示 | 层次 max pooling，每层同时做实例对比和时间对比
 
+表中：「方法」是对比模型，「正样本」说明其如何选取正样本，「对比发生的层级」说明其对比的粒度。结论：TS2Vec 以"同一时间戳、不同上下文"为正样本，并在多个粒度上同时做实例与时间对比。
+
 [解读] 区别可以这样概括：前三者各自只在一个粒度上对比，并依赖子序列、时间邻近或数据增强这类先验；TS2Vec 用"同一时间戳、不同上下文"作为正样本，并把对比扩展到多个粒度。
 
 与同系列相关：[TCN](/0626_ML_Tasks_TimeSeries_Deep_TCN) 的膨胀卷积思想在这里被用作编码器骨干（论文引用 Bai et al. 2018 说明膨胀卷积的大感受野）；总览见 [时间序列总览](/0603_ML_Tasks_TimeSeries)、[Deep 篇](/0606_ML_Tasks_TimeSeries_Deep) 与 [异常检测篇](/0609_ML_Tasks_TimeSeries_Anomaly)。
@@ -307,4 +352,5 @@ reg = Ridge(alpha=1.0).fit(reprs[:, -1], future_values)   # future_values: (n, H
 
 - Zhihan Yue, Yujing Wang, Juanyong Duan, Tianmeng Yang, Congrui Huang, Yunhai Tong, Bixiong Xu. [TS2Vec: Towards Universal Representation of Time Series](https://arxiv.org/abs/2106.10466), AAAI 2022.
 - 官方代码：[yuezhihan/ts2vec](https://github.com/yuezhihan/ts2vec)（论文摘要给出的地址）
+
 
