@@ -3,7 +3,7 @@
 | Title     | ML Tasks TimeSeries Deep Autoformer                   |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-19T01:59:55Z`                                |
-| Updated @ | `2026-11-19T06:20:52Z`                                |
+| Updated @ | `2026-11-20T08:12:55Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/636) |
 
@@ -41,6 +41,8 @@ Autoformer 仍是 residual + encoder-decoder 结构（见论文 Figure
 1），关键改动有两处：Transformer 的 self-attention 换成
 Auto-Correlation，每个子层之后加上序列分解块。
 
+下图概括 Autoformer 的编码器与解码器结构。
+
 ``` 
  编码器 (N 层)                         解码器 (M 层)
  X_en^{l-1}                            X_de^{l-1}
@@ -57,6 +59,13 @@ Auto-Correlation，每个子层之后加上序列分解块。
                          最终预测 = W_S * X_de^M + T_de^M
 ```
 
+图中：
+
+  - 左侧是编码器：每层先 Auto-Correlation 加残差，再分解并丢弃趋势，接着前馈加残差再分解，输出只含季节项的
+    $X\_{en}^l$。
+  - 右侧是解码器：每个子层之后分解出季节项 $S\_i$ 与趋势项 $T\_i$；季节项继续进入下一子层，趋势项累积为 $T^l$。
+  - 最终预测是季节分量经 $W\_S$ 投影后与累积趋势之和。
+
 ### 序列分解块（Series Decomposition Block）
 
 用滑动平均提取趋势项（trend-cyclical），残差作为季节项（seasonal）。对长度 $L$ 的输入 $X$（$L\\times
@@ -65,6 +74,9 @@ d$）：
 $$ \\begin{aligned} X\_t &= \\mathrm{AvgPool}(\\mathrm{Padding}(X))
 &&\\text{（趋势项，Padding 保证长度不变）}\\ X\_s &= X - X\_t &&\\text{（季节项）}\\
 X\_s, X\_t &= \\mathrm{SeriesDecomp}(X) \\end{aligned} $$
+
+其中：$X$ 是输入（$L\\times d$）；$\\mathrm{AvgPool}$ 是滑动平均池化，$\\mathrm{Padding}$
+在两端填充以保持长度；$X\_t$ 是趋势项；$X\_s$ 是季节项；第三行是前两行的简写 $\\mathrm{SeriesDecomp}$。
 
 论文 Algorithm 1 给出滑动窗口 $k=25$。这个块没有可学习参数，是一个固定的 moving average 平滑。
 
@@ -79,6 +91,10 @@ X\_{des} &= \\mathrm{Concat}(X\_{ens}, X\_0) &&\\text{（季节项初始化：�
 X\_{\\mathrm{Mean}}) &&\\text{（趋势项初始化：后接 }O\\text{ 个 }X\_{en}\\text{
 的均值）} \\end{aligned} $$
 
+其中：$X\_{en}\[I/2:I\]$ 是编码器输入的后半段；$X\_{ens},X\_{ent}$ 是其季节与趋势部分；$X\_0$
+是长度 $O$ 的零占位符，$X\_{\\mathrm{Mean}}$ 是 $O$ 个 $X\_{en}$
+均值；$X\_{des},X\_{det}$ 是解码器季节与趋势的初始输入。
+
 ### 编码器
 
 编码器只关心季节项：每层内两次分解都把趋势部分丢掉（论文公式 3 里用 $\_$
@@ -89,6 +105,10 @@ $$ \\begin{aligned} S\_{en}^{l,1}, \_ &=
 X\_{en}^{l-1}\\big)\\ S\_{en}^{l,2}, \_ &=
 \\mathrm{SeriesDecomp}\\big(\\mathrm{FeedForward}(S\_{en}^{l,1}) +
 S\_{en}^{l,1}\\big)\\ X\_{en}^{l} &= S\_{en}^{l,2} \\end{aligned} $$
+
+其中：$X\_{en}^{l-1}$ 是编码器第 $l$ 层输入；$S\_{en}^{l,1},S\_{en}^{l,2}$
+是两次分解后保留的季节项；下划线 $\_$ 表示被丢弃的趋势项；$X\_{en}^{l}$
+是该层输出，只含季节信息。
 
 ### 解码器
 
@@ -105,6 +125,10 @@ X\_{en}^{N}) + S\_{de}^{l,1}\\big)\\ S\_{de}^{l,3}, T\_{de}^{l,3} &=
 S\_{de}^{l,2}\\big)\\ T\_{de}^{l} &= T\_{de}^{l-1} + W\_{l,1} \\ast
 T\_{de}^{l,1} + W\_{l,2} \\ast T\_{de}^{l,2} + W\_{l,3} \\ast
 T\_{de}^{l,3} \\end{aligned} $$
+
+其中：$X\_{de}^{l-1}$ 是解码器上一层输出；$S\_{de}^{l,i}$ 与 $T\_{de}^{l,i}$ 是第 $l$ 层第
+$i$ 次分解得到的季节项与趋势项；$X\_{en}^{N}$ 是编码器最终输出，作为交叉注意力的键与值；$W\_{l,i}$
+是对趋势项做投影的线性映射；$\\ast$ 表示线性映射；$T\_{de}^{l}$ 是累积的趋势分量。
 
 其中 $W\_{l,i}$ 是对抽出趋势做投影的线性映射。最终预测是两个分量之和：$W\_S \\ast X\_{de}^{M} +
 T\_{de}^{M}$，$W\_S$ 把季节分量投影到目标维度。论文 Figure 4
@@ -124,6 +148,9 @@ $\\mathrm{softmax}(QK^\\top)$，而是找"最可能的周期长度（时延）"�
 $$ R\_{XX}(\\tau) = \\lim\_{L\\to\\infty} \\frac{1}{L} \\sum\_{t=1}^{L}
 X\_t, X\_{t-\\tau} $$
 
+其中：$R\_{XX}(\\tau)$ 是时延 $\\tau$ 的自相关；$X\_t$ 是 $t$ 时刻取值，$X\_{t-\\tau}$
+是滞后 $\\tau$ 的取值；$L$ 是序列长度；求和平均衡量序列与其滞后版本的相似度。
+
 $R(\\tau)$ 衡量序列与其滞后 $\\tau$ 序列的相似度；论文把它当作"周期长度为 $\\tau$ 的**未归一化置信度**"。
 
 ### 时延聚合（Time Delay Aggregation）
@@ -137,6 +164,12 @@ R\_{Q,K}(\\tau\_1,\\dots,\\tau\_k) &=
 \\mathrm{SoftMax}\\big(R\_{Q,K}(\\tau\_1,\\dots,\\tau\_k)\\big)\\
 \\mathrm{AutoCorrelation}(Q,K,V) &= \\sum\_{i=1}^{k}
 \\mathrm{Roll}(V,\\tau\_i), \\hat R\_{Q,K}(\\tau\_i) \\end{aligned} $$
+
+其中：$Q,K,V$ 是查询、键、值（长度 $L$）；$R\_{Q,K}(\\tau)$ 是 $Q$ 与 $K$ 在时延 $\\tau$
+的自相关；$\\arg\\mathrm{Topk}$ 选出自相关最大的 $k$ 个时延
+$\\tau\_1,\\dots,\\tau\_k$，$k=\\lfloor c\\log L\\rfloor$；$\\hat R$ 是它们的
+softmax 权重；$\\mathrm{Roll}(V,\\tau\_i)$ 是把 $V$ 按时延 $\\tau\_i$
+循环移位；输出是各移位序列的加权和。
 
 $c$ 是超参数（论文 Algorithm 2 设 $1\\le c\\le 3$）。$\\mathrm{Roll}(X,\\tau)$
 表示把序列按时延 $\\tau$ 循环移位，被移出首位的元素重新接到末尾。多头版本和 Transformer
@@ -154,6 +187,11 @@ $O$（截断或补零），$Q$ 来自解码器上一块。
 $$ \\begin{aligned} S\_{XX}(f) &= \\mathcal{F}(X\_t),
 \\overline{\\mathcal{F}(X\_t)}\\ R\_{XX}(\\tau) &=
 \\mathcal{F}^{-1}\\big(S\_{XX}(f)\\big) \\end{aligned} $$
+
+其中：$X\_t$ 是序列；$\\mathcal F$ 是傅里叶变换，$\\mathcal F^{-1}$
+是其逆变换，$\\overline{\\mathcal F(X\_t)}$ 是复共轭；$S\_{XX}(f)$
+是功率谱密度，$f$ 是频率；$R\_{XX}(\\tau)$ 是时延 $\\tau$ 的自相关，可由一次 FFT
+得到所有时延。
 
 对 $Q,K$ 则是 $R\_{Q,K} =
 \\mathcal{F}^{-1}\\big(\\mathcal{F}(Q),\\overline{\\mathcal{F}(K)}\\big)$。所有滞后
@@ -174,6 +212,9 @@ $$ \\begin{aligned} \\text{趋势}\\ X\_t &= \\Big\[\\tfrac{2+2+6}{3},\\
 6,\\ 6,\\ 8,\\ 8.667\]\\ \\text{季节}\\ X\_s &= X - X\_t = \[-1.333,\\
 2,\\ -2,\\ 2,\\ -2,\\ 1.333\] \\end{aligned} $$
 
+其中：$X$ 是输入序列；$X\_t$ 是滑动平均得到的趋势项；$X\_s$ 是季节项（原序列减趋势）；每个趋势值是窗口 $k=3$
+内三点的平均。
+
 趋势项平滑上升，季节项在正负之间交替。
 
 **(b) 自相关与时延聚合。** 取 $L=8$ 的序列（令 $Q=K=V=x$ 以便手算）
@@ -193,12 +234,18 @@ $\\tau=L$，即不移位）。softmax 权重：
 $$ \\begin{aligned} w\_0 &= \\frac{e^{34}}{e^{34} + e^{32}} =
 \\frac{1}{1 + e^{-2}} = 0.8808\\ w\_4 &= 0.1192 \\end{aligned} $$
 
+其中：$w\_0,w\_4$ 是时延 0 与 4 的 softmax 权重，由自相关值 $R(0)=34$、$R(4)=32$
+归一化得到，自相关越大权重越大；$e$ 是自然常数。
+
 $\\mathrm{Roll}(x,4)=\[2,1,-3,0,3,1,-3,-1\]$（$y\_t = x\_{(t+4)\\bmod
 8}$），聚合输出
 
 $$ \\begin{aligned} \\text{out} &= 0.8808, x + 0.1192, \\mathrm{Roll}(x,
 4)\\ &= \[2.881,\\ 1,\\ -3,\\ -0.881,\\ 2.119,\\ 1,\\ -3,\\ -0.119\]
 \\end{aligned} $$
+
+其中：$x$ 是输入序列（令 $Q=K=V=x$）；$\\mathrm{Roll}(x,4)$ 是按时延 4 循环移位后的序列；$0.8808$
+与 $0.1192$ 是两个时延的 softmax 权重；out 是聚合结果，每个位置融合了自身与"一个周期前同相位"的值。
 
 例如 $\\text{out}\_0 = 0.8808\\cdot 3 + 0.1192\\cdot 2 =
 2.881$，$\\text{out}\_4 = 0.8808\\cdot 2 + 0.1192\\cdot 3 =
@@ -247,6 +294,9 @@ $$ \\begin{aligned} \\text{out} &= 0.8808, x + 0.1192, \\mathrm{Roll}(x,
 | Exchange    | 0.197 / 0.323 | 0.300 / 0.369 | 0.509 / 0.524 | 1.447 / 0.941 |
 | Traffic     | 0.613 / 0.388 | 0.616 / 0.382 | 0.622 / 0.337 | 0.660 / 0.408 |
 | Weather     | 0.266 / 0.336 | 0.307 / 0.367 | 0.359 / 0.395 | 0.419 / 0.428 |
+
+表中：「数据集」是评测集，四列分别是预测长度 $O=96,192,336,720$ 下 Autoformer 的 MSE /
+MAE（越小越好）。结论：预测越长误差越大，Exchange 随长度增长最明显。
 
 ILI（$O=24/36/48/60$）为 MSE 3.483 / 3.103 / 2.669 / 2.770。论文表中所有数据集与预测长度上
 Autoformer 均为最优（对比 Informer、LogTrans、Reformer、LSTNet、LSTM、TCN）。论文称：在
@@ -313,6 +363,10 @@ $O=336$ 的单变量 MSE 降低 14%（0.180 到 0.145），而 Table 2 中 Autof
 | Reformer    | LSH 选点           | 点级              | $O(L\\log L)$     | 无       |
 | Informer    | KL 散度 ProbSparse | 点级              | $O(L\\log L)$     | 无       |
 | Autoformer  | 自相关选 top-k 时延    | 子序列级（Roll + 加权） | $O(L\\log L)$     | 内置渐进式分解 |
+
+表中：「方法」是对比对象，「依赖发现」是挑选相关位置的方式，「聚合方式」是点级还是子序列级，「复杂度（论文）」是对序列长度 $L$
+的复杂度，「分解」说明是否内置分解。结论：Autoformer 在子序列级聚合、内置分解的同时保持
+$O(L\\log L)$。
 
   - 与 N-BEATS（论文把它列为"预处理式分解"的例子并作为单变量基线）相比：Autoformer 在隐变量上持续分解，N-BEATS
     用基函数展开。
