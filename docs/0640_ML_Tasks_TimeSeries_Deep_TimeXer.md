@@ -2,7 +2,7 @@
 Title | ML Tasks TimeSeries Deep TimeXer
 -- | --
 Created @ | `2026-11-19T02:00:04Z`
-Updated @| `2026-11-19T06:20:39Z`
+Updated @| `2026-11-20T08:14:28Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/640)
 
@@ -29,6 +29,9 @@ $$
 x_{T+1:T+S}=F_\theta\left(x_{1:T},\,z_{1:T_{ex}}\right)
 $$
 
+
+其中：$x_{T+1:T+S}$ 是未来 $S$ 步的内生预测；$F_\theta$ 是模型；$x_{1:T}$ 是内生序列的历史（长度 $T$）；$z_{1:T_{ex}}$ 是 $C$ 条外生序列的历史（长度 $T_{ex}$，可与 $T$ 不同）。
+
 论文强调任何有用序列都可作外生变量，不论回看长度，因此设定取最灵活的 $T_{ex}\neq T$（回看窗口长度可以不同）。
 
 ### EPF 电价预测数据集
@@ -43,6 +46,8 @@ BE | 比利时 | 比利时负荷预测、法国发电预测
 FR | 法国 | 负荷与发电预测
 DE | 德国 | Amprion 区域负荷，以及风电（附录文字还提到太阳能发电预测，与表 6 的描述略不一致）
 
+表中：「数据集」是电力市场简称，「市场」是对应地区，「外生变量」是用作外生变量的序列。内生变量均为日前电价。
+
 协议沿用 NBEATSx：输入 168 小时（一周）、预测 24 小时（一天），数据为小时频率。
 
 ### 现有做法的三个困难（论文引言）
@@ -55,6 +60,9 @@ DE | 德国 | Amprion 区域负荷，以及风电（附录文字还提到太阳�
 
 TimeXer 的关键是"不同角色用不同粒度的表示"：内生变量是要预测的，需要细粒度的时间建模，所以用 patch token；外生变量只提供外部信息，用整条序列的变量级 token 就够了，这样对缺失、错位、不同频率天然更宽容。论文称 patch 级表示对外生变量"过于细粒度，带来计算复杂度和噪声"。
 
+
+下图概括 TimeXer 内生与外生两条路径如何连接。
+
 ```
  内生序列 x (T点) ──切 patch──► [p1 p2 ... pN] + [G]      N+1 个 token
                                     │  self-attention ((N+1)x(N+1))
@@ -66,6 +74,13 @@ TimeXer 的关键是"不同角色用不同粒度的表示"：内生变量是要�
                                   FFN  ──► 重复 L 个 block ──► 线性投影 ──► 预测
 ```
 
+图中：
+
+- 上方是内生路径：内生序列切成 patch（$p_1,\dots,p_N$），再附加全局 token $[G]$，共 $N+1$ 个 token，做 self-attention（$(N+1)\times(N+1)$）。
+- 下方是外生路径：每条外生序列整体线性映射为一个变量 token $v_1,\dots,v_C$。
+- 全局 token 作 query、变量 token 作 key/value 做 cross-attention（$1\times C$），之后接 FFN；重复 $L$ 个 block，最后线性投影得到预测。
+- 关键结论：外部信息的路径是外生 token → 全局 token → 各内生 patch。
+
 ### 内生嵌入
 
 $$
@@ -76,6 +91,9 @@ G_{en} &= \mathrm{Learnable}(x) && \text{1 个可学习全局 token}
 \end{aligned}
 $$
 
+
+其中：$x$ 是内生序列；$\mathrm{Patchify}$ 把它切成 $N$ 个非重叠 patch $s_1,\dots,s_N$，每个长度 $P$；$T$ 是回看长度；$\mathrm{PatchEmbed}$ 把 patch 线性投影到 $D$ 维并加位置嵌入，得到 $P_{en}$；$G_{en}$ 是可学习的全局 token。
+
 送入 Transformer 的内生 token 共 $N+1$ 个。论文做了"重叠 patch"消融（PatchTST 风格，patch 24、步长 12），EPF 平均 MSE/MAE 由 0.307/0.265 变为 0.316/0.269，因此采用非重叠 patch。
 
 ### 外生嵌入
@@ -83,6 +101,9 @@ $$
 $$
 V_{ex,i}=\mathrm{VariateEmbed}\left(z^{(i)}\right),\quad i=1,\dots,C
 $$
+
+
+其中：$z^{(i)}$ 是第 $i$ 条外生序列的整条回看序列（长度 $T_{ex}$）；$\mathrm{VariateEmbed}$ 是线性层，把它映射成一个 $D$ 维 token；$V_{ex,i}$ 是第 $i$ 个变量 token，$C$ 是外生变量数。
 
 其中 $\mathrm{VariateEmbed}$ 是 $\mathbb R^{T_{ex}}\to\mathbb R^{D}$ 的线性层。每条外生序列整条映射成一个 $D$ 维 token，得到 $C$ 个变量 token，不做 patch。
 
@@ -104,11 +125,17 @@ $$
 \hat P_l,\hat G_l=\mathrm{LayerNorm}\left([P_l,G_l]+\mathrm{SelfAttention}([P_l,G_l])\right)
 $$
 
+
+其中：$P_l,G_l$ 是第 $l$ 层的内生 patch token 与全局 token，$[P_l,G_l]$ 是二者在序列维拼接；$\mathrm{SelfAttention}$ 是自注意力；加上原输入是残差；$\mathrm{LayerNorm}$ 是层归一化；$\hat P_l,\hat G_l$ 是更新后的 patch 与全局 token。
+
 外生到内生的 cross-attention（Eq.6）：
 
 $$
 \hat G_l=\mathrm{LayerNorm}\left(\hat G_l+\mathrm{CrossAttention}(\hat G_l,V_{ex})\right)
 $$
+
+
+其中：$\hat G_l$ 是第 $l$ 层的全局 token；$V_{ex}$ 是外生变量 token；$\mathrm{CrossAttention}(\hat G_l,V_{ex})$ 以全局 token 为查询、外生 token 为键值，把外部信息拉进来；加 $\hat G_l$ 是残差；$\mathrm{LayerNorm}$ 是层归一化。
 
 最后 FFN 同时作用于 $P$ 与 $G$（Eq.7），共 $L$ 个 block。外生 token $V_{ex}$ 在嵌入后保持不变，在所有层共享。论文指出这正是它比 iTransformer 省的地方：不做外生 token 之间的交互。
 
@@ -119,6 +146,9 @@ $$
 $$
 \mathrm{Loss}=\sum_{i=1}^{S}\left\lVert x_i-\hat x_i\right\rVert_2^2
 $$
+
+
+其中：$S$ 是预测步数；$x_i$ 是第 $i$ 步的真实内生值，$\hat x_i$ 是预测值；$\lVert\cdot\rVert_2^2$ 是平方误差；损失是各预测步平方误差之和。
 
 ### 自拟示意：EPF 设定下的 token 数（自拟，已重算）
 
@@ -152,6 +182,8 @@ FR | 0.385 / 0.208 | 0.439 / 0.233 | 0.411 / 0.220 | 0.434 / 0.208 | 0.429 / 0.2
 DE | 0.440 / 0.415 | 0.479 / 0.443 | 0.461 / 0.432 | 0.574 / 0.430 | 0.520 / 0.463
 平均 | 0.307 / 0.265 | 0.335 / 0.289 | 0.330 / 0.282 | 0.354 / 0.284 | 0.366 / 0.314
 
+表中：「数据集」是五个电力市场与平均，其余各列是各方法的 MSE / MAE（越小越好）。结论：TimeXer 在五个数据集上整体最优，平均误差明显低于其他基线。
+
 论文自述 TimeXer 在五个数据集上取得一致最优；FR 的 MAE 与 Crossformer 持平（均 0.208）。附录 Table 9 另给出专为外生变量设计的基线：NBEATSx 平均 0.330 / 0.283，TFT 平均 0.402 / 0.335；TimeXer 五次不同随机种子的结果，平均 MSE 为 0.307±0.002、MAE 为 0.265±0.001。
 
 ### 主结果二：长期多变量预测（论文 Table 3）
@@ -168,6 +200,8 @@ ETTm1 | 0.382 / 0.397 | 0.407 / 0.410 | 0.387 / 0.400
 ETTm2 | 0.274 / 0.322 | 0.288 / 0.332 | 0.281 / 0.326
 Traffic | 0.466 / 0.287 | 0.428 / 0.282 | 0.481 / 0.304
 
+表中：「数据集」是评测集，其余三列是 TimeXer、iTransformer、PatchTST 在回看 96、四个预测长度平均的 MSE / MAE（越小越好）。结论：TimeXer 在多数数据集上最优，Traffic 上 iTransformer 更好。
+
 论文自述在大多数数据集上最优。Traffic 上 iTransformer 更好，ETTh1 的 MAE 上 RLinear（0.434）略优于 TimeXer（0.437）。
 
 ### 带外生变量的长期预测（附录 Table 11）
@@ -183,6 +217,8 @@ TimeXer（完整） | P+G / V | 0.307 / 0.265
 去掉全局 token | P / V | 0.316 / 0.273
 外生 token 与内生全局 token 相加（不用 cross-attention） | P+G / V | 0.329 / 0.273
 外生 token 与内生 token 拼接后一起 self-attention | P+G / V | 0.312 / 0.270
+
+表中：「设计」是消融设置，「内生 / 外生」列的 P 表示 patch token，G 表示全局 token，V 表示变量 token，「平均 MSE / MAE」是 EPF 上的平均误差（越小越好）。结论：完整设计整体最好，去掉全局 token 或改用其他融合方式都会变差。
 
 论文结论：完整设计整体最好（个别格子如 BE 的 MSE，外生用 patch 的 0.376 优于完整设计的 0.379）。附录 Table 8 在长期预测上做了同样的消融，其中 Traffic 上"拼接后 self-attention"（平均 0.149 / 0.228）优于 TimeXer（0.156 / 0.234），在 ETTh1、ETTm1 上拼接方案反而变差（ETTh1 平均 0.080 / 0.220，TimeXer 为 0.073 / 0.209）。论文据此认为外生变量之间的交互有时也有用，但并非在所有情况下有效。
 
@@ -218,6 +254,8 @@ PatchTST | patch token，通道独立 | 无专门设计 | 只在单变量 patch 
 iTransformer | 整条序列一个变量 token | 与内生变量一视同仁，全部变量 token 一起 self-attention | 变量之间，时间依赖只靠线性映射
 Crossformer | 所有变量的 patch 段 | 一视同仁 | 两阶段（跨时间、跨变量）
 TFT / NBEATSx / TiDE | 逐时间点拼接外生特征（论文 2.2 节的概括） | 论文称 NBEATSx、TiDE 可访问外生变量的未来值；需时间对齐 | 各异
+
+表中：「方法」是对比对象，「内生表示」「外生变量」「注意力范围」说明各方法如何表示目标序列、如何对待外生变量、注意力作用的范围。结论：TimeXer 是唯一把外生变量与内生变量区别对待的方案，用变量 token 与全局 token 连接。
 
 要点：PatchTST 擅长时间依赖但不建模变量间关系；iTransformer 擅长变量关系但丢掉内部时间结构；TimeXer 在内生侧保留 patch 的时间结构，在外生侧用变量级 token，并用全局 token 连接两个粒度。论文还指出直接把多变量模型（如 iTransformer）套在外生变量任务上，内生变量的表示学得不好（附录 F 的 CKA 分析）。
 
@@ -258,4 +296,5 @@ class TimeXerSketch(nn.Module):
 
 - Yuxuan Wang, Haixu Wu, Jiaxiang Dong, Guo Qin, Haoran Zhang, Yong Liu, Yunzhong Qiu, Jianmin Wang, Mingsheng Long. TimeXer: Empowering Transformers for Time Series Forecasting with Exogenous Variables. NeurIPS 2024. [arXiv:2402.19072](https://arxiv.org/abs/2402.19072)
 - 官方代码（论文摘要给出）：[thuml/TimeXer](https://github.com/thuml/TimeXer)
+
 
