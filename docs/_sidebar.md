@@ -296,6 +296,7 @@
         - [MICN](/0683_ML_Tasks_TimeSeries_Deep_MICN)
         - [MSGNet](/0675_ML_Tasks_TimeSeries_Deep_MSGNet)
         - [Mamba](/0643_ML_Tasks_TimeSeries_Deep_Mamba)
+        - [MambaSingleLayer](/0687_ML_Tasks_TimeSeries_Deep_MambaSingleLayer)
         - [MultiPatchFormer](/0686_ML_Tasks_TimeSeries_Deep_MultiPatchFormer)
         - [N-BEATS](/0628_ML_Tasks_TimeSeries_Deep_NBEATS)
         - [N-HiTS](/0629_ML_Tasks_TimeSeries_Deep_NHiTS)
@@ -658,4 +659,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1726481120</sub></kbd>
+<kbd><sub>@1728061120</sub></kbd>

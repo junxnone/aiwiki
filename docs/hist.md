@@ -4,6 +4,7 @@
 
 #### **Created**
 
+- 2026-11-20&nbsp;&nbsp; [MambaSingleLayer](/0687_ML_Tasks_TimeSeries_Deep_MambaSingleLayer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:MambaSingleLayer
 - 2026-11-20&nbsp;&nbsp; [MultiPatchFormer](/0686_ML_Tasks_TimeSeries_Deep_MultiPatchFormer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:MultiPatchFormer
 - 2026-11-20&nbsp;&nbsp; [Crossformer](/0685_ML_Tasks_TimeSeries_Deep_Crossformer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:Crossformer
 - 2026-11-20&nbsp;&nbsp; [Pyraformer](/0684_ML_Tasks_TimeSeries_Deep_Pyraformer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:Pyraformer
@@ -658,6 +659,7 @@
 
 #### **Updated**
 
+- 2026-11-20&nbsp;&nbsp; [MambaSingleLayer](/0687_ML_Tasks_TimeSeries_Deep_MambaSingleLayer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:MambaSingleLayer
 - 2026-11-20&nbsp;&nbsp; [MultiPatchFormer](/0686_ML_Tasks_TimeSeries_Deep_MultiPatchFormer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:MultiPatchFormer
 - 2026-11-20&nbsp;&nbsp; [Crossformer](/0685_ML_Tasks_TimeSeries_Deep_Crossformer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:Crossformer
 - 2026-11-20&nbsp;&nbsp; [Pyraformer](/0684_ML_Tasks_TimeSeries_Deep_Pyraformer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:Pyraformer
