@@ -2,7 +2,7 @@
 Title | ML Tasks TimeSeries Foundation Sundial
 -- | --
 Created @ | `2026-11-19T03:24:22Z`
-Updated @| `2026-11-19T03:24:22Z`
+Updated @| `2026-11-20T08:24:39Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/663)
 
@@ -23,6 +23,8 @@ Sundial 是清华大学（软件学院、BNRist）团队提出的一族时间序
 离散 token + 语言建模 | Chronos、LLMTime | 离散 token | 类别分布（交叉熵）
 连续 token + 生成式建模 | Sundial | 连续值 patch | 不预设先验，流匹配采样
 
+表中：「类别」是已有基础模型的三类，「代表」是典型模型，「输入」「输出分布」说明其输入表示与输出分布假设。Sundial 属于第三类：连续 patch 输入加生成式建模，不预设分布先验。
+
 论文指出的具体问题：
 
 - **mode collapse 与过平滑**：时序数据异质性强，相似的回看窗口可能对应截然不同的未来（语义不稳定）。论文称 MSE 目标预先设定了单峰预测分布，过平滑是因为结果对该损失而言是全局最优的；`[解读]` 即 MSE 的最优解是条件均值，预训练规模一大就学成"平均曲线"（论文 Figure 14-15 做了与 Sundial 同骨干的 MSE 预训练模型对比）；
@@ -34,6 +36,9 @@ Sundial 的取向：输入保持"原生"（连续值），分布保持"灵活"�
 
 ## 整体结构
 
+
+下图概括 Sundial 的整体计算流程。
+
 ```
 原始序列 -> Re-Norm -> PatchEmbed -> [Pre-LN -> 因果自注意力(RoPE; FlashAttn, KV Cache) -> Pre-LN -> FFN] x N 层
                                                          |
@@ -42,6 +47,8 @@ Sundial 的取向：输入保持"原生"（连续值），分布保持"灵活"�
           训练: 带噪未来 y_i^(t), 时间 t, 条件 h_i --> FM-Net --> 速度, 回归 (y_i - y_i^(0))
           推理: 高斯噪声 y_i^(0) --K 步 Euler 推进--> 预测样本 y_i^(1)
 ```
+
+图中：原始序列经 Re-Norm 与 PatchEmbed 变成 patch token，进入 $N$ 层 Transformer（Pre-LN、带 RoPE 的因果自注意力、FFN），每个位置得到表示 $h_i$；训练时 FM-Net 以带噪未来、时间与 $h_i$ 为输入回归速度；推理时从高斯噪声出发，$K$ 步 Euler 推进得到预测样本。
 
 本文数字取自 arXiv 最新版（v4）PDF 的表格与渲染页。三部分：tokenization（re-normalization + patch embedding）、decoder-only Transformer、TimeFlow Loss。论文还把它直观地类比为一种 ARMA 式深度模型：Transformer 自回归地学 token 表示，TimeFlow 在回看表示的条件下把随机噪声变换成非确定的预测。这是论文自己的比喻，不是严格等价。
 
@@ -52,6 +59,9 @@ Sundial 的取向：输入保持"原生"（连续值），分布保持"灵活"�
 **Patch Embedding**：序列 $X=\{x_1,\dots,x_T\}$ 切成长度 $P$ 的 patch $\mathbf x_i = x_{1+(i-1)P:iP}$。长度不能整除时在**序列开头**补位，并为每个 patch 配一个二值 mask $\mathbf m_i\in\mathbb R^P$ 标记补位位置。共 $N=\lceil T/P\rceil$ 个输入 token。一个所有 patch 共享的 MLP $\mathbb R^{2P}\to\mathbb R^{D}$ 完成嵌入：
 
 $$\mathbf h_i=\mathrm{PatchEmbed}\big(\mathrm{Concat}(\mathbf x_i,\mathbf m_i)\big)$$
+
+
+其中：$\mathbf x_i$ 是第 $i$ 个 patch；$\mathbf m_i$ 是标记补位的二值 mask；$\mathrm{Concat}$ 把二者拼接（长度 $2P$）；$\mathrm{PatchEmbed}$ 是所有 patch 共享的 MLP，把它映射到 $D$ 维；$\mathbf h_i$ 是输入 token 表示。
 
 与 Chronos 的逐点量化相比，patch 保留原始数值，同时让 Transformer 的上下文 token 数缩短为约 $1/P$。
 
@@ -67,6 +77,9 @@ decoder-only，只做少量"朴素"改动，论文强调这些在时序基础模
 
 $$\mathcal A_{ij}=\mathbf h_i^\top \mathbf W_{\mathbf q}\mathbf R_{\Theta,i-j}\mathbf W_{\mathbf k}^\top \mathbf h_j,\qquad \mathrm{Attention}(\mathbf H)=\mathrm{Softmax}\Big(\frac{\mathrm{Mask}(\mathcal A)}{\sqrt d}\Big)\mathbf H\mathbf W_{\mathbf v}$$
 
+
+其中：$\mathcal A_{ij}$ 是位置 $i$ 对位置 $j$ 的注意力得分；$\mathbf h_i$ 是 patch 表示；$\mathbf W_{\mathbf q},\mathbf W_{\mathbf k},\mathbf W_{\mathbf v}$ 是查询、键、值投影；$\mathbf R_{\Theta,i-j}$ 是 RoPE 旋转矩阵，只依赖相对位置 $i-j$；$\mathrm{Mask}$ 是因果掩码；$d$ 是投影维度。
+
 其中 $\mathbf W_{\mathbf q},\mathbf W_{\mathbf k},\mathbf W_{\mathbf v}\in\mathbb R^{D\times d}$，$\mathbf R_{\Theta,t}\in\mathbb R^{d\times d}$ 是旋转角为 $t\cdot\Theta$ 的旋转矩阵。
 
 ### TimeFlow Loss
@@ -75,9 +88,15 @@ $$\mathcal A_{ij}=\mathbf h_i^\top \mathbf W_{\mathbf q}\mathbf R_{\Theta,i-j}\m
 
 $$\mathcal L^{\mathrm{Gauss}}_{\mathrm{CFM}}(\theta)=\mathbb E_{t,\epsilon,\mathbf x_1}\big\|u^\theta_t(\mathbf x_t)-(\mathbf x_1-\mathbf x_0)\big\|^2,\qquad \mathbf x_t=t\mathbf x_1+(1-t)\epsilon$$
 
+
+其中：$\mathcal L^{\mathrm{Gauss}}_{\mathrm{CFM}}$ 是条件流匹配损失；$u^\theta_t$ 是网络预测的速度；$\mathbf x_1$ 是真实数据；$\mathbf x_0$ 与 $\epsilon$ 是同一个高斯噪声；$\mathbf x_t$ 是 $t$ 时刻线性路径上的点；$(\mathbf x_1-\mathbf x_0)$ 是该路径的恒定速度；$t\sim\mathcal U[0,1]$。
+
 其中 $t\sim\mathcal U[0,1]$（论文式 (1) 的目标里写 $\mathbf x_0$、路径里写 $\epsilon$，指同一个高斯噪声，符号混用）。直觉 `[解读]`：线性路径上点的速度恒为"终点减起点"，所以网络只需学会"在带噪点 $\mathbf x_t$、时刻 $t$ 处，该往哪个方向走"。采样时对速度做 Euler 积分（论文式 (2)）：
 
 $$\mathbf x_{t+\Delta t}-\mathbf x_t=u^\theta_t(\mathbf x_t)\Delta t,\qquad \mathbf x_0\sim\mathcal N(\mathbf 0,\mathbf I),\ t\in[0,1]$$
+
+
+其中：$\mathbf x_t$ 是流在时刻 $t$ 的点；$u^\theta_t$ 是学到的速度场；$\Delta t$ 是步长（$\Delta t=1/K$）；$\mathbf x_0\sim\mathcal N(\mathbf 0,\mathbf I)$ 是起点高斯噪声；沿速度做 Euler 积分到 $t=1$ 得到一个预测样本。
 
 **2. 多 patch 预测。** 位置 $i$ 的输出不是下一个长 $P$ 的 patch，而是其后 $F$ 个点 $\mathbf y_i=x_{1+iP:F+iP}$，且 $F>P$。动机（论文）：引用 TimesFM 的经验，较大的 patch 对 decoder-only 更好，而小的输入 patch 更能适应不同频率的数据；多 patch 预测还能减少自回归推理步数。
 
@@ -89,9 +108,15 @@ $$\mathcal L(\theta,\mathbf h_i)=\mathbb E_{t,\epsilon,\mathbf y_i}\Big\|u^\thet
 
 $$u^\theta_t\big(\mathbf y_i^{(t)}\mid\mathbf h_i\big)=\mathrm{FM\text{-}Net}\big(\mathbf y_i^{(t)},t,\mathbf h_i\big)$$
 
+
+其中：$u^\theta_t$ 是速度网络；$\mathbf y_i^{(t)}$ 是时刻 $t$ 的加噪点；$t$ 是流时间；$\mathbf h_i$ 是条件（通过 AdaLN 注入）；$\mathrm{FM\text{-}Net}$ 是由 MLP 实现的速度预测器。
+
 训练时对真值加噪得到 $\mathbf y_i^{(t)}$，与 $t$ 一同输入；条件 $\mathbf h_i$ 通过 **AdaLN**（Peebles & Xie 2023）注入。对所有 $N$ 个位置求和得到总损失（式 (8)）：
 
 $$\mathcal L_{\mathrm{TimeFlow}}=\sum_{i=1}^{N}\Big\|\mathrm{FM\text{-}Net}\big(\mathbf y_i^{(t)},t,\mathbf h_i\big)-\big(\mathbf y_i-\mathbf y_i^{(0)}\big)\Big\|^2$$
+
+
+其中：$\mathcal L_{\mathrm{TimeFlow}}$ 是总损失；$N$ 是位置个数；$\mathbf h_i$ 是位置 $i$ 的 Transformer 表示（条件）；$\mathbf y_i$ 是未来真值，$\mathbf y_i^{(0)}$ 是高斯噪声，$\mathbf y_i^{(t)}$ 是在时刻 $t$ 的加噪点；$\mathrm{FM\text{-}Net}$ 是预测速度的小 MLP；目标速度为 $\mathbf y_i-\mathbf y_i^{(0)}$。
 
 要点：
 
@@ -126,6 +151,8 @@ Sundial Small | 6 | (512, 2048) | 8 | (512, 3) | 32M
 Sundial Base | 12 | (768, 3072) | 12 | (768, 3) | 128M
 Sundial Large | 24 | (1024, 4096) | 16 | (1024, 6) | 444M
 
+表中：「模型」是三种规模，其余列是 Transformer 层数 $L$、$(D,D_{ff})$（模型维度与前馈维度）、头数、TimeFlow 网络的 $(D_{tf},L_{tf})$ 与参数量（M 为百万）。三者 patch 长 $P=16$、上下文 $T=2880$。
+
 预测长度 $F$：FEV（短期任务）训练 $F=16$ 的版本；TSLib 点预测与 GIFT-Eval（预测长度 6 到 900）训练 $F=720$ 的版本。所需预测更短则截断输出，更长则滚动预测。自拟算术示意：$F=720$、$P=16$ 时一次输出覆盖 $720/16=45$ 个 patch 的跨度。
 
 推理时：评测中 FEV 采 20 条样本，GIFT-Eval 采 100 条（分别与 Chronos、Moirai 的评测设置一致），采样步数 $K=50$。
@@ -147,6 +174,8 @@ ETTh2 | 0.340 / 0.387 | 0.333 / 0.387 | 0.334 / 0.387 | 0.371 / 0.399 | 0.367 / 
 ECL | 0.169 / 0.265 | 0.169 / 0.265 | 0.166 / 0.262 | - | 0.186 / 0.270 | 0.204 / 0.273
 Weather | 0.233 / 0.271 | 0.234 / 0.270 | 0.238 / 0.275 | 0.256 / 0.288 | 0.264 / 0.273 | 0.279 / 0.306
 
+表中：「数据集」是评测集，其余各列是各模型四个预测长度平均的 MSE / MAE（越小越好，"-"表示该数据集在对应模型的预训练集中）。结论：Sundial 总体优于 Time-MoE、Moirai、Chronos，但并非逐项最优或逐项随规模单调。
+
 （"-" 表示该数据集在对应模型的预训练集中，不评测。）论文称与此前最好的 Time-MoE 相比，Sundial 系列用更少参数取得平均 MSE 下降 7.57%、平均 MAE 下降 4.71%。同表可见 Sundial 并非每个数据集都最优（如 ETTh1 的 MSE 最优是 Small 的 0.390，ETTh1 上 Base 反而比 Small 差），`[解读]` 随规模增大总体变好但并不逐项单调（如 ETTh2、Weather 上 Large 不优于 Base）。
 
 ### 概率预测
@@ -162,6 +191,8 @@ Chronos | 0.786 | 0.551 | 14.309
 Moirai | 0.809 | 0.515 | 10.175
 PatchTST（监督） | 0.762 | 0.496 | 10.052
 iTransformer（监督） | 0.802 | 0.524 | 11.320
+
+表中：「模型」是对比方法，MASE 与 CRPS 越小越好，Rank 是平均排名（越小越好）。结论：Sundial 的 MASE 在监督与基础模型中第一、CRPS 第二；按 Rank 看 TimesFM 与 TabPFN 更靠前。
 
 论文的结论：在监督模型与基础模型中，Sundial 的 MASE 第一、CRPS 第二；按 Rank 看 TimesFM 与 TabPFN 更靠前（此点论文正文未强调，数字见上表）。
 
@@ -199,6 +230,8 @@ Chronos | 逐点离散量化 | 交叉熵 | 是 | 词表量化，上下文长
 Moirai | 连续 patch | 混合分布 | 是 | 参数化先验
 TimesFM / Timer / Time-MoE | 连续 | MSE / 分位数 | Table 6 标注 TimesFM、Timer-XL、Time-MoE 为非概率 | 确定性点预测
 
+表中：「方法」是对比对象，「tokenization」说明输入表示，「分布/损失」说明训练目标，「概率输出」说明是否支持概率预测，「说明」给出补充。结论：Sundial 以连续 patch 输入加 flow matching 生成式目标，不预设分布先验。
+
 这里的 Table 6 判断（Probabilistic = True/False）是论文自己的口径。与相邻方法的区别 `[解读]`：论文相关工作提到的 TimeGrad、CSDI 一类扩散方法多是任务专用的预测或生成器，Sundial 是预训练基础模型；DeepAR：DeepAR 每步输出参数化分布的参数；Sundial 把分布族的假设换成一个生成头。
 
 ## 使用方式
@@ -221,4 +254,5 @@ median = samples.median(dim=1).values
 - Yong Liu, Guo Qin, Zhiyuan Shi, Zhi Chen, Caiyin Yang, Xiangdong Huang, Jianmin Wang, Mingsheng Long. [Sundial: A Family of Highly Capable Time Series Foundation Models, arXiv:2502.00816](https://arxiv.org/abs/2502.00816)（ICML 2025，PMLR 267）
 - 代码：[https://github.com/thuml/Sundial](https://github.com/thuml/Sundial)（论文摘要给出）
 - 模型：[https://huggingface.co/thuml/sundial-base-128m](https://huggingface.co/thuml/sundial-base-128m)（论文脚注给出）
+
 
