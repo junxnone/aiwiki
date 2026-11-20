@@ -277,6 +277,7 @@
     - [时间序列模型综述：从 ARIMA 到时序基础模型](/0603_ML_Tasks_TimeSeries)
       - [时间序列异常检测：方法详解、评估与发展脉络](/0609_ML_Tasks_TimeSeries_Anomaly)
         - [Anomaly Transformer](/0648_ML_Tasks_TimeSeries_Anomaly_AnomalyTransformer)
+        - [KANAD](/0680_ML_Tasks_TimeSeries_Anomaly_KANAD)
         - [TranAD](/0649_ML_Tasks_TimeSeries_Anomaly_TranAD)
       - [经典统计时间序列模型：方法详解、理论骨架与发展脉络](/0604_ML_Tasks_TimeSeries_Classical)
         - [ARIMA](/0624_ML_Tasks_TimeSeries_Classical_ARIMA)
@@ -651,4 +652,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1717231120</sub></kbd>
+<kbd><sub>@1718351120</sub></kbd>
