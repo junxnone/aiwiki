@@ -3,7 +3,7 @@
 | Title     | ML Tasks TimeSeries Foundation Timer                  |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-19T02:42:20Z`                                |
-| Updated @ | `2026-11-19T02:42:20Z`                                |
+| Updated @ | `2026-11-20T08:21:34Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/656) |
 
@@ -77,6 +77,9 @@ S3 是 Channel Independence（CI，PatchTST 采用）的扩展。区别：
 | batch 来源 | 变量维展平进 batch，一个 batch 的样本来自同一数据集 | 同一 batch 可混合不同时间段、不同数据集 |
 | 适用数据     | 规整的多变量序列                         | 单变量与不规则序列均可             |
 
+表中：「方面」是对比维度，后两列是 CI（通道独立）与 S3 的做法。结论：S3 不要求时间对齐，同一 batch
+可混合不同数据集，适用于单变量与不规则序列。
+
 论文认为 S3 让模型在预训练时见到来自不同时期、不同数据集的序列，难度更高，但促使模型更关注时间变化本身。\[解读\]
 一个直接的后果是模型不显式建模变量间依赖：多变量数据被拆成独立的单变量序列后，变量间关系不再保留。
 
@@ -86,11 +89,19 @@ LLM 的自回归目标是
 
 $$P(\\mathcal U)=\\prod\_{i=1}^{N}p(u\_i\\mid u\_{\<i})$$
 
+其中：$\\mathcal U={u\_1,\\dots,u\_N}$ 是 token 序列；$p(u\_i\\mid u\_{\<i})$
+是在已知前面所有 token 时第 $i$ 个 token 的条件概率；连乘把联合分布分解为逐 token
+的条件分布，这是自回归生成的基础。
+
 Timer 把 S3 序列 $\\mathbf X={x\_1,\\dots,x\_{NS}}$（上下文长度 $NS$）按长度 $S$ 切成
 $N$ 个 token，每个 token 是一段连续时间点：
 
 $$\\mathbf s\_i={x\_{(i-1)S+1},\\dots,x\_{iS}}\\in\\mathbb R^{S},\\quad
 i=1,\\dots,N$$
+
+其中：$\\mathbf s\_i$ 是第 $i$ 个 token，即连续 $S$
+个时间点；$x\_{(i-1)S+1},\\dots,x\_{iS}$ 是这些时间点的取值；$N$ 是 token
+个数；$\\mathbb R^{S}$ 表示 $S$ 维向量。
 
 模型是 $L$ 层、维度 $D$ 的 decoder-only Transformer（因果注意力）：
 
@@ -99,11 +110,20 @@ $$\\mathbf h\_i^0=\\mathbf W\_e\\mathbf s\_i+\\mathbf{TE}*i,\\qquad
 l=1,\\dots,L,\\qquad {\\hat{\\mathbf s}*{i+1}}=\\mathbf H^L\\mathbf
 W\_d$$
 
+其中：$\\mathbf h\_i^0$ 是第 $i$ 个 token 的输入表示；$\\mathbf W\_e$
+是编码矩阵；$\\mathbf{TE}*i$ 是可选的时间戳嵌入；$\\mathbf H^l$ 是第 $l$
+层输出，$\\mathrm{TrmBlock}$ 是因果 Transformer 块，$L$ 是层数；$\\mathbf
+W\_d$ 是解码矩阵；$\\hat{\\mathbf s}*{i+1}$ 是对下一个 token 的预测。
+
 其中 $\\mathbf W\_e,\\mathbf W\_d\\in\\mathbb R^{D\\times S}$ 分别独立地对每个
 token 做编码和解码，$\\mathbf{TE}\_i$ 是可选的时间戳嵌入。预训练目标是 token 级的 MSE：
 
 $$\\mathcal L\_{\\rm MSE}=\\frac1{NS}\\sum\\lVert \\mathbf
 s\_i-\\hat{\\mathbf s}\_i\\rVert\_2^2,\\quad i=2,\\dots,N$$
+
+其中：$\\mathcal L\_{\\rm MSE}$ 是预训练损失；$N$ 是 token 个数，$S$ 是每个 token
+的长度；$\\mathbf s\_i$ 是第 $i$ 个真实 token，$\\hat{\\mathbf s}\_i$
+是模型预测；求和遍及第 2 到第 $N$ 个 token，因为第 1 个 token 没有前文可预测。
 
 每个位置生成的 token 都被独立监督（token-wise supervision），因此推理时上下文长度可变，并能通过滑动、扩大输入
 token 做迭代多步生成。
@@ -134,6 +154,8 @@ Table 9 标注 Probabilistic 为 False）。
 | 增加层数 | 2 / 4 / 6 / 8 | 256                    | 1.10M / 2.16M / 3.21M / 4.27M    |
 | 增加维度 | 6             | 256 / 512 / 768 / 1024 | 3.21M / 12.72M / 28.51M / 50.59M |
 | 其他   | 8             | 768 / 1024             | 37.97M / 67.40M                  |
+
+表中：「扩展方式」说明改变的是层数、维度还是两者，「层数 L」「模型维度 D」是网络规模，「参数量」是对应总参数。
 
 ### 统一的生成式下游任务（论文图 5）
 
@@ -188,6 +210,9 @@ TimesNet，Timer 在 UTSD-4G 预训练。
 | 20%    | 38（86.4%）         |
 | 100%   | 25（56.8%）         |
 
+表中：「下游样本比例」是用于微调的训练样本比例，「Timer 胜出场景数（共 44）」是在 44 个填补场景中 Timer 优于
+TimesNet 的个数（括号为占比）。结论：样本越少，预训练的优势越大。
+
 5% 样本下，预训练相对从头训练平均降低的填补 MSE，各数据集在 1.85%（ETTh2）到 15.49%（PEMS04）之间（图 8）。
 
 ### 异常检测
@@ -200,6 +225,9 @@ TimesNet，Timer 在 UTSD-4G 预训练。
 | 1%           | 31       | 51                  | 51    |
 | 3%           | 61       | 98                  | 110   |
 | 10%          | 109      | 129                 | 172   |
+
+表中：「$\\alpha$ 分位」是允许的检测位置（测试段按重构误差降序排列后的前多少比例），后三列是在该分位内检出异常的任务数（共 250
+个任务，越大越好）。结论：Timer 在各分位下检出数最多或并列最多。
 
 预训练 vs 从头训练（图 9）：3% 分位检出 99→110，10% 分位 146→172；250 个任务的平均分位
 14.3%→12.5%（越小越好）。
@@ -274,6 +302,9 @@ Table 18，本文不转引。
 | Moirai   | 见论文 Table 9            | encoder         | 预测            | 概率预测，segment token                                        |
 | TimesFM  | 见论文 Table 9            | decoder         | 预测            | Timer 论文 Table 9 标为概率预测（TimesFM 原论文自述只做点预测），segment token |
 | Chronos  | 见论文 Table 9            | encoder-decoder | 预测            | 概率预测，point token                                          |
+
+表中：「方法」是对比模型，「预训练方式」「架构」「任务」「备注」说明各自的训练目标、网络结构、支持的任务与特点。结论：Timer 是
+decoder-only 的生成式预训练，并统一支持预测、填补、异常检测。
 
 其他相邻方法：PatchTST、iTransformer、TimesNet 等监督式小模型（本系列已有同名文章，见
 [时间序列深度模型综述](/0606_ML_Tasks_TimeSeries_Deep)）；Time-MoE
