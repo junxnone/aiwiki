@@ -3,7 +3,7 @@
 | Title     | ML Tasks TimeSeries Deep TSMixer                      |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-19T01:28:55Z`                                |
-| Updated @ | `2026-11-19T02:24:22Z`                                |
+| Updated @ | `2026-11-20T08:11:08Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/632) |
 
@@ -56,6 +56,9 @@ $$ \\hat Y = A X \\oplus b \\ \\in \\mathbb R^{T\\times C\_x} $$
 
 （$\\oplus$ 为按列加偏置；$A$ 沿时间维作用，各变量共享）
 
+其中：$\\hat Y$ 是预测；$X$ 是历史观测；$A\\in\\mathbb R^{T\\times L}$ 是沿时间维的权重，把长度
+$L$ 映射到 $T$；$b$ 是偏置；$C\_x$ 是变量数。
+
 **理论洞察**：
 
   - 若序列严格周期 $x(t)=x(t-P)$（$P\<L$），存在取值为 0/1 的 $A$（$A\_{ij}=1$ 当
@@ -66,6 +69,9 @@ $$ \\hat Y = A X \\oplus b \\ \\in \\mathbb R^{T\\times C\_x} $$
 
 $$ \\lvert y\_i-\\hat y\_i\\rvert \\le K\\big(i+\\min(i,P)\\big),\\quad
 i=1,\\dots,T $$
+
+其中：$y\_i$ 是第 $i$ 个预测步的真实值，$\\hat y\_i$ 是线性模型的预测；$K$ 是光滑部分 $f$ 的
+Lipschitz 常数；$P$ 是周期；$T$ 是预测步数；右侧给出误差上界，随 $i+\\min(i,P)$ 增大。
 
 **time-step-dependent vs data-dependent**：线性模型对输入序列各时间步的权重固定（只依赖位置），论文称为
 time-step-dependent；RNN 的门控、Transformer 的注意力则是
@@ -103,6 +109,8 @@ L$ 权重，增大 $L$ 的代价是平方而非 $L\\times C$ 的乘积。
 
 输入是一个 $L\\times C$ 的矩阵：行是时间步，列是变量。
 
+下图概括 TSMixer 的整体结构。
+
     输入 X (L×C)
       │
       ├─ [Mixer Layer] × N
@@ -112,6 +120,15 @@ L$ 权重，增大 $L$ 的代价是平方而非 $L\\times C$ 的乘积。
       └─ Temporal Projection: 沿时间维 FC(L→T)，各变量共享
             ↓
          预测 Ŷ (T×C)
+
+图中：
+
+  - 输入 $X$（$L\\times C$）依次通过 $N$ 个 Mixer Layer；每层包含
+    time-mixing（沿时间维全连接，各变量共享）与
+    feature-mixing（沿特征维两层 MLP，各时间步共享），都带残差与归一化。
+  - 最后的 Temporal Projection 沿时间维把长度 $L$ 映射为 $T$，得到预测 $\\hat Y$（$T\\times
+    C$）。
+  - 关键结论：时间混合与特征混合交替进行，变量交互只发生在 feature-mixing。
 
 组件说明（论文第 4.1 节）：
 
@@ -142,6 +159,14 @@ L}(X)\[:,i\])\\big)\\Big)\\ \\text{Feature Mixing:}\\quad & U\[j,:\] =
 O\_1=\\mathrm{Mix}(X);\\quad O\_k=\\mathrm{Mix}(O\_{k-1});\\quad \\hat
 Y=\\mathrm{TP}\_{L\\to T}(O\_K) \\end{aligned} $$
 
+其中：$X\\in\\mathbb R^{L\\times C}$ 是输入（行为时间步，列为变量）；$X\[:,i\]$ 是第 $i$
+个变量沿时间的序列；$X\[j,:\]$ 是第 $j$ 个时间步的所有变量；$W\_1\\in\\mathbb
+R^{L\\times T}$、$W\_2,W\_3$ 与 $b\_1,b\_2,b\_3$ 是线性层权重与偏置；$\\sigma$
+是激活函数；$\\mathrm{Drop}$ 是 dropout；$\\mathrm{Norm}$
+是归一化；$\\mathrm{TP}$、$\\mathrm{TM}$、$\\mathrm{FM}$
+依次是时间投影、时间混合与特征混合；$O\_k$ 是第 $k$ 个 Mixer Layer
+的输出，$K$ 是层数，$\\hat Y$ 是预测。
+
 附录补充的实现细节：
 
   - 对长序列预测任务，为提高容量，FM 的隐层加宽（$W\_2\\in\\mathbb R^{H\\times
@@ -154,6 +179,8 @@ Y=\\mathrm{TP}\_{L\\to T}(O\_K) \\end{aligned} $$
 以长序列基准的设置为例（`[解读]` 数字为本文自己的演算，用来帮助理解形状，非论文数据）：ETT 取
 $L=512$、$C=7$、$T=96$，隐层 $H=64$。
 
+下面用张量形状走查说明交替混合的过程。
+
     输入                       X           (B, 512, 7)
     Time-mixing:  转置          (B, 7, 512)   Linear(512→512) 沿最后一维，7 个变量共用同一组权重
                   转置回        (B, 512, 7)   + 残差，Norm（对 512×7 整体）
@@ -161,6 +188,12 @@ $L=512$、$C=7$、$T=96$，隐层 $H=64$。
                   + 残差，Norm  (B, 512, 7)
     重复 N 个 Mixer Layer       形状不变
     Temporal Projection: 转置 (B,7,512) → Linear(512→96) → (B,7,96) → 转置 (B,96,7)
+
+图中：这是一个具体张量形状的走查（ETT 设置：$L=512$、$C=7$、$T=96$、隐层 $H=64$，$B$ 为
+batch）。time-mixing 先转置，使 7 个变量共用同一组 $512\\to512$ 权重；feature-mixing
+对每个时间步各做 $7\\to64\\to7$；Mixer Layer 重复 $N$ 次形状不变；最后 Temporal
+Projection 把时间维从 512 映射到 96。结论：变量只在 feature-mixing 中交互，时间步只在 time-mixing
+与投影中交互。
 
   - 一个 time-mixing 的权重约 $512\\times 512+512\\approx$ 26.3 万；一个
     feature-mixing 约 $7\\times 64\\times 2\\approx 900$（不计偏置）。把整个
@@ -182,13 +215,25 @@ $O(LC)$。这使 TSMixer 可以使用较长的回看窗口而不至于参数爆�
 R^{T\\times C\_z}$（如未来几周促销）。TSMixer-Ext 分 **align（对齐）** 与 **mixing（混合）**
 两阶段：
 
+下图概括 TSMixer-Ext 的 align、mixing、output 三阶段。
+
     align:   历史特征 (L×Cx) --Temporal Projection + 特征混合--> 隐表示（附录公式中为 T×H）
              未来特征 Z (T×Cz) --特征混合--> (T×H)
              静态特征 S (1×Cs) --沿时间重复--> (T×Cs)，在 conditional feature mixing 中与隐状态拼接
     mixing:  拼接后的张量 → 若干个 Conditional Mixer Layer（时间混合 + 以 S 为条件的特征混合）
     output:  全连接 → 每个时间步的输出（实数预测值，或分布参数）
 
+图中：
+
+  - align 阶段：历史特征经 Temporal Projection 与特征混合得到 $T\\times H$
+    的隐表示；未来特征经特征混合得到 $T\\times
+    H$；静态特征沿时间重复后在条件特征混合中拼接。
+  - mixing 阶段：把对齐后的张量送入若干 Conditional Mixer Layer（时间混合 + 以静态特征为条件的特征混合）。
+  - output 阶段：全连接输出每个时间步的预测值或分布参数。
+
 形状走查（按论文附录 B.3.3 的公式整理；M5 设置 L=35、T=28，H 为隐层大小）：
+
+下面的形状走查说明扩展版各特征如何对齐到同一网格。
 
     目标 X (L×C) 与历史特征 X̂ (L×Cx) 沿特征维拼接 → (L×(C+Cx))
       → Temporal Projection (L→T) → (T×(C+Cx)) → CFM → X' (T×H)
@@ -197,6 +242,14 @@ R^{T\\times C\_z}$（如未来几周促销）。TSMixer-Ext 分 **align（对齐
     O1 = CMix_{2H→H}(X'⊕Z', S)  →  O_k = CMix_{H→H}(O_{k-1}, S)  (k=2..K)   形状均为 (T×H)
     最后线性层 → (T×Cy) 的预测值，或每个时间步的分布参数
     CFM(X, S): V = FR(Expand(S)) ∈ R^(·×H)；把 X 与 V 拼接后做 Feature Mixing
+
+图中：
+
+  - 第一行把目标与历史特征沿特征维拼接，经 Temporal Projection（$L\\to T$）与条件特征混合（CFM）得到
+    $X'$（$T\\times H$）；未来特征 $Z$ 经 CFM 得到 $Z'$。
+  - 两者拼接后送入多个条件混合层 CMix，静态特征 $S$ 在每层作为条件；最后线性层输出预测值或分布参数。
+  - $H$ 是隐层大小，$T$ 是预测步数，$C\_z$ 是未来特征数，$C\_y$ 是目标数；关键结论：所有类型的特征被对齐到同一
+    $T\\times H$ 网格后统一混合。
 
 也就是说静态特征不单独走一条支路，而是每个条件特征混合层里都被重复到每个时间步、投影后与当前隐状态拼接，再交给
 feature-mixing；未来特征与历史特征在"对齐"之后同处 T×H 的网格里，所以后续的 time-mixing 与
@@ -255,6 +308,9 @@ TMix-Only。FEDformer/Autoformer/Informer/PatchTST 的数字取自 Nie et al.
 | Electricity | 0.131          | 0.129           | 0.135         | 0.197           | 0.197            | 0.199          |
 | Traffic     | 0.376          | 0.360           | 0.395         | 0.444           | 0.432            | 0.454          |
 
+表中：「数据集」是长序列基准，其余各列是 TSMixer、PatchTST、Linear 在预测步数 $T=96$ 与 $T=720$ 上的
+MSE（越小越好）。结论：TSMixer 与单变量的 PatchTST 互有胜负，整体优于线性模型。
+
 论文表末一行给出 TSMixer 相对其他方法的平均 MSE
 改进：51.94%、16.69%、24.51%、62.40%、-0.66%、6.77%、-1.53%。按渲染页面核对，它们依次对应
 TFT、FEDformer、Autoformer、Informer、TMix-Only、Linear、PatchTST（TMix-Only 与
@@ -281,6 +337,9 @@ PatchTST 为负值，表示 TSMixer 略差）。
 | FEDformer  | 是   | 0.804±0.039     | 0.674±0.014 |
 | TSMixer    | 是   | **0.737±0.033** | 0.605±0.027 |
 
+表中：「模型」是对比方法，「多变量」表示是否建模跨变量，Test / Val WRMSSE 是测试与验证集上的加权误差（越小越好，± 为 5
+个随机种子的标准差）。结论：多变量模型远好于单变量模型，TSMixer 最优。
+
 结论：在 M5 上多变量模型远好于单变量模型；论文据此认为 PatchTST 这类忽略跨变量信息的设计在此任务上受限，与 Nie et al.
 的主张相反。论文总结：TSMixer 在跨变量信息无用时能与单变量模型持平，在有用时又是利用得最好的。
 
@@ -294,6 +353,10 @@ PatchTST 为负值，表示 TSMixer 略差）。
 | TSMixer-Ext | 是    | 否    | 0.657±0.046     | 0.000±0.000 |
 | TSMixer-Ext | 否    | 是    | 0.697±0.028     | 0.000±0.000 |
 | TSMixer-Ext | 是    | 是    | **0.640±0.013** | 0.568±0.009 |
+
+表中：「静态特征」「未来特征」表示是否使用该类辅助特征，Test / Val WRMSSE 是测试与验证集上的加权误差（越小越好）；前三行
+TSMixer-Ext 的 Val 为 0.000 是论文原表如此，建议只看 Test 列。结论：同时使用静态与未来特征时
+TSMixer-Ext 最好。
 
 （前三行 TSMixer-Ext 的 Val 列在论文 PDF 渲染页中确为 0.000±0.000，论文正文未对此作说明。`[解读]`
 作者没有报告这三种消融设置的验证集结果，0.000 看起来不像真实的验证 WRMSSE，建议只引用 Test
@@ -314,6 +377,10 @@ PatchTST 为负值，表示 TSMixer 略差）。
 | DeepAR      | 1M    | 8743.55   | 105         |
 | TFT         | 2.9M  | 14426.79  | 22          |
 | TSMixer-Ext | 244K  | 11615.87  | 108         |
+
+表中：「模型」是对比方法，「参数量」（K 为千、M 为百万）、「训练时间 (s)」、「推理 (step/s)」是 M5
+上的开销（推理越大越快）。结论：TSMixer 比 RNN/Transformer
+类模型小得多，推理接近线性模型。
 
 论文的解读：TSMixer 比 RNN/Transformer 类模型小得多，训练时间与多变量模型相近，推理速度接近线性模型；PatchTST
 推理更快，是因为它把特征维并入 batch 维，并行度更高但丢失了多变量信息。
@@ -337,6 +404,9 @@ MLP 计算开销最高且比 TSMixer 和 CNN 都差；CNN 在 Weather 上与 TSM
 | TSMixer-Ext 去掉静态 / 未来特征（Table 5）   | 辅助特征的贡献             | 静态特征影响更显著，两者都有贡献                                                          |
 | 改变回看窗口 L（Fig. 5、Fig. 7）            | 能否利用长序列             | 线性与 TSMixer 均随 L 增大而改善，TSMixer 在 336/512 最好                               |
 | 全连接 MLP / CNN vs TSMixer（Table 10） | 交替混合 vs 同时混合        | TSMixer 更好或相当，参数增长更慢                                                      |
+
+表中：「对照」是被比较的设置，「在比什么」说明想回答的问题，「论文观察」是对应结果。结论：feature-mixing
+在常用长序列基准上无明显帮助，但在 M5 上带来大幅提升。
 
 ## 优缺点与局限
 
@@ -369,6 +439,9 @@ MLP 计算开销最高且比 TSMixer 和 CNN 都差；CNN 在 Weather 上与 TSM
 | MLP-Mixer（视觉）                                   | patch 与通道的混合        | \-      | \-    | 结构灵感来源，归一化与输入布局不同                                          |
 | [TCN](/0626_ML_Tasks_TimeSeries_Deep_TCN)       | 因果膨胀卷积              | 取决于实现   | 取决于实现 | `[解读]` 同属"非 RNN/非注意力"路线；论文未与之直接对比（仅在附录 F 比较了 1-D 卷积 + 线性层） |
 
+表中：「方法」是对比对象；「时间建模」「跨变量」「辅助特征」三列说明其建模方式与是否支持变量间混合、静态与未来特征；「与 TSMixer
+的关系」说明联系。结论：TSMixer 是少数同时支持跨变量混合与辅助特征的全 MLP 方案。
+
 按"权重如何依赖输入"与"是否混合变量"再拆一次（`[解读]`，综合论文第 3 节与 Table 1 的分类）：
 
 | 方法类型                        | 对时间步的权重                 | 变量处理                                   | 参数随 L、C 的增长                               |
@@ -377,6 +450,10 @@ MLP 计算开销最高且比 TSMixer 和 CNN 都差；CNN 在 Weather 上与 TSM
 | PatchTST                    | 注意力（data-dependent）     | 变量并入 batch 维，独立处理                      | 取决于 patch 与模型宽度                           |
 | 多变量 Transformer（Informer 等） | 注意力（data-dependent）     | 各时间步的变量向量一起嵌入，联合建模                     | 嵌入层与注意力宽度相关                               |
 | TSMixer                     | 固定（time-step-dependent） | time-mixing 变量共享；feature-mixing 显式混合变量 | 近似 $L\\times L+C\\times C$（论文写作 $O(L+C)$） |
+
+表中：「方法类型」是模型类别，「对时间步的权重」说明权重是固定的（只依赖位置）还是依赖数据，「变量处理」说明对多变量的处理，「参数随 L、C
+的增长」是参数增长规律（$L$ 为回看长度，$C$ 为变量数，$T$ 为预测步数）。结论：TSMixer 用固定的时间权重，并通过
+feature-mixing 显式混合变量，参数近似随 $L$ 与 $C$ 相加增长。
 
 在综述里的位置见 [Deep 学习路线](/0606_ML_Tasks_TimeSeries_Deep)（MLP /
 线性一类）与[总览](/0603_ML_Tasks_TimeSeries)；基础模型方向中基于"轻量
