@@ -3,7 +3,7 @@
 | Title     | ML Tasks TimeSeries Foundation TimeGPT1               |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-19T02:42:12Z`                                |
-| Updated @ | `2026-11-19T06:18:09Z`                                |
+| Updated @ | `2026-11-20T08:20:14Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/652) |
 
@@ -54,6 +54,10 @@ $$\\mathbb P\\big(\\mathbf y\_{\[t+1:t+h\]}\\mid \\mathbf
 y\_{\[0:t\]},\\mathbf x\_{\[0:t+h\]}\\big)=f\_\\theta\\big(\\mathbf
 y\_{\[0:t\]},\\mathbf x\_{\[0:t+h\]}\\big)$$
 
+其中：$\\mathbb P(\\cdot\\mid\\cdot)$ 是条件概率分布；$\\mathbf y\_{\[t+1:t+h\]}$
+是未来 $h$ 步目标；$\\mathbf y\_{\[0:t\]}$ 是历史目标；$\\mathbf x\_{\[0:t+h\]}$
+是外生协变量（含未来 $h$ 步已知部分）；$f\_\\theta$ 是预测函数，$\\theta$ 是模型参数。
+
 迁移学习：在源数据集 $D\_s={(\\mathbf X,\\mathbf y)\\mid \\mathbf X\\in\\mathcal
 X,\\ \\mathbf y\\in\\mathcal Y}$ 上预训练，用来提升在目标数据集 $D\_t$ 上的表现。论文考虑两种：
 
@@ -66,6 +70,8 @@ X,\\ \\mathbf y\\in\\mathcal Y}$ 上预训练，用来提升在目标数据集 $
 的直觉让它泛化到新数据。论文结构图（Figure 2/3）的大意如下（ASCII
 示意为本文自绘）：
 
+下图概括 TimeGPT-1 的训练与推理流程。
+
     训练:  多领域训练集 (金融/电力/网络流量/零售/旅游/IoT/医疗/交通/经济)
               |
               v
@@ -73,6 +79,9 @@ X,\\ \\mathbf y\\in\\mathcal Y}$ 上预训练，用来提升在目标数据集 $
               |
     推理:  历史值 y[0:t] + 外生变量/事件 x  -->  模型  -->  预测 y[t+1:t+h]
                                                            + conformal 预测区间
+
+图中：训练阶段使用来自金融、电力、网络流量等多个领域的训练集，训练一个 Transformer 编码器-解码器（每层含多头注意力、CNN 与
+Add & Norm）；推理阶段输入历史值与外生变量/事件，模型输出预测，并给出 conformal 预测区间。
 
 论文文字描述的架构（5.1 节）：
 
@@ -99,6 +108,8 @@ X,\\ \\mathbf y\\in\\mathcal Y}$ 上预训练，用来提升在目标数据集 $
 | 基线的超参、调参方式                      | 没有                             |
 | conformal 的窗口数、分位数、校准细节         | 没有                             |
 | 权重与代码                           | 没有公开；附录只给 SDK/API 的使用方式        |
+
+表中：「项目」是读者关心的信息，右列说明论文是否给出。结论：模型规模、窗口长度、训练损失、数据清单与权重均未公开，无法复现。
 
 \[解读\] 这意味着本文后面所有"结构"都只能停留在论文给出的概述层面，无法像 PatchTST 之类的论文那样推导张量形状。
 
@@ -133,6 +144,11 @@ $1-\\alpha$，取
 $$q=\\text{第 }\\lceil (n+1)(1-\\alpha)\\rceil\\text{ 小的 }e\_j,\\qquad
 \\big\[\\hat y-q,\\ \\hat y+q\\big\]$$
 
+其中：$n$ 是校准窗口数；$e\_j$ 是第 $j$ 个校准窗口的绝对误差；$\\alpha$ 是允许的错误率（$1-\\alpha$
+为目标覆盖率）；$q$ 是第 $\\lceil (n+1)(1-\\alpha)\\rceil$
+小的误差，作为区间半宽；$\\hat y$ 是点预测，区间为 $\[\\hat
+y-q,\\hat y+q\]$。
+
 自拟示意例子（非论文数据）：$n=5$，误差为 $2,5,3,4,1$，$\\alpha=0.2$。$\\lceil 6\\times
 0.8\\rceil=\\lceil 4.8\\rceil=5$，取第 5 小的误差，即 $q=5$；若点预测 $\\hat
 y=100$，则区间为 $\[95,105\]$。
@@ -157,6 +173,12 @@ y^{base}\_{i,t}\\rvert}$$
 $$rRMSE=\\frac{\\sum\_{i=1}^{n}\\sqrt{\\sum\_{t=1}^{h}\\big(y\_{i,t}-\\hat
 y\_{i,t}\\big)^{2}}}{\\sum\_{i=1}^{n}\\sqrt{\\sum\_{t=1}^{h}\\big(y\_{i,t}-\\hat
 y^{base}\_{i,t}\\big)^{2}}}$$
+
+其中：$n$ 是序列条数；$h$ 是预测步长；$y\_{i,t}$ 是第 $i$ 条序列第 $t$ 步的真实值；$\\hat y\_{i,t}$
+是模型预测；$\\hat y^{base}\_{i,t}$ 是基线（Seasonal Naive）预测；rMAE
+用绝对误差之和相对基线归一，rRMSE
+用每条序列的均方根误差之和相对基线归一，二者都小于
+1 表示优于基线。
 
 注意这是"先对全数据集求和再相除"的全局归一化（论文称在每个完整数据集上全局应用归一化），因此 Seasonal Naive 恒为
 1.000，小于 1 表示优于 Seasonal Naive。
@@ -186,6 +208,11 @@ rMAE 与 rRMSE 在表中完全相同（表中确实如此）。
 | TFT             | 0.752 / 0.700 | 0.954 / 0.954 | 0.817 / 0.791 | 1.120 / 1.112  |
 | NHITS           | 0.738 / 0.694 | 0.883 / 0.883 | 0.788 / 0.771 | 0.829 / 0.860  |
 | **TimeGPT**     | 0.727 / 0.685 | 0.878 / 0.878 | 0.804 / 0.780 | 0.852 / 0.878  |
+
+表中：「模型」是对比方法，月度 / 周度 / 日度 / 小时是四种频率，每格为 rMAE / rRMSE（相对 SeasonalNaive
+归一，越小越好，小于 1 表示优于 SeasonalNaive）。结论：TimeGPT
+在月度、周度第一，日度第二，小时第三，与最强基线
+NHITS 差距很小。
 
 按表中加粗/下划线读出的名次：
 
@@ -250,6 +277,9 @@ Table 1 同口径下的结果。
 | TimeGPT-1                              | 公开时间序列，\>1000 亿点，数据集未列出 | 论文无权重，SDK/API     | conformal | 编码器-解码器 Transformer，细节未披露                             |
 | Lag-Llama / TimesFM / Chronos / Moirai | 各论文各自说明                 | 以各自论文为准 \[待核实\]   | 各异        | 本篇不展开，见 [基础模型篇](/0608_ML_Tasks_TimeSeries_Foundation) |
 | N-HiTS / TFT / DeepAR / LSTM           | 在测试集上训练的局部或全局模型         | 各自的开源实现，论文未说明用的哪个 | 各异        | 在论文中作为基线                                              |
+
+表中：「方法」是对比对象，「训练数据与规模」「开放性」「区间」「备注」说明各自的数据、是否开放、不确定性输出方式与特点。结论：TimeGPT-1
+的权重与数据清单均未公开，区间由 conformal 预测给出。
 
 与传统"一个数据集训练一个模型"的区别：TimeGPT 的卖点是推理即预测，省去训练与选模；与 N-BEATS、N-HiTS（以及
 [DeepAR](/0625_ML_Tasks_TimeSeries_Deep_DeepAR)、[TCN](/0626_ML_Tasks_TimeSeries_Deep_TCN)）等深度预测模型相比，是否更准要看
