@@ -2,12 +2,12 @@
 Title | MO Quantization LLM WA
 -- | --
 Created @ | `2026-11-23T02:20:33Z`
-Updated @| `2026-11-23T02:24:56Z`
+Updated @| `2026-11-23T02:43:40Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/707)
 
 ---
-# LLM WA
+# LLM 权重+激活量化
 
 仅量化权重（W4A16）主要省显存和带宽，但大模型的**预填充（prefill）阶段是算力受限**的——要加速计算，需要**把激活也量化**，让矩阵乘全部用低位整数完成（W8A8、W4A4）。难点是 LLM 激活里有**系统性的离群值**：少数通道的幅值比其他通道大一两个数量级，使得按张量量化的激活几乎只剩 2～3 个有效量化级别。本文覆盖四条应对离群值的路线：**混合精度分解**（LLM.int8()，*LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale*，NeurIPS 2022，arXiv:2208.07339）、**把难度从激活迁移到权重**（SmoothQuant，*SmoothQuant: Accurate and Efficient Post-Training Quantization for Large Language Models*，ICML 2023，arXiv:2211.10438）、**可学习的截断与等价变换**（OmniQuant，*OmniQuant: Omnidirectionally Calibrated Quantization for Large Language Models*，ICLR 2024，arXiv:2308.13137）和**旋转消除离群值**（QuaRot，*QuaRot: Outlier-Free 4-Bit Inference in Rotated LLMs*，arXiv:2404.00456）；还简述 ZeroQuant（*ZeroQuant: Efficient and Affordable Post-Training Quantization for Large-Scale Transformers*，arXiv:2206.01861）的细粒度量化，以及 FP8 推理。
 
@@ -180,4 +180,5 @@ FP8 推理不需要把激活压成整数，而是用 FP8 的 E4M3/E5M2 格式（
 - Shao W, Chen M, Zhang Z, Xu P, Zhao L, Li Z, Zhang K, Gao P, Qiao Y, Luo P. OmniQuant: Omnidirectionally Calibrated Quantization for Large Language Models. ICLR 2024. arXiv:2308.13137
 - Ashkboos S, Mohtashami A 等. QuaRot: Outlier-Free 4-Bit Inference in Rotated LLMs. arXiv:2404.00456 `[作者列表与会议待核实]`
 - Ashkboos S 等. SliceGPT: Compress Large Language Models by Deleting Rows and Columns（计算不变性定理的来源）. 2024 `[未读原文]`
+
 
