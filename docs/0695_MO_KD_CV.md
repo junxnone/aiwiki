@@ -2,12 +2,12 @@
 Title | MO KD CV
 -- | --
 Created @ | `2026-11-23T01:52:29Z`
-Updated @| `2026-11-23T01:52:50Z`
+Updated @| `2026-11-23T02:42:53Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/695)
 
 ---
-# CV
+# 检测/分割/ViT 蒸馏
 
 把蒸馏用到**检测、分割**和**视觉 Transformer**上，会遇到与分类蒸馏不同的问题：检测里前景背景极度不均衡，且除了"是什么"还要蒸馏"在哪里"；分割是逐像素的稠密预测，空间位置之间的关系远比单个 logits 向量复杂；视觉 Transformer 则有 token 化的结构可以利用。本文覆盖四个代表：FGD（*Focal and Global Knowledge Distillation for Detectors*，CVPR 2022，arXiv:2111.11837）、LD（*Localization Distillation for Dense Object Detection*，CVPR 2022，arXiv:2102.12252）、CWD（*Channel-wise Knowledge Distillation for Dense Prediction*，ICCV 2021，arXiv:2011.13256）和 DeiT 的蒸馏 token（*Training data-efficient image transformers & distillation through attention*，ICML 2021，arXiv:2012.12877）。
 
@@ -178,4 +178,5 @@ DeiT 展示了用卷积网络做 Teacher 训练视觉 Transformer 的方法（�
 - Zheng Z, Ye R, Wang P, Ren D, Zuo W, Hou Q, Cheng M-M. Localization Distillation for Dense Object Detection. CVPR 2022. arXiv:2102.12252
 - Shu C, Liu Y, Gao J, Yan Z, Shen C. Channel-wise Knowledge Distillation for Dense Prediction. ICCV 2021. arXiv:2011.13256
 - Touvron H, Cord M, Douze M, Massa F, Sablayrolles A, Jégou H. Training data-efficient image transformers & distillation through attention. ICML 2021. arXiv:2012.12877
+
 
