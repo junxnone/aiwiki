@@ -110,7 +110,7 @@
 - 2026-11-10&nbsp;&nbsp; [深度学习时间序列模型：方法详解、原理与发展脉络](/0606_ML_Tasks_TimeSeries_Deep)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep
 - 2026-11-10&nbsp;&nbsp; [机器学习时间序列模型：方法详解、原理与发展脉络](/0605_ML_Tasks_TimeSeries_ML)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:ML
 - 2026-11-10&nbsp;&nbsp; [经典统计时间序列模型：方法详解、理论骨架与发展脉络](/0604_ML_Tasks_TimeSeries_Classical)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Classical
-- 2026-11-10&nbsp;&nbsp; [时间序列模型综述：从 ARIMA 到时序基础模型](/0603_ML_Tasks_TimeSeries)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries
+- 2026-11-10&nbsp;&nbsp; [时间序列模型](/0603_ML_Tasks_TimeSeries)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries
 - 2026-10-21&nbsp;&nbsp; [channels_last 内存格式](/0602_Tools_Pytorch_Speed_ChannelsLast)&nbsp;&nbsp; :bookmark:Tools :bookmark:Pytorch :bookmark:Speed :bookmark:ChannelsLast
 - 2026-10-21&nbsp;&nbsp; [ExecuTorch](/0601_Tools_Pytorch_ExecuTorch)&nbsp;&nbsp; :bookmark:Tools :bookmark:Pytorch :bookmark:ExecuTorch
 - 2026-10-21&nbsp;&nbsp; [torch.export](/0600_Tools_Pytorch_Export)&nbsp;&nbsp; :bookmark:Tools :bookmark:Pytorch :bookmark:Export
@@ -703,6 +703,7 @@
 - 2026-11-23&nbsp;&nbsp; [特征蒸馏（Feature-based KD）](/0690_MO_KD_Feature)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Feature
 - 2026-11-23&nbsp;&nbsp; [响应蒸馏（Response-based KD）](/0689_MO_KD_Response)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Response
 - 2026-11-23&nbsp;&nbsp; [量化发展历史](/0688_MO_Quantization_History)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:History
+- 2026-11-23&nbsp;&nbsp; [时间序列模型](/0603_ML_Tasks_TimeSeries)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries
 - 2026-11-23&nbsp;&nbsp; [Specular Highlight Removal](/0540_ML_Tasks_Image_SHR)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:SHR
 - 2026-11-23&nbsp;&nbsp; [模型性能优化技术](/0471_MO)&nbsp;&nbsp; :bookmark:MO
 - 2026-11-23&nbsp;&nbsp; [知识蒸馏发展历史](/0336_MO_KD_History)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:History
@@ -781,7 +782,6 @@
 - 2026-11-19&nbsp;&nbsp; [深度学习时间序列模型：方法详解、原理与发展脉络](/0606_ML_Tasks_TimeSeries_Deep)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep
 - 2026-11-19&nbsp;&nbsp; [机器学习时间序列模型：方法详解、原理与发展脉络](/0605_ML_Tasks_TimeSeries_ML)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:ML
 - 2026-11-19&nbsp;&nbsp; [经典统计时间序列模型：方法详解、理论骨架与发展脉络](/0604_ML_Tasks_TimeSeries_Classical)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Classical
-- 2026-11-19&nbsp;&nbsp; [时间序列模型综述：从 ARIMA 到时序基础模型](/0603_ML_Tasks_TimeSeries)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries
 - 2026-11-19&nbsp;&nbsp; [Transformer in Transformer](/0360_ML_Transformer_TiT)&nbsp;&nbsp; :bookmark:ML :bookmark:Transformer :bookmark:TiT
 - 2026-11-19&nbsp;&nbsp; [DeiT](/0253_ML_Transformer_DeiT)&nbsp;&nbsp; :bookmark:ML :bookmark:Transformer :bookmark:DeiT
 - 2026-11-19&nbsp;&nbsp; [Transformer](/0229_ML_Transformer)&nbsp;&nbsp; :bookmark:ML :bookmark:Transformer

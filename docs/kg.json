@@ -3027,7 +3027,7 @@
     {
       "id": "aiwiki ML Tasks TimeSeries",
       "group": 3,
-      "title": "时间序列模型综述：从 ARIMA 到时序基础模型",
+      "title": "时间序列模型",
       "url": "https://junxnone.github.io/aiwiki/#/0603_ML_Tasks_TimeSeries",
       "visible": true,
       "expand": true,
