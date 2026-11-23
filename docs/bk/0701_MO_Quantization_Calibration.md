@@ -3,13 +3,13 @@
 | Title     | MO Quantization Calibration                           |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-23T02:07:17Z`                                |
-| Updated @ | `2026-11-23T02:24:51Z`                                |
+| Updated @ | `2026-11-23T02:43:16Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/701) |
 
 -----
 
-# Calibration
+# 量化校准（Calibration）
 
 校准（Calibration）回答量化里最基础的一个问题：**量化范围
 $\[\\alpha,\\beta\]$（或截断阈值）该取多大**。范围太大，量化步长

@@ -2,12 +2,12 @@
 Title | MO Quantization Calibration
 -- | --
 Created @ | `2026-11-23T02:07:17Z`
-Updated @| `2026-11-23T02:24:51Z`
+Updated @| `2026-11-23T02:43:16Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/701)
 
 ---
-# Calibration
+# 量化校准（Calibration）
 
 校准（Calibration）回答量化里最基础的一个问题：**量化范围 $[\alpha,\beta]$（或截断阈值）该取多大**。范围太大，量化步长 $s$ 大，舍入误差大；范围太小，大值被截断，截断误差大。权重在训练后就是固定的，范围通常可直接取最大/最小值；激活依赖输入，需要用少量**校准数据**统计它们的分布。本文汇总几种常用的校准方法：min-max、百分位、MSE、KL 熵（TensorRT 默认）、交叉熵（用于最后一层 logits）、基于 BN 统计量，以及 ACIQ（*Post training 4-bit quantization of convolution networks for rapid-deployment*，Banner 等，NeurIPS 2019，arXiv:1810.05723）给出的解析最优截断值。主要依据：Qualcomm 的 *A White Paper on Neural Network Quantization*（arXiv:2106.08295）、NVIDIA 的 *Integer Quantization for Deep Learning Inference*（arXiv:2004.09602）和 ACIQ 论文。
 
@@ -173,4 +173,5 @@ $$
 - Wu H, Judd P, Zhang X, Isaev M, Micikevicius P. Integer Quantization for Deep Learning Inference: Principles and Empirical Evaluation. arXiv:2004.09602
 - Nagel M 等. Data-Free Quantization Through Weight Equalization and Bias Correction. ICCV 2019. arXiv:1906.04721
 - Migacz S. 8-bit Inference with TensorRT. GTC 2017. `[未核对原文]`
+
 
