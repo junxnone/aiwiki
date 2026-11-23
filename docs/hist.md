@@ -4,6 +4,7 @@
 
 #### **Created**
 
+- 2026-11-23&nbsp;&nbsp; [CV](/0695_MO_KD_CV)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:CV
 - 2026-11-23&nbsp;&nbsp; [DataFree](/0694_MO_KD_DataFree)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:DataFree
 - 2026-11-23&nbsp;&nbsp; [Self](/0693_MO_KD_Self)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Self
 - 2026-11-23&nbsp;&nbsp; [Online](/0692_MO_KD_Online)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Online
@@ -666,6 +667,7 @@
 
 #### **Updated**
 
+- 2026-11-23&nbsp;&nbsp; [CV](/0695_MO_KD_CV)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:CV
 - 2026-11-23&nbsp;&nbsp; [DataFree](/0694_MO_KD_DataFree)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:DataFree
 - 2026-11-23&nbsp;&nbsp; [Self](/0693_MO_KD_Self)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Self
 - 2026-11-23&nbsp;&nbsp; [Online](/0692_MO_KD_Online)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Online

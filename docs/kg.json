@@ -3169,6 +3169,15 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki MO KD CV",
+      "group": 3,
+      "title": "CV",
+      "url": "https://junxnone.github.io/aiwiki/#/0695_MO_KD_CV",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Op Convolution Math",
       "group": 4,
       "title": "卷积 数学定义",
@@ -7597,6 +7606,13 @@
     {
       "source": "aiwiki MO KD",
       "target": "aiwiki MO KD DataFree",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki MO KD",
+      "target": "aiwiki MO KD CV",
       "value": 3,
       "visible": true,
       "expand": true
