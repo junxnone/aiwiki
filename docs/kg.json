@@ -4654,6 +4654,15 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki MO KD LLM BlackBox",
+      "group": 4,
+      "title": "LLM BlackBox",
+      "url": "https://junxnone.github.io/aiwiki/#/0697_MO_KD_LLM_BlackBox",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Tasks Image Classification LeNet",
       "group": 5,
       "title": "LeNet",

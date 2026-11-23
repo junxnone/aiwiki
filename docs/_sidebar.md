@@ -501,6 +501,7 @@
     - [Feature](/0690_MO_KD_Feature)
     - [知识蒸馏发展历史](/0336_MO_KD_History)
     - LLM
+      - [LLM BlackBox](/0697_MO_KD_LLM_BlackBox)
       - [LLM WhiteBox](/0696_MO_KD_LLM_WhiteBox)
     - [Online](/0692_MO_KD_Online)
     - [Relation](/0691_MO_KD_Relation)
@@ -669,4 +670,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0956361123</sub></kbd>
+<kbd><sub>@0958051123</sub></kbd>

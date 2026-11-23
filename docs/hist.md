@@ -4,6 +4,7 @@
 
 #### **Created**
 
+- 2026-11-23&nbsp;&nbsp; [LLM BlackBox](/0697_MO_KD_LLM_BlackBox)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:LLM :bookmark:BlackBox
 - 2026-11-23&nbsp;&nbsp; [LLM WhiteBox](/0696_MO_KD_LLM_WhiteBox)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:LLM :bookmark:WhiteBox
 - 2026-11-23&nbsp;&nbsp; [CV](/0695_MO_KD_CV)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:CV
 - 2026-11-23&nbsp;&nbsp; [DataFree](/0694_MO_KD_DataFree)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:DataFree
@@ -668,6 +669,7 @@
 
 #### **Updated**
 
+- 2026-11-23&nbsp;&nbsp; [LLM BlackBox](/0697_MO_KD_LLM_BlackBox)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:LLM :bookmark:BlackBox
 - 2026-11-23&nbsp;&nbsp; [LLM WhiteBox](/0696_MO_KD_LLM_WhiteBox)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:LLM :bookmark:WhiteBox
 - 2026-11-23&nbsp;&nbsp; [CV](/0695_MO_KD_CV)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:CV
 - 2026-11-23&nbsp;&nbsp; [DataFree](/0694_MO_KD_DataFree)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:DataFree
