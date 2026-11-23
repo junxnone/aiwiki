@@ -3178,6 +3178,15 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki MO KD Theory",
+      "group": 3,
+      "title": "Theory",
+      "url": "https://junxnone.github.io/aiwiki/#/0698_MO_KD_Theory",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Op Convolution Math",
       "group": 4,
       "title": "卷积 数学定义",
@@ -7631,6 +7640,13 @@
     {
       "source": "aiwiki MO KD",
       "target": "aiwiki MO KD CV",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki MO KD",
+      "target": "aiwiki MO KD Theory",
       "value": 3,
       "visible": true,
       "expand": true

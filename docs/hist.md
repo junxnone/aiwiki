@@ -4,6 +4,7 @@
 
 #### **Created**
 
+- 2026-11-23&nbsp;&nbsp; [Theory](/0698_MO_KD_Theory)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Theory
 - 2026-11-23&nbsp;&nbsp; [LLM BlackBox](/0697_MO_KD_LLM_BlackBox)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:LLM :bookmark:BlackBox
 - 2026-11-23&nbsp;&nbsp; [LLM WhiteBox](/0696_MO_KD_LLM_WhiteBox)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:LLM :bookmark:WhiteBox
 - 2026-11-23&nbsp;&nbsp; [CV](/0695_MO_KD_CV)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:CV
@@ -669,6 +670,7 @@
 
 #### **Updated**
 
+- 2026-11-23&nbsp;&nbsp; [Theory](/0698_MO_KD_Theory)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Theory
 - 2026-11-23&nbsp;&nbsp; [LLM BlackBox](/0697_MO_KD_LLM_BlackBox)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:LLM :bookmark:BlackBox
 - 2026-11-23&nbsp;&nbsp; [LLM WhiteBox](/0696_MO_KD_LLM_WhiteBox)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:LLM :bookmark:WhiteBox
 - 2026-11-23&nbsp;&nbsp; [CV](/0695_MO_KD_CV)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:CV
