@@ -3,13 +3,13 @@
 | Title     | MO Quantization LLM Weight                            |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-23T02:18:05Z`                                |
-| Updated @ | `2026-11-23T02:24:58Z`                                |
+| Updated @ | `2026-11-23T02:43:35Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/706) |
 
 -----
 
-# LLM Weight
+# LLM 权重量化
 
 大语言模型的推理常常受**显存和带宽**限制：权重搬运比计算更耗时。**仅权重量化（weight-only
 quantization）**把权重压到 4 bit（甚至 3、2 bit），计算时再反量化回 FP16

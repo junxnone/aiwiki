@@ -2,12 +2,12 @@
 Title | MO Quantization LLM Weight
 -- | --
 Created @ | `2026-11-23T02:18:05Z`
-Updated @| `2026-11-23T02:24:58Z`
+Updated @| `2026-11-23T02:43:35Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/706)
 
 ---
-# LLM Weight
+# LLM 权重量化
 
 大语言模型的推理常常受**显存和带宽**限制：权重搬运比计算更耗时。**仅权重量化（weight-only quantization）**把权重压到 4 bit（甚至 3、2 bit），计算时再反量化回 FP16 或直接用专用内核，对延迟和显存都有明显收益，是 LLM 部署的主流做法。与传统 CNN 量化不同，LLM 的权重量化要在**不能重新训练**（成本太高）、**只有少量校准数据**的前提下，做到 4 bit 近乎无损。本文覆盖几种有代表性的方法：GPTQ（*GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers*，ICLR 2023，arXiv:2210.17323）、AWQ（*AWQ: Activation-aware Weight Quantization for On-Device LLM Compression and Acceleration*，MLSys 2024，arXiv:2306.00978）、SpQR（*SpQR: A Sparse-Quantized Representation for Near-Lossless LLM Weight Compression*，arXiv:2306.03078）、QuIP#（*QuIP#: Even Better LLM Quantization with Hadamard Incoherence and Lattice Codebooks*，ICML 2024，arXiv:2402.04396）、AQLM（*Extreme Compression of Large Language Models via Additive Quantization*，arXiv:2401.06118），以及 NF4/QLoRA（见 [数据类型](/0700_MO_Quantization_DataType)）和 GGUF 格式。
 
@@ -201,4 +201,5 @@ AQLM 把"极端压缩"（每参数 2～3 bit）视为多码本量化（MCQ）问
 - Tseng A, Chee J, Sun Q, Kuleshov V, De Sa C. QuIP#: Even Better LLM Quantization with Hadamard Incoherence and Lattice Codebooks. ICML 2024. arXiv:2402.04396
 - Egiazarian V, Panferov A, Kuznedelev D, Frantar E, Babenko A, Alistarh D. Extreme Compression of Large Language Models via Additive Quantization. arXiv:2401.06118 `[会议待核实]`
 - Dettmers T, Pagnoni A, Holtzman A, Zettlemoyer L. QLoRA: Efficient Finetuning of Quantized LLMs. NeurIPS 2023. arXiv:2305.14314
+
 
