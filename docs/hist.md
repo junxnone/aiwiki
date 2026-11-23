@@ -680,6 +680,7 @@
 - 2026-11-23&nbsp;&nbsp; [Relation](/0691_MO_KD_Relation)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Relation
 - 2026-11-23&nbsp;&nbsp; [Feature](/0690_MO_KD_Feature)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Feature
 - 2026-11-23&nbsp;&nbsp; [Response](/0689_MO_KD_Response)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Response
+- 2026-11-23&nbsp;&nbsp; [知识蒸馏发展历史](/0336_MO_KD_History)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:History
 - 2026-11-20&nbsp;&nbsp; [量化发展历史](/0688_MO_Quantization_History)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:History
 - 2026-11-20&nbsp;&nbsp; [MambaSingleLayer](/0687_ML_Tasks_TimeSeries_Deep_MambaSingleLayer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:MambaSingleLayer
 - 2026-11-20&nbsp;&nbsp; [MultiPatchFormer](/0686_ML_Tasks_TimeSeries_Deep_MultiPatchFormer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:MultiPatchFormer
@@ -740,7 +741,6 @@
 - 2026-11-20&nbsp;&nbsp; [N-HiTS](/0629_ML_Tasks_TimeSeries_Deep_NHiTS)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:NHiTS
 - 2026-11-20&nbsp;&nbsp; [N-BEATS](/0628_ML_Tasks_TimeSeries_Deep_NBEATS)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:NBEATS
 - 2026-11-20&nbsp;&nbsp; [ROCKET](/0627_ML_Tasks_TimeSeries_ML_ROCKET)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:ML :bookmark:ROCKET
-- 2026-11-20&nbsp;&nbsp; [知识蒸馏发展历史](/0336_MO_KD_History)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:History
 - 2026-11-19&nbsp;&nbsp; [Needle](/0665_x_needle)&nbsp;&nbsp; :bookmark:x :bookmark:needle
 - 2026-11-19&nbsp;&nbsp; [Transformer History](/0664_ML_Transformer_History)&nbsp;&nbsp; :bookmark:ML :bookmark:Transformer :bookmark:History
 - 2026-11-19&nbsp;&nbsp; [TCN](/0626_ML_Tasks_TimeSeries_Deep_TCN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:TCN
