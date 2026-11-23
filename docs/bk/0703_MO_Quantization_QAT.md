@@ -3,13 +3,13 @@
 | Title     | MO Quantization QAT                                   |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-23T02:11:34Z`                                |
-| Updated @ | `2026-11-23T02:25:14Z`                                |
+| Updated @ | `2026-11-23T02:43:24Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/703) |
 
 -----
 
-# QAT
+# 量化感知训练（QAT）
 
 量化感知训练（Quantization-Aware
 Training，QAT）在训练或微调时就把量化"放进"网络：前向传播里模拟量化（先量化再反量化，称为

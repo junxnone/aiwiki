@@ -2,12 +2,12 @@
 Title | MO Quantization QAT
 -- | --
 Created @ | `2026-11-23T02:11:34Z`
-Updated @| `2026-11-23T02:25:14Z`
+Updated @| `2026-11-23T02:43:24Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/703)
 
 ---
-# QAT
+# 量化感知训练（QAT）
 
 量化感知训练（Quantization-Aware Training，QAT）在训练或微调时就把量化"放进"网络：前向传播里模拟量化（先量化再反量化，称为 fake quantization / 伪量化），让网络在训练过程中感受到量化带来的误差并自行适应。代价是需要训练数据、算力和时间；好处是同等位宽下通常比训练后量化（PTQ）精度更高，特别是在 4 bit 以下。本文覆盖：QAT 的基本机制（伪量化、直通估计器 STE）、DoReFa-Net（*DoReFa-Net: Training Low Bitwidth Convolutional Neural Networks with Low Bitwidth Gradients*，arXiv:1606.06160）、PACT（*PACT: Parameterized Clipping Activation for Quantized Neural Networks*，arXiv:1805.06085）、LSQ（*Learned Step Size Quantization*，ICLR 2020，arXiv:1902.08153），以及 QAT 中的 BN 处理和与知识蒸馏的结合。STE 来自 Bengio 等人的 *Estimating or Propagating Gradients Through Stochastic Neurons for Conditional Computation*（arXiv:1308.3432）。
 
@@ -187,4 +187,5 @@ Qualcomm 白皮书给出的标准 QAT 流程（从预训练模型出发，并先
 - Esser S K, McKinstry J L, Bablani D, Appuswamy R, Modha D S. Learned Step Size Quantization. ICLR 2020. arXiv:1902.08153
 - Nagel M, Amjad R A, van Baalen M 等. A White Paper on Neural Network Quantization. arXiv:2106.08295
 - Jacob B 等. Quantization and Training of Neural Networks for Efficient Integer-Arithmetic-Only Inference. CVPR 2018. arXiv:1712.05877
+
 
