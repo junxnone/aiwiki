@@ -2,18 +2,15 @@
 Title | ML Tasks TimeSeries Classical
 -- | --
 Created @ | `2026-11-10T09:17:20Z`
-Updated @| `2026-11-19T09:42:09Z`
+Updated @| `2026-11-23T06:17:00Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/604)
 
 ---
-# 经典统计时间序列模型：方法详解、理论骨架与发展脉络
+# 经典统计时间序列模型
 
-> 读者：想真正弄懂 ARIMA、指数平滑、状态空间这些"老方法"怎么用、为什么成立、边界在哪、如何被扩展、与深度学习怎么对接的工程师和研究者。配套文档：[survey](0603_ML_Tasks_TimeSeries)（总览）、[metrics](0610_ML_Tasks_TimeSeries_Metrics)（评估指标）、[timeline](0611_ML_Tasks_TimeSeries_Timeline)（时间线）。
->
-> 公式用 LaTeX 书写，需要支持数学渲染的 Markdown 查看器。
->
-> 标注：**[V]** 书目信息经 Crossref 或 arXiv API 核对（标题、作者、年份、期刊与 DOI 或编号；只核对书目，未重读全文）；**[经验]** 编者判断；**待核实** 凭记忆写出或书目信息核对不完全（例如 Crossref 命中的是后来的再版）。方法的数学形式与推导是标准内容，由编者归纳整理。文中例子的数字是为说明概念构造的。
+> 配套文档：[survey](0603_ML_Tasks_TimeSeries)（总览）、[metrics](0610_ML_Tasks_TimeSeries_Metrics)（评估指标）、[timeline](0611_ML_Tasks_TimeSeries_Timeline)（时间线）。
+
 
 ## 0. 先看全景
 
