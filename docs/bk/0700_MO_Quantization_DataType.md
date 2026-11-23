@@ -3,13 +3,13 @@
 | Title     | MO Quantization DataType                              |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-23T02:05:31Z`                                |
-| Updated @ | `2026-11-23T02:24:53Z`                                |
+| Updated @ | `2026-11-23T02:43:12Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/700) |
 
 -----
 
-# DataType
+# 量化数据类型（FP8/MX/NF4）
 
 量化不只有"整数"一条路。随着模型变大，硬件开始原生支持各种低位宽的**浮点与块缩放（microscaling）格式**。这一篇把常见的数值格式放在一起看：位布局（符号、指数、尾数）、表示范围、特殊值，以及它们各自适合放在哪里。涉及的主要文献有：*FP8
 Formats for Deep

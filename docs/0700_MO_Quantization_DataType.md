@@ -2,12 +2,12 @@
 Title | MO Quantization DataType
 -- | --
 Created @ | `2026-11-23T02:05:31Z`
-Updated @| `2026-11-23T02:24:53Z`
+Updated @| `2026-11-23T02:43:12Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/700)
 
 ---
-# DataType
+# 量化数据类型（FP8/MX/NF4）
 
 量化不只有"整数"一条路。随着模型变大，硬件开始原生支持各种低位宽的**浮点与块缩放（microscaling）格式**。这一篇把常见的数值格式放在一起看：位布局（符号、指数、尾数）、表示范围、特殊值，以及它们各自适合放在哪里。涉及的主要文献有：*FP8 Formats for Deep Learning*（NVIDIA、Arm、Intel，arXiv:2209.05433）、*Microscaling Data Formats for Deep Learning*（MX 格式，Microsoft、AMD、Arm、Intel、Meta、NVIDIA、Qualcomm 等，arXiv:2310.10537）和 *QLoRA*（4-bit NormalFloat，NF4，arXiv:2305.14314）。
 
@@ -168,4 +168,5 @@ $$
 - Rouhani B D 等. Microscaling Data Formats for Deep Learning. arXiv:2310.10537
 - Dettmers T, Pagnoni A, Holtzman A, Zettlemoyer L. QLoRA: Efficient Finetuning of Quantized LLMs. NeurIPS 2023. arXiv:2305.14314
 - Open Compute Project. OCP Microscaling Formats (MX) Specification. `[未核对原文]`
+
 
