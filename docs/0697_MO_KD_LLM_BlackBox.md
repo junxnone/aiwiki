@@ -2,12 +2,12 @@
 Title | MO KD LLM BlackBox
 -- | --
 Created @ | `2026-11-23T01:57:04Z`
-Updated @| `2026-11-23T01:58:58Z`
+Updated @| `2026-11-23T02:43:01Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/697)
 
 ---
-# LLM BlackBox
+# LLM 黑盒蒸馏
 
 "黑盒"蒸馏指**只能拿到 Teacher 生成的文本**，拿不到 logits 或中间层。这正是调用闭源大模型 API（GPT-4、Claude 等）时的现实：没有概率分布，只有输出的文本。此时蒸馏就退化成"让强模型产生训练数据，再对弱模型做监督微调（SFT）"，也常被称为**数据蒸馏**或**合成数据蒸馏**。本文覆盖这条路线的几个代表：Self-Instruct（*Self-Instruct: Aligning Language Models with Self-Generated Instructions*，ACL 2023，arXiv:2212.10560）及其衍生的 Alpaca 路线；Distilling Step-by-Step（*Distilling Step-by-Step! Outperforming Larger Language Models with Less Training Data and Smaller Model Sizes*，arXiv:2305.02301）；以及把大推理模型的长链式思考（CoT）蒸馏到小模型的 DeepSeek-R1 蒸馏（*DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning*，arXiv:2501.12948）。
 
@@ -173,4 +173,5 @@ DeepSeek-R1 论文在主体（R1-Zero、R1 的强化学习）之外，还把 R1 
 - Taori R 等. Stanford Alpaca: An Instruction-following LLaMA Model. 2023. `[链接未核实]`
 - Hsieh C-Y, Li C-L, Yeh C-K, Nakhost H, Fujii Y, Ratner A, Krishna R, Lee C-Y, Pfister T. Distilling Step-by-Step! Outperforming Larger Language Models with Less Training Data and Smaller Model Sizes. Findings of ACL 2023. arXiv:2305.02301
 - DeepSeek-AI. DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning. arXiv:2501.12948
+
 

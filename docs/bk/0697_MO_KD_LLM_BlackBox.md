@@ -3,13 +3,13 @@
 | Title     | MO KD LLM BlackBox                                    |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-23T01:57:04Z`                                |
-| Updated @ | `2026-11-23T01:58:58Z`                                |
+| Updated @ | `2026-11-23T02:43:01Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/697) |
 
 -----
 
-# LLM BlackBox
+# LLM 黑盒蒸馏
 
 "黑盒"蒸馏指**只能拿到 Teacher 生成的文本**，拿不到 logits 或中间层。这正是调用闭源大模型
 API（GPT-4、Claude
