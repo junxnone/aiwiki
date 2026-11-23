@@ -2,20 +2,14 @@
 Title | ML Tasks TimeSeries Deep
 -- | --
 Created @ | `2026-11-10T09:17:24Z`
-Updated @| `2026-11-19T09:43:45Z`
+Updated @| `2026-11-23T06:17:13Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/606)
 
 ---
-# 深度学习时间序列模型：方法详解、原理与发展脉络
+# 深度学习时间序列模型
 
-> 读者：想弄清 RNN、CNN、MLP、Transformer、状态空间这几大类深度时序模型各自怎么做、为什么这样设计、哪些设计经得起检验、哪些只是基准上的现象的工程师和研究者。
->
 > 配套文档：[总览](0603_ML_Tasks_TimeSeries)｜[经典统计模型](0604_ML_Tasks_TimeSeries_Classical)｜[机器学习](0605_ML_Tasks_TimeSeries_ML)｜[评估指标](0610_ML_Tasks_TimeSeries_Metrics)｜[生成式](0607_ML_Tasks_TimeSeries_Generative)｜[基础模型](0608_ML_Tasks_TimeSeries_Foundation)｜[时间线](0611_ML_Tasks_TimeSeries_Timeline)。
->
-> 公式用 LaTeX 书写，需要支持数学渲染的 Markdown 查看器。
->
-> 标注：**[V]** 书目信息经 Crossref 或 arXiv API 核对（标题、作者、年份、期刊与 DOI 或编号；arXiv 条目另读过摘要页，论述与摘要一致，不含全文核对）；**[经验]** 编者判断，需用自己的数据验证；**待核实** 凭记忆写出或书目核对不完全（对模型内部结构的细节描述，凡未读摘要或原文者，一律视为待核实）。方法的数学形式是标准内容，由编者归纳整理。本文不引用任何模型在具体基准上的得分，例子中的数字是为说明概念构造的。核对日期：2026-11-10。
 
 ## 0. 先看全景
 
