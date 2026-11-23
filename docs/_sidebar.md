@@ -514,6 +514,7 @@
     - [Calibration](/0701_MO_Quantization_Calibration)
     - [DataType](/0700_MO_Quantization_DataType)
     - [量化发展历史](/0688_MO_Quantization_History)
+    - [PTQ](/0702_MO_Quantization_PTQ)
 - [RL 强化学习](/0290_RL)
   - [Advantage Actor Critic](/0460_RL_A2C)
   - [Actor Critic](/0459_RL_AC)
@@ -674,4 +675,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1008181123</sub></kbd>
+<kbd><sub>@1010561123</sub></kbd>

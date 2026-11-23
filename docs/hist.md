@@ -4,6 +4,7 @@
 
 #### **Created**
 
+- 2026-11-23&nbsp;&nbsp; [PTQ](/0702_MO_Quantization_PTQ)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:PTQ
 - 2026-11-23&nbsp;&nbsp; [Calibration](/0701_MO_Quantization_Calibration)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:Calibration
 - 2026-11-23&nbsp;&nbsp; [DataType](/0700_MO_Quantization_DataType)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:DataType
 - 2026-11-23&nbsp;&nbsp; [Basics](/0699_MO_Quantization_Basics)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:Basics
@@ -673,6 +674,7 @@
 
 #### **Updated**
 
+- 2026-11-23&nbsp;&nbsp; [PTQ](/0702_MO_Quantization_PTQ)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:PTQ
 - 2026-11-23&nbsp;&nbsp; [Calibration](/0701_MO_Quantization_Calibration)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:Calibration
 - 2026-11-23&nbsp;&nbsp; [DataType](/0700_MO_Quantization_DataType)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:DataType
 - 2026-11-23&nbsp;&nbsp; [Basics](/0699_MO_Quantization_Basics)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:Basics
