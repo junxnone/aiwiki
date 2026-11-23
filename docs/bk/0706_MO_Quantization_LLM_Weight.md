@@ -3,7 +3,7 @@
 | Title     | MO Quantization LLM Weight                            |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-23T02:18:05Z`                                |
-| Updated @ | `2026-11-23T02:18:23Z`                                |
+| Updated @ | `2026-11-23T02:24:58Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/706) |
 
@@ -38,7 +38,7 @@ Models via Additive Quantization*，arXiv:2401.06118），以及 NF4/QLoRA（见
 [基础原理](/0699_MO_Quantization_Basics)；数据格式
 [数据类型](/0700_MO_Quantization_DataType)；通用 PTQ 重建方法
 [PTQ](/0702_MO_Quantization_PTQ)；LLM 的权重+激活量化 [LLM
-WA](/XXXX_MO_Quantization_LLM_WA)；系列中的
+WA](/0707_MO_Quantization_LLM_WA)；系列中的
 [量化历史](/0688_MO_Quantization_History)。
 
 ## 1\. 解决什么问题
@@ -262,8 +262,8 @@ Quantization）\*\*推广到 LLM，两项创新：
   - 先用 **4 bit 的 PTQ**（AWQ 或 GPTQ，分组大小常取 128）；
   - 需要更低位宽（≤3 bit）或小模型要求近无损时，考虑 SpQR、QuIP\#、AQLM，同时确认推理框架是否支持相应的内核；
   - 本地 CPU/边缘部署常用 llama.cpp + GGUF（社区常用 Q4\_K\_M）；
-  - 同时量化激活的方案见 [LLM 权重+激活量化](/XXXX_MO_Quantization_LLM_WA)；KV Cache 见
-    [KV Cache 量化](/XXXX_MO_Quantization_KVCache)。
+  - 同时量化激活的方案见 [LLM 权重+激活量化](/0707_MO_Quantization_LLM_WA)；KV Cache 见
+    [KV Cache 量化](/0708_MO_Quantization_KVCache)。
 
 ## Reference
 
