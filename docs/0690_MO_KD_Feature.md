@@ -2,7 +2,7 @@
 Title | MO KD Feature
 -- | --
 Created @ | `2026-11-23T01:45:00Z`
-Updated @| `2026-11-23T01:45:00Z`
+Updated @| `2026-11-23T01:58:44Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/690)
 
@@ -15,7 +15,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/690)
 
 > 标注约定：未标注的内容来自上述论文原文；`[解读]` 是对论文的理解，`[经验]` 是一般经验，`[待核实]` 是未能确认的内容。
 
-本站相关：总览 [知识蒸馏](0207_MO_KD)；发展历史 [KD History](0336_MO_KD_History)；输出层蒸馏 [响应蒸馏](/0689_MO_KD_Response)；关系蒸馏 [关系蒸馏](/XXXX_MO_KD_Relation)；检测与视觉 Transformer 中的特征蒸馏见 [检测/分割/ViT 蒸馏](/XXXX_MO_KD_CV)。
+本站相关：总览 [知识蒸馏](0207_MO_KD)；发展历史 [KD History](0336_MO_KD_History)；输出层蒸馏 [响应蒸馏](/0689_MO_KD_Response)；关系蒸馏 [关系蒸馏](/0691_MO_KD_Relation)；检测与视觉 Transformer 中的特征蒸馏见 [检测/分割/ViT 蒸馏](/0695_MO_KD_CV)。
 
 ## 1. 解决什么问题
 
@@ -203,7 +203,7 @@ ReviewKD：T1 ←─ U(S1,S2,S3,S4)
 
 - 特征蒸馏比响应蒸馏提供更密的监督信号，但需要处理师生结构对齐问题，选层与适配模块是主要的工程成本；
 - 之后的 DKD（见 [响应蒸馏](/0689_MO_KD_Response)）表明，只要 logit 蒸馏的损失设计得当，也能达到接近特征蒸馏的效果，两类方法并不互斥，常常叠加使用；
-- 在检测、分割里，通道/空间信息更关键，特征蒸馏通常是首选（详见 [检测/分割/ViT 蒸馏](/XXXX_MO_KD_CV)）。
+- 在检测、分割里，通道/空间信息更关键，特征蒸馏通常是首选（详见 [检测/分割/ViT 蒸馏](/0695_MO_KD_CV)）。
 
 ## Reference
 
