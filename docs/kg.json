@@ -3160,6 +3160,15 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki MO KD DataFree",
+      "group": 3,
+      "title": "DataFree",
+      "url": "https://junxnone.github.io/aiwiki/#/0694_MO_KD_DataFree",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Op Convolution Math",
       "group": 4,
       "title": "卷积 数学定义",
@@ -7581,6 +7590,13 @@
     {
       "source": "aiwiki MO KD",
       "target": "aiwiki MO KD Self",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki MO KD",
+      "target": "aiwiki MO KD DataFree",
       "value": 3,
       "visible": true,
       "expand": true

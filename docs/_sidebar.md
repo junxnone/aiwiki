@@ -496,6 +496,7 @@
   - [大模型分布图](/0498_LM_map)
 - [模型性能优化技术](/0471_MO)
   - [知识蒸馏](/0207_MO_KD)
+    - [DataFree](/0694_MO_KD_DataFree)
     - [Feature](/0690_MO_KD_Feature)
     - [知识蒸馏发展历史](/0336_MO_KD_History)
     - [Online](/0692_MO_KD_Online)
@@ -665,4 +666,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0950211123</sub></kbd>
+<kbd><sub>@0951531123</sub></kbd>
