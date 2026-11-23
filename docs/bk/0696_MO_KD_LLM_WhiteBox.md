@@ -3,13 +3,13 @@
 | Title     | MO KD LLM WhiteBox                                    |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-23T01:55:41Z`                                |
-| Updated @ | `2026-11-23T01:58:56Z`                                |
+| Updated @ | `2026-11-23T02:42:57Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/696) |
 
 -----
 
-# LLM WhiteBox
+# LLM 白盒蒸馏
 
 "白盒"指蒸馏时**能访问 Teacher 的完整输出分布（logits）甚至中间层**，与只能拿到 Teacher
 生成文本的"黑盒"蒸馏相对（见 [LLM

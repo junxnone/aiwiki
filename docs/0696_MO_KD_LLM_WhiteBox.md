@@ -2,12 +2,12 @@
 Title | MO KD LLM WhiteBox
 -- | --
 Created @ | `2026-11-23T01:55:41Z`
-Updated @| `2026-11-23T01:58:56Z`
+Updated @| `2026-11-23T02:42:57Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/696)
 
 ---
-# LLM WhiteBox
+# LLM 白盒蒸馏
 
 "白盒"指蒸馏时**能访问 Teacher 的完整输出分布（logits）甚至中间层**，与只能拿到 Teacher 生成文本的"黑盒"蒸馏相对（见 [LLM 黑盒蒸馏](/0697_MO_KD_LLM_BlackBox)）。语言模型的白盒蒸馏经历了三个阶段：先是机器翻译里把蒸馏从词级推到序列级（Seq-KD），然后是 BERT 时代的编码器压缩（DistilBERT、TinyBERT、MiniLM），再到生成式大模型的蒸馏（MiniLLM、GKD、DistiLLM），后者的核心问题是**自回归解码中训练与推理的分布不一致**。本文覆盖：Seq-KD（*Sequence-Level Knowledge Distillation*，EMNLP 2016，arXiv:1606.07947）、DistilBERT（arXiv:1910.01108）、TinyBERT（*TinyBERT: Distilling BERT for Natural Language Understanding*，arXiv:1909.10351）、MiniLM（arXiv:2002.10957）、MiniLLM（*MiniLLM: On-Policy Distillation of Large Language Models*，ICLR 2024，arXiv:2306.08543）、GKD（*On-Policy Distillation of Language Models: Learning from Self-Generated Mistakes*，ICLR 2024，arXiv:2306.13649）和 DistiLLM（*DistiLLM: Towards Streamlined Distillation for Large Language Models*，arXiv:2402.03898）。
 
@@ -222,4 +222,5 @@ $$
 - Gu Y, Dong L, Wei F, Huang M. MiniLLM: On-Policy Distillation of Large Language Models. ICLR 2024. arXiv:2306.08543
 - Agarwal R, Vieillard N, Zhou Y 等. On-Policy Distillation of Language Models: Learning from Self-Generated Mistakes. ICLR 2024. arXiv:2306.13649 `[作者列表待核实]`
 - Ko J, Kim S, Chen T, Yun S-Y. DistiLLM: Towards Streamlined Distillation for Large Language Models. ICML 2024 `[会议待核实]`. arXiv:2402.03898
+
 
