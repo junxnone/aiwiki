@@ -2,7 +2,7 @@
 Title | MO Quantization LLM WA
 -- | --
 Created @ | `2026-11-23T02:20:33Z`
-Updated @| `2026-11-23T02:20:33Z`
+Updated @| `2026-11-23T02:21:03Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/707)
 
@@ -75,7 +75,7 @@ $$
 s_j=\frac{\max(|X_j|)^{\alpha}}{\max(|W_j|)^{1-\alpha}}
 $$
 
-其中：$X_j$ 是第 $j$ 个输入通道的激活，$W_j$ 是对应的权重行，$\alpha\in[0,1]$ 是迁移强度；$s_j$ 是在校准样本上统计得到的；$\alpha=0.5$ 对多数模型（如所有 OPT、BLOOM）是均衡点，使对应通道的权重与激活的最大值相近，便于同样的量化器；模型的激活离群更严重时（如 GLM-130B）可以取更大的 $\alpha$。
+其中：$X_j$ 是第 $j$ 个输入通道的激活，$W_j$ 是对应的权重行，$\alpha\in[0,1]$ 是迁移强度；$s_j$ 是在校准样本上统计得到的；$\alpha=0.5$ 对多数模型（如所有 OPT、BLOOM）是均衡点，使对应通道的权重与激活的最大值相近，便于同样的量化器；模型的激活离群更严重时（如 GLM-130B）可以取更大的 $\alpha$ `[具体取值待核实]`。
 
 ### 4.3 在 Transformer 中的应用与效率档位
 
