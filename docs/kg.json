@@ -3124,6 +3124,15 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki MO KD Feature",
+      "group": 3,
+      "title": "Feature",
+      "url": "https://junxnone.github.io/aiwiki/#/0690_MO_KD_Feature",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Op Convolution Math",
       "group": 4,
       "title": "卷积 数学定义",
@@ -7517,6 +7526,13 @@
     {
       "source": "aiwiki MO KD",
       "target": "aiwiki MO KD Response",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki MO KD",
+      "target": "aiwiki MO KD Feature",
       "value": 3,
       "visible": true,
       "expand": true
