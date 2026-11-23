@@ -5,7 +5,6 @@ on:
 jobs:
   issue2md:
     runs-on: ubuntu-latest
-    if: contains(fromJSON('["OWNER","COLLABORATOR"]'), github.event.issue.author_association)
     outputs:
       commit_hash: ${{ steps.backup-last-commit.outputs.commit_hash }}
     steps:
