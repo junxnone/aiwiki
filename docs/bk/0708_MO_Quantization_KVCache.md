@@ -3,13 +3,13 @@
 | Title     | MO Quantization KVCache                               |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-23T02:22:30Z`                                |
-| Updated @ | `2026-11-23T02:22:30Z`                                |
+| Updated @ | `2026-11-23T02:43:43Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/708) |
 
 -----
 
-# KVCache
+# KV Cache 量化
 
 自回归生成时，每一层注意力要缓存此前所有 token 的 Key 和 Value（KV
 cache），避免重复计算。当上下文变长、批量变大，**KV

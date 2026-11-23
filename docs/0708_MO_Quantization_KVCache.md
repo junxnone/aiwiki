@@ -2,12 +2,12 @@
 Title | MO Quantization KVCache
 -- | --
 Created @ | `2026-11-23T02:22:30Z`
-Updated @| `2026-11-23T02:22:30Z`
+Updated @| `2026-11-23T02:43:43Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/708)
 
 ---
-# KVCache
+# KV Cache 量化
 
 自回归生成时，每一层注意力要缓存此前所有 token 的 Key 和 Value（KV cache），避免重复计算。当上下文变长、批量变大，**KV cache 取代权重成为显存占用的主角**，同时每一步解码都要把整块缓存从显存读入，造成计算核心空闲、推理速度受带宽限制。因此需要对 KV cache 单独做量化。本文覆盖两个代表：KIVI（*KIVI: A Tuning-Free Asymmetric 2bit Quantization for KV Cache*，arXiv:2402.02750）和 KVQuant（*KVQuant: Towards 10 Million Context Length LLM Inference with KV Cache Quantization*，arXiv:2401.18079）。
 
@@ -142,4 +142,5 @@ $$
 - Liu Z, Yuan J, Jin H, Zhong S, Xu Z, Braverman V, Chen B, Hu X. KIVI: A Tuning-Free Asymmetric 2bit Quantization for KV Cache. arXiv:2402.02750
 - Hooper C, Kim S, Mohammadzadeh H, Mahoney M W, Shao Y S, Keutzer K, Gholami A. KVQuant: Towards 10 Million Context Length LLM Inference with KV Cache Quantization. arXiv:2401.18079
 - Su J 等. RoFormer: Enhanced Transformer with Rotary Position Embedding（RoPE）. 2021. `[未读原文]`
+
 
