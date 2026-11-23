@@ -681,6 +681,7 @@
 - 2026-11-23&nbsp;&nbsp; [Feature](/0690_MO_KD_Feature)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Feature
 - 2026-11-23&nbsp;&nbsp; [Response](/0689_MO_KD_Response)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Response
 - 2026-11-23&nbsp;&nbsp; [知识蒸馏发展历史](/0336_MO_KD_History)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:History
+- 2026-11-23&nbsp;&nbsp; [Distilling the Knowledge in a Neural Network](/0208_MO_KD_s)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:s
 - 2026-11-20&nbsp;&nbsp; [量化发展历史](/0688_MO_Quantization_History)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:History
 - 2026-11-20&nbsp;&nbsp; [MambaSingleLayer](/0687_ML_Tasks_TimeSeries_Deep_MambaSingleLayer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:MambaSingleLayer
 - 2026-11-20&nbsp;&nbsp; [MultiPatchFormer](/0686_ML_Tasks_TimeSeries_Deep_MultiPatchFormer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:MultiPatchFormer
@@ -1051,7 +1052,6 @@
 - 2024-08-05&nbsp;&nbsp; [模型可视化](/0133_Tools_VIS)&nbsp;&nbsp; :bookmark:Tools :bookmark:VIS
 - 2024-07-26&nbsp;&nbsp; [Grounding DINO](/0464_paper_GroundingDINO)&nbsp;&nbsp; :bookmark:paper :bookmark:GroundingDINO
 - 2024-06-28&nbsp;&nbsp; [PostProcessing](/0370_ML_PostP)&nbsp;&nbsp; :bookmark:ML :bookmark:PostP
-- 2024-06-28&nbsp;&nbsp; [Distilling the Knowledge in a Neural Network](/0208_MO_KD_s)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:s
 - 2024-06-22&nbsp;&nbsp; [Eureka](/0470_paper_Eureka)&nbsp;&nbsp; :bookmark:paper :bookmark:Eureka
 - 2024-06-18&nbsp;&nbsp; [SAA+](/0469_paper_SAAplus)&nbsp;&nbsp; :bookmark:paper :bookmark:SAAplus
 - 2024-06-18&nbsp;&nbsp; [CLIP](/0448_paper_CLIP)&nbsp;&nbsp; :bookmark:paper :bookmark:CLIP
