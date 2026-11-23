@@ -510,6 +510,7 @@
     - [Theory](/0698_MO_KD_Theory)
     - [Distilling the Knowledge in a Neural Network](/0208_MO_KD_s)
   - [量化](/0312_MO_Quantization)
+    - [Basics](/0699_MO_Quantization_Basics)
     - [量化发展历史](/0688_MO_Quantization_History)
 - [RL 强化学习](/0290_RL)
   - [Advantage Actor Critic](/0460_RL_A2C)
@@ -671,4 +672,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1002451123</sub></kbd>
+<kbd><sub>@1004291123</sub></kbd>
