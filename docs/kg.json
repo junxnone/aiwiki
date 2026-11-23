@@ -4744,6 +4744,15 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki MO Quantization LLM WA",
+      "group": 4,
+      "title": "LLM WA",
+      "url": "https://junxnone.github.io/aiwiki/#/0707_MO_Quantization_LLM_WA",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Tasks Image Classification LeNet",
       "group": 5,
       "title": "LeNet",

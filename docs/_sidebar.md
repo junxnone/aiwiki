@@ -515,6 +515,7 @@
     - [DataType](/0700_MO_Quantization_DataType)
     - [量化发展历史](/0688_MO_Quantization_History)
     - LLM
+      - [LLM WA](/0707_MO_Quantization_LLM_WA)
       - [LLM Weight](/0706_MO_Quantization_LLM_Weight)
     - [LowBit](/0704_MO_Quantization_LowBit)
     - [MixedPrecision](/0705_MO_Quantization_MixedPrecision)
@@ -680,4 +681,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1019111123</sub></kbd>
+<kbd><sub>@1021511123</sub></kbd>
