@@ -2,12 +2,12 @@
 Title | MO KD Feature
 -- | --
 Created @ | `2026-11-23T01:45:00Z`
-Updated @| `2026-11-23T01:58:44Z`
+Updated @| `2026-11-23T02:42:33Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/690)
 
 ---
-# Feature
+# 特征蒸馏（Feature-based KD）
 
 特征蒸馏（Feature-based KD）让 Student 匹配 Teacher **中间层**的特征，而不只是最终输出。中间特征带来更丰富的监督信号，尤其适合 Student 比 Teacher 更深更瘦、或任务依赖空间信息（检测、分割）的场景。本文覆盖这一类的四个代表：FitNets（*FitNets: Hints for Thin Deep Nets*，ICLR 2015，arXiv:1412.6550）、Attention Transfer（*Paying More Attention to Attention*，ICLR 2017，arXiv:1612.03928）、CRD（*Contrastive Representation Distillation*，ICLR 2020，arXiv:1910.10699）和 ReviewKD（*Distilling Knowledge via Knowledge Review*，CVPR 2021，arXiv:2104.09044），并简述 FSP。
 
@@ -212,4 +212,5 @@ ReviewKD：T1 ←─ U(S1,S2,S3,S4)
 - Yim J, Joo D, Bae J, Kim J. A Gift from Knowledge Distillation: Fast Optimization, Network Minimization and Transfer Learning (FSP). CVPR 2017. `[无 arXiv，未读原文]`
 - Tian Y, Krishnan D, Isola P. Contrastive Representation Distillation. ICLR 2020. arXiv:1910.10699
 - Chen P, Liu S, Zhao H, Jia J. Distilling Knowledge via Knowledge Review. CVPR 2021. arXiv:2104.09044
+
 

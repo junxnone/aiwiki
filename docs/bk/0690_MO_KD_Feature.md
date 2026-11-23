@@ -3,13 +3,13 @@
 | Title     | MO KD Feature                                         |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-23T01:45:00Z`                                |
-| Updated @ | `2026-11-23T01:58:44Z`                                |
+| Updated @ | `2026-11-23T02:42:33Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/690) |
 
 -----
 
-# Feature
+# 特征蒸馏（Feature-based KD）
 
 特征蒸馏（Feature-based KD）让 Student 匹配 Teacher
 **中间层**的特征，而不只是最终输出。中间特征带来更丰富的监督信号，尤其适合
