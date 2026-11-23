@@ -2,7 +2,7 @@
 Title | MO KD DataFree
 -- | --
 Created @ | `2026-11-23T01:50:51Z`
-Updated @| `2026-11-23T01:50:51Z`
+Updated @| `2026-11-23T02:24:44Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/694)
 
@@ -15,7 +15,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/694)
 
 > 标注约定：未标注的内容来自上述论文原文；`[解读]` 是对论文的理解，`[经验]` 是一般经验，`[待核实]` 是未能确认的内容。
 
-本站相关：总览 [知识蒸馏](0207_MO_KD)；发展历史 [KD History](0336_MO_KD_History)；蒸馏损失基础 [响应蒸馏](/0689_MO_KD_Response)；ZSKT 中使用的注意力迁移见 [特征蒸馏](/0690_MO_KD_Feature)；量化中同样存在"无数据"流派，见 [量化 PTQ](/XXXX_MO_Quantization_PTQ)（DFQ 等）。
+本站相关：总览 [知识蒸馏](0207_MO_KD)；发展历史 [KD History](0336_MO_KD_History)；蒸馏损失基础 [响应蒸馏](/0689_MO_KD_Response)；ZSKT 中使用的注意力迁移见 [特征蒸馏](/0690_MO_KD_Feature)；量化中同样存在"无数据"流派，见 [量化 PTQ](/0702_MO_Quantization_PTQ)（DFQ 等）。
 
 ## 1. 解决什么问题
 
