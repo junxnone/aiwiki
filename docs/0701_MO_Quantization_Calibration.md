@@ -2,7 +2,7 @@
 Title | MO Quantization Calibration
 -- | --
 Created @ | `2026-11-23T02:07:17Z`
-Updated @| `2026-11-23T02:07:17Z`
+Updated @| `2026-11-23T02:24:51Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/701)
 
@@ -15,7 +15,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/701)
 
 > 标注约定：未标注的内容来自上述论文原文；`[解读]` 是对论文的理解，`[经验]` 是一般经验，`[待核实]` 是未能确认的内容（如 TensorRT KL 校准的实现细节未读到原始文档）。
 
-本站相关：总览 [量化](0312_MO_Quantization)；量化基础与误差 [基础原理](/0699_MO_Quantization_Basics)；校准用于 [训练后量化 PTQ](/XXXX_MO_Quantization_PTQ)；系列中的 [量化历史](/0688_MO_Quantization_History)。
+本站相关：总览 [量化](0312_MO_Quantization)；量化基础与误差 [基础原理](/0699_MO_Quantization_Basics)；校准用于 [训练后量化 PTQ](/0702_MO_Quantization_PTQ)；系列中的 [量化历史](/0688_MO_Quantization_History)。
 
 ## 1. 解决什么问题
 
@@ -138,7 +138,7 @@ $$
 表中：
 
 - 第一列是方法，第二列是是否截断大值，第三列是是否依赖校准数据，第四列是优化目标，第五列是适用场景与注意点；
-- 实际工程上，常按网络类型试几种方法并挑选（NVIDIA 的推荐流程是先对 max、entropy、几个百分位做统一校准、评估后选最优，达不到精度再做逐层敏感度分析、跳过最敏感的层，见 [训练后量化 PTQ](/XXXX_MO_Quantization_PTQ)）；
+- 实际工程上，常按网络类型试几种方法并挑选（NVIDIA 的推荐流程是先对 max、entropy、几个百分位做统一校准、评估后选最优，达不到精度再做逐层敏感度分析、跳过最敏感的层，见 [训练后量化 PTQ](/0702_MO_Quantization_PTQ)）；
 - 权重一般用 max 校准 + 逐通道即可（NVIDIA 的实验）；激活才是校准方法的主战场。
 
 下图以激活直方图示意不同截断阈值的位置：
@@ -164,7 +164,7 @@ $$
 
 - 校准的本质是 clipping 与 rounding 的折中；低位宽（4 bit 及以下）时必须主动截断，高位宽（8 bit）时 max 往往也能工作；
 - 实践上：权重 max（逐通道）、激活试 entropy / 99.99% / MSE，最后一层 logits 单独处理，并检查最敏感的层；
-- 当校准无法达到精度要求时，转向更强的 PTQ 方法（如 AdaRound、BRECQ，见 [训练后量化](/XXXX_MO_Quantization_PTQ)）或量化感知训练（见 [QAT](/XXXX_MO_Quantization_QAT)）。
+- 当校准无法达到精度要求时，转向更强的 PTQ 方法（如 AdaRound、BRECQ，见 [训练后量化](/0702_MO_Quantization_PTQ)）或量化感知训练（见 [QAT](/0703_MO_Quantization_QAT)）。
 
 ## Reference
 
