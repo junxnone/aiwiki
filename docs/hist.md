@@ -4,6 +4,7 @@
 
 #### **Created**
 
+- 2026-11-23&nbsp;&nbsp; [Online](/0692_MO_KD_Online)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Online
 - 2026-11-23&nbsp;&nbsp; [Relation](/0691_MO_KD_Relation)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Relation
 - 2026-11-23&nbsp;&nbsp; [Feature](/0690_MO_KD_Feature)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Feature
 - 2026-11-23&nbsp;&nbsp; [Response](/0689_MO_KD_Response)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Response
@@ -663,6 +664,7 @@
 
 #### **Updated**
 
+- 2026-11-23&nbsp;&nbsp; [Online](/0692_MO_KD_Online)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Online
 - 2026-11-23&nbsp;&nbsp; [Relation](/0691_MO_KD_Relation)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Relation
 - 2026-11-23&nbsp;&nbsp; [Feature](/0690_MO_KD_Feature)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Feature
 - 2026-11-23&nbsp;&nbsp; [Response](/0689_MO_KD_Response)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Response
