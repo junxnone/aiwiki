@@ -3,7 +3,7 @@
 | Title     | MO Quantization Basics                                |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-23T02:03:30Z`                                |
-| Updated @ | `2026-11-23T02:03:30Z`                                |
+| Updated @ | `2026-11-23T02:24:49Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/699) |
 
@@ -103,7 +103,7 @@ $\\alpha\\le0\\le\\beta$，范围会被"推"到包含 0，Jacob 论文称为 nud
   - 想减少截断误差，就扩大范围、增大 $s$；
   - 但 $s$ 增大会使舍入误差（范围 $\[-\\tfrac12s,\\tfrac12s\]$）变大；
   - 如何选 $\[\\alpha,\\beta\]$ 是量化的核心问题之一，见
-    [校准](/XXXX_MO_Quantization_Calibration)。
+    [校准](/0701_MO_Quantization_Calibration)。
 
 ## 4\. 对称量化与非对称量化
 
@@ -144,7 +144,7 @@ $$
 量化参数（$S$、$Z$）在多大范围内共享，称为量化粒度。\*\*逐张量（per-tensor）\*\*整个 tensor
 共用一组参数，所有定点加速器都支持；\*\*逐通道（per-channel）\*\*每个输出通道一组参数，当不同通道的权重范围差异很大时能明显提升精度（Qualcomm
 白皮书：权重的逐通道量化可以改善精度）。组粒度的做法见 [LLM
-权重量化](/XXXX_MO_Quantization_LLM_Weight)。
+权重量化](/0706_MO_Quantization_LLM_Weight)。
 
 ## 6\. 整数推理的算术
 
@@ -211,7 +211,7 @@ $$
     上方差的滑动平均估计；$\\varepsilon$：数值稳定的小常数；
   - 折叠后的偏置同理合并（偏置折叠式见 [OpenVINO BN 折叠](0564_Tools_OV_MO_BNFolding)）；
   - 量化应该**在折叠之后**对 $w\_{fold}$ 做；训练时要模拟这一折叠（见
-    [量化感知训练](/XXXX_MO_Quantization_QAT)）。折叠后每个输出通道的权重范围由
+    [量化感知训练](/0703_MO_Quantization_QAT)）。折叠后每个输出通道的权重范围由
     $\\gamma/\\sigma$ 决定，通道间差异可能变大，这也是逐通道量化更有利的原因之一 `[解读]`。
 
 ## 7\. 汇总
