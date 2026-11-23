@@ -3,7 +3,7 @@
 | Title     | MO Quantization MixedPrecision                        |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-23T02:15:36Z`                                |
-| Updated @ | `2026-11-23T02:15:36Z`                                |
+| Updated @ | `2026-11-23T02:25:02Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/705) |
 
@@ -30,7 +30,7 @@ Hardware-Aware Automated Quantization with Mixed Precision*，CVPR
 [基础原理](/0699_MO_Quantization_Basics)；校准
 [校准](/0701_MO_Quantization_Calibration)；量化感知训练
 [QAT](/0703_MO_Quantization_QAT)；LLM 中的混合精度/离群值处理 [LLM
-权重量化](/XXXX_MO_Quantization_LLM_Weight)；系列中的
+权重量化](/0706_MO_Quantization_LLM_Weight)；系列中的
 [量化历史](/0688_MO_Quantization_History)。
 
 ## 1\. 解决什么问题
@@ -217,7 +217,7 @@ $\[0,c\]$（因为是 ReLU 的非负输出）。
   - 混合精度的核心原则：**敏感层高位、不敏感层低位**；怎样度量"敏感度"是关键（梯度不可靠，曲率或硬件反馈更合适）；
   - 工程上先用 Hessian 类的分析方法缩小范围，再在目标硬件上验证延迟；硬件是否支持逐层不同位宽也是前提；
   - 在 LLM 里，混合精度的思想以"少数离群值/显著通道保留高精度"的形式出现（如 SpQR、AWQ，见 [LLM
-    权重量化](/XXXX_MO_Quantization_LLM_Weight)）。
+    权重量化](/0706_MO_Quantization_LLM_Weight)）。
 
 ## Reference
 
