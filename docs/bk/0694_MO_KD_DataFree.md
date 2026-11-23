@@ -3,13 +3,13 @@
 | Title     | MO KD DataFree                                        |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-23T01:50:51Z`                                |
-| Updated @ | `2026-11-23T02:24:44Z`                                |
+| Updated @ | `2026-11-23T02:42:49Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/694) |
 
 -----
 
-# DataFree
+# 无数据蒸馏（Data-Free KD）
 
 无数据蒸馏（Data-free KD）解决的是这样的场景：Teacher
 已经训练好并发布，**但训练数据拿不到**（隐私、版权、数据太大或被删除）。普通蒸馏需要用原始数据（或同分布数据）让

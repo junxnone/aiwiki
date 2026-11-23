@@ -2,12 +2,12 @@
 Title | MO KD DataFree
 -- | --
 Created @ | `2026-11-23T01:50:51Z`
-Updated @| `2026-11-23T02:24:44Z`
+Updated @| `2026-11-23T02:42:49Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/694)
 
 ---
-# DataFree
+# 无数据蒸馏（Data-Free KD）
 
 无数据蒸馏（Data-free KD）解决的是这样的场景：Teacher 已经训练好并发布，**但训练数据拿不到**（隐私、版权、数据太大或被删除）。普通蒸馏需要用原始数据（或同分布数据）让 Student 去匹配 Teacher 的输出，没有数据就无从下手。无数据蒸馏的思路是**自己合成训练样本**：要么训练一个生成器，要么直接对输入做优化。本文覆盖三个代表：DAFL（*Data-Free Learning of Student Networks*，ICCV 2019，arXiv:1904.01186）、DeepInversion / Adaptive DeepInversion（*Dreaming to Distill: Data-free Knowledge Transfer via DeepInversion*，CVPR 2020，arXiv:1912.08795）和 ZSKT（*Zero-shot Knowledge Transfer via Adversarial Belief Matching*，NeurIPS 2019，arXiv:1905.09768），并区分一个容易混淆的概念——数据集蒸馏（Dataset Distillation）。
 
@@ -157,4 +157,5 @@ $$
 - Yin H, Molchanov P, Li Z, Alvarez J M, Mallya A, Hoiem D, Jha N K, Kautz J. Dreaming to Distill: Data-free Knowledge Transfer via DeepInversion. CVPR 2020. arXiv:1912.08795
 - Micaelli P, Storkey A `[第二作者待核实]`. Zero-shot Knowledge Transfer via Adversarial Belief Matching. NeurIPS 2019. arXiv:1905.09768
 - Wang T, Zhu J-Y, Torralba A, Efros A A. Dataset Distillation. arXiv:1811.10959
+
 
