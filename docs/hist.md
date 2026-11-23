@@ -682,6 +682,7 @@
 - 2026-11-23&nbsp;&nbsp; [Response](/0689_MO_KD_Response)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Response
 - 2026-11-23&nbsp;&nbsp; [知识蒸馏发展历史](/0336_MO_KD_History)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:History
 - 2026-11-23&nbsp;&nbsp; [Distilling the Knowledge in a Neural Network](/0208_MO_KD_s)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:s
+- 2026-11-23&nbsp;&nbsp; [知识蒸馏](/0207_MO_KD)&nbsp;&nbsp; :bookmark:MO :bookmark:KD
 - 2026-11-20&nbsp;&nbsp; [量化发展历史](/0688_MO_Quantization_History)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:History
 - 2026-11-20&nbsp;&nbsp; [MambaSingleLayer](/0687_ML_Tasks_TimeSeries_Deep_MambaSingleLayer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:MambaSingleLayer
 - 2026-11-20&nbsp;&nbsp; [MultiPatchFormer](/0686_ML_Tasks_TimeSeries_Deep_MultiPatchFormer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:MultiPatchFormer
@@ -936,7 +937,6 @@
 - 2026-10-19&nbsp;&nbsp; [边缘](/0065_CV_Edge)&nbsp;&nbsp; :bookmark:CV :bookmark:Edge
 - 2026-10-18&nbsp;&nbsp; [模型性能优化技术](/0471_MO)&nbsp;&nbsp; :bookmark:MO
 - 2026-10-18&nbsp;&nbsp; [量化](/0312_MO_Quantization)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization
-- 2026-10-18&nbsp;&nbsp; [知识蒸馏](/0207_MO_KD)&nbsp;&nbsp; :bookmark:MO :bookmark:KD
 - 2026-10-16&nbsp;&nbsp; [模型可解释性前沿状态](/0558_Hot_Interpretability)&nbsp;&nbsp; :bookmark:Hot :bookmark:Interpretability
 - 2026-10-16&nbsp;&nbsp; [Model Precision](/0450_x_Model_Precision)&nbsp;&nbsp; :bookmark:x :bookmark:Model :bookmark:Precision
 - 2026-10-15&nbsp;&nbsp; [Harness Benchmark](/0557_Hot_Harness_Benchmark)&nbsp;&nbsp; :bookmark:Hot :bookmark:Harness :bookmark:Benchmark
