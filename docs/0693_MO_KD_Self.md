@@ -2,12 +2,12 @@
 Title | MO KD Self
 -- | --
 Created @ | `2026-11-23T01:49:16Z`
-Updated @| `2026-11-23T01:49:16Z`
+Updated @| `2026-11-23T02:42:45Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/693)
 
 ---
-# Self
+# 自蒸馏（Self-Distillation）
 
 自蒸馏（Self-distillation）让**模型自己同时充当 Teacher 和 Student**：用自己更早的训练阶段、更深的层、同类的其他样本，或一个人工设计的分布作为"老师"。它去掉了"先训练一个大 Teacher"的前提，也让人重新审视 KD 为什么有效——也许一部分原因是软目标的**正则化作用**。本文覆盖四个代表：BAN（*Born Again Neural Networks*，ICML 2018，arXiv:1805.04770）、BYOT（*Be Your Own Teacher*，ICCV 2019，arXiv:1905.08094）、CS-KD（*Regularizing Class-wise Predictions via Self-knowledge Distillation*，CVPR 2020，arXiv:2003.13964）和 Tf-KD（*Revisiting Knowledge Distillation via Label Smoothing Regularization*，arXiv:1909.11723）。
 
@@ -167,4 +167,5 @@ $$
 - Zhang L 等. Be Your Own Teacher: Improve the Performance of Convolutional Neural Networks via Self Distillation. ICCV 2019. arXiv:1905.08094 `[作者列表待核实]`
 - Yun S, Park J, Lee K, Shin J. Regularizing Class-wise Predictions via Self-knowledge Distillation. CVPR 2020. arXiv:2003.13964
 - Yuan L, Tay F E H, Li G, Wang T, Feng J. Revisiting Knowledge Distillation via Label Smoothing Regularization. arXiv:1909.11723
+
 

@@ -3,13 +3,13 @@
 | Title     | MO KD Self                                            |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-23T01:49:16Z`                                |
-| Updated @ | `2026-11-23T01:49:16Z`                                |
+| Updated @ | `2026-11-23T02:42:45Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/693) |
 
 -----
 
-# Self
+# 自蒸馏（Self-Distillation）
 
 自蒸馏（Self-distillation）让**模型自己同时充当 Teacher 和
 Student**：用自己更早的训练阶段、更深的层、同类的其他样本，或一个人工设计的分布作为"老师"。它去掉了"先训练一个大
