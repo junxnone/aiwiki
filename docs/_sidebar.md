@@ -500,6 +500,8 @@
     - [DataFree](/0694_MO_KD_DataFree)
     - [Feature](/0690_MO_KD_Feature)
     - [知识蒸馏发展历史](/0336_MO_KD_History)
+    - LLM
+      - [LLM WhiteBox](/0696_MO_KD_LLM_WhiteBox)
     - [Online](/0692_MO_KD_Online)
     - [Relation](/0691_MO_KD_Relation)
     - [Response](/0689_MO_KD_Response)
@@ -667,4 +669,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0953381123</sub></kbd>
+<kbd><sub>@0956361123</sub></kbd>
