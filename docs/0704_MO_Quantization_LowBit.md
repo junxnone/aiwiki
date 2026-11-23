@@ -2,12 +2,12 @@
 Title | MO Quantization LowBit
 -- | --
 Created @ | `2026-11-23T02:13:43Z`
-Updated @| `2026-11-23T02:25:00Z`
+Updated @| `2026-11-23T02:43:28Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/704)
 
 ---
-# LowBit
+# 低比特量化（二值/三值）
 
 当位宽降到 1~2 bit，量化就进入**二值化 / 三值化**的极限区域：权重只取 $\{-1,+1\}$ 或 $\{-1,0,+1\}$，乘法可以退化成加减法或位运算，模型体积压缩 16～32 倍。本文覆盖这条路线的四个代表：BinaryConnect（*BinaryConnect: Training Deep Neural Networks with binary weights during propagations*，NeurIPS 2015，arXiv:1511.00363）、XNOR-Net（*XNOR-Net: ImageNet Classification Using Binary Convolutional Neural Networks*，ECCV 2016，arXiv:1603.05279）、TWN（*Ternary Weight Networks*，arXiv:1605.04711）和 BitNet b1.58（*The Era of 1-bit LLMs: All Large Language Models are in 1.58 Bits*，arXiv:2402.17764）。
 
@@ -187,4 +187,5 @@ $$
 - Rastegari M, Ordonez V, Redmon J, Farhadi A. XNOR-Net: ImageNet Classification Using Binary Convolutional Neural Networks. ECCV 2016. arXiv:1603.05279 `[作者列表待核实]`
 - Li F, Liu B, Wang X, Zhang B, Yan J. Ternary Weight Networks. arXiv:1605.04711
 - Ma S, Wang H, Ma L, Wang L, Wang W, Huang S, Dong L, Wang R, Xue J, Wei F. The Era of 1-bit LLMs: All Large Language Models are in 1.58 Bits. arXiv:2402.17764
+
 
