@@ -279,9 +279,9 @@
         - [Anomaly Transformer](/0648_ML_Tasks_TimeSeries_Anomaly_AnomalyTransformer)
         - [KANAD](/0680_ML_Tasks_TimeSeries_Anomaly_KANAD)
         - [TranAD](/0649_ML_Tasks_TimeSeries_Anomaly_TranAD)
-      - [经典统计时间序列模型：方法详解、理论骨架与发展脉络](/0604_ML_Tasks_TimeSeries_Classical)
+      - [经典统计时间序列模型](/0604_ML_Tasks_TimeSeries_Classical)
         - [ARIMA](/0624_ML_Tasks_TimeSeries_Classical_ARIMA)
-      - [深度学习时间序列模型：方法详解、原理与发展脉络](/0606_ML_Tasks_TimeSeries_Deep)
+      - [深度学习时间序列模型](/0606_ML_Tasks_TimeSeries_Deep)
         - [Autoformer](/0636_ML_Tasks_TimeSeries_Deep_Autoformer)
         - [Crossformer](/0685_ML_Tasks_TimeSeries_Deep_Crossformer)
         - [DLinear](/0630_ML_Tasks_TimeSeries_Deep_DLinear)
@@ -320,7 +320,7 @@
         - [TimesNet](/0631_ML_Tasks_TimeSeries_Deep_TimesNet)
         - [WPMixer](/0677_ML_Tasks_TimeSeries_Deep_WPMixer)
         - [iTransformer](/0639_ML_Tasks_TimeSeries_Deep_iTransformer)
-      - [时间序列基础模型：方法详解、原理与发展脉络](/0608_ML_Tasks_TimeSeries_Foundation)
+      - [时间序列-Foundation Model](/0608_ML_Tasks_TimeSeries_Foundation)
         - [Chronos](/0660_ML_Tasks_TimeSeries_Foundation_Chronos)
         - [Chronos2](/0682_ML_Tasks_TimeSeries_Foundation_Chronos2)
         - [GPT4TS](/0650_ML_Tasks_TimeSeries_Foundation_GPT4TS)
@@ -336,11 +336,11 @@
         - [Time-MoE](/0662_ML_Tasks_TimeSeries_Foundation_TimeMoE)
         - [Timer](/0656_ML_Tasks_TimeSeries_Foundation_Timer)
         - [TimesFM](/0654_ML_Tasks_TimeSeries_Foundation_TimesFM)
-      - [生成式时间序列模型：方法详解、原理与发展脉络](/0607_ML_Tasks_TimeSeries_Generative)
+      - [生成式时间序列模型](/0607_ML_Tasks_TimeSeries_Generative)
         - [CSDI](/0647_ML_Tasks_TimeSeries_Generative_CSDI)
         - [TS2Vec](/0646_ML_Tasks_TimeSeries_Generative_TS2Vec)
         - [TimeGrad](/0645_ML_Tasks_TimeSeries_Generative_TimeGrad)
-      - [机器学习时间序列模型：方法详解、原理与发展脉络](/0605_ML_Tasks_TimeSeries_ML)
+      - [机器学习时间序列模型](/0605_ML_Tasks_TimeSeries_ML)
         - [GBDT](/0658_ML_Tasks_TimeSeries_ML_GBDT)
         - [ROCKET](/0627_ML_Tasks_TimeSeries_ML_ROCKET)
       - [时间序列模型评估指标：公式、历史与现行评估方式、优缺点](/0610_ML_Tasks_TimeSeries_Metrics)
@@ -683,4 +683,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1417001123</sub></kbd>
+<kbd><sub>@1418191123</sub></kbd>

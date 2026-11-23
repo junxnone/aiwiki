@@ -105,11 +105,11 @@
 - 2026-11-10&nbsp;&nbsp; [时间序列模型发展时间线](/0611_ML_Tasks_TimeSeries_Timeline)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Timeline
 - 2026-11-10&nbsp;&nbsp; [时间序列模型评估指标：公式、历史与现行评估方式、优缺点](/0610_ML_Tasks_TimeSeries_Metrics)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Metrics
 - 2026-11-10&nbsp;&nbsp; [时间序列-异常检测](/0609_ML_Tasks_TimeSeries_Anomaly)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Anomaly
-- 2026-11-10&nbsp;&nbsp; [时间序列基础模型：方法详解、原理与发展脉络](/0608_ML_Tasks_TimeSeries_Foundation)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Foundation
-- 2026-11-10&nbsp;&nbsp; [生成式时间序列模型：方法详解、原理与发展脉络](/0607_ML_Tasks_TimeSeries_Generative)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Generative
-- 2026-11-10&nbsp;&nbsp; [深度学习时间序列模型：方法详解、原理与发展脉络](/0606_ML_Tasks_TimeSeries_Deep)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep
-- 2026-11-10&nbsp;&nbsp; [机器学习时间序列模型：方法详解、原理与发展脉络](/0605_ML_Tasks_TimeSeries_ML)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:ML
-- 2026-11-10&nbsp;&nbsp; [经典统计时间序列模型：方法详解、理论骨架与发展脉络](/0604_ML_Tasks_TimeSeries_Classical)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Classical
+- 2026-11-10&nbsp;&nbsp; [时间序列-Foundation Model](/0608_ML_Tasks_TimeSeries_Foundation)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Foundation
+- 2026-11-10&nbsp;&nbsp; [生成式时间序列模型](/0607_ML_Tasks_TimeSeries_Generative)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Generative
+- 2026-11-10&nbsp;&nbsp; [深度学习时间序列模型](/0606_ML_Tasks_TimeSeries_Deep)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep
+- 2026-11-10&nbsp;&nbsp; [机器学习时间序列模型](/0605_ML_Tasks_TimeSeries_ML)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:ML
+- 2026-11-10&nbsp;&nbsp; [经典统计时间序列模型](/0604_ML_Tasks_TimeSeries_Classical)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Classical
 - 2026-11-10&nbsp;&nbsp; [时间序列模型](/0603_ML_Tasks_TimeSeries)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries
 - 2026-10-21&nbsp;&nbsp; [channels_last 内存格式](/0602_Tools_Pytorch_Speed_ChannelsLast)&nbsp;&nbsp; :bookmark:Tools :bookmark:Pytorch :bookmark:Speed :bookmark:ChannelsLast
 - 2026-10-21&nbsp;&nbsp; [ExecuTorch](/0601_Tools_Pytorch_ExecuTorch)&nbsp;&nbsp; :bookmark:Tools :bookmark:Pytorch :bookmark:ExecuTorch
@@ -704,6 +704,11 @@
 - 2026-11-23&nbsp;&nbsp; [响应蒸馏（Response-based KD）](/0689_MO_KD_Response)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Response
 - 2026-11-23&nbsp;&nbsp; [量化发展历史](/0688_MO_Quantization_History)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:History
 - 2026-11-23&nbsp;&nbsp; [时间序列-异常检测](/0609_ML_Tasks_TimeSeries_Anomaly)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Anomaly
+- 2026-11-23&nbsp;&nbsp; [时间序列-Foundation Model](/0608_ML_Tasks_TimeSeries_Foundation)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Foundation
+- 2026-11-23&nbsp;&nbsp; [生成式时间序列模型](/0607_ML_Tasks_TimeSeries_Generative)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Generative
+- 2026-11-23&nbsp;&nbsp; [深度学习时间序列模型](/0606_ML_Tasks_TimeSeries_Deep)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep
+- 2026-11-23&nbsp;&nbsp; [机器学习时间序列模型](/0605_ML_Tasks_TimeSeries_ML)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:ML
+- 2026-11-23&nbsp;&nbsp; [经典统计时间序列模型](/0604_ML_Tasks_TimeSeries_Classical)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Classical
 - 2026-11-23&nbsp;&nbsp; [时间序列模型](/0603_ML_Tasks_TimeSeries)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries
 - 2026-11-23&nbsp;&nbsp; [Specular Highlight Removal](/0540_ML_Tasks_Image_SHR)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:SHR
 - 2026-11-23&nbsp;&nbsp; [模型性能优化技术](/0471_MO)&nbsp;&nbsp; :bookmark:MO
@@ -777,11 +782,6 @@
 - 2026-11-19&nbsp;&nbsp; [ARIMA](/0624_ML_Tasks_TimeSeries_Classical_ARIMA)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Classical :bookmark:ARIMA
 - 2026-11-19&nbsp;&nbsp; [时间序列模型发展时间线](/0611_ML_Tasks_TimeSeries_Timeline)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Timeline
 - 2026-11-19&nbsp;&nbsp; [时间序列模型评估指标：公式、历史与现行评估方式、优缺点](/0610_ML_Tasks_TimeSeries_Metrics)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Metrics
-- 2026-11-19&nbsp;&nbsp; [时间序列基础模型：方法详解、原理与发展脉络](/0608_ML_Tasks_TimeSeries_Foundation)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Foundation
-- 2026-11-19&nbsp;&nbsp; [生成式时间序列模型：方法详解、原理与发展脉络](/0607_ML_Tasks_TimeSeries_Generative)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Generative
-- 2026-11-19&nbsp;&nbsp; [深度学习时间序列模型：方法详解、原理与发展脉络](/0606_ML_Tasks_TimeSeries_Deep)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep
-- 2026-11-19&nbsp;&nbsp; [机器学习时间序列模型：方法详解、原理与发展脉络](/0605_ML_Tasks_TimeSeries_ML)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:ML
-- 2026-11-19&nbsp;&nbsp; [经典统计时间序列模型：方法详解、理论骨架与发展脉络](/0604_ML_Tasks_TimeSeries_Classical)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Classical
 - 2026-11-19&nbsp;&nbsp; [Transformer in Transformer](/0360_ML_Transformer_TiT)&nbsp;&nbsp; :bookmark:ML :bookmark:Transformer :bookmark:TiT
 - 2026-11-19&nbsp;&nbsp; [DeiT](/0253_ML_Transformer_DeiT)&nbsp;&nbsp; :bookmark:ML :bookmark:Transformer :bookmark:DeiT
 - 2026-11-19&nbsp;&nbsp; [Transformer](/0229_ML_Transformer)&nbsp;&nbsp; :bookmark:ML :bookmark:Transformer

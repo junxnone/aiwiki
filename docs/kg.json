@@ -4638,7 +4638,7 @@
     {
       "id": "aiwiki ML Tasks TimeSeries Classical",
       "group": 4,
-      "title": "经典统计时间序列模型：方法详解、理论骨架与发展脉络",
+      "title": "经典统计时间序列模型",
       "url": "https://junxnone.github.io/aiwiki/#/0604_ML_Tasks_TimeSeries_Classical",
       "visible": true,
       "expand": true,
@@ -4647,7 +4647,7 @@
     {
       "id": "aiwiki ML Tasks TimeSeries ML",
       "group": 4,
-      "title": "机器学习时间序列模型：方法详解、原理与发展脉络",
+      "title": "机器学习时间序列模型",
       "url": "https://junxnone.github.io/aiwiki/#/0605_ML_Tasks_TimeSeries_ML",
       "visible": true,
       "expand": true,
@@ -4656,7 +4656,7 @@
     {
       "id": "aiwiki ML Tasks TimeSeries Deep",
       "group": 4,
-      "title": "深度学习时间序列模型：方法详解、原理与发展脉络",
+      "title": "深度学习时间序列模型",
       "url": "https://junxnone.github.io/aiwiki/#/0606_ML_Tasks_TimeSeries_Deep",
       "visible": true,
       "expand": true,
@@ -4665,7 +4665,7 @@
     {
       "id": "aiwiki ML Tasks TimeSeries Generative",
       "group": 4,
-      "title": "生成式时间序列模型：方法详解、原理与发展脉络",
+      "title": "生成式时间序列模型",
       "url": "https://junxnone.github.io/aiwiki/#/0607_ML_Tasks_TimeSeries_Generative",
       "visible": true,
       "expand": true,
@@ -4674,7 +4674,7 @@
     {
       "id": "aiwiki ML Tasks TimeSeries Foundation",
       "group": 4,
-      "title": "时间序列基础模型：方法详解、原理与发展脉络",
+      "title": "时间序列-Foundation Model",
       "url": "https://junxnone.github.io/aiwiki/#/0608_ML_Tasks_TimeSeries_Foundation",
       "visible": true,
       "expand": true,
