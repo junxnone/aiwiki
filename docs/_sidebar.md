@@ -275,7 +275,7 @@
     - [Motion Detection 运动侦测](/0243_ML_Tasks_MD)
     - [MetricLearning](/0157_ML_Tasks_MetricLearning)
     - [时间序列模型](/0603_ML_Tasks_TimeSeries)
-      - [时间序列异常检测：方法详解、评估与发展脉络](/0609_ML_Tasks_TimeSeries_Anomaly)
+      - [时间序列-异常检测](/0609_ML_Tasks_TimeSeries_Anomaly)
         - [Anomaly Transformer](/0648_ML_Tasks_TimeSeries_Anomaly_AnomalyTransformer)
         - [KANAD](/0680_ML_Tasks_TimeSeries_Anomaly_KANAD)
         - [TranAD](/0649_ML_Tasks_TimeSeries_Anomaly_TranAD)
@@ -683,4 +683,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1416091123</sub></kbd>
+<kbd><sub>@1417001123</sub></kbd>

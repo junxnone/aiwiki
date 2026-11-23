@@ -4683,7 +4683,7 @@
     {
       "id": "aiwiki ML Tasks TimeSeries Anomaly",
       "group": 4,
-      "title": "时间序列异常检测：方法详解、评估与发展脉络",
+      "title": "时间序列-异常检测",
       "url": "https://junxnone.github.io/aiwiki/#/0609_ML_Tasks_TimeSeries_Anomaly",
       "visible": true,
       "expand": true,
