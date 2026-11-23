@@ -3,13 +3,13 @@
 | Title     | MO Quantization PTQ                                   |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-23T02:09:47Z`                                |
-| Updated @ | `2026-11-23T02:25:04Z`                                |
+| Updated @ | `2026-11-23T02:43:20Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/702) |
 
 -----
 
-# PTQ
+# 训练后量化（PTQ）
 
 训练后量化（Post-Training
 Quantization，PTQ）是在**已经训练好的模型**上直接量化，不做端到端重新训练，只用少量（常常是无标签的）校准数据，甚至完全不用数据。它速度快、使用门槛低，是工业部署里的首选；难点在于位宽降到

@@ -2,12 +2,12 @@
 Title | MO Quantization PTQ
 -- | --
 Created @ | `2026-11-23T02:09:47Z`
-Updated @| `2026-11-23T02:25:04Z`
+Updated @| `2026-11-23T02:43:20Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/702)
 
 ---
-# PTQ
+# 训练后量化（PTQ）
 
 训练后量化（Post-Training Quantization，PTQ）是在**已经训练好的模型**上直接量化，不做端到端重新训练，只用少量（常常是无标签的）校准数据，甚至完全不用数据。它速度快、使用门槛低，是工业部署里的首选；难点在于位宽降到 4 bit 及以下时，简单的"四舍五入 + 校准范围"精度会明显下降。本文覆盖四个有代表性的 PTQ 方法：DFQ（*Data-Free Quantization Through Weight Equalization and Bias Correction*，ICCV 2019，arXiv:1906.04721）、AdaRound（*Up or Down? Adaptive Rounding for Post-Training Quantization*，ICML 2020，arXiv:2004.10568）、BRECQ（*BRECQ: Pushing the Limit of Post-Training Quantization by Block Reconstruction*，ICLR 2021，arXiv:2102.05426）和 QDrop（*QDrop: Randomly Dropping Quantization for Extremely Low-bit Post-Training Quantization*，ICLR 2022，arXiv:2203.05740）。
 
@@ -206,4 +206,5 @@ $$
 - Nagel M, Amjad R A, van Baalen M, Louizos C, Blankevoort T. Up or Down? Adaptive Rounding for Post-Training Quantization. ICML 2020. arXiv:2004.10568 `[作者列表待核实]`
 - Li Y 等. BRECQ: Pushing the Limit of Post-Training Quantization by Block Reconstruction. ICLR 2021. arXiv:2102.05426 `[作者列表待核实]`
 - Wei X, Gong R, Li Y, Liu X, Yu F. QDrop: Randomly Dropping Quantization for Extremely Low-bit Post-Training Quantization. ICLR 2022. arXiv:2203.05740
+
 
