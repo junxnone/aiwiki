@@ -2,7 +2,7 @@
 Title | MO Quantization LLM WA
 -- | --
 Created @ | `2026-11-23T02:20:33Z`
-Updated @| `2026-11-23T02:21:03Z`
+Updated @| `2026-11-23T02:24:56Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/707)
 
@@ -15,7 +15,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/707)
 
 > 标注约定：未标注的内容来自上述论文原文；`[解读]` 是对论文的理解，`[经验]` 是一般经验，`[待核实]` 是未能确认的内容（如 SpinQuant、FP8 推理的细节未读原文）。
 
-本站相关：总览 [量化](0312_MO_Quantization)；基础 [基础原理](/0699_MO_Quantization_Basics)；数据格式（FP8、MX）[数据类型](/0700_MO_Quantization_DataType)；仅权重量化 [LLM 权重量化](/0706_MO_Quantization_LLM_Weight)；KV Cache 量化 [KV Cache](/XXXX_MO_Quantization_KVCache)；系列中的 [量化历史](/0688_MO_Quantization_History)。
+本站相关：总览 [量化](0312_MO_Quantization)；基础 [基础原理](/0699_MO_Quantization_Basics)；数据格式（FP8、MX）[数据类型](/0700_MO_Quantization_DataType)；仅权重量化 [LLM 权重量化](/0706_MO_Quantization_LLM_Weight)；KV Cache 量化 [KV Cache](/0708_MO_Quantization_KVCache)；系列中的 [量化历史](/0688_MO_Quantization_History)。
 
 ## 1. 解决什么问题
 
@@ -170,7 +170,7 @@ FP8 推理不需要把激活压成整数，而是用 FP8 的 E4M3/E5M2 格式（
 
 - W8A8（SmoothQuant、LLM.int8()）已经相当成熟，适合服务端加速；W4A4 需要旋转类方法（QuaRot、SpinQuant）或更强的重建；
 - 与仅权重量化（W4A16）相比，WA 量化多了对激活的校准与离群值处理，但能同时利用整数算力，加速预填充；
-- 权重与激活的量化往往要和 KV cache 量化一起考虑（见 [KV Cache](/XXXX_MO_Quantization_KVCache)）。
+- 权重与激活的量化往往要和 KV cache 量化一起考虑（见 [KV Cache](/0708_MO_Quantization_KVCache)）。
 
 ## Reference
 

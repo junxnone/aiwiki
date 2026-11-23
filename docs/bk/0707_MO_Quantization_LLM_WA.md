@@ -3,7 +3,7 @@
 | Title     | MO Quantization LLM WA                                |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-23T02:20:33Z`                                |
-| Updated @ | `2026-11-23T02:21:03Z`                                |
+| Updated @ | `2026-11-23T02:24:56Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/707) |
 
@@ -37,7 +37,7 @@ cache。**
 本站相关：总览 [量化](0312_MO_Quantization)；基础
 [基础原理](/0699_MO_Quantization_Basics)；数据格式（FP8、MX）[数据类型](/0700_MO_Quantization_DataType)；仅权重量化
 [LLM 权重量化](/0706_MO_Quantization_LLM_Weight)；KV Cache 量化 [KV
-Cache](/XXXX_MO_Quantization_KVCache)；系列中的
+Cache](/0708_MO_Quantization_KVCache)；系列中的
 [量化历史](/0688_MO_Quantization_History)。
 
 ## 1\. 解决什么问题
@@ -256,7 +256,7 @@ E4M3，并用逐张量的缩放因子把数值范围对齐到 FP8 可表示区�
     需要旋转类方法（QuaRot、SpinQuant）或更强的重建；
   - 与仅权重量化（W4A16）相比，WA 量化多了对激活的校准与离群值处理，但能同时利用整数算力，加速预填充；
   - 权重与激活的量化往往要和 KV cache 量化一起考虑（见 [KV
-    Cache](/XXXX_MO_Quantization_KVCache)）。
+    Cache](/0708_MO_Quantization_KVCache)）。
 
 ## Reference
 
