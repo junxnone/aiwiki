@@ -2,12 +2,12 @@
 Title | MO Quantization MixedPrecision
 -- | --
 Created @ | `2026-11-23T02:15:36Z`
-Updated @| `2026-11-23T02:25:02Z`
+Updated @| `2026-11-23T02:43:32Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/705)
 
 ---
-# MixedPrecision
+# 混合精度量化
 
 混合精度量化让**不同层使用不同的位宽**：对量化敏感的层保留较高精度，不敏感的层用更低精度，在相同的模型大小/延迟预算下获得比"全网统一位宽"更好的精度。难点是搜索空间：$L$ 层网络、每层有 $k$ 种位宽，就有 $k^L$ 种配置。本文覆盖两条解决思路：**用 Hessian 的二阶信息度量敏感度**（HAWQ：*HAWQ: Hessian AWare Quantization of Neural Networks with Mixed-Precision*，ICCV 2019，arXiv:1905.03696；HAWQ-V2：*HAWQ-V2: Hessian Aware trace-Weighted Quantization of Neural Networks*，arXiv:1911.03852），以及**用强化学习结合硬件反馈自动搜索**（HAQ：*HAQ: Hardware-Aware Automated Quantization with Mixed Precision*，CVPR 2019，arXiv:1811.08886）。
 
@@ -165,4 +165,5 @@ $$
 - Dong Z, Yao Z, Gholami A, Mahoney M W, Keutzer K. HAWQ: Hessian AWare Quantization of Neural Networks with Mixed-Precision. ICCV 2019. arXiv:1905.03696
 - Dong Z, Yao Z, Cai Y, Arfeen D, Gholami A, Mahoney M W, Keutzer K. HAWQ-V2: Hessian Aware trace-Weighted Quantization of Neural Networks. NeurIPS 2020. arXiv:1911.03852 `[会议待核实]`
 - Wang K, Liu Z, Lin Y, Lin J, Han S. HAQ: Hardware-Aware Automated Quantization with Mixed Precision. CVPR 2019. arXiv:1811.08886 `[第四、五作者待核实]`
+
 
