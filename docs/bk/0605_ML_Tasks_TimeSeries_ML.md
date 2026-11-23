@@ -3,23 +3,15 @@
 | Title     | ML Tasks TimeSeries ML                                |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-10T09:17:22Z`                                |
-| Updated @ | `2026-11-19T09:42:43Z`                                |
+| Updated @ | `2026-11-23T06:17:46Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/605) |
 
 -----
 
-# 机器学习时间序列模型：方法详解、原理与发展脉络
+# 机器学习时间序列模型
 
-> 读者：想弄清"把时序变成监督学习"这条路线怎么做、为什么有效、什么时候不行、与统计模型和深度模型怎么分工的工程师和研究者。
-> 
 > 配套文档：[总览](0603_ML_Tasks_TimeSeries)｜[经典统计模型](0604_ML_Tasks_TimeSeries_Classical)｜[评估指标](0610_ML_Tasks_TimeSeries_Metrics)｜[深度学习](0606_ML_Tasks_TimeSeries_Deep)｜[生成式](0607_ML_Tasks_TimeSeries_Generative)｜[基础模型](0608_ML_Tasks_TimeSeries_Foundation)｜[时间线](0611_ML_Tasks_TimeSeries_Timeline)。
-> 
-> 公式用 LaTeX 书写，需要支持数学渲染的 Markdown 查看器。
-> 
-> 标注：**\[V\]** 书目信息经 Crossref 或 arXiv API 核对（标题、作者、年份、期刊与 DOI 或编号；其中
-> arXiv 条目另读过摘要页，论述与摘要一致，不含全文核对）；**\[经验\]** 编者判断，需用自己的数据验证；**待核实**
-> 凭记忆写出或书目核对不完全。方法的数学形式是标准内容，由编者归纳整理。本文不引用任何模型在具体基准上的得分，例子中的数字是为说明概念构造的。核对日期：2026-11-10。
 
 ## 0\. 先看全景
 
