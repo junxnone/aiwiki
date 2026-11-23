@@ -514,6 +514,7 @@
     - [Calibration](/0701_MO_Quantization_Calibration)
     - [DataType](/0700_MO_Quantization_DataType)
     - [量化发展历史](/0688_MO_Quantization_History)
+    - [KVCache](/0708_MO_Quantization_KVCache)
     - LLM
       - [LLM WA](/0707_MO_Quantization_LLM_WA)
       - [LLM Weight](/0706_MO_Quantization_LLM_Weight)
@@ -681,4 +682,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1021511123</sub></kbd>
+<kbd><sub>@1023311123</sub></kbd>

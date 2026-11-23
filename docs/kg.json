@@ -3250,6 +3250,15 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki MO Quantization KVCache",
+      "group": 3,
+      "title": "KVCache",
+      "url": "https://junxnone.github.io/aiwiki/#/0708_MO_Quantization_KVCache",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Op Convolution Math",
       "group": 4,
       "title": "卷积 数学定义",
@@ -7903,6 +7912,13 @@
     {
       "source": "aiwiki MO Quantization",
       "target": "aiwiki MO Quantization MixedPrecision",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki MO Quantization",
+      "target": "aiwiki MO Quantization KVCache",
       "value": 3,
       "visible": true,
       "expand": true
