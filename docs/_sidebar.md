@@ -522,6 +522,7 @@
     - [MixedPrecision](/0705_MO_Quantization_MixedPrecision)
     - [PTQ](/0702_MO_Quantization_PTQ)
     - [QAT](/0703_MO_Quantization_QAT)
+    - [Tools](/0709_MO_Quantization_Tools)
 - [RL 强化学习](/0290_RL)
   - [Advantage Actor Critic](/0460_RL_A2C)
   - [Actor Critic](/0459_RL_AC)
@@ -682,4 +683,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1023311123</sub></kbd>
+<kbd><sub>@1026051123</sub></kbd>

@@ -3259,6 +3259,15 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki MO Quantization Tools",
+      "group": 3,
+      "title": "Tools",
+      "url": "https://junxnone.github.io/aiwiki/#/0709_MO_Quantization_Tools",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Op Convolution Math",
       "group": 4,
       "title": "卷积 数学定义",
@@ -7919,6 +7928,13 @@
     {
       "source": "aiwiki MO Quantization",
       "target": "aiwiki MO Quantization KVCache",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki MO Quantization",
+      "target": "aiwiki MO Quantization Tools",
       "value": 3,
       "visible": true,
       "expand": true

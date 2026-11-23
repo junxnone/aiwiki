@@ -4,6 +4,7 @@
 
 #### **Created**
 
+- 2026-11-23&nbsp;&nbsp; [Tools](/0709_MO_Quantization_Tools)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:Tools
 - 2026-11-23&nbsp;&nbsp; [KVCache](/0708_MO_Quantization_KVCache)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:KVCache
 - 2026-11-23&nbsp;&nbsp; [LLM WA](/0707_MO_Quantization_LLM_WA)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:LLM :bookmark:WA
 - 2026-11-23&nbsp;&nbsp; [LLM Weight](/0706_MO_Quantization_LLM_Weight)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:LLM :bookmark:Weight
@@ -680,6 +681,7 @@
 
 #### **Updated**
 
+- 2026-11-23&nbsp;&nbsp; [Tools](/0709_MO_Quantization_Tools)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:Tools
 - 2026-11-23&nbsp;&nbsp; [KVCache](/0708_MO_Quantization_KVCache)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:KVCache
 - 2026-11-23&nbsp;&nbsp; [LLM WA](/0707_MO_Quantization_LLM_WA)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:LLM :bookmark:WA
 - 2026-11-23&nbsp;&nbsp; [LLM Weight](/0706_MO_Quantization_LLM_Weight)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:LLM :bookmark:Weight
@@ -700,10 +702,10 @@
 - 2026-11-23&nbsp;&nbsp; [Relation](/0691_MO_KD_Relation)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Relation
 - 2026-11-23&nbsp;&nbsp; [Feature](/0690_MO_KD_Feature)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Feature
 - 2026-11-23&nbsp;&nbsp; [Response](/0689_MO_KD_Response)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Response
+- 2026-11-23&nbsp;&nbsp; [量化发展历史](/0688_MO_Quantization_History)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:History
 - 2026-11-23&nbsp;&nbsp; [知识蒸馏发展历史](/0336_MO_KD_History)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:History
 - 2026-11-23&nbsp;&nbsp; [Distilling the Knowledge in a Neural Network](/0208_MO_KD_s)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:s
 - 2026-11-23&nbsp;&nbsp; [知识蒸馏](/0207_MO_KD)&nbsp;&nbsp; :bookmark:MO :bookmark:KD
-- 2026-11-20&nbsp;&nbsp; [量化发展历史](/0688_MO_Quantization_History)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:History
 - 2026-11-20&nbsp;&nbsp; [MambaSingleLayer](/0687_ML_Tasks_TimeSeries_Deep_MambaSingleLayer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:MambaSingleLayer
 - 2026-11-20&nbsp;&nbsp; [MultiPatchFormer](/0686_ML_Tasks_TimeSeries_Deep_MultiPatchFormer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:MultiPatchFormer
 - 2026-11-20&nbsp;&nbsp; [Crossformer](/0685_ML_Tasks_TimeSeries_Deep_Crossformer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:Crossformer
