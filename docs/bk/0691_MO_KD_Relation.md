@@ -3,13 +3,13 @@
 | Title     | MO KD Relation                                        |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-23T01:46:17Z`                                |
-| Updated @ | `2026-11-23T01:46:17Z`                                |
+| Updated @ | `2026-11-23T02:42:37Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/691) |
 
 -----
 
-# Relation
+# 关系蒸馏（Relation-based KD）
 
 关系蒸馏（Relation-based KD）让 Student 匹配的不是 Teacher
 对**单个样本**的输出或特征，而是**样本之间（或层与层之间）的相对关系**——距离、夹角、相似度矩阵、概率分布。因为只匹配"关系"，师生的特征维度不必一致，也不必逐个样本复现
