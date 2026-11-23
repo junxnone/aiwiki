@@ -2,12 +2,12 @@
 Title | MO Quantization Tools
 -- | --
 Created @ | `2026-11-23T02:24:32Z`
-Updated @| `2026-11-23T02:24:32Z`
+Updated @| `2026-11-23T02:43:47Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/709)
 
 ---
-# Tools
+# 量化工具对比
 
 前面几篇讲的是算法，这一篇把它们落到**工具**上：想把一个模型量化并部署，有哪些常用的库、各自擅长什么、和哪些推理框架/硬件配套。本文只依据各项目官方 README / 文档中**明确写出**的内容整理（拉取时间：2026-11），没有核实到的位置一律标 `[待核实]`；工具迭代很快，实际使用请以官方文档为准。覆盖的工具：OpenVINO NNCF、PyTorch AO（torchao）、NVIDIA Model Optimizer（ModelOpt）、bitsandbytes、llama.cpp（GGUF）、vLLM 支持的量化格式（含 LLM Compressor、AutoAWQ、GPTQModel 等）。
 
@@ -143,4 +143,5 @@ vLLM 文档建议用 **LLM Compressor** 对模型做量化（支持 FP8、INT8�
 - bitsandbytes. https://github.com/bitsandbytes-foundation/bitsandbytes （README）
 - llama.cpp 的 quantize 工具. https://github.com/ggml-org/llama.cpp/blob/master/tools/quantize/README.md
 - vLLM Quantization. https://github.com/vllm-project/vllm/blob/main/docs/features/quantization/README.md
+
 
