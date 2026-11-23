@@ -2,12 +2,12 @@
 Title | MO KD Theory
 -- | --
 Created @ | `2026-11-23T01:58:26Z`
-Updated @| `2026-11-23T02:24:46Z`
+Updated @| `2026-11-23T02:43:05Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/698)
 
 ---
-# Theory
+# 蒸馏理论与实践
 
 前面几篇讲的都是"怎么蒸馏"。这一篇回答另外几个问题：**蒸馏为什么有效？Teacher 是不是越大越好？什么时候值得蒸馏？蒸馏怎么和量化、剪枝配合？** 它归纳了现有论文给出的几种解释，重点介绍两项关于"Teacher 与 Student 差距"的研究：TAKD（*Improved Knowledge Distillation via Teacher Assistant*，AAAI 2020，arXiv:1902.03393）和蒸馏缩放律（*Distillation Scaling Laws*，ICML 2025，arXiv:2502.08606），最后给出与剪枝/量化组合的实践要点。
 
@@ -140,4 +140,5 @@ $$
 - Furlanello T 等. Born Again Neural Networks. ICML 2018. arXiv:1805.04770
 - Yuan L 等. Revisiting Knowledge Distillation via Label Smoothing Regularization. arXiv:1909.11723
 - Müller R, Kornblith S, Hinton G. When Does Label Smoothing Help? NeurIPS 2019. arXiv:1906.02629
+
 
