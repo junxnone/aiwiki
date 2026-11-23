@@ -2,7 +2,7 @@
 Title | MO KD Theory
 -- | --
 Created @ | `2026-11-23T01:58:26Z`
-Updated @| `2026-11-23T01:58:26Z`
+Updated @| `2026-11-23T02:24:46Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/698)
 
@@ -15,7 +15,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/698)
 
 > 标注约定：未标注的内容来自上述论文原文；`[解读]` 是对论文的理解，`[经验]` 是一般经验，`[待核实]` 是未能确认的内容。
 
-本站相关：总览 [知识蒸馏](0207_MO_KD)；发展历史 [KD History](0336_MO_KD_History)；基础损失 [响应蒸馏](/0689_MO_KD_Response)；自蒸馏与正则化视角 [自蒸馏](/0693_MO_KD_Self)；模型优化技术总览 [模型性能优化技术](0471_MO)；与量化结合 [量化感知训练](/XXXX_MO_Quantization_QAT)；NNCF 工具 [OpenVINO NNCF](0451_Tools_OV_NNCF)。
+本站相关：总览 [知识蒸馏](0207_MO_KD)；发展历史 [KD History](0336_MO_KD_History)；基础损失 [响应蒸馏](/0689_MO_KD_Response)；自蒸馏与正则化视角 [自蒸馏](/0693_MO_KD_Self)；模型优化技术总览 [模型性能优化技术](0471_MO)；与量化结合 [量化感知训练](/0703_MO_Quantization_QAT)；NNCF 工具 [OpenVINO NNCF](0451_Tools_OV_NNCF)。
 
 ## 1. 解决什么问题
 
@@ -106,7 +106,7 @@ $$
 
 蒸馏、量化、剪枝压缩的是不同维度，彼此正交、可以组合（总览见 [模型性能优化技术](0471_MO)）：
 
-- **蒸馏 + 量化**：量化感知训练（QAT）时加入蒸馏损失，用全精度模型作为 Teacher，帮助低比特模型恢复精度（详见 [量化感知训练](/XXXX_MO_Quantization_QAT)）；ReviewKD 的论文也指出 KD 可与剪枝、量化结合以进一步改进网络设计；
+- **蒸馏 + 量化**：量化感知训练（QAT）时加入蒸馏损失，用全精度模型作为 Teacher，帮助低比特模型恢复精度（详见 [量化感知训练](/0703_MO_Quantization_QAT)）；ReviewKD 的论文也指出 KD 可与剪枝、量化结合以进一步改进网络设计；
 - **剪枝 + 蒸馏**：剪枝后的微调阶段用原模型当 Teacher，帮助恢复精度（DeepInversion 论文中的无数据剪枝也使用了师生 KL 损失，见 [无数据蒸馏](/0694_MO_KD_DataFree)）；
 - **工具侧要注意**：OpenVINO 的 NNCF 较新版本里，基于旧版配置式 API 的训练时算法（包括 Knowledge Distillation）已被移除（详见 [OpenVINO NNCF](0451_Tools_OV_NNCF)），因此在 OpenVINO 工作流里做蒸馏通常需要在训练框架一侧自行实现，再导出；
 - 常见的开源实现（如 torchdistill、Hugging Face TRL 的 GKD 训练器）可用于上手，本文未核对其最新接口 `[待核实]`。
