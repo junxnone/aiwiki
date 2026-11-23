@@ -497,6 +497,7 @@
 - [模型性能优化技术](/0471_MO)
   - [知识蒸馏](/0207_MO_KD)
     - [知识蒸馏发展历史](/0336_MO_KD_History)
+    - [Response](/0689_MO_KD_Response)
     - [Distilling the Knowledge in a Neural Network](/0208_MO_KD_s)
   - [量化](/0312_MO_Quantization)
     - [量化发展历史](/0688_MO_Quantization_History)
@@ -660,4 +661,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1745171120</sub></kbd>
+<kbd><sub>@0944011123</sub></kbd>

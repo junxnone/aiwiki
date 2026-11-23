@@ -3115,6 +3115,15 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki MO KD Response",
+      "group": 3,
+      "title": "Response",
+      "url": "https://junxnone.github.io/aiwiki/#/0689_MO_KD_Response",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Op Convolution Math",
       "group": 4,
       "title": "卷积 数学定义",
@@ -7501,6 +7510,13 @@
     {
       "source": "aiwiki MO KD",
       "target": "aiwiki MO KD History",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki MO KD",
+      "target": "aiwiki MO KD Response",
       "value": 3,
       "visible": true,
       "expand": true
