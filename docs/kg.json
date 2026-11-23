@@ -3223,6 +3223,15 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki MO Quantization QAT",
+      "group": 3,
+      "title": "QAT",
+      "url": "https://junxnone.github.io/aiwiki/#/0703_MO_Quantization_QAT",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Op Convolution Math",
       "group": 4,
       "title": "卷积 数学定义",
@@ -7837,6 +7846,13 @@
     {
       "source": "aiwiki MO Quantization",
       "target": "aiwiki MO Quantization PTQ",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki MO Quantization",
+      "target": "aiwiki MO Quantization QAT",
       "value": 3,
       "visible": true,
       "expand": true
