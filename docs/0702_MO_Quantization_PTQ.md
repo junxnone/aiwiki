@@ -2,7 +2,7 @@
 Title | MO Quantization PTQ
 -- | --
 Created @ | `2026-11-23T02:09:47Z`
-Updated @| `2026-11-23T02:09:47Z`
+Updated @| `2026-11-23T02:25:04Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/702)
 
@@ -15,7 +15,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/702)
 
 > 标注约定：未标注的内容来自上述论文原文；`[解读]` 是对论文的理解，`[经验]` 是一般经验，`[待核实]` 是未能确认的内容。
 
-本站相关：总览 [量化](0312_MO_Quantization)；基础 [基础原理](/0699_MO_Quantization_Basics)；校准范围的选择 [校准](/0701_MO_Quantization_Calibration)；量化感知训练 [QAT](/XXXX_MO_Quantization_QAT)；LLM 场景下的 PTQ [LLM 权重量化](/XXXX_MO_Quantization_LLM_Weight)；系列中的 [量化历史](/0688_MO_Quantization_History)；无需数据的蒸馏对应思路 [无数据蒸馏](/0694_MO_KD_DataFree)。
+本站相关：总览 [量化](0312_MO_Quantization)；基础 [基础原理](/0699_MO_Quantization_Basics)；校准范围的选择 [校准](/0701_MO_Quantization_Calibration)；量化感知训练 [QAT](/0703_MO_Quantization_QAT)；LLM 场景下的 PTQ [LLM 权重量化](/0706_MO_Quantization_LLM_Weight)；系列中的 [量化历史](/0688_MO_Quantization_History)；无需数据的蒸馏对应思路 [无数据蒸馏](/0694_MO_KD_DataFree)。
 
 ## 1. 解决什么问题
 
@@ -196,8 +196,8 @@ $$
 
 ## 8. 总结 [解读]
 
-- PTQ 的常用阶梯：先做校准（见 [校准](/0701_MO_Quantization_Calibration)），不行就加跨层均衡/偏置校正，再不行用 AdaRound/BRECQ/QDrop 做权重取整的重建，仍不行才上 [QAT](/XXXX_MO_Quantization_QAT)；
-- 这些方法大多在 CNN 上提出，用于大模型时需要针对 LLM 的特点调整（如 GPTQ 对 OBS 的利用，见 [LLM 权重量化](/XXXX_MO_Quantization_LLM_Weight)）；
+- PTQ 的常用阶梯：先做校准（见 [校准](/0701_MO_Quantization_Calibration)），不行就加跨层均衡/偏置校正，再不行用 AdaRound/BRECQ/QDrop 做权重取整的重建，仍不行才上 [QAT](/0703_MO_Quantization_QAT)；
+- 这些方法大多在 CNN 上提出，用于大模型时需要针对 LLM 的特点调整（如 GPTQ 对 OBS 的利用，见 [LLM 权重量化](/0706_MO_Quantization_LLM_Weight)）；
 - 局限：重建类方法依赖校准数据的代表性，QDrop 的分析也说明 PTQ 对校准数据非常敏感。
 
 ## Reference
