@@ -2,7 +2,7 @@
 Title | MO KD Response
 -- | --
 Created @ | `2026-11-23T01:43:08Z`
-Updated @| `2026-11-23T01:43:08Z`
+Updated @| `2026-11-23T01:58:42Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/689)
 
@@ -15,7 +15,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/689)
 
 > 标注约定：未标注的内容来自上述论文原文；`[解读]` 是对论文的理解，`[经验]` 是一般经验，`[待核实]` 是未能确认的内容。
 
-本站相关：总览 [知识蒸馏](0207_MO_KD)；Hinton 原文笔记 [Distilling the Knowledge in a Neural Network](0208_MO_KD_s)；发展历史 [KD History](0336_MO_KD_History)；视觉 Transformer 中的 hard 蒸馏 [DeiT](0253_ML_Transformer_DeiT)；其他类别见 [特征蒸馏](/XXXX_MO_KD_Feature)、[自蒸馏](/XXXX_MO_KD_Self)、[理论与实践](/XXXX_MO_KD_Theory)。
+本站相关：总览 [知识蒸馏](0207_MO_KD)；Hinton 原文笔记 [Distilling the Knowledge in a Neural Network](0208_MO_KD_s)；发展历史 [KD History](0336_MO_KD_History)；视觉 Transformer 中的 hard 蒸馏 [DeiT](0253_ML_Transformer_DeiT)；其他类别见 [特征蒸馏](/0690_MO_KD_Feature)、[自蒸馏](/0693_MO_KD_Self)、[理论与实践](/0698_MO_KD_Theory)。
 
 ## 1. 解决什么问题
 
@@ -150,7 +150,7 @@ $$
 ## 6. KD 与标签平滑
 
 - **标签平滑（Label Smoothing）**：用硬标签与均匀分布的加权平均作为训练目标，防止模型过度自信。Müller、Kornblith、Hinton（NeurIPS 2019）发现：**用标签平滑训练出的 Teacher，蒸馏效果会变差**——因为标签平滑会让同类样本的倒数第二层表示聚成紧致的簇，logits 中关于类间相似性的信息丢失，而这些信息恰恰是蒸馏需要的；
-- **KD 是一种学出来的标签平滑**：Yuan 等（*Revisiting Knowledge Distillation via Label Smoothing Regularization*）证明 KD 是学习得到的标签平滑正则，反过来标签平滑也提供了一个"虚拟 Teacher"；他们观察到：Student 可以反过来改进 Teacher，一个精度比 Student 还低的 Teacher 也能显著提升 Student。由此提出 **Teacher-free KD（Tf-KD）**：让模型向自身或人工设计的正则分布学习，无需额外 Teacher（见 [自蒸馏](/XXXX_MO_KD_Self)）；
+- **KD 是一种学出来的标签平滑**：Yuan 等（*Revisiting Knowledge Distillation via Label Smoothing Regularization*）证明 KD 是学习得到的标签平滑正则，反过来标签平滑也提供了一个"虚拟 Teacher"；他们观察到：Student 可以反过来改进 Teacher，一个精度比 Student 还低的 Teacher 也能显著提升 Student。由此提出 **Teacher-free KD（Tf-KD）**：让模型向自身或人工设计的正则分布学习，无需额外 Teacher（见 [自蒸馏](/0693_MO_KD_Self)）；
 - 结论：KD 的成功不完全来自类间相似性，软目标的**正则化作用**同样重要。
 
 ## 7. 对比汇总
@@ -171,7 +171,7 @@ $$
 
 - 响应蒸馏简单通用，是其他类别蒸馏的底座；DKD 表明只要处理好 TCKD/NCKD 的权重，不需要中间特征也能做得很好；
 - 实践上先从温度 $T$（常见 2~4，`[经验]`）与 $\alpha$ 调起；Teacher 过强或经过标签平滑训练时要留意效果下降；
-- 响应蒸馏只能利用最终输出，若任务更依赖中间表示（检测、分割），可进一步看 [特征蒸馏](/XXXX_MO_KD_Feature)。
+- 响应蒸馏只能利用最终输出，若任务更依赖中间表示（检测、分割），可进一步看 [特征蒸馏](/0690_MO_KD_Feature)。
 
 ## Reference
 
