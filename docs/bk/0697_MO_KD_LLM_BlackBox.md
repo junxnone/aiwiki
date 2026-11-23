@@ -3,7 +3,7 @@
 | Title     | MO KD LLM BlackBox                                    |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-23T01:57:04Z`                                |
-| Updated @ | `2026-11-23T01:57:04Z`                                |
+| Updated @ | `2026-11-23T01:58:58Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/697) |
 
@@ -31,7 +31,7 @@ CoT），经过过滤后作为小模型的监督信号。**
 本站相关：总览 [知识蒸馏](0207_MO_KD)；发展历史 [KD History](0336_MO_KD_History)；白盒蒸馏
 [LLM 白盒蒸馏](/0696_MO_KD_LLM_WhiteBox)；Alpaca 等指令微调背景 [LM FT
 Alignment](0568_LM_FT_Alignment)；DeepSeek 相关 [Hot
-DeepSeek](0496_Hot_DeepSeek)；理论与实践 [蒸馏理论与实践](/XXXX_MO_KD_Theory)。
+DeepSeek](0496_Hot_DeepSeek)；理论与实践 [蒸馏理论与实践](/0698_MO_KD_Theory)。
 
 ## 1\. 解决什么问题
 
