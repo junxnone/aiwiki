@@ -3,7 +3,7 @@
 | Title     | MO Quantization LowBit                                |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-23T02:13:43Z`                                |
-| Updated @ | `2026-11-23T02:13:43Z`                                |
+| Updated @ | `2026-11-23T02:25:00Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/704) |
 
@@ -31,7 +31,7 @@ BitNet b1.58（*The Era of 1-bit LLMs: All Large Language Models are in
 [基础原理](/0699_MO_Quantization_Basics)；QAT 中的 STE 机制
 [量化感知训练](/0703_MO_Quantization_QAT)；数据类型
 [数据类型](/0700_MO_Quantization_DataType)；LLM 的常规量化 [LLM
-权重量化](/XXXX_MO_Quantization_LLM_Weight)；系列中的
+权重量化](/0706_MO_Quantization_LLM_Weight)；系列中的
 [量化历史](/0688_MO_Quantization_History)。
 
 ## 1\. 解决什么问题
@@ -230,7 +230,7 @@ $$
   - 极低比特的收益是计算范式的改变（乘法 → 加法/位运算），而不仅是压缩；但需要专门的硬件与内核才能兑现；
   - 精度问题靠"保留全精度权重 + 最优缩放因子 + 合适的阈值/截断"来缓解；
   - 对 LLM，主流做法仍是 4 bit 左右的 PTQ/QAT（见 [LLM
-    权重量化](/XXXX_MO_Quantization_LLM_Weight)）；三值化需要从头训练，是另一条路线。
+    权重量化](/0706_MO_Quantization_LLM_Weight)）；三值化需要从头训练，是另一条路线。
 
 ## Reference
 
