@@ -3241,6 +3241,15 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki MO Quantization MixedPrecision",
+      "group": 3,
+      "title": "MixedPrecision",
+      "url": "https://junxnone.github.io/aiwiki/#/0705_MO_Quantization_MixedPrecision",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Op Convolution Math",
       "group": 4,
       "title": "卷积 数学定义",
@@ -7869,6 +7878,13 @@
     {
       "source": "aiwiki MO Quantization",
       "target": "aiwiki MO Quantization LowBit",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki MO Quantization",
+      "target": "aiwiki MO Quantization MixedPrecision",
       "value": 3,
       "visible": true,
       "expand": true
