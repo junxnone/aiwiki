@@ -514,6 +514,7 @@
     - [Calibration](/0701_MO_Quantization_Calibration)
     - [DataType](/0700_MO_Quantization_DataType)
     - [量化发展历史](/0688_MO_Quantization_History)
+    - [LowBit](/0704_MO_Quantization_LowBit)
     - [PTQ](/0702_MO_Quantization_PTQ)
     - [QAT](/0703_MO_Quantization_QAT)
 - [RL 强化学习](/0290_RL)
@@ -676,4 +677,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1012441123</sub></kbd>
+<kbd><sub>@1014431123</sub></kbd>
