@@ -4735,6 +4735,15 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki MO Quantization LLM Weight",
+      "group": 4,
+      "title": "LLM Weight",
+      "url": "https://junxnone.github.io/aiwiki/#/0706_MO_Quantization_LLM_Weight",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Tasks Image Classification LeNet",
       "group": 5,
       "title": "LeNet",

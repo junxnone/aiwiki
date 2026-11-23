@@ -4,6 +4,7 @@
 
 #### **Created**
 
+- 2026-11-23&nbsp;&nbsp; [LLM Weight](/0706_MO_Quantization_LLM_Weight)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:LLM :bookmark:Weight
 - 2026-11-23&nbsp;&nbsp; [MixedPrecision](/0705_MO_Quantization_MixedPrecision)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:MixedPrecision
 - 2026-11-23&nbsp;&nbsp; [LowBit](/0704_MO_Quantization_LowBit)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:LowBit
 - 2026-11-23&nbsp;&nbsp; [QAT](/0703_MO_Quantization_QAT)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:QAT
@@ -677,6 +678,7 @@
 
 #### **Updated**
 
+- 2026-11-23&nbsp;&nbsp; [LLM Weight](/0706_MO_Quantization_LLM_Weight)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:LLM :bookmark:Weight
 - 2026-11-23&nbsp;&nbsp; [MixedPrecision](/0705_MO_Quantization_MixedPrecision)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:MixedPrecision
 - 2026-11-23&nbsp;&nbsp; [LowBit](/0704_MO_Quantization_LowBit)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:LowBit
 - 2026-11-23&nbsp;&nbsp; [QAT](/0703_MO_Quantization_QAT)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:QAT
