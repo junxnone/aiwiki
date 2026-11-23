@@ -5,26 +5,26 @@
 #### **Created**
 
 - 2026-11-23&nbsp;&nbsp; [Tools](/0709_MO_Quantization_Tools)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:Tools
-- 2026-11-23&nbsp;&nbsp; [KVCache](/0708_MO_Quantization_KVCache)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:KVCache
-- 2026-11-23&nbsp;&nbsp; [LLM WA](/0707_MO_Quantization_LLM_WA)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:LLM :bookmark:WA
-- 2026-11-23&nbsp;&nbsp; [LLM Weight](/0706_MO_Quantization_LLM_Weight)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:LLM :bookmark:Weight
-- 2026-11-23&nbsp;&nbsp; [MixedPrecision](/0705_MO_Quantization_MixedPrecision)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:MixedPrecision
-- 2026-11-23&nbsp;&nbsp; [LowBit](/0704_MO_Quantization_LowBit)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:LowBit
-- 2026-11-23&nbsp;&nbsp; [QAT](/0703_MO_Quantization_QAT)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:QAT
-- 2026-11-23&nbsp;&nbsp; [PTQ](/0702_MO_Quantization_PTQ)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:PTQ
-- 2026-11-23&nbsp;&nbsp; [Calibration](/0701_MO_Quantization_Calibration)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:Calibration
-- 2026-11-23&nbsp;&nbsp; [DataType](/0700_MO_Quantization_DataType)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:DataType
-- 2026-11-23&nbsp;&nbsp; [Basics](/0699_MO_Quantization_Basics)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:Basics
-- 2026-11-23&nbsp;&nbsp; [Theory](/0698_MO_KD_Theory)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Theory
-- 2026-11-23&nbsp;&nbsp; [LLM BlackBox](/0697_MO_KD_LLM_BlackBox)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:LLM :bookmark:BlackBox
-- 2026-11-23&nbsp;&nbsp; [LLM WhiteBox](/0696_MO_KD_LLM_WhiteBox)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:LLM :bookmark:WhiteBox
-- 2026-11-23&nbsp;&nbsp; [CV](/0695_MO_KD_CV)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:CV
-- 2026-11-23&nbsp;&nbsp; [DataFree](/0694_MO_KD_DataFree)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:DataFree
-- 2026-11-23&nbsp;&nbsp; [Self](/0693_MO_KD_Self)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Self
-- 2026-11-23&nbsp;&nbsp; [Online](/0692_MO_KD_Online)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Online
-- 2026-11-23&nbsp;&nbsp; [Relation](/0691_MO_KD_Relation)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Relation
-- 2026-11-23&nbsp;&nbsp; [Feature](/0690_MO_KD_Feature)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Feature
-- 2026-11-23&nbsp;&nbsp; [Response](/0689_MO_KD_Response)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Response
+- 2026-11-23&nbsp;&nbsp; [KV Cache 量化](/0708_MO_Quantization_KVCache)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:KVCache
+- 2026-11-23&nbsp;&nbsp; [LLM 权重+激活量化](/0707_MO_Quantization_LLM_WA)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:LLM :bookmark:WA
+- 2026-11-23&nbsp;&nbsp; [LLM 权重量化](/0706_MO_Quantization_LLM_Weight)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:LLM :bookmark:Weight
+- 2026-11-23&nbsp;&nbsp; [混合精度量化](/0705_MO_Quantization_MixedPrecision)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:MixedPrecision
+- 2026-11-23&nbsp;&nbsp; [低比特量化（二值/三值）](/0704_MO_Quantization_LowBit)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:LowBit
+- 2026-11-23&nbsp;&nbsp; [量化感知训练（QAT）](/0703_MO_Quantization_QAT)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:QAT
+- 2026-11-23&nbsp;&nbsp; [训练后量化（PTQ）](/0702_MO_Quantization_PTQ)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:PTQ
+- 2026-11-23&nbsp;&nbsp; [量化校准（Calibration）](/0701_MO_Quantization_Calibration)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:Calibration
+- 2026-11-23&nbsp;&nbsp; [量化数据类型（FP8/MX/NF4）](/0700_MO_Quantization_DataType)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:DataType
+- 2026-11-23&nbsp;&nbsp; [量化基础原理](/0699_MO_Quantization_Basics)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:Basics
+- 2026-11-23&nbsp;&nbsp; [蒸馏理论与实践](/0698_MO_KD_Theory)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Theory
+- 2026-11-23&nbsp;&nbsp; [LLM 黑盒蒸馏](/0697_MO_KD_LLM_BlackBox)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:LLM :bookmark:BlackBox
+- 2026-11-23&nbsp;&nbsp; [LLM 白盒蒸馏](/0696_MO_KD_LLM_WhiteBox)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:LLM :bookmark:WhiteBox
+- 2026-11-23&nbsp;&nbsp; [检测/分割/ViT 蒸馏](/0695_MO_KD_CV)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:CV
+- 2026-11-23&nbsp;&nbsp; [无数据蒸馏（Data-Free KD）](/0694_MO_KD_DataFree)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:DataFree
+- 2026-11-23&nbsp;&nbsp; [自蒸馏（Self-Distillation）](/0693_MO_KD_Self)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Self
+- 2026-11-23&nbsp;&nbsp; [在线蒸馏（Online KD）](/0692_MO_KD_Online)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Online
+- 2026-11-23&nbsp;&nbsp; [关系蒸馏（Relation-based KD）](/0691_MO_KD_Relation)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Relation
+- 2026-11-23&nbsp;&nbsp; [特征蒸馏（Feature-based KD）](/0690_MO_KD_Feature)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Feature
+- 2026-11-23&nbsp;&nbsp; [响应蒸馏（Response-based KD）](/0689_MO_KD_Response)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Response
 - 2026-11-20&nbsp;&nbsp; [量化发展历史](/0688_MO_Quantization_History)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:History
 - 2026-11-20&nbsp;&nbsp; [MambaSingleLayer](/0687_ML_Tasks_TimeSeries_Deep_MambaSingleLayer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:MambaSingleLayer
 - 2026-11-20&nbsp;&nbsp; [MultiPatchFormer](/0686_ML_Tasks_TimeSeries_Deep_MultiPatchFormer)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:MultiPatchFormer
@@ -682,26 +682,26 @@
 #### **Updated**
 
 - 2026-11-23&nbsp;&nbsp; [Tools](/0709_MO_Quantization_Tools)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:Tools
-- 2026-11-23&nbsp;&nbsp; [KVCache](/0708_MO_Quantization_KVCache)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:KVCache
-- 2026-11-23&nbsp;&nbsp; [LLM WA](/0707_MO_Quantization_LLM_WA)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:LLM :bookmark:WA
-- 2026-11-23&nbsp;&nbsp; [LLM Weight](/0706_MO_Quantization_LLM_Weight)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:LLM :bookmark:Weight
-- 2026-11-23&nbsp;&nbsp; [MixedPrecision](/0705_MO_Quantization_MixedPrecision)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:MixedPrecision
-- 2026-11-23&nbsp;&nbsp; [LowBit](/0704_MO_Quantization_LowBit)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:LowBit
-- 2026-11-23&nbsp;&nbsp; [QAT](/0703_MO_Quantization_QAT)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:QAT
-- 2026-11-23&nbsp;&nbsp; [PTQ](/0702_MO_Quantization_PTQ)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:PTQ
-- 2026-11-23&nbsp;&nbsp; [Calibration](/0701_MO_Quantization_Calibration)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:Calibration
-- 2026-11-23&nbsp;&nbsp; [DataType](/0700_MO_Quantization_DataType)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:DataType
-- 2026-11-23&nbsp;&nbsp; [Basics](/0699_MO_Quantization_Basics)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:Basics
-- 2026-11-23&nbsp;&nbsp; [Theory](/0698_MO_KD_Theory)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Theory
-- 2026-11-23&nbsp;&nbsp; [LLM BlackBox](/0697_MO_KD_LLM_BlackBox)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:LLM :bookmark:BlackBox
-- 2026-11-23&nbsp;&nbsp; [LLM WhiteBox](/0696_MO_KD_LLM_WhiteBox)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:LLM :bookmark:WhiteBox
-- 2026-11-23&nbsp;&nbsp; [CV](/0695_MO_KD_CV)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:CV
-- 2026-11-23&nbsp;&nbsp; [DataFree](/0694_MO_KD_DataFree)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:DataFree
-- 2026-11-23&nbsp;&nbsp; [Self](/0693_MO_KD_Self)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Self
-- 2026-11-23&nbsp;&nbsp; [Online](/0692_MO_KD_Online)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Online
-- 2026-11-23&nbsp;&nbsp; [Relation](/0691_MO_KD_Relation)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Relation
-- 2026-11-23&nbsp;&nbsp; [Feature](/0690_MO_KD_Feature)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Feature
-- 2026-11-23&nbsp;&nbsp; [Response](/0689_MO_KD_Response)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Response
+- 2026-11-23&nbsp;&nbsp; [KV Cache 量化](/0708_MO_Quantization_KVCache)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:KVCache
+- 2026-11-23&nbsp;&nbsp; [LLM 权重+激活量化](/0707_MO_Quantization_LLM_WA)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:LLM :bookmark:WA
+- 2026-11-23&nbsp;&nbsp; [LLM 权重量化](/0706_MO_Quantization_LLM_Weight)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:LLM :bookmark:Weight
+- 2026-11-23&nbsp;&nbsp; [混合精度量化](/0705_MO_Quantization_MixedPrecision)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:MixedPrecision
+- 2026-11-23&nbsp;&nbsp; [低比特量化（二值/三值）](/0704_MO_Quantization_LowBit)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:LowBit
+- 2026-11-23&nbsp;&nbsp; [量化感知训练（QAT）](/0703_MO_Quantization_QAT)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:QAT
+- 2026-11-23&nbsp;&nbsp; [训练后量化（PTQ）](/0702_MO_Quantization_PTQ)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:PTQ
+- 2026-11-23&nbsp;&nbsp; [量化校准（Calibration）](/0701_MO_Quantization_Calibration)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:Calibration
+- 2026-11-23&nbsp;&nbsp; [量化数据类型（FP8/MX/NF4）](/0700_MO_Quantization_DataType)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:DataType
+- 2026-11-23&nbsp;&nbsp; [量化基础原理](/0699_MO_Quantization_Basics)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:Basics
+- 2026-11-23&nbsp;&nbsp; [蒸馏理论与实践](/0698_MO_KD_Theory)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Theory
+- 2026-11-23&nbsp;&nbsp; [LLM 黑盒蒸馏](/0697_MO_KD_LLM_BlackBox)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:LLM :bookmark:BlackBox
+- 2026-11-23&nbsp;&nbsp; [LLM 白盒蒸馏](/0696_MO_KD_LLM_WhiteBox)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:LLM :bookmark:WhiteBox
+- 2026-11-23&nbsp;&nbsp; [检测/分割/ViT 蒸馏](/0695_MO_KD_CV)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:CV
+- 2026-11-23&nbsp;&nbsp; [无数据蒸馏（Data-Free KD）](/0694_MO_KD_DataFree)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:DataFree
+- 2026-11-23&nbsp;&nbsp; [自蒸馏（Self-Distillation）](/0693_MO_KD_Self)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Self
+- 2026-11-23&nbsp;&nbsp; [在线蒸馏（Online KD）](/0692_MO_KD_Online)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Online
+- 2026-11-23&nbsp;&nbsp; [关系蒸馏（Relation-based KD）](/0691_MO_KD_Relation)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Relation
+- 2026-11-23&nbsp;&nbsp; [特征蒸馏（Feature-based KD）](/0690_MO_KD_Feature)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Feature
+- 2026-11-23&nbsp;&nbsp; [响应蒸馏（Response-based KD）](/0689_MO_KD_Response)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Response
 - 2026-11-23&nbsp;&nbsp; [量化发展历史](/0688_MO_Quantization_History)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:History
 - 2026-11-23&nbsp;&nbsp; [模型性能优化技术](/0471_MO)&nbsp;&nbsp; :bookmark:MO
 - 2026-11-23&nbsp;&nbsp; [知识蒸馏发展历史](/0336_MO_KD_History)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:History

@@ -3117,7 +3117,7 @@
     {
       "id": "aiwiki MO KD Response",
       "group": 3,
-      "title": "Response",
+      "title": "响应蒸馏（Response-based KD）",
       "url": "https://junxnone.github.io/aiwiki/#/0689_MO_KD_Response",
       "visible": true,
       "expand": true,
@@ -3126,7 +3126,7 @@
     {
       "id": "aiwiki MO KD Feature",
       "group": 3,
-      "title": "Feature",
+      "title": "特征蒸馏（Feature-based KD）",
       "url": "https://junxnone.github.io/aiwiki/#/0690_MO_KD_Feature",
       "visible": true,
       "expand": true,
@@ -3135,7 +3135,7 @@
     {
       "id": "aiwiki MO KD Relation",
       "group": 3,
-      "title": "Relation",
+      "title": "关系蒸馏（Relation-based KD）",
       "url": "https://junxnone.github.io/aiwiki/#/0691_MO_KD_Relation",
       "visible": true,
       "expand": true,
@@ -3144,7 +3144,7 @@
     {
       "id": "aiwiki MO KD Online",
       "group": 3,
-      "title": "Online",
+      "title": "在线蒸馏（Online KD）",
       "url": "https://junxnone.github.io/aiwiki/#/0692_MO_KD_Online",
       "visible": true,
       "expand": true,
@@ -3153,7 +3153,7 @@
     {
       "id": "aiwiki MO KD Self",
       "group": 3,
-      "title": "Self",
+      "title": "自蒸馏（Self-Distillation）",
       "url": "https://junxnone.github.io/aiwiki/#/0693_MO_KD_Self",
       "visible": true,
       "expand": true,
@@ -3162,7 +3162,7 @@
     {
       "id": "aiwiki MO KD DataFree",
       "group": 3,
-      "title": "DataFree",
+      "title": "无数据蒸馏（Data-Free KD）",
       "url": "https://junxnone.github.io/aiwiki/#/0694_MO_KD_DataFree",
       "visible": true,
       "expand": true,
@@ -3171,8 +3171,8 @@
     {
       "id": "aiwiki MO KD CV",
       "group": 3,
-      "title": "CV",
-      "url": "https://junxnone.github.io/aiwiki/#/0695_MO_KD_CV",
+      "title": "检测/分割/ViT 蒸馏",
+      "url": "https://junxnone.github.io/aiwiki/#/分割",
       "visible": true,
       "expand": true,
       "childLinks": []
@@ -3180,7 +3180,7 @@
     {
       "id": "aiwiki MO KD Theory",
       "group": 3,
-      "title": "Theory",
+      "title": "蒸馏理论与实践",
       "url": "https://junxnone.github.io/aiwiki/#/0698_MO_KD_Theory",
       "visible": true,
       "expand": true,
@@ -3189,7 +3189,7 @@
     {
       "id": "aiwiki MO Quantization Basics",
       "group": 3,
-      "title": "Basics",
+      "title": "量化基础原理",
       "url": "https://junxnone.github.io/aiwiki/#/0699_MO_Quantization_Basics",
       "visible": true,
       "expand": true,
@@ -3198,8 +3198,8 @@
     {
       "id": "aiwiki MO Quantization DataType",
       "group": 3,
-      "title": "DataType",
-      "url": "https://junxnone.github.io/aiwiki/#/0700_MO_Quantization_DataType",
+      "title": "量化数据类型（FP8/MX/NF4）",
+      "url": "https://junxnone.github.io/aiwiki/#/MX",
       "visible": true,
       "expand": true,
       "childLinks": []
@@ -3207,7 +3207,7 @@
     {
       "id": "aiwiki MO Quantization Calibration",
       "group": 3,
-      "title": "Calibration",
+      "title": "量化校准（Calibration）",
       "url": "https://junxnone.github.io/aiwiki/#/0701_MO_Quantization_Calibration",
       "visible": true,
       "expand": true,
@@ -3216,7 +3216,7 @@
     {
       "id": "aiwiki MO Quantization PTQ",
       "group": 3,
-      "title": "PTQ",
+      "title": "训练后量化（PTQ）",
       "url": "https://junxnone.github.io/aiwiki/#/0702_MO_Quantization_PTQ",
       "visible": true,
       "expand": true,
@@ -3225,7 +3225,7 @@
     {
       "id": "aiwiki MO Quantization QAT",
       "group": 3,
-      "title": "QAT",
+      "title": "量化感知训练（QAT）",
       "url": "https://junxnone.github.io/aiwiki/#/0703_MO_Quantization_QAT",
       "visible": true,
       "expand": true,
@@ -3234,8 +3234,8 @@
     {
       "id": "aiwiki MO Quantization LowBit",
       "group": 3,
-      "title": "LowBit",
-      "url": "https://junxnone.github.io/aiwiki/#/0704_MO_Quantization_LowBit",
+      "title": "低比特量化（二值/三值）",
+      "url": "https://junxnone.github.io/aiwiki/#/三值）](",
       "visible": true,
       "expand": true,
       "childLinks": []
@@ -3243,7 +3243,7 @@
     {
       "id": "aiwiki MO Quantization MixedPrecision",
       "group": 3,
-      "title": "MixedPrecision",
+      "title": "混合精度量化",
       "url": "https://junxnone.github.io/aiwiki/#/0705_MO_Quantization_MixedPrecision",
       "visible": true,
       "expand": true,
@@ -3252,7 +3252,7 @@
     {
       "id": "aiwiki MO Quantization KVCache",
       "group": 3,
-      "title": "KVCache",
+      "title": "KV Cache 量化",
       "url": "https://junxnone.github.io/aiwiki/#/0708_MO_Quantization_KVCache",
       "visible": true,
       "expand": true,
@@ -4737,7 +4737,7 @@
     {
       "id": "aiwiki MO KD LLM WhiteBox",
       "group": 4,
-      "title": "LLM WhiteBox",
+      "title": "LLM 白盒蒸馏",
       "url": "https://junxnone.github.io/aiwiki/#/0696_MO_KD_LLM_WhiteBox",
       "visible": true,
       "expand": true,
@@ -4746,7 +4746,7 @@
     {
       "id": "aiwiki MO KD LLM BlackBox",
       "group": 4,
-      "title": "LLM BlackBox",
+      "title": "LLM 黑盒蒸馏",
       "url": "https://junxnone.github.io/aiwiki/#/0697_MO_KD_LLM_BlackBox",
       "visible": true,
       "expand": true,
@@ -4755,7 +4755,7 @@
     {
       "id": "aiwiki MO Quantization LLM Weight",
       "group": 4,
-      "title": "LLM Weight",
+      "title": "LLM 权重量化",
       "url": "https://junxnone.github.io/aiwiki/#/0706_MO_Quantization_LLM_Weight",
       "visible": true,
       "expand": true,
@@ -4764,7 +4764,7 @@
     {
       "id": "aiwiki MO Quantization LLM WA",
       "group": 4,
-      "title": "LLM WA",
+      "title": "LLM 权重+激活量化",
       "url": "https://junxnone.github.io/aiwiki/#/0707_MO_Quantization_LLM_WA",
       "visible": true,
       "expand": true,
