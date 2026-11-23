@@ -3,13 +3,13 @@
 | Title     | MO KD Online                                          |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-23T01:47:32Z`                                |
-| Updated @ | `2026-11-23T01:58:49Z`                                |
+| Updated @ | `2026-11-23T02:42:40Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/692) |
 
 -----
 
-# Online
+# 在线蒸馏（Online KD）
 
 在线蒸馏（Online KD）指 **Teacher 与 Student
 同时训练**，不再依赖一个预先训练好并冻结的大模型。它回应了离线蒸馏的两个麻烦：需要两阶段训练（先训

@@ -2,12 +2,12 @@
 Title | MO KD Online
 -- | --
 Created @ | `2026-11-23T01:47:32Z`
-Updated @| `2026-11-23T01:58:49Z`
+Updated @| `2026-11-23T02:42:40Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/692)
 
 ---
-# Online
+# 在线蒸馏（Online KD）
 
 在线蒸馏（Online KD）指 **Teacher 与 Student 同时训练**，不再依赖一个预先训练好并冻结的大模型。它回应了离线蒸馏的两个麻烦：需要两阶段训练（先训 Teacher，再训 Student），以及并不总能找到合适的大 Teacher。本文覆盖这一类的三个代表：DML（*Deep Mutual Learning*，CVPR 2018，arXiv:1706.00384）、ONE（*Knowledge Distillation by On-the-Fly Native Ensemble*，NeurIPS 2018，arXiv:1806.04606）和 Codistillation（*Large Scale Distributed Neural Network Training Through Online Distillation*，ICLR 2018，arXiv:1804.03235）。
 
@@ -149,4 +149,5 @@ $$
 - Zhang Y, Xiang T, Hospedales T M, Lu H. Deep Mutual Learning. CVPR 2018. arXiv:1706.00384
 - Lan X, Zhu X, Gong S. Knowledge Distillation by On-the-Fly Native Ensemble. NeurIPS 2018. arXiv:1806.04606
 - Anil R, Pereyra G, Passos A, Ormandi R, Dahl G E, Hinton G E. Large Scale Distributed Neural Network Training Through Online Distillation. ICLR 2018. arXiv:1804.03235 `[作者列表待核实]`
+
 
