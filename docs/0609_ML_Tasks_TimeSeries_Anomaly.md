@@ -2,20 +2,15 @@
 Title | ML Tasks TimeSeries Anomaly
 -- | --
 Created @ | `2026-11-10T09:17:31Z`
-Updated @| `2026-11-19T09:45:14Z`
+Updated @| `2026-11-23T06:15:58Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/609)
 
 ---
-# 时间序列异常检测：方法详解、评估与发展脉络
+# 时间序列-异常检测
 
-> 读者：想系统弄清时序异常检测怎么做、有哪些方法族、为什么评估比模型更容易出问题、部署时应注意什么的工程师和研究者。本文把散在各篇的异常检测内容整合并补全。
 >
 > 配套文档：[总览](0603_ML_Tasks_TimeSeries)｜[经典统计模型](0604_ML_Tasks_TimeSeries_Classical)｜[机器学习](0605_ML_Tasks_TimeSeries_ML)｜[深度学习](0606_ML_Tasks_TimeSeries_Deep)｜[生成式](0607_ML_Tasks_TimeSeries_Generative)｜[基础模型](0608_ML_Tasks_TimeSeries_Foundation)｜[评估指标](0610_ML_Tasks_TimeSeries_Metrics)｜[时间线](0611_ML_Tasks_TimeSeries_Timeline)。
->
-> 公式用 LaTeX 书写，需要支持数学渲染的 Markdown 查看器。
->
-> 标注：**[V]** 书目信息经 Crossref 或 arXiv API 核对（标题、作者、年份、期刊与 DOI 或编号；arXiv 条目另读过摘要页或标题页，不含全文核对）；**[经验]** 编者判断，需用自己的数据验证；**待核实** 凭记忆写出或未能核对（对方法内部细节的描述，凡未读摘要或原文者，一律视为待核实）。方法的数学形式是标准内容，由编者归纳整理。本文不引用任何方法在具体基准上的得分，例子中的数字是为说明概念构造的。核对日期：2026-11-10。
 
 ## 0. 先看全景
 
