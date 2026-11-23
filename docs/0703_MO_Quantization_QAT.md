@@ -2,7 +2,7 @@
 Title | MO Quantization QAT
 -- | --
 Created @ | `2026-11-23T02:11:34Z`
-Updated @| `2026-11-23T02:11:34Z`
+Updated @| `2026-11-23T02:25:14Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/703)
 
@@ -15,7 +15,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/703)
 
 > 标注约定：未标注的内容来自上述论文原文；`[解读]` 是对论文的理解，`[经验]` 是一般经验，`[待核实]` 是未能确认的内容。
 
-本站相关：总览 [量化](0312_MO_Quantization)；基础 [基础原理](/0699_MO_Quantization_Basics)；无需训练的 [训练后量化 PTQ](/0702_MO_Quantization_PTQ)；低比特极限 [低比特量化](/XXXX_MO_Quantization_LowBit)；与蒸馏结合 [蒸馏理论与实践](/0698_MO_KD_Theory)；系列中的 [量化历史](/0688_MO_Quantization_History)。
+本站相关：总览 [量化](0312_MO_Quantization)；基础 [基础原理](/0699_MO_Quantization_Basics)；无需训练的 [训练后量化 PTQ](/0702_MO_Quantization_PTQ)；低比特极限 [低比特量化](/0704_MO_Quantization_LowBit)；与蒸馏结合 [蒸馏理论与实践](/0698_MO_KD_Theory)；系列中的 [量化历史](/0688_MO_Quantization_History)。
 
 ## 1. 解决什么问题
 
@@ -177,7 +177,7 @@ Qualcomm 白皮书给出的标准 QAT 流程（从预训练模型出发，并先
 
 - QAT 的"配方"：全精度预训练 → 插入伪量化 → 用合适的范围初始化 → 可学习的量化参数 → 少量 epoch 的微调（4 bit 以上通常只需很少 epoch）；
 - 与 KD 结合是常见做法：用 FP 模型当 Teacher，帮助低比特 Student 恢复精度；
-- 对 LLM，完整 QAT 往往太贵，常用 PTQ（见 [LLM 权重量化](/XXXX_MO_Quantization_LLM_Weight)）；只有在 PTQ 无法满足精度、且有训练预算时才上 QAT。
+- 对 LLM，完整 QAT 往往太贵，常用 PTQ（见 [LLM 权重量化](/0706_MO_Quantization_LLM_Weight)）；只有在 PTQ 无法满足精度、且有训练预算时才上 QAT。
 
 ## Reference
 
