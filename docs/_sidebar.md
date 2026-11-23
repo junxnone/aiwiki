@@ -343,7 +343,7 @@
       - [机器学习时间序列模型](/0605_ML_Tasks_TimeSeries_ML)
         - [GBDT](/0658_ML_Tasks_TimeSeries_ML_GBDT)
         - [ROCKET](/0627_ML_Tasks_TimeSeries_ML_ROCKET)
-      - [时间序列模型评估指标：公式、历史与现行评估方式、优缺点](/0610_ML_Tasks_TimeSeries_Metrics)
+      - [时间序列模型评估指标](/0610_ML_Tasks_TimeSeries_Metrics)
       - [时间序列模型发展时间线](/0611_ML_Tasks_TimeSeries_Timeline)
   - [Op](/0366_ML_Op)
     - [Activation Function 激活函数](/0279_ML_Op_AF)
@@ -683,4 +683,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1418191123</sub></kbd>
+<kbd><sub>@1418471123</sub></kbd>

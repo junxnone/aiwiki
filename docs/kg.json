@@ -4692,7 +4692,7 @@
     {
       "id": "aiwiki ML Tasks TimeSeries Metrics",
       "group": 4,
-      "title": "时间序列模型评估指标：公式、历史与现行评估方式、优缺点",
+      "title": "时间序列模型评估指标",
       "url": "https://junxnone.github.io/aiwiki/#/0610_ML_Tasks_TimeSeries_Metrics",
       "visible": true,
       "expand": true,
