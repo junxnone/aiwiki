@@ -3,13 +3,13 @@
 | Title     | MO KD Response                                        |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-23T01:43:08Z`                                |
-| Updated @ | `2026-11-23T01:58:42Z`                                |
+| Updated @ | `2026-11-23T02:42:29Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/689) |
 
 -----
 
-# Response
+# 响应蒸馏（Response-based KD）
 
 响应蒸馏（Response-based KD）让 Student 去匹配 Teacher **最终输出层**的信息，通常是 logits
 经温度软化后的概率分布。它是最早、最简单、也是用得最广的一类蒸馏：不要求 Teacher 与 Student

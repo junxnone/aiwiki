@@ -2,12 +2,12 @@
 Title | MO KD Response
 -- | --
 Created @ | `2026-11-23T01:43:08Z`
-Updated @| `2026-11-23T01:58:42Z`
+Updated @| `2026-11-23T02:42:29Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/689)
 
 ---
-# Response
+# 响应蒸馏（Response-based KD）
 
 响应蒸馏（Response-based KD）让 Student 去匹配 Teacher **最终输出层**的信息，通常是 logits 经温度软化后的概率分布。它是最早、最简单、也是用得最广的一类蒸馏：不要求 Teacher 与 Student 结构相近，也不需要访问中间层，只要有输出就能做。本文覆盖这一类的四个代表：Hinton 提出的原始 KD（*Distilling the Knowledge in a Neural Network*，arXiv:1503.02531）、hard 与 soft 两种蒸馏目标、DKD（*Decoupled Knowledge Distillation*，CVPR 2022，arXiv:2203.08679）对 KD 损失的解耦，以及 KD 与标签平滑的关系（Müller 等，arXiv:1906.02629；Yuan 等，arXiv:1909.11723）。
 
@@ -180,4 +180,5 @@ $$
 - Müller R, Kornblith S, Hinton G. When Does Label Smoothing Help? NeurIPS 2019. arXiv:1906.02629
 - Yuan L, Tay F E H, Li G, Wang T, Feng J. Revisiting Knowledge Distillation via Label Smoothing Regularization. CVPR 2020 `[会议待核实]`. arXiv:1909.11723
 - Touvron H 等. Training data-efficient image transformers & distillation through attention (DeiT). arXiv:2012.12877
+
 
