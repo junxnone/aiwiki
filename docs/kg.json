@@ -3196,6 +3196,15 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki MO Quantization DataType",
+      "group": 3,
+      "title": "DataType",
+      "url": "https://junxnone.github.io/aiwiki/#/0700_MO_Quantization_DataType",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Op Convolution Math",
       "group": 4,
       "title": "卷积 数学定义",
@@ -7789,6 +7798,13 @@
     {
       "source": "aiwiki MO Quantization",
       "target": "aiwiki MO Quantization Basics",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki MO Quantization",
+      "target": "aiwiki MO Quantization DataType",
       "value": 3,
       "visible": true,
       "expand": true

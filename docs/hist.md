@@ -4,6 +4,7 @@
 
 #### **Created**
 
+- 2026-11-23&nbsp;&nbsp; [DataType](/0700_MO_Quantization_DataType)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:DataType
 - 2026-11-23&nbsp;&nbsp; [Basics](/0699_MO_Quantization_Basics)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:Basics
 - 2026-11-23&nbsp;&nbsp; [Theory](/0698_MO_KD_Theory)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Theory
 - 2026-11-23&nbsp;&nbsp; [LLM BlackBox](/0697_MO_KD_LLM_BlackBox)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:LLM :bookmark:BlackBox
@@ -671,6 +672,7 @@
 
 #### **Updated**
 
+- 2026-11-23&nbsp;&nbsp; [DataType](/0700_MO_Quantization_DataType)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:DataType
 - 2026-11-23&nbsp;&nbsp; [Basics](/0699_MO_Quantization_Basics)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:Basics
 - 2026-11-23&nbsp;&nbsp; [Theory](/0698_MO_KD_Theory)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Theory
 - 2026-11-23&nbsp;&nbsp; [LLM BlackBox](/0697_MO_KD_LLM_BlackBox)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:LLM :bookmark:BlackBox
