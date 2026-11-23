@@ -2,7 +2,7 @@
 Title | MO Quantization DataType
 -- | --
 Created @ | `2026-11-23T02:05:31Z`
-Updated @| `2026-11-23T02:05:31Z`
+Updated @| `2026-11-23T02:24:53Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/700)
 
@@ -15,7 +15,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/700)
 
 > 标注约定：未标注的内容来自上述论文原文；`[解读]` 是对论文的理解，`[经验]` 是一般经验，`[待核实]` 是未能确认的内容（例如 NVFP4 等没有读到原始文献的格式）。
 
-本站相关：总览 [量化](0312_MO_Quantization)；量化基础 [基础原理](/0699_MO_Quantization_Basics)；LLM 中如何使用这些格式 [LLM 权重量化](/XXXX_MO_Quantization_LLM_Weight)、[LLM 权重+激活量化](/XXXX_MO_Quantization_LLM_WA)；系列中的 [量化历史](/0688_MO_Quantization_History)。
+本站相关：总览 [量化](0312_MO_Quantization)；量化基础 [基础原理](/0699_MO_Quantization_Basics)；LLM 中如何使用这些格式 [LLM 权重量化](/0706_MO_Quantization_LLM_Weight)、[LLM 权重+激活量化](/0707_MO_Quantization_LLM_WA)；系列中的 [量化历史](/0688_MO_Quantization_History)。
 
 ## 1. 解决什么问题
 
@@ -160,7 +160,7 @@ $$
 
 - 选数据类型就是选"量化网格的形状 + 缩放的粒度"：整数最简单、硬件普遍支持；浮点（FP8、FP4）在长尾分布上表示更灵活；块缩放（MX）在不增加太多开销的情况下提供更细的缩放粒度；
 - 训练推荐 FP8（E4M3 前向、E5M2 梯度），推理常用 INT8/INT4，LLM 权重存储常用 INT4 或 NF4，新硬件上的 MX、NVFP4 正在成为选项；
-- 这些类型怎么配合算法使用，见 [LLM 权重量化](/XXXX_MO_Quantization_LLM_Weight) 与 [LLM 权重+激活量化](/XXXX_MO_Quantization_LLM_WA)。
+- 这些类型怎么配合算法使用，见 [LLM 权重量化](/0706_MO_Quantization_LLM_Weight) 与 [LLM 权重+激活量化](/0707_MO_Quantization_LLM_WA)。
 
 ## Reference
 
