@@ -498,6 +498,7 @@
   - [知识蒸馏](/0207_MO_KD)
     - [Feature](/0690_MO_KD_Feature)
     - [知识蒸馏发展历史](/0336_MO_KD_History)
+    - [Relation](/0691_MO_KD_Relation)
     - [Response](/0689_MO_KD_Response)
     - [Distilling the Knowledge in a Neural Network](/0208_MO_KD_s)
   - [量化](/0312_MO_Quantization)
@@ -662,4 +663,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0946011123</sub></kbd>
+<kbd><sub>@0947151123</sub></kbd>

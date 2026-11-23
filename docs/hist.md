@@ -4,6 +4,7 @@
 
 #### **Created**
 
+- 2026-11-23&nbsp;&nbsp; [Relation](/0691_MO_KD_Relation)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Relation
 - 2026-11-23&nbsp;&nbsp; [Feature](/0690_MO_KD_Feature)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Feature
 - 2026-11-23&nbsp;&nbsp; [Response](/0689_MO_KD_Response)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Response
 - 2026-11-20&nbsp;&nbsp; [量化发展历史](/0688_MO_Quantization_History)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:History
@@ -662,6 +663,7 @@
 
 #### **Updated**
 
+- 2026-11-23&nbsp;&nbsp; [Relation](/0691_MO_KD_Relation)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Relation
 - 2026-11-23&nbsp;&nbsp; [Feature](/0690_MO_KD_Feature)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Feature
 - 2026-11-23&nbsp;&nbsp; [Response](/0689_MO_KD_Response)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Response
 - 2026-11-20&nbsp;&nbsp; [量化发展历史](/0688_MO_Quantization_History)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:History

@@ -3133,6 +3133,15 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki MO KD Relation",
+      "group": 3,
+      "title": "Relation",
+      "url": "https://junxnone.github.io/aiwiki/#/0691_MO_KD_Relation",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Op Convolution Math",
       "group": 4,
       "title": "卷积 数学定义",
@@ -7533,6 +7542,13 @@
     {
       "source": "aiwiki MO KD",
       "target": "aiwiki MO KD Feature",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki MO KD",
+      "target": "aiwiki MO KD Relation",
       "value": 3,
       "visible": true,
       "expand": true
