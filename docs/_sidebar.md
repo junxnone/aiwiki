@@ -511,6 +511,7 @@
     - [Distilling the Knowledge in a Neural Network](/0208_MO_KD_s)
   - [量化](/0312_MO_Quantization)
     - [Basics](/0699_MO_Quantization_Basics)
+    - [Calibration](/0701_MO_Quantization_Calibration)
     - [DataType](/0700_MO_Quantization_DataType)
     - [量化发展历史](/0688_MO_Quantization_History)
 - [RL 强化学习](/0290_RL)
@@ -673,4 +674,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1006281123</sub></kbd>
+<kbd><sub>@1008181123</sub></kbd>
