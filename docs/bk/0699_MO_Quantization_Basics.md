@@ -3,13 +3,13 @@
 | Title     | MO Quantization Basics                                |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-23T02:03:30Z`                                |
-| Updated @ | `2026-11-23T02:24:49Z`                                |
+| Updated @ | `2026-11-23T02:43:08Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/699) |
 
 -----
 
-# Basics
+# 量化基础原理
 
 量化（Quantization）把神经网络中的浮点数（权重、激活）用低比特整数表示，让推理可以用整数运算完成，从而省存储、省带宽、省算力。这一篇讲量化的**基本原理**：仿射量化的公式、对称与非对称、量化粒度、截断与舍入误差，以及整数推理的算术（整数矩阵乘、requantize、零点展开、偏置、BN
 折叠）。内容主要依据三份文献：Jacob 等人的 *Quantization and Training of Neural Networks
