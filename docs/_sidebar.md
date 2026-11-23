@@ -501,6 +501,7 @@
     - [Online](/0692_MO_KD_Online)
     - [Relation](/0691_MO_KD_Relation)
     - [Response](/0689_MO_KD_Response)
+    - [Self](/0693_MO_KD_Self)
     - [Distilling the Knowledge in a Neural Network](/0208_MO_KD_s)
   - [量化](/0312_MO_Quantization)
     - [量化发展历史](/0688_MO_Quantization_History)
@@ -664,4 +665,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0948431123</sub></kbd>
+<kbd><sub>@0950211123</sub></kbd>
