@@ -3,7 +3,7 @@
 | Title     | MO KD LLM WhiteBox                                    |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-23T01:55:41Z`                                |
-| Updated @ | `2026-11-23T01:55:41Z`                                |
+| Updated @ | `2026-11-23T01:58:56Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/696) |
 
@@ -13,7 +13,7 @@
 
 "白盒"指蒸馏时**能访问 Teacher 的完整输出分布（logits）甚至中间层**，与只能拿到 Teacher
 生成文本的"黑盒"蒸馏相对（见 [LLM
-黑盒蒸馏](/XXXX_MO_KD_LLM_BlackBox)）。语言模型的白盒蒸馏经历了三个阶段：先是机器翻译里把蒸馏从词级推到序列级（Seq-KD），然后是
+黑盒蒸馏](/0697_MO_KD_LLM_BlackBox)）。语言模型的白盒蒸馏经历了三个阶段：先是机器翻译里把蒸馏从词级推到序列级（Seq-KD），然后是
 BERT
 时代的编码器压缩（DistilBERT、TinyBERT、MiniLM），再到生成式大模型的蒸馏（MiniLLM、GKD、DistiLLM），后者的核心问题是**自回归解码中训练与推理的分布不一致**。本文覆盖：Seq-KD（*Sequence-Level
 Knowledge Distillation*，EMNLP
@@ -36,7 +36,7 @@ KL、JSD、skew KL）做了大量工作。**
 本站相关：总览 [知识蒸馏](0207_MO_KD)；发展历史 [KD History](0336_MO_KD_History)；基础损失与温度
 [响应蒸馏](/0689_MO_KD_Response)；特征、注意力对齐的思想
 [特征蒸馏](/0690_MO_KD_Feature)；黑盒蒸馏与推理蒸馏 [LLM
-黑盒蒸馏](/XXXX_MO_KD_LLM_BlackBox)；视觉 Transformer 中的蒸馏见 [检测/分割/ViT
+黑盒蒸馏](/0697_MO_KD_LLM_BlackBox)；视觉 Transformer 中的蒸馏见 [检测/分割/ViT
 蒸馏](/0695_MO_KD_CV)。
 
 ## 1\. 解决什么问题
