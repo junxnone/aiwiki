@@ -522,7 +522,7 @@
     - [混合精度量化](/0705_MO_Quantization_MixedPrecision)
     - [训练后量化（PTQ）](/0702_MO_Quantization_PTQ)
     - [量化感知训练（QAT）](/0703_MO_Quantization_QAT)
-    - [Tools](/0709_MO_Quantization_Tools)
+    - [量化工具对比](/0709_MO_Quantization_Tools)
 - [RL 强化学习](/0290_RL)
   - [Advantage Actor Critic](/0460_RL_A2C)
   - [Actor Critic](/0459_RL_AC)
@@ -683,4 +683,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1044171123</sub></kbd>
+<kbd><sub>@1044341123</sub></kbd>
