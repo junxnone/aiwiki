@@ -3,7 +3,7 @@
 | Title     | ML Metrics Detection                                  |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2019-01-16T03:46:56Z`                                |
-| Updated @ | `2026-11-24T00:58:22Z`                                |
+| Updated @ | `2026-11-24T05:37:03Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/230) |
 
@@ -36,10 +36,10 @@
 ``` mermaid
 
 graph TD
-    O(Object Detection \n Metrics History)--> |PASCAL VOC 2005| V1(TPR / FPR)
-    V1 --> |PASCAL VOC 2007| V2("11 Point Interpolation AP \n (IoU=0.5)")
-    V2 --> |PASCAL VOC 2010| V3("All Point Interpolation AP \n (IoU=0.5)")
-    V3 --> |MS COCO 2014| V4(" 101 Point Interpolation AP\n(mAP@0.5 mAP@[0.5:0.05:0.95])")
+    O("Object Detection \n Metrics History")--> |"PASCAL VOC 2005"| V1("TPR / FPR")
+    V1 --> |"PASCAL VOC 2007"| V2("11 Point Interpolation AP \n (IoU=0.5)")
+    V2 --> |"PASCAL VOC 2010"| V3("All Point Interpolation AP \n (IoU=0.5)")
+    V3 --> |"MS COCO 2014"| V4(" 101 Point Interpolation AP\n(mAP@0.5 mAP@[0.5:0.05:0.95])")
 
 ```
 
@@ -56,12 +56,12 @@ graph TD
 
 ``` mermaid
 graph LR
-    A(Predictions<br/>box + class + score) --> B(按 class 分组<br/>按 score 降序)
-    B --> C(与 GT 计算 IoU<br/>IoU ≥ 阈值 且 类别一致)
-    C --> D(判定 TP / FP<br/>一个 GT 只能匹配一次)
-    D --> E(累计 Precision / Recall<br/>得到 PR Curve)
-    E --> F(AP 每类面积)
-    F --> G(mAP 类别平均)
+    A("Predictions<br/>box + class + score") --> B("按 class 分组<br/>按 score 降序")
+    B --> C("与 GT 计算 IoU<br/>IoU ≥ 阈值 且 类别一致")
+    C --> D("判定 TP / FP<br/>一个 GT 只能匹配一次")
+    D --> E("累计 Precision / Recall<br/>得到 PR Curve")
+    E --> F("AP 每类面积")
+    F --> G("mAP 类别平均")
 ```
 
 图中：
