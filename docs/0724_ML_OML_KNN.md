@@ -2,7 +2,7 @@
 Title | ML OML KNN
 -- | --
 Created @ | `2026-11-24T03:39:16Z`
-Updated @| `2026-11-24T03:39:16Z`
+Updated @| `2026-11-24T05:37:38Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/724)
 
@@ -19,11 +19,11 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/724)
 
 ```mermaid
 graph LR
-    Q(待预测样本 x) --> D(计算 x 与所有训练样本的距离)
-    D --> S(取距离最小的 K 个邻居)
-    S --> V{任务}
-    V -->|分类| C(多数投票)
-    V -->|回归| R(取平均值)
+    Q("待预测样本 x") --> D("计算 x 与所有训练样本的距离")
+    D --> S("取距离最小的 K 个邻居")
+    S --> V{"任务"}
+    V -->|"分类"| C("多数投票")
+    V -->|"回归"| R("取平均值")
 ```
 
 图中：
@@ -97,4 +97,5 @@ print(search.best_params_)
 ## Reference
 - [scikit-learn - Nearest Neighbors](https://scikit-learn.org/stable/modules/neighbors.html)
 - [Nearest neighbor pattern classification - Cover & Hart 1967](https://ieeexplore.ieee.org/document/1053964)
+
 
