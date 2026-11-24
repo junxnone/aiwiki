@@ -2,7 +2,7 @@
 Title | ML Metrics CrossValidation
 -- | --
 Created @ | `2020-06-11T05:02:59Z`
-Updated @| `2026-11-24T02:49:47Z`
+Updated @| `2026-11-24T05:37:06Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/249)
 
@@ -34,14 +34,14 @@ Num | Cross Validation | Description | sklearn
 
 ```mermaid
 graph TD
-    A(数据) --> B{样本之间<br/>是否独立?}
-    B -->|有时间顺序| T(TimeSeriesSplit)
-    B -->|有分组<br/>同病人/同场景/同设备| G(GroupKFold)
-    B -->|独立同分布| C{类别是否均衡?}
-    C -->|不均衡| S(StratifiedKFold)
-    C -->|均衡| D{样本量}
-    D -->|小| L(Leave One Out / Repeated K-Fold)
-    D -->|大| K(K Fold K=5 或 10)
+    A("数据") --> B{"样本之间<br/>是否独立?"}
+    B -->|"有时间顺序"| T("TimeSeriesSplit")
+    B -->|"有分组<br/>同病人/同场景/同设备"| G("GroupKFold")
+    B -->|"独立同分布"| C{"类别是否均衡?"}
+    C -->|"不均衡"| S("StratifiedKFold")
+    C -->|"均衡"| D{"样本量"}
+    D -->|"小"| L("Leave One Out / Repeated K-Fold")
+    D -->|"大"| K("K Fold K=5 或 10")
 ```
 
 图中：
@@ -134,5 +134,6 @@ print(scores.mean(), scores.std())
 - [几种交叉验证（cross validation）方式的比较](https://www.cnblogs.com/ysugyl/p/8707887.html)
 - [sklearn - cross validation](https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation)
 - [sklearn.model_selection 介绍](https://www.cnblogs.com/XD00/p/12290528.html)
+
 
 
