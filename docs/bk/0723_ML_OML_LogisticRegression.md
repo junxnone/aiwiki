@@ -3,7 +3,7 @@
 | Title     | ML OML LogisticRegression                             |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-24T03:39:13Z`                                |
-| Updated @ | `2026-11-24T03:39:13Z`                                |
+| Updated @ | `2026-11-24T05:37:35Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/723) |
 
@@ -20,11 +20,11 @@
 
 ``` mermaid
 graph LR
-    X(特征 x) --> L("线性组合<br/>z = wᵀx + b")
+    X("特征 x") --> L("线性组合<br/>z = wᵀx + b")
     L --> S("sigmoid<br/>p = 1 / (1 + e^-z)")
-    S --> T{p 是否大于阈值?}
-    T -->|是| P(预测为正类)
-    T -->|否| N(预测为负类)
+    S --> T{"p 是否大于阈值?"}
+    T -->|"是"| P("预测为正类")
+    T -->|"否"| N("预测为负类")
 ```
 
 图中：
