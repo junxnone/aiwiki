@@ -4,6 +4,36 @@
 
 #### **Created**
 
+- 2026-11-24&nbsp;&nbsp; [AIVAD 基于属性表示的视频异常检测](/0764_paper_AIVAD)&nbsp;&nbsp; :bookmark:paper :bookmark:AIVAD
+- 2026-11-24&nbsp;&nbsp; [VLMAD 视觉语言模型异常检测](/0763_paper_VLMAD)&nbsp;&nbsp; :bookmark:paper :bookmark:VLMAD
+- 2026-11-24&nbsp;&nbsp; [CFM 跨模态特征映射](/0762_paper_CFM)&nbsp;&nbsp; :bookmark:paper :bookmark:CFM
+- 2026-11-24&nbsp;&nbsp; [AnomalyVFM 把视觉基础模型变成零样本异常检测器](/0761_paper_AnomalyVFM)&nbsp;&nbsp; :bookmark:paper :bookmark:AnomalyVFM
+- 2026-11-24&nbsp;&nbsp; [FoundAD 基础视觉编码器即少样本异常检测器](/0760_paper_FoundAD)&nbsp;&nbsp; :bookmark:paper :bookmark:FoundAD
+- 2026-11-24&nbsp;&nbsp; [MHPatchCore 马氏距离 PatchCore](/0759_paper_MHPatchCore)&nbsp;&nbsp; :bookmark:paper :bookmark:MHPatchCore
+- 2026-11-24&nbsp;&nbsp; [SuperADD 免训练的类别无关异常分割](/0758_paper_SuperADD)&nbsp;&nbsp; :bookmark:paper :bookmark:SuperADD
+- 2026-11-24&nbsp;&nbsp; [RAD 检索式异常检测](/0757_paper_RAD)&nbsp;&nbsp; :bookmark:paper :bookmark:RAD
+- 2026-11-24&nbsp;&nbsp; [AnomalyDINO 基于 DINOv2 的少样本异常检测](/0756_paper_AnomalyDINO)&nbsp;&nbsp; :bookmark:paper :bookmark:AnomalyDINO
+- 2026-11-24&nbsp;&nbsp; [GeneralAD 跨领域的异常检测](/0755_paper_GeneralAD)&nbsp;&nbsp; :bookmark:paper :bookmark:GeneralAD
+- 2026-11-24&nbsp;&nbsp; [INPFormer 单图内固有正常原型](/0754_paper_INPFormer)&nbsp;&nbsp; :bookmark:paper :bookmark:INPFormer
+- 2026-11-24&nbsp;&nbsp; [Dinomaly 基于 ViT 的特征重构](/0753_paper_Dinomaly)&nbsp;&nbsp; :bookmark:paper :bookmark:Dinomaly
+- 2026-11-24&nbsp;&nbsp; [L2BT 学着做一个 Transformer](/0752_paper_L2BT)&nbsp;&nbsp; :bookmark:paper :bookmark:L2BT
+- 2026-11-24&nbsp;&nbsp; [UniNet 统一对比学习框架](/0751_paper_UniNet)&nbsp;&nbsp; :bookmark:paper :bookmark:UniNet
+- 2026-11-24&nbsp;&nbsp; [CFA 耦合超球面特征适配](/0750_paper_CFA)&nbsp;&nbsp; :bookmark:paper :bookmark:CFA
+- 2026-11-24&nbsp;&nbsp; [ReverseDistillation 反向蒸馏](/0749_paper_ReverseDistillation)&nbsp;&nbsp; :bookmark:paper :bookmark:ReverseDistillation
+- 2026-11-24&nbsp;&nbsp; [EfficientAD 毫秒级异常检测](/0748_paper_EfficientAD)&nbsp;&nbsp; :bookmark:paper :bookmark:EfficientAD
+- 2026-11-24&nbsp;&nbsp; [SuperSimpleNet 统一监督与无监督的缺陷检测](/0747_paper_SuperSimpleNet)&nbsp;&nbsp; :bookmark:paper :bookmark:SuperSimpleNet
+- 2026-11-24&nbsp;&nbsp; [GLASS 梯度上升异常合成](/0746_paper_GLASS)&nbsp;&nbsp; :bookmark:paper :bookmark:GLASS
+- 2026-11-24&nbsp;&nbsp; [DSR 双子空间重投影](/0745_paper_DSR)&nbsp;&nbsp; :bookmark:paper :bookmark:DSR
+- 2026-11-24&nbsp;&nbsp; [DRAEM 判别式重构嵌入](/0744_paper_DRAEM)&nbsp;&nbsp; :bookmark:paper :bookmark:DRAEM
+- 2026-11-24&nbsp;&nbsp; [GANomaly 对抗训练的异常检测](/0743_paper_GANomaly)&nbsp;&nbsp; :bookmark:paper :bookmark:GANomaly
+- 2026-11-24&nbsp;&nbsp; [FRE 特征重构误差](/0742_paper_FRE)&nbsp;&nbsp; :bookmark:paper :bookmark:FRE
+- 2026-11-24&nbsp;&nbsp; [DFKDE 深度特征核密度估计](/0741_paper_DFKDE)&nbsp;&nbsp; :bookmark:paper :bookmark:DFKDE
+- 2026-11-24&nbsp;&nbsp; [DFM 深度特征建模](/0740_paper_DFM)&nbsp;&nbsp; :bookmark:paper :bookmark:DFM
+- 2026-11-24&nbsp;&nbsp; [PatchFlow 基于补丁特征的归一化流](/0739_paper_PatchFlow)&nbsp;&nbsp; :bookmark:paper :bookmark:PatchFlow
+- 2026-11-24&nbsp;&nbsp; [UFlow U 形流与无监督阈值](/0738_paper_UFlow)&nbsp;&nbsp; :bookmark:paper :bookmark:UFlow
+- 2026-11-24&nbsp;&nbsp; [CSFlow 跨尺度流异常检测](/0737_paper_CSFlow)&nbsp;&nbsp; :bookmark:paper :bookmark:CSFlow
+- 2026-11-24&nbsp;&nbsp; [FastFlow 二维归一化流异常检测](/0736_paper_FastFlow)&nbsp;&nbsp; :bookmark:paper :bookmark:FastFlow
+- 2026-11-24&nbsp;&nbsp; [CFlow 条件归一化流异常检测](/0735_paper_CFlow)&nbsp;&nbsp; :bookmark:paper :bookmark:CFlow
 - 2026-11-24&nbsp;&nbsp; [IS-Net：高精度二分图像分割（DIS）](/0734_paper_ISNet)&nbsp;&nbsp; :bookmark:paper :bookmark:ISNet
 - 2026-11-24&nbsp;&nbsp; [Isolation Forest 孤立森林](/0733_ML_OML_IsolationForest)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:IsolationForest
 - 2026-11-24&nbsp;&nbsp; [t-SNE 非线性降维](/0732_ML_OML_tSNE)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:tSNE
@@ -706,6 +736,36 @@
 
 #### **Updated**
 
+- 2026-11-24&nbsp;&nbsp; [AIVAD 基于属性表示的视频异常检测](/0764_paper_AIVAD)&nbsp;&nbsp; :bookmark:paper :bookmark:AIVAD
+- 2026-11-24&nbsp;&nbsp; [VLMAD 视觉语言模型异常检测](/0763_paper_VLMAD)&nbsp;&nbsp; :bookmark:paper :bookmark:VLMAD
+- 2026-11-24&nbsp;&nbsp; [CFM 跨模态特征映射](/0762_paper_CFM)&nbsp;&nbsp; :bookmark:paper :bookmark:CFM
+- 2026-11-24&nbsp;&nbsp; [AnomalyVFM 把视觉基础模型变成零样本异常检测器](/0761_paper_AnomalyVFM)&nbsp;&nbsp; :bookmark:paper :bookmark:AnomalyVFM
+- 2026-11-24&nbsp;&nbsp; [FoundAD 基础视觉编码器即少样本异常检测器](/0760_paper_FoundAD)&nbsp;&nbsp; :bookmark:paper :bookmark:FoundAD
+- 2026-11-24&nbsp;&nbsp; [MHPatchCore 马氏距离 PatchCore](/0759_paper_MHPatchCore)&nbsp;&nbsp; :bookmark:paper :bookmark:MHPatchCore
+- 2026-11-24&nbsp;&nbsp; [SuperADD 免训练的类别无关异常分割](/0758_paper_SuperADD)&nbsp;&nbsp; :bookmark:paper :bookmark:SuperADD
+- 2026-11-24&nbsp;&nbsp; [RAD 检索式异常检测](/0757_paper_RAD)&nbsp;&nbsp; :bookmark:paper :bookmark:RAD
+- 2026-11-24&nbsp;&nbsp; [AnomalyDINO 基于 DINOv2 的少样本异常检测](/0756_paper_AnomalyDINO)&nbsp;&nbsp; :bookmark:paper :bookmark:AnomalyDINO
+- 2026-11-24&nbsp;&nbsp; [GeneralAD 跨领域的异常检测](/0755_paper_GeneralAD)&nbsp;&nbsp; :bookmark:paper :bookmark:GeneralAD
+- 2026-11-24&nbsp;&nbsp; [INPFormer 单图内固有正常原型](/0754_paper_INPFormer)&nbsp;&nbsp; :bookmark:paper :bookmark:INPFormer
+- 2026-11-24&nbsp;&nbsp; [Dinomaly 基于 ViT 的特征重构](/0753_paper_Dinomaly)&nbsp;&nbsp; :bookmark:paper :bookmark:Dinomaly
+- 2026-11-24&nbsp;&nbsp; [L2BT 学着做一个 Transformer](/0752_paper_L2BT)&nbsp;&nbsp; :bookmark:paper :bookmark:L2BT
+- 2026-11-24&nbsp;&nbsp; [UniNet 统一对比学习框架](/0751_paper_UniNet)&nbsp;&nbsp; :bookmark:paper :bookmark:UniNet
+- 2026-11-24&nbsp;&nbsp; [CFA 耦合超球面特征适配](/0750_paper_CFA)&nbsp;&nbsp; :bookmark:paper :bookmark:CFA
+- 2026-11-24&nbsp;&nbsp; [ReverseDistillation 反向蒸馏](/0749_paper_ReverseDistillation)&nbsp;&nbsp; :bookmark:paper :bookmark:ReverseDistillation
+- 2026-11-24&nbsp;&nbsp; [EfficientAD 毫秒级异常检测](/0748_paper_EfficientAD)&nbsp;&nbsp; :bookmark:paper :bookmark:EfficientAD
+- 2026-11-24&nbsp;&nbsp; [SuperSimpleNet 统一监督与无监督的缺陷检测](/0747_paper_SuperSimpleNet)&nbsp;&nbsp; :bookmark:paper :bookmark:SuperSimpleNet
+- 2026-11-24&nbsp;&nbsp; [GLASS 梯度上升异常合成](/0746_paper_GLASS)&nbsp;&nbsp; :bookmark:paper :bookmark:GLASS
+- 2026-11-24&nbsp;&nbsp; [DSR 双子空间重投影](/0745_paper_DSR)&nbsp;&nbsp; :bookmark:paper :bookmark:DSR
+- 2026-11-24&nbsp;&nbsp; [DRAEM 判别式重构嵌入](/0744_paper_DRAEM)&nbsp;&nbsp; :bookmark:paper :bookmark:DRAEM
+- 2026-11-24&nbsp;&nbsp; [GANomaly 对抗训练的异常检测](/0743_paper_GANomaly)&nbsp;&nbsp; :bookmark:paper :bookmark:GANomaly
+- 2026-11-24&nbsp;&nbsp; [FRE 特征重构误差](/0742_paper_FRE)&nbsp;&nbsp; :bookmark:paper :bookmark:FRE
+- 2026-11-24&nbsp;&nbsp; [DFKDE 深度特征核密度估计](/0741_paper_DFKDE)&nbsp;&nbsp; :bookmark:paper :bookmark:DFKDE
+- 2026-11-24&nbsp;&nbsp; [DFM 深度特征建模](/0740_paper_DFM)&nbsp;&nbsp; :bookmark:paper :bookmark:DFM
+- 2026-11-24&nbsp;&nbsp; [PatchFlow 基于补丁特征的归一化流](/0739_paper_PatchFlow)&nbsp;&nbsp; :bookmark:paper :bookmark:PatchFlow
+- 2026-11-24&nbsp;&nbsp; [UFlow U 形流与无监督阈值](/0738_paper_UFlow)&nbsp;&nbsp; :bookmark:paper :bookmark:UFlow
+- 2026-11-24&nbsp;&nbsp; [CSFlow 跨尺度流异常检测](/0737_paper_CSFlow)&nbsp;&nbsp; :bookmark:paper :bookmark:CSFlow
+- 2026-11-24&nbsp;&nbsp; [FastFlow 二维归一化流异常检测](/0736_paper_FastFlow)&nbsp;&nbsp; :bookmark:paper :bookmark:FastFlow
+- 2026-11-24&nbsp;&nbsp; [CFlow 条件归一化流异常检测](/0735_paper_CFlow)&nbsp;&nbsp; :bookmark:paper :bookmark:CFlow
 - 2026-11-24&nbsp;&nbsp; [IS-Net：高精度二分图像分割（DIS）](/0734_paper_ISNet)&nbsp;&nbsp; :bookmark:paper :bookmark:ISNet
 - 2026-11-24&nbsp;&nbsp; [Isolation Forest 孤立森林](/0733_ML_OML_IsolationForest)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:IsolationForest
 - 2026-11-24&nbsp;&nbsp; [t-SNE 非线性降维](/0732_ML_OML_tSNE)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:tSNE
