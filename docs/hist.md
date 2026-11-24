@@ -718,6 +718,10 @@
 - 2026-11-24&nbsp;&nbsp; [Pairwise Metrics 成对相似度与距离](/0139_ML_Metrics_Pairwise)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Pairwise
 - 2026-11-24&nbsp;&nbsp; [Metrics 评价指标](/0138_ML_Metrics)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics
 - 2026-11-24&nbsp;&nbsp; [Metrics for Classification](/0137_ML_Metrics_Classification)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Classification
+- 2026-11-24&nbsp;&nbsp; [SVM 原理推导](/0116_ML_OML_SVM_原理)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:SVM :bookmark:原理
+- 2026-11-24&nbsp;&nbsp; [SVM 支持向量机](/0115_ML_OML_SVM)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:SVM
+- 2026-11-24&nbsp;&nbsp; [Random Forest 随机森林](/0114_ML_OML_RandomForest)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:RandomForest
+- 2026-11-24&nbsp;&nbsp; [Decision Tree 决策树](/0113_ML_OML_DecisionTree)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:DecisionTree
 - 2026-11-23&nbsp;&nbsp; [量化工具对比](/0709_MO_Quantization_Tools)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:Tools
 - 2026-11-23&nbsp;&nbsp; [KV Cache 量化](/0708_MO_Quantization_KVCache)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:KVCache
 - 2026-11-23&nbsp;&nbsp; [LLM 权重+激活量化](/0707_MO_Quantization_LLM_WA)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:LLM :bookmark:WA
@@ -1216,10 +1220,6 @@
 - 2023-02-02&nbsp;&nbsp; [GD 原理推导](/0151_ML_Arch_GD_原理)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:GD :bookmark:原理
 - 2023-02-02&nbsp;&nbsp; [Momentum](/0150_ML_Arch_GD_Momentum)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:GD :bookmark:Momentum
 - 2023-02-02&nbsp;&nbsp; [BGD SGD MBGD](/0148_ML_Arch_GD_xGD)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:GD :bookmark:xGD
-- 2023-02-02&nbsp;&nbsp; [SVM 原理推导](/0116_ML_OML_SVM_原理)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:SVM :bookmark:原理
-- 2023-02-02&nbsp;&nbsp; [SVM 支持向量机](/0115_ML_OML_SVM)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:SVM
-- 2023-02-02&nbsp;&nbsp; [Random Forest 随机森林](/0114_ML_OML_RandomForest)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:RandomForest
-- 2023-02-02&nbsp;&nbsp; [Decision Tree 决策树](/0113_ML_OML_DecisionTree)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:DecisionTree
 - 2023-02-02&nbsp;&nbsp; [Training & Inference Tools History](/0005_Tools_TIHistory)&nbsp;&nbsp; :bookmark:Tools :bookmark:TIHistory
 - 2023-01-31&nbsp;&nbsp; [Motion Detection 运动侦测](/0243_ML_Tasks_MD)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:MD
 - 2023-01-31&nbsp;&nbsp; [Classification](/0061_ML_Tasks_Image_Classification)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Classification
