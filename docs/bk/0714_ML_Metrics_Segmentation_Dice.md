@@ -3,7 +3,7 @@
 | Title     | ML Metrics Segmentation Dice                          |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-24T01:03:54Z`                                |
-| Updated @ | `2026-11-24T01:03:54Z`                                |
+| Updated @ | `2026-11-24T01:04:52Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/714) |
 
@@ -81,7 +81,7 @@ $$ Dice\_{soft} = \\frac{2\\sum\_i p\_i g\_i + \\epsilon}{\\sum\_i p\_i
     Dice = 1（正确地没有预测任何东西）；只有一方为空则 Dice = 0
   - **小目标**：目标只有几个像素时 Dice 波动很大，很小的偏移也会让 Dice 大幅下降
   - **3D 体数据**：医学 CT/MRI 在体素上计算，常同时配合 [Hausdorff
-    Distance](/0138_ML_Metrics) 评估边界
+    Distance](/0715_ML_Metrics_Segmentation_Hausdorff) 评估边界
 
 ## Code
 
