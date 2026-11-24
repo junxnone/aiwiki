@@ -2,7 +2,7 @@
 Title | ML Metrics
 -- | --
 Created @ | `2021-11-21T06:01:17Z`
-Updated @| `2026-11-24T01:04:56Z`
+Updated @| `2026-11-24T05:37:01Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/138)
 
@@ -79,12 +79,12 @@ F<sub>1</sub> |  当 β = 1 时的 F<sub>β</sub> | Precision 和 Recall 的调�
 
 ```mermaid
 graph TD
-    M(Metrics) --> T1(依赖阈值<br/>Threshold-dependent)
-    M --> T2(不依赖阈值<br/>Threshold-free)
-    T1 --> A1(Accuracy / Precision / Recall / F1)
-    T1 --> A2(IoU / Dice / Confusion Matrix)
-    T2 --> B1(AUROC / AUPR / AP)
-    T2 --> B2(mAP / mIoU 取多个阈值或类别平均)
+    M("Metrics") --> T1("依赖阈值<br/>Threshold-dependent")
+    M --> T2("不依赖阈值<br/>Threshold-free")
+    T1 --> A1("Accuracy / Precision / Recall / F1")
+    T1 --> A2("IoU / Dice / Confusion Matrix")
+    T2 --> B1("AUROC / AUPR / AP")
+    T2 --> B2("mAP / mIoU 取多个阈值或类别平均")
 ```
 
 图中：
@@ -178,4 +178,5 @@ NAS / 部署 | Latency / Throughput / FLOPs / Params | 见 [Efficiency](/0721_ML
 - [【机器学习笔记】：一文让你彻底理解准确率，精准率，召回率，真正率，假正率，ROC/AUC](https://zhuanlan.zhihu.com/p/46714763)
 - [Tensorflow Models Supported object detection evaluation protocols](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/evaluation_protocols.md)
 - [VOC2010 DEVKIT doc](http://host.robots.ox.ac.uk/pascal/VOC/voc2010/devkit_doc_08-May-2010.pdf)
+
 

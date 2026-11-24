@@ -3,7 +3,7 @@
 | Title     | ML Metrics                                            |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2021-11-21T06:01:17Z`                                |
-| Updated @ | `2026-11-24T01:04:56Z`                                |
+| Updated @ | `2026-11-24T05:37:01Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/138) |
 
@@ -85,12 +85,12 @@
 
 ``` mermaid
 graph TD
-    M(Metrics) --> T1(依赖阈值<br/>Threshold-dependent)
-    M --> T2(不依赖阈值<br/>Threshold-free)
-    T1 --> A1(Accuracy / Precision / Recall / F1)
-    T1 --> A2(IoU / Dice / Confusion Matrix)
-    T2 --> B1(AUROC / AUPR / AP)
-    T2 --> B2(mAP / mIoU 取多个阈值或类别平均)
+    M("Metrics") --> T1("依赖阈值<br/>Threshold-dependent")
+    M --> T2("不依赖阈值<br/>Threshold-free")
+    T1 --> A1("Accuracy / Precision / Recall / F1")
+    T1 --> A2("IoU / Dice / Confusion Matrix")
+    T2 --> B1("AUROC / AUPR / AP")
+    T2 --> B2("mAP / mIoU 取多个阈值或类别平均")
 ```
 
 图中：
