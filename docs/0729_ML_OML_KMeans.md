@@ -2,7 +2,7 @@
 Title | ML OML KMeans
 -- | --
 Created @ | `2026-11-24T03:39:35Z`
-Updated @| `2026-11-24T03:39:35Z`
+Updated @| `2026-11-24T05:37:44Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/729)
 
@@ -31,11 +31,11 @@ $$
 
 ```mermaid
 graph TD
-    A(初始化 K 个簇中心) --> B(分配: 每个样本归到最近的中心)
-    B --> C(更新: 每个簇的中心 = 簇内样本均值)
-    C --> D{中心不再变化<br/>或达到最大迭代次数?}
-    D -->|否| B
-    D -->|是| E(输出聚类结果)
+    A("初始化 K 个簇中心") --> B("分配: 每个样本归到最近的中心")
+    B --> C("更新: 每个簇的中心 = 簇内样本均值")
+    C --> D{"中心不再变化<br/>或达到最大迭代次数?"}
+    D -->|"否"| B
+    D -->|"是"| E("输出聚类结果")
 ```
 
 图中：
@@ -99,4 +99,5 @@ for k in range(2, 11):
 ## Reference
 - [scikit-learn - Clustering](https://scikit-learn.org/stable/modules/clustering.html#k-means)
 - [k-means++: The Advantages of Careful Seeding](https://theory.stanford.edu/~sergei/papers/kMeansPP-soda.pdf)
+
 
