@@ -3,13 +3,13 @@
 | Title     | ML Metrics Segmentation PQ                            |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-24T01:03:52Z`                                |
-| Updated @ | `2026-11-24T01:03:52Z`                                |
+| Updated @ | `2026-11-24T02:49:12Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/713) |
 
 -----
 
-# PQ
+# Panoptic Quality 全景分割质量
 
   - **PQ** - `Panoptic Quality`，全景分割（Panoptic Segmentation）的统一评价指标
   - 全景分割要求每个像素同时有**类别**和**实例
