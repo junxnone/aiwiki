@@ -2,80 +2,97 @@
 Title | paper SuperSimpleNet
 -- | --
 Created @ | `2026-11-24T08:14:33Z`
-Updated @| `2026-11-24T08:14:33Z`
+Updated @| `2026-11-24T09:21:35Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/747)
 
 ---
 # SuperSimpleNet 统一监督与无监督的缺陷检测
 
-- **SuperSimpleNet**：Unifying Unsupervised and Supervised Learning for Fast and Reliable Surface Defect Detection，ICPR 2024，论文 [arXiv 2408.03143](https://arxiv.org/abs/2408.03143)；扩展版发表于 JIMS 2025：[No Label Left Behind](https://link.springer.com/article/10.1007/s10845-025-02680-8)
+- **SuperSimpleNet**：Unifying Unsupervised and Supervised Learning for Fast and Reliable Surface Defect Detection，ICPR 2024，论文 [arXiv 2408.03143](https://arxiv.org/abs/2408.03143)；扩展版发表于 JIMS 2025：[No Label Left Behind](https://link.springer.com/article/10.1007/s10845-025-02680-8)；官方代码 [blaz-r/SuperSimpleNet](https://github.com/blaz-r/SuperSimpleNet)
 - 类型：Segmentation
-- 思路：由 SimpleNet 演化而来的**判别式**缺陷检测模型，特征级合成异常 + 分割-检测模块，既支持无监督也支持有监督（anomalib 目前只支持无监督）
-- 官方代码 [blaz-r/SuperSimpleNet](https://github.com/blaz-r/SuperSimpleNet)
+- 动机：工业界需要的缺陷检测模型要同时满足**高性能、训练稳定一致、推理快**，并且能**用上全部可用的训练数据**（既能只用正常图像，也能利用少量带标注的异常图像）。现有方法往往只满足其中一部分
+- 核心思想：在 SimpleNet 的基础上改进的**判别式**模型，增强了训练一致性、推理时间和检测性能；在**特征空间**里用二值化 Perlin 掩码生成合成异常；新增**分类头**；既能无监督（只用正常图）也能利用带标签的异常图。anomalib 目前只支持无监督设置
+- 论文结果：无监督 MVTec AD 图像级 AUROC **98.4%**、VisA **93.4%**；有监督 SensumSODF **97.8%** AUROC、KSDD2 **97.4%** $AP_{det}$；推理时间 **9.3 ms**，吞吐 **268 张/秒**
 
 ## 原理
 
-SuperSimpleNet 由四个部分组成：
+SuperSimpleNet 由特征提取器、特征适配器、特征空间异常生成和分割-检测模块组成：
 
 ```mermaid
 graph LR
-    X["输入图像"] --> F["特征提取器<br/>ResNet 类 + 上采样"]
-    F --> P["平均池化<br/>聚合邻域上下文"]
-    P --> A["特征适配器<br/>可选"]
-    A --> G["特征级合成异常<br/>训练时: Perlin 掩码区域加高斯噪声"]
-    G --> SD["分割-检测模块<br/>输出异常图 与 异常分数"]
+    X["输入图像"] --> F["特征提取器<br/>WideResNet50 的第 2 3 层 + 上采样 + 3x3 平均池化"]
+    F --> A["特征适配器<br/>线性层 得到 A"]
+    A --> G["特征空间异常生成 仅训练时<br/>Perlin 掩码区域加高斯噪声 得到 P"]
+    G --> S["分割头 D_seg<br/>输出异常掩码 M_o"]
+    S --> C["分类头 D_cls<br/>拼接 M_o 与特征 5x5 卷积 池化 线性层 得到分数 s"]
+    G --> C
 ```
 
 图中：
 
-- 特征提取器是类 ResNet 网络，特征经上采样并**平均池化**以聚合邻域上下文
-- **特征适配器**进一步把特征调整到异常检测任务（可选）
-- 训练时，在 **Perlin 二值掩码**指定的区域给特征加上高斯噪声，作为特征级合成异常；推理时跳过这一步
-- **分割-检测模块**同时输出像素级异常图和图像级异常分数；异常图被上采样到输入尺寸并经高斯滤波
+- **特征提取器**：沿用 SimpleNet 的设计，用 ImageNet 预训练的 WideResNet50，取第 2、3 层特征。ResNet 输出分辨率较低，限制了对小异常的检测和分割精度，所以在拼接前加入了新的**上采样策略**：layer 3 放大 4 倍，layer 2 放大 2 倍，使两层大小相同才能拼接；之后与 SimpleNet 一样用 $3\times3$ 的局部平均池化汇聚邻域上下文
+- **特征适配器**：一个简单的线性层，输出适配后的特征 $\mathcal{A}$，把预训练特征进一步调整到异常检测任务
+- **特征空间异常生成**（训练时）：先对 Perlin 噪声图 $M_p$ 阈值化得到二值掩码 $M_t$，把真实异常区域 $M_{gt}$ 从中去除得到 $M_a$（无监督时 $M_{gt}$ 为空）；在 $M_a$ 限定的区域内给适配特征加上高斯噪声，得到扰动特征 $\mathcal{P}$。和原 SimpleNet 的不同点：为了训练更稳定，仍保留特征的副本，但**噪声同时加在原特征和副本上**
+- **分割头 $D_{seg}$**（沿用 SimpleNet）输出异常掩码 $M_o$；**分类头 $D_{cls}$**（新增）由一个 $5\times5$ 卷积块和一个线性层组成，输入是 $M_o$ 与特征的拼接，卷积块输出和 $M_o$ 各做平均池化和最大池化后合并，经线性层输出图像级分数 $s$。分类头让模型理解图像的全局语义，减少误报，也更容易检出小区域内的明显变化
 
-合成异常的形式：
+特征空间中的合成异常：
 
 $$
-\tilde{F} = F + M \odot \mathcal{E}, \qquad \mathcal{E} \sim \mathcal{N}(0, \sigma^2 I)
+\mathcal{P} = \mathcal{A} + M_a \odot \epsilon, \qquad \epsilon \sim \mathcal{N}(\mu, \sigma^2)
+$$
+
+其中：$\mathcal{A}$ 是适配后的特征图；$M_a$ 是由 Perlin 噪声阈值化后去掉真实异常区域得到的二值掩码；$\epsilon$ 是高斯噪声，论文取 $\sigma = 0.015$（与 SimpleNet 一致）；$\odot$ 为逐元素相乘；$\mathcal{P}$ 是扰动后的特征，用作分割头和分类头的训练输入。Perlin 噪声二值化阈值对 VisA、KSDD2、SensumSODF 为 0.6（产生较细较小的异常），对异常较大的 MVTec AD 为 0.2；合成异常加到 **50%** 的图像上。
+
+**有监督设置**：直接用真实掩码 $M_{gt}$ 替换合成掩码并不合适，因为训练集里的缺陷往往不能覆盖所有可能的缺陷类型，所以在保留合成异常的同时，**只在无缺陷区域**加噪声，最终掩码 $M$ 是真实标注和合成异常的混合。
+
+**损失函数**：
+
+$$
+l_{i,j} = \begin{cases} \max\big(0,\ th - D_{seg}(P_{i,j})\big) & M[i,j] = 1 \\ \max\big(0,\ th + D_{seg}(P_{i,j})\big) & \text{otherwise} \end{cases}, \quad \mathcal{L}_{seg} = \mathcal{L}_{1t} + \mathcal{L}_{foc}, \quad \mathcal{L} = \mathcal{L}_{seg} + \mathcal{L}_{cls}
 $$
 
 其中：
 
-- $F$：适配后的特征图；$M$：由 Perlin 噪声得到的二值掩码，决定哪些位置被「污染」；$\mathcal{E}$：均值 0、标准差 $\sigma$ 的高斯噪声；$\odot$ 为逐元素相乘
-- $\tilde{F}$：加噪后的特征，被当作「异常特征」，其对应的掩码 $M$ 就是分割任务的标签
-- $\sigma$：噪声强度，anomalib 说明默认的噪声标准差对应使用 torchvision V1 权重的 WideResNet50，改用其他权重时要重新检查
+- $l_{i,j}$：**截断 $L_1$ 损失**在位置 $(i,j)$ 的值，$th$ 是防止过拟合的截断项，论文取 0.5；掩码为 1（异常）的位置要求分割头输出大于 $th$，否则要求输出小于 $-th$；$\mathcal{L}_{1t}$ 是对预测掩码中所有元素的平均
+- $\mathcal{L}_{foc}$：**Focal Loss**（见 [Focal Loss](/0284_ML_Arch_Func_LossFunction_FocalLoss)），在不均衡数据下更稳定；分割损失 $\mathcal{L}_{seg}$ 同时使用截断 $L_1$ 和 Focal Loss；分类损失 $\mathcal{L}_{cls}$ 只用 Focal Loss
+- 分割目标是异常掩码 $M$（合成和真实异常区域）；分类目标 $y$ 由 $M$ 导出：图像含异常（合成或真实）则为 1，否则为 0
 
-## 特点
+**推理**：跳过异常生成。分割头输出 $M_o$，插值到输入大小并用 $\sigma = 4$ 的高斯滤波得到最终异常图；图像分数是分类头输出的 $s$。
 
-Name | 说明
+## 实现细节
+
+Name | 设置
 -- | --
-统一监督范式 | 同一模型可以只用正常样本、也可以加入少量有缺陷样本，覆盖无监督到全监督
-快速 | 结构简单，推理速度快（论文标题强调 Fast）
-ICPR 与 JIMS 的区别 | 只在 `adapt_cls_features`：ICPR 版为 True（分类头特征经过适配），JIMS 版为 False（默认）
-训练建议 | anomalib 建议训练 300 个 epoch，batch size 32，以获得稳定训练；较小的值也能运行，但结果可能不是最优
+训练 | 300 个 epoch，batch size 32，AdamW；适配器学习率 $10^{-4}$，分割头和分类头 $2\times10^{-4}$，权重衰减 $10^{-5}$
+学习率调度 | 在 240 和 270 个 epoch 后乘以 0.4
+稳定训练 | 无监督设置：停止分类头到分割头的梯度；有监督设置：梯度裁剪到范数 1
+输入 | MVTec AD、VisA：256×256，不做中心裁剪；KSDD2：232×640；SensumSODF：capsule 192×320，softgel 144×144
+评估 | 取最后一个 epoch 的模型；SuperSimpleNet 与 SimpleNet 报告 5 个随机种子的平均值和标准差
 
-表中是 SuperSimpleNet 的特点：它是适合工业表面缺陷的轻量判别式模型，使用时要注意骨干权重版本。
+表中是论文的设置。anomalib 的说明与此一致：建议训练 300 个 epoch、batch size 32，以便在随机生成异常的情况下稳定训练；验证过的骨干是使用 torchvision V1 权重的 WideResNet50（权重名以 `.tv_` 结尾，而不是 `tv2`）。ICPR 版与 JIMS 版的差别只在 `adapt_cls_features`：ICPR 版为 True（分类头特征经过适配），JIMS 版为 False（anomalib 默认）。
 
-## 使用与评估
+## 实验结果
 
-```bash
-anomalib train --model Supersimplenet --data MVTecAD --data.category <category>
-```
+- **评估指标**：SensumSODF、MVTec AD、VisA 的图像级用 AUROC，像素级用 **AUPRO**（近年来这三个数据集的像素级评估不再用像素 AUROC）；KSDD2 用 $AP_{det}$ 和 $AP_{loc}$（见 [Anomaly Detection Metrics](/0711_ML_Metrics_Anomaly)）
+- **有监督**：SensumSODF（胶囊和软胶囊两类，3 折交叉验证）上图像检测平均 AUROC **97.8%**，比此前最佳高 0.9 个百分点，**错误率降低 29%**；KSDD2 上 $AP_{det}$ **97.4%**。作者推测这是因为分类头可以从真实与合成异常中学到更多全局信息
+- **无监督**：MVTec AD 检测平均 AUROC **98.4%**（AUPRO 平均 92.3%），VisA 检测 AUROC **93.4%**
+- **速度**：推理时间 **9.3 ms**（NVIDIA Tesla 系列 GPU），吞吐 **268 images/s**，同时保持 SOTA 精度
+- **稳定性**：多次随机种子的结果波动小，论文强调这是工业应用要求的「训练一致性」
 
-anomalib README 在 MVTec AD 上给出了各类别结果（300 个 epoch，seed 0，默认参数，batch size 32），平均值如下：
+**anomalib 复现的结果**（README，300 epoch，seed 0，默认参数，batch size 32）：
 
 Version | AUROC | AUPRO
 -- | -- | --
 ICPR | 0.980 | 0.914
 JIMS | 0.975 | 0.916
 
-表中分别是 ICPR 版和 JIMS 版的平均 AUROC 与 AUPRO：两个版本的整体水平接近，ICPR 版的 AUROC 稍高，JIMS 版的 AUPRO 稍高。AUPRO 的含义见 [Anomaly Detection Metrics](/0711_ML_Metrics_Anomaly)。验证过的骨干是使用 torchvision V1 权重的 WideResNet50（权重名以 `.tv_` 结尾，而不是 `tv2`）；有监督、弱监督、混合监督的训练请参考官方代码。指标含义见 [Anomaly Detection Metrics](/0711_ML_Metrics_Anomaly)。
+表中是 MVTec AD 的平均值：与论文的 98.4% 接近。ICPR 版 AUROC 稍高，JIMS 版 AUPRO 稍高。
 
-## 优缺点
+## 特点与局限
 
-- **优点**：结构简单、速度快；无监督和有监督统一；工业表面缺陷效果好
-- **缺点**：对骨干权重版本和噪声强度敏感；anomalib 目前只支持无监督设置；合成异常是特征级噪声，对逻辑类异常有限
+- **优点**：结构简单、速度快（9.3 ms）；无监督和有监督统一，可以利用少量带标注异常；训练一致性好；分类头减少误报
+- **局限**（论文 6 节）：无监督设置下**多物体类别**表现较差；**强依赖骨干**，高斯噪声的幅度需要针对每个骨干调整，若骨干提取不到有意义的特征则性能下降；作者计划后续扩展到弱监督和混合监督设置
 
 ## Reference
 - [SuperSimpleNet: Unifying Unsupervised and Supervised Learning for Fast and Reliable Surface Defect Detection](https://arxiv.org/abs/2408.03143)
