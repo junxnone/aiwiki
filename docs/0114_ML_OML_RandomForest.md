@@ -2,7 +2,7 @@
 Title | ML OML RandomForest
 -- | --
 Created @ | `2021-03-30T07:49:58Z`
-Updated @| `2026-11-24T03:40:02Z`
+Updated @| `2026-11-24T05:37:13Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/114)
 
@@ -29,16 +29,16 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/114)
 
 ```mermaid
 graph TD
-    D(训练集 N 个样本) --> B1(Bootstrap 抽样 1)
-    D --> B2(Bootstrap 抽样 2)
-    D --> BT(Bootstrap 抽样 T)
-    B1 --> T1(决策树 1<br/>每个节点随机选 m 个特征)
-    B2 --> T2(决策树 2)
-    BT --> TT(决策树 T)
-    T1 --> V(投票 / 平均)
+    D("训练集 N 个样本") --> B1("Bootstrap 抽样 1")
+    D --> B2("Bootstrap 抽样 2")
+    D --> BT("Bootstrap 抽样 T")
+    B1 --> T1("决策树 1<br/>每个节点随机选 m 个特征")
+    B2 --> T2("决策树 2")
+    BT --> TT("决策树 T")
+    T1 --> V("投票 / 平均")
     T2 --> V
     TT --> V
-    V --> O(最终预测)
+    V --> O("最终预测")
 ```
 
 图中：
@@ -152,4 +152,5 @@ pi = permutation_importance(rf, X_val, y_val, n_repeats=10, random_state=0)   # 
 - [随机森林 – Random forest](https://easyai.tech/ai-definition/random-forest/)
 - [Random Forests - Breiman 2001](https://link.springer.com/article/10.1023/A:1010933404324)
 - [scikit-learn - Random forests](https://scikit-learn.org/stable/modules/ensemble.html#forest)
+
 
