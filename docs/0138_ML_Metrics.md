@@ -2,7 +2,7 @@
 Title | ML Metrics
 -- | --
 Created @ | `2021-11-21T06:01:17Z`
-Updated @| `2026-11-24T00:58:16Z`
+Updated @| `2026-11-24T01:04:56Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/138)
 
@@ -115,13 +115,13 @@ AUPRO | | | | | √ (Pixel Level)
 
 Task | 常用 Metrics | 说明
 -- | -- | --
-Regression | MAE / MSE / RMSE / R² / MAPE | 输出为连续值，衡量预测值与真值的误差
-Retrieval | Recall@K / mAP / MRR / NDCG | 衡量检索结果排序质量，相似度度量见 [Pairwise](/0139_ML_Metrics_Pairwise)
-Clustering | ARI / NMI / Silhouette | 无标签时用内部指标，有标签时用外部指标
-Generation | FID / IS / PSNR / SSIM / LPIPS | 衡量生成/重建图像的质量与多样性
+Regression | MAE / MSE / RMSE / R² / MAPE | 输出为连续值，衡量预测值与真值的误差，见 [Regression](/0710_ML_Metrics_Regression)
+Retrieval | Recall@K / mAP / MRR / NDCG | 衡量检索结果排序质量，见 [Retrieval](/0712_ML_Metrics_Retrieval)，相似度度量见 [Pairwise](/0139_ML_Metrics_Pairwise)
+Clustering | ARI / NMI / Silhouette | 无标签时用内部指标，有标签时用外部指标，见 [Clustering](/0719_ML_Metrics_Clustering)
+Generation | FID / IS / PSNR / SSIM / LPIPS | 衡量生成/重建图像的质量与多样性，见 [Generation](/0718_ML_Metrics_Generation)
 OCR | CER / WER / Edit Distance | 见 [OCR Metrics](/0190_ML_Tasks_Image_OCR_Metrics)
 LLM | Perplexity / BLEU / ROUGE / Benchmark | 见 [LLMs Metrics](/0503_LM_LLMs_Metrics)
-NAS / 部署 | Latency / Throughput / FLOPs / Params | 见 [NAS Metrics](/0394_ML_AutoML_NAS_Metrics)
+NAS / 部署 | Latency / Throughput / FLOPs / Params | 见 [Efficiency](/0721_ML_Metrics_Efficiency) 和 [NAS Metrics](/0394_ML_AutoML_NAS_Metrics)
 
 
 ## 本分类文章索引
@@ -133,11 +133,23 @@ NAS / 部署 | Latency / Throughput / FLOPs / Params | 见 [NAS Metrics](/0394_M
   - [AP & mAP & AR](/0382_ML_Metrics_Detection_APmAPAR)
   - [COCO Detection Metrics](/0384_ML_Metrics_Detection_COCO)
   - [GIoU](/0232_ML_Metrics_Detection_GIoU)
+  - [DIoU / CIoU](/0716_ML_Metrics_Detection_DIoUCIoU)
   - [Center Distance](/0525_ML_Metrics_Detection_CD)
 - [Metrics for Segmentation](/0231_ML_Metrics_Segmentation)
+  - [Dice](/0714_ML_Metrics_Segmentation_Dice)
+  - [PQ](/0713_ML_Metrics_Segmentation_PQ) - Panoptic Quality
   - [Boundary F1-Score](/0526_ML_Metrics_Segmentation_BF1S)
+  - [Hausdorff](/0715_ML_Metrics_Segmentation_Hausdorff)
+- [Anomaly](/0711_ML_Metrics_Anomaly) - Image/Pixel AUROC / AUPRO
+- [Keypoint](/0717_ML_Metrics_Keypoint) - OKS / PCK / NME
+- [Regression](/0710_ML_Metrics_Regression) - MAE / RMSE / R²
+- [Retrieval](/0712_ML_Metrics_Retrieval) - Recall@K / mAP / NDCG
+- [Clustering](/0719_ML_Metrics_Clustering) - ARI / NMI / Silhouette
+- [Generation](/0718_ML_Metrics_Generation) - PSNR / SSIM / LPIPS / FID
 - [Pairwise Metrics](/0139_ML_Metrics_Pairwise) - 相似度/距离/核函数
 - [Cross Validation](/0249_ML_Metrics_CrossValidation) - 评估方法而非指标
+- [Statistics](/0720_ML_Metrics_Statistics) - 置信区间与显著性检验
+- [Efficiency](/0721_ML_Metrics_Efficiency) - Params / FLOPs / Latency / Throughput
 
 
 ## 选择指南与常见误区
