@@ -2,7 +2,7 @@
 Title | ML Metrics Generation
 -- | --
 Created @ | `2026-11-24T01:04:02Z`
-Updated @| `2026-11-24T02:49:28Z`
+Updated @| `2026-11-24T05:37:28Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/718)
 
@@ -18,14 +18,14 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/718)
 
 ```mermaid
 graph TD
-    G(生成图像评估) --> FR(有参考 Full-Reference)
-    G --> DL(分布级 / 无参考)
-    FR --> F1(像素级: MSE / PSNR)
-    FR --> F2(结构级: SSIM / MS-SSIM)
-    FR --> F3(感知级: LPIPS / DISTS)
-    DL --> D1(FID / KID)
-    DL --> D2(IS)
-    DL --> D3(CLIP Score / 人工评估)
+    G("生成图像评估") --> FR("有参考 Full-Reference")
+    G --> DL("分布级 / 无参考")
+    FR --> F1("像素级: MSE / PSNR")
+    FR --> F2("结构级: SSIM / MS-SSIM")
+    FR --> F3("感知级: LPIPS / DISTS")
+    DL --> D1("FID / KID")
+    DL --> D2("IS")
+    DL --> D3("CLIP Score / 人工评估")
 ```
 
 图中：
@@ -137,5 +137,6 @@ print(fid.compute())
 - [GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium](https://arxiv.org/abs/1706.08500) - FID
 - [Improved Techniques for Training GANs](https://arxiv.org/abs/1606.03498) - IS
 - [TorchMetrics Image](https://lightning.ai/docs/torchmetrics/stable/image/frechet_inception_distance.html)
+
 
 

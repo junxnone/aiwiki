@@ -3,7 +3,7 @@
 | Title     | ML Metrics Generation                                 |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-24T01:04:02Z`                                |
-| Updated @ | `2026-11-24T02:49:28Z`                                |
+| Updated @ | `2026-11-24T05:37:28Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/718) |
 
@@ -21,14 +21,14 @@
 
 ``` mermaid
 graph TD
-    G(生成图像评估) --> FR(有参考 Full-Reference)
-    G --> DL(分布级 / 无参考)
-    FR --> F1(像素级: MSE / PSNR)
-    FR --> F2(结构级: SSIM / MS-SSIM)
-    FR --> F3(感知级: LPIPS / DISTS)
-    DL --> D1(FID / KID)
-    DL --> D2(IS)
-    DL --> D3(CLIP Score / 人工评估)
+    G("生成图像评估") --> FR("有参考 Full-Reference")
+    G --> DL("分布级 / 无参考")
+    FR --> F1("像素级: MSE / PSNR")
+    FR --> F2("结构级: SSIM / MS-SSIM")
+    FR --> F3("感知级: LPIPS / DISTS")
+    DL --> D1("FID / KID")
+    DL --> D2("IS")
+    DL --> D3("CLIP Score / 人工评估")
 ```
 
 图中：
