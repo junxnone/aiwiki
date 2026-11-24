@@ -2,7 +2,7 @@
 Title | ML Metrics Segmentation
 -- | --
 Created @ | `2020-03-03T02:31:43Z`
-Updated @| `2026-11-24T00:58:24Z`
+Updated @| `2026-11-24T01:04:58Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/231)
 
@@ -64,7 +64,7 @@ FWIoU | $FWIoU = \frac{1}{\sum_{i=0}^{k}\sum_{j=0}^{k} p_{ij}}\sum_{i=0}^{k}\fra
 ## Dice
 - **Dice Coefficient / F1-Score**：与 IoU 类似的重合度指标，医学图像分割中最常用
 - 对小目标比 IoU 更宽容；与 IoU 单调相关，$Dice = \frac{2\,IoU}{1 + IoU}$
-- 作为损失函数时见 [Dice Loss](/0283_ML_Arch_Func_LossFunction_DiceLoss)
+- 详见 [Dice](/0714_ML_Metrics_Segmentation_Dice)；作为损失函数时见 [Dice Loss](/0283_ML_Arch_Func_LossFunction_DiceLoss)
 
 $\large Dice = \frac{2\left|A \cap B\right|}{\left|A\right| + \left|B\right|} = \frac{2TP}{2TP + FP + FN}$
 
@@ -82,7 +82,7 @@ $\large Dice = \frac{2\left|A \cap B\right|}{\left|A\right| + \left|B\right|} = 
 
 ## PQ - SQ - RQ
 
-- **PQ** - `Panoptic Quality`，全景分割的统一指标，同时衡量**分割质量**和**识别质量**
+- **PQ** - `Panoptic Quality`，全景分割的统一指标，同时衡量**分割质量**和**识别质量**，详见 [PQ](/0713_ML_Metrics_Segmentation_PQ)
 - 先对每个类别，用 IoU > 0.5 把预测 segment 与真值 segment 匹配（该阈值下匹配是唯一的）：匹配上的为 TP，未匹配的预测为 FP，未匹配的真值为 FN，之后各类别分别计算再取平均
 
 $\large PQ = \underbrace{\frac{\sum_{(p, g) \in TP} IoU(p, g)}{|TP|}}_{SQ} \times \underbrace{\frac{|TP|}{|TP| + \frac{1}{2}|FP| + \frac{1}{2}|FN|}}_{RQ}$
@@ -99,7 +99,7 @@ $\large PQ = \underbrace{\frac{\sum_{(p, g) \in TP} IoU(p, g)}{|TP|}}_{SQ} \time
 ## Boundary
 
 - 区域重合指标（IoU/Dice）对边界不敏感，大目标边界偏几个像素 IoU 几乎不变
-- 评估边界精度使用 [Boundary F1-Score](/0526_ML_Metrics_Segmentation_BF1S)，也有 Boundary IoU、Hausdorff Distance 等
+- 评估边界精度使用 [Boundary F1-Score](/0526_ML_Metrics_Segmentation_BF1S)，也有 Boundary IoU、[Hausdorff Distance](/0715_ML_Metrics_Segmentation_Hausdorff) 等
 
 ## Code
 ```python
