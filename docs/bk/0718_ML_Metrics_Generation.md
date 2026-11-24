@@ -3,13 +3,13 @@
 | Title     | ML Metrics Generation                                 |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-24T01:04:02Z`                                |
-| Updated @ | `2026-11-24T01:04:02Z`                                |
+| Updated @ | `2026-11-24T02:49:28Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/718) |
 
 -----
 
-# Generation
+# Image Generation Metrics 图像生成与重建指标
 
   - 生成/重建类任务（超分、去噪、压缩、图像生成、风格迁移、异常合成）输出的是**图像**，没有唯一的「对错」，评估分两类：
       - **有参考 (Full-Reference)**：有对应的真值图，逐像素或逐特征比较，如 PSNR / SSIM / LPIPS

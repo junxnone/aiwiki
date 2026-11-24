@@ -2,12 +2,12 @@
 Title | ML Metrics Generation
 -- | --
 Created @ | `2026-11-24T01:04:02Z`
-Updated @| `2026-11-24T01:04:02Z`
+Updated @| `2026-11-24T02:49:28Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/718)
 
 ---
-# Generation
+# Image Generation Metrics 图像生成与重建指标
 
 - 生成/重建类任务（超分、去噪、压缩、图像生成、风格迁移、异常合成）输出的是**图像**，没有唯一的「对错」，评估分两类：
   - **有参考 (Full-Reference)**：有对应的真值图，逐像素或逐特征比较，如 PSNR / SSIM / LPIPS
@@ -137,4 +137,5 @@ print(fid.compute())
 - [GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium](https://arxiv.org/abs/1706.08500) - FID
 - [Improved Techniques for Training GANs](https://arxiv.org/abs/1606.03498) - IS
 - [TorchMetrics Image](https://lightning.ai/docs/torchmetrics/stable/image/frechet_inception_distance.html)
+
 
