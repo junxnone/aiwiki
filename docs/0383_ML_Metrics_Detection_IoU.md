@@ -2,12 +2,12 @@
 Title | ML Metrics Detection IoU
 -- | --
 Created @ | `2023-02-16T15:22:05Z`
-Updated @| `2026-11-24T00:58:34Z`
+Updated @| `2026-11-24T02:49:57Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/383)
 
 ---
-# IoU - Intersection Over Union
+# Intersection over Union 交并比
 
 - `GT BBox` 与 `Predict BBox` 的交叠率，即它们交集与并集的比值。
 - 最理想情况是完全重叠，即比值为1.
@@ -68,4 +68,5 @@ def iou(a, b):
 - 两个框不相交时 IoU 恒为 0，既无法反映「相距多远」，作为损失时也没有梯度，改进见 [GIoU](/0232_ML_Metrics_Detection_GIoU)（以及 DIoU/CIoU）
 - 对小目标敏感：目标只有几个像素时，偏移 1 个像素 IoU 就会大幅下降
 - 只考虑重叠面积，不反映偏移的方向和长宽比；中心点误差见 [Center Distance](/0525_ML_Metrics_Detection_CD)
+
 

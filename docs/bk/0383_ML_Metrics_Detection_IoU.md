@@ -3,13 +3,13 @@
 | Title     | ML Metrics Detection IoU                              |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-02-16T15:22:05Z`                                |
-| Updated @ | `2026-11-24T00:58:34Z`                                |
+| Updated @ | `2026-11-24T02:49:57Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/383) |
 
 -----
 
-# IoU - Intersection Over Union
+# Intersection over Union 交并比
 
   - `GT BBox` 与 `Predict BBox` 的交叠率，即它们交集与并集的比值。
   - 最理想情况是完全重叠，即比值为1.
