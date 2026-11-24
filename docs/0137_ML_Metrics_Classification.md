@@ -2,7 +2,7 @@
 Title | ML Metrics Classification
 -- | --
 Created @ | `2021-11-21T04:55:43Z`
-Updated @| `2026-11-24T00:58:18Z`
+Updated @| `2026-11-24T05:36:59Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/137)
 
@@ -25,14 +25,14 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/137)
 
 ```mermaid
 graph TD
-    S(分类任务) --> B(二分类)
-    S --> MC(多分类)
-    S --> ML(多标签)
-    B --> B1(阈值相关: Accuracy / Precision / Recall / F1 / MCC)
-    B --> B2(阈值无关: AUROC / AUPR / AP)
-    MC --> M1(Accuracy / Top-k / Confusion Matrix)
-    MC --> M2(micro / macro / weighted 平均)
-    ML --> L1(samples 平均 / Hamming Loss / Subset Accuracy)
+    S("分类任务") --> B("二分类")
+    S --> MC("多分类")
+    S --> ML("多标签")
+    B --> B1("阈值相关: Accuracy / Precision / Recall / F1 / MCC")
+    B --> B2("阈值无关: AUROC / AUPR / AP")
+    MC --> M1("Accuracy / Top-k / Confusion Matrix")
+    MC --> M2("micro / macro / weighted 平均")
+    ML --> L1("samples 平均 / Hamming Loss / Subset Accuracy")
 ```
 
 图中：
@@ -342,4 +342,5 @@ cm = confusion_matrix(y_true, y_pred, normalize='true')   # 按行(真值)归一
 - [sklearn.metrics.confusion_matrix](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.confusion_matrix.html)
 - [The Relationship Between Precision-Recall and ROC Curves](https://www.biostat.wisc.edu/~page/rocpr.pdf)
 - [On Calibration of Modern Neural Networks](https://arxiv.org/abs/1706.04599)
+
 
