@@ -2,7 +2,7 @@
 Title | paper PatchCore
 -- | --
 Created @ | `2026-03-24T08:34:11Z`
-Updated @| `2026-11-24T08:15:30Z`
+Updated @| `2026-11-24T09:20:46Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/535)
 
@@ -51,6 +51,12 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/535)
 3. **硬件友好性**：特征提取全程基于卷积网络的前向传播，可通过CUDA/TensorRT做GPU加速，无自定义复杂操作，适配工业产线的实时推理需求。
 
 
+## 动机与思路
+
+- 论文：[Towards Total Recall in Industrial Anomaly Detection](https://arxiv.org/abs/2106.08265)（Roth 等，Amazon AWS，CVPR 2022）。冷启动异常检测只有正常样本，要在**检测**（图像级）和**定位**（像素级）上都达到工业可用的水平。此前的方法有两个问题：一是只用最后一层的深层特征，丢失局部的正常信息，而且深层特征偏向 ImageNet 的分类任务，与工业场景的重合度低；二是记忆库随训练图像增多而变大，推理慢、存储大（如 SPADE 需要先用整图的深层特征做预筛选）
+- 论文的做法：①用**局部邻域聚合**的**中层**特征块 (patch) 构建正常记忆库，既保留空间分辨率又增大感受野；②用**贪心 Coreset 子采样**把记忆库压缩到 1%~25%，在覆盖整个特征分布的前提下大幅降低推理成本；③用最近邻距离作为异常分数，图像里**只要有一个 Patch 异常，整张图就异常**
+- 结果：在 MVTec AD 上图像级 AUROC 最高 **99.6%**，把此前最佳方法的错误率降低了一半以上；在少样本、mSTC、MTD 上也有竞争力
+
 ## 流程图
 
 下图概括了 PatchCore 的训练（建库）和推理（检索）流程：
@@ -58,45 +64,118 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/535)
 ```mermaid
 graph LR
     A["正常图像"] --> B["中层特征<br/>layer2 + layer3"]
-    B --> C["局部邻域聚合<br/>得到 Patch 特征"]
+    B --> C["局部邻域聚合<br/>平均池化 得到 Patch 特征"]
     C --> D["Coreset 子采样<br/>得到精简记忆库 M"]
     T["测试图像"] --> E["同样提取 Patch 特征"]
     E --> F["在 M 中找最近邻<br/>距离即 Patch 异常分"]
     D --> F
-    F --> G["Anomaly Map<br/>最大值为图像分数"]
+    F --> G["Anomaly Map<br/>最大值经重加权作为图像分数"]
 ```
 
 图中：
 
 - 上半部分是训练阶段：对所有正常图像提取带局部上下文的 Patch 特征，再通过 Coreset 子采样压缩成小记忆库，不需要训练任何网络参数
-- 下半部分是推理阶段：对测试图像的每个 Patch，在记忆库里找最近的正常 Patch，距离越大越异常
+- 下半部分是推理阶段：对测试图像的每个 Patch，在记忆库里找最近的正常 Patch，距离越大越异常；各 Patch 的分数按空间位置重排得到分割图
 - 区别于 [PaDiM](/0322_paper_PaDiM) 把每个位置建模为一个高斯分布，PatchCore 直接保留一批代表性的正常 Patch，不需要对位置对齐
 
 ## 公式
 
-Coreset 子采样（贪心 k-center）：
+**局部感知的 Patch 特征**。记 $\phi_{i,j}$ 为第 $i$ 张图在预训练网络第 $j$ 个层级（ResNet 的第 $j$ 个 block）的特征图，位置 $(h,w)$ 处的特征为 $\phi_{i,j}(h,w)$。取 $p \times p$ 的邻域聚合得到该位置的特征：
 
 $$
-\mathcal{M}_C^{*} = \underset{\mathcal{M}_C \subset \mathcal{M},\ \lvert \mathcal{M}_C \rvert = l}{\arg\min}\ \max_{m \in \mathcal{M}}\ \min_{n \in \mathcal{M}_C}\ \lVert m - n \rVert_2
-$$
-
-推理时的异常分数：
-
-$$
-m^{*},\, m = \underset{m^{test} \in \mathcal{P}(x^{test})}{\arg\max}\ \underset{m \in \mathcal{M}}{\arg\min}\ \lVert m^{test} - m \rVert_2, \qquad s^{*} = \lVert m^{*} - m \rVert_2
+\mathcal{N}_p^{(h,w)} = \Big\{(a,b)\ \Big|\ a \in [h - \lfloor p/2 \rfloor, h + \lfloor p/2 \rfloor],\ b \in [w - \lfloor p/2 \rfloor, w + \lfloor p/2 \rfloor]\Big\}
 $$
 
 $$
-s = \Big(1 - \frac{\exp \lVert m^{*} - m \rVert_2}{\sum_{m' \in \mathcal{N}_b(m)}\exp \lVert m^{*} - m' \rVert_2}\Big)\, s^{*}
+\phi_{i,j}\big(\mathcal{N}_p^{(h,w)}\big) = f_{\text{agg}}\Big(\big\{\phi_{i,j}(a,b)\ \big|\ (a,b) \in \mathcal{N}_p^{(h,w)}\big\}\Big)
 $$
 
 其中：
 
-- $\mathcal{M}$：完整的记忆库（所有正常 Patch 特征）；$\mathcal{M}_C$：子采样后的 Coreset，$l$ 为其大小（通常取 $\mathcal{M}$ 的 1%~10%）；$m, n$：记忆库中的特征向量
-- 子采样的目标：选出 $l$ 个代表点，使完整记忆库里任一点到最近代表点的最大距离最小，即「覆盖」整个特征分布；这是 NP 难问题，用贪心近似
-- $\mathcal{P}(x^{test})$：测试图像的 Patch 特征集合；$m^{test}$：其中一个测试 Patch 特征；$m$：它在记忆库中最近的正常 Patch；$m^{*}$：所有测试 Patch 中距离最远的那一个
-- $s^{*}$：图像的最大 Patch 距离，即**一个 Patch 异常就判整张图异常**；$s$：重新加权后的分数
-- $\mathcal{N}_b(m)$：$m$ 在记忆库中的 $b$ 个最近邻；重加权项 $\Big(1 - \dfrac{\exp\lVert m^* - m\rVert}{\sum\exp\lVert m^* - m'\rVert}\Big)$：如果最近邻 $m$ 自己所在的区域很稀疏（离它的邻居也远），说明这个最近邻不可靠，需要提高异常分数，用来降低罕见但正常的 Patch 的误报
+- $\mathcal{N}_p^{(h,w)}$：以 $(h,w)$ 为中心、边长为 $p$（奇数）的邻域；$p$ 越大，每个 Patch 特征包含的局部上下文越多
+- $f_{\text{agg}}$：聚合函数，PatchCore 用**自适应平均池化**，相当于对每张特征图做局部平滑，并把维度统一成预设的 $d$；**不改变特征图的分辨率**
+- 论文只用两个相邻的中层 $j$ 和 $j+1$（默认为 WideResNet50 的 block 2 和 3）：把 $j+1$ 层的 Patch 特征双线性上采样到 $j$ 层的分辨率，再与 $j$ 层对应位置的特征**拼接**，这样既保留分辨率，又不会过度偏向 ImageNet
+
+整个记忆库是所有正常训练图像的 Patch 特征的并集：
+
+$$
+\mathcal{M} = \bigcup_{x_i \in \mathcal{X}_N}\mathcal{P}_{s,p}\big(\phi_j(x_i)\big)
+$$
+
+其中 $\mathcal{X}_N$ 是全部正常训练图像；$\mathcal{P}_{s,p}(\cdot)$ 是步长为 $s$、邻域为 $p$ 的 Patch 特征集合，论文取 $s=1$、$p=3$。
+
+**Coreset 子采样**（最小最大设施选址，minimax facility location）。希望选出的子集 $\mathcal{M}_C$ 在特征空间里覆盖原记忆库：
+
+$$
+\mathcal{M}_C^{*} = \underset{\mathcal{M}_C \subset \mathcal{M}}{\arg\min}\ \max_{m \in \mathcal{M}}\ \min_{n \in \mathcal{M}_C}\ \lVert m - n \rVert_2
+$$
+
+其中：
+
+- $\mathcal{M}$：完整的记忆库；$\mathcal{M}_C$：子采样后的 Coreset，大小 $l$ 通常取 $\lvert\mathcal{M}\rvert$ 的 1%、10%、25%（记作 PatchCore-1% 等，1% 即记忆库缩小 100 倍）
+- $m, n$：记忆库中的特征向量；目标是使完整记忆库中**任意一点到最近代表点的最大距离最小**，即代表点「覆盖」整个分布，而不是像随机采样那样漏掉稀疏的簇
+- 精确求解是 NP 难问题，论文用**迭代贪心近似**：每步选出离当前 Coreset 最远的点加入；为加速选择，用 Johnson-Lindenstrauss 定理把特征用随机线性投影 $\psi: \mathbb{R}^d \to \mathbb{R}^{d^*}\ (d^* < d)$ 降维后再计算距离
+
+**异常分数**。对测试图像 $x^{test}$ 的所有 Patch 特征 $\mathcal{P}(x^{test})$，先找到距离记忆库最远的那个 Patch，其距离即为未加权的图像分数：
+
+$$
+m^{test,*},\, m^{*} = \underset{m^{test} \in \mathcal{P}(x^{test})}{\arg\max}\ \underset{m \in \mathcal{M}}{\arg\min}\ \lVert m^{test} - m \rVert_2, \qquad s^{*} = \lVert m^{test,*} - m^{*} \rVert_2
+$$
+
+再按最近邻的「稀有程度」重新加权：
+
+$$
+s = \Big(1 - \frac{\exp \lVert m^{test,*} - m^{*} \rVert_2}{\sum_{m \in \mathcal{N}_b(m^{*})}\exp \lVert m^{test,*} - m \rVert_2}\Big)\cdot s^{*}
+$$
+
+其中：
+
+- $m^{test,*}$：测试图像中**最异常**的 Patch 特征；$m^{*}$：它在记忆库中的最近邻；$s^{*}$：二者的距离，即**一个 Patch 异常就判整张图异常**
+- $\mathcal{N}_b(m^{*})$：$m^{*}$ 在记忆库中的 $b$ 个最近邻（论文的 $b$ 取较小值）；括号里的权重：如果 $m^{*}$ 自己周围很稀疏（它的邻居离测试 Patch 也远），权重就大，说明这个最近邻本身是罕见的正常样本，需要**提高**异常分数；反之邻居很密，则略微降低分数。论文发现这种重加权比直接取最大距离更稳健
+- $s$：最终的图像异常分数；分割图由各 Patch 分数按空间位置重排得到，再上采样到原图尺寸，并用 $\sigma=4$ 的高斯核平滑（论文未调优该参数）
+
+## 论文实验设置与结果
+
+**实验设置**：
+
+- 数据集：MVTec AD（主实验）、mini Shanghai Tech Campus（mSTC，异常定位）、Magnetic Tile Defects（MTD，图像级检测）；指标是图像级 AUROC、像素级 AUROC 和 PRO（见 [Anomaly Detection Metrics](/0711_ML_Metrics_Anomaly)）
+- **骨干**：默认 ImageNet 预训练的 WideResNet50（与 SPADE、PaDiM 公平比较），取 block 2 和 3 的输出；最近邻检索用 faiss；$p=3$，$s=1$
+- 报告 25%、10%、1% 三种子采样比例的结果
+
+**主要结果**：
+
+Method | 图像级 AUROC | 错误率
+-- | -- | --
+SPADE | 85.5 | 14.5
+PatchSVDD | 92.1 | 7.9
+DifferNet | 94.9 | 5.1
+PaDiM | 95.3 | 4.7
+PaDiM（针对任务选择的骨干） | 97.9 | 2.1
+PatchCore-25% | 99.1 | 0.9
+PatchCore-10% | 99.0 | 1.0
+PatchCore-1% | 99.0 | 1.0
+
+表中是 MVTec AD 15 类平均的图像级检测结果（论文 Table 1）：PatchCore 在三种子采样比例下都显著领先；错误率从 PaDiM 的 2.1% 降到 0.9%，**降低了 57%**。F1 最优阈值下，1725 张图像里只有 42 张被误分类（19 个误报、23 个漏报），1/3 的类别完全被解决。
+
+- **分割**：像素级 AUROC 为 98.1（PaDiM 为 97.5），PRO 为 93.5（PaDiM 为 92.1）
+- **更大分辨率和集成**：因为 Coreset 让推理足够快，PatchCore-1% 可以使用更大的图像分辨率（280/320）、更大的骨干（WideResNet-101）和集成模型：DenseNet-201 + ResNeXt-101 + WRN-101、图像尺寸 320 时图像级 AUROC 达 **99.6**、像素级 98.2、PRO 94.9（错误率 0.4，较 1% 又降一半以上）
+- **推理时间**（Table 5，含骨干前向）：PatchCore-100% 为 0.6 秒、PatchCore-10% 为 0.22 秒、PatchCore-1% 为 0.17 秒；SPADE 为 0.66 秒，PaDiM 为 0.19 秒。也就是说，不做子采样时比 SPADE 快，做了子采样后比 PaDiM 还快；改用近似最近邻 IVFPQ 的 PatchCore-100% 为 0.2 秒，但图像级 AUROC 降到 98.0
+- **少样本**（第 4.5 节）：训练图像从 1 张（占 0.4%）到 50 张（21%）变化，只用约 1/5 的正常数据就能达到此前的最佳水平；只用 5 或 1 张正常样本就能匹配 SPADE 在全数据下的定位和检测性能；也优于 16-shot 的 DifferNet
+- **其他数据集**：mSTC（定位）和 MTD（检测）上都超过了此前方法；mSTC 与自然图像更接近，所以改用 block 3、4 的特征，其他超参数不变；MTD 的图像尺寸不一，PaDiM 这类依赖空间对齐的方法无法直接应用
+
+**消融实验**（论文第 4.4 节）：
+
+Name | 结论
+-- | --
+邻域大小 $p$ | 局部性与全局上下文之间存在明显的最优值，所以取 $p=3$；更大的分辨率和邻域会让检测性能略升后饱和，但分割性能持续提高
+特征层级 | block 2 的特征已经能达到 SOTA；加入 block 3（即 2+3）进一步提升，是默认设置；往更深的层级走会降低分辨率并加重 ImageNet 偏置
+子采样方法 | 贪心 Coreset 优于随机子采样和「学习一组代理向量」（用基向量重构目标）；**不做子采样的性能与缩小两个数量级的 Coreset 相当**
+记忆库冗余 | 不做子采样时，测试时只用到记忆库中不到 30% 的样本；Coreset 子采样到 1% 后，这一比例升到近 95%；在约 50%~10% 的子采样区间，联合检测和定位性能甚至有所提高
+步长 $s$ | 用增大步长来缩小记忆库会降低性能：$s=2$ 时图像级 AUROC 为 97.6%，$s=3$ 时为 96.8%
+
+表中的结论：局部邻域聚合和中层特征提升精度，Coreset 子采样则让这一切在可接受的推理成本下成为可能，而且几乎不损失精度。
+
+**剩余错误分析**（附录 C.4）：误报主要来自标注的模糊性（有些变化也可以被认为是异常）和很高的正常样本方差；漏报中有些异常其实被定位到了，但被赋予的权重太小，也有些细粒度异常在更高分辨率下能找回来。
 
 ## 特点
 
@@ -108,7 +187,7 @@ Coreset | 压缩记忆库到 1% 左右，检索速度和内存可接受，精度
 少样本 | 少量正常图像（几十张甚至十几张）也能获得较好效果
 推理代价 | 需要近邻检索，Patch 数量多、库大时比 [STFPM](/0324_paper_STFPM) 慢，可用 GPU 或近似最近邻加速
 
-表中是 PatchCore 的特点：它是目前 MVTec AD 上性能最强、同时实现简单的基线之一，付出的代价是推理时需要保存并检索记忆库。
+表中是 PatchCore 的特点：它是 MVTec AD 上性能最强、同时实现简单的基线之一，付出的代价是推理时需要保存并检索记忆库。
 
 ## 优缺点
 
@@ -121,11 +200,7 @@ Coreset | 压缩记忆库到 1% 左右，检索速度和内存可接受，精度
   - 只用中层特征和 ImageNet 预训练骨干，对与 ImageNet 差异很大的领域（如某些医学、遥感图像）适应性有限
   - 无法利用缺陷样本（纯无监督）；对「逻辑性异常」（如零件数量错误、位置错误）不敏感
 
-## 使用与评估
-
-```bash
-anomalib train --model Patchcore --data MVTecAD --data.category <category>
-```
+## anomalib 评估结果
 
 以下结果来自 anomalib README（MVTec AD 15 类平均，seed 42），指标含义见 [Anomaly Detection Metrics](/0711_ML_Metrics_Anomaly)：
 
@@ -134,7 +209,7 @@ Backbone | Image AUROC | Pixel AUROC | Image F1
 Wide ResNet-50 | 0.980 | 0.980 | 0.976
 ResNet-18 | 0.973 | 0.976 | 0.970
 
-表中可以看到 PatchCore 在两种骨干上都显著优于 [PaDiM](/0322_paper_PaDiM) 和 [STFPM](/0324_paper_STFPM)，Wide ResNet-50 略优于 ResNet-18。Image AUROC 为 0.98 说明整图分类已经接近饱和，进一步的提升需要看更难的数据集（如 MVTec AD 2）和逻辑异常。
+表中可以看到 PatchCore 在两种骨干上都显著优于 [PaDiM](/0322_paper_PaDiM) 和 [STFPM](/0324_paper_STFPM)，Wide ResNet-50 略优于 ResNet-18。Image AUROC 为 0.98 说明整图分类已经接近饱和，进一步的提升需要看更难的数据集（如 MVTec AD 2）和逻辑异常；anomalib 的数值与论文 Table 1 的 99.0 左右相比略低，差异可能来自预处理、子采样比例等设置。
 
 ## Reference
 - [paper 2022 Towards Total Recall in Industrial Anomaly Detection](https://arxiv.org/pdf/2106.08265)
