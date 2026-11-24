@@ -2,12 +2,12 @@
 Title | ML Metrics Pairwise
 -- | --
 Created @ | `2021-11-21T16:27:48Z`
-Updated @| `2026-11-24T00:58:20Z`
+Updated @| `2026-11-24T02:49:41Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/139)
 
 ---
-# Pairwise
+# Pairwise Metrics 成对相似度与距离
 
 - Pairwise Metrics 衡量**两个样本（向量）之间**的相似度或距离，而不是模型预测的好坏
 - 应用：Retrieval / Face Recognition / Metric Learning 的特征比对，聚类（KMeans/DBSCAN），KNN，SVM 核函数，异常检测中的特征距离
@@ -95,4 +95,5 @@ K = rbf_kernel(X, Y, gamma=0.5)
 ## Reference
 - [Pairwise metrics - scikit-learn](https://scikit-learn.org/stable/modules/metrics.html#pairwise-metrics-affinities-and-kernels)
 - [sklearn.metrics.pairwise_distances](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise_distances.html)
+
 
