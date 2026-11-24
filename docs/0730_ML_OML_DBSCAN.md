@@ -2,7 +2,7 @@
 Title | ML OML DBSCAN
 -- | --
 Created @ | `2026-11-24T03:39:37Z`
-Updated @| `2026-11-24T03:39:37Z`
+Updated @| `2026-11-24T05:37:46Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/730)
 
@@ -44,16 +44,16 @@ Type | 定义
 
 ```mermaid
 graph TD
-    A(任取一个未访问的点 p) --> B{p 的 ε 邻域内<br/>点数 ≥ minPts?}
-    B -->|否| C(暂时标记为噪声)
-    B -->|是| D(新建一个簇<br/>p 为核心点)
-    D --> E(把邻域内的点加入队列)
-    E --> F(依次扩展:<br/>遇到核心点则合并其邻域)
-    F --> G(队列为空 该簇完成)
-    C --> H{还有未访问的点?}
+    A("任取一个未访问的点 p") --> B{"p 的 ε 邻域内<br/>点数 ≥ minPts?"}
+    B -->|"否"| C("暂时标记为噪声")
+    B -->|"是"| D("新建一个簇<br/>p 为核心点")
+    D --> E("把邻域内的点加入队列")
+    E --> F("依次扩展:<br/>遇到核心点则合并其邻域")
+    F --> G("队列为空 该簇完成")
+    C --> H{"还有未访问的点?"}
     G --> H
-    H -->|是| A
-    H -->|否| I(输出簇和噪声)
+    H -->|"是"| A
+    H -->|"否"| I("输出簇和噪声")
 ```
 
 图中：
@@ -116,4 +116,5 @@ print(len(set(labels)) - (1 if -1 in labels else 0), (labels == -1).sum())   # �
 - [A Density-Based Algorithm for Discovering Clusters in Large Spatial Databases with Noise](https://www.aaai.org/Papers/KDD/1996/KDD96-037.pdf)
 - [scikit-learn - DBSCAN](https://scikit-learn.org/stable/modules/clustering.html#dbscan)
 - [HDBSCAN](https://hdbscan.readthedocs.io/)
+
 
