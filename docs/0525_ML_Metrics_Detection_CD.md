@@ -2,12 +2,12 @@
 Title | ML Metrics Detection CD
 -- | --
 Created @ | `2025-11-13T07:38:06Z`
-Updated @| `2026-11-24T00:58:38Z`
+Updated @| `2026-11-24T02:50:04Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/525)
 
 ---
-# Center Distance
+# Center Distance 中心点距离
 - Center error（目标检测中心误差）是衡量检测框定位精度的核心指标，指预测检测框中心坐标与真实框中心坐标的偏差。
 - 中心误差偏大时，通常指向模型对目标位置特征学习不足，需调整锚框设计、优化回归头损失函数。
 - 与 [IoU](/0383_ML_Metrics_Detection_IoU) 的区别：IoU 看重叠面积，两个框不相交时恒为 0；Center Distance 在不相交时仍然有意义，且与框的大小、长宽比无关
@@ -52,4 +52,5 @@ def center_distance(pred, gt, norm=None):
 ## Reference
 
 - [nuScenes detection task](https://www.nuscenes.org/object-detection) - Center Distance 匹配与 mATE
+
 
