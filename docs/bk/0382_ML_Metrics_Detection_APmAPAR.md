@@ -3,13 +3,13 @@
 | Title     | ML Metrics Detection APmAPAR                          |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-02-16T15:19:37Z`                                |
-| Updated @ | `2026-11-24T00:58:32Z`                                |
+| Updated @ | `2026-11-24T02:49:54Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/382) |
 
 -----
 
-# AP & mAP & AR
+# AP & mAP & AR 平均精度与召回
 
   - `mAP@[0.5:.05:.95]` - 当前比较流行的衡量标准
   - **AP**：单个类别在所有 `confidence 阈值` 下的 Precision-Recall

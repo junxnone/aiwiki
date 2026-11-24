@@ -2,12 +2,12 @@
 Title | ML Metrics Detection APmAPAR
 -- | --
 Created @ | `2023-02-16T15:19:37Z`
-Updated @| `2026-11-24T00:58:32Z`
+Updated @| `2026-11-24T02:49:54Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/382)
 
 ---
-# AP & mAP & AR
+# AP & mAP & AR 平均精度与召回
 
 - `mAP@[0.5:.05:.95]` - 当前比较流行的衡量标准
 - **AP**：单个类别在所有 `confidence 阈值` 下的 Precision-Recall 曲线下面积；**mAP**：所有类别 AP 的平均；**AR**：给定每图最大检测数时的最大召回，在类别和 IoU 上平均
@@ -156,4 +156,5 @@ def voc_ap(rec, prec):
 - [COCO Detection Evaluation](https://cocodataset.org/#detection-eval)
 - [mAP (mean Average Precision) for Object Detection](https://medium.com/@jonathan_hui/map-mean-average-precision-for-object-detection-45c121a31173)
 - [Metrics for object detection](https://github.com/rafaelpadilla/Object-Detection-Metrics)
+
 
