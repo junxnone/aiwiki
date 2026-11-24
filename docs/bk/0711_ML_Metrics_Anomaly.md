@@ -3,13 +3,13 @@
 | Title     | ML Metrics Anomaly                                    |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-24T01:03:48Z`                                |
-| Updated @ | `2026-11-24T01:03:48Z`                                |
+| Updated @ | `2026-11-24T02:49:05Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/711) |
 
 -----
 
-# Anomaly
+# Anomaly Detection Metrics 异常检测指标
 
   - 异常检测（Anomaly Detection）的核心特点：**正常样本极多，异常样本极少**，且异常往往只占图像的一小块区域
   - 评估分两个层次：

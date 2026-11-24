@@ -2,12 +2,12 @@
 Title | ML Metrics Anomaly
 -- | --
 Created @ | `2026-11-24T01:03:48Z`
-Updated @| `2026-11-24T01:03:48Z`
+Updated @| `2026-11-24T02:49:05Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/711)
 
 ---
-# Anomaly
+# Anomaly Detection Metrics 异常检测指标
 
 - 异常检测（Anomaly Detection）的核心特点：**正常样本极多，异常样本极少**，且异常往往只占图像的一小块区域
 - 评估分两个层次：
@@ -103,4 +103,5 @@ f1_max = (2 * p * r / (p + r + 1e-12)).max()
 - [MVTec AD — A Comprehensive Real-World Dataset for Unsupervised Anomaly Detection](https://openaccess.thecvf.com/content_CVPR_2019/papers/Bergmann_MVTec_AD_--_A_Comprehensive_Real-World_Dataset_for_Unsupervised_Anomaly_CVPR_2019_paper.pdf)
 - [Uninformed Students: Student-Teacher Anomaly Detection with Discriminative Latent Embeddings](https://arxiv.org/abs/1911.02357) - 提出 PRO
 - [anomalib](https://github.com/openvinotoolkit/anomalib)
+
 
