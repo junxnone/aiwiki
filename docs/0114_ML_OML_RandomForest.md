@@ -2,7 +2,7 @@
 Title | ML OML RandomForest
 -- | --
 Created @ | `2021-03-30T07:49:58Z`
-Updated @| `2026-11-24T03:34:25Z`
+Updated @| `2026-11-24T03:40:02Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/114)
 
@@ -12,7 +12,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/114)
 - Random Forest - 随机森林
 - 由很多决策树构成，不同决策树之间没有关联
   - 属于 集成学习 中的 Bagging
-- 基学习器是 [Decision Tree](/0113_ML_OML_DecisionTree)，通过「**样本随机 + 特征随机**」让每棵树彼此不同，再投票/平均得到结果
+- 属于 [Ensemble Learning](/0726_ML_OML_Ensemble) 的 Bagging，基学习器是 [Decision Tree](/0113_ML_OML_DecisionTree)，通过「**样本随机 + 特征随机**」让每棵树彼此不同，再投票/平均得到结果
 - **优点**
   - 不容易过拟合
   - 训练速度比较快, 可并行
@@ -111,7 +111,7 @@ Name | Decision Tree | Random Forest | GBDT
 基学习器 | - | 深而完整的树 | 浅树
 对噪声 | 敏感 | 较稳健 | 敏感
 调参 | 少 | 少，默认值通常就很好 | 多
-精度 | 较低 | 较高 | 表格数据通常最高
+精度 | 较低 | 较高 | 表格数据通常最高，见 [GBDT](/0727_ML_OML_Ensemble_GBDT) / [XGBoost](/0728_ML_OML_Ensemble_XGBoost)
 
 表中从集成方式、关注的误差类型和使用难度对比三种树模型：随机森林是「开箱即用」的强基线，GBDT 调好后精度更高但更容易过拟合。
 
