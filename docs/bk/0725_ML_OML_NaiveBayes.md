@@ -3,7 +3,7 @@
 | Title     | ML OML NaiveBayes                                     |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-24T03:39:18Z`                                |
-| Updated @ | `2026-11-24T03:39:18Z`                                |
+| Updated @ | `2026-11-24T05:37:40Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/725) |
 
@@ -36,12 +36,12 @@ $$ P(y \\mid x) = \\frac{P(x \\mid y),P(y)}{P(x)}, \\qquad \\hat{y} =
 
 ``` mermaid
 graph LR
-    X(特征 x) --> L1(对每个类别 y)
+    X("特征 x") --> L1("对每个类别 y")
     L1 --> P("先验 ln P(y)")
     L1 --> Q("各特征似然 ln P(xj given y) 求和")
-    P --> S(得分相加)
+    P --> S("得分相加")
     Q --> S
-    S --> A(取得分最大的类别)
+    S --> A("取得分最大的类别")
 ```
 
 图中：
