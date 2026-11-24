@@ -2,7 +2,7 @@
 Title | ML Metrics Statistics
 -- | --
 Created @ | `2026-11-24T01:04:06Z`
-Updated @| `2026-11-24T02:49:34Z`
+Updated @| `2026-11-24T05:37:30Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/720)
 
@@ -19,10 +19,10 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/720)
 
 ```mermaid
 graph TD
-    R(指标数值的不确定性) --> T(测试集有限<br/>采样误差)
-    R --> S(训练随机性<br/>种子 / 初始化 / 数据顺序)
-    R --> D(数据划分<br/>train / val / test)
-    R --> H(超参数 / 阈值选择)
+    R("指标数值的不确定性") --> T("测试集有限<br/>采样误差")
+    R --> S("训练随机性<br/>种子 / 初始化 / 数据顺序")
+    R --> D("数据划分<br/>train / val / test")
+    R --> H("超参数 / 阈值选择")
 ```
 
 图中：
@@ -128,5 +128,6 @@ print(stats.ttest_rel(scores_a, scores_b))
 - [Approximate Statistical Tests for Comparing Supervised Classification Learning Algorithms](https://sci2s.ugr.es/keel/pdf/algorithm/articulo/dietterich1998.pdf)
 - [Statistical Comparisons of Classifiers over Multiple Data Sets](https://jmlr.org/papers/v7/demsar06a.html)
 - [Inference for the Generalization Error](https://link.springer.com/article/10.1023/A:1024068626366) - Nadeau & Bengio
+
 
 
