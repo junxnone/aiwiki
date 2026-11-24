@@ -2,7 +2,7 @@
 Title | ML OML PCA
 -- | --
 Created @ | `2026-11-24T03:39:39Z`
-Updated @| `2026-11-24T03:39:39Z`
+Updated @| `2026-11-24T05:37:48Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/731)
 
@@ -19,11 +19,11 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/731)
 
 ```mermaid
 graph LR
-    D(原始数据 d 维) --> C(中心化 减去均值)
-    C --> V(协方差矩阵 Σ)
-    V --> E(特征分解<br/>特征值 λ 与特征向量 u)
-    E --> S(取最大的 k 个特征值对应的特征向量)
-    S --> P(投影到 k 维: z = Uᵀ x)
+    D("原始数据 d 维") --> C("中心化 减去均值")
+    C --> V("协方差矩阵 Σ")
+    V --> E("特征分解<br/>特征值 λ 与特征向量 u")
+    E --> S("取最大的 k 个特征值对应的特征向量")
+    S --> P("投影到 k 维: z = Uᵀ x")
 ```
 
 图中：
@@ -125,4 +125,5 @@ print(p.n_components_, p.explained_variance_ratio_.cumsum())    # 保留的成�
 ## Reference
 - [scikit-learn - Decomposing signals in components (PCA)](https://scikit-learn.org/stable/modules/decomposition.html#pca)
 - [A Tutorial on Principal Component Analysis](https://arxiv.org/abs/1404.1100)
+
 
