@@ -3,13 +3,13 @@
 | Title     | ML Metrics Detection COCO                             |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-02-16T15:23:32Z`                                |
-| Updated @ | `2026-11-24T00:58:36Z`                                |
+| Updated @ | `2026-11-24T02:50:00Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/384) |
 
 -----
 
-# COCO Detection Metrics
+# COCO Detection Metrics COCO 检测评估指标
 
   - COCO IoU 按照 `AP@[.5:.95]` 来计算, 更严格
       - 早期的 Pascal VOC 按照 `AP@.50IOU` 来计算
