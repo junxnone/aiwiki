@@ -3,7 +3,7 @@
 | Title     | ML Metrics Retrieval                                  |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-24T01:03:50Z`                                |
-| Updated @ | `2026-11-24T01:03:50Z`                                |
+| Updated @ | `2026-11-24T01:04:54Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/712) |
 
@@ -98,7 +98,7 @@ def retrieval_metrics(sim, q_ids, g_ids, ks=(1, 5, 10)):
 
 ## Reference
 
-  - \[Evaluation measures (information retrieval) -
-    Wikipedia\](<https://en.wikipedia.org/wiki/Evaluation_measures_(information_retrieval%29)>
+  - [Evaluation measures (information retrieval) -
+    Wikipedia](https://en.wikipedia.org/wiki/Evaluation_measures_%28information_retrieval%29)
   - [Deep Learning for Person Re-identification: A Survey and
     Outlook](https://arxiv.org/abs/2001.04193)
