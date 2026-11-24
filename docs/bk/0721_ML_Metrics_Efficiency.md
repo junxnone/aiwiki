@@ -3,13 +3,13 @@
 | Title     | ML Metrics Efficiency                                 |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-24T01:04:08Z`                                |
-| Updated @ | `2026-11-24T01:04:08Z`                                |
+| Updated @ | `2026-11-24T02:49:37Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/721) |
 
 -----
 
-# Efficiency
+# Efficiency Metrics 模型效率指标
 
   - 模型除了精度指标，还要评估**效率**：部署时能不能跑得动、跑得多快、占多少资源
   - 精度指标见 [Metrics](/0138_ML_Metrics) 及各任务文章；NAS 中的效率约束见 [NAS
