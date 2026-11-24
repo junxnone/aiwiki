@@ -2,7 +2,7 @@
 Title | ML OML DecisionTree
 -- | --
 Created @ | `2021-03-30T07:53:56Z`
-Updated @| `2026-11-24T03:34:23Z`
+Updated @| `2026-11-24T05:37:11Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/113)
 
@@ -21,13 +21,13 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/113)
 
 ```mermaid
 graph TD
-    R{天气?} -->|晴| H{湿度?}
-    R -->|阴| Y1(去)
-    R -->|雨| W{有风?}
-    H -->|高| N1(不去)
-    H -->|正常| Y2(去)
-    W -->|是| N2(不去)
-    W -->|否| Y3(去)
+    R{"天气?"} -->|"晴"| H{"湿度?"}
+    R -->|"阴"| Y1("去")
+    R -->|"雨"| W{"有风?"}
+    H -->|"高"| N1("不去")
+    H -->|"正常"| Y2("去")
+    W -->|"是"| N2("不去")
+    W -->|"否"| Y3("去")
 ```
 
 图中：
@@ -46,11 +46,11 @@ graph TD
 
 ```mermaid
 graph TD
-    A(当前节点样本集) --> B{样本都属于<br/>同一类 或 无特征可分?}
-    B -->|是| L(生成叶节点<br/>取多数类)
-    B -->|否| C(选择最优划分特征)
-    C --> D(按特征取值划分子集)
-    D --> E(对每个子集递归)
+    A("当前节点样本集") --> B{"样本都属于<br/>同一类 或 无特征可分?"}
+    B -->|"是"| L("生成叶节点<br/>取多数类")
+    B -->|"否"| C("选择最优划分特征")
+    C --> D("按特征取值划分子集")
+    D --> E("对每个子集递归")
     E --> A
 ```
 
@@ -189,4 +189,5 @@ print(clf.feature_importances_)          # 特征重要性
 - [决策树 – Decision tree](https://easyai.tech/ai-definition/decision-tree/)
 - [scikit-learn - Decision Trees](https://scikit-learn.org/stable/modules/tree.html)
 - [Induction of Decision Trees - Quinlan](https://link.springer.com/article/10.1007/BF00116251)
+
 
