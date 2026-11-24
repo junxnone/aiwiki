@@ -2,12 +2,12 @@
 Title | paper PaDiM
 -- | --
 Created @ | `2022-12-05T01:58:43Z`
-Updated @| `2025-05-27T01:32:38Z`
+Updated @| `2026-11-24T08:15:25Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/322)
 
 ---
-# PaDiM
+# PaDiM 补丁分布建模
 - PaDiM - `Patch Distribution Modeling`
 - 核心流程围绕 “特征提取 - 分布建模 - 异常评分” 展开，结合预训练 CNN 与概率统计方法实现异常检测与定位。
 - 使用预训练的 CNN 网络提取中间层feature 组成嵌入向量
@@ -69,7 +69,87 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/322)
 
 
 
+## 流程图
+
+下图概括了 PaDiM 训练与测试的两条流水线：
+
+```mermaid
+graph LR
+    A["正常图像"] --> B["预训练 CNN<br/>多层特征拼接"]
+    B --> C["随机选择维度<br/>降维"]
+    C --> D["每个位置拟合高斯<br/>均值 μ 协方差 Σ"]
+    T["测试图像"] --> E["同样提取特征并降维"]
+    E --> F["与对应位置高斯<br/>计算马氏距离"]
+    D --> F
+    F --> G["Anomaly Map<br/>取最大值为图像分数"]
+```
+
+图中：
+
+- 上半部分是训练阶段：只用正常图像，提取多层特征并降维后，对每个空间位置分别拟合一个高斯分布
+- 下半部分是测试阶段：测试图像经过同样的特征提取，与对应位置的高斯分布比较，得到每个位置的异常分数，组成 Anomaly Map
+- 两条流水线共用同一个特征提取器，且 CNN 全程不训练，所以训练过程只是统计均值和协方差，不需要反向传播
+
+## 公式
+
+$$
+\mu_{ij} = \frac{1}{N}\sum_{n=1}^{N}x_{ij}^{(n)}, \qquad \Sigma_{ij} = \frac{1}{N-1}\sum_{n=1}^{N}\big(x_{ij}^{(n)} - \mu_{ij}\big)\big(x_{ij}^{(n)} - \mu_{ij}\big)^\top + \varepsilon I
+$$
+
+$$
+M(x_{ij}) = \sqrt{(x_{ij} - \mu_{ij})^\top \Sigma_{ij}^{-1} (x_{ij} - \mu_{ij})}
+$$
+
+其中：
+
+- $(i, j)$：特征图上的空间位置；$n$：训练图像编号，$N$：训练图像总数；$x_{ij}^{(n)} \in \mathbb{R}^{d}$：第 $n$ 张图在位置 $(i,j)$ 的嵌入向量（多层特征拼接并降维后，$d$ 为维度）
+- $\mu_{ij}$：位置 $(i,j)$ 的均值向量；$\Sigma_{ij}$：协方差矩阵，描述特征各维之间的相关性
+- $\varepsilon I$：加在对角线上的正则项（$\varepsilon$ 为小正数，$I$ 为单位矩阵），保证 $\Sigma_{ij}$ 可逆，即使训练图像数量少于维度
+- $x_{ij}$：测试图像在位置 $(i,j)$ 的嵌入；$M(x_{ij})$：马氏距离，考虑了特征的方差和相关性，比欧氏距离更适合描述「偏离正常分布多远」
+- 图像级分数为 $\max_{ij} M(x_{ij})$，即 Anomaly Map 的最大值
+
+## 特点
+
+Name | 说明
+-- | --
+为什么用马氏距离 | 正常特征的各维方差和相关性不同，马氏距离会把方差大的维度权重降低，更准确
+为什么随机选维度 | 论文发现随机选择维度与 PCA 效果相当但更快，且不改变原始特征的空间对应
+位置相关 | 每个位置有自己的高斯分布，所以要求训练和测试图像对齐良好（如固定摆放的工业产品）
+存储代价 | 每个位置要存 $\mu$（$d$ 维）和 $\Sigma$（$d \times d$），位置数多、维度高时占内存，模型大小与训练图像数无关
+推理速度 | 无需迭代，推理时只需特征提取和马氏距离计算，速度较快
+
+表中是 PaDiM 的设计取舍：它把「全部正常图像」压缩成每个位置的一个高斯分布，所以推理快、模型大小固定，但对物体位置变化敏感（如物体随机旋转、平移时每个位置的分布不再稳定）。
+
+## 优缺点
+
+- **优点**
+  - 训练无需反向传播，只做统计，训练快
+  - 能同时输出图像级分数和像素级异常图
+  - 推理速度快，精度对 CNN 骨干较稳定
+- **缺点**
+  - 对对齐敏感，物体位置、姿态变化大时效果下降
+  - 需要存储每个位置的协方差矩阵，高分辨率或高维时占用大
+  - 假设每个位置的正常特征服从单一高斯分布，对多模态的正常情况（如正常的外观有多种）建模不足
+
+## 使用与评估
+
+在 anomalib 中训练 PaDiM：
+
+```bash
+anomalib train --model Padim --data MVTecAD --data.category <category>
+```
+
+以下结果来自 anomalib README（MVTec AD 全部 15 类平均，seed 42），指标含义见 [Anomaly Detection Metrics](/0711_ML_Metrics_Anomaly)：
+
+Backbone | Image AUROC | Pixel AUROC | Image F1
+-- | -- | -- | --
+ResNet-18 | 0.891 | 0.968 | 0.916
+Wide ResNet-50 | 0.950 | 0.979 | 0.951
+
+表中分别是图像级 AUROC、像素级 AUROC 和图像级 F1，骨干更强（Wide ResNet-50）时三项都更好；PaDiM 的像素级 AUROC 很高，但 Pixel AUROC 受背景像素主导，不能单独说明定位的好坏。
+
 ## Reference
 
 - [PaDiM: a Patch Distribution Modeling Framework for Anomaly Detection and Localization](https://arxiv.org/pdf/2011.08785.pdf) 
+
 
