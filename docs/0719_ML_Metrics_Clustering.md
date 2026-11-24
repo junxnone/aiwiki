@@ -2,12 +2,12 @@
 Title | ML Metrics Clustering
 -- | --
 Created @ | `2026-11-24T01:04:05Z`
-Updated @| `2026-11-24T01:04:05Z`
+Updated @| `2026-11-24T02:49:31Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/719)
 
 ---
-# Clustering
+# Clustering Metrics 聚类指标
 
 - 聚类是无监督任务，评估分两种情况：
   - **外部指标 (External)**：有真值标签（如拿分类数据集检验聚类效果），把聚类结果与标签比较
@@ -100,4 +100,5 @@ def cluster_acc(y_true, y_pred):
 ## Reference
 - [Clustering performance evaluation - scikit-learn](https://scikit-learn.org/stable/modules/clustering.html#clustering-performance-evaluation)
 - [Comparing partitions](https://link.springer.com/article/10.1007/BF01908075) - ARI
+
 
