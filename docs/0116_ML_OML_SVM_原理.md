@@ -2,7 +2,7 @@
 Title | ML OML SVM 原理
 -- | --
 Created @ | `2021-03-29T05:16:05Z`
-Updated @| `2026-11-24T03:34:29Z`
+Updated @| `2026-11-24T05:34:35Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/116)
 
@@ -16,12 +16,12 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/116)
 
 ```mermaid
 graph LR
-    A(超平面 + 点到平面距离) --> B(最大间隔 → 原问题<br/>凸二次规划)
-    B --> C(拉格朗日函数 + KKT 条件)
-    C --> D(对偶问题<br/>只含 α 和内积)
-    D --> E(软间隔<br/>0 ≤ α ≤ C)
-    D --> F(核函数<br/>内积替换为 k)
-    D --> G(SMO 求解)
+    A["超平面与点到平面距离"] --> B["最大间隔转化为原问题<br/>凸二次规划"]
+    B --> C["拉格朗日函数与 KKT 条件"]
+    C --> D["对偶问题<br/>只含 α 和内积"]
+    D --> E["软间隔<br/>α 取值范围 0 到 C"]
+    D --> F["核函数<br/>内积替换为 k"]
+    D --> G["SMO 求解"]
 ```
 
 图中：
