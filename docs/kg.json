@@ -633,7 +633,7 @@
     {
       "id": "aiwiki ML OML",
       "group": 2,
-      "title": "传统机器学习",
+      "title": "Traditional Machine Learning 传统机器学习",
       "url": "https://junxnone.github.io/aiwiki/#/0367_ML_OML",
       "visible": true,
       "expand": true,
@@ -3340,6 +3340,96 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki ML OML LinearRegression",
+      "group": 3,
+      "title": "Linear Regression 线性回归",
+      "url": "https://junxnone.github.io/aiwiki/#/0722_ML_OML_LinearRegression",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML OML LogisticRegression",
+      "group": 3,
+      "title": "Logistic Regression 逻辑回归",
+      "url": "https://junxnone.github.io/aiwiki/#/0723_ML_OML_LogisticRegression",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML OML KNN",
+      "group": 3,
+      "title": "KNN K 近邻",
+      "url": "https://junxnone.github.io/aiwiki/#/0724_ML_OML_KNN",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML OML NaiveBayes",
+      "group": 3,
+      "title": "Naive Bayes 朴素贝叶斯",
+      "url": "https://junxnone.github.io/aiwiki/#/0725_ML_OML_NaiveBayes",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML OML Ensemble",
+      "group": 3,
+      "title": "Ensemble Learning 集成学习",
+      "url": "https://junxnone.github.io/aiwiki/#/0726_ML_OML_Ensemble",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML OML KMeans",
+      "group": 3,
+      "title": "K-Means K 均值聚类",
+      "url": "https://junxnone.github.io/aiwiki/#/0729_ML_OML_KMeans",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML OML DBSCAN",
+      "group": 3,
+      "title": "DBSCAN 密度聚类",
+      "url": "https://junxnone.github.io/aiwiki/#/0730_ML_OML_DBSCAN",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML OML PCA",
+      "group": 3,
+      "title": "PCA 主成分分析",
+      "url": "https://junxnone.github.io/aiwiki/#/0731_ML_OML_PCA",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML OML tSNE",
+      "group": 3,
+      "title": "t-SNE 非线性降维",
+      "url": "https://junxnone.github.io/aiwiki/#/0732_ML_OML_tSNE",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML OML IsolationForest",
+      "group": 3,
+      "title": "Isolation Forest 孤立森林",
+      "url": "https://junxnone.github.io/aiwiki/#/0733_ML_OML_IsolationForest",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Op Convolution Math",
       "group": 4,
       "title": "卷积 数学定义",
@@ -4874,6 +4964,24 @@
       "group": 4,
       "title": "IoU Loss Family 边界框回归损失",
       "url": "https://junxnone.github.io/aiwiki/#/0716_ML_Metrics_Detection_DIoUCIoU",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML OML Ensemble GBDT",
+      "group": 4,
+      "title": "GBDT 梯度提升决策树",
+      "url": "https://junxnone.github.io/aiwiki/#/0727_ML_OML_Ensemble_GBDT",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML OML Ensemble XGBoost",
+      "group": 4,
+      "title": "XGBoost 极端梯度提升",
+      "url": "https://junxnone.github.io/aiwiki/#/0728_ML_OML_Ensemble_XGBoost",
       "visible": true,
       "expand": true,
       "childLinks": []
@@ -8286,6 +8394,76 @@
       "expand": true
     },
     {
+      "source": "aiwiki ML OML",
+      "target": "aiwiki ML OML LinearRegression",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML OML",
+      "target": "aiwiki ML OML LogisticRegression",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML OML",
+      "target": "aiwiki ML OML KNN",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML OML",
+      "target": "aiwiki ML OML NaiveBayes",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML OML",
+      "target": "aiwiki ML OML Ensemble",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML OML",
+      "target": "aiwiki ML OML KMeans",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML OML",
+      "target": "aiwiki ML OML DBSCAN",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML OML",
+      "target": "aiwiki ML OML PCA",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML OML",
+      "target": "aiwiki ML OML tSNE",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML OML",
+      "target": "aiwiki ML OML IsolationForest",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
       "source": "aiwiki ML PreP",
       "target": "aiwiki ML PreP DataNorm",
       "value": 3,
@@ -9898,6 +10076,20 @@
     {
       "source": "aiwiki ML Op Norm",
       "target": "aiwiki ML Op Norm LayerNorm",
+      "value": 4,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML OML Ensemble",
+      "target": "aiwiki ML OML Ensemble GBDT",
+      "value": 4,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML OML Ensemble",
+      "target": "aiwiki ML OML Ensemble XGBoost",
       "value": 4,
       "visible": true,
       "expand": true

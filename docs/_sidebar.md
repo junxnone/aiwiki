@@ -187,11 +187,23 @@
   - [时间序列数据集](/0623_Datasets_TS)
   - [Video](/0019_Datasets_Video)
 - [机器学习/深度学习](/0416_ML)
-  - [传统机器学习](/0367_ML_OML)
+  - [Traditional Machine Learning 传统机器学习](/0367_ML_OML)
+    - [DBSCAN 密度聚类](/0730_ML_OML_DBSCAN)
     - [Decision Tree 决策树](/0113_ML_OML_DecisionTree)
+    - [Ensemble Learning 集成学习](/0726_ML_OML_Ensemble)
+      - [GBDT 梯度提升决策树](/0727_ML_OML_Ensemble_GBDT)
+      - [XGBoost 极端梯度提升](/0728_ML_OML_Ensemble_XGBoost)
+    - [Isolation Forest 孤立森林](/0733_ML_OML_IsolationForest)
+    - [K-Means K 均值聚类](/0729_ML_OML_KMeans)
+    - [KNN K 近邻](/0724_ML_OML_KNN)
+    - [Linear Regression 线性回归](/0722_ML_OML_LinearRegression)
+    - [Logistic Regression 逻辑回归](/0723_ML_OML_LogisticRegression)
+    - [Naive Bayes 朴素贝叶斯](/0725_ML_OML_NaiveBayes)
+    - [PCA 主成分分析](/0731_ML_OML_PCA)
     - [Random Forest 随机森林](/0114_ML_OML_RandomForest)
     - [SVM 支持向量机](/0115_ML_OML_SVM)
       - [SVM 原理推导](/0116_ML_OML_SVM_原理)
+    - [t-SNE 非线性降维](/0732_ML_OML_tSNE)
   - [ML 架构](/0376_ML_Arch)
     - [Loss/Cost/ Object Function - 损失代价目标函数](/0378_ML_Arch_Func)
       - [Cost Function 代价函数](/0282_ML_Arch_Func_CostFunction)
@@ -695,4 +707,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1135271124</sub></kbd>
+<kbd><sub>@1140391124</sub></kbd>

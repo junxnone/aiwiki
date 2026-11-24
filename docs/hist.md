@@ -4,6 +4,18 @@
 
 #### **Created**
 
+- 2026-11-24&nbsp;&nbsp; [Isolation Forest 孤立森林](/0733_ML_OML_IsolationForest)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:IsolationForest
+- 2026-11-24&nbsp;&nbsp; [t-SNE 非线性降维](/0732_ML_OML_tSNE)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:tSNE
+- 2026-11-24&nbsp;&nbsp; [PCA 主成分分析](/0731_ML_OML_PCA)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:PCA
+- 2026-11-24&nbsp;&nbsp; [DBSCAN 密度聚类](/0730_ML_OML_DBSCAN)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:DBSCAN
+- 2026-11-24&nbsp;&nbsp; [K-Means K 均值聚类](/0729_ML_OML_KMeans)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:KMeans
+- 2026-11-24&nbsp;&nbsp; [XGBoost 极端梯度提升](/0728_ML_OML_Ensemble_XGBoost)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:Ensemble :bookmark:XGBoost
+- 2026-11-24&nbsp;&nbsp; [GBDT 梯度提升决策树](/0727_ML_OML_Ensemble_GBDT)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:Ensemble :bookmark:GBDT
+- 2026-11-24&nbsp;&nbsp; [Ensemble Learning 集成学习](/0726_ML_OML_Ensemble)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:Ensemble
+- 2026-11-24&nbsp;&nbsp; [Naive Bayes 朴素贝叶斯](/0725_ML_OML_NaiveBayes)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:NaiveBayes
+- 2026-11-24&nbsp;&nbsp; [KNN K 近邻](/0724_ML_OML_KNN)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:KNN
+- 2026-11-24&nbsp;&nbsp; [Logistic Regression 逻辑回归](/0723_ML_OML_LogisticRegression)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:LogisticRegression
+- 2026-11-24&nbsp;&nbsp; [Linear Regression 线性回归](/0722_ML_OML_LinearRegression)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:LinearRegression
 - 2026-11-24&nbsp;&nbsp; [Efficiency Metrics 模型效率指标](/0721_ML_Metrics_Efficiency)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Efficiency
 - 2026-11-24&nbsp;&nbsp; [Statistical Significance 统计显著性](/0720_ML_Metrics_Statistics)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Statistics
 - 2026-11-24&nbsp;&nbsp; [Clustering Metrics 聚类指标](/0719_ML_Metrics_Clustering)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Clustering
@@ -342,7 +354,7 @@
 - 2023-02-02&nbsp;&nbsp; [PostProcessing](/0370_ML_PostP)&nbsp;&nbsp; :bookmark:ML :bookmark:PostP
 - 2023-02-02&nbsp;&nbsp; [PreProcessing](/0369_ML_PreP)&nbsp;&nbsp; :bookmark:ML :bookmark:PreP
 - 2023-02-02&nbsp;&nbsp; [Hyperparameter 超参数](/0368_ML_Arch_HP)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:HP
-- 2023-02-02&nbsp;&nbsp; [传统机器学习](/0367_ML_OML)&nbsp;&nbsp; :bookmark:ML :bookmark:OML
+- 2023-02-02&nbsp;&nbsp; [Traditional Machine Learning 传统机器学习](/0367_ML_OML)&nbsp;&nbsp; :bookmark:ML :bookmark:OML
 - 2023-01-31&nbsp;&nbsp; [Op](/0366_ML_Op)&nbsp;&nbsp; :bookmark:ML :bookmark:Op
 - 2022-12-28&nbsp;&nbsp; [OpenCV 数据结构](/0364_OpenCV_data)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:data
 - 2022-12-27&nbsp;&nbsp; [Image Filtering](/0363_OpenCV_IP_Filter)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter
@@ -693,6 +705,18 @@
 
 #### **Updated**
 
+- 2026-11-24&nbsp;&nbsp; [Isolation Forest 孤立森林](/0733_ML_OML_IsolationForest)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:IsolationForest
+- 2026-11-24&nbsp;&nbsp; [t-SNE 非线性降维](/0732_ML_OML_tSNE)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:tSNE
+- 2026-11-24&nbsp;&nbsp; [PCA 主成分分析](/0731_ML_OML_PCA)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:PCA
+- 2026-11-24&nbsp;&nbsp; [DBSCAN 密度聚类](/0730_ML_OML_DBSCAN)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:DBSCAN
+- 2026-11-24&nbsp;&nbsp; [K-Means K 均值聚类](/0729_ML_OML_KMeans)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:KMeans
+- 2026-11-24&nbsp;&nbsp; [XGBoost 极端梯度提升](/0728_ML_OML_Ensemble_XGBoost)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:Ensemble :bookmark:XGBoost
+- 2026-11-24&nbsp;&nbsp; [GBDT 梯度提升决策树](/0727_ML_OML_Ensemble_GBDT)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:Ensemble :bookmark:GBDT
+- 2026-11-24&nbsp;&nbsp; [Ensemble Learning 集成学习](/0726_ML_OML_Ensemble)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:Ensemble
+- 2026-11-24&nbsp;&nbsp; [Naive Bayes 朴素贝叶斯](/0725_ML_OML_NaiveBayes)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:NaiveBayes
+- 2026-11-24&nbsp;&nbsp; [KNN K 近邻](/0724_ML_OML_KNN)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:KNN
+- 2026-11-24&nbsp;&nbsp; [Logistic Regression 逻辑回归](/0723_ML_OML_LogisticRegression)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:LogisticRegression
+- 2026-11-24&nbsp;&nbsp; [Linear Regression 线性回归](/0722_ML_OML_LinearRegression)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:LinearRegression
 - 2026-11-24&nbsp;&nbsp; [Efficiency Metrics 模型效率指标](/0721_ML_Metrics_Efficiency)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Efficiency
 - 2026-11-24&nbsp;&nbsp; [Statistical Significance 统计显著性](/0720_ML_Metrics_Statistics)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Statistics
 - 2026-11-24&nbsp;&nbsp; [Clustering Metrics 聚类指标](/0719_ML_Metrics_Clustering)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Clustering
@@ -711,6 +735,7 @@
 - 2026-11-24&nbsp;&nbsp; [Intersection over Union 交并比](/0383_ML_Metrics_Detection_IoU)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:IoU
 - 2026-11-24&nbsp;&nbsp; [AP & mAP & AR 平均精度与召回](/0382_ML_Metrics_Detection_APmAPAR)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:APmAPAR
 - 2026-11-24&nbsp;&nbsp; [TPR & FPR 真正率与假正率](/0381_ML_Metrics_Detection_TPRFPR)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:TPRFPR
+- 2026-11-24&nbsp;&nbsp; [Traditional Machine Learning 传统机器学习](/0367_ML_OML)&nbsp;&nbsp; :bookmark:ML :bookmark:OML
 - 2026-11-24&nbsp;&nbsp; [Cross Validation 交叉验证](/0249_ML_Metrics_CrossValidation)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:CrossValidation
 - 2026-11-24&nbsp;&nbsp; [Generalized IoU 广义交并比](/0232_ML_Metrics_Detection_GIoU)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:GIoU
 - 2026-11-24&nbsp;&nbsp; [Segmentation Metrics](/0231_ML_Metrics_Segmentation)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Segmentation
@@ -1207,7 +1232,6 @@
 - 2023-02-03&nbsp;&nbsp; [AnnealingLR 退火学习率](/0372_ML_Arch_LR_AnnealingLR)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:LR :bookmark:AnnealingLR
 - 2023-02-03&nbsp;&nbsp; [Hyperparameter 超参数](/0368_ML_Arch_HP)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:HP
 - 2023-02-02&nbsp;&nbsp; [PreProcessing](/0369_ML_PreP)&nbsp;&nbsp; :bookmark:ML :bookmark:PreP
-- 2023-02-02&nbsp;&nbsp; [传统机器学习](/0367_ML_OML)&nbsp;&nbsp; :bookmark:ML :bookmark:OML
 - 2023-02-02&nbsp;&nbsp; [Copy-Pasting](/0269_ML_PreP_DataAug_CP)&nbsp;&nbsp; :bookmark:ML :bookmark:PreP :bookmark:DataAug :bookmark:CP
 - 2023-02-02&nbsp;&nbsp; [Cyclical Learning Rate 周期学习率](/0266_ML_Arch_LR_CLR)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:LR :bookmark:CLR
 - 2023-02-02&nbsp;&nbsp; [Learning Rate 学习率](/0265_ML_Arch_LR)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:LR
