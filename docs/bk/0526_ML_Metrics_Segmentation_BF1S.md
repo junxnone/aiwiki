@@ -3,7 +3,7 @@
 | Title     | ML Metrics Segmentation BF1S                          |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2025-11-13T08:09:31Z`                                |
-| Updated @ | `2026-11-24T02:50:07Z`                                |
+| Updated @ | `2026-11-24T05:37:17Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/526) |
 
@@ -30,12 +30,12 @@
 
 ``` mermaid
 graph LR
-    P(预测 mask) --> PB(提取预测边界<br/>Boundary of Pred)
-    G(GT mask) --> GB(提取真值边界<br/>Boundary of GT)
-    PB --> M(容差 τ 内匹配<br/>像素到最近边界距离 ≤ τ)
+    P("预测 mask") --> PB("提取预测边界<br/>Boundary of Pred")
+    G("GT mask") --> GB("提取真值边界<br/>Boundary of GT")
+    PB --> M("容差 τ 内匹配<br/>像素到最近边界距离 ≤ τ")
     GB --> M
-    M --> PR(Precision / Recall)
-    PR --> F(Boundary F1)
+    M --> PR("Precision / Recall")
+    PR --> F("Boundary F1")
 ```
 
 图中：
