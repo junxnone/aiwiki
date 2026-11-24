@@ -4,6 +4,18 @@
 
 #### **Created**
 
+- 2026-11-24&nbsp;&nbsp; [Efficiency](/0721_ML_Metrics_Efficiency)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Efficiency
+- 2026-11-24&nbsp;&nbsp; [Statistics](/0720_ML_Metrics_Statistics)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Statistics
+- 2026-11-24&nbsp;&nbsp; [Clustering](/0719_ML_Metrics_Clustering)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Clustering
+- 2026-11-24&nbsp;&nbsp; [Generation](/0718_ML_Metrics_Generation)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Generation
+- 2026-11-24&nbsp;&nbsp; [Keypoint](/0717_ML_Metrics_Keypoint)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Keypoint
+- 2026-11-24&nbsp;&nbsp; [DIoUCIoU](/0716_ML_Metrics_Detection_DIoUCIoU)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:DIoUCIoU
+- 2026-11-24&nbsp;&nbsp; [Hausdorff](/0715_ML_Metrics_Segmentation_Hausdorff)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Segmentation :bookmark:Hausdorff
+- 2026-11-24&nbsp;&nbsp; [Dice](/0714_ML_Metrics_Segmentation_Dice)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Segmentation :bookmark:Dice
+- 2026-11-24&nbsp;&nbsp; [PQ](/0713_ML_Metrics_Segmentation_PQ)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Segmentation :bookmark:PQ
+- 2026-11-24&nbsp;&nbsp; [Retrieval](/0712_ML_Metrics_Retrieval)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Retrieval
+- 2026-11-24&nbsp;&nbsp; [Anomaly](/0711_ML_Metrics_Anomaly)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Anomaly
+- 2026-11-24&nbsp;&nbsp; [Regression](/0710_ML_Metrics_Regression)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Regression
 - 2026-11-23&nbsp;&nbsp; [量化工具对比](/0709_MO_Quantization_Tools)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:Tools
 - 2026-11-23&nbsp;&nbsp; [KV Cache 量化](/0708_MO_Quantization_KVCache)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:KVCache
 - 2026-11-23&nbsp;&nbsp; [LLM 权重+激活量化](/0707_MO_Quantization_LLM_WA)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:LLM :bookmark:WA
@@ -681,6 +693,18 @@
 
 #### **Updated**
 
+- 2026-11-24&nbsp;&nbsp; [Efficiency](/0721_ML_Metrics_Efficiency)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Efficiency
+- 2026-11-24&nbsp;&nbsp; [Statistics](/0720_ML_Metrics_Statistics)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Statistics
+- 2026-11-24&nbsp;&nbsp; [Clustering](/0719_ML_Metrics_Clustering)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Clustering
+- 2026-11-24&nbsp;&nbsp; [Generation](/0718_ML_Metrics_Generation)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Generation
+- 2026-11-24&nbsp;&nbsp; [Keypoint](/0717_ML_Metrics_Keypoint)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Keypoint
+- 2026-11-24&nbsp;&nbsp; [DIoUCIoU](/0716_ML_Metrics_Detection_DIoUCIoU)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:DIoUCIoU
+- 2026-11-24&nbsp;&nbsp; [Hausdorff](/0715_ML_Metrics_Segmentation_Hausdorff)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Segmentation :bookmark:Hausdorff
+- 2026-11-24&nbsp;&nbsp; [Dice](/0714_ML_Metrics_Segmentation_Dice)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Segmentation :bookmark:Dice
+- 2026-11-24&nbsp;&nbsp; [PQ](/0713_ML_Metrics_Segmentation_PQ)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Segmentation :bookmark:PQ
+- 2026-11-24&nbsp;&nbsp; [Retrieval](/0712_ML_Metrics_Retrieval)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Retrieval
+- 2026-11-24&nbsp;&nbsp; [Anomaly](/0711_ML_Metrics_Anomaly)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Anomaly
+- 2026-11-24&nbsp;&nbsp; [Regression](/0710_ML_Metrics_Regression)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Regression
 - 2026-11-24&nbsp;&nbsp; [Boundary F1-Score](/0526_ML_Metrics_Segmentation_BF1S)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Segmentation :bookmark:BF1S
 - 2026-11-24&nbsp;&nbsp; [Center Distance](/0525_ML_Metrics_Detection_CD)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:CD
 - 2026-11-24&nbsp;&nbsp; [COCO Detection Metrics](/0384_ML_Metrics_Detection_COCO)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:COCO

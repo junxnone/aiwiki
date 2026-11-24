@@ -3268,6 +3268,78 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki ML Metrics Regression",
+      "group": 3,
+      "title": "Regression",
+      "url": "https://junxnone.github.io/aiwiki/#/0710_ML_Metrics_Regression",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Metrics Anomaly",
+      "group": 3,
+      "title": "Anomaly",
+      "url": "https://junxnone.github.io/aiwiki/#/0711_ML_Metrics_Anomaly",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Metrics Retrieval",
+      "group": 3,
+      "title": "Retrieval",
+      "url": "https://junxnone.github.io/aiwiki/#/0712_ML_Metrics_Retrieval",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Metrics Keypoint",
+      "group": 3,
+      "title": "Keypoint",
+      "url": "https://junxnone.github.io/aiwiki/#/0717_ML_Metrics_Keypoint",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Metrics Generation",
+      "group": 3,
+      "title": "Generation",
+      "url": "https://junxnone.github.io/aiwiki/#/0718_ML_Metrics_Generation",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Metrics Clustering",
+      "group": 3,
+      "title": "Clustering",
+      "url": "https://junxnone.github.io/aiwiki/#/0719_ML_Metrics_Clustering",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Metrics Statistics",
+      "group": 3,
+      "title": "Statistics",
+      "url": "https://junxnone.github.io/aiwiki/#/0720_ML_Metrics_Statistics",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Metrics Efficiency",
+      "group": 3,
+      "title": "Efficiency",
+      "url": "https://junxnone.github.io/aiwiki/#/0721_ML_Metrics_Efficiency",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Op Convolution Math",
       "group": 4,
       "title": "卷积 数学定义",
@@ -4766,6 +4838,42 @@
       "group": 4,
       "title": "LLM 权重+激活量化",
       "url": "https://junxnone.github.io/aiwiki/#/0707_MO_Quantization_LLM_WA",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Metrics Segmentation PQ",
+      "group": 4,
+      "title": "PQ",
+      "url": "https://junxnone.github.io/aiwiki/#/0713_ML_Metrics_Segmentation_PQ",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Metrics Segmentation Dice",
+      "group": 4,
+      "title": "Dice",
+      "url": "https://junxnone.github.io/aiwiki/#/0714_ML_Metrics_Segmentation_Dice",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Metrics Segmentation Hausdorff",
+      "group": 4,
+      "title": "Hausdorff",
+      "url": "https://junxnone.github.io/aiwiki/#/0715_ML_Metrics_Segmentation_Hausdorff",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Metrics Detection DIoUCIoU",
+      "group": 4,
+      "title": "DIoUCIoU",
+      "url": "https://junxnone.github.io/aiwiki/#/0716_ML_Metrics_Detection_DIoUCIoU",
       "visible": true,
       "expand": true,
       "childLinks": []
@@ -7485,6 +7593,62 @@
       "expand": true
     },
     {
+      "source": "aiwiki ML Metrics",
+      "target": "aiwiki ML Metrics Regression",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Metrics",
+      "target": "aiwiki ML Metrics Anomaly",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Metrics",
+      "target": "aiwiki ML Metrics Retrieval",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Metrics",
+      "target": "aiwiki ML Metrics Keypoint",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Metrics",
+      "target": "aiwiki ML Metrics Generation",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Metrics",
+      "target": "aiwiki ML Metrics Clustering",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Metrics",
+      "target": "aiwiki ML Metrics Statistics",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Metrics",
+      "target": "aiwiki ML Metrics Efficiency",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
       "source": "aiwiki Tools TF",
       "target": "aiwiki Tools TF Datasets",
       "value": 3,
@@ -9116,8 +9280,36 @@
       "expand": true
     },
     {
+      "source": "aiwiki ML Metrics Detection",
+      "target": "aiwiki ML Metrics Detection DIoUCIoU",
+      "value": 4,
+      "visible": true,
+      "expand": true
+    },
+    {
       "source": "aiwiki ML Metrics Segmentation",
       "target": "aiwiki ML Metrics Segmentation BF1S",
+      "value": 4,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Metrics Segmentation",
+      "target": "aiwiki ML Metrics Segmentation PQ",
+      "value": 4,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Metrics Segmentation",
+      "target": "aiwiki ML Metrics Segmentation Dice",
+      "value": 4,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Metrics Segmentation",
+      "target": "aiwiki ML Metrics Segmentation Hausdorff",
       "value": 4,
       "visible": true,
       "expand": true
