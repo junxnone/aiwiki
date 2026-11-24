@@ -141,7 +141,7 @@ var plugin = function plugin(hook, vm) {
     next(htmlElement.innerHTML);
   });
   hook.doneEach(function () {
-    mermaid.init({}, '.mermaid');
+    mermaid.run({ querySelector: '.mermaid' });
   });
 };
 
