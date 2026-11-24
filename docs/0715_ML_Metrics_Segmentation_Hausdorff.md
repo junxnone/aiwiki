@@ -2,12 +2,12 @@
 Title | ML Metrics Segmentation Hausdorff
 -- | --
 Created @ | `2026-11-24T01:03:56Z`
-Updated @| `2026-11-24T01:03:56Z`
+Updated @| `2026-11-24T02:49:18Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/715)
 
 ---
-# Hausdorff
+# Hausdorff Distance 豪斯多夫距离
 
 - 区域重合指标（[IoU / Dice](/0231_ML_Metrics_Segmentation)）对边界偏差不敏感；**距离类**指标直接测量预测边界与真值边界之间有多远，单位是像素或毫米
 - 医学图像分割（器官/肿瘤轮廓）中最常用，同时是评估分割边界最坏偏差的指标
@@ -100,4 +100,5 @@ assd = (d_pg.sum() + d_gp.sum()) / (len(d_pg) + len(d_gp))
 - [Hausdorff distance - Wikipedia](https://en.wikipedia.org/wiki/Hausdorff_distance)
 - [Metrics reloaded: Recommendations for image analysis validation](https://arxiv.org/abs/2206.01653)
 - [Deepmind surface-distance](https://github.com/google-deepmind/surface-distance)
+
 
