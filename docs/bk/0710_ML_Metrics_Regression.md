@@ -3,13 +3,13 @@
 | Title     | ML Metrics Regression                                 |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-24T01:03:46Z`                                |
-| Updated @ | `2026-11-24T01:03:46Z`                                |
+| Updated @ | `2026-11-24T02:49:02Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/710) |
 
 -----
 
-# Regression
+# Regression Metrics 回归指标
 
   - Regression 任务输出**连续值**（价格、温度、深度、坐标偏移等），Metrics 衡量预测值 $\\hat{y}$ 与真值
     $y$ 之间的误差
