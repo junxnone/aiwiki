@@ -2,12 +2,12 @@
 Title | ML Metrics Segmentation BF1S
 -- | --
 Created @ | `2025-11-13T08:09:31Z`
-Updated @| `2026-11-24T01:05:02Z`
+Updated @| `2026-11-24T02:50:07Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/526)
 
 ---
-# Boundary F1-Score
+# Boundary F1-Score 分割边界 F1
 - 分割边界 F1 分数（Segmentation Boundary F1-score）是评估图像分割边界精度的核心指标，综合了边界检测的精确率（Precision）和召回率（Recall）。
 - 区域类指标（[IoU / Dice](/0231_ML_Metrics_Segmentation)）对边界不敏感：大目标的边界偏几个像素时，IoU 几乎不变；Boundary F1 专门衡量边界的贴合程度
 - 最初用于评估轮廓检测（BSDS500），后来用于语义分割的边界质量评估
@@ -92,4 +92,5 @@ def boundary_f1(pred, gt, tau=2):
 
 - [Contour Detection and Hierarchical Image Segmentation](https://www2.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/papers/amfm_pami2010.pdf) - BSDS500 边界评估
 - [Boundary IoU: Improving Object-Centric Image Segmentation Evaluation](https://arxiv.org/abs/2103.16562)
+
 

@@ -3,13 +3,13 @@
 | Title     | ML Metrics Segmentation BF1S                          |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2025-11-13T08:09:31Z`                                |
-| Updated @ | `2026-11-24T01:05:02Z`                                |
+| Updated @ | `2026-11-24T02:50:07Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/526) |
 
 -----
 
-# Boundary F1-Score
+# Boundary F1-Score 分割边界 F1
 
   - 分割边界 F1 分数（Segmentation Boundary
     F1-score）是评估图像分割边界精度的核心指标，综合了边界检测的精确率（Precision）和召回率（Recall）。
