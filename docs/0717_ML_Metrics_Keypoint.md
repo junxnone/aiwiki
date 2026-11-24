@@ -2,12 +2,12 @@
 Title | ML Metrics Keypoint
 -- | --
 Created @ | `2026-11-24T01:04:00Z`
-Updated @| `2026-11-24T01:04:00Z`
+Updated @| `2026-11-24T02:49:25Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/717)
 
 ---
-# Keypoint
+# Keypoint Metrics 关键点指标
 
 - 关键点检测（人体姿态、人脸关键点、手部、物体关键点）预测一组点的坐标，评估的是**每个点离真值有多近**
 - 不同于检测的 BBox，关键点没有面积，不能用 [IoU](/0383_ML_Metrics_Detection_IoU)，需要用基于距离的度量
@@ -99,4 +99,5 @@ def oks(pred, gt, vis, area, kappas):
 - [COCO Keypoint Evaluation](https://cocodataset.org/#keypoints-eval)
 - [2D Human Pose Estimation: New Benchmark and State of the Art Analysis](http://human-pose.mpi-inf.mpg.de/) - MPII, PCKh
 - [Human3.6M](http://vision.imar.ro/human3.6m/description.php)
+
 

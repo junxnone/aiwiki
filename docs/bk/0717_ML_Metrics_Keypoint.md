@@ -3,13 +3,13 @@
 | Title     | ML Metrics Keypoint                                   |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-24T01:04:00Z`                                |
-| Updated @ | `2026-11-24T01:04:00Z`                                |
+| Updated @ | `2026-11-24T02:49:25Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/717) |
 
 -----
 
-# Keypoint
+# Keypoint Metrics 关键点指标
 
   - 关键点检测（人体姿态、人脸关键点、手部、物体关键点）预测一组点的坐标，评估的是**每个点离真值有多近**
   - 不同于检测的 BBox，关键点没有面积，不能用
