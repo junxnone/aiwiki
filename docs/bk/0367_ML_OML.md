@@ -3,7 +3,7 @@
 | Title     | ML OML                                                |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-02-02T08:57:10Z`                                |
-| Updated @ | `2026-11-24T03:40:00Z`                                |
+| Updated @ | `2026-11-24T05:37:08Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/367) |
 
@@ -25,17 +25,17 @@
 
 ``` mermaid
 graph TD
-    ML(传统机器学习) --> S(监督学习)
-    ML --> U(无监督学习)
-    ML --> SS(半监督 / 强化学习)
-    S --> C(分类)
-    S --> R(回归)
-    C --> C1(决策树 / SVM / KNN / 朴素贝叶斯 / 逻辑回归)
-    C --> C2(集成: Random Forest / AdaBoost / GBDT)
-    R --> R1(线性回归 / Ridge / Lasso / SVR / 回归树)
-    U --> UC(聚类: K-Means / DBSCAN / GMM)
-    U --> UD(降维: PCA / t-SNE / LDA)
-    U --> UA(异常检测: Isolation Forest / One-Class SVM)
+    ML("传统机器学习") --> S("监督学习")
+    ML --> U("无监督学习")
+    ML --> SS("半监督 / 强化学习")
+    S --> C("分类")
+    S --> R("回归")
+    C --> C1("决策树 / SVM / KNN / 朴素贝叶斯 / 逻辑回归")
+    C --> C2("集成: Random Forest / AdaBoost / GBDT")
+    R --> R1("线性回归 / Ridge / Lasso / SVR / 回归树")
+    U --> UC("聚类: K-Means / DBSCAN / GMM")
+    U --> UD("降维: PCA / t-SNE / LDA")
+    U --> UA("异常检测: Isolation Forest / One-Class SVM")
 ```
 
 图中：
@@ -100,12 +100,12 @@ Boosting）通常优于深度学习，图像、语音、文本等非结构化数
 
 ``` mermaid
 graph LR
-    D(数据采集) --> P(数据清洗<br/>缺失值 / 异常值)
-    P --> F(特征工程<br/>构造 / 选择 / 缩放)
-    F --> M(模型训练)
-    M --> E(评估)
-    E -->|调参| M
-    E --> O(部署)
+    D("数据采集") --> P("数据清洗<br/>缺失值 / 异常值")
+    P --> F("特征工程<br/>构造 / 选择 / 缩放")
+    F --> M("模型训练")
+    M --> E("评估")
+    E -->|"调参"| M
+    E --> O("部署")
 ```
 
 图中：
