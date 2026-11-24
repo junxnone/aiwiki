@@ -3,7 +3,7 @@
 | Title     | ML Metrics Segmentation PQ                            |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-24T01:03:52Z`                                |
-| Updated @ | `2026-11-24T02:49:12Z`                                |
+| Updated @ | `2026-11-24T05:37:24Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/713) |
 
@@ -23,16 +23,16 @@
 
 ``` mermaid
 graph LR
-    P(预测 segments) --> M(逐类匹配<br/>IoU 大于 0.5)
-    G(真值 segments) --> M
-    M --> TP(TP: 匹配的 pair)
-    M --> FP(FP: 未匹配的预测)
-    M --> FN(FN: 未匹配的真值)
-    TP --> SQ(SQ: 匹配 pair 的平均 IoU)
-    TP --> RQ(RQ: F1 形式)
+    P("预测 segments") --> M("逐类匹配<br/>IoU 大于 0.5")
+    G("真值 segments") --> M
+    M --> TP("TP: 匹配的 pair")
+    M --> FP("FP: 未匹配的预测")
+    M --> FN("FN: 未匹配的真值")
+    TP --> SQ("SQ: 匹配 pair 的平均 IoU")
+    TP --> RQ("RQ: F1 形式")
     FP --> RQ
     FN --> RQ
-    SQ --> PQ(PQ = SQ x RQ)
+    SQ --> PQ("PQ = SQ x RQ")
     RQ --> PQ
 ```
 
