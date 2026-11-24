@@ -2,7 +2,7 @@
 Title | ML Metrics Anomaly
 -- | --
 Created @ | `2026-11-24T01:03:48Z`
-Updated @| `2026-11-24T02:49:05Z`
+Updated @| `2026-11-24T05:37:21Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/711)
 
@@ -19,11 +19,11 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/711)
 
 ```mermaid
 graph LR
-    M(模型) --> AM(Anomaly Map<br/>每像素异常分数)
-    AM --> PS(Pixel 分数)
-    AM --> IS(Image 分数<br/>取 max / top-k 均值)
-    IS --> IM(Image AUROC / AP / F1)
-    PS --> PM(Pixel AUROC / AUPRO / AP / F1)
+    M("模型") --> AM("Anomaly Map<br/>每像素异常分数")
+    AM --> PS("Pixel 分数")
+    AM --> IS("Image 分数<br/>取 max / top-k 均值")
+    IS --> IM("Image AUROC / AP / F1")
+    PS --> PM("Pixel AUROC / AUPRO / AP / F1")
 ```
 
 图中：
@@ -103,5 +103,6 @@ f1_max = (2 * p * r / (p + r + 1e-12)).max()
 - [MVTec AD — A Comprehensive Real-World Dataset for Unsupervised Anomaly Detection](https://openaccess.thecvf.com/content_CVPR_2019/papers/Bergmann_MVTec_AD_--_A_Comprehensive_Real-World_Dataset_for_Unsupervised_Anomaly_CVPR_2019_paper.pdf)
 - [Uninformed Students: Student-Teacher Anomaly Detection with Discriminative Latent Embeddings](https://arxiv.org/abs/1911.02357) - 提出 PRO
 - [anomalib](https://github.com/openvinotoolkit/anomalib)
+
 
 

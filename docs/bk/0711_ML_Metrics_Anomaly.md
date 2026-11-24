@@ -3,7 +3,7 @@
 | Title     | ML Metrics Anomaly                                    |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-24T01:03:48Z`                                |
-| Updated @ | `2026-11-24T02:49:05Z`                                |
+| Updated @ | `2026-11-24T05:37:21Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/711) |
 
@@ -23,11 +23,11 @@
 
 ``` mermaid
 graph LR
-    M(模型) --> AM(Anomaly Map<br/>每像素异常分数)
-    AM --> PS(Pixel 分数)
-    AM --> IS(Image 分数<br/>取 max / top-k 均值)
-    IS --> IM(Image AUROC / AP / F1)
-    PS --> PM(Pixel AUROC / AUPRO / AP / F1)
+    M("模型") --> AM("Anomaly Map<br/>每像素异常分数")
+    AM --> PS("Pixel 分数")
+    AM --> IS("Image 分数<br/>取 max / top-k 均值")
+    IS --> IM("Image AUROC / AP / F1")
+    PS --> PM("Pixel AUROC / AUPRO / AP / F1")
 ```
 
 图中：
