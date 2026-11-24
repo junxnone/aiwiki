@@ -3,13 +3,13 @@
 | Title     | ML Metrics Detection TPRFPR                           |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-02-16T15:17:13Z`                                |
-| Updated @ | `2026-11-24T00:58:30Z`                                |
+| Updated @ | `2026-11-24T02:49:51Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/381) |
 
 -----
 
-# TPR & FPR
+# TPR & FPR 真正率与假正率
 
   - $TPR = \\frac{TP}{TP+FN}$
   - $FPR = \\frac{FP}{FP+TN}$

@@ -2,12 +2,12 @@
 Title | ML Metrics Detection TPRFPR
 -- | --
 Created @ | `2023-02-16T15:17:13Z`
-Updated @| `2026-11-24T00:58:30Z`
+Updated @| `2026-11-24T02:49:51Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/381)
 
 ---
-# TPR & FPR
+# TPR & FPR 真正率与假正率
 
 - $TPR = \frac{TP}{TP+FN}$
 - $FPR = \frac{FP}{FP+TN}$
@@ -39,4 +39,5 @@ Name | ROC (TPR vs FPR) | PR (Precision vs Recall)
 适用 | 分类任务；正负比例大致均衡 | 检测、异常检测等负样本极多的任务
 
 表中比较了两条曲线的特点：检测任务的负样本（背景）远多于正样本，所以检测评估以 PR/AP 为主，ROC 更适合分类任务，见 [Metrics for Classification](/0137_ML_Metrics_Classification)。
+
 
