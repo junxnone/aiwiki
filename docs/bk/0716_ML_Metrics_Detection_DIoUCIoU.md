@@ -3,7 +3,7 @@
 | Title     | ML Metrics Detection DIoUCIoU                         |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-24T01:03:58Z`                                |
-| Updated @ | `2026-11-24T02:49:21Z`                                |
+| Updated @ | `2026-11-24T05:37:26Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/716) |
 
@@ -23,11 +23,11 @@
 
 ``` mermaid
 graph LR
-    L(L1 / L2<br/>坐标回归) --> I(IoU Loss<br/>不相交时无梯度)
-    I --> G(GIoU<br/>加最小外接框)
-    G --> D(DIoU<br/>加中心点距离)
-    D --> C(CIoU<br/>加长宽比)
-    C --> E(EIoU<br/>分别约束宽和高)
+    L("L1 / L2<br/>坐标回归") --> I("IoU Loss<br/>不相交时无梯度")
+    I --> G("GIoU<br/>加最小外接框")
+    G --> D("DIoU<br/>加中心点距离")
+    D --> C("CIoU<br/>加长宽比")
+    C --> E("EIoU<br/>分别约束宽和高")
 ```
 
 图中：

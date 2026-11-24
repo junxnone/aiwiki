@@ -2,7 +2,7 @@
 Title | ML Metrics Detection DIoUCIoU
 -- | --
 Created @ | `2026-11-24T01:03:58Z`
-Updated @| `2026-11-24T02:49:21Z`
+Updated @| `2026-11-24T05:37:26Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/716)
 
@@ -17,11 +17,11 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/716)
 
 ```mermaid
 graph LR
-    L(L1 / L2<br/>坐标回归) --> I(IoU Loss<br/>不相交时无梯度)
-    I --> G(GIoU<br/>加最小外接框)
-    G --> D(DIoU<br/>加中心点距离)
-    D --> C(CIoU<br/>加长宽比)
-    C --> E(EIoU<br/>分别约束宽和高)
+    L("L1 / L2<br/>坐标回归") --> I("IoU Loss<br/>不相交时无梯度")
+    I --> G("GIoU<br/>加最小外接框")
+    G --> D("DIoU<br/>加中心点距离")
+    D --> C("CIoU<br/>加长宽比")
+    C --> E("EIoU<br/>分别约束宽和高")
 ```
 
 图中：
@@ -89,5 +89,6 @@ def ciou_loss(a, b, eps=1e-7):
 - [Distance-IoU Loss: Faster and Better Learning for Bounding Box Regression](https://arxiv.org/abs/1911.08287)
 - [Focal and Efficient IOU Loss for Accurate Bounding Box Regression](https://arxiv.org/abs/2101.08158)
 - [torchvision.ops.complete_box_iou_loss](https://pytorch.org/vision/stable/generated/torchvision.ops.complete_box_iou_loss.html)
+
 
 
