@@ -3,13 +3,13 @@
 | Title     | ML Metrics Detection DIoUCIoU                         |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-24T01:03:58Z`                                |
-| Updated @ | `2026-11-24T01:03:58Z`                                |
+| Updated @ | `2026-11-24T02:49:21Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/716) |
 
 -----
 
-# DIoUCIoU
+# IoU Loss Family 边界框回归损失
 
   - 目标检测的 BBox 回归损失从 L1/L2 逐步演进到 **IoU 系列损失**：IoU → GIoU → DIoU → CIoU →
     EIoU

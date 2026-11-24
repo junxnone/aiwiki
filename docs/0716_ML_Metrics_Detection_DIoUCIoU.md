@@ -2,12 +2,12 @@
 Title | ML Metrics Detection DIoUCIoU
 -- | --
 Created @ | `2026-11-24T01:03:58Z`
-Updated @| `2026-11-24T01:03:58Z`
+Updated @| `2026-11-24T02:49:21Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/716)
 
 ---
-# DIoUCIoU
+# IoU Loss Family 边界框回归损失
 
 - 目标检测的 BBox 回归损失从 L1/L2 逐步演进到 **IoU 系列损失**：IoU → GIoU → DIoU → CIoU → EIoU
 - 它们都是在 [IoU](/0383_ML_Metrics_Detection_IoU) 的基础上，补上 IoU 没有考虑的几何因素（不相交距离、中心点距离、长宽比）
@@ -89,4 +89,5 @@ def ciou_loss(a, b, eps=1e-7):
 - [Distance-IoU Loss: Faster and Better Learning for Bounding Box Regression](https://arxiv.org/abs/1911.08287)
 - [Focal and Efficient IOU Loss for Accurate Bounding Box Regression](https://arxiv.org/abs/2101.08158)
 - [torchvision.ops.complete_box_iou_loss](https://pytorch.org/vision/stable/generated/torchvision.ops.complete_box_iou_loss.html)
+
 
