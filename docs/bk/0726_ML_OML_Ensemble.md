@@ -3,7 +3,7 @@
 | Title     | ML OML Ensemble                                       |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-24T03:39:20Z`                                |
-| Updated @ | `2026-11-24T03:39:20Z`                                |
+| Updated @ | `2026-11-24T05:37:42Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/726) |
 
@@ -20,13 +20,13 @@
 
 ``` mermaid
 graph TD
-    E(集成学习) --> BG(Bagging<br/>并行训练 投票/平均)
-    E --> BO(Boosting<br/>串行训练 关注上一轮的错误)
-    E --> ST(Stacking<br/>基学习器输出作为元学习器的输入)
-    BG --> RF(Random Forest)
-    BO --> AD(AdaBoost)
-    BO --> GB(GBDT / XGBoost / LightGBM)
-    ST --> S1(多模型融合)
+    E("集成学习") --> BG("Bagging<br/>并行训练 投票/平均")
+    E --> BO("Boosting<br/>串行训练 关注上一轮的错误")
+    E --> ST("Stacking<br/>基学习器输出作为元学习器的输入")
+    BG --> RF("Random Forest")
+    BO --> AD("AdaBoost")
+    BO --> GB("GBDT / XGBoost / LightGBM")
+    ST --> S1("多模型融合")
 ```
 
 图中：
