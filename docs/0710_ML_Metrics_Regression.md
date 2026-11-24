@@ -2,7 +2,7 @@
 Title | ML Metrics Regression
 -- | --
 Created @ | `2026-11-24T01:03:46Z`
-Updated @| `2026-11-24T02:49:02Z`
+Updated @| `2026-11-24T05:37:19Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/710)
 
@@ -39,12 +39,12 @@ Max Error | $\max_i \lvert y_i - \hat{y}_i \rvert$ | 最坏情况误差，安全
 
 ```mermaid
 graph TD
-    A(回归任务) --> B{是否有离群点<br/>且不想被其主导?}
-    B -->|是| C(MAE / Median AE / Huber)
-    B -->|否, 大误差代价更高| D(MSE / RMSE)
-    A --> E{需要跨量纲比较<br/>或百分比含义?}
-    E -->|是 且 y 远离 0| F(MAPE / sMAPE)
-    E -->|解释方差| G(R²)
+    A("回归任务") --> B{"是否有离群点<br/>且不想被其主导?"}
+    B -->|"是"| C("MAE / Median AE / Huber")
+    B -->|"否, 大误差代价更高"| D("MSE / RMSE")
+    A --> E{"需要跨量纲比较<br/>或百分比含义?"}
+    E -->|"是 且 y 远离 0"| F("MAPE / sMAPE")
+    E -->|"解释方差"| G("R²")
 ```
 
 图中：
@@ -91,5 +91,6 @@ mape = mean_absolute_percentage_error(y_true, y_pred)   # 返回小数, 不是�
 
 ## Reference
 - [Regression metrics - scikit-learn](https://scikit-learn.org/stable/modules/model_evaluation.html#regression-metrics)
+
 
 
