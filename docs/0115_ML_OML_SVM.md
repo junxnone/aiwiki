@@ -2,7 +2,7 @@
 Title | ML OML SVM
 -- | --
 Created @ | `2019-05-11T13:48:41Z`
-Updated @| `2026-11-24T03:34:27Z`
+Updated @| `2026-11-24T05:37:15Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/115)
 
@@ -66,10 +66,10 @@ SVM Kernel | 用于处理非线性问题, k() = 特征变换函数的点乘
 
 ```mermaid
 graph TD
-    A(训练数据) --> B{线性可分?}
-    B -->|是| H(线性可分 SVM<br/>硬间隔最大化)
-    B -->|近似可分<br/>有少量噪声| S(线性 SVM<br/>软间隔最大化)
-    B -->|否| K(非线性 SVM<br/>核技巧 + 软间隔)
+    A("训练数据") --> B{"线性可分?"}
+    B -->|"是"| H("线性可分 SVM<br/>硬间隔最大化")
+    B -->|"近似可分<br/>有少量噪声"| S("线性 SVM<br/>软间隔最大化")
+    B -->|"否"| K("非线性 SVM<br/>核技巧 + 软间隔")
 ```
 
 图中：
@@ -267,4 +267,5 @@ clf = make_pipeline(StandardScaler(), LinearSVC(C=1.0)).fit(X_train, y_train)
 - implement
   - [libsvm](https://www.csie.ntu.edu.tw/~cjlin/libsvm/)
   - [sklearn.svm](http://scikit-learn.sourceforge.net/stable/modules/classes.html#module-sklearn.svm)
+
 
