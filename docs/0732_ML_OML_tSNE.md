@@ -2,7 +2,7 @@
 Title | ML OML tSNE
 -- | --
 Created @ | `2026-11-24T03:39:40Z`
-Updated @| `2026-11-24T03:39:40Z`
+Updated @| `2026-11-24T05:37:50Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/732)
 
@@ -19,11 +19,11 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/732)
 
 ```mermaid
 graph LR
-    H(高维数据 X) --> P(用高斯分布计算<br/>点对相似度 P)
-    L(低维初始点 Y<br/>随机或 PCA 初始化) --> Q(用 t 分布计算<br/>点对相似度 Q)
-    P --> K(最小化 KL 散度 P 与 Q)
+    H("高维数据 X") --> P("用高斯分布计算<br/>点对相似度 P")
+    L("低维初始点 Y<br/>随机或 PCA 初始化") --> Q("用 t 分布计算<br/>点对相似度 Q")
+    P --> K("最小化 KL 散度 P 与 Q")
     Q --> K
-    K --> G(梯度下降更新 Y)
+    K --> G("梯度下降更新 Y")
     G --> Q
 ```
 
@@ -108,4 +108,5 @@ plt.scatter(Y[:, 0], Y[:, 1], c=labels, s=5, cmap='tab10')      # 用类别着�
 - [Visualizing Data using t-SNE](https://www.jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf)
 - [How to Use t-SNE Effectively - Distill](https://distill.pub/2016/misread-tsne/)
 - [scikit-learn - t-SNE](https://scikit-learn.org/stable/modules/manifold.html#t-sne)
+
 
