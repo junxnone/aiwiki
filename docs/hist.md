@@ -4,6 +4,7 @@
 
 #### **Created**
 
+- 2026-11-24&nbsp;&nbsp; [FUVAS 少样本无监督视频异常分割](/0765_paper_FUVAS)&nbsp;&nbsp; :bookmark:paper :bookmark:FUVAS
 - 2026-11-24&nbsp;&nbsp; [AIVAD 基于属性表示的视频异常检测](/0764_paper_AIVAD)&nbsp;&nbsp; :bookmark:paper :bookmark:AIVAD
 - 2026-11-24&nbsp;&nbsp; [VLMAD 视觉语言模型异常检测](/0763_paper_VLMAD)&nbsp;&nbsp; :bookmark:paper :bookmark:VLMAD
 - 2026-11-24&nbsp;&nbsp; [CFM 跨模态特征映射](/0762_paper_CFM)&nbsp;&nbsp; :bookmark:paper :bookmark:CFM
@@ -232,7 +233,7 @@
 - 2026-04-24&nbsp;&nbsp; [Uformer](/0539_paper_Uformer)&nbsp;&nbsp; :bookmark:paper :bookmark:Uformer
 - 2026-04-24&nbsp;&nbsp; [SpecularityNet-PSD](/0538_paper_SpecularityNet)&nbsp;&nbsp; :bookmark:paper :bookmark:SpecularityNet
 - 2026-03-27&nbsp;&nbsp; [PatchCore 持续学习](/0537_ML_IL_PatchCore)&nbsp;&nbsp; :bookmark:ML :bookmark:IL :bookmark:PatchCore
-- 2026-03-24&nbsp;&nbsp; [PatchCore](/0535_paper_PatchCore)&nbsp;&nbsp; :bookmark:paper :bookmark:PatchCore
+- 2026-03-24&nbsp;&nbsp; [PatchCore 记忆库补丁检索](/0535_paper_PatchCore)&nbsp;&nbsp; :bookmark:paper :bookmark:PatchCore
 - 2026-03-20&nbsp;&nbsp; [OPs CPU Impl](/0534_Tools_OV_OPs_CPUImpl)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:OPs :bookmark:CPUImpl
 - 2026-03-20&nbsp;&nbsp; [OpenVINO Ops Impl](/0533_Tools_OV_OPs_Impl)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:OPs :bookmark:Impl
 - 2026-03-17&nbsp;&nbsp; [GPU Impl Permute](/0532_Tools_OV_OPs_GPUImpl_Permute)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:OPs :bookmark:GPUImpl :bookmark:Permute
@@ -299,7 +300,7 @@
 - 2024-06-28&nbsp;&nbsp; [模型性能优化技术](/0471_MO)&nbsp;&nbsp; :bookmark:MO
 - 2024-06-22&nbsp;&nbsp; [Eureka](/0470_paper_Eureka)&nbsp;&nbsp; :bookmark:paper :bookmark:Eureka
 - 2024-06-18&nbsp;&nbsp; [SAA+](/0469_paper_SAAplus)&nbsp;&nbsp; :bookmark:paper :bookmark:SAAplus
-- 2024-06-13&nbsp;&nbsp; [WinCLIP](/0468_paper_WinCLIP)&nbsp;&nbsp; :bookmark:paper :bookmark:WinCLIP
+- 2024-06-13&nbsp;&nbsp; [WinCLIP 零样本异常检测](/0468_paper_WinCLIP)&nbsp;&nbsp; :bookmark:paper :bookmark:WinCLIP
 - 2024-05-15&nbsp;&nbsp; [MuSC](/0467_paper_MuSC)&nbsp;&nbsp; :bookmark:paper :bookmark:MuSC
 - 2024-04-26&nbsp;&nbsp; [AnomalyCLIP](/0466_paper_AnomalyCLIP)&nbsp;&nbsp; :bookmark:paper :bookmark:AnomalyCLIP
 - 2024-04-26&nbsp;&nbsp; [YOLO-World](/0465_paper_YOLOWorld)&nbsp;&nbsp; :bookmark:paper :bookmark:YOLOWorld
@@ -394,9 +395,9 @@
 - 2022-12-16&nbsp;&nbsp; [KnowledgeGraph](/0329_KnowledgeGraph)&nbsp;&nbsp; :bookmark:KnowledgeGraph
 - 2022-12-13&nbsp;&nbsp; [Numpy](/0328_Tools_Numpy)&nbsp;&nbsp; :bookmark:Tools :bookmark:Numpy
 - 2022-12-12&nbsp;&nbsp; [图像](/0325_Media_Image)&nbsp;&nbsp; :bookmark:Media :bookmark:Image
-- 2022-12-09&nbsp;&nbsp; [STFPM](/0324_paper_STFPM)&nbsp;&nbsp; :bookmark:paper :bookmark:STFPM
+- 2022-12-09&nbsp;&nbsp; [STFPM 师生特征金字塔匹配](/0324_paper_STFPM)&nbsp;&nbsp; :bookmark:paper :bookmark:STFPM
 - 2022-12-05&nbsp;&nbsp; [MVTec](/0323_ML_Tasks_Image_Anomaly_MVTec)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Anomaly :bookmark:MVTec
-- 2022-12-05&nbsp;&nbsp; [PaDiM](/0322_paper_PaDiM)&nbsp;&nbsp; :bookmark:paper :bookmark:PaDiM
+- 2022-12-05&nbsp;&nbsp; [PaDiM 补丁分布建模](/0322_paper_PaDiM)&nbsp;&nbsp; :bookmark:paper :bookmark:PaDiM
 - 2022-11-30&nbsp;&nbsp; [anomalib](/0321_Tools_anomalib)&nbsp;&nbsp; :bookmark:Tools :bookmark:anomalib
 - 2022-11-29&nbsp;&nbsp; [GaussianBlur](/0320_OpenCV_IP_Filter_GaussianBlur)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter :bookmark:GaussianBlur
 - 2022-11-29&nbsp;&nbsp; [boxFilter](/0319_OpenCV_IP_Filter_boxFilter)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter :bookmark:boxFilter
@@ -736,6 +737,7 @@
 
 #### **Updated**
 
+- 2026-11-24&nbsp;&nbsp; [FUVAS 少样本无监督视频异常分割](/0765_paper_FUVAS)&nbsp;&nbsp; :bookmark:paper :bookmark:FUVAS
 - 2026-11-24&nbsp;&nbsp; [AIVAD 基于属性表示的视频异常检测](/0764_paper_AIVAD)&nbsp;&nbsp; :bookmark:paper :bookmark:AIVAD
 - 2026-11-24&nbsp;&nbsp; [VLMAD 视觉语言模型异常检测](/0763_paper_VLMAD)&nbsp;&nbsp; :bookmark:paper :bookmark:VLMAD
 - 2026-11-24&nbsp;&nbsp; [CFM 跨模态特征映射](/0762_paper_CFM)&nbsp;&nbsp; :bookmark:paper :bookmark:CFM
@@ -791,13 +793,18 @@
 - 2026-11-24&nbsp;&nbsp; [Retrieval Metrics 检索指标](/0712_ML_Metrics_Retrieval)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Retrieval
 - 2026-11-24&nbsp;&nbsp; [Anomaly Detection Metrics 异常检测指标](/0711_ML_Metrics_Anomaly)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Anomaly
 - 2026-11-24&nbsp;&nbsp; [Regression Metrics 回归指标](/0710_ML_Metrics_Regression)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Regression
+- 2026-11-24&nbsp;&nbsp; [PatchCore 记忆库补丁检索](/0535_paper_PatchCore)&nbsp;&nbsp; :bookmark:paper :bookmark:PatchCore
 - 2026-11-24&nbsp;&nbsp; [Boundary F1-Score 分割边界 F1](/0526_ML_Metrics_Segmentation_BF1S)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Segmentation :bookmark:BF1S
 - 2026-11-24&nbsp;&nbsp; [Center Distance 中心点距离](/0525_ML_Metrics_Detection_CD)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:CD
+- 2026-11-24&nbsp;&nbsp; [WinCLIP 零样本异常检测](/0468_paper_WinCLIP)&nbsp;&nbsp; :bookmark:paper :bookmark:WinCLIP
 - 2026-11-24&nbsp;&nbsp; [COCO Detection Metrics COCO 检测评估指标](/0384_ML_Metrics_Detection_COCO)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:COCO
 - 2026-11-24&nbsp;&nbsp; [Intersection over Union 交并比](/0383_ML_Metrics_Detection_IoU)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:IoU
 - 2026-11-24&nbsp;&nbsp; [AP & mAP & AR 平均精度与召回](/0382_ML_Metrics_Detection_APmAPAR)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:APmAPAR
 - 2026-11-24&nbsp;&nbsp; [TPR & FPR 真正率与假正率](/0381_ML_Metrics_Detection_TPRFPR)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:TPRFPR
 - 2026-11-24&nbsp;&nbsp; [Traditional Machine Learning 传统机器学习](/0367_ML_OML)&nbsp;&nbsp; :bookmark:ML :bookmark:OML
+- 2026-11-24&nbsp;&nbsp; [STFPM 师生特征金字塔匹配](/0324_paper_STFPM)&nbsp;&nbsp; :bookmark:paper :bookmark:STFPM
+- 2026-11-24&nbsp;&nbsp; [PaDiM 补丁分布建模](/0322_paper_PaDiM)&nbsp;&nbsp; :bookmark:paper :bookmark:PaDiM
+- 2026-11-24&nbsp;&nbsp; [anomalib](/0321_Tools_anomalib)&nbsp;&nbsp; :bookmark:Tools :bookmark:anomalib
 - 2026-11-24&nbsp;&nbsp; [Cross Validation 交叉验证](/0249_ML_Metrics_CrossValidation)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:CrossValidation
 - 2026-11-24&nbsp;&nbsp; [Generalized IoU 广义交并比](/0232_ML_Metrics_Detection_GIoU)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:GIoU
 - 2026-11-24&nbsp;&nbsp; [Segmentation Metrics](/0231_ML_Metrics_Segmentation)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Segmentation
@@ -1115,8 +1122,6 @@
 - 2026-04-24&nbsp;&nbsp; [SpecularityNet-PSD](/0538_paper_SpecularityNet)&nbsp;&nbsp; :bookmark:paper :bookmark:SpecularityNet
 - 2026-03-31&nbsp;&nbsp; [增量学习/持续学习](/0536_ML_IL)&nbsp;&nbsp; :bookmark:ML :bookmark:IL
 - 2026-03-27&nbsp;&nbsp; [PatchCore 持续学习](/0537_ML_IL_PatchCore)&nbsp;&nbsp; :bookmark:ML :bookmark:IL :bookmark:PatchCore
-- 2026-03-27&nbsp;&nbsp; [anomalib](/0321_Tools_anomalib)&nbsp;&nbsp; :bookmark:Tools :bookmark:anomalib
-- 2026-03-24&nbsp;&nbsp; [PatchCore](/0535_paper_PatchCore)&nbsp;&nbsp; :bookmark:paper :bookmark:PatchCore
 - 2026-03-20&nbsp;&nbsp; [OpenVINO Ops Impl](/0533_Tools_OV_OPs_Impl)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:OPs :bookmark:Impl
 - 2026-03-20&nbsp;&nbsp; [GPU Impl Permute](/0532_Tools_OV_OPs_GPUImpl_Permute)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:OPs :bookmark:GPUImpl :bookmark:Permute
 - 2026-03-20&nbsp;&nbsp; [GPU Impl Crop](/0530_Tools_OV_OPs_GPUImpl_Crop)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:OPs :bookmark:GPUImpl :bookmark:Crop
@@ -1136,8 +1141,6 @@
 - 2025-06-05&nbsp;&nbsp; [AnomalyAny CN](/0520_paper_AnomalyAny_cn)&nbsp;&nbsp; :bookmark:paper :bookmark:AnomalyAny :bookmark:cn
 - 2025-06-05&nbsp;&nbsp; [AnomalyAny](/0519_paper_AnomalyAny)&nbsp;&nbsp; :bookmark:paper :bookmark:AnomalyAny
 - 2025-05-29&nbsp;&nbsp; [异常缺陷生成](/0517_ML_Tasks_Image_Anomaly_Synthesis)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Anomaly :bookmark:Synthesis
-- 2025-05-27&nbsp;&nbsp; [STFPM](/0324_paper_STFPM)&nbsp;&nbsp; :bookmark:paper :bookmark:STFPM
-- 2025-05-27&nbsp;&nbsp; [PaDiM](/0322_paper_PaDiM)&nbsp;&nbsp; :bookmark:paper :bookmark:PaDiM
 - 2025-05-13&nbsp;&nbsp; [BLDM](/0514_x_DM_BLDM)&nbsp;&nbsp; :bookmark:x :bookmark:DM :bookmark:BLDM
 - 2025-05-12&nbsp;&nbsp; [Inference Code 分析](/0516_paper_AdaBLDM_InferenceCode)&nbsp;&nbsp; :bookmark:paper :bookmark:AdaBLDM :bookmark:InferenceCode
 - 2025-05-12&nbsp;&nbsp; [AdaBLDM 译文](/0515_paper_AdaBLDM_cn)&nbsp;&nbsp; :bookmark:paper :bookmark:AdaBLDM :bookmark:cn
@@ -1203,7 +1206,6 @@
 - 2024-06-22&nbsp;&nbsp; [Eureka](/0470_paper_Eureka)&nbsp;&nbsp; :bookmark:paper :bookmark:Eureka
 - 2024-06-18&nbsp;&nbsp; [SAA+](/0469_paper_SAAplus)&nbsp;&nbsp; :bookmark:paper :bookmark:SAAplus
 - 2024-06-18&nbsp;&nbsp; [CLIP](/0448_paper_CLIP)&nbsp;&nbsp; :bookmark:paper :bookmark:CLIP
-- 2024-06-14&nbsp;&nbsp; [WinCLIP](/0468_paper_WinCLIP)&nbsp;&nbsp; :bookmark:paper :bookmark:WinCLIP
 - 2024-05-19&nbsp;&nbsp; [AnomalyCLIP](/0466_paper_AnomalyCLIP)&nbsp;&nbsp; :bookmark:paper :bookmark:AnomalyCLIP
 - 2024-05-15&nbsp;&nbsp; [MuSC](/0467_paper_MuSC)&nbsp;&nbsp; :bookmark:paper :bookmark:MuSC
 - 2024-05-15&nbsp;&nbsp; [模型结构可视化工具 netron](/0135_Tools_VIS_netron)&nbsp;&nbsp; :bookmark:Tools :bookmark:VIS :bookmark:netron

@@ -590,6 +590,7 @@
   - [EfficientAD 毫秒级异常检测](/0748_paper_EfficientAD)
   - [Eureka](/0470_paper_Eureka)
   - [FRE 特征重构误差](/0742_paper_FRE)
+  - [FUVAS 少样本无监督视频异常分割](/0765_paper_FUVAS)
   - [FastFlow 二维归一化流异常检测](/0736_paper_FastFlow)
   - [FiLo](/0472_paper_FiLo)
   - [FoundAD 基础视觉编码器即少样本异常检测器](/0760_paper_FoundAD)
@@ -608,8 +609,8 @@
   - [MHPatchCore 马氏距离 PatchCore](/0759_paper_MHPatchCore)
   - [MTA](/0479_paper_MTA)
   - [MuSC](/0467_paper_MuSC)
-  - [PaDiM](/0322_paper_PaDiM)
-  - [PatchCore](/0535_paper_PatchCore)
+  - [PaDiM 补丁分布建模](/0322_paper_PaDiM)
+  - [PatchCore 记忆库补丁检索](/0535_paper_PatchCore)
   - [PatchFlow 基于补丁特征的归一化流](/0739_paper_PatchFlow)
   - [PointNet++](/0541_paper_PointNet)
   - [RAD 检索式异常检测](/0757_paper_RAD)
@@ -617,7 +618,7 @@
     - [RDT-1B 翻译](/0508_paper_RDT_CN)
   - [ReverseDistillation 反向蒸馏](/0749_paper_ReverseDistillation)
   - [SAA+](/0469_paper_SAAplus)
-  - [STFPM](/0324_paper_STFPM)
+  - [STFPM 师生特征金字塔匹配](/0324_paper_STFPM)
   - [SpecularityNet-PSD](/0538_paper_SpecularityNet)
   - [SuperADD 免训练的类别无关异常分割](/0758_paper_SuperADD)
   - [SuperSimpleNet 统一监督与无监督的缺陷检测](/0747_paper_SuperSimpleNet)
@@ -628,7 +629,7 @@
   - [UniNet 统一对比学习框架](/0751_paper_UniNet)
   - [VLMAD 视觉语言模型异常检测](/0763_paper_VLMAD)
   - [VPT - Visual Prompt Tuning](/0477_paper_VPT)
-  - [WinCLIP](/0468_paper_WinCLIP)
+  - [WinCLIP 零样本异常检测](/0468_paper_WinCLIP)
   - [YOLO-World](/0465_paper_YOLOWorld)
   - [SAM-6D](/0545_paper_sam6d)
 - [AI Tools](/0415_Tools)
@@ -738,4 +739,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1616221124</sub></kbd>
+<kbd><sub>@1617041124</sub></kbd>

@@ -543,7 +543,7 @@
     {
       "id": "aiwiki paper PaDiM",
       "group": 2,
-      "title": "PaDiM",
+      "title": "PaDiM 补丁分布建模",
       "url": "https://junxnone.github.io/aiwiki/#/0322_paper_PaDiM",
       "visible": true,
       "expand": true,
@@ -552,7 +552,7 @@
     {
       "id": "aiwiki paper STFPM",
       "group": 2,
-      "title": "STFPM",
+      "title": "STFPM 师生特征金字塔匹配",
       "url": "https://junxnone.github.io/aiwiki/#/0324_paper_STFPM",
       "visible": true,
       "expand": true,
@@ -1002,7 +1002,7 @@
     {
       "id": "aiwiki paper WinCLIP",
       "group": 2,
-      "title": "WinCLIP",
+      "title": "WinCLIP 零样本异常检测",
       "url": "https://junxnone.github.io/aiwiki/#/0468_paper_WinCLIP",
       "visible": true,
       "expand": true,
@@ -1236,7 +1236,7 @@
     {
       "id": "aiwiki paper PatchCore",
       "group": 2,
-      "title": "PatchCore",
+      "title": "PatchCore 记忆库补丁检索",
       "url": "https://junxnone.github.io/aiwiki/#/0535_paper_PatchCore",
       "visible": true,
       "expand": true,
@@ -1661,6 +1661,15 @@
       "group": 2,
       "title": "AIVAD 基于属性表示的视频异常检测",
       "url": "https://junxnone.github.io/aiwiki/#/0764_paper_AIVAD",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki paper FUVAS",
+      "group": 2,
+      "title": "FUVAS 少样本无监督视频异常分割",
+      "url": "https://junxnone.github.io/aiwiki/#/0765_paper_FUVAS",
       "visible": true,
       "expand": true,
       "childLinks": []
@@ -7520,6 +7529,13 @@
     {
       "source": "aiwiki paper",
       "target": "aiwiki paper AIVAD",
+      "value": 2,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki paper",
+      "target": "aiwiki paper FUVAS",
       "value": 2,
       "visible": true,
       "expand": true
