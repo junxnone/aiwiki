@@ -2,12 +2,12 @@
 Title | ML Metrics Retrieval
 -- | --
 Created @ | `2026-11-24T01:03:50Z`
-Updated @| `2026-11-24T01:04:54Z`
+Updated @| `2026-11-24T02:49:09Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/712)
 
 ---
-# Retrieval
+# Retrieval Metrics 检索指标
 
 - 检索（Retrieval）给定一个 Query，从 Gallery 中按相似度返回一个**排序列表**，Metrics 评估这个排序列表的质量
 - 用于图像检索、以图搜图、行人/车辆重识别（ReID）、人脸识别（1:N）、推荐系统、RAG 的召回
@@ -86,4 +86,5 @@ def retrieval_metrics(sim, q_ids, g_ids, ks=(1, 5, 10)):
 ## Reference
 - [Evaluation measures (information retrieval) - Wikipedia](https://en.wikipedia.org/wiki/Evaluation_measures_%28information_retrieval%29)
 - [Deep Learning for Person Re-identification: A Survey and Outlook](https://arxiv.org/abs/2001.04193)
+
 

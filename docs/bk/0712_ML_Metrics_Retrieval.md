@@ -3,13 +3,13 @@
 | Title     | ML Metrics Retrieval                                  |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-24T01:03:50Z`                                |
-| Updated @ | `2026-11-24T01:04:54Z`                                |
+| Updated @ | `2026-11-24T02:49:09Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/712) |
 
 -----
 
-# Retrieval
+# Retrieval Metrics 检索指标
 
   - 检索（Retrieval）给定一个 Query，从 Gallery 中按相似度返回一个**排序列表**，Metrics
     评估这个排序列表的质量
