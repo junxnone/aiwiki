@@ -140,8 +140,31 @@ var plugin = function plugin(hook, vm) {
     });
     next(htmlElement.innerHTML);
   });
+  // mermaid is large, so load it only when a page actually has a diagram
+  var mermaidReady = null;
+  var loadMermaid = function loadMermaid() {
+    if (!mermaidReady) {
+      mermaidReady = new Promise(function (resolve, reject) {
+        var s = document.createElement('script');
+        s.src = 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js';
+        s.onload = function () {
+          mermaid.initialize({ startOnLoad: false });
+          resolve();
+        };
+        s.onerror = function () {
+          mermaidReady = null;
+          reject(new Error('failed to load mermaid'));
+        };
+        document.head.appendChild(s);
+      });
+    }
+    return mermaidReady;
+  };
   hook.doneEach(function () {
-    mermaid.run({ querySelector: '.mermaid' });
+    if (!document.querySelector('.mermaid')) return;
+    loadMermaid().then(function () {
+      mermaid.run({ querySelector: '.mermaid' });
+    });
   });
 };
 
