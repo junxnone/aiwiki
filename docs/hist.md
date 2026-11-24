@@ -553,7 +553,7 @@
 - 2020-04-04&nbsp;&nbsp; [BGD SGD MBGD](/0148_ML_Arch_GD_xGD)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:GD :bookmark:xGD
 - 2020-03-23&nbsp;&nbsp; [Multi-Sample Dropout](/0259_ML_Op_Dropout_MS)&nbsp;&nbsp; :bookmark:ML :bookmark:Op :bookmark:Dropout :bookmark:MS
 - 2020-03-18&nbsp;&nbsp; [OpenVINO INT8 Model](/0182_Tools_OV_INT8Model)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:INT8Model
-- 2020-03-03&nbsp;&nbsp; [Segmentation](/0231_ML_Metrics_Segmentation)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Segmentation
+- 2020-03-03&nbsp;&nbsp; [Segmentation Metrics](/0231_ML_Metrics_Segmentation)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Segmentation
 - 2020-03-03&nbsp;&nbsp; [CamVid](/0088_Datasets_Image2D_Segmentation_CamVid)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:Segmentation :bookmark:CamVid
 - 2020-02-27&nbsp;&nbsp; [Contours 轮廓](/0343_OpenCV_IP_shape_Contours)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:shape :bookmark:Contours
 - 2020-02-26&nbsp;&nbsp; [DAGM](/0095_Datasets_Image2D_Segmentation_DAGM)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:Segmentation :bookmark:DAGM
@@ -644,7 +644,7 @@
 - 2019-01-18&nbsp;&nbsp; [VIA VGG Image Annotator](/0075_Tools_Label_VGG)&nbsp;&nbsp; :bookmark:Tools :bookmark:Label :bookmark:VGG
 - 2019-01-18&nbsp;&nbsp; [MNIST](/0030_Datasets_Image2D_Classification_mnist)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:Classification :bookmark:mnist
 - 2019-01-17&nbsp;&nbsp; [ImageNet](/0031_Datasets_Image2D_Classification_ImageNet)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:Classification :bookmark:ImageNet
-- 2019-01-16&nbsp;&nbsp; [Detection](/0230_ML_Metrics_Detection)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection
+- 2019-01-16&nbsp;&nbsp; [Detection Metrics](/0230_ML_Metrics_Detection)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection
 - 2018-12-26&nbsp;&nbsp; [UNet](/0161_ML_Tasks_Image_Segmentation_UNet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Segmentation :bookmark:UNet
 - 2018-12-20&nbsp;&nbsp; [膨胀腐蚀](/0344_OpenCV_IP_Filter_morphology)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter :bookmark:morphology
 - 2018-12-19&nbsp;&nbsp; [COCO](/0247_Datasets_Image2D_COCO)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:COCO
@@ -681,6 +681,19 @@
 
 #### **Updated**
 
+- 2026-11-24&nbsp;&nbsp; [Boundary F1-Score](/0526_ML_Metrics_Segmentation_BF1S)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Segmentation :bookmark:BF1S
+- 2026-11-24&nbsp;&nbsp; [Center Distance](/0525_ML_Metrics_Detection_CD)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:CD
+- 2026-11-24&nbsp;&nbsp; [COCO Detection Metrics](/0384_ML_Metrics_Detection_COCO)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:COCO
+- 2026-11-24&nbsp;&nbsp; [IoU - Intersection Over Union](/0383_ML_Metrics_Detection_IoU)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:IoU
+- 2026-11-24&nbsp;&nbsp; [AP & mAP & AR](/0382_ML_Metrics_Detection_APmAPAR)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:APmAPAR
+- 2026-11-24&nbsp;&nbsp; [TPR & FPR](/0381_ML_Metrics_Detection_TPRFPR)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:TPRFPR
+- 2026-11-24&nbsp;&nbsp; [CrossValidation 交叉验证](/0249_ML_Metrics_CrossValidation)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:CrossValidation
+- 2026-11-24&nbsp;&nbsp; [GIoU](/0232_ML_Metrics_Detection_GIoU)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:GIoU
+- 2026-11-24&nbsp;&nbsp; [Segmentation Metrics](/0231_ML_Metrics_Segmentation)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Segmentation
+- 2026-11-24&nbsp;&nbsp; [Detection Metrics](/0230_ML_Metrics_Detection)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection
+- 2026-11-24&nbsp;&nbsp; [Pairwise](/0139_ML_Metrics_Pairwise)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Pairwise
+- 2026-11-24&nbsp;&nbsp; [Metrics 评价指标](/0138_ML_Metrics)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics
+- 2026-11-24&nbsp;&nbsp; [Metrics for Classification](/0137_ML_Metrics_Classification)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Classification
 - 2026-11-23&nbsp;&nbsp; [量化工具对比](/0709_MO_Quantization_Tools)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:Tools
 - 2026-11-23&nbsp;&nbsp; [KV Cache 量化](/0708_MO_Quantization_KVCache)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:KVCache
 - 2026-11-23&nbsp;&nbsp; [LLM 权重+激活量化](/0707_MO_Quantization_LLM_WA)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:LLM :bookmark:WA
@@ -1001,8 +1014,6 @@
 - 2025-12-30&nbsp;&nbsp; [YOLO V2](/0055_ML_Tasks_Image_Detection_YOLO_V2)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Detection :bookmark:YOLO :bookmark:V2
 - 2025-12-30&nbsp;&nbsp; [YOLO V1](/0054_ML_Tasks_Image_Detection_YOLO_V1)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Detection :bookmark:YOLO :bookmark:V1
 - 2025-12-30&nbsp;&nbsp; [YOLO tiny](/0052_ML_Tasks_Image_Detection_YOLO_tiny)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Detection :bookmark:YOLO :bookmark:tiny
-- 2025-11-13&nbsp;&nbsp; [Boundary F1-Score](/0526_ML_Metrics_Segmentation_BF1S)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Segmentation :bookmark:BF1S
-- 2025-11-13&nbsp;&nbsp; [Center Distance](/0525_ML_Metrics_Detection_CD)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:CD
 - 2025-08-22&nbsp;&nbsp; [AdaBLDM 环境设置](/0524_paper_AdaBLDM_envs)&nbsp;&nbsp; :bookmark:paper :bookmark:AdaBLDM :bookmark:envs
 - 2025-06-25&nbsp;&nbsp; [DualAnoDiff](/0522_paper_DualAnoDiff)&nbsp;&nbsp; :bookmark:paper :bookmark:DualAnoDiff
 - 2025-06-10&nbsp;&nbsp; [DualAnoDiff CN](/0523_paper_DualAnoDiff_cn)&nbsp;&nbsp; :bookmark:paper :bookmark:DualAnoDiff :bookmark:cn
@@ -1078,7 +1089,6 @@
 - 2024-06-18&nbsp;&nbsp; [SAA+](/0469_paper_SAAplus)&nbsp;&nbsp; :bookmark:paper :bookmark:SAAplus
 - 2024-06-18&nbsp;&nbsp; [CLIP](/0448_paper_CLIP)&nbsp;&nbsp; :bookmark:paper :bookmark:CLIP
 - 2024-06-14&nbsp;&nbsp; [WinCLIP](/0468_paper_WinCLIP)&nbsp;&nbsp; :bookmark:paper :bookmark:WinCLIP
-- 2024-05-21&nbsp;&nbsp; [Metrics for Classification](/0137_ML_Metrics_Classification)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Classification
 - 2024-05-19&nbsp;&nbsp; [AnomalyCLIP](/0466_paper_AnomalyCLIP)&nbsp;&nbsp; :bookmark:paper :bookmark:AnomalyCLIP
 - 2024-05-15&nbsp;&nbsp; [MuSC](/0467_paper_MuSC)&nbsp;&nbsp; :bookmark:paper :bookmark:MuSC
 - 2024-05-15&nbsp;&nbsp; [模型结构可视化工具 netron](/0135_Tools_VIS_netron)&nbsp;&nbsp; :bookmark:Tools :bookmark:VIS :bookmark:netron
@@ -1137,7 +1147,6 @@
 - 2023-06-16&nbsp;&nbsp; [3D Tools](/0419_3D_Tools)&nbsp;&nbsp; :bookmark:3D :bookmark:Tools
 - 2023-06-16&nbsp;&nbsp; [x](/0418_x)&nbsp;&nbsp; :bookmark:x
 - 2023-06-16&nbsp;&nbsp; [Media](/0417_Media)&nbsp;&nbsp; :bookmark:Media
-- 2023-06-16&nbsp;&nbsp; [Metrics 评价指标](/0138_ML_Metrics)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics
 - 2023-06-16&nbsp;&nbsp; [Point Cloud Library](/0077_3D_Tools_PCL)&nbsp;&nbsp; :bookmark:3D :bookmark:Tools :bookmark:PCL
 - 2023-06-04&nbsp;&nbsp; [Cool Demo](/0409_x_Demo)&nbsp;&nbsp; :bookmark:x :bookmark:Demo
 - 2023-05-18&nbsp;&nbsp; [PCL Tools](/0081_3D_Tools_PCL_Tools)&nbsp;&nbsp; :bookmark:3D :bookmark:Tools :bookmark:PCL :bookmark:Tools
@@ -1159,11 +1168,6 @@
 - 2023-03-25&nbsp;&nbsp; [ProxylessNAS](/0387_ML_AutoML_NAS_ProxylessNAS)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:NAS :bookmark:ProxylessNAS
 - 2023-03-08&nbsp;&nbsp; [Traditional Image Segmentation 传统图像分割](/0158_CV_TIS)&nbsp;&nbsp; :bookmark:CV :bookmark:TIS
 - 2023-02-21&nbsp;&nbsp; [CSPNet](/0385_paper_CSPNet)&nbsp;&nbsp; :bookmark:paper :bookmark:CSPNet
-- 2023-02-20&nbsp;&nbsp; [AP & mAP & AR](/0382_ML_Metrics_Detection_APmAPAR)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:APmAPAR
-- 2023-02-20&nbsp;&nbsp; [TPR & FPR](/0381_ML_Metrics_Detection_TPRFPR)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:TPRFPR
-- 2023-02-20&nbsp;&nbsp; [Detection](/0230_ML_Metrics_Detection)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection
-- 2023-02-16&nbsp;&nbsp; [COCO Detection Metrics](/0384_ML_Metrics_Detection_COCO)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:COCO
-- 2023-02-16&nbsp;&nbsp; [IoU - Intersection Over Union](/0383_ML_Metrics_Detection_IoU)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:IoU
 - 2023-02-15&nbsp;&nbsp; [YOLO 系列](/0053_ML_Tasks_Image_Detection_YOLO)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Detection :bookmark:YOLO
 - 2023-02-14&nbsp;&nbsp; [ChatGPT](/0373_Hot_AIGC_ChatGPT)&nbsp;&nbsp; :bookmark:Hot :bookmark:AIGC :bookmark:ChatGPT
 - 2023-02-06&nbsp;&nbsp; [Loss/Cost/ Object Function - 损失代价目标函数](/0378_ML_Arch_Func)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:Func
@@ -1185,7 +1189,6 @@
 - 2023-02-02&nbsp;&nbsp; [AutoAugment](/0256_ML_PreP_DataAug_AutoAugment)&nbsp;&nbsp; :bookmark:ML :bookmark:PreP :bookmark:DataAug :bookmark:AutoAugment
 - 2023-02-02&nbsp;&nbsp; [Data Augmentation 数据增强](/0255_ML_PreP_DataAug)&nbsp;&nbsp; :bookmark:ML :bookmark:PreP :bookmark:DataAug
 - 2023-02-02&nbsp;&nbsp; [Data Normalization 数据标准化](/0251_ML_PreP_DataNorm)&nbsp;&nbsp; :bookmark:ML :bookmark:PreP :bookmark:DataNorm
-- 2023-02-02&nbsp;&nbsp; [CrossValidation 交叉验证](/0249_ML_Metrics_CrossValidation)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:CrossValidation
 - 2023-02-02&nbsp;&nbsp; [GD 原理推导](/0151_ML_Arch_GD_原理)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:GD :bookmark:原理
 - 2023-02-02&nbsp;&nbsp; [Momentum](/0150_ML_Arch_GD_Momentum)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:GD :bookmark:Momentum
 - 2023-02-02&nbsp;&nbsp; [BGD SGD MBGD](/0148_ML_Arch_GD_xGD)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:GD :bookmark:xGD
@@ -1220,7 +1223,6 @@
 - 2021-12-11&nbsp;&nbsp; [Concepts](/0144_Media_Tools_GStreamer_Concepts)&nbsp;&nbsp; :bookmark:Media :bookmark:Tools :bookmark:GStreamer :bookmark:Concepts
 - 2021-12-11&nbsp;&nbsp; [Plugins](/0143_Media_Tools_GStreamer_Plugins)&nbsp;&nbsp; :bookmark:Media :bookmark:Tools :bookmark:GStreamer :bookmark:Plugins
 - 2021-11-22&nbsp;&nbsp; [Tensorflow](/0140_Tools_TF)&nbsp;&nbsp; :bookmark:Tools :bookmark:TF
-- 2021-11-21&nbsp;&nbsp; [Pairwise](/0139_ML_Metrics_Pairwise)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Pairwise
 - 2021-10-27&nbsp;&nbsp; [UseCase](/0130_ML_NNS_KDTree_FLANN_UseCase)&nbsp;&nbsp; :bookmark:ML :bookmark:NNS :bookmark:KDTree :bookmark:FLANN :bookmark:UseCase
 - 2021-10-27&nbsp;&nbsp; [Source Code Structure](/0129_ML_NNS_KDTree_FLANN_SourceCode)&nbsp;&nbsp; :bookmark:ML :bookmark:NNS :bookmark:KDTree :bookmark:FLANN :bookmark:SourceCode
 - 2021-10-27&nbsp;&nbsp; [Flann Install](/0128_ML_NNS_KDTree_FLANN_Install)&nbsp;&nbsp; :bookmark:ML :bookmark:NNS :bookmark:KDTree :bookmark:FLANN :bookmark:Install
@@ -1306,14 +1308,12 @@
 - 2020-05-08&nbsp;&nbsp; [TextRecognitionDataGenerator](/0187_ML_Tasks_Image_OCR_Tools_TextRecognitionDataGenerator)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Tools :bookmark:TextRecognitionDataGenerator
 - 2020-05-07&nbsp;&nbsp; [CAFCN](/0186_ML_Tasks_Image_OCR_CAFCN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:CAFCN
 - 2020-04-15&nbsp;&nbsp; [Labelme](/0074_Tools_Label_Labelme)&nbsp;&nbsp; :bookmark:Tools :bookmark:Label :bookmark:Labelme
-- 2020-03-03&nbsp;&nbsp; [Segmentation](/0231_ML_Metrics_Segmentation)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Segmentation
 - 2020-02-12&nbsp;&nbsp; [RGB 色表](/0127_Media_Image_Color_RGB)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Color :bookmark:RGB
 - 2020-02-03&nbsp;&nbsp; [Workbench](/0178_Tools_OV_Workbench)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:Workbench
 - 2020-01-29&nbsp;&nbsp; [Config Files](/0262_Tools_Darknet_cfgFiles)&nbsp;&nbsp; :bookmark:Tools :bookmark:Darknet :bookmark:cfgFiles
 - 2020-01-06&nbsp;&nbsp; [Visualization 可视化](/0171_Tools_Pytorch_VIS)&nbsp;&nbsp; :bookmark:Tools :bookmark:Pytorch :bookmark:VIS
 - 2019-12-11&nbsp;&nbsp; [FastRCNN](/0058_ML_Tasks_Image_Detection_FastRCNN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Detection :bookmark:FastRCNN
 - 2019-12-11&nbsp;&nbsp; [RCNN](/0057_ML_Tasks_Image_Detection_RCNN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Detection :bookmark:RCNN
-- 2019-12-10&nbsp;&nbsp; [GIoU](/0232_ML_Metrics_Detection_GIoU)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:GIoU
 - 2019-12-10&nbsp;&nbsp; [MetricLearning](/0157_ML_Tasks_MetricLearning)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:MetricLearning
 - 2019-12-04&nbsp;&nbsp; [Xception](/0050_ML_Tasks_Image_Classification_Xception)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Classification :bookmark:Xception
 - 2019-11-29&nbsp;&nbsp; [Deeplab](/0162_ML_Tasks_Image_Segmentation_Deeplab)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Segmentation :bookmark:Deeplab

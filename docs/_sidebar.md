@@ -372,7 +372,7 @@
   - [Metrics 评价指标](/0138_ML_Metrics)
     - [Metrics for Classification](/0137_ML_Metrics_Classification)
     - [CrossValidation 交叉验证](/0249_ML_Metrics_CrossValidation)
-    - [Detection](/0230_ML_Metrics_Detection)
+    - [Detection Metrics](/0230_ML_Metrics_Detection)
       - [AP & mAP & AR](/0382_ML_Metrics_Detection_APmAPAR)
       - [Center Distance](/0525_ML_Metrics_Detection_CD)
       - [COCO Detection Metrics](/0384_ML_Metrics_Detection_COCO)
@@ -380,7 +380,7 @@
       - [IoU - Intersection Over Union](/0383_ML_Metrics_Detection_IoU)
       - [TPR & FPR](/0381_ML_Metrics_Detection_TPRFPR)
     - [Pairwise](/0139_ML_Metrics_Pairwise)
-    - [Segmentation](/0231_ML_Metrics_Segmentation)
+    - [Segmentation Metrics](/0231_ML_Metrics_Segmentation)
       - [Boundary F1-Score](/0526_ML_Metrics_Segmentation_BF1S)
   - [PreProcessing](/0369_ML_PreP)
     - [Data Augmentation 数据增强](/0255_ML_PreP_DataAug)
@@ -683,4 +683,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1418471123</sub></kbd>
+<kbd><sub>@0859271124</sub></kbd>

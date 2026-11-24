@@ -1929,7 +1929,7 @@
     {
       "id": "aiwiki ML Metrics Detection",
       "group": 3,
-      "title": "Detection",
+      "title": "Detection Metrics",
       "url": "https://junxnone.github.io/aiwiki/#/0230_ML_Metrics_Detection",
       "visible": true,
       "expand": true,
@@ -1938,7 +1938,7 @@
     {
       "id": "aiwiki ML Metrics Segmentation",
       "group": 3,
-      "title": "Segmentation",
+      "title": "Segmentation Metrics",
       "url": "https://junxnone.github.io/aiwiki/#/0231_ML_Metrics_Segmentation",
       "visible": true,
       "expand": true,
