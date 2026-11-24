@@ -3,13 +3,13 @@
 | Title     | ML Metrics Detection GIoU                             |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2019-12-10T07:47:50Z`                                |
-| Updated @ | `2026-11-24T01:05:00Z`                                |
+| Updated @ | `2026-11-24T02:49:44Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/232) |
 
 -----
 
-# GIoU
+# Generalized IoU 广义交并比
 
   - GIoU - `Generalized Intersection over Union`
   - 在 IoU 基础上引入「最小外接框」，解决预测框与真值框**不相交时** IoU 恒为 0 的问题，既可以做评价指标，也可以做回归损失
