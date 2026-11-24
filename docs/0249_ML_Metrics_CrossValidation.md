@@ -2,12 +2,12 @@
 Title | ML Metrics CrossValidation
 -- | --
 Created @ | `2020-06-11T05:02:59Z`
-Updated @| `2026-11-24T00:58:26Z`
+Updated @| `2026-11-24T02:49:47Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/249)
 
 ---
-# CrossValidation 交叉验证
+# Cross Validation 交叉验证
 
 - Cross Validation - `交叉验证`：把数据多次划分为训练集和验证集，用多次评估结果的均值估计模型的泛化性能
 - 目的：
@@ -134,4 +134,5 @@ print(scores.mean(), scores.std())
 - [几种交叉验证（cross validation）方式的比较](https://www.cnblogs.com/ysugyl/p/8707887.html)
 - [sklearn - cross validation](https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation)
 - [sklearn.model_selection 介绍](https://www.cnblogs.com/XD00/p/12290528.html)
+
 
