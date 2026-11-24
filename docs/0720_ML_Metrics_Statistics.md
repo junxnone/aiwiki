@@ -2,12 +2,12 @@
 Title | ML Metrics Statistics
 -- | --
 Created @ | `2026-11-24T01:04:06Z`
-Updated @| `2026-11-24T01:04:06Z`
+Updated @| `2026-11-24T02:49:34Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/720)
 
 ---
-# Statistics
+# Statistical Significance 统计显著性
 
 - 指标是在有限的测试集上算出来的**估计值**，带有随机性：换一批测试数据、换一个随机种子，结果都会变化
 - 回答「模型 A 是不是真的比模型 B 好」，需要看**置信区间**和**显著性检验**，而不是比较两个数字的大小
@@ -128,4 +128,5 @@ print(stats.ttest_rel(scores_a, scores_b))
 - [Approximate Statistical Tests for Comparing Supervised Classification Learning Algorithms](https://sci2s.ugr.es/keel/pdf/algorithm/articulo/dietterich1998.pdf)
 - [Statistical Comparisons of Classifiers over Multiple Data Sets](https://jmlr.org/papers/v7/demsar06a.html)
 - [Inference for the Generalization Error](https://link.springer.com/article/10.1023/A:1024068626366) - Nadeau & Bengio
+
 
