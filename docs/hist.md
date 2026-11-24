@@ -4,6 +4,7 @@
 
 #### **Created**
 
+- 2026-11-24&nbsp;&nbsp; [IS-Net：高精度二分图像分割（DIS）](/0734_paper_ISNet)&nbsp;&nbsp; :bookmark:paper :bookmark:ISNet
 - 2026-11-24&nbsp;&nbsp; [Isolation Forest 孤立森林](/0733_ML_OML_IsolationForest)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:IsolationForest
 - 2026-11-24&nbsp;&nbsp; [t-SNE 非线性降维](/0732_ML_OML_tSNE)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:tSNE
 - 2026-11-24&nbsp;&nbsp; [PCA 主成分分析](/0731_ML_OML_PCA)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:PCA
@@ -705,6 +706,7 @@
 
 #### **Updated**
 
+- 2026-11-24&nbsp;&nbsp; [IS-Net：高精度二分图像分割（DIS）](/0734_paper_ISNet)&nbsp;&nbsp; :bookmark:paper :bookmark:ISNet
 - 2026-11-24&nbsp;&nbsp; [Isolation Forest 孤立森林](/0733_ML_OML_IsolationForest)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:IsolationForest
 - 2026-11-24&nbsp;&nbsp; [t-SNE 非线性降维](/0732_ML_OML_tSNE)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:tSNE
 - 2026-11-24&nbsp;&nbsp; [PCA 主成分分析](/0731_ML_OML_PCA)&nbsp;&nbsp; :bookmark:ML :bookmark:OML :bookmark:PCA

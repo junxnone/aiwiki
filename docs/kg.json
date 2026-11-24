@@ -1387,6 +1387,15 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki paper ISNet",
+      "group": 2,
+      "title": "IS-Net：高精度二分图像分割（DIS）",
+      "url": "https://junxnone.github.io/aiwiki/#/0734_paper_ISNet",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Op Convolution",
       "group": 3,
       "title": "ML Op Convolution",
@@ -7024,6 +7033,13 @@
     {
       "source": "aiwiki paper",
       "target": "aiwiki paper TimesNet",
+      "value": 2,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki paper",
+      "target": "aiwiki paper ISNet",
       "value": 2,
       "visible": true,
       "expand": true

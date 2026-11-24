@@ -582,6 +582,7 @@
     - [Fast-FoundationStereo: Real-Time Zero-Shot Stereo Matching 读书笔记](/0543_paper_FoundationStereo_FFDS)
   - [Grounding DINO](/0464_paper_GroundingDINO)
     - [Grounding DINO 翻译](/0485_paper_GroundingDINO_cn)
+  - [IS-Net：高精度二分图像分割（DIS）](/0734_paper_ISNet)
   - [LFA](/0480_paper_LFA)
   - [MTA](/0479_paper_MTA)
   - [MuSC](/0467_paper_MuSC)
@@ -707,4 +708,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1140391124</sub></kbd>
+<kbd><sub>@1327471124</sub></kbd>
