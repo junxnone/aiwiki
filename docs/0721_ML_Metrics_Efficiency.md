@@ -2,7 +2,7 @@
 Title | ML Metrics Efficiency
 -- | --
 Created @ | `2026-11-24T01:04:08Z`
-Updated @| `2026-11-24T02:49:37Z`
+Updated @| `2026-11-24T05:37:32Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/721)
 
@@ -55,10 +55,10 @@ $$
 
 ```mermaid
 graph LR
-    I(输入) --> P(预处理<br/>resize / 归一化)
-    P --> M(模型推理)
-    M --> Q(后处理<br/>NMS / 解码)
-    Q --> O(输出)
+    I("输入") --> P("预处理<br/>resize / 归一化")
+    P --> M("模型推理")
+    M --> Q("后处理<br/>NMS / 解码")
+    Q --> O("输出")
 ```
 
 图中：
@@ -118,5 +118,6 @@ benchmark_app -m model.xml -d GPU -hint throughput
 - [OpenVINO Benchmark Tool](https://docs.openvino.ai/2024/learn-openvino/openvino-samples/benchmark-tool.html)
 - [Efficient Processing of Deep Neural Networks: A Tutorial and Survey](https://arxiv.org/abs/1703.09039)
 - [ptflops](https://github.com/sovrasov/flops-counter.pytorch)
+
 
 
