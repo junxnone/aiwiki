@@ -4,18 +4,18 @@
 
 #### **Created**
 
-- 2026-11-24&nbsp;&nbsp; [Efficiency](/0721_ML_Metrics_Efficiency)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Efficiency
-- 2026-11-24&nbsp;&nbsp; [Statistics](/0720_ML_Metrics_Statistics)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Statistics
-- 2026-11-24&nbsp;&nbsp; [Clustering](/0719_ML_Metrics_Clustering)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Clustering
-- 2026-11-24&nbsp;&nbsp; [Generation](/0718_ML_Metrics_Generation)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Generation
-- 2026-11-24&nbsp;&nbsp; [Keypoint](/0717_ML_Metrics_Keypoint)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Keypoint
-- 2026-11-24&nbsp;&nbsp; [DIoUCIoU](/0716_ML_Metrics_Detection_DIoUCIoU)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:DIoUCIoU
-- 2026-11-24&nbsp;&nbsp; [Hausdorff](/0715_ML_Metrics_Segmentation_Hausdorff)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Segmentation :bookmark:Hausdorff
-- 2026-11-24&nbsp;&nbsp; [Dice](/0714_ML_Metrics_Segmentation_Dice)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Segmentation :bookmark:Dice
-- 2026-11-24&nbsp;&nbsp; [PQ](/0713_ML_Metrics_Segmentation_PQ)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Segmentation :bookmark:PQ
-- 2026-11-24&nbsp;&nbsp; [Retrieval](/0712_ML_Metrics_Retrieval)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Retrieval
-- 2026-11-24&nbsp;&nbsp; [Anomaly](/0711_ML_Metrics_Anomaly)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Anomaly
-- 2026-11-24&nbsp;&nbsp; [Regression](/0710_ML_Metrics_Regression)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Regression
+- 2026-11-24&nbsp;&nbsp; [Efficiency Metrics 模型效率指标](/0721_ML_Metrics_Efficiency)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Efficiency
+- 2026-11-24&nbsp;&nbsp; [Statistical Significance 统计显著性](/0720_ML_Metrics_Statistics)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Statistics
+- 2026-11-24&nbsp;&nbsp; [Clustering Metrics 聚类指标](/0719_ML_Metrics_Clustering)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Clustering
+- 2026-11-24&nbsp;&nbsp; [Image Generation Metrics 图像生成与重建指标](/0718_ML_Metrics_Generation)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Generation
+- 2026-11-24&nbsp;&nbsp; [Keypoint Metrics 关键点指标](/0717_ML_Metrics_Keypoint)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Keypoint
+- 2026-11-24&nbsp;&nbsp; [IoU Loss Family 边界框回归损失](/0716_ML_Metrics_Detection_DIoUCIoU)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:DIoUCIoU
+- 2026-11-24&nbsp;&nbsp; [Hausdorff Distance 豪斯多夫距离](/0715_ML_Metrics_Segmentation_Hausdorff)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Segmentation :bookmark:Hausdorff
+- 2026-11-24&nbsp;&nbsp; [Dice Coefficient 骰子系数](/0714_ML_Metrics_Segmentation_Dice)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Segmentation :bookmark:Dice
+- 2026-11-24&nbsp;&nbsp; [Panoptic Quality 全景分割质量](/0713_ML_Metrics_Segmentation_PQ)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Segmentation :bookmark:PQ
+- 2026-11-24&nbsp;&nbsp; [Retrieval Metrics 检索指标](/0712_ML_Metrics_Retrieval)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Retrieval
+- 2026-11-24&nbsp;&nbsp; [Anomaly Detection Metrics 异常检测指标](/0711_ML_Metrics_Anomaly)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Anomaly
+- 2026-11-24&nbsp;&nbsp; [Regression Metrics 回归指标](/0710_ML_Metrics_Regression)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Regression
 - 2026-11-23&nbsp;&nbsp; [量化工具对比](/0709_MO_Quantization_Tools)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:Tools
 - 2026-11-23&nbsp;&nbsp; [KV Cache 量化](/0708_MO_Quantization_KVCache)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:KVCache
 - 2026-11-23&nbsp;&nbsp; [LLM 权重+激活量化](/0707_MO_Quantization_LLM_WA)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:LLM :bookmark:WA
@@ -198,8 +198,8 @@
 - 2026-03-16&nbsp;&nbsp; [GPU Impl Reorder](/0529_Tools_OV_OPs_GPUImpl_Reorder)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:OPs :bookmark:GPUImpl :bookmark:Reorder
 - 2026-03-16&nbsp;&nbsp; [OpenVINO Ops](/0528_Tools_OV_OPs)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:OPs
 - 2026-01-29&nbsp;&nbsp; [OpenVINO Debug](/0527_Tools_OV_Debug)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:Debug
-- 2025-11-13&nbsp;&nbsp; [Boundary F1-Score](/0526_ML_Metrics_Segmentation_BF1S)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Segmentation :bookmark:BF1S
-- 2025-11-13&nbsp;&nbsp; [Center Distance](/0525_ML_Metrics_Detection_CD)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:CD
+- 2025-11-13&nbsp;&nbsp; [Boundary F1-Score 分割边界 F1](/0526_ML_Metrics_Segmentation_BF1S)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Segmentation :bookmark:BF1S
+- 2025-11-13&nbsp;&nbsp; [Center Distance 中心点距离](/0525_ML_Metrics_Detection_CD)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:CD
 - 2025-08-08&nbsp;&nbsp; [AdaBLDM 环境设置](/0524_paper_AdaBLDM_envs)&nbsp;&nbsp; :bookmark:paper :bookmark:AdaBLDM :bookmark:envs
 - 2025-06-10&nbsp;&nbsp; [DualAnoDiff CN](/0523_paper_DualAnoDiff_cn)&nbsp;&nbsp; :bookmark:paper :bookmark:DualAnoDiff :bookmark:cn
 - 2025-06-10&nbsp;&nbsp; [DualAnoDiff](/0522_paper_DualAnoDiff)&nbsp;&nbsp; :bookmark:paper :bookmark:DualAnoDiff
@@ -326,10 +326,10 @@
 - 2023-03-28&nbsp;&nbsp; [GreedyProjectionTriangulation](/0399_3D_Algos_triangulation)&nbsp;&nbsp; :bookmark:3D :bookmark:Algos :bookmark:triangulation
 - 2023-02-21&nbsp;&nbsp; [Papers](/0386_paper)&nbsp;&nbsp; :bookmark:paper
 - 2023-02-21&nbsp;&nbsp; [CSPNet](/0385_paper_CSPNet)&nbsp;&nbsp; :bookmark:paper :bookmark:CSPNet
-- 2023-02-16&nbsp;&nbsp; [COCO Detection Metrics](/0384_ML_Metrics_Detection_COCO)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:COCO
-- 2023-02-16&nbsp;&nbsp; [IoU - Intersection Over Union](/0383_ML_Metrics_Detection_IoU)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:IoU
-- 2023-02-16&nbsp;&nbsp; [AP & mAP & AR](/0382_ML_Metrics_Detection_APmAPAR)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:APmAPAR
-- 2023-02-16&nbsp;&nbsp; [TPR & FPR](/0381_ML_Metrics_Detection_TPRFPR)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:TPRFPR
+- 2023-02-16&nbsp;&nbsp; [COCO Detection Metrics COCO 检测评估指标](/0384_ML_Metrics_Detection_COCO)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:COCO
+- 2023-02-16&nbsp;&nbsp; [Intersection over Union 交并比](/0383_ML_Metrics_Detection_IoU)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:IoU
+- 2023-02-16&nbsp;&nbsp; [AP & mAP & AR 平均精度与召回](/0382_ML_Metrics_Detection_APmAPAR)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:APmAPAR
+- 2023-02-16&nbsp;&nbsp; [TPR & FPR 真正率与假正率](/0381_ML_Metrics_Detection_TPRFPR)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:TPRFPR
 - 2023-02-15&nbsp;&nbsp; [资源参考](/0380_Reference)&nbsp;&nbsp; :bookmark:Reference
 - 2023-02-14&nbsp;&nbsp; [YOLO V5](/0379_ML_Tasks_Image_Detection_YOLO_V5)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Detection :bookmark:YOLO :bookmark:V5
 - 2023-02-06&nbsp;&nbsp; [Loss/Cost/ Object Function - 损失代价目标函数](/0378_ML_Arch_Func)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:Func
@@ -385,7 +385,7 @@
 - 2021-11-25&nbsp;&nbsp; [Options](/0142_ML_AutoML_Tools_SIGOPT_Options)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:Tools :bookmark:SIGOPT :bookmark:Options
 - 2021-11-25&nbsp;&nbsp; [UseCase](/0141_ML_AutoML_Tools_SIGOPT_UseCase)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:Tools :bookmark:SIGOPT :bookmark:UseCase
 - 2021-11-22&nbsp;&nbsp; [Tensorflow](/0140_Tools_TF)&nbsp;&nbsp; :bookmark:Tools :bookmark:TF
-- 2021-11-21&nbsp;&nbsp; [Pairwise](/0139_ML_Metrics_Pairwise)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Pairwise
+- 2021-11-21&nbsp;&nbsp; [Pairwise Metrics 成对相似度与距离](/0139_ML_Metrics_Pairwise)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Pairwise
 - 2021-11-21&nbsp;&nbsp; [Metrics 评价指标](/0138_ML_Metrics)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics
 - 2021-11-21&nbsp;&nbsp; [Metrics for Classification](/0137_ML_Metrics_Classification)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Classification
 - 2021-10-27&nbsp;&nbsp; [UseCase](/0130_ML_NNS_KDTree_FLANN_UseCase)&nbsp;&nbsp; :bookmark:ML :bookmark:NNS :bookmark:KDTree :bookmark:FLANN :bookmark:UseCase
@@ -532,7 +532,7 @@
 - 2020-07-01&nbsp;&nbsp; [Luong Attention](/0211_ML_Attention_Luong)&nbsp;&nbsp; :bookmark:ML :bookmark:Attention :bookmark:Luong
 - 2020-06-18&nbsp;&nbsp; [Augmentation](/0203_ML_Tasks_Image_OCR_Augmentation)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Augmentation
 - 2020-06-12&nbsp;&nbsp; [Early Stopping](/0172_Tools_Pytorch_ES)&nbsp;&nbsp; :bookmark:Tools :bookmark:Pytorch :bookmark:ES
-- 2020-06-11&nbsp;&nbsp; [CrossValidation 交叉验证](/0249_ML_Metrics_CrossValidation)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:CrossValidation
+- 2020-06-11&nbsp;&nbsp; [Cross Validation 交叉验证](/0249_ML_Metrics_CrossValidation)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:CrossValidation
 - 2020-06-09&nbsp;&nbsp; [Voting](/0202_ML_Tasks_Image_OCR_Calamari_Voting)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Calamari :bookmark:Voting
 - 2020-06-01&nbsp;&nbsp; [Calamari](/0201_ML_Tasks_Image_OCR_Calamari)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Calamari
 - 2020-06-01&nbsp;&nbsp; [Traditional OCR 传统字符识别](/0199_CV_TOCR)&nbsp;&nbsp; :bookmark:CV :bookmark:TOCR
@@ -586,7 +586,7 @@
 - 2019-12-17&nbsp;&nbsp; [AutoEncoder](/0209_ML_AE)&nbsp;&nbsp; :bookmark:ML :bookmark:AE
 - 2019-12-11&nbsp;&nbsp; [FastRCNN](/0058_ML_Tasks_Image_Detection_FastRCNN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Detection :bookmark:FastRCNN
 - 2019-12-11&nbsp;&nbsp; [RCNN](/0057_ML_Tasks_Image_Detection_RCNN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Detection :bookmark:RCNN
-- 2019-12-10&nbsp;&nbsp; [GIoU](/0232_ML_Metrics_Detection_GIoU)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:GIoU
+- 2019-12-10&nbsp;&nbsp; [Generalized IoU 广义交并比](/0232_ML_Metrics_Detection_GIoU)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:GIoU
 - 2019-12-10&nbsp;&nbsp; [MetricLearning](/0157_ML_Tasks_MetricLearning)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:MetricLearning
 - 2019-12-09&nbsp;&nbsp; [Dice Loss](/0283_ML_Arch_Func_LossFunction_DiceLoss)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:Func :bookmark:LossFunction :bookmark:DiceLoss
 - 2019-12-09&nbsp;&nbsp; [Copy-Pasting](/0269_ML_PreP_DataAug_CP)&nbsp;&nbsp; :bookmark:ML :bookmark:PreP :bookmark:DataAug :bookmark:CP
@@ -693,29 +693,29 @@
 
 #### **Updated**
 
-- 2026-11-24&nbsp;&nbsp; [Efficiency](/0721_ML_Metrics_Efficiency)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Efficiency
-- 2026-11-24&nbsp;&nbsp; [Statistics](/0720_ML_Metrics_Statistics)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Statistics
-- 2026-11-24&nbsp;&nbsp; [Clustering](/0719_ML_Metrics_Clustering)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Clustering
-- 2026-11-24&nbsp;&nbsp; [Generation](/0718_ML_Metrics_Generation)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Generation
-- 2026-11-24&nbsp;&nbsp; [Keypoint](/0717_ML_Metrics_Keypoint)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Keypoint
-- 2026-11-24&nbsp;&nbsp; [DIoUCIoU](/0716_ML_Metrics_Detection_DIoUCIoU)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:DIoUCIoU
-- 2026-11-24&nbsp;&nbsp; [Hausdorff](/0715_ML_Metrics_Segmentation_Hausdorff)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Segmentation :bookmark:Hausdorff
-- 2026-11-24&nbsp;&nbsp; [Dice](/0714_ML_Metrics_Segmentation_Dice)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Segmentation :bookmark:Dice
-- 2026-11-24&nbsp;&nbsp; [PQ](/0713_ML_Metrics_Segmentation_PQ)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Segmentation :bookmark:PQ
-- 2026-11-24&nbsp;&nbsp; [Retrieval](/0712_ML_Metrics_Retrieval)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Retrieval
-- 2026-11-24&nbsp;&nbsp; [Anomaly](/0711_ML_Metrics_Anomaly)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Anomaly
-- 2026-11-24&nbsp;&nbsp; [Regression](/0710_ML_Metrics_Regression)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Regression
-- 2026-11-24&nbsp;&nbsp; [Boundary F1-Score](/0526_ML_Metrics_Segmentation_BF1S)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Segmentation :bookmark:BF1S
-- 2026-11-24&nbsp;&nbsp; [Center Distance](/0525_ML_Metrics_Detection_CD)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:CD
-- 2026-11-24&nbsp;&nbsp; [COCO Detection Metrics](/0384_ML_Metrics_Detection_COCO)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:COCO
-- 2026-11-24&nbsp;&nbsp; [IoU - Intersection Over Union](/0383_ML_Metrics_Detection_IoU)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:IoU
-- 2026-11-24&nbsp;&nbsp; [AP & mAP & AR](/0382_ML_Metrics_Detection_APmAPAR)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:APmAPAR
-- 2026-11-24&nbsp;&nbsp; [TPR & FPR](/0381_ML_Metrics_Detection_TPRFPR)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:TPRFPR
-- 2026-11-24&nbsp;&nbsp; [CrossValidation 交叉验证](/0249_ML_Metrics_CrossValidation)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:CrossValidation
-- 2026-11-24&nbsp;&nbsp; [GIoU](/0232_ML_Metrics_Detection_GIoU)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:GIoU
+- 2026-11-24&nbsp;&nbsp; [Efficiency Metrics 模型效率指标](/0721_ML_Metrics_Efficiency)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Efficiency
+- 2026-11-24&nbsp;&nbsp; [Statistical Significance 统计显著性](/0720_ML_Metrics_Statistics)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Statistics
+- 2026-11-24&nbsp;&nbsp; [Clustering Metrics 聚类指标](/0719_ML_Metrics_Clustering)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Clustering
+- 2026-11-24&nbsp;&nbsp; [Image Generation Metrics 图像生成与重建指标](/0718_ML_Metrics_Generation)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Generation
+- 2026-11-24&nbsp;&nbsp; [Keypoint Metrics 关键点指标](/0717_ML_Metrics_Keypoint)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Keypoint
+- 2026-11-24&nbsp;&nbsp; [IoU Loss Family 边界框回归损失](/0716_ML_Metrics_Detection_DIoUCIoU)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:DIoUCIoU
+- 2026-11-24&nbsp;&nbsp; [Hausdorff Distance 豪斯多夫距离](/0715_ML_Metrics_Segmentation_Hausdorff)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Segmentation :bookmark:Hausdorff
+- 2026-11-24&nbsp;&nbsp; [Dice Coefficient 骰子系数](/0714_ML_Metrics_Segmentation_Dice)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Segmentation :bookmark:Dice
+- 2026-11-24&nbsp;&nbsp; [Panoptic Quality 全景分割质量](/0713_ML_Metrics_Segmentation_PQ)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Segmentation :bookmark:PQ
+- 2026-11-24&nbsp;&nbsp; [Retrieval Metrics 检索指标](/0712_ML_Metrics_Retrieval)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Retrieval
+- 2026-11-24&nbsp;&nbsp; [Anomaly Detection Metrics 异常检测指标](/0711_ML_Metrics_Anomaly)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Anomaly
+- 2026-11-24&nbsp;&nbsp; [Regression Metrics 回归指标](/0710_ML_Metrics_Regression)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Regression
+- 2026-11-24&nbsp;&nbsp; [Boundary F1-Score 分割边界 F1](/0526_ML_Metrics_Segmentation_BF1S)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Segmentation :bookmark:BF1S
+- 2026-11-24&nbsp;&nbsp; [Center Distance 中心点距离](/0525_ML_Metrics_Detection_CD)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:CD
+- 2026-11-24&nbsp;&nbsp; [COCO Detection Metrics COCO 检测评估指标](/0384_ML_Metrics_Detection_COCO)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:COCO
+- 2026-11-24&nbsp;&nbsp; [Intersection over Union 交并比](/0383_ML_Metrics_Detection_IoU)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:IoU
+- 2026-11-24&nbsp;&nbsp; [AP & mAP & AR 平均精度与召回](/0382_ML_Metrics_Detection_APmAPAR)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:APmAPAR
+- 2026-11-24&nbsp;&nbsp; [TPR & FPR 真正率与假正率](/0381_ML_Metrics_Detection_TPRFPR)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:TPRFPR
+- 2026-11-24&nbsp;&nbsp; [Cross Validation 交叉验证](/0249_ML_Metrics_CrossValidation)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:CrossValidation
+- 2026-11-24&nbsp;&nbsp; [Generalized IoU 广义交并比](/0232_ML_Metrics_Detection_GIoU)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection :bookmark:GIoU
 - 2026-11-24&nbsp;&nbsp; [Segmentation Metrics](/0231_ML_Metrics_Segmentation)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Segmentation
 - 2026-11-24&nbsp;&nbsp; [Detection Metrics](/0230_ML_Metrics_Detection)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Detection
-- 2026-11-24&nbsp;&nbsp; [Pairwise](/0139_ML_Metrics_Pairwise)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Pairwise
+- 2026-11-24&nbsp;&nbsp; [Pairwise Metrics 成对相似度与距离](/0139_ML_Metrics_Pairwise)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Pairwise
 - 2026-11-24&nbsp;&nbsp; [Metrics 评价指标](/0138_ML_Metrics)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics
 - 2026-11-24&nbsp;&nbsp; [Metrics for Classification](/0137_ML_Metrics_Classification)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:Classification
 - 2026-11-23&nbsp;&nbsp; [量化工具对比](/0709_MO_Quantization_Tools)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:Tools

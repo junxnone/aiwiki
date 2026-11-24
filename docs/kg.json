@@ -1650,7 +1650,7 @@
     {
       "id": "aiwiki ML Metrics Pairwise",
       "group": 3,
-      "title": "Pairwise",
+      "title": "Pairwise Metrics 成对相似度与距离",
       "url": "https://junxnone.github.io/aiwiki/#/0139_ML_Metrics_Pairwise",
       "visible": true,
       "expand": true,
@@ -2055,7 +2055,7 @@
     {
       "id": "aiwiki ML Metrics CrossValidation",
       "group": 3,
-      "title": "CrossValidation 交叉验证",
+      "title": "Cross Validation 交叉验证",
       "url": "https://junxnone.github.io/aiwiki/#/0249_ML_Metrics_CrossValidation",
       "visible": true,
       "expand": true,
@@ -3270,7 +3270,7 @@
     {
       "id": "aiwiki ML Metrics Regression",
       "group": 3,
-      "title": "Regression",
+      "title": "Regression Metrics 回归指标",
       "url": "https://junxnone.github.io/aiwiki/#/0710_ML_Metrics_Regression",
       "visible": true,
       "expand": true,
@@ -3279,7 +3279,7 @@
     {
       "id": "aiwiki ML Metrics Anomaly",
       "group": 3,
-      "title": "Anomaly",
+      "title": "Anomaly Detection Metrics 异常检测指标",
       "url": "https://junxnone.github.io/aiwiki/#/0711_ML_Metrics_Anomaly",
       "visible": true,
       "expand": true,
@@ -3288,7 +3288,7 @@
     {
       "id": "aiwiki ML Metrics Retrieval",
       "group": 3,
-      "title": "Retrieval",
+      "title": "Retrieval Metrics 检索指标",
       "url": "https://junxnone.github.io/aiwiki/#/0712_ML_Metrics_Retrieval",
       "visible": true,
       "expand": true,
@@ -3297,7 +3297,7 @@
     {
       "id": "aiwiki ML Metrics Keypoint",
       "group": 3,
-      "title": "Keypoint",
+      "title": "Keypoint Metrics 关键点指标",
       "url": "https://junxnone.github.io/aiwiki/#/0717_ML_Metrics_Keypoint",
       "visible": true,
       "expand": true,
@@ -3306,7 +3306,7 @@
     {
       "id": "aiwiki ML Metrics Generation",
       "group": 3,
-      "title": "Generation",
+      "title": "Image Generation Metrics 图像生成与重建指标",
       "url": "https://junxnone.github.io/aiwiki/#/0718_ML_Metrics_Generation",
       "visible": true,
       "expand": true,
@@ -3315,7 +3315,7 @@
     {
       "id": "aiwiki ML Metrics Clustering",
       "group": 3,
-      "title": "Clustering",
+      "title": "Clustering Metrics 聚类指标",
       "url": "https://junxnone.github.io/aiwiki/#/0719_ML_Metrics_Clustering",
       "visible": true,
       "expand": true,
@@ -3324,7 +3324,7 @@
     {
       "id": "aiwiki ML Metrics Statistics",
       "group": 3,
-      "title": "Statistics",
+      "title": "Statistical Significance 统计显著性",
       "url": "https://junxnone.github.io/aiwiki/#/0720_ML_Metrics_Statistics",
       "visible": true,
       "expand": true,
@@ -3333,7 +3333,7 @@
     {
       "id": "aiwiki ML Metrics Efficiency",
       "group": 3,
-      "title": "Efficiency",
+      "title": "Efficiency Metrics 模型效率指标",
       "url": "https://junxnone.github.io/aiwiki/#/0721_ML_Metrics_Efficiency",
       "visible": true,
       "expand": true,
@@ -3801,7 +3801,7 @@
     {
       "id": "aiwiki ML Metrics Detection GIoU",
       "group": 4,
-      "title": "GIoU",
+      "title": "Generalized IoU 广义交并比",
       "url": "https://junxnone.github.io/aiwiki/#/0232_ML_Metrics_Detection_GIoU",
       "visible": true,
       "expand": true,
@@ -4215,7 +4215,7 @@
     {
       "id": "aiwiki ML Metrics Detection TPRFPR",
       "group": 4,
-      "title": "TPR & FPR",
+      "title": "TPR & FPR 真正率与假正率",
       "url": "https://junxnone.github.io/aiwiki/#/0381_ML_Metrics_Detection_TPRFPR",
       "visible": true,
       "expand": true,
@@ -4224,7 +4224,7 @@
     {
       "id": "aiwiki ML Metrics Detection APmAPAR",
       "group": 4,
-      "title": "AP & mAP & AR",
+      "title": "AP & mAP & AR 平均精度与召回",
       "url": "https://junxnone.github.io/aiwiki/#/0382_ML_Metrics_Detection_APmAPAR",
       "visible": true,
       "expand": true,
@@ -4233,7 +4233,7 @@
     {
       "id": "aiwiki ML Metrics Detection IoU",
       "group": 4,
-      "title": "IoU - Intersection Over Union",
+      "title": "Intersection over Union 交并比",
       "url": "https://junxnone.github.io/aiwiki/#/0383_ML_Metrics_Detection_IoU",
       "visible": true,
       "expand": true,
@@ -4242,7 +4242,7 @@
     {
       "id": "aiwiki ML Metrics Detection COCO",
       "group": 4,
-      "title": "COCO Detection Metrics",
+      "title": "COCO Detection Metrics COCO 检测评估指标",
       "url": "https://junxnone.github.io/aiwiki/#/0384_ML_Metrics_Detection_COCO",
       "visible": true,
       "expand": true,
@@ -4413,7 +4413,7 @@
     {
       "id": "aiwiki ML Metrics Detection CD",
       "group": 4,
-      "title": "Center Distance",
+      "title": "Center Distance 中心点距离",
       "url": "https://junxnone.github.io/aiwiki/#/0525_ML_Metrics_Detection_CD",
       "visible": true,
       "expand": true,
@@ -4422,7 +4422,7 @@
     {
       "id": "aiwiki ML Metrics Segmentation BF1S",
       "group": 4,
-      "title": "Boundary F1-Score",
+      "title": "Boundary F1-Score 分割边界 F1",
       "url": "https://junxnone.github.io/aiwiki/#/0526_ML_Metrics_Segmentation_BF1S",
       "visible": true,
       "expand": true,
@@ -4845,7 +4845,7 @@
     {
       "id": "aiwiki ML Metrics Segmentation PQ",
       "group": 4,
-      "title": "PQ",
+      "title": "Panoptic Quality 全景分割质量",
       "url": "https://junxnone.github.io/aiwiki/#/0713_ML_Metrics_Segmentation_PQ",
       "visible": true,
       "expand": true,
@@ -4854,7 +4854,7 @@
     {
       "id": "aiwiki ML Metrics Segmentation Dice",
       "group": 4,
-      "title": "Dice",
+      "title": "Dice Coefficient 骰子系数",
       "url": "https://junxnone.github.io/aiwiki/#/0714_ML_Metrics_Segmentation_Dice",
       "visible": true,
       "expand": true,
@@ -4863,7 +4863,7 @@
     {
       "id": "aiwiki ML Metrics Segmentation Hausdorff",
       "group": 4,
-      "title": "Hausdorff",
+      "title": "Hausdorff Distance 豪斯多夫距离",
       "url": "https://junxnone.github.io/aiwiki/#/0715_ML_Metrics_Segmentation_Hausdorff",
       "visible": true,
       "expand": true,
@@ -4872,7 +4872,7 @@
     {
       "id": "aiwiki ML Metrics Detection DIoUCIoU",
       "group": 4,
-      "title": "DIoUCIoU",
+      "title": "IoU Loss Family 边界框回归损失",
       "url": "https://junxnone.github.io/aiwiki/#/0716_ML_Metrics_Detection_DIoUCIoU",
       "visible": true,
       "expand": true,
