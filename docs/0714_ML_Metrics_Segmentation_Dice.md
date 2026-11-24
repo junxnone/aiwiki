@@ -2,12 +2,12 @@
 Title | ML Metrics Segmentation Dice
 -- | --
 Created @ | `2026-11-24T01:03:54Z`
-Updated @| `2026-11-24T01:04:52Z`
+Updated @| `2026-11-24T02:49:15Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/714)
 
 ---
-# Dice
+# Dice Coefficient 骰子系数
 
 - **Dice Coefficient**（Sørensen–Dice，也叫 `Dice Score` / `F1 Score`）衡量两个集合（预测掩码和真值掩码）的重合程度
 - 医学图像分割中最常用，也常用作损失函数，见 [Dice Loss](/0283_ML_Arch_Func_LossFunction_DiceLoss)；总览见 [Segmentation Metrics](/0231_ML_Metrics_Segmentation)
@@ -89,4 +89,5 @@ def dice(pred, gt, eps=1e-7):
 ## Reference
 - [Dice-Sørensen coefficient - Wikipedia](https://en.wikipedia.org/wiki/Dice-S%C3%B8rensen_coefficient)
 - [Metrics reloaded: Recommendations for image analysis validation](https://arxiv.org/abs/2206.01653)
+
 
