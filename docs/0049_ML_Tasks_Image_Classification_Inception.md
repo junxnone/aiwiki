@@ -2,7 +2,7 @@
 Title | ML Tasks Image Classification Inception
 -- | --
 Created @ | `2018-10-31T21:54:28Z`
-Last Modify @| `2022-12-25T17:13:27Z`
+Updated @| `2026-11-25T16:50:58Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/49)
 
@@ -57,4 +57,25 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/49)
 - Inception-ResNet v1/v2
   - 添加了 ResNet
 
+
+
+
+## 三代演进对比
+
+版本 | 年份 | 主要思想 | 代表技术
+-- | -- | -- | --
+[V1](/0048_ML_Tasks_Image_Classification_Inception_V1) | 2014 | 多尺度并行 + $1\times1$ 降维 | Inception Module、辅助分类器、全局平均池化
+[V2/V3](/0046_ML_Tasks_Image_Classification_Inception_V2V3) | 2015 | 分解卷积、规范化训练 | $3\times3$ 代 $5\times5$、$1\times n$/$n\times1$、BN、Label Smoothing
+[V4/Inception-ResNet](/0047_ML_Tasks_Image_Classification_Inception_V4) | 2016 | 统一结构 + 残差连接 | Stem、Reduction、残差缩放
+[Xception](/0050_ML_Tasks_Image_Classification_Xception) | 2016 | Inception 假设的极端形式 | 深度可分离卷积
+
+表中：从上到下是 Inception 家族的演进；每一代都是在计算量基本不变的前提下提升精度，最后的 Xception 把「多分支」推到每个通道一个分支。
+
+## 一条主线
+
+$$
+\text{多尺度并行}\xrightarrow{\text{降维}}\text{减少计算}\xrightarrow{\text{分解}}\text{更小的卷积}\xrightarrow{\text{残差}}\text{更深更易训练}
+$$
+
+其中：箭头表示每一步解决上一步引出的问题——并行多尺度计算量大，用 $1\times1$ 降维；大卷积计算量大，用小卷积分解代替；网络变深后训练困难，引入残差连接。
 
