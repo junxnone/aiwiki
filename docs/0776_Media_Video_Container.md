@@ -2,7 +2,7 @@
 Title | Media Video Container
 -- | --
 Created @ | `2026-11-25T16:20:42Z`
-Updated @| `2026-11-25T16:20:42Z`
+Updated @| `2026-11-25T16:21:17Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/776)
 
@@ -13,9 +13,9 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/776)
 
 ## 容器与编码的区别
 
-- 编码 (codec)：决定视频/音频数据怎么压缩，如 H.264、AAC，见 [Video Codec](@@VC@@)、[Audio Codec](@@AC@@)
+- 编码 (codec)：决定视频/音频数据怎么压缩，如 H.264、AAC，见 [Video Codec](/0770_Media_Video_Codec)、[Audio Codec](/0769_Media_Audio_Codec)
 - 容器 (container)：决定多路数据 (视频、音频、字幕) 怎么打包进一个文件或流，并保存时间戳、索引、元数据
-- 一个 `.mp4` 文件里可能是 H.264 + AAC，也可能是 H.265 + AAC；只看后缀无法知道里面是什么编码，需要用 [MediaInfo](@@MI@@) 或 [gst-discoverer](/0111_Media_Tools_GStreamer_gstdiscoverer) 查看
+- 一个 `.mp4` 文件里可能是 H.264 + AAC，也可能是 H.265 + AAC；只看后缀无法知道里面是什么编码，需要用 [MediaInfo](/0773_Media_Tools_MediaInfo) 或 [gst-discoverer](/0111_Media_Tools_GStreamer_gstdiscoverer) 查看
 
 下图展示 GStreamer/FFmpeg 里常见的「解封装 → 解码」与「编码 → 封装」两个方向：
 
@@ -84,7 +84,7 @@ flowchart TB
 
 - 固定 188 字节的包，包头同步字节为 `0x47`，用 PID 区分视频、音频和节目表 (PAT/PMT)
 - 没有全局索引，每个包都自带足够信息，丢包后很快能恢复，所以适合广播和网络传输
-- HLS 把流切成一个个 `.ts` 小文件，见 [Video Streaming](@@VS@@)
+- HLS 把流切成一个个 `.ts` 小文件，见 [Video Streaming](/0771_Media_Video_Streaming)
 
 ## 转封装常见问题
 
