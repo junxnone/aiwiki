@@ -2,7 +2,7 @@
 Title | Media Tools MediaInfo
 -- | --
 Created @ | `2026-11-25T16:17:22Z`
-Updated @| `2026-11-25T16:17:22Z`
+Updated @| `2026-11-25T16:21:25Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/773)
 
@@ -15,7 +15,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/773)
 
 - 后缀名不可靠：`.mp4` 里可能是 H.264 也可能是 H.265，播放失败常常是因为编码或 Profile 不被支持
 - 排查问题时需要确认：编码/Profile/Level、像素格式、色度采样、位深、帧率 (定帧率还是变帧率)、码率、时长、音频采样率与声道数
-- 相关概念见 [Video Container](@@VCT@@)、[Video Codec](@@VC@@)、[Audio Basics](@@AB@@)
+- 相关概念见 [Video Container](/0776_Media_Video_Container)、[Video Codec](/0770_Media_Video_Codec)、[Audio Basics](/0775_Media_Audio_Basics)
 
 ## MediaInfo
 
@@ -49,7 +49,7 @@ ffprobe -v error -show_packets -select_streams v:0 in.mp4      # 每个包的 pt
 ```
 
 - `-select_streams v:0` 只看第一路视频；`-show_entries` 只输出指定字段
-- `-show_packets`/`-show_frames` 可以查看每个包或帧的时间戳和类型，用来分析 GOP 结构和 B 帧，见 [Video Codec](@@VC@@)
+- `-show_packets`/`-show_frames` 可以查看每个包或帧的时间戳和类型，用来分析 GOP 结构和 B 帧，见 [Video Codec](/0770_Media_Video_Codec)
 
 ## gst-discoverer
 
