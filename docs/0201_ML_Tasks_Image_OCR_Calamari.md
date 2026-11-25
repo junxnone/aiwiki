@@ -2,7 +2,7 @@
 Title | ML Tasks Image OCR Calamari
 -- | --
 Created @ | `2020-06-01T09:43:32Z`
-Last Modify @| `2022-12-24T13:01:38Z`
+Updated @| `2026-11-25T16:56:23Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/201)
 
@@ -47,4 +47,63 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/201)
 - confidence_voter_fuzzy_ctc
 > fuzzy_ctc 没用到 是什么？
 
+
+
+
+
+## 投票公式
+
+设有 $V$ 个模型 (voter)，第 $v$ 个模型对某个字符位置给出各候选字符 $c$ 的置信度 $p_v(c)$：
+
+$$
+\hat c_{single}=\arg\max_c\ \sum_{v=1}^{V}\mathbb 1\Bigl[\arg\max_{c'}p_v(c')=c\Bigr],\qquad
+\hat c_{adding}=\arg\max_c\ \sum_{v=1}^{V}p_v(c)
+$$
+
+其中：
+
+- $V$：参与投票的模型数 (论文设置为 $5$)；$p_v(c)$：第 $v$ 个模型对候选字符 $c$ 的置信度
+- Single：每个模型只投自己置信度最高的那一个字符，得票多者胜 (多数表决)，不看置信度大小
+- Adding：把各模型对同一字符的置信度直接相加，总和最大者胜，让置信度参与决策
+- $\mathbb 1[\cdot]$：条件成立为 $1$，否则为 $0$
+
+## 示例
+
+假设三个 voter 对同一个位置的候选 `l`、`Ⅰ` (大写 i) 给出如下置信度 (示意数字)：
+
+voter | `l` | `Ⅰ`
+-- | -- | --
+1 | 0.40 | 0.60
+2 | 0.45 | 0.55
+3 | 0.90 | 0.10
+Single (票数) | 1 | 2
+Adding (置信度和) | 1.75 | 1.25
+
+表中：前三行是每个 voter 的置信度；`Single` 统计每个 voter 的最高项，`Ⅰ` 得 $2$ 票，所以选 `Ⅰ`；`Adding` 求和，`l` 的总置信度更高，所以选 `l`。两种规则结果可能不同：voter 3 对 `l` 非常有把握，Adding 利用了这个信息，而 Single 把它当作一票。
+
+## 交叉训练
+
+```mermaid
+flowchart LR
+    D[数据集 分成 N=5 份] --> T1[模型 1<br>用 2,3,4,5 训练<br>1 测试]
+    D --> T2[模型 2<br>用 1,3,4,5 训练<br>2 测试]
+    D --> T3[... 模型 5]
+    T1 --> V[投票]
+    T2 --> V
+    T3 --> V
+    V --> R[最终预测]
+```
+
+图中：
+
+- 数据被分成 $N=5$ 份，依次把其中一份留作测试，其余四份用于训练，共得到 $5$ 个模型，每个模型看到的数据略有不同，因此它们的错误有一定独立性，投票才有意义
+- 5 个模型的预测通过 voter 合并，通常比任何单个模型的错误率低，这与交叉验证 (cross fold) 和集成学习 (ensemble) 的思路相同
+- 同时留出的那一份测试集可以用来评估单个模型
+
+## 代码说明
+
+- `sequence_voter`：对整行文本做投票的入口
+- `confidence_voter_default_ctc`：默认的置信度投票，处理 CTC 输出，对应上文的 Adding 规则 (逐位置累加置信度)
+- `confidence_voter_fuzzy_ctc`：模糊版本的 CTC 置信度投票，用于对齐不完全相同的预测序列；默认没有使用，具体行为请阅读源码 `[待核实]`
+- 更详细的投票长度 (voting length) 与对齐方式见 [Calamari Voting](/0202_ML_Tasks_Image_OCR_Calamari_Voting)
 
