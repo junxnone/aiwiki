@@ -2,7 +2,7 @@
 Title | Media Image Camera Exposure
 -- | --
 Created @ | `2026-11-25T16:29:06Z`
-Updated @| `2026-11-25T16:29:06Z`
+Updated @| `2026-11-25T16:30:45Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/789)
 
@@ -70,7 +70,7 @@ $$
 
 其中：
 
-- $v$：物体在图像上的运动速度 (像素/秒)，可由物体实际速度除以物方分辨率得到，见 [Sensor](@@SEN@@)
+- $v$：物体在图像上的运动速度 (像素/秒)，可由物体实际速度除以物方分辨率得到，见 [Sensor](/0788_Media_Image_Camera_Sensor)
 - $t_{exp}$：曝光时间 (秒)
 - 例：传送带上物体在图像中速度为 $5000\text{px/s}$，要求模糊不超过 $1$ 像素，则曝光时间不能超过 $0.2\text{ms}$；这类场景需要全局快门和频闪光源，见 [定拍 vs 飞拍](/0038_Media_Image_Camera_定拍飞拍)
 
@@ -83,7 +83,7 @@ $$
 
 ## 自动曝光
 
-自动曝光 (AE) 是一个闭环控制，在 [ISP](@@ISP@@) 的 3A 统计中完成：
+自动曝光 (AE) 是一个闭环控制，在 [ISP](/0785_Media_Image_ISP) 的 3A 统计中完成：
 
 ```mermaid
 flowchart LR
@@ -111,7 +111,7 @@ flowchart LR
 
 ## 白平衡
 
-- 光源色温不同，同一物体颜色偏黄或偏蓝；白平衡对 R、B 通道乘增益来校正，原理见 [ISP](@@ISP@@)
+- 光源色温不同，同一物体颜色偏黄或偏蓝；白平衡对 R、B 通道乘增益来校正，原理见 [ISP](/0785_Media_Image_ISP)
 - 自动白平衡 (AWB) 适合日常；机器视觉用固定增益或一次性白平衡 (Once)，使用标准白板标定，保持结果稳定
 
 ## 工业相机相关特征
