@@ -3,7 +3,7 @@
 | Title     | ML Tasks Image OCR                                    |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2020-05-07T06:49:15Z`                                |
-| Updated @ | `2026-11-25T16:19:03Z`                                |
+| Updated @ | `2026-11-25T16:24:26Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/200) |
 
@@ -111,6 +111,8 @@ OCR-free 路线。
 
   - [TextField](0194_ML_Tasks_Image_OCR_TextField)：用"方向场"（预测每个像素指向文本中心线的方向）来表示任意形状的文本区域，再做后处理还原出文本框
   - [SCAN](0191_ML_Tasks_Image_OCR_SCAN)：在识别阶段引入空间注意力机制，让模型在生成每个字符时动态聚焦图像的不同区域
+  - [DBNet](0778_ML_Tasks_Image_OCR_DBNet)（2019.11）：基于分割的检测，把二值化做成可微函数放进网络里联合训练，能自适应学习每个像素的阈值，后处理简单、速度快，是
+    PaddleOCR 检测模块的基础
 
 ## OCR-free / 多模态大模型时代（2021 年至今）
 
@@ -118,14 +120,17 @@ OCR-free 路线。
 这类联合训练的端到端）流水线，逐渐转向用一个视觉-语言模型**直接**从文档图像生成结构化文本（甚至直接是
 Markdown/HTML），不再有独立的"文字框"这个中间产物：
 
-  - **TrOCR**（Microsoft，2021）：用预训练的图像 Transformer 做编码器、预训练的文本
-    Transformer 做解码器，直接把图像转成文字序列，是把 Transformer 预训练范式系统引入 OCR 识别阶段的代表工作；
-  - **Donut**（2021/2022，ECCV）：**OCR-free** 的文档理解
+  - **[TrOCR](0780_ML_Tasks_Image_OCR_TrOCR)**（Microsoft，2021）：用预训练的图像
+    Transformer 做编码器、预训练的文本 Transformer 做解码器，直接把图像转成文字序列，是把 Transformer
+    预训练范式系统引入 OCR 识别阶段的代表工作；
+  - **[Donut](0781_ML_Tasks_Image_OCR_Donut)**（2021/2022，ECCV）：**OCR-free**
+    的文档理解
     Transformer——不经过任何显式的文字检测/识别步骤，直接从文档图像端到端输出结构化信息（如字段抽取结果），"OCR-free"
     这个说法由此被广泛采用；
-  - **PaddleOCR**：从 PP-OCRv3（2022，识别模块换成基于 Transformer 的 SVTR 架构取代
-    LSTM）一路迭代到 2025-05 发布的 **PaddleOCR 3.0 / PP-OCRv5**，是工业界使用最广泛的开源
-    OCR 工具链之一；2025-10 进一步推出仅 0.9B 参数的 **PaddleOCR-VL**，支持 109 种语言；
+  - **PaddleOCR**：从 PP-OCRv3（2022，识别模块换成基于 Transformer 的
+    [SVTR](0779_ML_Tasks_Image_OCR_SVTR) 架构取代 LSTM）一路迭代到 2025-05 发布的
+    **PaddleOCR 3.0 / PP-OCRv5**，是工业界使用最广泛的开源 OCR 工具链之一；2025-10 进一步推出仅
+    0.9B 参数的 **PaddleOCR-VL**，支持 109 种语言；
   - **Nougat**（Meta，2023）：面向学术文档（含数学公式、表格）的 OCR-free 神经网络解析方法；
   - **GOT-OCR2.0、dots.ocr、DeepSeek-OCR** 等（2024-2025）：基于 Qwen-VL
     等视觉语言基础模型微调出的通用文档解析模型，一次推理同时搞定文字检测、识别、版面/表格/公式结构化，不再是传统的多阶段流水线；其中
