@@ -824,6 +824,10 @@
 - 2026-11-25&nbsp;&nbsp; [Metrics](/0190_ML_Tasks_Image_OCR_Metrics)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Metrics
 - 2026-11-25&nbsp;&nbsp; [CTC](/0189_ML_Tasks_Image_OCR_CTC)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:CTC
 - 2026-11-25&nbsp;&nbsp; [History](/0166_ML_Tasks_Image_Classification_History)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Classification :bookmark:History
+- 2026-11-25&nbsp;&nbsp; [UNet](/0161_ML_Tasks_Image_Segmentation_UNet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Segmentation :bookmark:UNet
+- 2026-11-25&nbsp;&nbsp; [FCN](/0160_ML_Tasks_Image_Segmentation_FCN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Segmentation :bookmark:FCN
+- 2026-11-25&nbsp;&nbsp; [Segmentation](/0159_ML_Tasks_Image_Segmentation)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Segmentation
+- 2026-11-25&nbsp;&nbsp; [CBIR](/0155_ML_Tasks_Image_Retrieval_CBIR)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Retrieval :bookmark:CBIR
 - 2026-11-25&nbsp;&nbsp; [Detection](/0152_ML_Tasks_Image_Detection)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Detection
 - 2026-11-25&nbsp;&nbsp; [VGGNet](/0146_ML_Tasks_Image_Classification_VGGNet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Classification :bookmark:VGGNet
 - 2026-11-25&nbsp;&nbsp; [Concepts](/0144_Media_Tools_GStreamer_Concepts)&nbsp;&nbsp; :bookmark:Media :bookmark:Tools :bookmark:GStreamer :bookmark:Concepts
@@ -1331,7 +1335,6 @@
 - 2023-12-04&nbsp;&nbsp; [Advantage Actor Critic](/0460_RL_A2C)&nbsp;&nbsp; :bookmark:RL :bookmark:A2C
 - 2023-12-04&nbsp;&nbsp; [Actor Critic](/0459_RL_AC)&nbsp;&nbsp; :bookmark:RL :bookmark:AC
 - 2023-11-23&nbsp;&nbsp; [RL 强化学习](/0290_RL)&nbsp;&nbsp; :bookmark:RL
-- 2023-11-21&nbsp;&nbsp; [FCN](/0160_ML_Tasks_Image_Segmentation_FCN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Segmentation :bookmark:FCN
 - 2023-11-14&nbsp;&nbsp; [RL Tasks](/0457_RL_Taks)&nbsp;&nbsp; :bookmark:RL :bookmark:Taks
 - 2023-11-14&nbsp;&nbsp; [RL Tools](/0454_RL_Tools)&nbsp;&nbsp; :bookmark:RL :bookmark:Tools
 - 2023-11-09&nbsp;&nbsp; [Isaac Gym - Nvidia](/0452_Tools_IsaacGym)&nbsp;&nbsp; :bookmark:Tools :bookmark:IsaacGym
@@ -1512,19 +1515,16 @@
 - 2019-06-22&nbsp;&nbsp; [MaskRCNN](/0163_ML_Tasks_Image_Segmentation_MaskRCNN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Segmentation :bookmark:MaskRCNN
 - 2019-05-29&nbsp;&nbsp; [计算图片 average brightness](/0350_OpenCV_UC_brightness)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:UC :bookmark:brightness
 - 2019-05-18&nbsp;&nbsp; [SIFT 尺度不变特征变换](/0069_CV_Feature_SIFT)&nbsp;&nbsp; :bookmark:CV :bookmark:Feature :bookmark:SIFT
-- 2019-03-28&nbsp;&nbsp; [Segmentation](/0159_ML_Tasks_Image_Segmentation)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Segmentation
 - 2019-03-18&nbsp;&nbsp; [GridSearch](/0205_ML_AutoML_HPO_GridSearch)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:HPO :bookmark:GridSearch
 - 2019-03-10&nbsp;&nbsp; [NNI](/0016_ML_AutoML_Tools_NNI)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:Tools :bookmark:NNI
 - 2019-03-05&nbsp;&nbsp; [Tips](/0261_Tools_Darknet_AlexeyAB)&nbsp;&nbsp; :bookmark:Tools :bookmark:Darknet :bookmark:AlexeyAB
 - 2019-02-20&nbsp;&nbsp; [Triplet Network](/0156_ML_Tasks_Image_Retrieval_CBIR_TripletNetwork)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Retrieval :bookmark:CBIR :bookmark:TripletNetwork
 - 2019-02-20&nbsp;&nbsp; [Siamese Network](/0153_ML_Tasks_Image_Retrieval_CBIR_SiameseNetwork)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Retrieval :bookmark:CBIR :bookmark:SiameseNetwork
-- 2019-02-19&nbsp;&nbsp; [CBIR](/0155_ML_Tasks_Image_Retrieval_CBIR)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Retrieval :bookmark:CBIR
 - 2019-02-19&nbsp;&nbsp; [VLAD](/0154_ML_Tasks_Image_Retrieval_CBIR_VLAD)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Retrieval :bookmark:CBIR :bookmark:VLAD
 - 2019-01-28&nbsp;&nbsp; [Semi-Supervised Learning 半监督学习](/0271_ML_SSL)&nbsp;&nbsp; :bookmark:ML :bookmark:SSL
 - 2019-01-28&nbsp;&nbsp; [Tools](/0175_ML_AL_Tools)&nbsp;&nbsp; :bookmark:ML :bookmark:AL :bookmark:Tools
 - 2019-01-24&nbsp;&nbsp; [Instance Segmentation 实例分割](/0167_ML_Tasks_Image_Segmentation_Instance)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Segmentation :bookmark:Instance
 - 2019-01-18&nbsp;&nbsp; [VIA VGG Image Annotator](/0075_Tools_Label_VGG)&nbsp;&nbsp; :bookmark:Tools :bookmark:Label :bookmark:VGG
-- 2018-12-26&nbsp;&nbsp; [UNet](/0161_ML_Tasks_Image_Segmentation_UNet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Segmentation :bookmark:UNet
 - 2018-12-20&nbsp;&nbsp; [膨胀腐蚀](/0344_OpenCV_IP_Filter_morphology)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter :bookmark:morphology
 - 2018-12-13&nbsp;&nbsp; [CVAT](/0073_Tools_Label_CVAT)&nbsp;&nbsp; :bookmark:Tools :bookmark:Label :bookmark:CVAT
 - 2018-12-12&nbsp;&nbsp; [Quiver](/0136_Tools_VIS_Quiver)&nbsp;&nbsp; :bookmark:Tools :bookmark:VIS :bookmark:Quiver
