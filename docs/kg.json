@@ -3817,6 +3817,15 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki RL Robot Rotation",
+      "group": 3,
+      "title": "Rotation",
+      "url": "https://junxnone.github.io/aiwiki/#/0777_RL_Robot_Rotation",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Op Convolution Math",
       "group": 4,
       "title": "卷积 数学定义",
@@ -9448,6 +9457,13 @@
     {
       "source": "aiwiki RL Robot",
       "target": "aiwiki RL Robot Kinematics",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki RL Robot",
+      "target": "aiwiki RL Robot Rotation",
       "value": 3,
       "visible": true,
       "expand": true
