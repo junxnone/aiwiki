@@ -3,7 +3,7 @@
 | Title     | Media Video Codec                                     |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-25T16:15:13Z`                                |
-| Updated @ | `2026-11-25T16:15:13Z`                                |
+| Updated @ | `2026-11-25T16:21:14Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/770) |
 
@@ -107,7 +107,7 @@ Pictures)。
   - 使用 B 帧时，解码顺序与显示顺序不同，所以每帧有两个时间戳：DTS (Decoding Time Stamp，解码时间) 和 PTS
     (Presentation Time Stamp，显示时间)
   - 低延迟场景 (视频会议、[低延迟相机](/0037_Media_Image_Camera_LowLatency)) 通常关闭 B
-    帧并缩短 GOP，见 [Video Streaming](@@VS@@)
+    帧并缩短 GOP，见 [Video Streaming](/0771_Media_Video_Streaming)
 
 ## 码率控制
 
@@ -140,16 +140,17 @@ Pictures)。
   - 裸流 (`.h264`/`.hevc`) 用起始码 `00 00 01` 或 `00 00 00 01` 分隔 NAL，称 Annex
     B 格式
   - 装进 mp4 时则使用长度前缀格式 (AVCC/HVCC)，SPS/PPS 存在文件头里；两种格式之间转换需要
-    `h264_mp4toannexb` 之类的处理，见 [Video Container](@@VCT@@)
+    `h264_mp4toannexb` 之类的处理，见 [Video
+    Container](/0776_Media_Video_Container)
   - 码流的 Profile/Level 描述了使用的编码工具和分辨率/码率上限，例如 H.264 的
     Baseline/Main/High；[gst-discoverer](/0111_Media_Tools_GStreamer_gstdiscoverer)
     输出里的 `H.264 (Constrained Baseline Profile)` 就是这个信息
 
 ## 工具
 
-  - 软件编解码：x264、x265、libaom/SVT-AV1，通过 [FFmpeg](@@FF@@) 或 GStreamer 的
-    `x264enc`/`x265enc` 调用
-  - 硬件编解码：见 [Video HWCodec](@@VH@@)
+  - 软件编解码：x264、x265、libaom/SVT-AV1，通过 [FFmpeg](/0774_Media_Tools_FFmpeg)
+    或 GStreamer 的 `x264enc`/`x265enc` 调用
+  - 硬件编解码：见 [Video HWCodec](/0772_Media_Video_HWCodec)
 
 ## Reference
 
