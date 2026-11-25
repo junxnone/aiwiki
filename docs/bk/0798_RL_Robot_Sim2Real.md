@@ -3,7 +3,7 @@
 | Title     | RL Robot Sim2Real                                     |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-25T16:33:47Z`                                |
-| Updated @ | `2026-11-25T16:33:47Z`                                |
+| Updated @ | `2026-11-25T16:34:16Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/798) |
 
@@ -12,8 +12,8 @@
 # Sim2Real
 
 Sim2Real（仿真到现实）：把在仿真中训练的策略迁移到真实机器人上，并缩小两者之间的差距（reality gap）。所属总览见 [RL
-Robot](https://github.com/junxnone/aiwiki/issues/458)，仿真见 RL Robot
-Simulation。
+Robot](https://github.com/junxnone/aiwiki/issues/458)，仿真见 [RL Robot
+Simulation](https://github.com/junxnone/aiwiki/issues/797)。
 
 ## 现实差距
 
