@@ -2,7 +2,7 @@
 Title | Media Image Format
 -- | --
 Created @ | `2026-11-25T16:27:44Z`
-Updated @| `2026-11-25T16:27:44Z`
+Updated @| `2026-11-25T16:30:29Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/782)
 
@@ -35,7 +35,7 @@ flowchart TD
 - 菱形是判断，矩形是推荐格式
 - 照片类内容容忍有损，选 JPEG 等有损格式可以大幅减小体积
 - 需要精确像素值 (如标注、分割 mask、测量) 时必须用无损格式，否则压缩会改变像素值
-- 需要保留传感器原始数据做后续处理时用 RAW，见 [Bayer](@@BY@@)
+- 需要保留传感器原始数据做后续处理时用 RAW，见 [Bayer](/0784_Media_Image_Bayer)
 
 ## 常见格式
 
