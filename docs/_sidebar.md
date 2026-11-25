@@ -4,6 +4,7 @@
     - [3D 图像](/0039_Media_Image_3DImage)
     - [Camera](/0107_Media_Image_Camera)
       - [Calibration](/0787_Media_Image_Camera_Calibration)
+      - [Exposure](/0789_Media_Image_Camera_Exposure)
       - [GenICam](/0106_Media_Image_Camera_GenICam)
         - [GenICam Aravis](/0108_Media_Image_Camera_GenICam_Aravis)
       - [低延迟](/0037_Media_Image_Camera_LowLatency)
@@ -762,4 +763,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0029281126</sub></kbd>
+<kbd><sub>@0029531126</sub></kbd>

@@ -4,6 +4,7 @@
 
 #### **Created**
 
+- 2026-11-25&nbsp;&nbsp; [Exposure](/0789_Media_Image_Camera_Exposure)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera :bookmark:Exposure
 - 2026-11-25&nbsp;&nbsp; [Sensor](/0788_Media_Image_Camera_Sensor)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera :bookmark:Sensor
 - 2026-11-25&nbsp;&nbsp; [Calibration](/0787_Media_Image_Camera_Calibration)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera :bookmark:Calibration
 - 2026-11-25&nbsp;&nbsp; [Affine](/0786_Media_Image_Affine)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Affine
@@ -760,6 +761,7 @@
 
 #### **Updated**
 
+- 2026-11-25&nbsp;&nbsp; [Exposure](/0789_Media_Image_Camera_Exposure)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera :bookmark:Exposure
 - 2026-11-25&nbsp;&nbsp; [Sensor](/0788_Media_Image_Camera_Sensor)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera :bookmark:Sensor
 - 2026-11-25&nbsp;&nbsp; [Calibration](/0787_Media_Image_Camera_Calibration)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera :bookmark:Calibration
 - 2026-11-25&nbsp;&nbsp; [Affine](/0786_Media_Image_Affine)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Affine

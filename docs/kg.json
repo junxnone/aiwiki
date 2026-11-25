@@ -5446,6 +5446,15 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki Media Image Camera Exposure",
+      "group": 4,
+      "title": "Exposure",
+      "url": "https://junxnone.github.io/aiwiki/#/0789_Media_Image_Camera_Exposure",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Tasks Image Classification LeNet",
       "group": 5,
       "title": "LeNet",
@@ -10102,6 +10111,13 @@
     {
       "source": "aiwiki Media Image Camera",
       "target": "aiwiki Media Image Camera Sensor",
+      "value": 4,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki Media Image Camera",
+      "target": "aiwiki Media Image Camera Exposure",
       "value": 4,
       "visible": true,
       "expand": true
