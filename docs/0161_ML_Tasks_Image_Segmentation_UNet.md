@@ -2,7 +2,7 @@
 Title | ML Tasks Image Segmentation UNet
 -- | --
 Created @ | `2018-12-26T18:37:24Z`
-Last Modify @| `2022-12-24T12:51:17Z`
+Updated @| `2026-11-25T16:51:53Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/161)
 
@@ -66,4 +66,75 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/161)
 
 ## Test Result
 ![image](https://user-images.githubusercontent.com/2216970/70588732-a7473800-1c08-11ea-9b49-8c714e7c2336.png)
+
+
+
+
+## 结构细节
+
+下图是 U-Net 的整体结构 (原论文输入 $572\times572$，使用无填充卷积)：
+
+```mermaid
+flowchart TB
+    subgraph Enc[收缩路径 编码器]
+        E1[2x conv3x3 64] --> E2[pool → 2x conv3x3 128] --> E3[pool → 2x conv3x3 256] --> E4[pool → 2x conv3x3 512] --> E5[pool → 2x conv3x3 1024]
+    end
+    subgraph Dec[扩张路径 解码器]
+        D4[up-conv2x2 → concat → 2x conv3x3 512] --> D3[up-conv → concat → 2x conv3x3 256] --> D2[up-conv → concat → 2x conv3x3 128] --> D1[up-conv → concat → 2x conv3x3 64] --> O[conv1x1 → 类别数]
+    end
+    E5 --> D4
+    E4 -.裁剪后拼接.-> D4
+    E3 -.-> D3
+    E2 -.-> D2
+    E1 -.-> D1
+```
+
+图中：
+
+- 左边收缩路径：每级两个 $3\times3$ 卷积后做 $2\times2$ 最大池化，分辨率减半、通道数翻倍 ($64\to128\to256\to512\to1024$)，学习越来越抽象的特征
+- 右边扩张路径：每级先用 $2\times2$ 转置卷积把分辨率放大一倍、通道减半，再与左边对应层的特征拼接 (虚线)，然后两个 $3\times3$ 卷积；最后用 $1\times1$ 卷积映射到类别数
+- 虚线是跳连：把编码器里分辨率高、细节丰富的特征直接送给解码器，弥补池化丢失的定位信息；因为无填充卷积使编码器特征比解码器大，所以拼接前要裁剪到相同尺寸
+- 整个网络有 $23$ 个卷积层，因形状像字母 U 而得名；与 [FCN](/0160_ML_Tasks_Image_Segmentation_FCN) 的区别是解码器对称、通道数多，且融合用 Concat 而不是 Add
+
+## 无填充卷积与 Overlap-tile
+
+- 每个 $3\times3$ 无填充卷积使特征图边长减 $2$，所以输入 $572\times572$ 对应输出只有 $388\times388$
+- 对大图的处理：把图像分成互相重叠的块 (tile)，每块预测中间的有效区域，边界处的缺失上下文用镜像填充 (overlap-tile 策略)，因此可以无缝分割任意大小的图像
+- 现在多数实现改用 `padding=1` 的 same 卷积，输入输出等大，不再需要裁剪
+
+## 加权损失
+
+$$
+E=\sum_{x\in\Omega}w(x)\log p_{\ell(x)}(x),\qquad
+w(x)=w_c(x)+w_0\exp\!\left(-\frac{(d_1(x)+d_2(x))^2}{2\sigma^2}\right)
+$$
+
+其中：
+
+- $\Omega$：所有像素；$\ell(x)$：像素 $x$ 的真实类别；$p_{\ell(x)}(x)$：网络在该类别上的 softmax 概率 ($E$ 取负后作为损失最小化)
+- $w_c(x)$：类别平衡权重，用来补偿不同类别像素数量的不平衡
+- $d_1(x),d_2(x)$：像素 $x$ 到最近和次近的细胞边界的距离；两个相邻细胞之间的狭窄背景处距离很小，指数项很大
+- $w_0$、$\sigma$：超参数，论文取 $w_0=10$，$\sigma\approx5$ 像素；效果是迫使网络学会把接触的细胞分开
+
+## 数据增强
+
+- 医学图像训练数据极少 (原论文只有 30 张)，所以强数据增强是关键
+- 弹性形变：在 $3\times3$ 的粗网格上采样位移向量 (高斯分布，标准差为 $10$ 像素)，再用双三次插值得到逐像素位移，模拟组织的自然形变
+- 同时使用平移、旋转、灰度变化；在收缩路径末尾使用 Dropout 做隐式增强
+
+## UNet 与 FCN 的对比
+
+维度 | [FCN](/0160_ML_Tasks_Image_Segmentation_FCN) | UNet
+-- | -- | --
+解码器 | 单次大倍数上采样，浅层仅少量融合 | 与编码器对称，逐级放大
+特征融合 | 逐点相加 (Add) | 通道拼接 (Concat)
+通道数 | 融合处为类别数 | 解码器每级保留大量通道
+小数据表现 | 一般 | 好，尤其配合弹性形变
+
+表中：Concat 保留了浅层和深层的全部信息，让后续卷积自己学习怎样融合，而 Add 要求二者逐元素对齐且信息混在一起；这是 UNet 在小数据集上更好的原因之一。
+
+## 变体
+
+- MobileNet-UNet：用 [MobileNet](/0045_ML_Tasks_Image_Classification_MobileNet) 作编码器，减少计算量，适合边缘设备
+- UNet++、Attention U-Net、3D U-Net、nnU-Net：增加嵌套跳连、注意力、三维卷积，以及自动配置训练流程，后者是医学图像分割的强基线
 
