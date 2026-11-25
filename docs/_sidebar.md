@@ -281,7 +281,7 @@
       - [OCR](/0200_ML_Tasks_Image_OCR)
         - [Attention](/0793_ML_Tasks_Image_OCR_Attention)
         - [Augmentation](/0203_ML_Tasks_Image_OCR_Augmentation)
-        - [CAFCN](/0186_ML_Tasks_Image_OCR_CAFCN)
+        - [CA-FCN](/0186_ML_Tasks_Image_OCR_CAFCN)
         - [CRNN](/0196_ML_Tasks_Image_OCR_CRNN)
         - [CTC](/0189_ML_Tasks_Image_OCR_CTC)
         - [CTPN](/0197_ML_Tasks_Image_OCR_CTPN)
@@ -772,4 +772,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0053481126</sub></kbd>
+<kbd><sub>@0057171126</sub></kbd>
