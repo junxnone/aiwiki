@@ -2,7 +2,7 @@
 Title | Media Image Color Gamma
 -- | --
 Created @ | `2026-11-25T16:27:56Z`
-Updated @| `2026-11-25T16:27:56Z`
+Updated @| `2026-11-25T16:30:31Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/783)
 
@@ -31,7 +31,7 @@ flowchart LR
 
 图中：
 
-- 传感器本身输出的是和光强成正比的线性值，ISP 里会做 gamma 编码，见 [ISP](@@ISP@@)
+- 传感器本身输出的是和光强成正比的线性值，ISP 里会做 gamma 编码，见 [ISP](/0785_Media_Image_ISP)
 - 中间 8 bit 数据 (JPEG、PNG、视频) 存的是编码后的非线性值
 - 显示器解码后得到近似线性的亮度，整条链路总体是线性的，人眼看到的就接近真实场景
 
