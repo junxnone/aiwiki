@@ -33,6 +33,7 @@
       - [gst-discoverer](/0111_Media_Tools_GStreamer_gstdiscoverer)
       - [gst-inspect](/0112_Media_Tools_GStreamer_gstinspect)
       - [gst-launch](/0110_Media_Tools_GStreamer_gstlaunch)
+    - [FFmpeg](/0774_Media_Tools_FFmpeg)
     - [MediaInfo](/0773_Media_Tools_MediaInfo)
   - [Audio 音频](/0767_Media_Audio)
     - [Audio Codec](/0769_Media_Audio_Codec)
@@ -271,7 +272,7 @@
         - [Augmentation](/0203_ML_Tasks_Image_OCR_Augmentation)
         - [CAFCN](/0186_ML_Tasks_Image_OCR_CAFCN)
         - [CRNN](/0196_ML_Tasks_Image_OCR_CRNN)
-        - [Install warp-ctc](/0189_ML_Tasks_Image_OCR_CTC)
+        - [CTC](/0189_ML_Tasks_Image_OCR_CTC)
         - [CTPN](/0197_ML_Tasks_Image_OCR_CTPN)
         - [Calamari](/0201_ML_Tasks_Image_OCR_Calamari)
           - [Voting](/0202_ML_Tasks_Image_OCR_Calamari_Voting)
@@ -747,4 +748,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0018071126</sub></kbd>
+<kbd><sub>@0020321126</sub></kbd>

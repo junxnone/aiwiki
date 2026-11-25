@@ -3790,6 +3790,15 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki Media Tools FFmpeg",
+      "group": 3,
+      "title": "FFmpeg",
+      "url": "https://junxnone.github.io/aiwiki/#/0774_Media_Tools_FFmpeg",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Op Convolution Math",
       "group": 4,
       "title": "卷积 数学定义",
@@ -5637,7 +5646,7 @@
     {
       "id": "aiwiki ML Tasks Image OCR CTC",
       "group": 5,
-      "title": "Install warp-ctc",
+      "title": "CTC",
       "url": "https://junxnone.github.io/aiwiki/#/0189_ML_Tasks_Image_OCR_CTC",
       "visible": true,
       "expand": true,
@@ -9267,6 +9276,13 @@
     {
       "source": "aiwiki Media Tools",
       "target": "aiwiki Media Tools MediaInfo",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki Media Tools",
+      "target": "aiwiki Media Tools FFmpeg",
       "value": 3,
       "visible": true,
       "expand": true
