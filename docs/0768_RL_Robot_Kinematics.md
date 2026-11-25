@@ -2,14 +2,14 @@
 Title | RL Robot Kinematics
 -- | --
 Created @ | `2026-11-25T16:14:46Z`
-Updated @| `2026-11-25T16:14:46Z`
+Updated @| `2026-11-25T16:23:26Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/768)
 
 ---
 # Kinematics
 
-不考虑力，只研究机械臂关节变量与末端位姿之间的几何关系：正运动学、逆运动学、雅可比与奇异性。所属总览见 [RL Robot](https://github.com/junxnone/aiwiki/issues/458)，变换基础见 RL Robot Transform。
+不考虑力，只研究机械臂关节变量与末端位姿之间的几何关系：正运动学、逆运动学、雅可比与奇异性。所属总览见 [RL Robot](https://github.com/junxnone/aiwiki/issues/458)，变换基础见 [RL Robot Transform](https://github.com/junxnone/aiwiki/issues/766)。
 
 ## 问题定义
 
