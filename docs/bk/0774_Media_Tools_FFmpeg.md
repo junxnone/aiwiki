@@ -3,7 +3,7 @@
 | Title     | Media Tools FFmpeg                                    |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-25T16:19:35Z`                                |
-| Updated @ | `2026-11-25T16:19:35Z`                                |
+| Updated @ | `2026-11-25T16:21:23Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/774) |
 
@@ -15,8 +15,9 @@ FFmpeg 是跨平台的音视频处理工具集，包含转码、转封装、滤�
 
 ## 组成
 
-下图展示 `ffmpeg` 命令内部处理一个文件的流水线，对应 [Video Container](@@VCT@@) 中的解封装/封装和
-[Video Codec](@@VC@@) 中的编解码：
+下图展示 `ffmpeg` 命令内部处理一个文件的流水线，对应 [Video
+Container](/0776_Media_Video_Container) 中的解封装/封装和 [Video
+Codec](/0770_Media_Video_Codec) 中的编解码：
 
 ``` mermaid
 flowchart LR
@@ -37,15 +38,15 @@ flowchart LR
 
 可执行程序与库：
 
-| 名称                             | 作用                            |
-| ------------------------------ | ----------------------------- |
-| `ffmpeg`                       | 转码和处理的主程序                     |
-| `ffprobe`                      | 探测媒体信息，见 [MediaInfo](@@MI@@)  |
-| `ffplay`                       | 简易播放器，常用于测试流                  |
-| `libavformat`                  | 容器格式与协议 (mp4/mkv/rtsp/http 等) |
-| `libavcodec`                   | 编解码器                          |
-| `libavfilter`                  | 滤镜框架                          |
-| `libswscale` / `libswresample` | 图像缩放与像素格式转换 / 音频重采样           |
+| 名称                             | 作用                                                |
+| ------------------------------ | ------------------------------------------------- |
+| `ffmpeg`                       | 转码和处理的主程序                                         |
+| `ffprobe`                      | 探测媒体信息，见 [MediaInfo](/0773_Media_Tools_MediaInfo) |
+| `ffplay`                       | 简易播放器，常用于测试流                                      |
+| `libavformat`                  | 容器格式与协议 (mp4/mkv/rtsp/http 等)                     |
+| `libavcodec`                   | 编解码器                                              |
+| `libavfilter`                  | 滤镜框架                                              |
+| `libswscale` / `libswresample` | 图像缩放与像素格式转换 / 音频重采样                               |
 
 表中：前三个是命令行程序，后四个是其依赖的库，自己写程序调用 FFmpeg 时就是链接这些库。
 
@@ -99,7 +100,7 @@ flowchart LR
     ffmpeg -i in.wav -ar 16000 -ac 1 out_16k.wav                   # 重采样为 16 kHz 单声道
     ffmpeg -f s16le -ar 48000 -ac 2 -i in.pcm out.wav              # 裸 PCM 转 WAV
 
-  - 采样率、声道数、PCM 格式名的含义见 [Audio Basics](@@AB@@)
+  - 采样率、声道数、PCM 格式名的含义见 [Audio Basics](/0775_Media_Audio_Basics)
 
 ### 原始图像 (yuv) 与像素格式
 
@@ -115,13 +116,13 @@ flowchart LR
     ffmpeg -re -i in.mp4 -c copy -f flv rtmp://server/live/key              # 推 RTMP
     ffplay -rtsp_transport tcp rtsp://ip:554/stream                         # 播放 RTSP
 
-  - 协议差异与延迟见 [Video Streaming](@@VS@@)
+  - 协议差异与延迟见 [Video Streaming](/0771_Media_Video_Streaming)
 
 ### 硬件加速
 
     ffmpeg -hwaccel vaapi -hwaccel_output_format vaapi -i in.mp4 -c:v h264_vaapi out.mp4
 
-  - 详见 [Video HWCodec](@@VH@@)
+  - 详见 [Video HWCodec](/0772_Media_Video_HWCodec)
 
 ## FFmpeg 与 GStreamer 的区别
 
