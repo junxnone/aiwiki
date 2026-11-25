@@ -4,6 +4,13 @@
 
 #### **Created**
 
+- 2026-11-25&nbsp;&nbsp; [Sensor](/0788_Media_Image_Camera_Sensor)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera :bookmark:Sensor
+- 2026-11-25&nbsp;&nbsp; [Calibration](/0787_Media_Image_Camera_Calibration)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera :bookmark:Calibration
+- 2026-11-25&nbsp;&nbsp; [Affine](/0786_Media_Image_Affine)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Affine
+- 2026-11-25&nbsp;&nbsp; [ISP](/0785_Media_Image_ISP)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:ISP
+- 2026-11-25&nbsp;&nbsp; [Bayer](/0784_Media_Image_Bayer)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Bayer
+- 2026-11-25&nbsp;&nbsp; [Gamma](/0783_Media_Image_Color_Gamma)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Color :bookmark:Gamma
+- 2026-11-25&nbsp;&nbsp; [Image Format](/0782_Media_Image_Format)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Format
 - 2026-11-25&nbsp;&nbsp; [Donut](/0781_ML_Tasks_Image_OCR_Donut)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Donut
 - 2026-11-25&nbsp;&nbsp; [TrOCR](/0780_ML_Tasks_Image_OCR_TrOCR)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:TrOCR
 - 2026-11-25&nbsp;&nbsp; [SVTR](/0779_ML_Tasks_Image_OCR_SVTR)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:SVTR
@@ -753,6 +760,13 @@
 
 #### **Updated**
 
+- 2026-11-25&nbsp;&nbsp; [Sensor](/0788_Media_Image_Camera_Sensor)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera :bookmark:Sensor
+- 2026-11-25&nbsp;&nbsp; [Calibration](/0787_Media_Image_Camera_Calibration)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera :bookmark:Calibration
+- 2026-11-25&nbsp;&nbsp; [Affine](/0786_Media_Image_Affine)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Affine
+- 2026-11-25&nbsp;&nbsp; [ISP](/0785_Media_Image_ISP)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:ISP
+- 2026-11-25&nbsp;&nbsp; [Bayer](/0784_Media_Image_Bayer)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Bayer
+- 2026-11-25&nbsp;&nbsp; [Gamma](/0783_Media_Image_Color_Gamma)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Color :bookmark:Gamma
+- 2026-11-25&nbsp;&nbsp; [Image Format](/0782_Media_Image_Format)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Format
 - 2026-11-25&nbsp;&nbsp; [Donut](/0781_ML_Tasks_Image_OCR_Donut)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Donut
 - 2026-11-25&nbsp;&nbsp; [TrOCR](/0780_ML_Tasks_Image_OCR_TrOCR)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:TrOCR
 - 2026-11-25&nbsp;&nbsp; [SVTR](/0779_ML_Tasks_Image_OCR_SVTR)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:SVTR
