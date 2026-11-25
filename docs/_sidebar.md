@@ -576,6 +576,9 @@
   - [Advantage Actor Critic](/0460_RL_A2C)
   - [Actor Critic](/0459_RL_AC)
   - [Robot](/0458_RL_Robot)
+    - [CSpace](/0794_RL_Robot_CSpace)
+    - [Control](/0796_RL_Robot_Control)
+    - [Dynamics](/0795_RL_Robot_Dynamics)
     - [Kinematics](/0768_RL_Robot_Kinematics)
     - [Rotation](/0777_RL_Robot_Rotation)
     - [Transform](/0766_RL_Robot_Transform)
@@ -767,4 +770,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0030311126</sub></kbd>
+<kbd><sub>@0030571126</sub></kbd>
