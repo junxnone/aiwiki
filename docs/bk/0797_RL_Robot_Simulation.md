@@ -3,7 +3,7 @@
 | Title     | RL Robot Simulation                                   |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-25T16:33:43Z`                                |
-| Updated @ | `2026-11-25T16:33:43Z`                                |
+| Updated @ | `2026-11-25T16:34:13Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/797) |
 
@@ -20,7 +20,8 @@ Dynamics](https://github.com/junxnone/aiwiki/issues/795)。
   - 安全：真机训练易损坏，仿真中摔倒无成本
   - 速度：可比实时快几十到几千倍，并行成百上千个环境
   - 可复现：状态可任意重置、种子固定
-  - 代价：仿真与现实存在差距（见 RL Robot Sim2Real）
+  - 代价：仿真与现实存在差距（见 [RL Robot
+    Sim2Real](https://github.com/junxnone/aiwiki/issues/798)）
 
 ## 仿真流程
 
