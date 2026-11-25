@@ -2,7 +2,7 @@
 Title | Media Video Streaming
 -- | --
 Created @ | `2026-11-25T16:16:49Z`
-Updated @| `2026-11-25T16:16:49Z`
+Updated @| `2026-11-25T16:21:19Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/771)
 
@@ -71,7 +71,7 @@ Marker | 标记位 | 视频中通常表示一帧的最后一个包
 表中：视频使用 90 kHz 时钟，所以 30 fps 的视频相邻帧时间戳相差 $90000/30=3000$ 个时钟周期；同一帧的所有 RTP 包时间戳相同。
 
 - 一帧 H.264 往往大于一个网络包 (MTU 约 1500 字节)，需要按 RFC 6184 做分片 (FU-A) 或聚合 (STAP-A)，接收端用 `rtph264depay` 还原
-- 丢一个包可能让整帧甚至整个 GOP 无法解码，直到下一个 IDR 帧才能恢复，这就是花屏的来源，见 [Video Codec](@@VC@@)
+- 丢一个包可能让整帧甚至整个 GOP 无法解码，直到下一个 IDR 帧才能恢复，这就是花屏的来源，见 [Video Codec](/0770_Media_Video_Codec)
 
 ## 协议对比
 
@@ -83,7 +83,7 @@ HLS | HTTP (TCP) | 约 6~30 s (低延迟 HLS 约 2~5 s) `[经验]` | 点播、�
 MPEG-DASH | HTTP (TCP) | 约 6~30 s，同 HLS 量级 `[经验]` | 与 HLS 类似，非苹果生态
 WebRTC | UDP (SRTP) | 小于 500 ms | 视频通话、互动直播
 
-表中：`典型延迟` 是量级，实际取决于缓冲、分片时长和网络。HLS/DASH 把流切成数秒的小文件 (ts 或 fMP4，见 [Video Container](@@VCT@@))，通过普通 HTTP 服务和 CDN 分发，延迟高但扩展性好；RTSP 和 WebRTC 面向实时，延迟低但不适合大规模分发。
+表中：`典型延迟` 是量级，实际取决于缓冲、分片时长和网络。HLS/DASH 把流切成数秒的小文件 (ts 或 fMP4，见 [Video Container](/0776_Media_Video_Container))，通过普通 HTTP 服务和 CDN 分发，延迟高但扩展性好；RTSP 和 WebRTC 面向实时，延迟低但不适合大规模分发。
 
 ## 延迟的构成
 
@@ -102,7 +102,7 @@ $$
 - $T_{dec}$：解码延迟
 - $T_{render}$：渲染和显示延迟
 
-降延迟的常见手段：关闭 B 帧、缩短 GOP、减小接收端缓冲、使用 UDP、使用硬件编解码 ([Video HWCodec](@@VH@@))。
+降延迟的常见手段：关闭 B 帧、缩短 GOP、减小接收端缓冲、使用 UDP、使用硬件编解码 ([Video HWCodec](/0772_Media_Video_HWCodec))。
 
 ## 常用命令
 
