@@ -2,7 +2,7 @@
 Title | ML Tasks Image OCR
 -- | --
 Created @ | `2020-05-07T06:49:15Z`
-Updated @| `2026-10-19T02:38:18Z`
+Updated @| `2026-11-25T16:19:03Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/200)
 
@@ -10,15 +10,16 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/200)
 # OCR
 - OCR - Optical Character Recognition - 光学字符识别 
 - HTR - Hand written Text Recognition - 手写文本识别
-- STR - Scene Text Recofnition - 场景文字识别
-- 传统（非深度学习）OCR 方法见 [传统OCR识别综述](https://blog.csdn.net/devcloud/article/details/103678688)（基于连通域分析、模板匹配、HOG+SVM 等手工特征的方法，是深度学习方法之前的主流路线）
+- STR - Scene Text Recognition - 场景文字识别
+- 传统（非深度学习）OCR 方法见 [Traditional OCR](0199_CV_TOCR) 和 [传统OCR识别综述](https://blog.csdn.net/devcloud/article/details/103678688)（基于连通域分析、模板匹配、HOG+SVM 等手工特征的方法，是深度学习方法之前的主流路线）
 - [OCR History](https://junxnone.github.io/wht/tech/ocr/)  [[edit](https://github.com/junxnone/wht/issues/8)]
 - **Tasks**
   - Text Detection - Text Localization - Text Segmentation：定位文字在图像里的位置（框/多边形/像素掩码）
   - Text Recognition：把已经定位/裁剪好的文字区域转成文字序列
   - Text Spotting - End to End：检测 + 识别一起做，而不是训练两个独立模型简单串联——好处是两个子任务共享底层特征、可以联合优化（检测结果不准会直接影响识别效果，反之识别阶段的梯度也能反过来帮助检测分支学到对识别更友好的框），典型代表见下文 FOTS
 - [OCR Lexicon](0198_ML_Tasks_Image_OCR_Lexicon)
-- [OCR Metrics](0190_ML_Tasks_Image_OCR_Metrics)
+- [OCR Metrics](0190_ML_Tasks_Image_OCR_Metrics)：检测的 IoU/P/R/F、识别的 CER/WER/编辑距离
+- [OCR Datasets](0240_Datasets_Image2D_OCR)：更完整的 OCR 数据集清单
 - **Tools**
   - [TextRecognitionDataGenerator](0187_ML_Tasks_Image_OCR_Tools_TextRecognitionDataGenerator)
   - [Calamari](0201_ML_Tasks_Image_OCR_Calamari)（含 [Voting](0202_ML_Tasks_Image_OCR_Calamari_Voting) 多模型投票策略）
@@ -30,9 +31,42 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/200)
   - Object Detection
   - Object Segmentation
 - Recognition
-  - **CTC-Based (CNN/RNN/Attention)**：CTC（Connectionist Temporal Classification）解决的是"图像宽度方向的特征序列"和"不定长的文字序列"之间没有逐字对齐标注时怎么训练的问题——网络在每个时间步都输出一个字符概率分布（含一个特殊的"空白"类别），训练时用动态规划（前向-后向算法）把所有能通过"合并连续重复字符、再去掉空白符"规约出目标文字串的路径概率加总作为似然，不需要知道每个字符具体对应图像里哪个位置；推理时贪心/束搜索解码。详见 [Install warp-ctc](0189_ML_Tasks_Image_OCR_CTC)
+  - **CTC-Based (CNN/RNN/Attention)**：CTC（Connectionist Temporal Classification）解决的是"图像宽度方向的特征序列"和"不定长的文字序列"之间没有逐字对齐标注时怎么训练的问题——网络在每个时间步都输出一个字符概率分布（含一个特殊的"空白"类别），训练时用动态规划（前向-后向算法）把所有能通过"合并连续重复字符、再去掉空白符"规约出目标文字串的路径概率加总作为似然，不需要知道每个字符具体对应图像里哪个位置；推理时贪心/束搜索解码。代表：[CRNN](0196_ML_Tasks_Image_OCR_CRNN)，原理详见 [CTC](0189_ML_Tasks_Image_OCR_CTC)
   - **Seq2Seq (CNN/Attention)**：用编码器把图像编码成一组特征向量，解码器像机器翻译一样逐字符自回归生成，每一步通过注意力机制动态聚焦图像的不同区域（通常对应下一个要识别的字符位置）——不需要 CTC 那种"空白+去重"的规约规则，能天然处理字符间的上下文依赖（比如利用语言模型先验纠正形近字），但自回归解码比 CTC 的并行解码慢
-- End2End
+- End2End：检测与识别共享特征、联合训练（如 [FOTS](0195_ML_Tasks_Image_OCR_FOTS)），或直接用视觉-语言模型从整页图像生成文本（见下文 OCR-free 一节）
+
+三种范式的数据流对比如下：
+
+```mermaid
+flowchart LR
+    subgraph P1[两阶段流水线]
+        A1[图像] --> B1[文字检测<br/>EAST / CTPN] --> C1[裁剪文字区域] --> D1[文字识别<br/>CRNN + CTC] --> E1[文本]
+    end
+    subgraph P2[联合训练 End2End]
+        A2[图像] --> B2[共享卷积特征] --> C2[检测分支] --> D2[RoI 特征变换] --> E2[识别分支] --> F2[文本 + 位置]
+        B2 --> E2
+    end
+    subgraph P3[OCR-free]
+        A3[文档图像] --> B3[视觉编码器] --> C3[语言解码器] --> D3[Markdown / HTML / JSON]
+    end
+```
+
+图中：
+
+- 三个子图从上到下依次是：两阶段流水线、联合训练的 End2End、OCR-free 大模型，箭头方向就是数据流向。
+- 两阶段流水线中检测和识别是两个独立模型，中间产物是"裁剪出来的文字区域"；检测框的误差会直接传递到识别阶段，两个模型无法互相反馈。
+- 联合训练方案中检测分支和识别分支共享同一份卷积特征（`B2` 同时连向检测分支与识别分支），并通过 RoI 特征变换把检测结果送入识别分支，因此识别的梯度可以回传影响共享特征。
+- OCR-free 方案没有"文字框"这个中间产物，视觉编码器直接把整页图像交给语言解码器，输出带结构的文本。
+
+各范式的取舍：
+
+Name | 代表 | 优点 | 缺点
+-- | -- | -- | --
+两阶段流水线 | CTPN/EAST + CRNN | 模块可单独替换、调试和部署轻量 | 误差逐级累积，复杂版面需要大量规则后处理
+联合训练 End2End | FOTS、CharNet | 共享特征、速度快，可联合优化 | 训练需要同时具备框和文本标注，结构较复杂
+OCR-free | Donut、GOT-OCR2.0、DeepSeek-OCR | 原生处理表格/公式/多栏版面，输出结构化 | 推理成本高、可能产生幻觉、对训练数据要求高
+
+表中各列：**代表**为典型方法，**优点/缺点**为相对其他两类范式的对比结论；表后结论是：简单/高吞吐的场景用两阶段流水线性价比最高，复杂版面和结构化输出优先考虑 OCR-free 路线。
 
 检测阶段还可以按粒度分成两种思路：
 
@@ -129,4 +163,5 @@ BDLHW | Batch/Dimension/Length/Height/Width
 - [Donut: OCR-free Document Understanding Transformer](https://arxiv.org/abs/2111.15664)
 - [PaddleOCR 3.0 Technical Report](https://arxiv.org/pdf/2507.05595)
 - [DeepSeek-OCR](https://huggingface.co/collections/deepseek-ai/deepseek-ocr)
+
 
