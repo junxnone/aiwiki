@@ -3,7 +3,7 @@
 | Title     | ML Tasks Image Anomaly                                |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2019-04-08T07:06:13Z`                                |
-| Updated @ | `2026-10-19T02:08:08Z`                                |
+| Updated @ | `2026-11-25T16:56:27Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/277) |
 
@@ -137,3 +137,87 @@ ImageNet）上预训练好的教师网络和一个学生网络，只用正常样
     Detection](https://arxiv.org/abs/2106.08265)
   - [MuSc: Zero-Shot Industrial Anomaly Classification and Segmentation
     with Mutual Scoring](https://github.com/xrli-U/MuSc)
+
+## 异常分数的计算
+
+各类方法最终都要给出一个异常分数 (图像级) 和一张异常图 (像素级)，下表和公式给出主要的计算方式：
+
+| 类别              | 异常分数 $s(x)$                                            | 含义         |
+| --------------- | ------------------------------------------------------ | ---------- |
+| 重构式             | $\\lVert x-\\hat x\\rVert^2$                           | 输入与重构输出之差  |
+| 记忆库 (PatchCore) | $\\min\_{m\\in\\mathcal M}\\lVert\\phi(x)-m\\rVert\_2$ | 到记忆库最近邻的距离 |
+| 高斯建模 (PaDiM)    | $\\sqrt{(\\phi-\\mu)^\\top\\Sigma^{-1}(\\phi-\\mu)}$   | 马氏距离       |
+| 归一化流            | $-\\log p\_\\theta(\\phi(x))$                          | 负对数似然      |
+| 教师-学生 (STFPM)   | $\\lVert\\hat\\phi\_T(x)-\\hat\\phi\_S(x)\\rVert^2$    | 教师与学生特征之差  |
+
+表中：$\\phi(x)$ 是预训练网络提取的 Patch 特征；$\\mathcal M$ 是记忆库；$\\mu,\\Sigma$
+是该位置正常特征的均值与协方差；$\\hat\\phi$ 为归一化后的特征；$\\hat x$
+为重构图。分数越大越异常。
+
+### 记忆库方法
+
+$$ s(x\_{i,j})=\\min\_{m\\in\\mathcal
+M}\\bigl|\\phi\_{i,j}(x)-m\\bigr|*2,\\qquad s(x)=\\max*{i,j}s(x\_{i,j})
+$$
+
+其中：
+
+  - $\\phi\_{i,j}(x)$：图像 $x$ 在特征图位置 $(i,j)$ 的 Patch 特征向量；$\\mathcal
+    M$：由正常样本的 Patch 特征构成的记忆库 (PatchCore 用贪婪核心集采样压缩)
+  - $s(x\_{i,j})$：位置 $(i,j)$ 的异常分数，即到记忆库最近邻的欧氏距离；把所有位置的分数排成图，就是像素级的异常图
+    (再上采样、高斯平滑)
+  - $s(x)$：图像级的异常分数，取异常图的最大值 (一个很异常的局部就足以判定整张图异常)
+
+### 高斯建模 (PaDiM)
+
+$$
+M(x\_{i,j})=\\sqrt{\\bigl(\\phi\_{i,j}-\\mu\_{i,j}\\bigr)^\\top\\Sigma\_{i,j}^{-1}\\bigl(\\phi\_{i,j}-\\mu\_{i,j}\\bigr)}
+$$
+
+其中：$\\mu\_{i,j},\\Sigma\_{i,j}$ 是训练集中所有正常图像在位置 $(i,j)$ 的特征均值与协方差
+(加正则项保证可逆)；$M$
+为马氏距离，把特征各维的方差和相关性都考虑进来，比欧氏距离更合理；缺点是每个位置都要存一份协方差，内存随位置数和特征维数增大。
+
+### 归一化流
+
+$$ \\log p\_\\theta(\\phi)=\\log
+p\_Z\\bigl(f\_\\theta(\\phi)\\bigr)+\\log\\left|\\det\\frac{\\partial
+f\_\\theta(\\phi)}{\\partial\\phi}\\right| $$
+
+其中：$f\_\\theta$ 是可逆变换，把特征 $\\phi$ 变到一个简单分布 (标准高斯) $p\_Z$ 下的
+$z$；第二项是雅可比行列式的对数，修正体积变化；训练时最大化正常特征的对数似然，测试时 $-\\log
+p\_\\theta$ 越大越异常。
+
+## 评价指标
+
+| 指标          | 含义         | 说明                                                       |
+| ----------- | ---------- | -------------------------------------------------------- |
+| Image AUROC | 图像级分类      | 异常图最大值作为图像分数，ROC 曲线下面积                                   |
+| Pixel AUROC | 像素级定位      | 对所有像素的异常分数计算，小缺陷被大量正常像素稀释                                |
+| PRO         | 每个缺陷区域的重叠率 | 对大小缺陷一视同仁                                                |
+| F1 / 阈值     | 实际部署       | 需要选择阈值，见 [算法落地实践](/0521_ML_Tasks_Image_Anomaly_Pipeline) |
+
+表中：AUROC 与阈值无关，适合比较算法；落地时必须确定具体阈值，才能把误检和漏检率控制在业务要求之内。公式见
+[MVTec](/0323_ML_Tasks_Image_Anomaly_MVTec)。
+
+## 方法对比
+
+| 类别    | 代表                  | 是否需要异常样本       | 速度 | 内存        | 特点            |
+| ----- | ------------------- | -------------- | -- | --------- | ------------- |
+| 重构式   | AE、DRAEM            | 否 (DRAEM 需要合成) | 快  | 小         | 易过度泛化，异常也能被重构 |
+| 记忆库   | PatchCore           | 否              | 中  | 大 (需存特征库) | 精度高，强基线       |
+| 归一化流  | CFLOW、FastFlow      | 否              | 快  | 小         | 无需存特征，速度快     |
+| 教师-学生 | STFPM、RD            | 否              | 快  | 小         | 结构简单，易部署      |
+| 零/少样本 | WinCLIP、AnomalyCLIP | 否              | 中  | 中         | 不需要目标产品数据     |
+
+表中：这是各类方法的定性比较 `[经验]`；在具体数据上精度和速度会有差异，选择时要同时看精度、延迟、内存和是否需要多个产品共用一个模型。
+
+## 选择建议
+
+  - 精度优先，单产品，内存充足：PatchCore
+  - 边缘设备、低延迟：FastFlow、STFPM、Reverse Distillation，可再做
+    [量化](/0312_MO_Quantization)
+  - 多个产品共用一个模型：UniAD、Dinomaly
+  - 完全没有目标数据：零样本方法 (AnomalyCLIP、MuSc)
+  - 有少量异常样本：可结合 [异常缺陷生成](/0517_ML_Tasks_Image_Anomaly_Synthesis) 或
+    DRAEM、SuperSimpleNet 等半监督方法
