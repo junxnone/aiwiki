@@ -1675,6 +1675,15 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki Media Audio",
+      "group": 2,
+      "title": "Audio 音频",
+      "url": "https://junxnone.github.io/aiwiki/#/0767_Media_Audio",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Op Convolution",
       "group": 3,
       "title": "ML Op Convolution",
@@ -3713,6 +3722,42 @@
       "group": 3,
       "title": "Isolation Forest 孤立森林",
       "url": "https://junxnone.github.io/aiwiki/#/0733_ML_OML_IsolationForest",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki RL Robot Transform",
+      "group": 3,
+      "title": "Transform",
+      "url": "https://junxnone.github.io/aiwiki/#/0766_RL_Robot_Transform",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki RL Robot Kinematics",
+      "group": 3,
+      "title": "Kinematics",
+      "url": "https://junxnone.github.io/aiwiki/#/0768_RL_Robot_Kinematics",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki Media Audio Codec",
+      "group": 3,
+      "title": "Audio Codec",
+      "url": "https://junxnone.github.io/aiwiki/#/0769_Media_Audio_Codec",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki Media Video Codec",
+      "group": 3,
+      "title": "Video Codec",
+      "url": "https://junxnone.github.io/aiwiki/#/0770_Media_Video_Codec",
       "visible": true,
       "expand": true,
       "childLinks": []
@@ -7814,6 +7859,13 @@
       "expand": true
     },
     {
+      "source": "aiwiki Media",
+      "target": "aiwiki Media Audio",
+      "value": 2,
+      "visible": true,
+      "expand": true
+    },
+    {
       "source": "aiwiki x",
       "target": "aiwiki x DefectGen",
       "value": 2,
@@ -8061,6 +8113,13 @@
     {
       "source": "aiwiki Datasets Image2D",
       "target": "aiwiki Datasets Image2D DTDSynthetic",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki Media Video",
+      "target": "aiwiki Media Video Codec",
       "value": 3,
       "visible": true,
       "expand": true
@@ -9291,6 +9350,20 @@
       "expand": true
     },
     {
+      "source": "aiwiki RL Robot",
+      "target": "aiwiki RL Robot Transform",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki RL Robot",
+      "target": "aiwiki RL Robot Kinematics",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
       "source": "aiwiki paper GroundingDINO",
       "target": "aiwiki paper GroundingDINO cn",
       "value": 3,
@@ -9454,6 +9527,13 @@
     {
       "source": "aiwiki Hot Harness",
       "target": "aiwiki Hot Harness Benchmark",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki Media Audio",
+      "target": "aiwiki Media Audio Codec",
       "value": 3,
       "visible": true,
       "expand": true

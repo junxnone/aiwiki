@@ -4,6 +4,11 @@
 
 #### **Created**
 
+- 2026-11-25&nbsp;&nbsp; [Video Codec](/0770_Media_Video_Codec)&nbsp;&nbsp; :bookmark:Media :bookmark:Video :bookmark:Codec
+- 2026-11-25&nbsp;&nbsp; [Audio Codec](/0769_Media_Audio_Codec)&nbsp;&nbsp; :bookmark:Media :bookmark:Audio :bookmark:Codec
+- 2026-11-25&nbsp;&nbsp; [Kinematics](/0768_RL_Robot_Kinematics)&nbsp;&nbsp; :bookmark:RL :bookmark:Robot :bookmark:Kinematics
+- 2026-11-25&nbsp;&nbsp; [Audio 音频](/0767_Media_Audio)&nbsp;&nbsp; :bookmark:Media :bookmark:Audio
+- 2026-11-25&nbsp;&nbsp; [Transform](/0766_RL_Robot_Transform)&nbsp;&nbsp; :bookmark:RL :bookmark:Robot :bookmark:Transform
 - 2026-11-24&nbsp;&nbsp; [FUVAS 少样本无监督视频异常分割](/0765_paper_FUVAS)&nbsp;&nbsp; :bookmark:paper :bookmark:FUVAS
 - 2026-11-24&nbsp;&nbsp; [AIVAD 基于属性表示的视频异常检测](/0764_paper_AIVAD)&nbsp;&nbsp; :bookmark:paper :bookmark:AIVAD
 - 2026-11-24&nbsp;&nbsp; [VLMAD 视觉语言模型异常检测](/0763_paper_VLMAD)&nbsp;&nbsp; :bookmark:paper :bookmark:VLMAD
@@ -737,6 +742,11 @@
 
 #### **Updated**
 
+- 2026-11-25&nbsp;&nbsp; [Video Codec](/0770_Media_Video_Codec)&nbsp;&nbsp; :bookmark:Media :bookmark:Video :bookmark:Codec
+- 2026-11-25&nbsp;&nbsp; [Audio Codec](/0769_Media_Audio_Codec)&nbsp;&nbsp; :bookmark:Media :bookmark:Audio :bookmark:Codec
+- 2026-11-25&nbsp;&nbsp; [Kinematics](/0768_RL_Robot_Kinematics)&nbsp;&nbsp; :bookmark:RL :bookmark:Robot :bookmark:Kinematics
+- 2026-11-25&nbsp;&nbsp; [Audio 音频](/0767_Media_Audio)&nbsp;&nbsp; :bookmark:Media :bookmark:Audio
+- 2026-11-25&nbsp;&nbsp; [Transform](/0766_RL_Robot_Transform)&nbsp;&nbsp; :bookmark:RL :bookmark:Robot :bookmark:Transform
 - 2026-11-24&nbsp;&nbsp; [FUVAS 少样本无监督视频异常分割](/0765_paper_FUVAS)&nbsp;&nbsp; :bookmark:paper :bookmark:FUVAS
 - 2026-11-24&nbsp;&nbsp; [AIVAD 基于属性表示的视频异常检测](/0764_paper_AIVAD)&nbsp;&nbsp; :bookmark:paper :bookmark:AIVAD
 - 2026-11-24&nbsp;&nbsp; [VLMAD 视觉语言模型异常检测](/0763_paper_VLMAD)&nbsp;&nbsp; :bookmark:paper :bookmark:VLMAD

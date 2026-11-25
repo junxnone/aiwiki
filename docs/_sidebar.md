@@ -22,6 +22,7 @@
     - [Perspective Transformation - 透视变换](/0345_Media_Image_PT)
     - [Resize](/0347_Media_Image_Resize)
   - [Video 视频](/0036_Media_Video)
+    - [Video Codec](/0770_Media_Video_Codec)
   - [多媒体处理工具](/0421_Media_Tools)
     - [GStreamer 流媒体应用框架](/0109_Media_Tools_GStreamer)
       - [Install](/0117_Media_Tools_GStreamer_Install)
@@ -30,6 +31,8 @@
       - [gst-discoverer](/0111_Media_Tools_GStreamer_gstdiscoverer)
       - [gst-inspect](/0112_Media_Tools_GStreamer_gstinspect)
       - [gst-launch](/0110_Media_Tools_GStreamer_gstlaunch)
+  - [Audio 音频](/0767_Media_Audio)
+    - [Audio Codec](/0769_Media_Audio_Codec)
 - [CV 计算机视觉](/0371_CV)
   - [Thresholding 二值化](/0099_CV_BIN)
     - [scikit-image 二值化](/0331_CV_BIN_ScikitImage)
@@ -551,6 +554,8 @@
   - [Advantage Actor Critic](/0460_RL_A2C)
   - [Actor Critic](/0459_RL_AC)
   - [Robot 基础知识](/0458_RL_Robot)
+    - [Kinematics](/0768_RL_Robot_Kinematics)
+    - [Transform](/0766_RL_Robot_Transform)
   - [RL Tasks](/0457_RL_Taks)
   - [RL Tools](/0454_RL_Tools)
 - [Papers](/0386_paper)
@@ -739,4 +744,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1617041124</sub></kbd>
+<kbd><sub>@0015571126</sub></kbd>
