@@ -425,7 +425,7 @@
 - 2022-12-24&nbsp;&nbsp; [Softmax](/0335_ML_Op_AF_Softmax)&nbsp;&nbsp; :bookmark:ML :bookmark:Op :bookmark:AF :bookmark:Softmax
 - 2022-12-16&nbsp;&nbsp; [KnowledgeGraph](/0329_KnowledgeGraph)&nbsp;&nbsp; :bookmark:KnowledgeGraph
 - 2022-12-13&nbsp;&nbsp; [Numpy](/0328_Tools_Numpy)&nbsp;&nbsp; :bookmark:Tools :bookmark:Numpy
-- 2022-12-12&nbsp;&nbsp; [图像](/0325_Media_Image)&nbsp;&nbsp; :bookmark:Media :bookmark:Image
+- 2022-12-12&nbsp;&nbsp; [Image 图像](/0325_Media_Image)&nbsp;&nbsp; :bookmark:Media :bookmark:Image
 - 2022-12-09&nbsp;&nbsp; [STFPM 师生特征金字塔匹配](/0324_paper_STFPM)&nbsp;&nbsp; :bookmark:paper :bookmark:STFPM
 - 2022-12-05&nbsp;&nbsp; [MVTec](/0323_ML_Tasks_Image_Anomaly_MVTec)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Anomaly :bookmark:MVTec
 - 2022-12-05&nbsp;&nbsp; [PaDiM 补丁分布建模](/0322_paper_PaDiM)&nbsp;&nbsp; :bookmark:paper :bookmark:PaDiM
@@ -804,6 +804,7 @@
 - 2026-11-25&nbsp;&nbsp; [Media](/0417_Media)&nbsp;&nbsp; :bookmark:Media
 - 2026-11-25&nbsp;&nbsp; [Resize](/0347_Media_Image_Resize)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Resize
 - 2026-11-25&nbsp;&nbsp; [Perspective Transformation - 透视变换](/0345_Media_Image_PT)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:PT
+- 2026-11-25&nbsp;&nbsp; [Image 图像](/0325_Media_Image)&nbsp;&nbsp; :bookmark:Media :bookmark:Image
 - 2026-11-25&nbsp;&nbsp; [OCR](/0200_ML_Tasks_Image_OCR)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR
 - 2026-11-25&nbsp;&nbsp; [CTPN](/0197_ML_Tasks_Image_OCR_CTPN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:CTPN
 - 2026-11-25&nbsp;&nbsp; [CRNN](/0196_ML_Tasks_Image_OCR_CRNN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:CRNN
@@ -816,8 +817,10 @@
 - 2026-11-25&nbsp;&nbsp; [YUV Color Model](/0121_Media_Image_Color_Model_YUV)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Color :bookmark:Model :bookmark:YUV
 - 2026-11-25&nbsp;&nbsp; [像素格式](/0119_Media_Image_Camera_PixelFormat)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera :bookmark:PixelFormat
 - 2026-11-25&nbsp;&nbsp; [GStreamer 流媒体应用框架](/0109_Media_Tools_GStreamer)&nbsp;&nbsp; :bookmark:Media :bookmark:Tools :bookmark:GStreamer
+- 2026-11-25&nbsp;&nbsp; [Camera](/0107_Media_Image_Camera)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera
 - 2026-11-25&nbsp;&nbsp; [GenICam](/0106_Media_Image_Camera_GenICam)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera :bookmark:GenICam
 - 2026-11-25&nbsp;&nbsp; [Video 视频](/0036_Media_Video)&nbsp;&nbsp; :bookmark:Media :bookmark:Video
+- 2026-11-25&nbsp;&nbsp; [2D 图像](/0035_Media_Image_2DImage)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:2DImage
 - 2026-11-24&nbsp;&nbsp; [FUVAS 少样本无监督视频异常分割](/0765_paper_FUVAS)&nbsp;&nbsp; :bookmark:paper :bookmark:FUVAS
 - 2026-11-24&nbsp;&nbsp; [AIVAD 基于属性表示的视频异常检测](/0764_paper_AIVAD)&nbsp;&nbsp; :bookmark:paper :bookmark:AIVAD
 - 2026-11-24&nbsp;&nbsp; [VLMAD 视觉语言模型异常检测](/0763_paper_VLMAD)&nbsp;&nbsp; :bookmark:paper :bookmark:VLMAD
@@ -1192,7 +1195,6 @@
 - 2026-07-10&nbsp;&nbsp; [相机坐标系](/0548_Media_Image_Camera_相机坐标系)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera :bookmark:相机坐标系
 - 2026-07-10&nbsp;&nbsp; [相机内参](/0547_Media_Image_Camera_相机内参)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera :bookmark:相机内参
 - 2026-07-10&nbsp;&nbsp; [dx、dy：单个像素物理宽/高 通俗解释](/0546_Media_Image_Camera_相机内参_dxdy)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera :bookmark:相机内参 :bookmark:dxdy
-- 2026-07-10&nbsp;&nbsp; [Camera](/0107_Media_Image_Camera)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera
 - 2026-06-08&nbsp;&nbsp; [SAM-6D](/0545_paper_sam6d)&nbsp;&nbsp; :bookmark:paper :bookmark:sam6d
 - 2026-06-02&nbsp;&nbsp; [BOP](/0544_Datasets_BOP)&nbsp;&nbsp; :bookmark:Datasets :bookmark:BOP
 - 2026-05-22&nbsp;&nbsp; [Fast-FoundationStereo: Real-Time Zero-Shot Stereo Matching 读书笔记](/0543_paper_FoundationStereo_FFDS)&nbsp;&nbsp; :bookmark:paper :bookmark:FoundationStereo :bookmark:FFDS
@@ -1397,7 +1399,6 @@
 - 2022-12-27&nbsp;&nbsp; [Image Filtering](/0363_OpenCV_IP_Filter)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter
 - 2022-12-27&nbsp;&nbsp; [OpenCV UseCase](/0362_OpenCV_UC)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:UC
 - 2022-12-16&nbsp;&nbsp; [KnowledgeGraph](/0329_KnowledgeGraph)&nbsp;&nbsp; :bookmark:KnowledgeGraph
-- 2022-12-12&nbsp;&nbsp; [图像](/0325_Media_Image)&nbsp;&nbsp; :bookmark:Media :bookmark:Image
 - 2022-11-29&nbsp;&nbsp; [GaussianBlur](/0320_OpenCV_IP_Filter_GaussianBlur)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter :bookmark:GaussianBlur
 - 2022-11-29&nbsp;&nbsp; [boxFilter](/0319_OpenCV_IP_Filter_boxFilter)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter :bookmark:boxFilter
 - 2022-11-28&nbsp;&nbsp; [Bilateral Filtering for Gray and Color Images](/0318_OpenCV_IP_Filter_bilateralFilter_BF)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter :bookmark:bilateralFilter :bookmark:BF
@@ -1418,7 +1419,6 @@
 - 2021-10-21&nbsp;&nbsp; [Color Space 转换](/0120_Media_Image_Color_Space_Transform)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Color :bookmark:Space :bookmark:Transform
 - 2021-10-21&nbsp;&nbsp; [Install](/0117_Media_Tools_GStreamer_Install)&nbsp;&nbsp; :bookmark:Media :bookmark:Tools :bookmark:GStreamer :bookmark:Install
 - 2021-10-11&nbsp;&nbsp; [Tools](/0063_CV_Tools)&nbsp;&nbsp; :bookmark:CV :bookmark:Tools
-- 2021-09-23&nbsp;&nbsp; [2D 图像](/0035_Media_Image_2DImage)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:2DImage
 - 2021-09-14&nbsp;&nbsp; [Reference](/0354_3D_Camera_激光测量)&nbsp;&nbsp; :bookmark:3D :bookmark:Camera :bookmark:激光测量
 - 2021-09-08&nbsp;&nbsp; [NLP](/0021_Datasets_NLP)&nbsp;&nbsp; :bookmark:Datasets :bookmark:NLP
 - 2021-09-08&nbsp;&nbsp; [Audio](/0020_Datasets_Audio)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Audio

@@ -1,5 +1,5 @@
 - [Media](/0417_Media)
-  - [图像](/0325_Media_Image)
+  - [Image 图像](/0325_Media_Image)
     - [2D 图像](/0035_Media_Image_2DImage)
     - [3D 图像](/0039_Media_Image_3DImage)
     - [Camera](/0107_Media_Image_Camera)
@@ -770,4 +770,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0030571126</sub></kbd>
+<kbd><sub>@0031521126</sub></kbd>
