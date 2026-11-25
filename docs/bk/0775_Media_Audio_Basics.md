@@ -3,7 +3,7 @@
 | Title     | Media Audio Basics                                    |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-25T16:20:26Z`                                |
-| Updated @ | `2026-11-25T16:20:26Z`                                |
+| Updated @ | `2026-11-25T16:21:10Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/775) |
 
@@ -12,8 +12,9 @@
 # Audio Basics
 
 音频基础：声音如何变成数字信号 (PCM)，以及采样率、位深、声道和码率之间的关系。这是后面理解音频编码 ([Audio
-Codec](@@AC@@)) 和多媒体工具
-([FFmpeg](@@FF@@)、[GStreamer](/0109_Media_Tools_GStreamer)) 的前提。
+Codec](/0769_Media_Audio_Codec)) 和多媒体工具
+([FFmpeg](/0774_Media_Tools_FFmpeg)、[GStreamer](/0109_Media_Tools_GStreamer))
+的前提。
 
 ## 数字化流程
 
@@ -122,7 +123,7 @@ $$ \\text{bitrate} = f\_s \\times b \\times N\_{ch} $$
 
 示例：CD 音质 $44100 \\times 16 \\times 2 = 1411200\\ \\text{bit/s} \\approx
 1411\\ \\text{kbps}$，10 分钟约 $1411200\\times600/8 \\approx 105.8\\
-\\text{MB}$；这也是为什么需要 [音频编码](@@AC@@) 来压缩。
+\\text{MB}$；这也是为什么需要 [音频编码](/0769_Media_Audio_Codec) 来压缩。
 
 ## 常见原始格式命名
 
