@@ -2,7 +2,7 @@
 Title | RL Robot
 -- | --
 Created @ | `2023-11-21T07:46:49Z`
-Updated @| `2026-11-25T16:23:22Z`
+Updated @| `2026-11-25T16:30:36Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/458)
 
@@ -158,8 +158,12 @@ $$
 - [RL Robot Rotation](https://github.com/junxnone/aiwiki/issues/777)：四种旋转表示、转换公式、万向锁、Slerp
 - [RL Robot Transform](https://github.com/junxnone/aiwiki/issues/766)：坐标系、$SE(3)$、李群与李代数
 - [RL Robot Kinematics](https://github.com/junxnone/aiwiki/issues/768)：正/逆运动学、DH、雅可比、奇异性
+- [RL Robot CSpace](https://github.com/junxnone/aiwiki/issues/794)：C-obstacle、PRM / RRT 采样规划、势场法
+- [RL Robot Dynamics](https://github.com/junxnone/aiwiki/issues/795)：动力学方程、拉格朗日与牛顿-欧拉法、RNEA / ABA
+- [RL Robot Control](https://github.com/junxnone/aiwiki/issues/796)：PID、计算力矩、任务空间控制、阻抗控制
 
 ## Reference
 
 - [入门机器人需要的基础知识](https://zhuanlan.zhihu.com/p/655770237)
+
 
