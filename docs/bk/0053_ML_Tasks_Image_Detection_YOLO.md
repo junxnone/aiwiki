@@ -3,7 +3,7 @@
 | Title     | ML Tasks Image Detection YOLO                        |
 | --------- | ---------------------------------------------------- |
 | Created @ | `2018-12-09T09:33:49Z`                               |
-| Updated @ | `2023-02-15T08:29:20Z`                               |
+| Updated @ | `2026-11-25T16:51:28Z`                               |
 | Labels    | \`\`                                                 |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/53) |
 
@@ -95,3 +95,52 @@ graph TD
   - CSPDarkNet53
   - CutMix & Mosaic
   - Mish
+
+## 版本对比
+
+| 版本                                               | 年份         | Backbone          | 输出尺度            | 关键改进                        |
+| ------------------------------------------------ | ---------- | ----------------- | --------------- | --------------------------- |
+| [YOLOv1](/0054_ML_Tasks_Image_Detection_YOLO_V1) | 2015       | 24 conv + 2 fc    | $7\\times7$ 单尺度 | 检测变成回归问题，实时                 |
+| [YOLOv2](/0055_ML_Tasks_Image_Detection_YOLO_V2) | 2016       | Darknet-19        | $13\\times13$   | BN、anchor + 聚类、直接位置预测、多尺度训练 |
+| [YOLOv3](/0056_ML_Tasks_Image_Detection_YOLO_V3) | 2018       | Darknet-53 (残差)   | 3 个尺度           | FPN 式多尺度、逻辑回归分类             |
+| [YOLOv4](https://arxiv.org/abs/2004.10934)       | 2020       | CSPDarknet53      | 3 个尺度           | Mosaic、CIoU、Mish、SPP/PAN    |
+| [YOLOv5](/0379_ML_Tasks_Image_Detection_YOLO_V5) | 2020       | CSPDarknet + SPPF | 3 个尺度           | 工程化，n/s/m/l/x 多规格           |
+| [YOLOv6/7/8/X](https://arxiv.org/abs/2209.02976) | 2021\~2022 | 各异                | 各异              | 重参数化、解耦头、anchor-free 等      |
+
+表中：`输出尺度` 指预测层使用的特征图个数，多尺度预测使小目标检测更好；每一代都在上一代基础上叠加 backbone、neck、head
+和训练技巧的改进。
+
+## 一个共同的预测框架
+
+$$ \\text{输出张量}\\in\\mathbb R^{S\\times S\\times\\bigl\[B,(5+C)\\bigr\]}
+$$
+
+其中：
+
+  - $S\\times S$：特征图 (网格) 大小，每个网格位置负责预测落在其中的物体
+  - $B$：每个位置预测的框数 (V1 为 $2$，V2 为 $5$，V3 为 $3$)
+  - $5$：每个框的 $(x,y,w,h,\\text{objectness})$，objectness 是该框含有物体的置信度
+  - $C$：类别数 (VOC 为 $20$，COCO 为 $80$)
+  - YOLOv1 的类别概率是每个网格一组 (所以是 $B\\cdot5+C$)，从 V2 起改为每个框一组 (即上式)
+
+## 速度与精度
+
+| 模型                       | 数据集      | mAP / AP            | 速度 `[待核实]` |
+| ------------------------ | -------- | ------------------- | ---------- |
+| YOLOv1                   | VOC07+12 | mAP 63.4            | 45 FPS     |
+| YOLOv2 ($416\\times416$) | VOC07+12 | mAP 76.8            | 67 FPS     |
+| YOLOv3 ($608\\times608$) | COCO     | AP 33.0 / AP50 57.9 | 约 20 FPS   |
+
+表中：数据来自各篇论文，运行平台 (Titan X 等) 与评估协议不同，不能互相严格比较；`mAP` 是 IoU 阈值 $0.5$
+下的平均精度，COCO 的 `AP` 是对 IoU $0.5\\sim0.95$ 取平均，数值天然更低。
+
+## 通用的改进点
+
+  - 损失：从 MSE 到 IoU 系列 (GIoU/DIoU/CIoU)，让损失直接对应评估指标；CIoU 公式见 [YOLO
+    V5](/0379_ML_Tasks_Image_Detection_YOLO_V5)
+  - 多尺度：FPN/PAN，在不同分辨率的特征图上分别检测大、小目标
+  - 训练技巧：Mosaic 等数据增强、EMA、余弦学习率、自动 anchor
+  - 部署：[Quantization](/0312_MO_Quantization) 可以把 YOLO 压缩到 INT8 在 CPU/GPU
+    上加速
+
+总览与检测基础概念见 [Detection](/0152_ML_Tasks_Image_Detection)。
