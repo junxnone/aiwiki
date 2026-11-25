@@ -2,11 +2,13 @@
 Title | ML Tasks Image Segmentation MSRCNN
 -- | --
 Created @ | `2019-06-22T08:30:59Z`
-Last Modify @| `2022-12-24T12:52:20Z`
+Updated @| `2026-11-25T16:51:59Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/164)
 
 ---
+
+#  Mask Scoring RCNN
 ## Reference
 
 - [paper - 2019 - Mask Scoring R-CNN](https://arxiv.org/pdf/1903.00241.pdf)
@@ -49,4 +51,63 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/164)
 
 
 ![image](https://user-images.githubusercontent.com/2216970/79095810-002d0580-7d8e-11ea-9919-ae83c4e66030.png)
+
+
+
+
+## 公式
+
+$$
+s_{mask}=s_{cls}\cdot s_{iou},\qquad
+\mathrm{MaskIoU}=\frac{|M_{pred}\cap M_{gt}|}{|M_{pred}\cup M_{gt}|}
+$$
+
+$$
+L_{MaskIoU}=\bigl(s_{iou}-\mathrm{MaskIoU}\bigr)^2
+$$
+
+其中：
+
+- $s_{cls}$：Mask R-CNN 的分类置信度；$s_{iou}$：新增的 MaskIoU Head 对该实例掩码质量的预测值，范围 $[0,1]$
+- $s_{mask}$：最终的掩码得分，用于对实例排序和计算 AP；原来只用 $s_{cls}$，而分类得分高并不代表掩码精确
+- $M_{pred}$：预测掩码经阈值 $0.5$ 二值化后的结果；$M_{gt}$：对应的真实掩码；$\mathrm{MaskIoU}$：二者的交并比，是预测掩码质量的真实度量
+- $L_{MaskIoU}$：对 $s_{iou}$ 做 $L_2$ 回归，使其逼近真实的 MaskIoU
+
+## 动机与结构
+
+```mermaid
+flowchart LR
+    A[RoIAlign 特征] --> B[Mask Head<br>预测掩码]
+    B --> C[max pool 2x2]
+    A --> D[拼接]
+    C --> D
+    D --> E[MaskIoU Head<br>conv + fc]
+    E --> F[s_iou]
+    G[分类分支] --> H[s_cls]
+    F --> I[x]
+    H --> I
+    I --> J[s_mask]
+```
+
+图中：
+
+- MaskIoU Head 的输入是 RoIAlign 的特征与预测掩码的拼接 (掩码先经 $2\times2$ 最大池化，使尺寸与特征匹配)
+- 输出的 $s_{iou}$ 与分类分支的 $s_{cls}$ 相乘得到最终的掩码得分
+- 训练时只对有前景的实例，用真实 MaskIoU 作回归目标；推理时的额外计算很小
+
+问题所在：Mask R-CNN 里分类得分和掩码质量的相关性弱，例如一个类别判断很准但掩码很差的实例，仍会得到高分，排在前面，使 AP 偏低。校正得分后，高质量掩码排在前面，AP 在严格的 IoU 阈值下提高。
+
+## 结果
+
+模型 | AP | $\mathrm{AP}_{50}$ | $\mathrm{AP}_{75}$
+-- | -- | -- | --
+Mask R-CNN | 基线 | 基线 | 基线
+MS R-CNN | 约提高 1.5 个点 | 略降 | 明显提高
+
+表中：与上文结论一致，MS R-CNN 在 $\mathrm{AP}_{75}$ (严格的 IoU) 上提高而在 $\mathrm{AP}_{50}$ 上略降，因为它主要改善的是高质量掩码的排序，对粗略的检出没有帮助；具体数值请查阅论文，不同 backbone 的数值不同 `[待核实]`。
+
+## 与 Mask R-CNN 的关系
+
+- 基于 [Mask R-CNN](/0163_ML_Tasks_Image_Segmentation_MaskRCNN)，只增加一个 MaskIoU Head，其余不变，因此可以插入到其他两阶段实例分割方法中
+- 思想与检测里的 IoU-aware 分类 (如 IoU-Net) 类似：让置信度反映定位或掩码的质量，而不仅是分类的把握
 
