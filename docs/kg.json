@@ -930,7 +930,7 @@
     {
       "id": "aiwiki RL Robot",
       "group": 2,
-      "title": "Robot 基础知识",
+      "title": "Robot",
       "url": "https://junxnone.github.io/aiwiki/#/0458_RL_Robot",
       "visible": true,
       "expand": true,
@@ -6544,6 +6544,42 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki ML Tasks Image OCR DBNet",
+      "group": 5,
+      "title": "DBNet",
+      "url": "https://junxnone.github.io/aiwiki/#/0778_ML_Tasks_Image_OCR_DBNet",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Tasks Image OCR SVTR",
+      "group": 5,
+      "title": "SVTR",
+      "url": "https://junxnone.github.io/aiwiki/#/0779_ML_Tasks_Image_OCR_SVTR",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Tasks Image OCR TrOCR",
+      "group": 5,
+      "title": "TrOCR",
+      "url": "https://junxnone.github.io/aiwiki/#/0780_ML_Tasks_Image_OCR_TrOCR",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Tasks Image OCR Donut",
+      "group": 5,
+      "title": "Donut",
+      "url": "https://junxnone.github.io/aiwiki/#/0781_ML_Tasks_Image_OCR_Donut",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Tasks Image Classification MobileNet V1",
       "group": 6,
       "title": "MobileNet V1",
@@ -11165,6 +11201,34 @@
     {
       "source": "aiwiki ML Tasks Image OCR",
       "target": "aiwiki ML Tasks Image OCR Augmentation",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks Image OCR",
+      "target": "aiwiki ML Tasks Image OCR DBNet",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks Image OCR",
+      "target": "aiwiki ML Tasks Image OCR SVTR",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks Image OCR",
+      "target": "aiwiki ML Tasks Image OCR TrOCR",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks Image OCR",
+      "target": "aiwiki ML Tasks Image OCR Donut",
       "value": 5,
       "visible": true,
       "expand": true

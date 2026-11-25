@@ -4,6 +4,10 @@
 
 #### **Created**
 
+- 2026-11-25&nbsp;&nbsp; [Donut](/0781_ML_Tasks_Image_OCR_Donut)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Donut
+- 2026-11-25&nbsp;&nbsp; [TrOCR](/0780_ML_Tasks_Image_OCR_TrOCR)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:TrOCR
+- 2026-11-25&nbsp;&nbsp; [SVTR](/0779_ML_Tasks_Image_OCR_SVTR)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:SVTR
+- 2026-11-25&nbsp;&nbsp; [DBNet](/0778_ML_Tasks_Image_OCR_DBNet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:DBNet
 - 2026-11-25&nbsp;&nbsp; [Rotation](/0777_RL_Robot_Rotation)&nbsp;&nbsp; :bookmark:RL :bookmark:Robot :bookmark:Rotation
 - 2026-11-25&nbsp;&nbsp; [Video Container](/0776_Media_Video_Container)&nbsp;&nbsp; :bookmark:Media :bookmark:Video :bookmark:Container
 - 2026-11-25&nbsp;&nbsp; [Audio Basics](/0775_Media_Audio_Basics)&nbsp;&nbsp; :bookmark:Media :bookmark:Audio :bookmark:Basics
@@ -322,7 +326,7 @@
 - 2024-02-20&nbsp;&nbsp; [RAG](/0461_LM_RAG)&nbsp;&nbsp; :bookmark:LM :bookmark:RAG
 - 2023-12-04&nbsp;&nbsp; [Advantage Actor Critic](/0460_RL_A2C)&nbsp;&nbsp; :bookmark:RL :bookmark:A2C
 - 2023-12-04&nbsp;&nbsp; [Actor Critic](/0459_RL_AC)&nbsp;&nbsp; :bookmark:RL :bookmark:AC
-- 2023-11-21&nbsp;&nbsp; [Robot 基础知识](/0458_RL_Robot)&nbsp;&nbsp; :bookmark:RL :bookmark:Robot
+- 2023-11-21&nbsp;&nbsp; [Robot](/0458_RL_Robot)&nbsp;&nbsp; :bookmark:RL :bookmark:Robot
 - 2023-11-14&nbsp;&nbsp; [RL Tasks](/0457_RL_Taks)&nbsp;&nbsp; :bookmark:RL :bookmark:Taks
 - 2023-11-08&nbsp;&nbsp; [AIGC Tools](/0456_Hot_AIGC_Tools)&nbsp;&nbsp; :bookmark:Hot :bookmark:AIGC :bookmark:Tools
 - 2023-11-01&nbsp;&nbsp; [Latent Space 潜在空间](/0455_LM_VLM_LatentSpace)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:LatentSpace
@@ -749,6 +753,10 @@
 
 #### **Updated**
 
+- 2026-11-25&nbsp;&nbsp; [Donut](/0781_ML_Tasks_Image_OCR_Donut)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Donut
+- 2026-11-25&nbsp;&nbsp; [TrOCR](/0780_ML_Tasks_Image_OCR_TrOCR)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:TrOCR
+- 2026-11-25&nbsp;&nbsp; [SVTR](/0779_ML_Tasks_Image_OCR_SVTR)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:SVTR
+- 2026-11-25&nbsp;&nbsp; [DBNet](/0778_ML_Tasks_Image_OCR_DBNet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:DBNet
 - 2026-11-25&nbsp;&nbsp; [Rotation](/0777_RL_Robot_Rotation)&nbsp;&nbsp; :bookmark:RL :bookmark:Robot :bookmark:Rotation
 - 2026-11-25&nbsp;&nbsp; [Video Container](/0776_Media_Video_Container)&nbsp;&nbsp; :bookmark:Media :bookmark:Video :bookmark:Container
 - 2026-11-25&nbsp;&nbsp; [Audio Basics](/0775_Media_Audio_Basics)&nbsp;&nbsp; :bookmark:Media :bookmark:Audio :bookmark:Basics
@@ -761,6 +769,7 @@
 - 2026-11-25&nbsp;&nbsp; [Kinematics](/0768_RL_Robot_Kinematics)&nbsp;&nbsp; :bookmark:RL :bookmark:Robot :bookmark:Kinematics
 - 2026-11-25&nbsp;&nbsp; [Audio 音频](/0767_Media_Audio)&nbsp;&nbsp; :bookmark:Media :bookmark:Audio
 - 2026-11-25&nbsp;&nbsp; [Transform](/0766_RL_Robot_Transform)&nbsp;&nbsp; :bookmark:RL :bookmark:Robot :bookmark:Transform
+- 2026-11-25&nbsp;&nbsp; [Robot](/0458_RL_Robot)&nbsp;&nbsp; :bookmark:RL :bookmark:Robot
 - 2026-11-25&nbsp;&nbsp; [多媒体处理工具](/0421_Media_Tools)&nbsp;&nbsp; :bookmark:Media :bookmark:Tools
 - 2026-11-25&nbsp;&nbsp; [Media](/0417_Media)&nbsp;&nbsp; :bookmark:Media
 - 2026-11-25&nbsp;&nbsp; [Resize](/0347_Media_Image_Resize)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Resize
@@ -1259,7 +1268,6 @@
 - 2023-12-04&nbsp;&nbsp; [Advantage Actor Critic](/0460_RL_A2C)&nbsp;&nbsp; :bookmark:RL :bookmark:A2C
 - 2023-12-04&nbsp;&nbsp; [Actor Critic](/0459_RL_AC)&nbsp;&nbsp; :bookmark:RL :bookmark:AC
 - 2023-11-23&nbsp;&nbsp; [RL 强化学习](/0290_RL)&nbsp;&nbsp; :bookmark:RL
-- 2023-11-21&nbsp;&nbsp; [Robot 基础知识](/0458_RL_Robot)&nbsp;&nbsp; :bookmark:RL :bookmark:Robot
 - 2023-11-21&nbsp;&nbsp; [FCN](/0160_ML_Tasks_Image_Segmentation_FCN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Segmentation :bookmark:FCN
 - 2023-11-14&nbsp;&nbsp; [RL Tasks](/0457_RL_Taks)&nbsp;&nbsp; :bookmark:RL :bookmark:Taks
 - 2023-11-14&nbsp;&nbsp; [RL Tools](/0454_RL_Tools)&nbsp;&nbsp; :bookmark:RL :bookmark:Tools

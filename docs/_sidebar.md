@@ -278,16 +278,20 @@
         - [CTPN](/0197_ML_Tasks_Image_OCR_CTPN)
         - [Calamari](/0201_ML_Tasks_Image_OCR_Calamari)
           - [Voting](/0202_ML_Tasks_Image_OCR_Calamari_Voting)
+        - [DBNet](/0778_ML_Tasks_Image_OCR_DBNet)
+        - [Donut](/0781_ML_Tasks_Image_OCR_Donut)
         - [EAST](/0193_ML_Tasks_Image_OCR_EAST)
         - [FOTS](/0195_ML_Tasks_Image_OCR_FOTS)
         - [Lexicon](/0198_ML_Tasks_Image_OCR_Lexicon)
         - [Metrics](/0190_ML_Tasks_Image_OCR_Metrics)
         - [SCAN](/0191_ML_Tasks_Image_OCR_SCAN)
+        - [SVTR](/0779_ML_Tasks_Image_OCR_SVTR)
         - [Sliding Windows CNN CTC](/0188_ML_Tasks_Image_OCR_SW)
         - [TextField](/0194_ML_Tasks_Image_OCR_TextField)
         - [TextScanner](/0192_ML_Tasks_Image_OCR_TextScanner)
         - Tools
           - [TextRecognitionDataGenerator](/0187_ML_Tasks_Image_OCR_Tools_TextRecognitionDataGenerator)
+        - [TrOCR](/0780_ML_Tasks_Image_OCR_TrOCR)
       - [Image Anomaly Detection](/0277_ML_Tasks_Image_Anomaly)
         - [MVTec](/0323_ML_Tasks_Image_Anomaly_MVTec)
         - [算法落地实践](/0521_ML_Tasks_Image_Anomaly_Pipeline)
@@ -559,7 +563,7 @@
 - [RL 强化学习](/0290_RL)
   - [Advantage Actor Critic](/0460_RL_A2C)
   - [Actor Critic](/0459_RL_AC)
-  - [Robot 基础知识](/0458_RL_Robot)
+  - [Robot](/0458_RL_Robot)
     - [Kinematics](/0768_RL_Robot_Kinematics)
     - [Rotation](/0777_RL_Robot_Rotation)
     - [Transform](/0766_RL_Robot_Transform)
@@ -751,4 +755,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0022471126</sub></kbd>
+<kbd><sub>@0024431126</sub></kbd>
