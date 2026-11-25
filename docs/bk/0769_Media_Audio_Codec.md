@@ -3,7 +3,7 @@
 | Title     | Media Audio Codec                                     |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-25T16:15:02Z`                                |
-| Updated @ | `2026-11-25T16:15:02Z`                                |
+| Updated @ | `2026-11-25T16:21:12Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/769) |
 
@@ -11,7 +11,8 @@
 
 # Audio Codec
 
-音频编码：把 [PCM](@@AB@@) 压缩成更小的码流，以及常见格式 WAV、FLAC、MP3、AAC、Opus 的区别与选用。
+音频编码：把 [PCM](/0775_Media_Audio_Basics) 压缩成更小的码流，以及常见格式
+WAV、FLAC、MP3、AAC、Opus 的区别与选用。
 
 ## 无损与有损
 
@@ -98,13 +99,14 @@ ms 的帧。
 
 表中：`类型` 指无损/有损；`典型码率` 是常见取值范围而非标准规定；`帧长/延迟`
 是编码器一帧的时长，实际端到端延迟还要加上网络和缓冲；`常用容器`
-见 [Video Container](@@VCT@@)。选用建议：存档用 FLAC，兼容性优先用 AAC 或 MP3，实时通信用 Opus。
+见 [Video Container](/0776_Media_Video_Container)。选用建议：存档用 FLAC，兼容性优先用
+AAC 或 MP3，实时通信用 Opus。
 
 ## 工具
 
-  - 查看一个音频文件用了哪种编码：[gst-discoverer](/0111_Media_Tools_GStreamer_gstdiscoverer)、[MediaInfo](@@MI@@)
-  - 转码：[FFmpeg](@@FF@@)，例如 `ffmpeg -i in.wav -c:a libopus -b:a 64k
-    out.opus`
+  - 查看一个音频文件用了哪种编码：[gst-discoverer](/0111_Media_Tools_GStreamer_gstdiscoverer)、[MediaInfo](/0773_Media_Tools_MediaInfo)
+  - 转码：[FFmpeg](/0774_Media_Tools_FFmpeg)，例如 `ffmpeg -i in.wav -c:a
+    libopus -b:a 64k out.opus`
 
 ## Reference
 
