@@ -610,7 +610,7 @@
 - 2020-06-18&nbsp;&nbsp; [Augmentation](/0203_ML_Tasks_Image_OCR_Augmentation)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Augmentation
 - 2020-06-12&nbsp;&nbsp; [Early Stopping](/0172_Tools_Pytorch_ES)&nbsp;&nbsp; :bookmark:Tools :bookmark:Pytorch :bookmark:ES
 - 2020-06-11&nbsp;&nbsp; [Cross Validation 交叉验证](/0249_ML_Metrics_CrossValidation)&nbsp;&nbsp; :bookmark:ML :bookmark:Metrics :bookmark:CrossValidation
-- 2020-06-09&nbsp;&nbsp; [Voting](/0202_ML_Tasks_Image_OCR_Calamari_Voting)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Calamari :bookmark:Voting
+- 2020-06-09&nbsp;&nbsp; [Calamari Voting](/0202_ML_Tasks_Image_OCR_Calamari_Voting)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Calamari :bookmark:Voting
 - 2020-06-01&nbsp;&nbsp; [Calamari](/0201_ML_Tasks_Image_OCR_Calamari)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Calamari
 - 2020-06-01&nbsp;&nbsp; [Traditional OCR 传统字符识别](/0199_CV_TOCR)&nbsp;&nbsp; :bookmark:CV :bookmark:TOCR
 - 2020-05-28&nbsp;&nbsp; [Lexicon](/0198_ML_Tasks_Image_OCR_Lexicon)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Lexicon
@@ -809,10 +809,15 @@
 - 2026-11-25&nbsp;&nbsp; [Resize](/0347_Media_Image_Resize)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Resize
 - 2026-11-25&nbsp;&nbsp; [Perspective Transformation - 透视变换](/0345_Media_Image_PT)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:PT
 - 2026-11-25&nbsp;&nbsp; [Image 图像](/0325_Media_Image)&nbsp;&nbsp; :bookmark:Media :bookmark:Image
+- 2026-11-25&nbsp;&nbsp; [Augmentation](/0203_ML_Tasks_Image_OCR_Augmentation)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Augmentation
+- 2026-11-25&nbsp;&nbsp; [Calamari Voting](/0202_ML_Tasks_Image_OCR_Calamari_Voting)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Calamari :bookmark:Voting
 - 2026-11-25&nbsp;&nbsp; [OCR](/0200_ML_Tasks_Image_OCR)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR
+- 2026-11-25&nbsp;&nbsp; [Traditional OCR 传统字符识别](/0199_CV_TOCR)&nbsp;&nbsp; :bookmark:CV :bookmark:TOCR
+- 2026-11-25&nbsp;&nbsp; [Lexicon](/0198_ML_Tasks_Image_OCR_Lexicon)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Lexicon
 - 2026-11-25&nbsp;&nbsp; [CTPN](/0197_ML_Tasks_Image_OCR_CTPN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:CTPN
 - 2026-11-25&nbsp;&nbsp; [CRNN](/0196_ML_Tasks_Image_OCR_CRNN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:CRNN
 - 2026-11-25&nbsp;&nbsp; [FOTS](/0195_ML_Tasks_Image_OCR_FOTS)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:FOTS
+- 2026-11-25&nbsp;&nbsp; [TextField](/0194_ML_Tasks_Image_OCR_TextField)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:TextField
 - 2026-11-25&nbsp;&nbsp; [EAST](/0193_ML_Tasks_Image_OCR_EAST)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:EAST
 - 2026-11-25&nbsp;&nbsp; [SCAN](/0191_ML_Tasks_Image_OCR_SCAN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:SCAN
 - 2026-11-25&nbsp;&nbsp; [Metrics](/0190_ML_Tasks_Image_OCR_Metrics)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Metrics
@@ -1477,12 +1482,7 @@
 - 2020-07-10&nbsp;&nbsp; [Feature Engineering](/0206_ML_AutoML_FE)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:FE
 - 2020-07-06&nbsp;&nbsp; [Query Strategy 查询/抽样 策略](/0276_ML_AL_QS)&nbsp;&nbsp; :bookmark:ML :bookmark:AL :bookmark:QS
 - 2020-07-06&nbsp;&nbsp; [Uncertainty Sampling](/0275_ML_AL_QS_UncertaintySampling)&nbsp;&nbsp; :bookmark:ML :bookmark:AL :bookmark:QS :bookmark:UncertaintySampling
-- 2020-06-18&nbsp;&nbsp; [Augmentation](/0203_ML_Tasks_Image_OCR_Augmentation)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Augmentation
-- 2020-06-09&nbsp;&nbsp; [Voting](/0202_ML_Tasks_Image_OCR_Calamari_Voting)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Calamari :bookmark:Voting
 - 2020-06-01&nbsp;&nbsp; [Calamari](/0201_ML_Tasks_Image_OCR_Calamari)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Calamari
-- 2020-06-01&nbsp;&nbsp; [Traditional OCR 传统字符识别](/0199_CV_TOCR)&nbsp;&nbsp; :bookmark:CV :bookmark:TOCR
-- 2020-05-28&nbsp;&nbsp; [Lexicon](/0198_ML_Tasks_Image_OCR_Lexicon)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Lexicon
-- 2020-05-28&nbsp;&nbsp; [TextField](/0194_ML_Tasks_Image_OCR_TextField)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:TextField
 - 2020-05-15&nbsp;&nbsp; [TextScanner](/0192_ML_Tasks_Image_OCR_TextScanner)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:TextScanner
 - 2020-05-08&nbsp;&nbsp; [Sliding Windows CNN CTC](/0188_ML_Tasks_Image_OCR_SW)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:SW
 - 2020-05-08&nbsp;&nbsp; [TextRecognitionDataGenerator](/0187_ML_Tasks_Image_OCR_Tools_TextRecognitionDataGenerator)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Tools :bookmark:TextRecognitionDataGenerator

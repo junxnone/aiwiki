@@ -286,7 +286,7 @@
         - [CTC](/0189_ML_Tasks_Image_OCR_CTC)
         - [CTPN](/0197_ML_Tasks_Image_OCR_CTPN)
         - [Calamari](/0201_ML_Tasks_Image_OCR_Calamari)
-          - [Voting](/0202_ML_Tasks_Image_OCR_Calamari_Voting)
+          - [Calamari Voting](/0202_ML_Tasks_Image_OCR_Calamari_Voting)
         - [DBNet](/0778_ML_Tasks_Image_OCR_DBNet)
         - [DeepSeek-OCR](/0790_ML_Tasks_Image_OCR_DeepSeekOCR)
         - [Donut](/0781_ML_Tasks_Image_OCR_Donut)
@@ -772,4 +772,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0035001126</sub></kbd>
+<kbd><sub>@0039151126</sub></kbd>
