@@ -2,7 +2,7 @@
 Title | Media Image ISP
 -- | --
 Created @ | `2026-11-25T16:28:19Z`
-Updated @| `2026-11-25T16:28:19Z`
+Updated @| `2026-11-25T16:30:37Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/785)
 
@@ -13,7 +13,7 @@ ISP (Image Signal Processor，图像信号处理器)：把传感器输出的 RAW
 
 ## 为什么需要 ISP
 
-- 传感器输出的是单通道 [Bayer](@@BY@@) RAW：线性、带噪声、有暗电流偏置、有镜头暗角、颜色不准
+- 传感器输出的是单通道 [Bayer](/0784_Media_Image_Bayer) RAW：线性、带噪声、有暗电流偏置、有镜头暗角、颜色不准
 - ISP 依次校正这些缺陷，完成去马赛克、白平衡、色彩校正、gamma 等，输出 YUV 或 RGB 图像
 - ISP 可以是 SoC 里的硬件模块、相机内部的 FPGA，也可以用软件实现 (如 libcamera、自己对 RAW 处理)
 - ISP 的处理时间是端到端延迟的一部分，见 [低延迟](/0037_Media_Image_Camera_LowLatency)
@@ -43,7 +43,7 @@ flowchart LR
 图中：
 
 - 主路径从左到右：RAW 域 (去马赛克之前) 的处理在前，RGB 域在中间，YUV 域在最后
-- `3A` 指自动曝光 (AE)、自动白平衡 (AWB)、自动对焦 (AF)：ISP 统计画面亮度、颜色信息，控制器据此调整曝光时间、增益等，形成闭环；曝光相关见 [Exposure](@@EXP@@)
+- `3A` 指自动曝光 (AE)、自动白平衡 (AWB)、自动对焦 (AF)：ISP 统计画面亮度、颜色信息，控制器据此调整曝光时间、增益等，形成闭环；曝光相关见 [Exposure](/0789_Media_Image_Camera_Exposure)
 - 前几步 (BLC/DPC/LSC) 都是在修正传感器本身的缺陷，需要线性数据，所以放在 gamma 之前
 
 ## 各模块
@@ -85,7 +85,7 @@ $$
 
 ### 去马赛克
 
-- 把 Bayer RAW 变成每个像素三个分量，见 [Bayer](@@BY@@)
+- 把 Bayer RAW 变成每个像素三个分量，见 [Bayer](/0784_Media_Image_Bayer)
 
 ### 色彩校正 CCM
 
@@ -108,7 +108,7 @@ $$
 
 ### Gamma 与色彩空间转换
 
-- 线性 RGB 经 gamma 编码后才适合 8 bit 存储和显示，见 [Gamma](@@GM@@)
+- 线性 RGB 经 gamma 编码后才适合 8 bit 存储和显示，见 [Gamma](/0783_Media_Image_Color_Gamma)
 - 再转换到 YCbCr 方便压缩和传输，见 [YUV](/0121_Media_Image_Color_Model_YUV)
 
 ### 降噪与锐化
