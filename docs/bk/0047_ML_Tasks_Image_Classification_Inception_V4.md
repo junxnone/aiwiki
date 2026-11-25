@@ -3,7 +3,7 @@
 | Title     | ML Tasks Image Classification Inception V4           |
 | --------- | ---------------------------------------------------- |
 | Created @ | `2019-12-04T10:51:56Z`                               |
-| Updated @ | `2023-01-31T06:34:42Z`                               |
+| Updated @ | `2026-11-25T16:50:56Z`                               |
 | Labels    | \`\`                                                 |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/47) |
 
@@ -87,3 +87,38 @@
 ## Test Result
 
 ![image](media/38ad66aa5a0d66ca20d9c5c342b59008f562078d.png)
+
+## 残差缩放
+
+$$ y=x+\\alpha,\\mathcal{F}(x),\\qquad \\alpha\\in\[0.1,,0.3\] $$
+
+其中：
+
+  - $x$：残差块的输入；$\\mathcal F(x)$：Inception 结构的输出 (经过 $1\\times1$
+    卷积把通道数调到与 $x$ 相同)
+  - $\\alpha$：缩放系数，论文取 $0.1\\sim0.3$；当滤波器数量超过约 1000
+    时，不缩放的残差分支会使训练早期发散，缩放后稳定
+  - 残差连接的作用与 [ResNet](/0051_ML_Tasks_Image_Classification_ResNet)
+    相同：让梯度直接回传，加快收敛
+
+## 版本对比
+
+| 模型                                                                 | 结构特点                                              | 说明        |
+| ------------------------------------------------------------------ | ------------------------------------------------- | --------- |
+| [Inception V3](/0046_ML_Tasks_Image_Classification_Inception_V2V3) | 分解卷积 + BN + Label Smoothing                       | 起点        |
+| Inception V4                                                       | 统一的 Stem，更多、更均匀的 Inception-A/B/C 模块，Reduction-A/B | 没有残差，更深更宽 |
+| Inception-ResNet-V1                                                | Inception 模块 + 残差，计算量接近 V3                        | 训练比 V3 更快 |
+| Inception-ResNet-V2                                                | 更宽的 Inception-ResNet，计算量接近 V4                     | 精度最高      |
+
+表中：论文结论是残差连接显著加快训练收敛；在同等计算量下，Inception-ResNet 精度略高于纯 Inception，但纯
+Inception-V4 在训练足够久后与 Inception-ResNet-V2 相近。
+
+## 模块组成
+
+  - Stem：网络入口，用卷积和池化把 $299\\times299\\times3$ 的输入变成
+    $35\\times35\\times384$ 的特征图，V4 与 Inception-ResNet-V2 共用同一个 Stem
+  - Inception-A/B/C：分别工作在 $35\\times35$、$17\\times17$、$8\\times8$
+    的特征图上，每组重复若干次 (V4 为 $4/7/3$ 次)
+  - Reduction-A/B：下采样模块，把特征图从 $35\\to17\\to8$ (采用并行卷积与池化的方式，见
+    [V2/V3](/0046_ML_Tasks_Image_Classification_Inception_V2V3) 的下采样)
+  - 最后接全局平均池化、Dropout (保留概率 $0.8$) 和 softmax
