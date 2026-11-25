@@ -3,7 +3,7 @@
 | Title     | RL Robot Control                                      |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-25T16:30:15Z`                                |
-| Updated @ | `2026-11-25T16:30:15Z`                                |
+| Updated @ | `2026-11-25T16:30:40Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/796) |
 
@@ -47,7 +47,9 @@ $$ \\tau = K\_p,e + K\_d,\\dot{e} + K\_i\\int e,dt $$
 
 $$ \\tau=K\_p,e+K\_d,\\dot{e}+g(q) $$
 
-其中 $g(q)$ 为重力项（见 Dynamics）。可保证稳态误差为 0，且在全局渐近稳定。
+其中 $g(q)$ 为重力项（见 [RL Robot
+Dynamics](https://github.com/junxnone/aiwiki/issues/795)）。可保证稳态误差为
+0，且在全局渐近稳定。
 
 ## 计算力矩控制
 
@@ -61,7 +63,9 @@ $$
 
   - $\\ddot{q}\_d$：期望加速度（前馈）
   - $K\_p,K\_d$：正定对角增益矩阵
-  - $M,C,g$：动力学模型（见 Dynamics）；用 RNEA 实时计算
+  - $M,C,g$：动力学模型（见 [RL Robot
+    Dynamics](https://github.com/junxnone/aiwiki/issues/795)）；用 RNEA
+    实时计算
   - 代入动力学方程后得误差方程 $\\ddot{e}+K\_d\\dot{e}+K\_p e=0$：线性、解耦，选好增益即可任意配置极点
   - 局限：模型必须足够准确，参数误差会破坏线性化效果；可进一步用自适应或鲁棒控制补偿
 
