@@ -2,7 +2,7 @@
 Title | ML Tasks Image Segmentation FCN
 -- | --
 Created @ | `2019-11-27T07:41:13Z`
-Updated @| `2023-11-21T14:42:14Z`
+Updated @| `2026-11-25T16:51:51Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/160)
 
@@ -101,4 +101,85 @@ FCN-8s | ![image](https://user-images.githubusercontent.com/2216970/69900027-846
 - [全卷积网络 FCN 详解](https://zhuanlan.zhihu.com/p/30195134)
 - [网络结构 FCN-8S-PASCAL - Netscope](http://ethereon.github.io/netscope/#/preset/fcn-8s-pascal)
 - [计算机视觉中upsampling(上采样)的三种方式](https://blog.csdn.net/u014451076/article/details/79156967)
+
+
+
+
+## 全连接转卷积
+
+分类网络的全连接层可以看作覆盖整张特征图的卷积：
+
+$$
+\text{fc6}:\ 7\times7\times512\to4096\ \Longleftrightarrow\ \text{Conv}(K=7,\ C_{out}=4096)
+$$
+
+其中：
+
+- 以 [VGG](/0146_ML_Tasks_Image_Classification_VGGNet) 为例，pool5 输出 $7\times7\times512$，fc6 有 $25088\times4096$ 个权重，可以重排为一个 $7\times7$、输入 $512$ 通道、输出 $4096$ 通道的卷积核
+- fc7、fc8 同理变成 $1\times1$ 卷积
+- 转换后网络的权重不变，但输入尺寸不再受限：输入图像更大时，输出不再是 $1\times1\times1000$ 的类别向量，而是一张 $h\times w\times1000$ 的类别得分图 (热图)，每个位置对应原图的一个感受野
+
+## 上采样
+
+$$
+\text{输出尺寸}=(W_{in}-1)\cdot S-2P+K
+$$
+
+其中：
+
+- 这是转置卷积 (反卷积) 的输出尺寸公式；$W_{in}$：输入边长，$S$：步长，$P$：补零，$K$：卷积核边长
+- 例：把 $1/32$ 的特征图放大 $32$ 倍，使用 $K=64$，$S=32$，$P=16$ 的转置卷积：$(W_{in}-1)\cdot32-32+64=32W_{in}$，刚好恢复到原图尺寸
+- 转置卷积的权重用双线性插值核初始化，再随训练学习，所以 FCN 的上采样是可学习的
+
+## 跳跃连接 (skip)
+
+$$
+\hat y_{8s}=\mathrm{up}_{8}\Bigl(\mathrm{up}_{2}\bigl(\mathrm{up}_{2}(s_{32})+s_{16}\bigr)+s_{8}\Bigr)
+$$
+
+其中：
+
+- $s_{32},s_{16},s_8$：分别由 pool5、pool4、pool3 后接 $1\times1$ 卷积得到的类别得分图，分辨率为原图的 $1/32$、$1/16$、$1/8$
+- $\mathrm{up}_k$：上采样 $k$ 倍 (转置卷积)；逐点相加的融合方式 (Add)，后来的 [UNet](/0161_ML_Tasks_Image_Segmentation_UNet) 改为通道拼接 (Concat)
+- 深层特征语义强但分辨率低，浅层特征分辨率高但语义弱；相加把两者的优点结合起来，所以 FCN-8s 的边缘比 FCN-32s 更精细
+
+下图展示三个变体的融合方式：
+
+```mermaid
+flowchart LR
+    P3[pool3 1/8] --> S3[1x1 conv]
+    P4[pool4 1/16] --> S4[1x1 conv]
+    P5[conv7 1/32] --> S5[1x1 conv]
+    S5 -->|up x2| A1((+))
+    S4 --> A1
+    A1 -->|up x2| A2((+))
+    S3 --> A2
+    A2 -->|up x8| O8[FCN-8s 输出]
+    A1 -->|up x16| O16[FCN-16s 输出]
+    S5 -->|up x32| O32[FCN-32s 输出]
+```
+
+图中：
+
+- 三个输出分别对应三种变体：FCN-32s 只用最深层，一次放大 $32$ 倍；FCN-16s 融合 pool4，放大 $16$ 倍；FCN-8s 再融合 pool3，放大 $8$ 倍
+- 圆圈里的 `+` 是逐点相加，箭头上的 `up x2` 表示放大 $2$ 倍
+- 融合的层级越浅，输出越精细
+
+## 损失与结果
+
+- 损失：逐像素的 softmax 交叉熵并对所有像素求和 (见 [Segmentation](/0159_ML_Tasks_Image_Segmentation) 中的 $L_{CE}$)
+- 结果：PASCAL VOC 上 FCN-8s 的 mean IU 约 $62.2\%$ (VOC 2012 test)，比之前最好的 SDS 方法高约 $20\%$，且速度快很多 `[待核实]`
+
+变体 | 融合层 | 步长 | mean IU (VOC 2011 val) `[待核实]`
+-- | -- | -- | --
+FCN-32s | pool5 | 32 | 59.4
+FCN-16s | pool5 + pool4 | 16 | 62.4
+FCN-8s | pool5 + pool4 + pool3 | 8 | 62.7
+
+表中：融合的层越多，精度越高，但从 16s 到 8s 提升已经很小；这说明单靠 Add 融合浅层特征，对细节的恢复有限，也是后续网络增加解码器的原因。
+
+## 后续
+
+- 缺点中提到的「缺乏空间一致性」由 DeepLab 的 CRF 后处理缓解，见 [DeepLab](/0162_ML_Tasks_Image_Segmentation_Deeplab)
+- 编码器-解码器与 Concat 融合，见 [UNet](/0161_ML_Tasks_Image_Segmentation_UNet)
 
