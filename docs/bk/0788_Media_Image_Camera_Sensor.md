@@ -3,7 +3,7 @@
 | Title     | Media Image Camera Sensor                             |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-25T16:28:55Z`                                |
-| Updated @ | `2026-11-25T16:28:55Z`                                |
+| Updated @ | `2026-11-25T16:30:43Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/788) |
 
@@ -114,10 +114,10 @@ $$ \\text{FOV}=2\\arctan\!\\left(\\frac{d}{2f}\\right),\\qquad
 ## 彩色与黑白
 
   - 彩色传感器带有 Bayer 滤光片，每个像素只能测一种颜色，需要去马赛克，有效分辨率和灵敏度都低于黑白，见
-    [Bayer](@@BY@@)
+    [Bayer](/0784_Media_Image_Bayer)
   - 工业测量、定位、缺陷检测只需要灰度信息时，优先选黑白相机
   - 输出的像素格式见 [像素格式](/0119_Media_Image_Camera_PixelFormat)，处理流程见
-    [ISP](@@ISP@@)
+    [ISP](/0785_Media_Image_ISP)
 
 ## 主要指标
 
