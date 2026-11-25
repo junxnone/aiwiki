@@ -805,6 +805,7 @@
 - 2026-11-25&nbsp;&nbsp; [Transform](/0766_RL_Robot_Transform)&nbsp;&nbsp; :bookmark:RL :bookmark:Robot :bookmark:Transform
 - 2026-11-25&nbsp;&nbsp; [Robot](/0458_RL_Robot)&nbsp;&nbsp; :bookmark:RL :bookmark:Robot
 - 2026-11-25&nbsp;&nbsp; [多媒体处理工具](/0421_Media_Tools)&nbsp;&nbsp; :bookmark:Media :bookmark:Tools
+- 2026-11-25&nbsp;&nbsp; [Image 相关 Tasks](/0420_ML_Tasks_Image)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image
 - 2026-11-25&nbsp;&nbsp; [Media](/0417_Media)&nbsp;&nbsp; :bookmark:Media
 - 2026-11-25&nbsp;&nbsp; [YOLO V5](/0379_ML_Tasks_Image_Detection_YOLO_V5)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Detection :bookmark:YOLO :bookmark:V5
 - 2026-11-25&nbsp;&nbsp; [Resize](/0347_Media_Image_Resize)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Resize
@@ -1371,7 +1372,6 @@
 - 2023-06-17&nbsp;&nbsp; [AutoML Tools](/0427_ML_AutoML_Tools)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:Tools
 - 2023-06-17&nbsp;&nbsp; [OpenCV 读写](/0426_OpenCV_IO)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IO
 - 2023-06-17&nbsp;&nbsp; [3D 算法](/0422_3D_Algos)&nbsp;&nbsp; :bookmark:3D :bookmark:Algos
-- 2023-06-17&nbsp;&nbsp; [Image 相关 Tasks](/0420_ML_Tasks_Image)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image
 - 2023-06-17&nbsp;&nbsp; [AI Tools](/0415_Tools)&nbsp;&nbsp; :bookmark:Tools
 - 2023-06-17&nbsp;&nbsp; [GreedyProjectionTriangulation](/0399_3D_Algos_triangulation)&nbsp;&nbsp; :bookmark:3D :bookmark:Algos :bookmark:triangulation
 - 2023-06-17&nbsp;&nbsp; [absdiff 检测物体运动](/0353_OpenCV_Core_absdiff)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:Core :bookmark:absdiff
