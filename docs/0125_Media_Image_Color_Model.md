@@ -2,7 +2,7 @@
 Title | Media Image Color Model
 -- | --
 Created @ | `2021-10-25T03:08:34Z`
-Last Modify @| `2022-12-23T13:32:22Z`
+Updated @| `2026-11-25T16:21:34Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/125)
 
@@ -18,7 +18,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/125)
 - Color Model  - 色彩模型 - 抽象数学模型分解色彩分量, 描述颜色
   - RGB - 用于计算机图形学 - 基于人眼感光细胞
   - CMYK - 用于彩色打印
-  - [YUV](/YUV) - 用于视频
+  - [YUV](/0121_Media_Image_Color_Model_YUV) - 用于视频
   - LAB - 基于人眼视觉神经
   - HSV/HSB
   - HSL
@@ -26,8 +26,10 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/125)
 
 
 ## RGB & CMYK
-- 人眼对于 `RGB` 三种颜色分量的敏感程度不同 `R<G<B`
-- 均匀性较差, 使用 `欧氏距离` 度量相似性结果会合人眼视觉有较大偏差
+- 人眼对于 `RGB` 三种颜色分量的敏感程度不同: 对绿光最敏感, 红光次之, 蓝光最不敏感 `G>R>B`
+  - 这也是 RGB 转灰度/亮度时权重不同的原因, 例如 BT.601 的 `Y = 0.299R + 0.587G + 0.114B` (见 [YUV](/0121_Media_Image_Color_Model_YUV))
+- 感知均匀性较差, 使用 `欧氏距离` 度量颜色相似性, 结果会和人眼视觉有较大偏差
+  - 需要按感知距离比较颜色时, 常转到 `CIE Lab` 等更接近感知均匀的空间再计算 (见 [色彩空间转换](/0120_Media_Image_Color_Space_Transform))
 - 光三原色 - 红/绿/蓝 - Red/Green/Blue
 - 颜料三原色 - 青/洋红/黄 -Cyan/Magenta/Yellow
 
@@ -68,5 +70,6 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/125)
 HSV | HSL
 -- | --
 ![image](https://user-images.githubusercontent.com/2216970/138561823-d64682b6-58f6-4a7e-a345-c29693f42d47.png) | ![image](https://user-images.githubusercontent.com/2216970/138561831-2e5fa871-76e0-43a2-a2a9-c2eec1e1ac06.png)
+
 
 
