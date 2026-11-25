@@ -270,7 +270,7 @@
         - [Deeplab](/0162_ML_Tasks_Image_Segmentation_Deeplab)
         - [FCN](/0160_ML_Tasks_Image_Segmentation_FCN)
         - [Instance Segmentation 实例分割](/0167_ML_Tasks_Image_Segmentation_Instance)
-        - [MSRCNN](/0164_ML_Tasks_Image_Segmentation_MSRCNN)
+        - [Mask Scoring RCNN](/0164_ML_Tasks_Image_Segmentation_MSRCNN)
         - [MaskRCNN](/0163_ML_Tasks_Image_Segmentation_MaskRCNN)
         - [UNet](/0161_ML_Tasks_Image_Segmentation_UNet)
       - [Image Retrieval](/0278_ML_Tasks_Image_Retrieval)
@@ -772,4 +772,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0053071126</sub></kbd>
+<kbd><sub>@0053481126</sub></kbd>

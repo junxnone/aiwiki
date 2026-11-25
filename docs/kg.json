@@ -5745,7 +5745,7 @@
     {
       "id": "aiwiki ML Tasks Image Segmentation MSRCNN",
       "group": 5,
-      "title": "MSRCNN",
+      "title": "Mask Scoring RCNN",
       "url": "https://junxnone.github.io/aiwiki/#/0164_ML_Tasks_Image_Segmentation_MSRCNN",
       "visible": true,
       "expand": true,
