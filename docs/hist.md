@@ -4,6 +4,8 @@
 
 #### **Created**
 
+- 2026-11-25&nbsp;&nbsp; [Sim2Real](/0798_RL_Robot_Sim2Real)&nbsp;&nbsp; :bookmark:RL :bookmark:Robot :bookmark:Sim2Real
+- 2026-11-25&nbsp;&nbsp; [Simulation](/0797_RL_Robot_Simulation)&nbsp;&nbsp; :bookmark:RL :bookmark:Robot :bookmark:Simulation
 - 2026-11-25&nbsp;&nbsp; [Control](/0796_RL_Robot_Control)&nbsp;&nbsp; :bookmark:RL :bookmark:Robot :bookmark:Control
 - 2026-11-25&nbsp;&nbsp; [Dynamics](/0795_RL_Robot_Dynamics)&nbsp;&nbsp; :bookmark:RL :bookmark:Robot :bookmark:Dynamics
 - 2026-11-25&nbsp;&nbsp; [CSpace](/0794_RL_Robot_CSpace)&nbsp;&nbsp; :bookmark:RL :bookmark:Robot :bookmark:CSpace
@@ -768,6 +770,8 @@
 
 #### **Updated**
 
+- 2026-11-25&nbsp;&nbsp; [Sim2Real](/0798_RL_Robot_Sim2Real)&nbsp;&nbsp; :bookmark:RL :bookmark:Robot :bookmark:Sim2Real
+- 2026-11-25&nbsp;&nbsp; [Simulation](/0797_RL_Robot_Simulation)&nbsp;&nbsp; :bookmark:RL :bookmark:Robot :bookmark:Simulation
 - 2026-11-25&nbsp;&nbsp; [Control](/0796_RL_Robot_Control)&nbsp;&nbsp; :bookmark:RL :bookmark:Robot :bookmark:Control
 - 2026-11-25&nbsp;&nbsp; [Dynamics](/0795_RL_Robot_Dynamics)&nbsp;&nbsp; :bookmark:RL :bookmark:Robot :bookmark:Dynamics
 - 2026-11-25&nbsp;&nbsp; [CSpace](/0794_RL_Robot_CSpace)&nbsp;&nbsp; :bookmark:RL :bookmark:Robot :bookmark:CSpace
@@ -810,6 +814,7 @@
 - 2026-11-25&nbsp;&nbsp; [CRNN](/0196_ML_Tasks_Image_OCR_CRNN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:CRNN
 - 2026-11-25&nbsp;&nbsp; [FOTS](/0195_ML_Tasks_Image_OCR_FOTS)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:FOTS
 - 2026-11-25&nbsp;&nbsp; [EAST](/0193_ML_Tasks_Image_OCR_EAST)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:EAST
+- 2026-11-25&nbsp;&nbsp; [SCAN](/0191_ML_Tasks_Image_OCR_SCAN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:SCAN
 - 2026-11-25&nbsp;&nbsp; [Metrics](/0190_ML_Tasks_Image_OCR_Metrics)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Metrics
 - 2026-11-25&nbsp;&nbsp; [CTC](/0189_ML_Tasks_Image_OCR_CTC)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:CTC
 - 2026-11-25&nbsp;&nbsp; [Concepts](/0144_Media_Tools_GStreamer_Concepts)&nbsp;&nbsp; :bookmark:Media :bookmark:Tools :bookmark:GStreamer :bookmark:Concepts
@@ -1479,7 +1484,6 @@
 - 2020-05-28&nbsp;&nbsp; [Lexicon](/0198_ML_Tasks_Image_OCR_Lexicon)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Lexicon
 - 2020-05-28&nbsp;&nbsp; [TextField](/0194_ML_Tasks_Image_OCR_TextField)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:TextField
 - 2020-05-15&nbsp;&nbsp; [TextScanner](/0192_ML_Tasks_Image_OCR_TextScanner)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:TextScanner
-- 2020-05-09&nbsp;&nbsp; [SCAN](/0191_ML_Tasks_Image_OCR_SCAN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:SCAN
 - 2020-05-08&nbsp;&nbsp; [Sliding Windows CNN CTC](/0188_ML_Tasks_Image_OCR_SW)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:SW
 - 2020-05-08&nbsp;&nbsp; [TextRecognitionDataGenerator](/0187_ML_Tasks_Image_OCR_Tools_TextRecognitionDataGenerator)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Tools :bookmark:TextRecognitionDataGenerator
 - 2020-05-07&nbsp;&nbsp; [CAFCN](/0186_ML_Tasks_Image_OCR_CAFCN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:CAFCN

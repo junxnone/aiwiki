@@ -581,6 +581,8 @@
     - [Dynamics](/0795_RL_Robot_Dynamics)
     - [Kinematics](/0768_RL_Robot_Kinematics)
     - [Rotation](/0777_RL_Robot_Rotation)
+    - [Sim2Real](/0798_RL_Robot_Sim2Real)
+    - [Simulation](/0797_RL_Robot_Simulation)
     - [Transform](/0766_RL_Robot_Transform)
   - [RL Tasks](/0457_RL_Taks)
   - [RL Tools](/0454_RL_Tools)
@@ -770,4 +772,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0031521126</sub></kbd>
+<kbd><sub>@0035001126</sub></kbd>
