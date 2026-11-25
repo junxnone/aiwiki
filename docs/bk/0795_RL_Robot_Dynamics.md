@@ -3,7 +3,7 @@
 | Title     | RL Robot Dynamics                                     |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-25T16:30:13Z`                                |
-| Updated @ | `2026-11-25T16:30:13Z`                                |
+| Updated @ | `2026-11-25T16:30:38Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/795) |
 
@@ -51,7 +51,9 @@ $$
 
   - $\\tau\_f$：关节摩擦力矩，如粘性摩擦 $B\\dot{q}$ 加库仑摩擦
   - $F\_{ext}$：末端受到的外力/外力矩
-  - $J$：雅可比矩阵（见 Kinematics）；$J^{\\top}F\_{ext}$ 把末端外力映射成关节力矩
+  - $J$：雅可比矩阵（见 [RL Robot
+    Kinematics](https://github.com/junxnone/aiwiki/issues/768)）；$J^{\\top}F\_{ext}$
+    把末端外力映射成关节力矩
 
 ## 性质
 
