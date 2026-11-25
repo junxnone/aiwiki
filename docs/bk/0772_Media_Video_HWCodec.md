@@ -3,7 +3,7 @@
 | Title     | Media Video HWCodec                                   |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-25T16:17:05Z`                                |
-| Updated @ | `2026-11-25T16:17:05Z`                                |
+| Updated @ | `2026-11-25T16:21:21Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/772) |
 
@@ -95,7 +95,7 @@ oneVPL，Windows 上用 D3D11VA 或 oneVPL；这些 API 最终驱动的是同一
   - 提示不支持某编码/Profile 时，先检查硬件代际是否支持，例如较早的 Intel 核显不支持 AV1 解码 `[待核实]`
     具体型号请查阅官方规格
   - 确认硬解真的在工作：看 CPU 占用是否明显下降，或用 `intel_gpu_top` (Intel) 观察 Video 引擎利用率
-  - 码率、GOP 等参数含义见 [Video Codec](@@VC@@)
+  - 码率、GOP 等参数含义见 [Video Codec](/0770_Media_Video_Codec)
 
 ## Reference
 
