@@ -3,7 +3,7 @@
 | Title     | RL Robot Transform                                    |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-25T16:14:36Z`                                |
-| Updated @ | `2026-11-25T16:14:36Z`                                |
+| Updated @ | `2026-11-25T16:23:24Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/766) |
 
@@ -12,8 +12,8 @@
 # Transform
 
 用齐次变换描述刚体在不同坐标系之间的位置与姿态变换，并简要介绍 $SE(3)$ 与李代数。所属总览见 [RL
-Robot](https://github.com/junxnone/aiwiki/issues/458)，旋转部分见 RL Robot
-Rotation。
+Robot](https://github.com/junxnone/aiwiki/issues/458)，旋转部分见 [RL Robot
+Rotation](https://github.com/junxnone/aiwiki/issues/777)。
 
 ## 坐标系与位姿
 
