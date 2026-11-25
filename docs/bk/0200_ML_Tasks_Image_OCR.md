@@ -3,7 +3,7 @@
 | Title     | ML Tasks Image OCR                                    |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2020-05-07T06:49:15Z`                                |
-| Updated @ | `2026-11-25T16:24:26Z`                                |
+| Updated @ | `2026-11-25T16:30:02Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/200) |
 
@@ -32,6 +32,8 @@
   - [OCR Datasets](0240_Datasets_Image2D_OCR)：更完整的 OCR 数据集清单
   - **Tools**
       - [TextRecognitionDataGenerator](0187_ML_Tasks_Image_OCR_Tools_TextRecognitionDataGenerator)
+      - [Tesseract](0792_ML_Tasks_Image_OCR_Tesseract)：最老牌的开源 OCR 引擎，4.0
+        起内置 LSTM 识别
       - [Calamari](0201_ML_Tasks_Image_OCR_Calamari)（含
         [Voting](0202_ML_Tasks_Image_OCR_Calamari_Voting) 多模型投票策略）
   - [OCR Augmentation](0203_ML_Tasks_Image_OCR_Augmentation)
@@ -48,7 +50,8 @@
       - **Seq2Seq
         (CNN/Attention)**：用编码器把图像编码成一组特征向量，解码器像机器翻译一样逐字符自回归生成，每一步通过注意力机制动态聚焦图像的不同区域（通常对应下一个要识别的字符位置）——不需要
         CTC 那种"空白+去重"的规约规则，能天然处理字符间的上下文依赖（比如利用语言模型先验纠正形近字），但自回归解码比 CTC
-        的并行解码慢
+        的并行解码慢。详见
+        [Attention](0793_ML_Tasks_Image_OCR_Attention)（RARE、ASTER）
   - End2End：检测与识别共享特征、联合训练（如
     [FOTS](0195_ML_Tasks_Image_OCR_FOTS)），或直接用视觉-语言模型从整页图像生成文本（见下文
     OCR-free 一节）
@@ -127,15 +130,17 @@ Markdown/HTML），不再有独立的"文字框"这个中间产物：
     的文档理解
     Transformer——不经过任何显式的文字检测/识别步骤，直接从文档图像端到端输出结构化信息（如字段抽取结果），"OCR-free"
     这个说法由此被广泛采用；
-  - **PaddleOCR**：从 PP-OCRv3（2022，识别模块换成基于 Transformer 的
+  - **[PaddleOCR](0791_ML_Tasks_Image_OCR_PaddleOCR)**：从
+    PP-OCRv3（2022，识别模块换成基于 Transformer 的
     [SVTR](0779_ML_Tasks_Image_OCR_SVTR) 架构取代 LSTM）一路迭代到 2025-05 发布的
     **PaddleOCR 3.0 / PP-OCRv5**，是工业界使用最广泛的开源 OCR 工具链之一；2025-10 进一步推出仅
     0.9B 参数的 **PaddleOCR-VL**，支持 109 种语言；
   - **Nougat**（Meta，2023）：面向学术文档（含数学公式、表格）的 OCR-free 神经网络解析方法；
-  - **GOT-OCR2.0、dots.ocr、DeepSeek-OCR** 等（2024-2025）：基于 Qwen-VL
+  - **GOT-OCR2.0、dots.ocr、[DeepSeek-OCR](0790_ML_Tasks_Image_OCR_DeepSeekOCR)**
+    等（2024-2025）：基于 Qwen-VL
     等视觉语言基础模型微调出的通用文档解析模型，一次推理同时搞定文字检测、识别、版面/表格/公式结构化，不再是传统的多阶段流水线；其中
-    **DeepSeek-OCR**（2025-10）提出了"用视觉表示压缩文本"的新思路——把大段文字渲染成图像再用视觉 Token
-    编码，比直接用文本 Token 编码效率最高可提升约 10 倍，单张 A100 一天可处理约 20 万页文档；
+    **[DeepSeek-OCR](0790_ML_Tasks_Image_OCR_DeepSeekOCR)**（2025-10）提出了"用视觉表示压缩文本"的新思路——把大段文字渲染成图像再用视觉
+    Token 编码，比直接用文本 Token 编码效率最高可提升约 10 倍，单张 A100 一天可处理约 20 万页文档；
   - 仅 2025 年 10 月一个月，业内就密集发布了
     Nanonets-OCR2-3B、PaddleOCR-VL-0.9B、DeepSeek-OCR-3B、Chandra-OCR-8B、OlmOCR-2-7B、LightOnOCR-1B
     六个主力开源 OCR/文档解析模型，是这个方向目前演进速度的直观体现。

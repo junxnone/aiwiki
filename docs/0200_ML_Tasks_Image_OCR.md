@@ -2,7 +2,7 @@
 Title | ML Tasks Image OCR
 -- | --
 Created @ | `2020-05-07T06:49:15Z`
-Updated @| `2026-11-25T16:24:26Z`
+Updated @| `2026-11-25T16:30:02Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/200)
 
@@ -22,6 +22,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/200)
 - [OCR Datasets](0240_Datasets_Image2D_OCR)：更完整的 OCR 数据集清单
 - **Tools**
   - [TextRecognitionDataGenerator](0187_ML_Tasks_Image_OCR_Tools_TextRecognitionDataGenerator)
+  - [Tesseract](0792_ML_Tasks_Image_OCR_Tesseract)：最老牌的开源 OCR 引擎，4.0 起内置 LSTM 识别
   - [Calamari](0201_ML_Tasks_Image_OCR_Calamari)（含 [Voting](0202_ML_Tasks_Image_OCR_Calamari_Voting) 多模型投票策略）
 - [OCR Augmentation](0203_ML_Tasks_Image_OCR_Augmentation)
 
@@ -32,7 +33,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/200)
   - Object Segmentation
 - Recognition
   - **CTC-Based (CNN/RNN/Attention)**：CTC（Connectionist Temporal Classification）解决的是"图像宽度方向的特征序列"和"不定长的文字序列"之间没有逐字对齐标注时怎么训练的问题——网络在每个时间步都输出一个字符概率分布（含一个特殊的"空白"类别），训练时用动态规划（前向-后向算法）把所有能通过"合并连续重复字符、再去掉空白符"规约出目标文字串的路径概率加总作为似然，不需要知道每个字符具体对应图像里哪个位置；推理时贪心/束搜索解码。代表：[CRNN](0196_ML_Tasks_Image_OCR_CRNN)，原理详见 [CTC](0189_ML_Tasks_Image_OCR_CTC)
-  - **Seq2Seq (CNN/Attention)**：用编码器把图像编码成一组特征向量，解码器像机器翻译一样逐字符自回归生成，每一步通过注意力机制动态聚焦图像的不同区域（通常对应下一个要识别的字符位置）——不需要 CTC 那种"空白+去重"的规约规则，能天然处理字符间的上下文依赖（比如利用语言模型先验纠正形近字），但自回归解码比 CTC 的并行解码慢
+  - **Seq2Seq (CNN/Attention)**：用编码器把图像编码成一组特征向量，解码器像机器翻译一样逐字符自回归生成，每一步通过注意力机制动态聚焦图像的不同区域（通常对应下一个要识别的字符位置）——不需要 CTC 那种"空白+去重"的规约规则，能天然处理字符间的上下文依赖（比如利用语言模型先验纠正形近字），但自回归解码比 CTC 的并行解码慢。详见 [Attention](0793_ML_Tasks_Image_OCR_Attention)（RARE、ASTER）
 - End2End：检测与识别共享特征、联合训练（如 [FOTS](0195_ML_Tasks_Image_OCR_FOTS)），或直接用视觉-语言模型从整页图像生成文本（见下文 OCR-free 一节）
 
 三种范式的数据流对比如下：
@@ -99,9 +100,9 @@ Year | Name | Description
 
 - **[TrOCR](0780_ML_Tasks_Image_OCR_TrOCR)**（Microsoft，2021）：用预训练的图像 Transformer 做编码器、预训练的文本 Transformer 做解码器，直接把图像转成文字序列，是把 Transformer 预训练范式系统引入 OCR 识别阶段的代表工作；
 - **[Donut](0781_ML_Tasks_Image_OCR_Donut)**（2021/2022，ECCV）：**OCR-free** 的文档理解 Transformer——不经过任何显式的文字检测/识别步骤，直接从文档图像端到端输出结构化信息（如字段抽取结果），"OCR-free" 这个说法由此被广泛采用；
-- **PaddleOCR**：从 PP-OCRv3（2022，识别模块换成基于 Transformer 的 [SVTR](0779_ML_Tasks_Image_OCR_SVTR) 架构取代 LSTM）一路迭代到 2025-05 发布的 **PaddleOCR 3.0 / PP-OCRv5**，是工业界使用最广泛的开源 OCR 工具链之一；2025-10 进一步推出仅 0.9B 参数的 **PaddleOCR-VL**，支持 109 种语言；
+- **[PaddleOCR](0791_ML_Tasks_Image_OCR_PaddleOCR)**：从 PP-OCRv3（2022，识别模块换成基于 Transformer 的 [SVTR](0779_ML_Tasks_Image_OCR_SVTR) 架构取代 LSTM）一路迭代到 2025-05 发布的 **PaddleOCR 3.0 / PP-OCRv5**，是工业界使用最广泛的开源 OCR 工具链之一；2025-10 进一步推出仅 0.9B 参数的 **PaddleOCR-VL**，支持 109 种语言；
 - **Nougat**（Meta，2023）：面向学术文档（含数学公式、表格）的 OCR-free 神经网络解析方法；
-- **GOT-OCR2.0、dots.ocr、DeepSeek-OCR** 等（2024-2025）：基于 Qwen-VL 等视觉语言基础模型微调出的通用文档解析模型，一次推理同时搞定文字检测、识别、版面/表格/公式结构化，不再是传统的多阶段流水线；其中 **DeepSeek-OCR**（2025-10）提出了"用视觉表示压缩文本"的新思路——把大段文字渲染成图像再用视觉 Token 编码，比直接用文本 Token 编码效率最高可提升约 10 倍，单张 A100 一天可处理约 20 万页文档；
+- **GOT-OCR2.0、dots.ocr、[DeepSeek-OCR](0790_ML_Tasks_Image_OCR_DeepSeekOCR)** 等（2024-2025）：基于 Qwen-VL 等视觉语言基础模型微调出的通用文档解析模型，一次推理同时搞定文字检测、识别、版面/表格/公式结构化，不再是传统的多阶段流水线；其中 **[DeepSeek-OCR](0790_ML_Tasks_Image_OCR_DeepSeekOCR)**（2025-10）提出了"用视觉表示压缩文本"的新思路——把大段文字渲染成图像再用视觉 Token 编码，比直接用文本 Token 编码效率最高可提升约 10 倍，单张 A100 一天可处理约 20 万页文档；
 - 仅 2025 年 10 月一个月，业内就密集发布了 Nanonets-OCR2-3B、PaddleOCR-VL-0.9B、DeepSeek-OCR-3B、Chandra-OCR-8B、OlmOCR-2-7B、LightOnOCR-1B 六个主力开源 OCR/文档解析模型，是这个方向目前演进速度的直观体现。
 
 这条路线最大的优势是**原生处理复杂版面**（多栏、表格、数学公式混排）不需要额外设计规则，但相比传统检测+识别流水线，推理成本更高、对训练数据的要求也更高。
@@ -164,6 +165,7 @@ BDLHW | Batch/Dimension/Length/Height/Width
 - [Donut: OCR-free Document Understanding Transformer](https://arxiv.org/abs/2111.15664)
 - [PaddleOCR 3.0 Technical Report](https://arxiv.org/pdf/2507.05595)
 - [DeepSeek-OCR](https://huggingface.co/collections/deepseek-ai/deepseek-ocr)
+
 
 
 
