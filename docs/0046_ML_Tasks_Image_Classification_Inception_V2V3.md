@@ -2,7 +2,7 @@
 Title | ML Tasks Image Classification Inception V2V3
 -- | --
 Created @ | `2019-12-04T09:37:22Z`
-Updated @| `2023-01-31T06:34:33Z`
+Updated @| `2026-11-25T16:50:53Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/46)
 
@@ -73,4 +73,67 @@ Mini-network<br>1xn/nx1 | ![image](https://user-images.githubusercontent.com/221
 
 ![image](https://user-images.githubusercontent.com/2216970/70128624-293eda80-16b8-11ea-955f-09e9f4413115.png)
 > BN-auxiliary:在辅助层的全连接层后面也进行BN操作, 此model被命名为 `Inception V3`
+
+
+
+## 分解卷积的计算量
+
+$$
+\frac{3^2C^2+3^2C^2}{5^2C^2}=\frac{18}{25}=72\%,\qquad
+\frac{1\cdot n+n\cdot1}{n\cdot n}=\frac{2}{n}
+$$
+
+其中：
+
+- 第一个式子比较「两个 $3\times3$」与「一个 $5\times5$」的参数量/计算量，$C$ 为输入输出通道数 (假设相同)：前者只有后者的 $72\%$，节省 $28\%$
+- 第二个式子比较「$1\times n$ 接 $n\times1$」与「$n\times n$」：比值为 $2/n$，$n=3$ 时只需 $67\%$ (节省 $33\%$)，$n=7$ 时只需 $29\%$
+- 两个小卷积叠加的感受野与一个大卷积相同，且多了一层非线性
+
+下图是 $5\times5$ 卷积被分解成两个 $3\times3$、再进一步分解成非对称卷积的过程：
+
+```mermaid
+flowchart LR
+    A["5x5 conv"] -->|分解| B["3x3 conv → 3x3 conv"]
+    B -->|再分解| C["1x3 → 3x1 → 1x3 → 3x1"]
+    D["nxn conv"] -->|非对称分解| E["1xn conv → nx1 conv"]
+```
+
+图中：
+
+- 箭头表示「用后者代替前者」，感受野不变，计算量逐步减小
+- 非对称分解对特征图较大的浅层效果不好，论文建议用在中等大小的特征图 (尺寸 $12\sim20$) 上
+
+## Label Smoothing
+
+$$
+q'(k)=(1-\epsilon)\,\delta_{k,y}+\frac{\epsilon}{K},\qquad
+L=-\sum_{k=1}^{K}q'(k)\log p(k)
+$$
+
+其中：
+
+- $K$：类别数；$y$：真实类别；$\delta_{k,y}$：当 $k=y$ 时为 $1$，否则为 $0$ (one-hot 标签)
+- $\epsilon$：平滑系数，论文取 $0.1$；平滑后真实类别的目标概率为 $1-\epsilon+\epsilon/K$，其他类别各为 $\epsilon/K$
+- $p(k)$：模型预测的第 $k$ 类 softmax 概率；$L$：用平滑标签 $q'$ 计算的交叉熵
+- 作用：不再追求把 logit 推到无穷大，防止过度自信和过拟合；论文报告它带来约 $0.2\%$ 的 top-1/top-5 提升 `[待核实]`
+
+## 特征图下采样
+
+- 先池化再卷积：特征图先变小，通道的表示能力出现瓶颈
+- 先卷积再池化：在大特征图上做卷积，计算量大
+- 方案：并行一条步长为 $2$ 的卷积分支和一条池化分支，把两路输出在通道维拼接，既不损失表示能力，又不增加太多计算
+
+## 与 V1 的对比
+
+维度 | [Inception V1](/0048_ML_Tasks_Image_Classification_Inception_V1) | Inception V2/V3
+-- | -- | --
+$5\times5$ 卷积 | 直接使用 | 两个 $3\times3$ 代替
+$n\times n$ 卷积 | 直接使用 | 可用 $1\times n$ + $n\times1$ 代替
+归一化 | 无 | BatchNorm
+辅助分类器 | 用于缓解梯度消失 | 主要起正则化作用 (加 BN)
+正则化 | Dropout | Label Smoothing
+优化器 | SGD | RMSProp
+输入尺寸 | $224\times224$ | $299\times299$
+
+表中：V3 是 V2 的最终版，在 V2 基础上给辅助分类器加了 BN 并用 RMSProp、Label Smoothing 等训练技巧。
 
