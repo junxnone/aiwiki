@@ -2,7 +2,7 @@
 Title | ML Tasks Image Classification MobileNet
 -- | --
 Created @ | `2018-09-27T06:12:31Z`
-Last Modify @| `2022-12-25T17:14:21Z`
+Updated @| `2026-11-25T16:51:20Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/45)
 
@@ -42,4 +42,36 @@ MobileNet V2 |  线性 Bottlenecks & 反转残差模块
 MobileNet V3 |  NAS
 
 
+
+
+
+## 三代演进
+
+下图展示三个版本逐步叠加的技术：
+
+```mermaid
+flowchart LR
+    A[V1<br>depthwise + pointwise] --> B[V2<br>+ 倒残差 + 线性瓶颈]
+    B --> C[V3<br>+ NAS + SE + h-swish]
+```
+
+图中：箭头表示在前一个版本的基础上增加的技术；每一代的基本单元仍然是深度可分离卷积，见 [Xception](/0050_ML_Tasks_Image_Classification_Xception) 中它的原理。
+
+## 对比
+
+版本 | 年份 | 基本块 | 参数量 | MACs | top-1
+-- | -- | -- | -- | -- | --
+[V1](/0042_ML_Tasks_Image_Classification_MobileNet_V1) | 2017 | depthwise + pointwise | 4.2 M | 569 M | 70.6%
+[V2](/0043_ML_Tasks_Image_Classification_MobileNet_V2) | 2018 | 倒残差 + 线性瓶颈 | 3.4 M | 300 M | 72.0%
+[V3-Large](/0044_ML_Tasks_Image_Classification_MobileNet_V3) | 2019 | V2 + SE + h-swish，NAS 搜索 | 5.4 M | 219 M | 75.2%
+[V3-Small](/0044_ML_Tasks_Image_Classification_MobileNet_V3) | 2019 | 同上，更小 | 2.9 M | 66 M | 67.4%
+
+表中：参数量、MACs 和 top-1 都是论文在 $224\times224$ 输入下的数字；MACs 是乘加次数，可以近似理解为计算量。三代都是 Google 针对手机等嵌入式设备设计的，目标是精度基本不变的前提下减少参数和计算。
+
+## 选用建议
+
+- 需要极简结构、容易部署：V1，没有 shortcut，算子只有卷积和 ReLU
+- 通用移动端分类/检测 backbone：V2，生态最成熟 (如 MobileNet-SSD)
+- 追求精度/延迟折中：V3；注意 h-swish 和 SE 在某些推理引擎里支持不好，量化时要核对
+- 部署到 Intel 平台时的量化与压缩见 [Quantization](/0312_MO_Quantization)
 
