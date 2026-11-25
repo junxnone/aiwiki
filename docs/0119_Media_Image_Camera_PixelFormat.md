@@ -2,7 +2,7 @@
 Title | Media Image Camera PixelFormat
 -- | --
 Created @ | `2021-10-21T17:44:24Z`
-Last Modify @| `2022-12-23T13:32:17Z`
+Updated @| `2026-11-25T16:21:39Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/119)
 
@@ -45,8 +45,8 @@ YCbCr 422 | `Y0 Cb0 Y1 Cr0 Y2 Cb1 Y3 Cr1`
 
 Images | Plane size & Layout
 -- | --
-3-palnes Images | ![image](https://user-images.githubusercontent.com/2216970/138544560-9817dbeb-6a7d-48c3-a3b7-09c556c96e2e.png)
-2-palnes Images | ![image](https://user-images.githubusercontent.com/2216970/138544563-f6750eb4-7b0d-46d5-84b1-c90f1c17c3b6.png)
+3-planes Images | ![image](https://user-images.githubusercontent.com/2216970/138544560-9817dbeb-6a7d-48c3-a3b7-09c556c96e2e.png)
+2-planes Images | ![image](https://user-images.githubusercontent.com/2216970/138544563-f6750eb4-7b0d-46d5-84b1-c90f1c17c3b6.png)
 
 
 
@@ -60,7 +60,13 @@ RGB/BGR | 8/a8/10/12/10v1Packed/10p32
 YUV | 422/411 - 8/
 YCbcr | 422/411 - 8
 
-- **YUV vs YCbCr ?**
-  -  YUV - 用于模拟信号
-  - YCbCr - 用于数字信号 - 方便压缩？？
+### YUV vs YCbCr
+
+Name | 信号类型 | 取值范围 | 说明
+-- | -- | -- | --
+YUV | 模拟 | $Y\in[0,1]$, $U,V$ 带符号 | 用于 PAL/NTSC 模拟电视, 由 RGB 线性变换得到
+YCbCr | 数字 | 8 bit 下 limited range $Y\in[16,235]$, $C_b,C_r\in[16,240]$ | 是 YUV 的缩放平移版本, 用于 H.264/H.265 等数字视频标准 (JPEG 使用 full range, 即 0~255)
+
+表中：`信号类型` 说明它出现在模拟还是数字链路里；`取值范围` 说明 8 bit 整数如何表示。YCbCr 把带符号的色差平移到 $128$ 附近, 使其可以用无符号整数存储, 因此数字场景里说的 `YUV` 绝大多数实际指 YCbCr (Pixel Format 名称如 `YUY2`、`NV12` 也沿用 YUV 叫法)。公式和范围的细节见 [YUV](/0121_Media_Image_Color_Model_YUV)。
+
 
