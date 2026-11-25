@@ -4,6 +4,10 @@
 
 #### **Created**
 
+- 2026-11-25&nbsp;&nbsp; [Attention](/0793_ML_Tasks_Image_OCR_Attention)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Attention
+- 2026-11-25&nbsp;&nbsp; [Tesseract](/0792_ML_Tasks_Image_OCR_Tesseract)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Tesseract
+- 2026-11-25&nbsp;&nbsp; [PaddleOCR](/0791_ML_Tasks_Image_OCR_PaddleOCR)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:PaddleOCR
+- 2026-11-25&nbsp;&nbsp; [DeepSeek-OCR](/0790_ML_Tasks_Image_OCR_DeepSeekOCR)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:DeepSeekOCR
 - 2026-11-25&nbsp;&nbsp; [Exposure](/0789_Media_Image_Camera_Exposure)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera :bookmark:Exposure
 - 2026-11-25&nbsp;&nbsp; [Sensor](/0788_Media_Image_Camera_Sensor)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera :bookmark:Sensor
 - 2026-11-25&nbsp;&nbsp; [Calibration](/0787_Media_Image_Camera_Calibration)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera :bookmark:Calibration
@@ -761,6 +765,10 @@
 
 #### **Updated**
 
+- 2026-11-25&nbsp;&nbsp; [Attention](/0793_ML_Tasks_Image_OCR_Attention)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Attention
+- 2026-11-25&nbsp;&nbsp; [Tesseract](/0792_ML_Tasks_Image_OCR_Tesseract)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Tesseract
+- 2026-11-25&nbsp;&nbsp; [PaddleOCR](/0791_ML_Tasks_Image_OCR_PaddleOCR)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:PaddleOCR
+- 2026-11-25&nbsp;&nbsp; [DeepSeek-OCR](/0790_ML_Tasks_Image_OCR_DeepSeekOCR)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:DeepSeekOCR
 - 2026-11-25&nbsp;&nbsp; [Exposure](/0789_Media_Image_Camera_Exposure)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera :bookmark:Exposure
 - 2026-11-25&nbsp;&nbsp; [Sensor](/0788_Media_Image_Camera_Sensor)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera :bookmark:Sensor
 - 2026-11-25&nbsp;&nbsp; [Calibration](/0787_Media_Image_Camera_Calibration)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera :bookmark:Calibration

@@ -279,6 +279,7 @@
           - [Triplet Network](/0156_ML_Tasks_Image_Retrieval_CBIR_TripletNetwork)
           - [VLAD](/0154_ML_Tasks_Image_Retrieval_CBIR_VLAD)
       - [OCR](/0200_ML_Tasks_Image_OCR)
+        - [Attention](/0793_ML_Tasks_Image_OCR_Attention)
         - [Augmentation](/0203_ML_Tasks_Image_OCR_Augmentation)
         - [CAFCN](/0186_ML_Tasks_Image_OCR_CAFCN)
         - [CRNN](/0196_ML_Tasks_Image_OCR_CRNN)
@@ -287,14 +288,17 @@
         - [Calamari](/0201_ML_Tasks_Image_OCR_Calamari)
           - [Voting](/0202_ML_Tasks_Image_OCR_Calamari_Voting)
         - [DBNet](/0778_ML_Tasks_Image_OCR_DBNet)
+        - [DeepSeek-OCR](/0790_ML_Tasks_Image_OCR_DeepSeekOCR)
         - [Donut](/0781_ML_Tasks_Image_OCR_Donut)
         - [EAST](/0193_ML_Tasks_Image_OCR_EAST)
         - [FOTS](/0195_ML_Tasks_Image_OCR_FOTS)
         - [Lexicon](/0198_ML_Tasks_Image_OCR_Lexicon)
         - [Metrics](/0190_ML_Tasks_Image_OCR_Metrics)
+        - [PaddleOCR](/0791_ML_Tasks_Image_OCR_PaddleOCR)
         - [SCAN](/0191_ML_Tasks_Image_OCR_SCAN)
         - [SVTR](/0779_ML_Tasks_Image_OCR_SVTR)
         - [Sliding Windows CNN CTC](/0188_ML_Tasks_Image_OCR_SW)
+        - [Tesseract](/0792_ML_Tasks_Image_OCR_Tesseract)
         - [TextField](/0194_ML_Tasks_Image_OCR_TextField)
         - [TextScanner](/0192_ML_Tasks_Image_OCR_TextScanner)
         - Tools
@@ -763,4 +767,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0029531126</sub></kbd>
+<kbd><sub>@0030311126</sub></kbd>

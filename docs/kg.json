@@ -6652,6 +6652,42 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki ML Tasks Image OCR DeepSeekOCR",
+      "group": 5,
+      "title": "DeepSeek-OCR",
+      "url": "https://junxnone.github.io/aiwiki/#/0790_ML_Tasks_Image_OCR_DeepSeekOCR",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Tasks Image OCR PaddleOCR",
+      "group": 5,
+      "title": "PaddleOCR",
+      "url": "https://junxnone.github.io/aiwiki/#/0791_ML_Tasks_Image_OCR_PaddleOCR",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Tasks Image OCR Tesseract",
+      "group": 5,
+      "title": "Tesseract",
+      "url": "https://junxnone.github.io/aiwiki/#/0792_ML_Tasks_Image_OCR_Tesseract",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Tasks Image OCR Attention",
+      "group": 5,
+      "title": "Attention",
+      "url": "https://junxnone.github.io/aiwiki/#/0793_ML_Tasks_Image_OCR_Attention",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Tasks Image Classification MobileNet V1",
       "group": 6,
       "title": "MobileNet V1",
@@ -11357,6 +11393,34 @@
     {
       "source": "aiwiki ML Tasks Image OCR",
       "target": "aiwiki ML Tasks Image OCR Donut",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks Image OCR",
+      "target": "aiwiki ML Tasks Image OCR DeepSeekOCR",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks Image OCR",
+      "target": "aiwiki ML Tasks Image OCR PaddleOCR",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks Image OCR",
+      "target": "aiwiki ML Tasks Image OCR Tesseract",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks Image OCR",
+      "target": "aiwiki ML Tasks Image OCR Attention",
       "value": 5,
       "visible": true,
       "expand": true
