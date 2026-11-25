@@ -4,6 +4,9 @@
 
 #### **Created**
 
+- 2026-11-25&nbsp;&nbsp; [MediaInfo](/0773_Media_Tools_MediaInfo)&nbsp;&nbsp; :bookmark:Media :bookmark:Tools :bookmark:MediaInfo
+- 2026-11-25&nbsp;&nbsp; [Video HWCodec](/0772_Media_Video_HWCodec)&nbsp;&nbsp; :bookmark:Media :bookmark:Video :bookmark:HWCodec
+- 2026-11-25&nbsp;&nbsp; [Video Streaming](/0771_Media_Video_Streaming)&nbsp;&nbsp; :bookmark:Media :bookmark:Video :bookmark:Streaming
 - 2026-11-25&nbsp;&nbsp; [Video Codec](/0770_Media_Video_Codec)&nbsp;&nbsp; :bookmark:Media :bookmark:Video :bookmark:Codec
 - 2026-11-25&nbsp;&nbsp; [Audio Codec](/0769_Media_Audio_Codec)&nbsp;&nbsp; :bookmark:Media :bookmark:Audio :bookmark:Codec
 - 2026-11-25&nbsp;&nbsp; [Kinematics](/0768_RL_Robot_Kinematics)&nbsp;&nbsp; :bookmark:RL :bookmark:Robot :bookmark:Kinematics
@@ -742,11 +745,17 @@
 
 #### **Updated**
 
+- 2026-11-25&nbsp;&nbsp; [MediaInfo](/0773_Media_Tools_MediaInfo)&nbsp;&nbsp; :bookmark:Media :bookmark:Tools :bookmark:MediaInfo
+- 2026-11-25&nbsp;&nbsp; [Video HWCodec](/0772_Media_Video_HWCodec)&nbsp;&nbsp; :bookmark:Media :bookmark:Video :bookmark:HWCodec
+- 2026-11-25&nbsp;&nbsp; [Video Streaming](/0771_Media_Video_Streaming)&nbsp;&nbsp; :bookmark:Media :bookmark:Video :bookmark:Streaming
 - 2026-11-25&nbsp;&nbsp; [Video Codec](/0770_Media_Video_Codec)&nbsp;&nbsp; :bookmark:Media :bookmark:Video :bookmark:Codec
 - 2026-11-25&nbsp;&nbsp; [Audio Codec](/0769_Media_Audio_Codec)&nbsp;&nbsp; :bookmark:Media :bookmark:Audio :bookmark:Codec
 - 2026-11-25&nbsp;&nbsp; [Kinematics](/0768_RL_Robot_Kinematics)&nbsp;&nbsp; :bookmark:RL :bookmark:Robot :bookmark:Kinematics
 - 2026-11-25&nbsp;&nbsp; [Audio 音频](/0767_Media_Audio)&nbsp;&nbsp; :bookmark:Media :bookmark:Audio
 - 2026-11-25&nbsp;&nbsp; [Transform](/0766_RL_Robot_Transform)&nbsp;&nbsp; :bookmark:RL :bookmark:Robot :bookmark:Transform
+- 2026-11-25&nbsp;&nbsp; [CTPN](/0197_ML_Tasks_Image_OCR_CTPN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:CTPN
+- 2026-11-25&nbsp;&nbsp; [CRNN](/0196_ML_Tasks_Image_OCR_CRNN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:CRNN
+- 2026-11-25&nbsp;&nbsp; [Metrics](/0190_ML_Tasks_Image_OCR_Metrics)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Metrics
 - 2026-11-24&nbsp;&nbsp; [FUVAS 少样本无监督视频异常分割](/0765_paper_FUVAS)&nbsp;&nbsp; :bookmark:paper :bookmark:FUVAS
 - 2026-11-24&nbsp;&nbsp; [AIVAD 基于属性表示的视频异常检测](/0764_paper_AIVAD)&nbsp;&nbsp; :bookmark:paper :bookmark:AIVAD
 - 2026-11-24&nbsp;&nbsp; [VLMAD 视觉语言模型异常检测](/0763_paper_VLMAD)&nbsp;&nbsp; :bookmark:paper :bookmark:VLMAD
@@ -1417,12 +1426,9 @@
 - 2020-06-01&nbsp;&nbsp; [Calamari](/0201_ML_Tasks_Image_OCR_Calamari)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Calamari
 - 2020-06-01&nbsp;&nbsp; [Traditional OCR 传统字符识别](/0199_CV_TOCR)&nbsp;&nbsp; :bookmark:CV :bookmark:TOCR
 - 2020-05-28&nbsp;&nbsp; [Lexicon](/0198_ML_Tasks_Image_OCR_Lexicon)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Lexicon
-- 2020-05-28&nbsp;&nbsp; [CTPN](/0197_ML_Tasks_Image_OCR_CTPN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:CTPN
-- 2020-05-28&nbsp;&nbsp; [CRNN](/0196_ML_Tasks_Image_OCR_CRNN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:CRNN
 - 2020-05-28&nbsp;&nbsp; [FOTS](/0195_ML_Tasks_Image_OCR_FOTS)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:FOTS
 - 2020-05-28&nbsp;&nbsp; [TextField](/0194_ML_Tasks_Image_OCR_TextField)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:TextField
 - 2020-05-28&nbsp;&nbsp; [EAST](/0193_ML_Tasks_Image_OCR_EAST)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:EAST
-- 2020-05-18&nbsp;&nbsp; [Metrics](/0190_ML_Tasks_Image_OCR_Metrics)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Metrics
 - 2020-05-15&nbsp;&nbsp; [TextScanner](/0192_ML_Tasks_Image_OCR_TextScanner)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:TextScanner
 - 2020-05-09&nbsp;&nbsp; [SCAN](/0191_ML_Tasks_Image_OCR_SCAN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:SCAN
 - 2020-05-09&nbsp;&nbsp; [Install warp-ctc](/0189_ML_Tasks_Image_OCR_CTC)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:CTC

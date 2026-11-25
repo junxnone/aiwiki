@@ -3763,6 +3763,33 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki Media Video Streaming",
+      "group": 3,
+      "title": "Video Streaming",
+      "url": "https://junxnone.github.io/aiwiki/#/0771_Media_Video_Streaming",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki Media Video HWCodec",
+      "group": 3,
+      "title": "Video HWCodec",
+      "url": "https://junxnone.github.io/aiwiki/#/0772_Media_Video_HWCodec",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki Media Tools MediaInfo",
+      "group": 3,
+      "title": "MediaInfo",
+      "url": "https://junxnone.github.io/aiwiki/#/0773_Media_Tools_MediaInfo",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Op Convolution Math",
       "group": 4,
       "title": "卷积 数学定义",
@@ -8125,6 +8152,20 @@
       "expand": true
     },
     {
+      "source": "aiwiki Media Video",
+      "target": "aiwiki Media Video Streaming",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki Media Video",
+      "target": "aiwiki Media Video HWCodec",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
       "source": "aiwiki 3D Camera",
       "target": "aiwiki 3D Camera 双目",
       "value": 3,
@@ -9219,6 +9260,13 @@
     {
       "source": "aiwiki Media Tools",
       "target": "aiwiki Media Tools GStreamer",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki Media Tools",
+      "target": "aiwiki Media Tools MediaInfo",
       "value": 3,
       "visible": true,
       "expand": true
