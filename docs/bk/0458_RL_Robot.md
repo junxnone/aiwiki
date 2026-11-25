@@ -3,7 +3,7 @@
 | Title     | RL Robot                                              |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-11-21T07:46:49Z`                                |
-| Updated @ | `2026-11-25T16:30:36Z`                                |
+| Updated @ | `2026-11-25T16:34:11Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/458) |
 
@@ -165,6 +165,11 @@ $$ T=\\begin{bmatrix}R & p\\ 0 & 1\\end{bmatrix} $$
     / ABA
   - [RL Robot
     Control](https://github.com/junxnone/aiwiki/issues/796)：PID、计算力矩、任务空间控制、阻抗控制
+  - [RL Robot
+    Simulation](https://github.com/junxnone/aiwiki/issues/797)：URDF /
+    MJCF、物理引擎、MuJoCo / PyBullet / Isaac Lab
+  - [RL Robot
+    Sim2Real](https://github.com/junxnone/aiwiki/issues/798)：现实差距、域随机化、系统辨识、师生蒸馏
 
 ## Reference
 

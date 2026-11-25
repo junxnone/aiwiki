@@ -2,7 +2,7 @@
 Title | RL Robot
 -- | --
 Created @ | `2023-11-21T07:46:49Z`
-Updated @| `2026-11-25T16:30:36Z`
+Updated @| `2026-11-25T16:34:11Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/458)
 
@@ -161,9 +161,12 @@ $$
 - [RL Robot CSpace](https://github.com/junxnone/aiwiki/issues/794)：C-obstacle、PRM / RRT 采样规划、势场法
 - [RL Robot Dynamics](https://github.com/junxnone/aiwiki/issues/795)：动力学方程、拉格朗日与牛顿-欧拉法、RNEA / ABA
 - [RL Robot Control](https://github.com/junxnone/aiwiki/issues/796)：PID、计算力矩、任务空间控制、阻抗控制
+- [RL Robot Simulation](https://github.com/junxnone/aiwiki/issues/797)：URDF / MJCF、物理引擎、MuJoCo / PyBullet / Isaac Lab
+- [RL Robot Sim2Real](https://github.com/junxnone/aiwiki/issues/798)：现实差距、域随机化、系统辨识、师生蒸馏
 
 ## Reference
 
 - [入门机器人需要的基础知识](https://zhuanlan.zhihu.com/p/655770237)
+
 
 
