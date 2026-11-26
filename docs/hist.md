@@ -4,6 +4,10 @@
 
 #### **Created**
 
+- 2026-11-26 23:39&nbsp;&nbsp; [Ops](/0846_LM_Deploy_Ops)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Ops
+- 2026-11-26 23:39&nbsp;&nbsp; [Service](/0845_LM_Deploy_Service)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Service
+- 2026-11-26 23:38&nbsp;&nbsp; [Sizing](/0844_LM_Deploy_Sizing)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Sizing
+- 2026-11-26 23:38&nbsp;&nbsp; [Format](/0843_LM_Deploy_Format)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Format
 - 2026-11-26 23:38&nbsp;&nbsp; [Frameworks](/0842_LM_Deploy_Frameworks)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Frameworks
 - 2026-11-26 23:38&nbsp;&nbsp; [CPU](/0841_LM_Infer_CPU)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:CPU
 - 2026-11-26 23:37&nbsp;&nbsp; [StructuredOutput](/0840_LM_Infer_StructuredOutput)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:StructuredOutput
@@ -814,6 +818,10 @@
 
 #### **Updated**
 
+- 2026-11-26 23:39&nbsp;&nbsp; [Ops](/0846_LM_Deploy_Ops)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Ops
+- 2026-11-26 23:39&nbsp;&nbsp; [Service](/0845_LM_Deploy_Service)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Service
+- 2026-11-26 23:38&nbsp;&nbsp; [Sizing](/0844_LM_Deploy_Sizing)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Sizing
+- 2026-11-26 23:38&nbsp;&nbsp; [Format](/0843_LM_Deploy_Format)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Format
 - 2026-11-26 23:38&nbsp;&nbsp; [Frameworks](/0842_LM_Deploy_Frameworks)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Frameworks
 - 2026-11-26 23:38&nbsp;&nbsp; [CPU](/0841_LM_Infer_CPU)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:CPU
 - 2026-11-26 23:37&nbsp;&nbsp; [StructuredOutput](/0840_LM_Infer_StructuredOutput)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:StructuredOutput

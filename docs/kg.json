@@ -4222,6 +4222,42 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki LM Deploy Format",
+      "group": 3,
+      "title": "Format",
+      "url": "https://junxnone.github.io/aiwiki/#/0843_LM_Deploy_Format",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki LM Deploy Sizing",
+      "group": 3,
+      "title": "Sizing",
+      "url": "https://junxnone.github.io/aiwiki/#/0844_LM_Deploy_Sizing",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki LM Deploy Service",
+      "group": 3,
+      "title": "Service",
+      "url": "https://junxnone.github.io/aiwiki/#/0845_LM_Deploy_Service",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki LM Deploy Ops",
+      "group": 3,
+      "title": "Ops",
+      "url": "https://junxnone.github.io/aiwiki/#/0846_LM_Deploy_Ops",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Op Convolution Math",
       "group": 4,
       "title": "卷积 数学定义",
@@ -10539,6 +10575,34 @@
     {
       "source": "aiwiki LM Deploy",
       "target": "aiwiki LM Deploy Frameworks",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki LM Deploy",
+      "target": "aiwiki LM Deploy Format",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki LM Deploy",
+      "target": "aiwiki LM Deploy Sizing",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki LM Deploy",
+      "target": "aiwiki LM Deploy Service",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki LM Deploy",
+      "target": "aiwiki LM Deploy Ops",
       "value": 3,
       "visible": true,
       "expand": true

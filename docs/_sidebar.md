@@ -516,7 +516,11 @@
   - [Semi-Supervised Learning 半监督学习](/0271_ML_SSL)
 - [大模型](/0408_LM)
   - [Deploy](/0820_LM_Deploy)
+    - [Format](/0843_LM_Deploy_Format)
     - [Frameworks](/0842_LM_Deploy_Frameworks)
+    - [Ops](/0846_LM_Deploy_Ops)
+    - [Service](/0845_LM_Deploy_Service)
+    - [Sizing](/0844_LM_Deploy_Sizing)
   - [大模型微调](/0410_LM_FT)
     - [AdaLoRA](/0491_LM_FT_AdaLoRA)
     - [Adapter FineTuning](/0412_LM_FT_Adapter)
@@ -816,4 +820,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@2339001126</sub></kbd>
+<kbd><sub>@2339541126</sub></kbd>
