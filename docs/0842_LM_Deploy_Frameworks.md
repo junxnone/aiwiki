@@ -2,7 +2,7 @@
 Title | LM Deploy Frameworks
 -- | --
 Created @ | `2026-11-26T15:38:24Z`
-Updated @| `2026-11-26T15:38:24Z`
+Updated @| `2026-11-26T15:43:03Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/842)
 
@@ -13,7 +13,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/842)
 
 ## 框架做什么
 
-推理框架在模型权重和用户请求之间，负责：加载模型、管理 KV Cache、调度批处理、执行优化后的算子、暴露 API。[Optimization](@@IOPT@@) 里的技术大多以框架的形式提供给用户。
+推理框架在模型权重和用户请求之间，负责：加载模型、管理 KV Cache、调度批处理、执行优化后的算子、暴露 API。[Optimization](/0835_LM_Infer_Optimization) 里的技术大多以框架的形式提供给用户。
 
 下图按目标硬件和使用场景把框架分类：
 
@@ -32,7 +32,7 @@ flowchart TD
 图中：
 
 - 服务器 GPU 场景下，通用高并发选 vLLM 或 SGLang，追求极致性能且接受 NVIDIA 绑定选 TensorRT-LLM；TGI 已进入维护模式，新项目不建议再选
-- CPU、笔记本和边缘设备选 llama.cpp 或 Ollama；Intel 平台选 OpenVINO GenAI，见 [OpenVINO](@@DOV@@)
+- CPU、笔记本和边缘设备选 llama.cpp 或 Ollama；Intel 平台选 OpenVINO GenAI，见 [OpenVINO](/0848_LM_Deploy_OpenVINO)
 - 需要跨多种硬件时，选支持多后端的框架
 
 ## 对比
@@ -48,7 +48,7 @@ Ollama | CPU、Metal、CUDA 等 | 一条命令拉取并运行模型；早期基�
 OpenVINO GenAI | Intel CPU、集成/独立 GPU、NPU | 针对 Intel 优化，NNCF 压缩 | OpenVINO IR | Intel 平台部署
 LMDeploy | NVIDIA | TurboMind 引擎，量化与服务 | HF | 国产模型常用
 
-表中：`模型格式` 的差异决定了转换流程，见 [Format](@@DFMT@@)。支持的具体硬件、量化类型和模型会随版本变化，选型时以官方文档为准 `[待核实]`。
+表中：`模型格式` 的差异决定了转换流程，见 [Format](/0843_LM_Deploy_Format)。支持的具体硬件、量化类型和模型会随版本变化，选型时以官方文档为准 `[待核实]`。
 
 ## 功能矩阵
 
@@ -63,7 +63,7 @@ PagedAttention / 分页 KV | ✓ | ✓ | ✓ | - | ✓
 多模态 (VLM) | ✓ | ✓ | ✓ | ✓ | ✓ (VLMPipeline)
 张量并行 | ✓ | ✓ | ✓ | 部分 | 部分
 
-表中：✓ 表示官方已支持，「部分」表示支持方式或范围有限，`-` 表示没有该机制。各框架迭代很快，表中是截至 2026 年的概况，具体模型和硬件组合是否可用要查当前版本的文档 `[待核实]`。功能原理见 [Optimization](@@IOPT@@)，多 LoRA 见 [Multi-LoRA Serving](/0572_LM_FT_MultiLoRAServing)，结构化输出见 [StructuredOutput](@@ISTR@@)。
+表中：✓ 表示官方已支持，「部分」表示支持方式或范围有限，`-` 表示没有该机制。各框架迭代很快，表中是截至 2026 年的概况，具体模型和硬件组合是否可用要查当前版本的文档 `[待核实]`。功能原理见 [Optimization](/0835_LM_Infer_Optimization)，多 LoRA 见 [Multi-LoRA Serving](/0572_LM_FT_MultiLoRAServing)，结构化输出见 [StructuredOutput](/0840_LM_Infer_StructuredOutput)。
 
 ## 选型要考虑的因素
 
@@ -72,7 +72,7 @@ PagedAttention / 分页 KV | ✓ | ✓ | ✓ | - | ✓
 - 模型：新模型架构的支持速度因框架而异，vLLM/llama.cpp 社区最活跃
 - 功能：结构化输出 (JSON)、函数调用、多 LoRA ([Multi-LoRA Serving](/0572_LM_FT_MultiLoRAServing))、投机解码、多模态
 - 量化：支持的量化格式 (GPTQ、AWQ、FP8、GGUF 的 Q4_K_M 等)，见 [量化](/0312_MO_Quantization)
-- 运维：是否提供指标 (Prometheus)、是否易于容器化，见 [Ops](@@DOPS@@)
+- 运维：是否提供指标 (Prometheus)、是否易于容器化，见 [Ops](/0846_LM_Deploy_Ops)
 
 ## 快速上手示例
 
@@ -97,12 +97,12 @@ ollama run llama3.1
 ```
 
 - 以上命令的参数会随版本变化，以各自文档为准
-- 服务化与 API 见 [Service](@@DSVC@@)；资源估算见 [Sizing](@@DSIZ@@)
+- 服务化与 API 见 [Service](/0845_LM_Deploy_Service)；资源估算见 [Sizing](/0844_LM_Deploy_Sizing)
 
 ## 性能对比的注意事项
 
 - 对比必须使用相同的模型、精度、硬件、输入输出长度和并发；同一框架不同版本差距也可能很大
-- 同时报告 TTFT、TPOT 和吞吐，而不是单一指标，见 [Basics](@@IBAS@@)
+- 同时报告 TTFT、TPOT 和吞吐，而不是单一指标，见 [Basics](/0834_LM_Infer_Basics)
 - 上线前用自己的真实流量分布做压测，不要直接采用厂商的基准数字
 
 vLLM 自带的在线压测 (对已经启动的服务发请求)：
@@ -114,8 +114,8 @@ vllm bench serve --backend vllm --model meta-llama/Llama-3.1-8B-Instruct \
 ```
 
 - 输出 TTFT、TPOT、ITL (inter-token latency) 的均值与分位数，以及请求吞吐和 token 吞吐
-- 官方文档推荐用 GuideLLM 做更灵活的生产压测；OpenVINO 侧用 `llm_bench`，见 [OpenVINO](@@DOV@@)
-- 压测方法论 (负载模型、并发扫描、怎样读结果) 见 [Benchmark](@@DBEN@@)
+- 官方文档推荐用 GuideLLM 做更灵活的生产压测；OpenVINO 侧用 `llm_bench`，见 [OpenVINO](/0848_LM_Deploy_OpenVINO)
+- 压测方法论 (负载模型、并发扫描、怎样读结果) 见 [Benchmark](/0849_LM_Deploy_Benchmark)
 
 ## 本站相关
 
