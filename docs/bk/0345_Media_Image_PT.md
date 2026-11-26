@@ -3,20 +3,13 @@
 | Title     | Media Image PT                                        |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2020-11-05T03:01:31Z`                                |
-| Updated @ | `2026-11-25T16:21:44Z`                                |
+| Updated @ | `2026-11-26T01:26:05Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/345) |
 
 -----
 
 # Perspective Transformation - 透视变换
-
-## Reference
-
-  - [图像几何变换之透视变换](https://www.cnblogs.com/liekkas0626/p/5262942.html)
-  - [OpenCV
-    几何变换](https://www.docs.opencv.org/4.0.0/da/d6e/tutorial_py_geometric_transformations.html)
-  - [透视变换原理实例代码详解](https://xiulian.blog.csdn.net/article/details/104281693)
 
 ## Brief
 
@@ -88,3 +81,10 @@ out = cv.warpPerspective(img, M, (300, 300))       # dsize 是 (w, h)
     `cv.findHomography` 做最小二乘/RANSAC 估计
   - `cv.warpPerspective` 内部按 $M^{-1}$ 反向映射并插值, 插值方法见
     [Resize](/0347_Media_Image_Resize)
+
+## Reference
+
+  - [图像几何变换之透视变换](https://www.cnblogs.com/liekkas0626/p/5262942.html)
+  - [OpenCV
+    几何变换](https://www.docs.opencv.org/4.0.0/da/d6e/tutorial_py_geometric_transformations.html)
+  - [透视变换原理实例代码详解](https://xiulian.blog.csdn.net/article/details/104281693)
