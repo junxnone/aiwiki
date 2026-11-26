@@ -6733,6 +6733,33 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki ML Tasks Image Classification DenseNet",
+      "group": 5,
+      "title": "DenseNet",
+      "url": "https://junxnone.github.io/aiwiki/#/0799_ML_Tasks_Image_Classification_DenseNet",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Tasks Image Classification SENet",
+      "group": 5,
+      "title": "SENet",
+      "url": "https://junxnone.github.io/aiwiki/#/0800_ML_Tasks_Image_Classification_SENet",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Tasks Image Classification EfficientNet",
+      "group": 5,
+      "title": "EfficientNet",
+      "url": "https://junxnone.github.io/aiwiki/#/0801_ML_Tasks_Image_Classification_EfficientNet",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Tasks Image Classification MobileNet V1",
       "group": 6,
       "title": "MobileNet V1",
@@ -11193,6 +11220,27 @@
     {
       "source": "aiwiki ML Tasks Image Classification",
       "target": "aiwiki ML Tasks Image Classification History",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks Image Classification",
+      "target": "aiwiki ML Tasks Image Classification DenseNet",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks Image Classification",
+      "target": "aiwiki ML Tasks Image Classification SENet",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks Image Classification",
+      "target": "aiwiki ML Tasks Image Classification EfficientNet",
       "value": 5,
       "visible": true,
       "expand": true

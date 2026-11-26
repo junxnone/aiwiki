@@ -242,6 +242,8 @@
     - [Image 相关 Tasks](/0420_ML_Tasks_Image)
       - [Classification](/0061_ML_Tasks_Image_Classification)
         - [AlexNet](/0027_ML_Tasks_Image_Classification_AlexNet)
+        - [DenseNet](/0799_ML_Tasks_Image_Classification_DenseNet)
+        - [EfficientNet](/0801_ML_Tasks_Image_Classification_EfficientNet)
         - [History](/0166_ML_Tasks_Image_Classification_History)
         - [Inception](/0049_ML_Tasks_Image_Classification_Inception)
           - [Inception V1](/0048_ML_Tasks_Image_Classification_Inception_V1)
@@ -253,6 +255,7 @@
           - [MobileNet V2](/0043_ML_Tasks_Image_Classification_MobileNet_V2)
           - [MobileNet V3](/0044_ML_Tasks_Image_Classification_MobileNet_V3)
         - [ResNet](/0051_ML_Tasks_Image_Classification_ResNet)
+        - [SENet](/0800_ML_Tasks_Image_Classification_SENet)
         - [VGGNet](/0146_ML_Tasks_Image_Classification_VGGNet)
         - [Xception](/0050_ML_Tasks_Image_Classification_Xception)
       - [Detection](/0152_ML_Tasks_Image_Detection)
@@ -772,4 +775,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0927571126</sub></kbd>
+<kbd><sub>@0930021126</sub></kbd>
