@@ -789,12 +789,21 @@
 - 2026-11-26&nbsp;&nbsp; [SENet](/0800_ML_Tasks_Image_Classification_SENet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Classification :bookmark:SENet
 - 2026-11-26&nbsp;&nbsp; [DenseNet](/0799_ML_Tasks_Image_Classification_DenseNet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Classification :bookmark:DenseNet
 - 2026-11-26&nbsp;&nbsp; [时间序列模型发展时间线](/0611_ML_Tasks_TimeSeries_Timeline)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Timeline
+- 2026-11-26&nbsp;&nbsp; [模型合并（Model Merging）](/0573_LM_FT_ModelMerging)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:ModelMerging
+- 2026-11-26&nbsp;&nbsp; [多 LoRA 生产部署（Multi-LoRA Serving）](/0572_LM_FT_MultiLoRAServing)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:MultiLoRAServing
+- 2026-11-26&nbsp;&nbsp; [大模型对齐训练：SFT / RLHF / DPO](/0568_LM_FT_Alignment)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:Alignment
+- 2026-11-26&nbsp;&nbsp; [OpenVINO BatchNorm 折叠（BN Folding）](/0564_Tools_OV_MO_BNFolding)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:MO :bookmark:BNFolding
+- 2026-11-26&nbsp;&nbsp; [OpenVINO 算子融合](/0563_Tools_OV_MO_Fusion)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:MO :bookmark:Fusion
+- 2026-11-26&nbsp;&nbsp; [NNCF Weight Compression](/0560_Tools_OV_NNCF_WC)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:NNCF :bookmark:WC
 - 2026-11-26&nbsp;&nbsp; [Advantage Actor Critic](/0460_RL_A2C)&nbsp;&nbsp; :bookmark:RL :bookmark:A2C
 - 2026-11-26&nbsp;&nbsp; [Actor Critic](/0459_RL_AC)&nbsp;&nbsp; :bookmark:RL :bookmark:AC
 - 2026-11-26&nbsp;&nbsp; [RL Tasks](/0457_RL_Taks)&nbsp;&nbsp; :bookmark:RL :bookmark:Taks
 - 2026-11-26&nbsp;&nbsp; [RL Tools](/0454_RL_Tools)&nbsp;&nbsp; :bookmark:RL :bookmark:Tools
 - 2026-11-26&nbsp;&nbsp; [Gym -> Gymnasium](/0453_Tools_Gym)&nbsp;&nbsp; :bookmark:Tools :bookmark:Gym
+- 2026-11-26&nbsp;&nbsp; [NNCF - Neural Network Compression Framework](/0451_Tools_OV_NNCF)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:NNCF
 - 2026-11-26&nbsp;&nbsp; [Image 相关 Tasks](/0420_ML_Tasks_Image)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image
+- 2026-11-26&nbsp;&nbsp; [Adapter FineTuning](/0412_LM_FT_Adapter)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:Adapter
+- 2026-11-26&nbsp;&nbsp; [DreamBooth](/0405_LM_FT_DreamBooth)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:DreamBooth
 - 2026-11-26&nbsp;&nbsp; [YOLO V5](/0379_ML_Tasks_Image_Detection_YOLO_V5)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Detection :bookmark:YOLO :bookmark:V5
 - 2026-11-26&nbsp;&nbsp; [Resize](/0347_Media_Image_Resize)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Resize
 - 2026-11-26&nbsp;&nbsp; [Perspective Transformation - 透视变换](/0345_Media_Image_PT)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:PT
@@ -1178,7 +1187,6 @@
 - 2026-10-21&nbsp;&nbsp; [oneDNN Post-ops](/0577_Tools_OV_OneDNN_PostOps)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:OneDNN :bookmark:PostOps
 - 2026-10-21&nbsp;&nbsp; [Snippets（CPU 子图 JIT 编译器）](/0576_Tools_OV_OPs_CPUImpl_Snippets)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:OPs :bookmark:CPUImpl :bookmark:Snippets
 - 2026-10-21&nbsp;&nbsp; [OPs NPU Impl](/0575_Tools_OV_OPs_NPUImpl)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:OPs :bookmark:NPUImpl
-- 2026-10-21&nbsp;&nbsp; [OpenVINO 算子融合](/0563_Tools_OV_MO_Fusion)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:MO :bookmark:Fusion
 - 2026-10-21&nbsp;&nbsp; [OPs CPU Impl](/0534_Tools_OV_OPs_CPUImpl)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:OPs :bookmark:CPUImpl
 - 2026-10-21&nbsp;&nbsp; [OPs GPU Impl](/0531_Tools_OV_OPs_GPUImpl)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:OPs :bookmark:GPUImpl
 - 2026-10-21&nbsp;&nbsp; [OpenVINO Ops](/0528_Tools_OV_OPs)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:OPs
@@ -1212,19 +1220,14 @@
 - 2026-10-21&nbsp;&nbsp; [ICP 精配准](/0086_3D_Algos_Registration_ICP)&nbsp;&nbsp; :bookmark:3D :bookmark:Algos :bookmark:Registration :bookmark:ICP
 - 2026-10-21&nbsp;&nbsp; [PPF 粗配准](/0085_3D_Algos_Registration_PPF)&nbsp;&nbsp; :bookmark:3D :bookmark:Algos :bookmark:Registration :bookmark:PPF
 - 2026-10-20&nbsp;&nbsp; [微调效果评估](/0574_LM_FT_Evaluation)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:Evaluation
-- 2026-10-20&nbsp;&nbsp; [模型合并（Model Merging）](/0573_LM_FT_ModelMerging)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:ModelMerging
-- 2026-10-20&nbsp;&nbsp; [多 LoRA 生产部署（Multi-LoRA Serving）](/0572_LM_FT_MultiLoRAServing)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:MultiLoRAServing
 - 2026-10-20&nbsp;&nbsp; [AdapterFusion](/0571_LM_FT_AdapterFusion)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:AdapterFusion
 - 2026-10-20&nbsp;&nbsp; [Textual Inversion](/0570_LM_FT_TextualInversion)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:TextualInversion
 - 2026-10-20&nbsp;&nbsp; [GaLore / ReLoRA：用低秩技巧做全参数训练](/0569_LM_FT_GaLoreReLoRA)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:GaLoreReLoRA
-- 2026-10-20&nbsp;&nbsp; [大模型对齐训练：SFT / RLHF / DPO](/0568_LM_FT_Alignment)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:Alignment
 - 2026-10-20&nbsp;&nbsp; [QLoRA](/0567_LM_FT_QLoRA)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:QLoRA
 - 2026-10-20&nbsp;&nbsp; [世界模型（World Model）](/0566_Hot_WorldModel)&nbsp;&nbsp; :bookmark:Hot :bookmark:WorldModel
 - 2026-10-20&nbsp;&nbsp; [OpenVINO 布局重排（Layout Transformation）](/0565_Tools_OV_MO_Layout)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:MO :bookmark:Layout
-- 2026-10-20&nbsp;&nbsp; [OpenVINO BatchNorm 折叠（BN Folding）](/0564_Tools_OV_MO_BNFolding)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:MO :bookmark:BNFolding
 - 2026-10-20&nbsp;&nbsp; [NNCF Training-time Optimization](/0562_Tools_OV_NNCF_TTOP)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:NNCF :bookmark:TTOP
 - 2026-10-20&nbsp;&nbsp; [NNCF Post-training Quantization](/0561_Tools_OV_NNCF_PTQ)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:NNCF :bookmark:PTQ
-- 2026-10-20&nbsp;&nbsp; [NNCF Weight Compression](/0560_Tools_OV_NNCF_WC)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:NNCF :bookmark:WC
 - 2026-10-20&nbsp;&nbsp; [光流 Optical Flow](/0559_CV_OpticalFlow)&nbsp;&nbsp; :bookmark:CV :bookmark:OpticalFlow
 - 2026-10-20&nbsp;&nbsp; [GPU Impl Reorder](/0529_Tools_OV_OPs_GPUImpl_Reorder)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:OPs :bookmark:GPUImpl :bookmark:Reorder
 - 2026-10-20&nbsp;&nbsp; [OFT/BOFT](/0495_LM_FT_OFT)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:OFT
@@ -1232,12 +1235,9 @@
 - 2026-10-20&nbsp;&nbsp; [LoKr](/0493_LM_FT_LoKr)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:LoKr
 - 2026-10-20&nbsp;&nbsp; [LoHa](/0492_LM_FT_LoHa)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:LoHa
 - 2026-10-20&nbsp;&nbsp; [AdaLoRA](/0491_LM_FT_AdaLoRA)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:AdaLoRA
-- 2026-10-20&nbsp;&nbsp; [NNCF - Neural Network Compression Framework](/0451_Tools_OV_NNCF)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:NNCF
-- 2026-10-20&nbsp;&nbsp; [Adapter FineTuning](/0412_LM_FT_Adapter)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:Adapter
 - 2026-10-20&nbsp;&nbsp; [Prefix Tuning](/0411_LM_FT_PrefixTuning)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:PrefixTuning
 - 2026-10-20&nbsp;&nbsp; [大模型微调](/0410_LM_FT)&nbsp;&nbsp; :bookmark:LM :bookmark:FT
 - 2026-10-20&nbsp;&nbsp; [LoRA](/0406_LM_FT_LoRA)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:LoRA
-- 2026-10-20&nbsp;&nbsp; [DreamBooth](/0405_LM_FT_DreamBooth)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:DreamBooth
 - 2026-10-20&nbsp;&nbsp; [Model Optimizer (Converter)](/0181_Tools_OV_MO)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:MO
 - 2026-10-19&nbsp;&nbsp; [算法落地实践](/0521_ML_Tasks_Image_Anomaly_Pipeline)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Anomaly :bookmark:Pipeline
 - 2026-10-19&nbsp;&nbsp; [G-API - Graph API](/0439_OpenCV_GAPI)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:GAPI
