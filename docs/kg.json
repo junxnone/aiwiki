@@ -1693,6 +1693,42 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki LM Lifecycle",
+      "group": 2,
+      "title": "Lifecycle",
+      "url": "https://junxnone.github.io/aiwiki/#/0817_LM_Lifecycle",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki LM Train",
+      "group": 2,
+      "title": "Train",
+      "url": "https://junxnone.github.io/aiwiki/#/0818_LM_Train",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki LM Infer",
+      "group": 2,
+      "title": "Infer",
+      "url": "https://junxnone.github.io/aiwiki/#/0819_LM_Infer",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki LM Deploy",
+      "group": 2,
+      "title": "Deploy",
+      "url": "https://junxnone.github.io/aiwiki/#/0820_LM_Deploy",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Op Convolution",
       "group": 3,
       "title": "ML Op Convolution",
@@ -8044,6 +8080,34 @@
     {
       "source": "aiwiki LM",
       "target": "aiwiki LM VLM",
+      "value": 2,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki LM",
+      "target": "aiwiki LM Lifecycle",
+      "value": 2,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki LM",
+      "target": "aiwiki LM Train",
+      "value": 2,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki LM",
+      "target": "aiwiki LM Infer",
+      "value": 2,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki LM",
+      "target": "aiwiki LM Deploy",
       "value": 2,
       "visible": true,
       "expand": true

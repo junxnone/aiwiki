@@ -4,6 +4,10 @@
 
 #### **Created**
 
+- 2026-11-26 23:33&nbsp;&nbsp; [Deploy](/0820_LM_Deploy)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy
+- 2026-11-26 23:33&nbsp;&nbsp; [Infer](/0819_LM_Infer)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer
+- 2026-11-26 23:33&nbsp;&nbsp; [Train](/0818_LM_Train)&nbsp;&nbsp; :bookmark:LM :bookmark:Train
+- 2026-11-26 23:32&nbsp;&nbsp; [Lifecycle](/0817_LM_Lifecycle)&nbsp;&nbsp; :bookmark:LM :bookmark:Lifecycle
 - 2026-11-26 22:40&nbsp;&nbsp; [剪枝发展历史](/0816_MO_Pruning_History)&nbsp;&nbsp; :bookmark:MO :bookmark:Pruning :bookmark:History
 - 2026-11-26 22:35&nbsp;&nbsp; [工具](/0815_MO_Pruning_Tools)&nbsp;&nbsp; :bookmark:MO :bookmark:Pruning :bookmark:Tools
 - 2026-11-26 22:35&nbsp;&nbsp; [LLM 剪枝](/0814_MO_Pruning_LLM)&nbsp;&nbsp; :bookmark:MO :bookmark:Pruning :bookmark:LLM
@@ -788,6 +792,10 @@
 
 #### **Updated**
 
+- 2026-11-26 23:33&nbsp;&nbsp; [Deploy](/0820_LM_Deploy)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy
+- 2026-11-26 23:33&nbsp;&nbsp; [Infer](/0819_LM_Infer)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer
+- 2026-11-26 23:33&nbsp;&nbsp; [Train](/0818_LM_Train)&nbsp;&nbsp; :bookmark:LM :bookmark:Train
+- 2026-11-26 23:32&nbsp;&nbsp; [Lifecycle](/0817_LM_Lifecycle)&nbsp;&nbsp; :bookmark:LM :bookmark:Lifecycle
 - 2026-11-26 23:16&nbsp;&nbsp; [像素格式](/0119_Media_Image_Camera_PixelFormat)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera :bookmark:PixelFormat
 - 2026-11-26 22:41&nbsp;&nbsp; [模型性能优化技术](/0471_MO)&nbsp;&nbsp; :bookmark:MO
 - 2026-11-26 22:41&nbsp;&nbsp; [剪枝](/0808_MO_Pruning)&nbsp;&nbsp; :bookmark:MO :bookmark:Pruning

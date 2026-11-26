@@ -515,6 +515,7 @@
       - [nanoflann](/0123_ML_NNS_KDTree_nanoflann)
   - [Semi-Supervised Learning 半监督学习](/0271_ML_SSL)
 - [大模型](/0408_LM)
+  - [Deploy](/0820_LM_Deploy)
   - [大模型微调](/0410_LM_FT)
     - [AdaLoRA](/0491_LM_FT_AdaLoRA)
     - [Adapter FineTuning](/0412_LM_FT_Adapter)
@@ -533,14 +534,17 @@
     - [Prefix Tuning](/0411_LM_FT_PrefixTuning)
     - [QLoRA](/0567_LM_FT_QLoRA)
     - [Textual Inversion](/0570_LM_FT_TextualInversion)
+  - [Infer](/0819_LM_Infer)
   - [Large Language Models](/0446_LM_LLMs)
     - [LLaMA](/0504_LM_LLMs_LLaMA)
     - [LLMs Metrics](/0503_LM_LLMs_Metrics)
     - [LLM Parameters](/0502_LM_LLMs_Parameters)
   - [多模态大模型](/0505_LM_LMMs)
+  - [Lifecycle](/0817_LM_Lifecycle)
   - [RAG](/0461_LM_RAG)
   - [大模型相关工具](/0497_LM_Tools)
     - [OPEA](/0501_LM_Tools_OPEA)
+  - [Train](/0818_LM_Train)
   - [VLM](/0506_LM_VLM)
     - [DragGAN](/0429_LM_VLM_DragGAN)
     - [GLIP](/0463_LM_VLM_GLIP)
@@ -790,4 +794,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@2317011126</sub></kbd>
+<kbd><sub>@2334121126</sub></kbd>
