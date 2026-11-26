@@ -3,7 +3,7 @@
 | Title     | LM Deploy OpenVINO                                    |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-26T15:39:40Z`                                |
-| Updated @ | `2026-11-26T15:39:40Z`                                |
+| Updated @ | `2026-11-26T15:43:18Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/848) |
 
@@ -102,12 +102,12 @@ print(pipe.generate("介绍一下 OpenVINO", max_new_tokens=200))
 
   - `LLMPipeline` 内部处理分词、chat template、KV Cache 和采样，接口比手写
     `optimum-intel` 的 `OVModelForCausalLM` 更简洁
-  - 流式输出：给 `generate` 传入 `streamer` 回调，边生成边处理，对应 [Service](@@DSVC@@)
-    中的流式输出
+  - 流式输出：给 `generate` 传入 `streamer` 回调，边生成边处理，对应
+    [Service](/0845_LM_Deploy_Service) 中的流式输出
   - 采样参数 (temperature、top-p) 通过 `GenerationConfig` 设置，含义见 [LLM
     Parameters](/0502_LM_LLMs_Parameters)
 
-投机解码：用一个小模型做 draft，大模型验证，原理见 [Speculative](@@ISPEC@@)：
+投机解码：用一个小模型做 draft，大模型验证，原理见 [Speculative](/0837_LM_Infer_Speculative)：
 
 ``` python
 import openvino_genai as ov_genai
@@ -119,9 +119,9 @@ config.num_assistant_tokens = 4                                     # 每轮 dra
 print(pipe.generate("介绍一下 OpenVINO", config))
 ```
 
-  - `num_assistant_tokens` 对应 [Speculative](@@ISPEC@@) 中的
-    $\\gamma$；也可以改用 `assistant_confidence_threshold`
-    (二者互斥)，只在 draft 置信度高于阈值时继续猜
+  - `num_assistant_tokens` 对应 [Speculative](/0837_LM_Infer_Speculative)
+    中的 $\\gamma$；也可以改用 `assistant_confidence_threshold` (二者互斥)，只在
+    draft 置信度高于阈值时继续猜
   - draft 模型必须与主模型使用同一个分词器，一般选同系列的小模型
   - 在 NPU 上使用时，官方示例建议主模型和 draft 模型都放在 NPU
 
@@ -145,7 +145,7 @@ Hugging Face 拉取已转换好的 OpenVINO 模型启动：
     `ovms.exe`，参数相同
   - 路径：快速入门使用 `/v1/chat/completions`，API 文档以 `/v3/chat/completions`
     为主路径，两者都可用；客户端用 OpenAI SDK 时把 `base_url` 指向对应前缀即可
-  - 以容器方式部署，与 [Service](@@DSVC@@) 中的网关、限流、扩缩容、监控方案一致
+  - 以容器方式部署，与 [Service](/0845_LM_Deploy_Service) 中的网关、限流、扩缩容、监控方案一致
 
 ## 压测
 
@@ -162,26 +162,28 @@ token 延迟和内存占用：
 | `-n`         | 重复次数 (第一次通常含编译开销，看后面几次) |
 | `-ic`        | 最大输出 token 数，默认 $512$   |
 
-表中：`llm_bench` 测的是单请求延迟；服务化后的并发吞吐要对 OVMS 做压测，方法见 [Benchmark](@@DBEN@@)。
+表中：`llm_bench` 测的是单请求延迟；服务化后的并发吞吐要对 OVMS 做压测，方法见
+[Benchmark](/0849_LM_Deploy_Benchmark)。
 
 ## 性能与调优
 
   - 带宽决定 decode：内存带宽越高，tokens/s 越高，所以 INT4 权重压缩通常能显著提速，见
-    [Basics](@@IBAS@@)
+    [Basics](/0834_LM_Infer_Basics)
   - CPU：确认使用多通道内存并绑定 NUMA 节点，线程数设为物理核数；批量并发时利用连续批处理
   - GPU：优先使用独立 GPU 或有足够显存带宽的集成显卡；注意核显与 CPU 共享内存
-  - 精度回归：压缩前后用固定评测集对比困惑度和任务指标，见 [Eval](@@TEVAL@@)，量化精度问题排查见
+  - 精度回归：压缩前后用固定评测集对比困惑度和任务指标，见 [Eval](/0827_LM_Train_Eval)，量化精度问题排查见
     [量化](/0312_MO_Quantization)
-  - 资源估算方法见 [Sizing](@@DSIZ@@)，框架对比见 [Frameworks](@@DFW@@)
+  - 资源估算方法见 [Sizing](/0844_LM_Deploy_Sizing)，框架对比见
+    [Frameworks](/0842_LM_Deploy_Frameworks)
 
 ## 常见问题
 
-| 现象         | 可能原因                      | 处理                                                   |
-| ---------- | ------------------------- | ---------------------------------------------------- |
-| 输出乱码或不停止   | chat template 或 EOS 设置不一致 | 检查分词器和 `generation_config.json`，见 [Format](@@DFMT@@) |
-| INT4 后明显变差 | 压缩过激                      | 提高 `ratio` 中 INT8 占比、减小 `group_size`、使用 AWQ 或数据感知压缩  |
-| 首次加载很慢     | 模型编译/加载开销                 | 使用模型缓存 (`CACHE_DIR`)                                 |
-| NPU 无法运行   | 格式或算子不支持                  | 使用 NPU 支持的压缩配置和静态形状                                  |
+| 现象         | 可能原因                      | 处理                                                                 |
+| ---------- | ------------------------- | ------------------------------------------------------------------ |
+| 输出乱码或不停止   | chat template 或 EOS 设置不一致 | 检查分词器和 `generation_config.json`，见 [Format](/0843_LM_Deploy_Format) |
+| INT4 后明显变差 | 压缩过激                      | 提高 `ratio` 中 INT8 占比、减小 `group_size`、使用 AWQ 或数据感知压缩                |
+| 首次加载很慢     | 模型编译/加载开销                 | 使用模型缓存 (`CACHE_DIR`)                                               |
+| NPU 无法运行   | 格式或算子不支持                  | 使用 NPU 支持的压缩配置和静态形状                                                |
 
 表中：这些是实际部署中常见的问题；NPU 的约束较多，建议先在 CPU/GPU 上验证精度，再迁移到 NPU。
 
