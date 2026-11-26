@@ -2,14 +2,14 @@
 Title | LM Train Cluster
 -- | --
 Created @ | `2026-11-26T15:36:10Z`
-Updated @| `2026-11-26T15:36:10Z`
+Updated @| `2026-11-26T15:42:22Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/832)
 
 ---
 # Cluster
 
-大模型训练集群：GPU 与加速器的关键指标，节点内与节点间的互联，通信库与拓扑，存储，以及怎样估算通信是否会成为瓶颈。并行策略见 [Distributed](@@TDIST@@)。
+大模型训练集群：GPU 与加速器的关键指标，节点内与节点间的互联，通信库与拓扑，存储，以及怎样估算通信是否会成为瓶颈。并行策略见 [Distributed](/0825_LM_Train_Distributed)。
 
 ## 集群结构
 
@@ -44,7 +44,7 @@ BF16/FP8 稠密算力 | 训练与 prefill 速度 | A100：$312$ TFLOPs BF16；H1
 卡间互联带宽 | 张量并行效率 | NVLink 每卡数百 GB/s
 功耗 | 机房供电与散热 | 每卡 $400\sim1000$ W 级
 
-表中：训练看算力和互联，推理 decode 看显存带宽和容量，见 [Infer Basics](@@IBAS@@)；Intel Gaudi 等加速器在同样的维度上比较。具体数值以厂商规格为准。
+表中：训练看算力和互联，推理 decode 看显存带宽和容量，见 [Infer Basics](/0834_LM_Infer_Basics)；Intel Gaudi 等加速器在同样的维度上比较。具体数值以厂商规格为准。
 
 ## 通信库与原语
 
@@ -68,7 +68,7 @@ $$
 
 - $S$：要同步的数据大小 (字节)；$n$：参与的卡数；$\text{BW}$：每卡的有效链路带宽
 - 第一项是带宽项：数据量大时主导，几乎与 $n$ 无关；第二项是延迟项，$\alpha$ 为每一跳的启动延迟 (微秒级)，卡数多、数据量小时主导
-- 例：$S=1$ GB 的梯度桶，$n=64$，$\text{BW}=50$ GB/s：带宽项约 $2\times\frac{63}{64}\times\frac{1}{50}\approx39$ ms；推理时的小消息 all-reduce 则主要受延迟项影响，见 [Infer Parallel](@@IPAR@@)
+- 例：$S=1$ GB 的梯度桶，$n=64$，$\text{BW}=50$ GB/s：带宽项约 $2\times\frac{63}{64}\times\frac{1}{50}\approx39$ ms；推理时的小消息 all-reduce 则主要受延迟项影响，见 [Infer Parallel](/0836_LM_Infer_Parallel)
 
 ## 网络与拓扑
 
@@ -79,8 +79,8 @@ $$
 
 ## 存储
 
-- 训练数据：预先分词并打包成大文件，顺序读取；读取吞吐要能喂饱所有 GPU，否则 MFU 下降，见 [Efficiency](@@TEFF@@)
-- checkpoint：大模型完整状态可达 TB 级，需要高带宽的并行文件系统 (如 Lustre、GPFS) 或分层写入 (先写本地 NVMe，再异步上传)，见 [Stability](@@TSTAB@@)
+- 训练数据：预先分词并打包成大文件，顺序读取；读取吞吐要能喂饱所有 GPU，否则 MFU 下降，见 [Efficiency](/0826_LM_Train_Efficiency)
+- checkpoint：大模型完整状态可达 TB 级，需要高带宽的并行文件系统 (如 Lustre、GPFS) 或分层写入 (先写本地 NVMe，再异步上传)，见 [Stability](/0831_LM_Train_Stability)
 
 ## 可靠性
 
