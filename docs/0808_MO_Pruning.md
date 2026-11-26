@@ -2,7 +2,7 @@
 Title | MO Pruning
 -- | --
 Created @ | `2026-11-26T14:35:10Z`
-Updated @| `2026-11-26T14:35:50Z`
+Updated @| `2026-11-26T14:41:13Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/808)
 
@@ -26,6 +26,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/808)
 | [N:M 半结构化稀疏](https://github.com/junxnone/aiwiki/issues/813) | 2:4 模式、Sparse Tensor Core、存储开销、ASP 流程 |
 | [LLM 剪枝](https://github.com/junxnone/aiwiki/issues/814) | 逐层重构、SparseGPT、Wanda、LLM-Pruner、Sheared-LLaMA、层剪枝 |
 | [工具](https://github.com/junxnone/aiwiki/issues/815) | `torch.nn.utils.prune`、Torch-Pruning、NNCF、ASP、TFMOT |
+| [发展历史](https://github.com/junxnone/aiwiki/issues/816) | 剪枝技术发展时间线：OBD / OBS、三步法、结构化剪枝、彩票假说、2:4 稀疏、LLM 剪枝 |
 
 表中：
 
@@ -97,4 +98,5 @@ $$
 - [SparseGPT](https://arxiv.org/abs/2301.00774)
 - [Wanda: A Simple and Effective Pruning Approach for LLMs](https://openreview.net/pdf?id=tz9JV2PRSv)
 - [LLM-Pruner](https://arxiv.org/pdf/2305.11627)
+
 
