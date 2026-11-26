@@ -3,31 +3,13 @@
 | Title     | ML Tasks Image Classification MobileNet V1           |
 | --------- | ---------------------------------------------------- |
 | Created @ | `2020-02-25T10:14:26Z`                               |
-| Updated @ | `2026-11-25T16:51:14Z`                               |
+| Updated @ | `2026-11-26T01:26:33Z`                               |
 | Labels    | \`\`                                                 |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/42) |
 
 -----
 
 # MobileNet V1
-
-## Reference
-
-  - 2017 **MobileNet V1** MobileNets: Efficient Convolutional Neural
-    Networks for Mobile Vision Applications
-    \[[paper](https://arxiv.org/pdf/1704.04861.pdf)\]
-  - [MobileNets
-    论文笔记](https://blog.csdn.net/Jesse_Mx/article/details/70766871)
-  - [深度解读谷歌MobileNet](https://blog.csdn.net/T800GHB/article/details/78879612)
-  - [Caffe Mobilenet](https://github.com/01org/caffe/wiki/Mobilenet)
-  - [MobileNets: Open-Source Models for Efficient On-Device
-    Vision](https://ai.googleblog.com/2017/06/mobilenets-open-source-models-for.html)
-  - [论文记录\_MobileNets Efficient Convolutional Neural Networks for Mobile
-    Vision
-    Application](https://blog.csdn.net/u013082989/article/details/77970196)
-  - [MobileNet论文详解](https://blog.csdn.net/qq_38807688/article/details/84590717)
-  - [tensorflow/models - Mobilenet
-    v1](https://github.com/tensorflow/models/blob/master/research/slim/nets/mobilenet_v1.md)
 
 ## Brief
 
@@ -152,3 +134,21 @@ D\_F+\\alpha M,\\alpha N,\\rho D\_F\\rho D\_F $$
 $\\rho$)；精度随宽度乘数下降得比计算量慢得多，说明在移动端「缩小宽度」是有效的折中。作为对比，VGG16
 为 $138\\text{M}$ 参数、$15.3\\text{G}$ MACs，top-1 为 $71.5%$，MobileNet 精度只低约
 $1%$，计算量只有它的约 $1/27$ `[待核实]`。
+
+## Reference
+
+  - 2017 **MobileNet V1** MobileNets: Efficient Convolutional Neural
+    Networks for Mobile Vision Applications
+    \[[paper](https://arxiv.org/pdf/1704.04861.pdf)\]
+  - [MobileNets
+    论文笔记](https://blog.csdn.net/Jesse_Mx/article/details/70766871)
+  - [深度解读谷歌MobileNet](https://blog.csdn.net/T800GHB/article/details/78879612)
+  - [Caffe Mobilenet](https://github.com/01org/caffe/wiki/Mobilenet)
+  - [MobileNets: Open-Source Models for Efficient On-Device
+    Vision](https://ai.googleblog.com/2017/06/mobilenets-open-source-models-for.html)
+  - [论文记录\_MobileNets Efficient Convolutional Neural Networks for Mobile
+    Vision
+    Application](https://blog.csdn.net/u013082989/article/details/77970196)
+  - [MobileNet论文详解](https://blog.csdn.net/qq_38807688/article/details/84590717)
+  - [tensorflow/models - Mobilenet
+    v1](https://github.com/tensorflow/models/blob/master/research/slim/nets/mobilenet_v1.md)
