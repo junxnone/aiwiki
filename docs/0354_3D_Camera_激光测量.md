@@ -2,7 +2,7 @@
 Title | 3D Camera 激光测量
 -- | --
 Created @ | `2021-09-14T07:53:53Z`
-Last Modify @| `2022-12-27T05:52:59Z`
+Updated @| `2026-11-26T08:19:30Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/354)
 
@@ -38,8 +38,8 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/354)
 
 原理 | **D = c x △t/2**
 -- | --
-D | 被测距离
-c | 光速
+$D$ | 被测距离
+$c$ | 光速
 △t | 测试时间
 
 
@@ -48,11 +48,12 @@ c | 光速
 
 ### 相位测量
 
-原理 | D = c x △t = c x △φ/ 4πf = λ/2 x △φ/2π
+原理 | $D = c\,\Delta t = c\,\dfrac{\Delta\varphi}{4\pi f} = \dfrac{\lambda}{2}\cdot\dfrac{\Delta\varphi}{2\pi}$
 -- | --
-D | 被测距离
-c | 光速
-△t | 测试时间 `△t=△φ/2πf`
-△φ | 相移
-f | 调制频率
-λ | 调制波长 `λ=c/f`
+$D$ | 被测距离
+$c$ | 光速
+$\Delta t$ | 测试时间 $\Delta t = \Delta\varphi/(2\pi f)$
+$\Delta\varphi$ | 相移
+$f$ | 调制频率
+$\lambda$ | 调制波长 $\lambda = c/f$
+
