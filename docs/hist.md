@@ -801,16 +801,26 @@
 - 2026-11-26&nbsp;&nbsp; [光流 Optical Flow](/0559_CV_OpticalFlow)&nbsp;&nbsp; :bookmark:CV :bookmark:OpticalFlow
 - 2026-11-26&nbsp;&nbsp; [Fast-FoundationStereo: Real-Time Zero-Shot Stereo Matching 读书笔记](/0543_paper_FoundationStereo_FFDS)&nbsp;&nbsp; :bookmark:paper :bookmark:FoundationStereo :bookmark:FFDS
 - 2026-11-26&nbsp;&nbsp; [异常缺陷生成](/0517_ML_Tasks_Image_Anomaly_Synthesis)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Anomaly :bookmark:Synthesis
+- 2026-11-26&nbsp;&nbsp; [多模态大模型](/0505_LM_LMMs)&nbsp;&nbsp; :bookmark:LM :bookmark:LMMs
+- 2026-11-26&nbsp;&nbsp; [LLaMA](/0504_LM_LLMs_LLaMA)&nbsp;&nbsp; :bookmark:LM :bookmark:LLMs :bookmark:LLaMA
+- 2026-11-26&nbsp;&nbsp; [LLMs Metrics](/0503_LM_LLMs_Metrics)&nbsp;&nbsp; :bookmark:LM :bookmark:LLMs :bookmark:Metrics
+- 2026-11-26&nbsp;&nbsp; [大模型相关工具](/0497_LM_Tools)&nbsp;&nbsp; :bookmark:LM :bookmark:Tools
+- 2026-11-26&nbsp;&nbsp; [GLIP](/0463_LM_VLM_GLIP)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:GLIP
+- 2026-11-26&nbsp;&nbsp; [RAG](/0461_LM_RAG)&nbsp;&nbsp; :bookmark:LM :bookmark:RAG
 - 2026-11-26&nbsp;&nbsp; [Advantage Actor Critic](/0460_RL_A2C)&nbsp;&nbsp; :bookmark:RL :bookmark:A2C
 - 2026-11-26&nbsp;&nbsp; [Actor Critic](/0459_RL_AC)&nbsp;&nbsp; :bookmark:RL :bookmark:AC
 - 2026-11-26&nbsp;&nbsp; [RL Tasks](/0457_RL_Taks)&nbsp;&nbsp; :bookmark:RL :bookmark:Taks
 - 2026-11-26&nbsp;&nbsp; [RL Tools](/0454_RL_Tools)&nbsp;&nbsp; :bookmark:RL :bookmark:Tools
 - 2026-11-26&nbsp;&nbsp; [Gym -> Gymnasium](/0453_Tools_Gym)&nbsp;&nbsp; :bookmark:Tools :bookmark:Gym
 - 2026-11-26&nbsp;&nbsp; [NNCF - Neural Network Compression Framework](/0451_Tools_OV_NNCF)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:NNCF
+- 2026-11-26&nbsp;&nbsp; [DragGAN](/0429_LM_VLM_DragGAN)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:DragGAN
 - 2026-11-26&nbsp;&nbsp; [Image 相关 Tasks](/0420_ML_Tasks_Image)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image
+- 2026-11-26&nbsp;&nbsp; [SAM](/0414_LM_VLM_SAM)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:SAM
 - 2026-11-26&nbsp;&nbsp; [Adapter FineTuning](/0412_LM_FT_Adapter)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:Adapter
 - 2026-11-26&nbsp;&nbsp; [DreamBooth](/0405_LM_FT_DreamBooth)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:DreamBooth
+- 2026-11-26&nbsp;&nbsp; [LaMa - Image Inpainting](/0404_LM_VLM_LaMa)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:LaMa
 - 2026-11-26&nbsp;&nbsp; [YOLO V5](/0379_ML_Tasks_Image_Detection_YOLO_V5)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Detection :bookmark:YOLO :bookmark:V5
+- 2026-11-26&nbsp;&nbsp; [ChatGPT](/0373_Hot_AIGC_ChatGPT)&nbsp;&nbsp; :bookmark:Hot :bookmark:AIGC :bookmark:ChatGPT
 - 2026-11-26&nbsp;&nbsp; [Reference](/0354_3D_Camera_激光测量)&nbsp;&nbsp; :bookmark:3D :bookmark:Camera :bookmark:激光测量
 - 2026-11-26&nbsp;&nbsp; [Resize](/0347_Media_Image_Resize)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Resize
 - 2026-11-26&nbsp;&nbsp; [Perspective Transformation - 透视变换](/0345_Media_Image_PT)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:PT
@@ -1317,9 +1327,6 @@
 - 2025-04-01&nbsp;&nbsp; [OpenVINO 优化](/0509_Tools_OV_Optimizations)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:Optimizations
 - 2025-02-18&nbsp;&nbsp; [RDT-1B 翻译](/0508_paper_RDT_CN)&nbsp;&nbsp; :bookmark:paper :bookmark:RDT :bookmark:CN
 - 2025-02-08&nbsp;&nbsp; [VLM](/0506_LM_VLM)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM
-- 2025-02-08&nbsp;&nbsp; [多模态大模型](/0505_LM_LMMs)&nbsp;&nbsp; :bookmark:LM :bookmark:LMMs
-- 2025-02-08&nbsp;&nbsp; [LLaMA](/0504_LM_LLMs_LLaMA)&nbsp;&nbsp; :bookmark:LM :bookmark:LLMs :bookmark:LLaMA
-- 2025-02-08&nbsp;&nbsp; [LLMs Metrics](/0503_LM_LLMs_Metrics)&nbsp;&nbsp; :bookmark:LM :bookmark:LLMs :bookmark:Metrics
 - 2025-02-08&nbsp;&nbsp; [LLM Parameters](/0502_LM_LLMs_Parameters)&nbsp;&nbsp; :bookmark:LM :bookmark:LLMs :bookmark:Parameters
 - 2025-02-08&nbsp;&nbsp; [OPEA](/0501_LM_Tools_OPEA)&nbsp;&nbsp; :bookmark:LM :bookmark:Tools :bookmark:OPEA
 - 2025-02-08&nbsp;&nbsp; [Multi-Head Attention](/0500_ML_Attention_MHA)&nbsp;&nbsp; :bookmark:ML :bookmark:Attention :bookmark:MHA
@@ -1329,21 +1336,15 @@
 - 2025-02-08&nbsp;&nbsp; [Luong Attention](/0211_ML_Attention_Luong)&nbsp;&nbsp; :bookmark:ML :bookmark:Attention :bookmark:Luong
 - 2025-02-07&nbsp;&nbsp; [Attention 注意力](/0210_ML_Attention)&nbsp;&nbsp; :bookmark:ML :bookmark:Attention
 - 2025-02-06&nbsp;&nbsp; [大模型分布图](/0498_LM_map)&nbsp;&nbsp; :bookmark:LM :bookmark:map
-- 2025-02-06&nbsp;&nbsp; [大模型相关工具](/0497_LM_Tools)&nbsp;&nbsp; :bookmark:LM :bookmark:Tools
 - 2025-02-05&nbsp;&nbsp; [AIGC Tools](/0456_Hot_AIGC_Tools)&nbsp;&nbsp; :bookmark:Hot :bookmark:AIGC :bookmark:Tools
 - 2025-02-05&nbsp;&nbsp; [SD 应用 webui](/0440_LM_VLM_StableDiffusion_WebUI)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:StableDiffusion :bookmark:WebUI
 - 2025-02-05&nbsp;&nbsp; [AIGC](/0374_Hot_AIGC)&nbsp;&nbsp; :bookmark:Hot :bookmark:AIGC
-- 2025-01-24&nbsp;&nbsp; [GLIP](/0463_LM_VLM_GLIP)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:GLIP
-- 2025-01-24&nbsp;&nbsp; [RAG](/0461_LM_RAG)&nbsp;&nbsp; :bookmark:LM :bookmark:RAG
 - 2025-01-24&nbsp;&nbsp; [Latent Space 潜在空间](/0455_LM_VLM_LatentSpace)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:LatentSpace
 - 2025-01-24&nbsp;&nbsp; [Large Language Models](/0446_LM_LLMs)&nbsp;&nbsp; :bookmark:LM :bookmark:LLMs
 - 2025-01-24&nbsp;&nbsp; [Stable Diffusion 原理](/0445_LM_VLM_StableDiffusion_Algos)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:StableDiffusion :bookmark:Algos
-- 2025-01-24&nbsp;&nbsp; [DragGAN](/0429_LM_VLM_DragGAN)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:DragGAN
 - 2025-01-24&nbsp;&nbsp; [机器学习/深度学习](/0416_ML)&nbsp;&nbsp; :bookmark:ML
-- 2025-01-24&nbsp;&nbsp; [SAM](/0414_LM_VLM_SAM)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:SAM
 - 2025-01-24&nbsp;&nbsp; [Imagen](/0413_LM_VLM_Imagen)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:Imagen
 - 2025-01-24&nbsp;&nbsp; [大模型](/0408_LM)&nbsp;&nbsp; :bookmark:LM
-- 2025-01-24&nbsp;&nbsp; [LaMa - Image Inpainting](/0404_LM_VLM_LaMa)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:LaMa
 - 2025-01-24&nbsp;&nbsp; [Stable Diffusion](/0402_LM_VLM_StableDiffusion)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:StableDiffusion
 - 2024-12-27&nbsp;&nbsp; [Contours 轮廓](/0343_OpenCV_IP_shape_Contours)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:shape :bookmark:Contours
 - 2024-10-17&nbsp;&nbsp; [Optuna](/0486_x_Optuna)&nbsp;&nbsp; :bookmark:x :bookmark:Optuna
@@ -1434,7 +1435,6 @@
 - 2023-03-25&nbsp;&nbsp; [ProxylessNAS](/0387_ML_AutoML_NAS_ProxylessNAS)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:NAS :bookmark:ProxylessNAS
 - 2023-03-08&nbsp;&nbsp; [Traditional Image Segmentation 传统图像分割](/0158_CV_TIS)&nbsp;&nbsp; :bookmark:CV :bookmark:TIS
 - 2023-02-21&nbsp;&nbsp; [CSPNet](/0385_paper_CSPNet)&nbsp;&nbsp; :bookmark:paper :bookmark:CSPNet
-- 2023-02-14&nbsp;&nbsp; [ChatGPT](/0373_Hot_AIGC_ChatGPT)&nbsp;&nbsp; :bookmark:Hot :bookmark:AIGC :bookmark:ChatGPT
 - 2023-02-06&nbsp;&nbsp; [Loss/Cost/ Object Function - 损失代价目标函数](/0378_ML_Arch_Func)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:Func
 - 2023-02-06&nbsp;&nbsp; [Dice Loss](/0283_ML_Arch_Func_LossFunction_DiceLoss)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:Func :bookmark:LossFunction :bookmark:DiceLoss
 - 2023-02-06&nbsp;&nbsp; [Cost Function 代价函数](/0282_ML_Arch_Func_CostFunction)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:Func :bookmark:CostFunction
