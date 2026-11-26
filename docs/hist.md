@@ -4,6 +4,8 @@
 
 #### **Created**
 
+- 2026-11-26 23:38&nbsp;&nbsp; [Frameworks](/0842_LM_Deploy_Frameworks)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Frameworks
+- 2026-11-26 23:38&nbsp;&nbsp; [CPU](/0841_LM_Infer_CPU)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:CPU
 - 2026-11-26 23:37&nbsp;&nbsp; [StructuredOutput](/0840_LM_Infer_StructuredOutput)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:StructuredOutput
 - 2026-11-26 23:37&nbsp;&nbsp; [Attention](/0839_LM_Infer_Attention)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:Attention
 - 2026-11-26 23:37&nbsp;&nbsp; [KVCache](/0838_LM_Infer_KVCache)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:KVCache
@@ -21,6 +23,7 @@
 - 2026-11-26 23:34&nbsp;&nbsp; [Efficiency](/0826_LM_Train_Efficiency)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Efficiency
 - 2026-11-26 23:34&nbsp;&nbsp; [Distributed](/0825_LM_Train_Distributed)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Distributed
 - 2026-11-26 23:34&nbsp;&nbsp; [Pretrain](/0824_LM_Train_Pretrain)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Pretrain
+- 2026-11-26 23:34&nbsp;&nbsp; [Architecture](/0823_LM_Train_Architecture)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Architecture
 - 2026-11-26 23:33&nbsp;&nbsp; [Tokenizer](/0822_LM_Train_Tokenizer)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Tokenizer
 - 2026-11-26 23:33&nbsp;&nbsp; [Data](/0821_LM_Train_Data)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Data
 - 2026-11-26 23:33&nbsp;&nbsp; [Deploy](/0820_LM_Deploy)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy
@@ -811,6 +814,8 @@
 
 #### **Updated**
 
+- 2026-11-26 23:38&nbsp;&nbsp; [Frameworks](/0842_LM_Deploy_Frameworks)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Frameworks
+- 2026-11-26 23:38&nbsp;&nbsp; [CPU](/0841_LM_Infer_CPU)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:CPU
 - 2026-11-26 23:37&nbsp;&nbsp; [StructuredOutput](/0840_LM_Infer_StructuredOutput)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:StructuredOutput
 - 2026-11-26 23:37&nbsp;&nbsp; [Attention](/0839_LM_Infer_Attention)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:Attention
 - 2026-11-26 23:37&nbsp;&nbsp; [KVCache](/0838_LM_Infer_KVCache)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:KVCache
@@ -828,6 +833,7 @@
 - 2026-11-26 23:34&nbsp;&nbsp; [Efficiency](/0826_LM_Train_Efficiency)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Efficiency
 - 2026-11-26 23:34&nbsp;&nbsp; [Distributed](/0825_LM_Train_Distributed)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Distributed
 - 2026-11-26 23:34&nbsp;&nbsp; [Pretrain](/0824_LM_Train_Pretrain)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Pretrain
+- 2026-11-26 23:34&nbsp;&nbsp; [Architecture](/0823_LM_Train_Architecture)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Architecture
 - 2026-11-26 23:33&nbsp;&nbsp; [Tokenizer](/0822_LM_Train_Tokenizer)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Tokenizer
 - 2026-11-26 23:33&nbsp;&nbsp; [Data](/0821_LM_Train_Data)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Data
 - 2026-11-26 23:33&nbsp;&nbsp; [Deploy](/0820_LM_Deploy)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy

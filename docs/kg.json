@@ -4042,6 +4042,15 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki LM Train Architecture",
+      "group": 3,
+      "title": "Architecture",
+      "url": "https://junxnone.github.io/aiwiki/#/0823_LM_Train_Architecture",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki LM Train Pretrain",
       "group": 3,
       "title": "Pretrain",
@@ -4190,6 +4199,24 @@
       "group": 3,
       "title": "StructuredOutput",
       "url": "https://junxnone.github.io/aiwiki/#/0840_LM_Infer_StructuredOutput",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki LM Infer CPU",
+      "group": 3,
+      "title": "CPU",
+      "url": "https://junxnone.github.io/aiwiki/#/0841_LM_Infer_CPU",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki LM Deploy Frameworks",
+      "group": 3,
+      "title": "Frameworks",
+      "url": "https://junxnone.github.io/aiwiki/#/0842_LM_Deploy_Frameworks",
       "visible": true,
       "expand": true,
       "childLinks": []
@@ -10385,6 +10412,13 @@
     },
     {
       "source": "aiwiki LM Train",
+      "target": "aiwiki LM Train Architecture",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki LM Train",
       "target": "aiwiki LM Train Pretrain",
       "value": 3,
       "visible": true,
@@ -10491,6 +10525,20 @@
     {
       "source": "aiwiki LM Infer",
       "target": "aiwiki LM Infer StructuredOutput",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki LM Infer",
+      "target": "aiwiki LM Infer CPU",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki LM Deploy",
+      "target": "aiwiki LM Deploy Frameworks",
       "value": 3,
       "visible": true,
       "expand": true

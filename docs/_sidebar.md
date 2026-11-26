@@ -516,6 +516,7 @@
   - [Semi-Supervised Learning 半监督学习](/0271_ML_SSL)
 - [大模型](/0408_LM)
   - [Deploy](/0820_LM_Deploy)
+    - [Frameworks](/0842_LM_Deploy_Frameworks)
   - [大模型微调](/0410_LM_FT)
     - [AdaLoRA](/0491_LM_FT_AdaLoRA)
     - [Adapter FineTuning](/0412_LM_FT_Adapter)
@@ -538,6 +539,7 @@
   - [Infer](/0819_LM_Infer)
     - [Attention](/0839_LM_Infer_Attention)
     - [Basics](/0834_LM_Infer_Basics)
+    - [CPU](/0841_LM_Infer_CPU)
     - [KVCache](/0838_LM_Infer_KVCache)
     - [Optimization](/0835_LM_Infer_Optimization)
     - [Parallel](/0836_LM_Infer_Parallel)
@@ -553,6 +555,7 @@
   - [大模型相关工具](/0497_LM_Tools)
     - [OPEA](/0501_LM_Tools_OPEA)
   - [Train](/0818_LM_Train)
+    - [Architecture](/0823_LM_Train_Architecture)
     - [Cluster](/0832_LM_Train_Cluster)
     - [Data](/0821_LM_Train_Data)
     - [Distributed](/0825_LM_Train_Distributed)
@@ -813,4 +816,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@2338371126</sub></kbd>
+<kbd><sub>@2339001126</sub></kbd>
