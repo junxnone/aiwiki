@@ -3,7 +3,7 @@
 | Title     | LM Infer Speculative                                  |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-26T15:37:12Z`                                |
-| Updated @ | `2026-11-26T15:37:12Z`                                |
+| Updated @ | `2026-11-26T15:42:33Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/837) |
 
@@ -14,12 +14,13 @@
 投机解码 (speculative decoding)：先用便宜的方法猜出多个
 token，再用大模型一次前向并行验证，在不改变输出分布的前提下加速
 decode。本文推导为什么它是无损的，比较 draft 模型、Medusa、EAGLE、n-gram 等猜测方法，并给出加速比的估算。概览见
-[Optimization](@@IOPT@@)。
+[Optimization](/0835_LM_Infer_Optimization)。
 
 ## 为什么能加速
 
-decode 每一步受显存带宽限制：读一遍权重只算一个 token，算力大量闲置，见 [Basics](@@IBAS@@)。大模型一次前向验证
-$\\gamma+1$ 个位置，读的权重和只算一个 token 几乎一样，所以只要猜得够准，一次前向就能产出多个 token。
+decode 每一步受显存带宽限制：读一遍权重只算一个 token，算力大量闲置，见
+[Basics](/0834_LM_Infer_Basics)。大模型一次前向验证 $\\gamma+1$ 个位置，读的权重和只算一个
+token 几乎一样，所以只要猜得够准，一次前向就能产出多个 token。
 
 ``` mermaid
 sequenceDiagram
@@ -103,16 +104,17 @@ c+1)} $$
 
 表中：选择时看三点：是否有同分词器的小模型、能否接受额外训练、任务输出与输入的重合程度。主流框架
 (vLLM、SGLang、TensorRT-LLM、llama.cpp、OpenVINO GenAI) 都支持其中若干种，见
-[Frameworks](@@DFW@@)。
+[Frameworks](/0842_LM_Deploy_Frameworks)。
 
 ## 适用范围
 
   - batch 小时收益大：带宽受限，算力有富余；batch 大到接近 compute-bound
     时，验证多个位置不再「免费」，收益下降甚至变慢
-  - 输出越长、越可预测 (代码、格式化文本、长思维链) 收益越大，见 [Reasoning](@@FTREA@@)
+  - 输出越长、越可预测 (代码、格式化文本、长思维链) 收益越大，见 [Reasoning](/0833_LM_FT_Reasoning)
   - 采样温度高时，$p$ 分布更平坦、接受率下降
-  - 显存：draft 模型和它的 KV Cache 都要占显存，会减少可服务的并发数，见 [Sizing](@@DSIZ@@)
-  - 在 Intel 平台上的用法见 [OpenVINO](@@DOV@@)
+  - 显存：draft 模型和它的 KV Cache 都要占显存，会减少可服务的并发数，见
+    [Sizing](/0844_LM_Deploy_Sizing)
+  - 在 Intel 平台上的用法见 [OpenVINO](/0848_LM_Deploy_OpenVINO)
 
 ## Reference
 
