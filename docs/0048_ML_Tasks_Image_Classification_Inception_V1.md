@@ -2,23 +2,12 @@
 Title | ML Tasks Image Classification Inception V1
 -- | --
 Created @ | `2019-12-04T09:27:53Z`
-Updated @| `2026-11-25T16:50:50Z`
+Updated @| `2026-11-26T01:26:20Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/48)
 
 ---
 # Inception V1
-
-## Reference
--  2014 **Inception V1 / GoogleNet** Going deeper with convolutions [[paper](https://arxiv.org/pdf/1409.4842.pdf)]
-- [深度学习---GoogLeNet](https://blog.csdn.net/qq_38906523/article/details/80061075)
-- [Going deeper with convolutions](https://arxiv.org/pdf/1409.4842v1.pdf)
-- [Inception结构](https://baike.baidu.com/item/Inception%E7%BB%93%E6%9E%84/22761220?fr=aladdin)
-- [一文概览Inception家族的「奋斗史」](https://www.chainnews.com/articles/727946354364.htm)
-- [深入浅出——网络模型中Inception的作用与结构全解析](https://blog.csdn.net/u010402786/article/details/52433324)
-- [图像分类丨Inception家族进化史「GoogleNet、Inception、Xception」](https://www.cnblogs.com/vincent1997/p/10920036.html)
-- [GoogLeNet系列解读](https://blog.csdn.net/shuzfan/article/details/50738394)
-- [Hebbian theory - 赫布理论](https://zh.wikipedia.org/wiki/%E8%B5%AB%E5%B8%83%E7%90%86%E8%AE%BA)
 
 ## Brief
 - `GoogLeNet` 是对 `Yann LeCuns` 的 `LeNet` 致敬, 代号为Inception
@@ -99,4 +88,15 @@ $$
 - 22 层 (带参数的层)，9 个 Inception 模块，参数约 $6.8\text{M}$ `[待核实]`，ILSVRC-2014 分类 top-5 错误率约 $6.67\%$
 - 用全局平均池化代替 [AlexNet](/0027_ML_Tasks_Image_Classification_AlexNet)、[VGGNet](/0146_ML_Tasks_Image_Classification_VGGNet) 的大全连接层，是参数骤减的主要原因
 - 后续改进见 [Inception V2/V3](/0046_ML_Tasks_Image_Classification_Inception_V2V3)、[Inception V4](/0047_ML_Tasks_Image_Classification_Inception_V4)，总览见 [Inception](/0049_ML_Tasks_Image_Classification_Inception)
+
+## Reference
+-  2014 **Inception V1 / GoogleNet** Going deeper with convolutions [[paper](https://arxiv.org/pdf/1409.4842.pdf)]
+- [深度学习---GoogLeNet](https://blog.csdn.net/qq_38906523/article/details/80061075)
+- [Going deeper with convolutions](https://arxiv.org/pdf/1409.4842v1.pdf)
+- [Inception结构](https://baike.baidu.com/item/Inception%E7%BB%93%E6%9E%84/22761220?fr=aladdin)
+- [一文概览Inception家族的「奋斗史」](https://www.chainnews.com/articles/727946354364.htm)
+- [深入浅出——网络模型中Inception的作用与结构全解析](https://blog.csdn.net/u010402786/article/details/52433324)
+- [图像分类丨Inception家族进化史「GoogleNet、Inception、Xception」](https://www.cnblogs.com/vincent1997/p/10920036.html)
+- [GoogLeNet系列解读](https://blog.csdn.net/shuzfan/article/details/50738394)
+- [Hebbian theory - 赫布理论](https://zh.wikipedia.org/wiki/%E8%B5%AB%E5%B8%83%E7%90%86%E8%AE%BA)
 
