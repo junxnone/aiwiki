@@ -3,24 +3,11 @@
 | Title     | ML Tasks Image Classification VGGNet                  |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2018-10-31T22:41:35Z`                                |
-| Updated @ | `2026-11-25T16:50:48Z`                                |
+| Updated @ | `2026-11-26T01:26:18Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/146) |
 
 -----
-
-## Reference
-
-  - 2014 **VGGNet** Very Deep Convolutional Networks for Large-Scale
-    Image Recognition \[[paper](https://arxiv.org/abs/1409.1556)\]
-    \[[code]())
-  - [VGGNet网络结构](https://blog.csdn.net/dcrmg/article/details/79254654)
-  - [神经网络中卷积层的堆叠](https://blog.csdn.net/v1_vivian/article/details/77776886)
-  - [卷积神经网络之VGG](https://www.cnblogs.com/wangguchangqing/p/10338560.html)
-  - [tensorflow（八）tensorflow加载VGG19模型数据并可视化每一层的输出](https://blog.csdn.net/missayaaa/article/details/80251823)
-  - [经典神经网络 VGG
-    论文解读](https://blog.csdn.net/briblue/article/details/83792394)
-  - [VGG16学习笔记](http://deanhan.com/2018/07/26/vgg16/)
 
 ## Brief
 
@@ -185,3 +172,16 @@ $74%$。
   - 缺点：参数多 (138M)，全连接层占大头；计算量大 (VGG16 约 $15.5\\text{G}$ MACs
     `[待核实]`)；没有残差连接，再加深会难以训练，后续由
     [ResNet](/0051_ML_Tasks_Image_Classification_ResNet) 解决
+
+## Reference
+
+  - 2014 **VGGNet** Very Deep Convolutional Networks for Large-Scale
+    Image Recognition \[[paper](https://arxiv.org/abs/1409.1556)\]
+    \[[code]())
+  - [VGGNet网络结构](https://blog.csdn.net/dcrmg/article/details/79254654)
+  - [神经网络中卷积层的堆叠](https://blog.csdn.net/v1_vivian/article/details/77776886)
+  - [卷积神经网络之VGG](https://www.cnblogs.com/wangguchangqing/p/10338560.html)
+  - [tensorflow（八）tensorflow加载VGG19模型数据并可视化每一层的输出](https://blog.csdn.net/missayaaa/article/details/80251823)
+  - [经典神经网络 VGG
+    论文解读](https://blog.csdn.net/briblue/article/details/83792394)
+  - [VGG16学习笔记](http://deanhan.com/2018/07/26/vgg16/)
