@@ -2,7 +2,7 @@
 Title | ML Tasks Image
 -- | --
 Created @ | `2023-06-17T11:31:29Z`
-Updated @| `2026-11-25T16:57:41Z`
+Updated @| `2026-11-26T01:30:46Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/420)
 
@@ -67,6 +67,7 @@ OCR | 图像 → 文本 | 字符准确率、编辑距离 | [OCR](/0200_ML_Tasks_
 [Xception](/0050_ML_Tasks_Image_Classification_Xception) | 深度可分离卷积
 [ResNet](/0051_ML_Tasks_Image_Classification_ResNet) | 残差学习，各深度对比
 [MobileNet](/0045_ML_Tasks_Image_Classification_MobileNet) | 总览；[V1](/0042_ML_Tasks_Image_Classification_MobileNet_V1)、[V2](/0043_ML_Tasks_Image_Classification_MobileNet_V2)、[V3](/0044_ML_Tasks_Image_Classification_MobileNet_V3)
+[DenseNet](/0799_ML_Tasks_Image_Classification_DenseNet)、[SENet](/0800_ML_Tasks_Image_Classification_SENet)、[EfficientNet](/0801_ML_Tasks_Image_Classification_EfficientNet) | 稠密连接、通道注意力、复合缩放
 
 表中：左列是文章，右列是该文章的重点内容；建议先读 Classification 和 History 建立脉络，再按需读各网络。
 
@@ -77,6 +78,7 @@ OCR | 图像 → 文本 | 字符准确率、编辑距离 | [OCR](/0200_ML_Tasks_
 [Detection](/0152_ML_Tasks_Image_Detection) | IoU、NMS、mAP、框回归、Focal Loss
 [RCNNs](/0060_ML_Tasks_Image_Detection_RCNNs) | R-CNN 三代对比；[R-CNN](/0057_ML_Tasks_Image_Detection_RCNN)、[Fast](/0058_ML_Tasks_Image_Detection_FastRCNN)、[Faster](/0059_ML_Tasks_Image_Detection_FasterRCNN)
 [YOLO](/0053_ML_Tasks_Image_Detection_YOLO) | 系列总览；[V1](/0054_ML_Tasks_Image_Detection_YOLO_V1)、[V2](/0055_ML_Tasks_Image_Detection_YOLO_V2)、[V3](/0056_ML_Tasks_Image_Detection_YOLO_V3)、[tiny](/0052_ML_Tasks_Image_Detection_YOLO_tiny)、[V5](/0379_ML_Tasks_Image_Detection_YOLO_V5)
+[SSD](/0802_ML_Tasks_Image_Detection_SSD)、[FPN](/0803_ML_Tasks_Image_Detection_FPN)、[RetinaNet](/0804_ML_Tasks_Image_Detection_RetinaNet)、[Loss](/0805_ML_Tasks_Image_Detection_Loss) | 多尺度检测、Focal Loss、IoU 系列损失
 
 ## 分割
 
@@ -88,6 +90,7 @@ OCR | 图像 → 文本 | 字符准确率、编辑距离 | [OCR](/0200_ML_Tasks_
 [Deeplab](/0162_ML_Tasks_Image_Segmentation_Deeplab) | 空洞卷积、ASPP、CRF
 [Instance](/0167_ML_Tasks_Image_Segmentation_Instance) | 实例分割的三类方法
 [MaskRCNN](/0163_ML_Tasks_Image_Segmentation_MaskRCNN)、[MSRCNN](/0164_ML_Tasks_Image_Segmentation_MSRCNN) | 掩码分支与掩码质量
+[PSPNet](/0806_ML_Tasks_Image_Segmentation_PSPNet) | 金字塔池化
 
 ## 检索
 
@@ -97,6 +100,7 @@ OCR | 图像 → 文本 | 字符准确率、编辑距离 | [OCR](/0200_ML_Tasks_
 [CBIR](/0155_ML_Tasks_Image_Retrieval_CBIR) | 基于内容的检索
 [VLAD](/0154_ML_Tasks_Image_Retrieval_CBIR_VLAD) | BoW、VLAD、NetVLAD、Fisher Vector
 [Siamese](/0153_ML_Tasks_Image_Retrieval_CBIR_SiameseNetwork)、[Triplet](/0156_ML_Tasks_Image_Retrieval_CBIR_TripletNetwork) | 对比损失、三元组损失
+[ArcFace](/0807_ML_Tasks_Image_Retrieval_ArcFace) | 角度间隔损失
 
 ## OCR
 
@@ -140,22 +144,22 @@ CTC | OCR | [CTC](/0189_ML_Tasks_Image_OCR_CTC)
 
 任务 | 建议标题 | 内容要点
 -- | -- | --
-分类 | ML Tasks Image Classification DenseNet | 稠密连接、特征复用
-分类 | ML Tasks Image Classification SENet | 通道注意力，Squeeze-and-Excitation
-分类 | ML Tasks Image Classification EfficientNet | 复合缩放 (深度/宽度/分辨率)，NAS
+分类 | [DenseNet](/0799_ML_Tasks_Image_Classification_DenseNet) (已建) | 稠密连接、特征复用
+分类 | [SENet](/0800_ML_Tasks_Image_Classification_SENet) (已建) | 通道注意力，Squeeze-and-Excitation
+分类 | [EfficientNet](/0801_ML_Tasks_Image_Classification_EfficientNet) (已建) | 复合缩放 (深度/宽度/分辨率)，NAS
 分类 | ML Tasks Image Classification ViT | Vision Transformer、patch 嵌入、与 CNN 的对比
 分类 | ML Tasks Image Classification ConvNeXt | 用现代训练配方改造纯卷积网络
-检测 | ML Tasks Image Detection SSD | 多尺度默认框，对比 YOLO
-检测 | ML Tasks Image Detection RetinaNet | Focal Loss、FPN
-检测 | ML Tasks Image Detection FPN | 特征金字塔，多尺度融合
+检测 | [SSD](/0802_ML_Tasks_Image_Detection_SSD) (已建) | 多尺度默认框，对比 YOLO
+检测 | [RetinaNet](/0804_ML_Tasks_Image_Detection_RetinaNet) (已建) | Focal Loss、FPN
+检测 | [FPN](/0803_ML_Tasks_Image_Detection_FPN) (已建) | 特征金字塔，多尺度融合
 检测 | ML Tasks Image Detection YOLO V4V7V8 | 近年的 YOLO 演进、anchor-free
 检测 | ML Tasks Image Detection DETR | Transformer 检测，二分图匹配，无需 NMS
-检测 | ML Tasks Image Detection Loss | GIoU/DIoU/CIoU 等框回归损失
-分割 | ML Tasks Image Segmentation PSPNet | 金字塔池化
+检测 | [Loss](/0805_ML_Tasks_Image_Detection_Loss) (已建) | GIoU/DIoU/CIoU 等框回归损失
+分割 | [PSPNet](/0806_ML_Tasks_Image_Segmentation_PSPNet) (已建) | 金字塔池化
 分割 | ML Tasks Image Segmentation SegFormer | Transformer 分割
 分割 | ML Tasks Image Segmentation SAM | 提示式通用分割
 分割 | ML Tasks Image Segmentation Panoptic | 全景分割与 PQ
-检索 | ML Tasks Image Retrieval ArcFace | 角度间隔损失
+检索 | [ArcFace](/0807_ML_Tasks_Image_Retrieval_ArcFace) (已建) | 角度间隔损失
 检索 | ML Tasks Image Retrieval CLIP | 图文对比学习，文本搜图
 检索 | ML Tasks Image Retrieval Faiss | 近似最近邻索引 (IVF/PQ/HNSW)
 新任务 | ML Tasks Image Keypoint | 人体姿态/关键点检测
@@ -170,4 +174,5 @@ CTC | OCR | [CTC](/0189_ML_Tasks_Image_OCR_CTC)
 - 图像基础：[Media Image](/0325_Media_Image)、[Media](/0417_Media)
 - 模型压缩与部署：[Quantization](/0312_MO_Quantization)、[KD](/0207_MO_KD)
 - 时间序列任务见 [ML Tasks TimeSeries](/0603_ML_Tasks_TimeSeries)
+
 
