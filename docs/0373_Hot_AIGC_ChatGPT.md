@@ -2,7 +2,7 @@
 Title | Hot AIGC ChatGPT
 -- | --
 Created @ | `2023-02-03T07:43:08Z`
-Updated @| `2023-02-14T09:29:12Z`
+Updated @| `2026-11-26T08:28:57Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/373)
 
@@ -14,3 +14,54 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/373)
 - 学习理解人类语言来聊天问答/写文案/翻译/编代码/...
 - 网络上一些网页版聊天机器人 - 开发了收费模式
 - 一些公式蹭上热点, 股价飙升
+
+## GPT 系列演进
+
+| 模型 | 时间 | 特点 |
+| --- | --- | --- |
+| GPT-1 | 2018.6 | 预训练 + 微调范式 |
+| GPT-2 | 2019.2 | 参数更大，展示零样本能力 |
+| GPT-3 | 2020.5 | 1750 亿参数，少样本学习 |
+| InstructGPT | 2022.3 | 用人类反馈对齐，更听得懂指令 |
+| ChatGPT | 2022.11 | 基于 InstructGPT 思路的对话产品 |
+| GPT-4 | 2023.3 | 多模态输入，能力显著提升 |
+
+表中：
+
+- **零样本 / 少样本**：不给或只给少量示例就能完成任务
+- 对比结论：规模、数据和对齐三个方向的提升，使对话体验在 ChatGPT 阶段成熟
+
+## 训练流程
+
+```mermaid
+flowchart LR
+    A[预训练 海量文本 预测下一个 token] --> B[SFT 指令数据监督微调]
+    B --> C[奖励模型 学习人类偏好]
+    C --> D[RLHF 用 PPO 优化策略]
+```
+
+图中：
+
+- **预训练**：在海量文本上学习语言知识
+- **SFT**：用高质量「指令-回答」数据让模型学会按指令回应
+- **奖励模型**：用人类对多个回答的排序训练一个打分模型
+- **RLHF**：用强化学习让模型生成更符合人类偏好的回答
+- 细节见 [大模型对齐训练](https://github.com/junxnone/aiwiki/issues/568)
+
+预训练目标是自回归语言模型损失：
+
+$$
+\mathcal{L}_{LM}=-\sum_{t=1}^{T}\log p_\theta\left(x_t\mid x_{<t}\right)
+$$
+
+其中：
+
+- $x_t$：第 $t$ 个 token；$x_{<t}$：它之前的所有 token
+- $p_\theta(\cdot)$：参数为 $\theta$ 的模型预测下一个 token 的概率
+- $T$：序列长度；该损失要求模型尽量准确地预测下一个 token
+
+## 局限
+
+- 会产生看似合理但不真实的内容（幻觉），可用检索增强缓解（见 [RAG](https://github.com/junxnone/aiwiki/issues/461)）
+- 知识有截止日期；上下文长度有限
+
