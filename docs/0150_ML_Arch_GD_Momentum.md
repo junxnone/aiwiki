@@ -2,7 +2,7 @@
 Title | ML Arch GD Momentum
 -- | --
 Created @ | `2019-03-12T01:50:50Z`
-Updated @| `2023-02-02T09:32:07Z`
+Updated @| `2026-11-26T08:17:07Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/150)
 
@@ -35,9 +35,17 @@ Nesterov Momentum | ![image](https://user-images.githubusercontent.com/2216970/1
 
 Name | Code 
 -- | -- 
-SGD | `x += - learning_rate * dx`
-Momentum   |  `v = mu * v - learning_rate * dx`<br>`x += v`
-Nesterov Momentum | `x_ahead = x + mu * v`<br>`v = mu * v - learning_rate * dx_ahead`<br>`x += v`
+SGD | $x \leftarrow x - \eta\, dx$
+Momentum   |  $v \leftarrow \mu v - \eta\, dx$<br>$x \leftarrow x + v$
+Nesterov Momentum | $x_{ahead} = x + \mu v$<br>$v \leftarrow \mu v - \eta\, dx_{ahead}$<br>$x \leftarrow x + v$
+
+其中：
+
+- $x$：待优化参数；$dx$：当前参数处的梯度；$dx_{ahead}$：在前瞻位置 $x_{ahead}$ 处计算的梯度
+- $\eta$：学习率（learning_rate）
+- $v$：速度（动量项），初始为 0
+- $\mu$：动量系数（mu），常取 0.9
+- $\leftarrow$：赋值更新
 
 
 
@@ -57,4 +65,5 @@ Nesterov Momentum | `x_ahead = x + mu * v`<br>`v = mu * v - learning_rate * dx_a
 ![image](https://user-images.githubusercontent.com/2216970/54170647-72a82380-44b2-11e9-98ab-2973edceaa47.png)
 
 ![image](https://user-images.githubusercontent.com/2216970/113685798-33804700-96f9-11eb-97db-5ee4395456ae.png)
+
 

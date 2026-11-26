@@ -3,7 +3,7 @@
 | Title     | ML Arch GD Momentum                                   |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2019-03-12T01:50:50Z`                                |
-| Updated @ | `2023-02-02T09:32:07Z`                                |
+| Updated @ | `2026-11-26T08:17:07Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/150) |
 
@@ -33,11 +33,19 @@
 
 ## 代码实现
 
-| Name              | Code                                                                          |
-| ----------------- | ----------------------------------------------------------------------------- |
-| SGD               | `x += - learning_rate * dx`                                                   |
-| Momentum          | `v = mu * v - learning_rate * dx`<br>`x += v`                                 |
-| Nesterov Momentum | `x_ahead = x + mu * v`<br>`v = mu * v - learning_rate * dx_ahead`<br>`x += v` |
+| Name              | Code                                                                                              |
+| ----------------- | ------------------------------------------------------------------------------------------------- |
+| SGD               | $x \\leftarrow x - \\eta, dx$                                                                     |
+| Momentum          | $v \\leftarrow \\mu v - \\eta, dx$<br>$x \\leftarrow x + v$                                       |
+| Nesterov Momentum | $x\_{ahead} = x + \\mu v$<br>$v \\leftarrow \\mu v - \\eta, dx\_{ahead}$<br>$x \\leftarrow x + v$ |
+
+其中：
+
+  - $x$：待优化参数；$dx$：当前参数处的梯度；$dx\_{ahead}$：在前瞻位置 $x\_{ahead}$ 处计算的梯度
+  - $\\eta$：学习率（learning\_rate）
+  - $v$：速度（动量项），初始为 0
+  - $\\mu$：动量系数（mu），常取 0.9
+  - $\\leftarrow$：赋值更新
 
 ## 指数加权平均
 
