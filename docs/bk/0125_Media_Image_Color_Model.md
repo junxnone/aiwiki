@@ -3,7 +3,7 @@
 | Title     | Media Image Color Model                               |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2021-10-25T03:08:34Z`                                |
-| Updated @ | `2026-11-26T01:25:47Z`                                |
+| Updated @ | `2026-11-26T08:17:05Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/125) |
 
@@ -25,8 +25,9 @@
 ## RGB & CMYK
 
   - 人眼对于 `RGB` 三种颜色分量的敏感程度不同: 对绿光最敏感, 红光次之, 蓝光最不敏感 `G>R>B`
-      - 这也是 RGB 转灰度/亮度时权重不同的原因, 例如 BT.601 的 `Y = 0.299R + 0.587G
-        + 0.114B` (见 [YUV](/0121_Media_Image_Color_Model_YUV))
+      - 这也是 RGB 转灰度/亮度时权重不同的原因, 例如 BT.601 的 $Y = 0.299R + 0.587G +
+        0.114B$（$Y$ 为亮度，$R,G,B$ 为红绿蓝分量，权重和为 1，绿色权重最大是因为人眼对绿光最敏感）(见
+        [YUV](/0121_Media_Image_Color_Model_YUV))
   - 感知均匀性较差, 使用 `欧氏距离` 度量颜色相似性, 结果会和人眼视觉有较大偏差
       - 需要按感知距离比较颜色时, 常转到 `CIE Lab` 等更接近感知均匀的空间再计算 (见
         [色彩空间转换](/0120_Media_Image_Color_Space_Transform))
