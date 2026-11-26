@@ -2,7 +2,7 @@
 Title | ML Arch Func LossFunction FocalLoss
 -- | --
 Created @ | `2019-03-14T06:35:24Z`
-Updated @| `2023-02-06T01:59:17Z`
+Updated @| `2026-11-26T08:19:27Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/284)
 
@@ -42,10 +42,11 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/284)
 Blanced CE | ![image](https://user-images.githubusercontent.com/2216970/70676744-1fc0fe00-1cc8-11ea-905a-f65c5ea7b426.png)
 -- | --
 
-- 引入权重因子  αt 
-  - class 1 ,  `αt = α ∈ [0, 1]`
-  - class −1,  `αt = 1−α`
--  αt 能够平衡 positive/negative 样本的重要性，但不能区分 easy/hard 样本
+- 引入权重因子 $\alpha_t$
+  - class 1 ,  $\alpha_t = \alpha \in [0, 1]$
+  - class −1,  $\alpha_t = 1-\alpha$
+  - 其中 $\alpha$ 为正类（前景）权重
+-  $\alpha_t$ 能够平衡 positive/negative 样本的重要性，但不能区分 easy/hard 样本
 
 ## Focal Loss
 
@@ -53,22 +54,23 @@ Focal Loss | ![image](https://user-images.githubusercontent.com/2216970/70677190
 -- | --
  α-balanced FL | ![image](https://user-images.githubusercontent.com/2216970/70677241-98748a00-1cc9-11ea-8b74-11637666d490.png)
 
-- 引入调制因子- modulating factor  `(1 − pt)^γ`,  γ ≥ 0
-- pt 为不同类别的分类概率
-  - pt 越大, 样本越容易, 调制因子越小, 损失函数值越小, 得以区分 easy/hard 样本
-- γ ≥ 0
-- αt ∈ [0, 1] - 用于调节 positive 和 negative 的比例，前景类别使用 α 时，对应的背景类别使用 1-α
-  - 例如 α=0.25 则前景权重占比较小，背景占比较大
-- γ 和 αt 是固定值, 不参与训练
-- γ 和 αt 的最优值是相互影响的，所以在评估准确度时需要把两者组合起来调节
-  - RetinaNet 作者在论文中给出 γ=2 & αt =0.25 时，ResNet-101+FPN 作为 backbone 的结构有最优的性能。
+- 引入调制因子 - modulating factor  $(1 - p_t)^\gamma$,  $\gamma \ge 0$
+- $p_t$ 为真实类别的分类概率（预测对的概率）
+  - $p_t$ 越大, 样本越容易, 调制因子越小, 损失函数值越小, 得以区分 easy/hard 样本
+- $\gamma \ge 0$：聚焦参数，越大越抑制简单样本的损失
+- $\alpha_t \in [0, 1]$ - 用于调节 positive 和 negative 的比例，前景类别使用 $\alpha$ 时，对应的背景类别使用 $1-\alpha$
+  - 例如 $\alpha=0.25$ 则前景权重占比较小，背景占比较大
+- $\gamma$ 和 $\alpha_t$ 是固定值, 不参与训练
+- $\gamma$ 和 $\alpha_t$ 的最优值是相互影响的，所以在评估准确度时需要把两者组合起来调节
+  - RetinaNet 作者在论文中给出 $\gamma=2$ & $\alpha_t =0.25$ 时，ResNet-101+FPN 作为 backbone 的结构有最优的性能。
 
 ---
 
 ![image](https://user-images.githubusercontent.com/2216970/69117514-e4695000-0aca-11ea-8442-af7b51830b87.png)
 
 ---
-不同 γ 和 αt 测试结果
+不同 $\gamma$ 和 $\alpha_t$ 测试结果
 
 ![image](https://user-images.githubusercontent.com/2216970/70678399-f191ed00-1ccc-11ea-8f6b-b4f1b05f76ff.png)
+
 
