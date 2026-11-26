@@ -2,7 +2,7 @@
 Title | LM Train Architecture
 -- | --
 Created @ | `2026-11-26T15:34:14Z`
-Updated @| `2026-11-26T15:34:14Z`
+Updated @| `2026-11-26T15:42:03Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/823)
 
@@ -48,7 +48,7 @@ $$
 
 - $Q,K,V$：由输入线性投影得到的查询、键、值，每个头的维度为 $d_h$；$QK^\top$ 的 $(i,j)$ 项衡量位置 $i$ 对位置 $j$ 的关注程度
 - $\sqrt{d_h}$：缩放因子，防止点积过大使 softmax 饱和；$M$：因果掩码，$j>i$ 处为 $-\infty$，使位置 $i$ 看不到未来
-- 计算量随序列长度 $S$ 平方增长 ($O(S^2d)$)，这是长上下文的主要开销，优化见 [Efficiency](@@TEFF@@)
+- 计算量随序列长度 $S$ 平方增长 ($O(S^2d)$)，这是长上下文的主要开销，优化见 [Efficiency](/0826_LM_Train_Efficiency)
 
 ### RoPE
 
@@ -63,12 +63,12 @@ $$
 - $m$：token 在序列中的位置；$i$：维度分组编号 ($i=0,\dots,d_h/2-1$)；$d_h$：头维度
 - $\omega_i$：第 $i$ 组的旋转频率，$i$ 越大频率越低，低频分量负责编码远距离的位置
 - 每组的两维 $(x_{2i},x_{2i+1})$ 按角度 $\theta_{m,i}$ 旋转；位置 $m$ 的 query 与位置 $n$ 的 key 的内积只依赖相对距离 $m-n$，所以注意力天然感知相对位置
-- 上下文窗口的外推可以通过调整 $\omega_i$ (如 PI、NTK、YaRN) 实现，见 [LongContext](@@TLONG@@)
+- 上下文窗口的外推可以通过调整 $\omega_i$ (如 PI、NTK、YaRN) 实现，见 [LongContext](/0829_LM_Train_LongContext)
 
 ### GQA
 
 - MHA (多头注意力)：每个头都有自己的 $K,V$；MQA：所有头共享一组 $K,V$；GQA (分组查询注意力)：$n_{head}$ 个 Q 头分成 $n_{kv}$ 组，每组共享一组 $K,V$
-- 目的：减小推理时的 KV Cache，因为 Cache 大小正比于 $n_{kv}$，见 [Infer Basics](@@IBAS@@)；例：Llama 3 8B 用 $n_{head}=32,n_{kv}=8$，KV Cache 只有 MHA 的 $1/4$
+- 目的：减小推理时的 KV Cache，因为 Cache 大小正比于 $n_{kv}$，见 [Infer Basics](/0834_LM_Infer_Basics)；例：Llama 3 8B 用 $n_{head}=32,n_{kv}=8$，KV Cache 只有 MHA 的 $1/4$
 
 ### MLA
 
@@ -110,7 +110,7 @@ $$
 
 - 混合专家 (MoE)：把 FFN 换成 $E$ 个并行的专家，路由器为每个 token 选出 top-$k$ 个专家 (如 $k=2$)，只激活这几个
 - 好处：总参数量大 (知识容量大)，但每个 token 的计算量只相当于激活的参数；例：Mixtral 8x7B 总参数约 $46.7\text{B}$，每 token 激活约 $12.9\text{B}$
-- 代价：显存仍需放下全部专家；负载不均衡需要辅助损失；部署时需要专家并行，见 [Infer Parallel](@@IPAR@@)
+- 代价：显存仍需放下全部专家；负载不均衡需要辅助损失；部署时需要专家并行，见 [Infer Parallel](/0836_LM_Infer_Parallel)
 
 ## 参数量与计算量
 
@@ -143,8 +143,8 @@ $$
 
 - $N_{\text{非嵌入}}$：不含嵌入层的参数量；每个权重在矩阵乘法里参与一次乘法和一次加法，所以是 $2$ FLOPs/参数；输入嵌入只是查表，不计算
 - $2LSd$：注意力的 $QK^\top$ 与「得分乘 $V$」两步，对每个 token 要与上下文的 $S$ 个位置各做一次 $d$ 维点积 (按 Kaplan 等人的计法，因果掩码使平均只算一半，故系数为 $2$ 而不是 $4$)；它与参数量无关，只随上下文长度增长
-- $C_{train}$：反向传播约是前向的 $2$ 倍，所以训练每 token 约 $3C_{fwd}\approx6N$，即 [Pretrain](@@TPRE@@) 里 $C\approx6ND$ 的来源
-- 注意力项什么时候不能忽略：比较 $2LSd$ 与 $2N\approx24Ld^2$ (标准结构每层约 $12d^2$ 参数)，比值约为 $\frac{S}{12d}$；例：Llama 3 8B ($d=4096$)，$S=4096$ 时注意力只占约 $8\%$，$S=128\text{K}$ 时注意力的计算量约是参数部分的 $2.6$ 倍，这就是长上下文训练和 prefill 昂贵的原因，见 [LongContext](@@TLONG@@)
+- $C_{train}$：反向传播约是前向的 $2$ 倍，所以训练每 token 约 $3C_{fwd}\approx6N$，即 [Pretrain](/0824_LM_Train_Pretrain) 里 $C\approx6ND$ 的来源
+- 注意力项什么时候不能忽略：比较 $2LSd$ 与 $2N\approx24Ld^2$ (标准结构每层约 $12d^2$ 参数)，比值约为 $\frac{S}{12d}$；例：Llama 3 8B ($d=4096$)，$S=4096$ 时注意力只占约 $8\%$，$S=128\text{K}$ 时注意力的计算量约是参数部分的 $2.6$ 倍，这就是长上下文训练和 prefill 昂贵的原因，见 [LongContext](/0829_LM_Train_LongContext)
 
 ## Reference
 - [Attention Is All You Need](https://arxiv.org/abs/1706.03762)
