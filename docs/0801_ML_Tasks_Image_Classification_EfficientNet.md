@@ -2,7 +2,7 @@
 Title | ML Tasks Image Classification EfficientNet
 -- | --
 Created @ | `2026-11-26T01:28:37Z`
-Updated @| `2026-11-26T01:28:37Z`
+Updated @| `2026-11-26T01:30:09Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/801)
 
@@ -40,7 +40,7 @@ flowchart LR
 
 ## 基础网络 B0
 
-- 由 NAS 搜索得到，搜索目标同时考虑精度和 FLOPs，结构类似 [MobileNet V2](/0043_ML_Tasks_Image_Classification_MobileNet_V2) 的 MBConv (倒残差 + 深度可分离卷积)，并在块里加入 [SE](@@SE@@) 注意力，激活函数用 Swish
+- 由 NAS 搜索得到，搜索目标同时考虑精度和 FLOPs，结构类似 [MobileNet V2](/0043_ML_Tasks_Image_Classification_MobileNet_V2) 的 MBConv (倒残差 + 深度可分离卷积)，并在块里加入 [SE](/0800_ML_Tasks_Image_Classification_SENet) 注意力，激活函数用 Swish
 - 全网络约 $5.3\text{M}$ 参数、$0.39\text{G}$ FLOPs，ImageNet top-1 $77.1\%$
 
 模型 | 输入分辨率 | 参数量 | FLOPs | ImageNet top-1 `[待核实]`
