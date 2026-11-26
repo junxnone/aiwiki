@@ -4312,6 +4312,24 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki LM Deploy MultiModal",
+      "group": 3,
+      "title": "MultiModal",
+      "url": "https://junxnone.github.io/aiwiki/#/0853_LM_Deploy_MultiModal",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki LM Deploy Edge",
+      "group": 3,
+      "title": "Edge",
+      "url": "https://junxnone.github.io/aiwiki/#/0854_LM_Deploy_Edge",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Op Convolution Math",
       "group": 4,
       "title": "卷积 数学定义",
@@ -10699,6 +10717,20 @@
     {
       "source": "aiwiki LM Deploy",
       "target": "aiwiki LM Deploy ToolCalling",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki LM Deploy",
+      "target": "aiwiki LM Deploy MultiModal",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki LM Deploy",
+      "target": "aiwiki LM Deploy Edge",
       "value": 3,
       "visible": true,
       "expand": true

@@ -4,6 +4,8 @@
 
 #### **Created**
 
+- 2026-11-26 23:40&nbsp;&nbsp; [Edge](/0854_LM_Deploy_Edge)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Edge
+- 2026-11-26 23:40&nbsp;&nbsp; [MultiModal](/0853_LM_Deploy_MultiModal)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:MultiModal
 - 2026-11-26 23:40&nbsp;&nbsp; [ToolCalling](/0852_LM_Deploy_ToolCalling)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:ToolCalling
 - 2026-11-26 23:40&nbsp;&nbsp; [Gateway](/0851_LM_Deploy_Gateway)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Gateway
 - 2026-11-26 23:40&nbsp;&nbsp; [Kubernetes](/0850_LM_Deploy_Kubernetes)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Kubernetes
@@ -824,6 +826,8 @@
 
 #### **Updated**
 
+- 2026-11-26 23:40&nbsp;&nbsp; [Edge](/0854_LM_Deploy_Edge)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Edge
+- 2026-11-26 23:40&nbsp;&nbsp; [MultiModal](/0853_LM_Deploy_MultiModal)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:MultiModal
 - 2026-11-26 23:40&nbsp;&nbsp; [ToolCalling](/0852_LM_Deploy_ToolCalling)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:ToolCalling
 - 2026-11-26 23:40&nbsp;&nbsp; [Gateway](/0851_LM_Deploy_Gateway)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Gateway
 - 2026-11-26 23:40&nbsp;&nbsp; [Kubernetes](/0850_LM_Deploy_Kubernetes)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Kubernetes

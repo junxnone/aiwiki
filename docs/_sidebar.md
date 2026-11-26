@@ -517,10 +517,12 @@
 - [大模型](/0408_LM)
   - [Deploy](/0820_LM_Deploy)
     - [Benchmark](/0849_LM_Deploy_Benchmark)
+    - [Edge](/0854_LM_Deploy_Edge)
     - [Format](/0843_LM_Deploy_Format)
     - [Frameworks](/0842_LM_Deploy_Frameworks)
     - [Gateway](/0851_LM_Deploy_Gateway)
     - [Kubernetes](/0850_LM_Deploy_Kubernetes)
+    - [MultiModal](/0853_LM_Deploy_MultiModal)
     - [OpenVINO](/0848_LM_Deploy_OpenVINO)
     - [Ops](/0846_LM_Deploy_Ops)
     - [Safety](/0847_LM_Deploy_Safety)
@@ -826,4 +828,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@2341111126</sub></kbd>
+<kbd><sub>@2341331126</sub></kbd>
