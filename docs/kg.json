@@ -1684,6 +1684,15 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki MO Pruning",
+      "group": 2,
+      "title": "剪枝",
+      "url": "https://junxnone.github.io/aiwiki/#/0808_MO_Pruning",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Op Convolution",
       "group": 3,
       "title": "ML Op Convolution",
@@ -3902,6 +3911,69 @@
       "group": 3,
       "title": "Sim2Real",
       "url": "https://junxnone.github.io/aiwiki/#/0798_RL_Robot_Sim2Real",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki MO Pruning Basics",
+      "group": 3,
+      "title": "MO Pruning Basics",
+      "url": "https://junxnone.github.io/aiwiki/#/0809_MO_Pruning_Basics",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki MO Pruning Criteria",
+      "group": 3,
+      "title": "重要性准则",
+      "url": "https://junxnone.github.io/aiwiki/#/0810_MO_Pruning_Criteria",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki MO Pruning Schedule",
+      "group": 3,
+      "title": "剪枝流程与时机",
+      "url": "https://junxnone.github.io/aiwiki/#/0811_MO_Pruning_Schedule",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki MO Pruning Structured",
+      "group": 3,
+      "title": "结构化剪枝",
+      "url": "https://junxnone.github.io/aiwiki/#/0812_MO_Pruning_Structured",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki MO Pruning Sparse24",
+      "group": 3,
+      "title": "N:M 半结构化稀疏",
+      "url": "https://junxnone.github.io/aiwiki/#/0813_MO_Pruning_Sparse24",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki MO Pruning LLM",
+      "group": 3,
+      "title": "LLM 剪枝",
+      "url": "https://junxnone.github.io/aiwiki/#/0814_MO_Pruning_LLM",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki MO Pruning Tools",
+      "group": 3,
+      "title": "工具",
+      "url": "https://junxnone.github.io/aiwiki/#/0815_MO_Pruning_Tools",
       "visible": true,
       "expand": true,
       "childLinks": []
@@ -8262,6 +8334,13 @@
       "expand": true
     },
     {
+      "source": "aiwiki MO",
+      "target": "aiwiki MO Pruning",
+      "value": 2,
+      "visible": true,
+      "expand": true
+    },
+    {
       "source": "aiwiki ML Tasks",
       "target": "aiwiki ML Tasks MetricLearning",
       "value": 3,
@@ -9979,6 +10058,55 @@
     {
       "source": "aiwiki Media Audio",
       "target": "aiwiki Media Audio Basics",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki MO Pruning",
+      "target": "aiwiki MO Pruning Basics",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki MO Pruning",
+      "target": "aiwiki MO Pruning Criteria",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki MO Pruning",
+      "target": "aiwiki MO Pruning Schedule",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki MO Pruning",
+      "target": "aiwiki MO Pruning Structured",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki MO Pruning",
+      "target": "aiwiki MO Pruning Sparse24",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki MO Pruning",
+      "target": "aiwiki MO Pruning LLM",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki MO Pruning",
+      "target": "aiwiki MO Pruning Tools",
       "value": 3,
       "visible": true,
       "expand": true

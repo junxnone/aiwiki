@@ -567,6 +567,14 @@
     - [自蒸馏（Self-Distillation）](/0693_MO_KD_Self)
     - [蒸馏理论与实践](/0698_MO_KD_Theory)
     - [Distilling the Knowledge in a Neural Network](/0208_MO_KD_s)
+  - [剪枝](/0808_MO_Pruning)
+    - [MO Pruning Basics](/0809_MO_Pruning_Basics)
+    - [重要性准则](/0810_MO_Pruning_Criteria)
+    - [LLM 剪枝](/0814_MO_Pruning_LLM)
+    - [剪枝流程与时机](/0811_MO_Pruning_Schedule)
+    - [N:M 半结构化稀疏](/0813_MO_Pruning_Sparse24)
+    - [结构化剪枝](/0812_MO_Pruning_Structured)
+    - [工具](/0815_MO_Pruning_Tools)
   - [量化](/0312_MO_Quantization)
     - [量化基础原理](/0699_MO_Quantization_Basics)
     - [量化校准（Calibration）](/0701_MO_Quantization_Calibration)
@@ -781,4 +789,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1825011126</sub></kbd>
+<kbd><sub>@2236481126</sub></kbd>
