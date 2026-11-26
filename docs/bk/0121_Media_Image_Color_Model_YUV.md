@@ -3,23 +3,13 @@
 | Title     | Media Image Color Model YUV                           |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2021-02-07T03:28:00Z`                                |
-| Updated @ | `2026-11-25T16:21:37Z`                                |
+| Updated @ | `2026-11-26T01:25:59Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/121) |
 
 -----
 
 # YUV Color Model
-
-## Reference
-
-  - [详解 YUV
-    格式（I420/YUV420/NV12/NV12/YUV422）](https://www.jianshu.com/p/358bf8b7eacc)
-  - [YUV pixel formats](https://www.fourcc.org/yuv.php)
-  - [YUV - videolan-wiki](https://wiki.videolan.org/YUV#Semi-planar)
-  - [Recommended 8-Bit YUV Formats for Video
-    Rendering](https://docs.microsoft.com/en-us/windows/win32/medfound/recommended-8-bit-yuv-formats-for-video-rendering)
-  - [一文理解 YUV](https://zhuanlan.zhihu.com/p/75735751)
 
 ## Brief
 
@@ -133,3 +123,13 @@ $219/224$ 缩放。
 | YUV                                                                       | YCbCr                                                        |
 | ------------------------------------------------------------------------- | ------------------------------------------------------------ |
 | ![chrome\_bgGeKE4sTE](media/4d05585390ddbbeab465dc8ffa892d509706a9f1.png) | ![image](media/548c860eaffe6193600c91836fe9366fb69aec3e.png) |
+
+## Reference
+
+  - [详解 YUV
+    格式（I420/YUV420/NV12/NV12/YUV422）](https://www.jianshu.com/p/358bf8b7eacc)
+  - [YUV pixel formats](https://www.fourcc.org/yuv.php)
+  - [YUV - videolan-wiki](https://wiki.videolan.org/YUV#Semi-planar)
+  - [Recommended 8-Bit YUV Formats for Video
+    Rendering](https://docs.microsoft.com/en-us/windows/win32/medfound/recommended-8-bit-yuv-formats-for-video-rendering)
+  - [一文理解 YUV](https://zhuanlan.zhihu.com/p/75735751)
