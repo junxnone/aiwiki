@@ -3,7 +3,7 @@
 | Title     | OpenCV IPP                                            |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-08-01T14:08:47Z`                                |
-| Updated @ | `2023-08-07T14:31:40Z`                                |
+| Updated @ | `2026-11-26T10:07:05Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/430) |
 
@@ -19,6 +19,34 @@
   - Ubuntu Package `libopencv-dev` 默认是
     [DWITH\_IPP=OFF](https://salsa.debian.org/science-team/opencv/-/blob/debian/experimental/debian/rules#L105)
   - `opencv-python` package 和 Windows exe Package 是 编译了 IPP
+
+IPP（Intel Integrated Performance Primitives）是 Intel 针对自家 CPU
+高度优化的图像、信号处理函数库。OpenCV 在运行时遇到可用的 IPP 实现，会优先调用
+IPP 版本，代替自己的纯 C++ / SIMD 实现。
+
+## 各发行包是否带 IPP
+
+| 发行包                    | 是否包含 IPP                |
+| ---------------------- | ----------------------- |
+| 官方 Release             | 是（编译进 opencv library）   |
+| `opencv-python`（pip）   | 是                       |
+| Windows 官方 exe         | 是                       |
+| Ubuntu `libopencv-dev` | 否（`WITH_IPP=OFF`）       |
+| 自行编译                   | 取决于 `-DWITH_IPP=ON/OFF` |
+
+表中：
+
+  - 原因：IPP 不是开源的，部分 Linux 发行版出于许可原因默认不带
+  - 对比结论：同一个函数在不同安装来源下，实际调用的实现可能不同，性能也可能不同
+
+## 编译与运行时控制
+
+    cmake -DWITH_IPP=ON ..                # 编译时启用 IPP
+    export OPENCV_IPP=disabled            # 运行时关闭 IPP
+
+其中：`WITH_IPP` 是 CMake 选项；`OPENCV_IPP` 是运行时环境变量，用于限制或关闭 IPP
+使用的指令集，常用于对比有无 IPP 的性能或排查问题。运行时分发机制见 [CPU
+Optimizations](https://github.com/junxnone/aiwiki/issues/438)。
 
 -----
 
