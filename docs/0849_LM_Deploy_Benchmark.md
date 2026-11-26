@@ -2,14 +2,14 @@
 Title | LM Deploy Benchmark
 -- | --
 Created @ | `2026-11-26T15:39:53Z`
-Updated @| `2026-11-26T15:39:53Z`
+Updated @| `2026-11-26T15:43:20Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/849)
 
 ---
 # Benchmark
 
-大模型推理服务的压测：测什么指标，怎样构造负载，怎样做并发扫描并读出容量，常用工具，以及常见的测量陷阱。指标定义见 [Basics](@@IBAS@@)。
+大模型推理服务的压测：测什么指标，怎样构造负载，怎样做并发扫描并读出容量，常用工具，以及常见的测量陷阱。指标定义见 [Basics](/0834_LM_Infer_Basics)。
 
 ## 测什么
 
@@ -49,7 +49,7 @@ flowchart LR
 
 - 从低负载开始逐级增加，每级运行足够长的时间 (至少几百个请求) 再记录
 - 低负载时吞吐随负载近似线性增长、延迟几乎不变；接近饱和时吞吐趋于平稳、延迟急剧上升 (排队)
-- 曲线上「延迟刚好不超过 SLO」的那个点，就是单实例在该 SLO 下的容量，用于 [Sizing](@@DSIZ@@) 中的副本数估算
+- 曲线上「延迟刚好不超过 SLO」的那个点，就是单实例在该 SLO 下的容量，用于 [Sizing](/0844_LM_Deploy_Sizing) 中的副本数估算
 
 容量与副本数：
 
@@ -67,10 +67,10 @@ $$
 
 工具 | 适用 | 说明
 -- | -- | --
-`vllm bench serve` | 任何 OpenAI 兼容服务 | vLLM 自带，支持数据集与到达率设置，输出 TTFT/TPOT/ITL 分位数，命令见 [Frameworks](@@DFW@@)
+`vllm bench serve` | 任何 OpenAI 兼容服务 | vLLM 自带，支持数据集与到达率设置，输出 TTFT/TPOT/ITL 分位数，命令见 [Frameworks](/0842_LM_Deploy_Frameworks)
 GuideLLM | 生产压测 | vLLM 官方推荐，支持扫描、报告生成
 genai-perf | Triton/OpenAI 兼容服务 | NVIDIA 的压测工具
-`llm_bench` | OpenVINO | 测单请求延迟和内存，命令见 [OpenVINO](@@DOV@@)
+`llm_bench` | OpenVINO | 测单请求延迟和内存，命令见 [OpenVINO](/0848_LM_Deploy_OpenVINO)
 llama-bench | llama.cpp | 测 prefill (pp) 和 decode (tg) 的 tokens/s
 Locust、k6 等 | 通用 | 自定义复杂流量，需要自己解析流式响应
 
