@@ -3,19 +3,11 @@
 | Title     | ML Tasks Image OCR TextScanner                        |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2020-05-15T05:52:22Z`                                |
-| Updated @ | `2026-11-25T16:56:13Z`                                |
+| Updated @ | `2026-11-26T01:27:40Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/192) |
 
 -----
-
-## Reference
-
-  - [TextScanner: Reading Characters in Order for Robust Scene Text
-    Recognition](https://arxiv.org/abs/1912.12422)
-  - [旷视研究院提出TextScanner：确保字符阅读顺序，实现文字识别新突破](https://zhuanlan.zhihu.com/p/100683420?utm_source=qq)
-  - [【OCR实践系列】TextScanner的一些研究](https://zhuanlan.zhihu.com/p/133662322)
-    --- [TF 实现](https://github.com/piginzoo/textscanner)
 
 ## Brief
 
@@ -195,3 +187,11 @@ flowchart LR
     CA-FCN 里的标签收缩
   - 训练方式：先在带字符级标注的 SynthText 上预训练 $5$ 个 epoch，再在真实图像上用序列级标注微调 $1$ 个
     epoch，学习率 $10^{-3}\\to10^{-4}\\to10^{-5}$
+
+## Reference
+
+  - [TextScanner: Reading Characters in Order for Robust Scene Text
+    Recognition](https://arxiv.org/abs/1912.12422)
+  - [旷视研究院提出TextScanner：确保字符阅读顺序，实现文字识别新突破](https://zhuanlan.zhihu.com/p/100683420?utm_source=qq)
+  - [【OCR实践系列】TextScanner的一些研究](https://zhuanlan.zhihu.com/p/133662322)
+    --- [TF 实现](https://github.com/piginzoo/textscanner)
