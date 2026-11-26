@@ -3,7 +3,7 @@
 | Title     | LM Train Optimizer                                    |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-26T15:35:44Z`                                |
-| Updated @ | `2026-11-26T15:35:44Z`                                |
+| Updated @ | `2026-11-26T15:42:18Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/830) |
 
@@ -33,7 +33,7 @@ v\_t}+\\epsilon}+\\lambda,\\theta\_{t-1}\\Bigr) \\end{aligned} $$
     $0.1$)
   - 「W」表示解耦的权重衰减：直接从参数中减去 $\\eta\\lambda\\theta$，而不是加到梯度里，使衰减不被自适应缩放影响
   - 代价：每个参数要多存 $m,v$ 两份 FP32 状态 ($8$ 字节)，是训练显存的大头，见
-    [Distributed](@@TDIST@@)
+    [Distributed](/0825_LM_Train_Distributed)
 
 ## 新的优化器
 
@@ -68,7 +68,7 @@ W\_t=W\_{t-1}-\\eta,O\_t $$
     batch 后收益递减，只是浪费计算
   - warmup：训练开始时 Adam 的二阶矩估计不准、参数还在随机初始化附近，用逐步升高的学习率避免早期发散，常用约 $2000$
     步或总步数的 $0.1%\\sim1%$ `[经验]`
-  - 调度：cosine 或 WSD，见 [Pretrain](@@TPRE@@)
+  - 调度：cosine 或 WSD，见 [Pretrain](/0824_LM_Train_Pretrain)
 
 ## μP：超参迁移
 
@@ -86,9 +86,11 @@ $\\eta$ 等超参可以直接用到宽度 $d$ 的大模型，省下在大模型�
 
 ## 实践建议
 
-  - 先用 AdamW + cosine/WSD 的公开配置作为基线，见 [Pretrain](@@TPRE@@)
+  - 先用 AdamW + cosine/WSD 的公开配置作为基线，见
+    [Pretrain](/0824_LM_Train_Pretrain)
   - 在小模型上做学习率扫描，用 μP 或经验的缩放规律推到大模型
-  - 观察梯度范数与 loss 曲线，不稳定时优先降低学习率、检查数据，见 [Stability](@@TSTAB@@)
+  - 观察梯度范数与 loss 曲线，不稳定时优先降低学习率、检查数据，见
+    [Stability](/0831_LM_Train_Stability)
   - 微调阶段的学习率远小于预训练 (如 $10^{-5}$ 量级)，LoRA 可以更大，见 [微调](/0410_LM_FT)
 
 ## Reference
