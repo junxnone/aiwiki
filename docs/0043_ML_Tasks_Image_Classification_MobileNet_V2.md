@@ -2,18 +2,12 @@
 Title | ML Tasks Image Classification MobileNet V2
 -- | --
 Created @ | `2020-02-25T10:15:57Z`
-Updated @| `2026-11-25T16:51:17Z`
+Updated @| `2026-11-26T01:26:36Z`
 Labels | `index`
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/43)
 
 ---
 # MobileNet V2
-
-## Reference
-- 2018 **MobileNet V2** MobileNetV2: Inverted Residuals and Linear Bottlenecks [[paper](https://arxiv.org/pdf/1801.04381.pdf)]
-- [MobileNet V2 论文初读](https://zhuanlan.zhihu.com/p/33075914)
-- [轻量化网络：MobileNet-V2](https://blog.csdn.net/u011995719/article/details/79135818)
-- [tensorflow/models - Mobilenet v2](https://github.com/tensorflow/models/tree/master/research/slim/nets/mobilenet)
 
 ## Brief
 
@@ -112,4 +106,10 @@ MACs | 569 M | 300 M
 ImageNet top-1 | 70.6% | 72.0%
 
 表中：V2 参数和计算量都更少，精度反而更高，说明块结构的改进比单纯加宽更有效。网络的 $t,c,n,s$ 配置说明见上图，其中扩张系数 $t$ 除第一个块为 $1$ 外都是 $6$。
+
+## Reference
+- 2018 **MobileNet V2** MobileNetV2: Inverted Residuals and Linear Bottlenecks [[paper](https://arxiv.org/pdf/1801.04381.pdf)]
+- [MobileNet V2 论文初读](https://zhuanlan.zhihu.com/p/33075914)
+- [轻量化网络：MobileNet-V2](https://blog.csdn.net/u011995719/article/details/79135818)
+- [tensorflow/models - Mobilenet v2](https://github.com/tensorflow/models/tree/master/research/slim/nets/mobilenet)
 
