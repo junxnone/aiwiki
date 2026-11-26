@@ -3,7 +3,7 @@
 | Title     | LM Infer Parallel                                     |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-26T15:37:00Z`                                |
-| Updated @ | `2026-11-26T15:37:00Z`                                |
+| Updated @ | `2026-11-26T15:42:31Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/836) |
 
@@ -12,7 +12,8 @@
 # Parallel
 
 大模型推理的并行：什么时候需要多卡，张量并行、流水线并行、专家并行怎样用于推理，PD 分离 (prefill/decode
-分开部署)，以及通信开销的估算。训练侧的并行原理见 [Distributed](@@TDIST@@)。
+分开部署)，以及通信开销的估算。训练侧的并行原理见
+[Distributed](/0825_LM_Train_Distributed)。
 
 ## 什么时候需要多卡
 
@@ -24,11 +25,12 @@ $$ \\text{需要显存}\\approx N\\cdot b\_w+\\text{KV}\_{total}+\\text{开销}\
 其中：
 
   - $N$：参数量；$b\_w$：每参数的字节数 (BF16 为 $2$，INT4 约 $0.5$)
-  - $\\text{KV}\_{total}$：所有并发序列的 KV Cache，公式见 [Basics](@@IBAS@@)
+  - $\\text{KV}\_{total}$：所有并发序列的 KV Cache，公式见
+    [Basics](/0834_LM_Infer_Basics)
   - 开销：激活、通信缓冲、CUDA 上下文等
 
 例：70B 模型 BF16 权重 $140$ GB，单张 80 GB 的卡放不下，至少需要 $2$ 张；INT4 量化后约
-$35\\sim40$ GB，一张卡可放下，详见 [Sizing](@@DSIZ@@)。
+$35\\sim40$ GB，一张卡可放下，详见 [Sizing](/0844_LM_Deploy_Sizing)。
 
 ## 并行方式
 
@@ -121,15 +123,16 @@ n\_e}{\\bar n} $$
   - $n\_e$：分配到专家 $e$ 的 token 数；$\\bar n$：各专家的平均 token 数
   - 所有卡要等最忙的那个专家算完，所以一层的耗时由 $\\max\_e n\_e$ 决定；不均衡系数为 $2$ 时，等效吞吐约减半
 
-应对：训练时加负载均衡损失 (见 [MoE](@@TMOE@@))，推理时把热门专家复制到多张卡 (冗余专家)，或按统计的负载重新放置专家。
+应对：训练时加负载均衡损失 (见 [MoE](/0828_LM_Train_MoE))，推理时把热门专家复制到多张卡
+(冗余专家)，或按统计的负载重新放置专家。
 
   - 长上下文：KV Cache 巨大，可沿序列维度切分 (上下文并行/ring attention)，把 KV 分布到多卡，见
-    [Distributed](@@TDIST@@)
+    [Distributed](/0825_LM_Train_Distributed)
 
 ## 实践
 
   - vLLM：`--tensor-parallel-size 4`、`--pipeline-parallel-size 2`；TensorRT-LLM、SGLang
-    也有对应参数，见 [Frameworks](@@DFW@@)
+    也有对应参数，见 [Frameworks](/0842_LM_Deploy_Frameworks)
   - 优先把 TP 放在同一节点内；跨节点用 PP 或副本
   - 多卡通信库：NCCL、oneCCL；检查 NVLink/PCIe 拓扑，PCIe 带宽低会使 TP 收益大打折扣
 
