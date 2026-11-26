@@ -2,14 +2,14 @@
 Title | LM Train Stability
 -- | --
 Created @ | `2026-11-26T15:35:57Z`
-Updated @| `2026-11-26T15:35:57Z`
+Updated @| `2026-11-26T15:42:20Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/831)
 
 ---
 # Stability
 
-大模型训练的稳定性：loss spike 和发散的成因，z-loss、QK-Norm 等稳定化手段，监控哪些信号，以及 checkpoint 与故障恢复。是 [Pretrain](@@TPRE@@) 中稳定性一节的展开。
+大模型训练的稳定性：loss spike 和发散的成因，z-loss、QK-Norm 等稳定化手段，监控哪些信号，以及 checkpoint 与故障恢复。是 [Pretrain](/0824_LM_Train_Pretrain) 中稳定性一节的展开。
 
 ## 现象
 
@@ -63,7 +63,7 @@ $$
 
 ### 其他
 
-- 学习率：spike 多发生在学习率较高的阶段；降低峰值学习率是最直接的手段，见 [Optimizer](@@TOPT@@)
+- 学习率：spike 多发生在学习率较高的阶段；降低峰值学习率是最直接的手段，见 [Optimizer](/0830_LM_Train_Optimizer)
 - Adam 的 $\epsilon$ 与 $\beta_2$：某些参数的梯度长期很小，$v_t$ 也很小，一旦梯度突然变大，$\hat m/\sqrt{\hat v}$ 会给出很大的更新；减小 $\beta_2$ (如 $0.95$) 让 $v_t$ 跟得更快
 - 嵌入层：对嵌入的梯度或输出做缩放 (如 GLM-130B 的 embedding gradient shrink)
 - 跳过 batch：PaLM 报告在 spike 发生时，从 spike 前约 $100$ 步的 checkpoint 重启，并跳过其后 $200\sim500$ 个 batch，spike 不再出现，说明它与特定数据和当时的参数状态的组合有关

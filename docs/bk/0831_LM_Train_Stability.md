@@ -3,7 +3,7 @@
 | Title     | LM Train Stability                                    |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-26T15:35:57Z`                                |
-| Updated @ | `2026-11-26T15:35:57Z`                                |
+| Updated @ | `2026-11-26T15:42:20Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/831) |
 
@@ -12,7 +12,7 @@
 # Stability
 
 大模型训练的稳定性：loss spike 和发散的成因，z-loss、QK-Norm 等稳定化手段，监控哪些信号，以及 checkpoint
-与故障恢复。是 [Pretrain](@@TPRE@@) 中稳定性一节的展开。
+与故障恢复。是 [Pretrain](/0824_LM_Train_Pretrain) 中稳定性一节的展开。
 
 ## 现象
 
@@ -67,7 +67,8 @@ q\_i)^\\top\\mathrm{Norm}(\\mathbf k\_j)}{\\sqrt{d\_h}} $$
 
 ### 其他
 
-  - 学习率：spike 多发生在学习率较高的阶段；降低峰值学习率是最直接的手段，见 [Optimizer](@@TOPT@@)
+  - 学习率：spike 多发生在学习率较高的阶段；降低峰值学习率是最直接的手段，见
+    [Optimizer](/0830_LM_Train_Optimizer)
   - Adam 的 $\\epsilon$ 与 $\\beta\_2$：某些参数的梯度长期很小，$v\_t$
     也很小，一旦梯度突然变大，$\\hat m/\\sqrt{\\hat v}$
     会给出很大的更新；减小 $\\beta\_2$ (如 $0.95$) 让 $v\_t$ 跟得更快
