@@ -2,7 +2,7 @@
 Title | ML Tasks Image Detection RetinaNet
 -- | --
 Created @ | `2026-11-26T01:29:10Z`
-Updated @| `2026-11-26T01:29:10Z`
+Updated @| `2026-11-26T01:30:16Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/804)
 
@@ -15,7 +15,7 @@ RetinaNet (Focal Loss for Dense Object Detection，ICCV 2017)：提出 Focal Los
 
 - 单阶段检测器在特征图上密集地放置 anchor，一张图有成千上万个候选，其中绝大多数是容易分类的背景
 - 这些简单负样本数量巨大，虽然每个损失很小，累计起来仍压倒少数的难样本，使训练被背景主导
-- 两阶段方法靠候选区域把负样本过滤到约 $1\sim2$ 千，再按固定比例采样；单阶段的 [SSD](@@SSD@@) 用难负样本挖掘；RetinaNet 改为直接修改损失函数
+- 两阶段方法靠候选区域把负样本过滤到约 $1\sim2$ 千，再按固定比例采样；单阶段的 [SSD](/0802_ML_Tasks_Image_Detection_SSD) 用难负样本挖掘；RetinaNet 改为直接修改损失函数
 
 ## Focal Loss
 
@@ -47,7 +47,7 @@ flowchart LR
 
 图中：
 
-- backbone + [FPN](@@FPN@@) 产生 $P_3\sim P_7$ 五层特征 (步长 $8\sim128$)，检测头在所有层之间共享权重
+- backbone + [FPN](/0803_ML_Tasks_Image_Detection_FPN) 产生 $P_3\sim P_7$ 五层特征 (步长 $8\sim128$)，检测头在所有层之间共享权重
 - 两个并行的全卷积子网：分类子网输出每个位置、每个 anchor 的 $K$ 类概率 (sigmoid)，回归子网输出 $4$ 个框偏移 (类别无关)；$A=9$ 为每个位置的 anchor 数 ($3$ 种尺度 $\{2^0,2^{1/3},2^{2/3}\}$ × $3$ 种长宽比 $\{1{:}2,1{:}1,2{:}1\}$)，anchor 面积为 $32^2\sim512^2$
 - 匹配：与真实框 $\mathrm{IoU}\ge0.5$ 为正样本，$<0.4$ 为负样本，$[0.4,0.5)$ 忽略
 - 总损失是所有 anchor 的 Focal Loss 之和，再除以正样本 anchor 数 (不是总数)，因为大多数 anchor 的损失已被压得很小
@@ -59,7 +59,7 @@ flowchart LR
 模型 | backbone | COCO AP `[待核实]` | 速度
 -- | -- | -- | --
 [Faster R-CNN](/0059_ML_Tasks_Image_Detection_FasterRCNN) + FPN | ResNet-101 | 36.2 | 较慢
-[SSD](@@SSD@@) 513 | ResNet-101 | 31.2 | 快
+[SSD](/0802_ML_Tasks_Image_Detection_SSD) 513 | ResNet-101 | 31.2 | 快
 RetinaNet-101-800 | ResNet-101 | 39.1 | 与两阶段相当的单张推理时间
 
 表中：RetinaNet 在 COCO 上超过了当时最好的两阶段方法，同时比它们更简洁；Focal Loss 单独就能使 AP 提高约 $\gt 3$ 个点，这说明单阶段检测落后的主要原因确实是样本不平衡，而不是结构。
