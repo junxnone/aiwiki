@@ -3,19 +3,13 @@
 | Title     | ML Tasks Image Classification Inception V4           |
 | --------- | ---------------------------------------------------- |
 | Created @ | `2019-12-04T10:51:56Z`                               |
-| Updated @ | `2026-11-25T16:50:56Z`                               |
+| Updated @ | `2026-11-26T01:26:25Z`                               |
 | Labels    | \`\`                                                 |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/47) |
 
 -----
 
 # Inception V4
-
-## Reference
-
-  - 2016 **Inception V4 & Inception-ResNet** Inception-v4,
-    Inception-ResNet and the Impact of Residual Connections on Learning
-    \[[paper](https://arxiv.org/pdf/1602.07261.pdf)\]
 
 ## Brief
 
@@ -122,3 +116,9 @@ Inception-V4 在训练足够久后与 Inception-ResNet-V2 相近。
   - Reduction-A/B：下采样模块，把特征图从 $35\\to17\\to8$ (采用并行卷积与池化的方式，见
     [V2/V3](/0046_ML_Tasks_Image_Classification_Inception_V2V3) 的下采样)
   - 最后接全局平均池化、Dropout (保留概率 $0.8$) 和 softmax
+
+## Reference
+
+  - 2016 **Inception V4 & Inception-ResNet** Inception-v4,
+    Inception-ResNet and the Impact of Residual Connections on Learning
+    \[[paper](https://arxiv.org/pdf/1602.07261.pdf)\]
