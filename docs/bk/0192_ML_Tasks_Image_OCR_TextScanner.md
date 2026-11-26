@@ -3,7 +3,7 @@
 | Title     | ML Tasks Image OCR TextScanner                        |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2020-05-15T05:52:22Z`                                |
-| Updated @ | `2026-11-26T01:27:40Z`                                |
+| Updated @ | `2026-11-26T08:17:12Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/192) |
 
@@ -54,7 +54,8 @@
       - Localization map - Q - `hxwx1`
       - Order segmentation maps - S -`hxwxN`
           - `N` - 预定义的字符序列长度
-      - Order map - `H = Q * S` - `hxwxN`
+      - Order map - $H = Q \* S$（$Q$：Localization map；$S$：Order
+        segmentation maps；逐元素相乘）- `hxwxN`
 
 ![image](media/8a0a871a3250bc688577d9e1938a87996f078c8f.png)
 
@@ -85,17 +86,17 @@
   - `Lo` - Order segmentation
   - `Ls` - Text segmentation
   - `Lm` - Mutual supervision
-  - `λ`
-      - `λl` - `=10`
-      - `λo` - `=10`
-      - `λm`
-          - pretrain `=0`
-          - 其他 `=1`
+  - $\\lambda$：各项损失的权重
+      - $\\lambda\_l = 10$
+      - $\\lambda\_o = 10$
+      - $\\lambda\_m$
+          - pretrain $=0$
+          - 其他 $=1$
 
 | Mutual supervision Loss | ![image](media/6df02e09f29e89f76c194eb73b555549ea6a5432.png)<br>![image](media/2e51a1fa182672bc430096df7f61a143f470a230.png) |
 | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 
-> `λ = 0.2` - `γ = 2`
+> $\\lambda = 0.2$，$\\gamma = 2$
 
 ## Test
 

@@ -2,7 +2,7 @@
 Title | ML Tasks Image OCR TextScanner
 -- | --
 Created @ | `2020-05-15T05:52:22Z`
-Updated @| `2026-11-26T01:27:40Z`
+Updated @| `2026-11-26T08:17:12Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/192)
 
@@ -46,7 +46,7 @@ Geometry Branch<br>几何分支 | Localization Maps | 字符位置顺序
   - Localization map - Q - `hxwx1`
   - Order segmentation maps - S -`hxwxN`
     - `N` - 预定义的字符序列长度
-  - Order map - `H = Q * S` - `hxwxN`
+  - Order map - $H = Q * S$（$Q$：Localization map；$S$：Order segmentation maps；逐元素相乘）- `hxwxN`
 
 ![image](https://user-images.githubusercontent.com/2216970/82168720-0fa1f000-98f2-11ea-9af0-5b9d58474be3.png)
 
@@ -74,17 +74,17 @@ classification scores | ![image](https://user-images.githubusercontent.com/22169
 - `Lo` -  Order segmentation
 - `Ls` -  Text segmentation
 - `Lm` - Mutual supervision 
-- `λ`  
-  - `λl` - `=10`
-  - `λo` - `=10`
-  - `λm`  
-    - pretrain `=0` 
-    - 其他 `=1`
+- $\lambda$：各项损失的权重  
+  - $\lambda_l = 10$
+  - $\lambda_o = 10$
+  - $\lambda_m$  
+    - pretrain $=0$ 
+    - 其他 $=1$
 
 Mutual supervision  Loss  | ![image](https://user-images.githubusercontent.com/2216970/82182754-5a822e80-9917-11ea-8fa1-c270407d23f9.png)<br>![image](https://user-images.githubusercontent.com/2216970/82182801-6ff75880-9917-11ea-94f2-7c400098a4aa.png)
 -- | --
 
-> `λ = 0.2`  - `γ = 2`
+> $\lambda = 0.2$，$\gamma = 2$
 
 ## Test
 
@@ -171,4 +171,5 @@ flowchart LR
 - [TextScanner: Reading Characters in Order for Robust Scene Text Recognition](https://arxiv.org/abs/1912.12422)
 - [旷视研究院提出TextScanner：确保字符阅读顺序，实现文字识别新突破](https://zhuanlan.zhihu.com/p/100683420?utm_source=qq)
 - [【OCR实践系列】TextScanner的一些研究](https://zhuanlan.zhihu.com/p/133662322) --- [TF 实现](https://github.com/piginzoo/textscanner)
+
 
