@@ -319,7 +319,7 @@
         - [异常缺陷生成](/0517_ML_Tasks_Image_Anomaly_Synthesis)
       - [Specular Highlight Removal](/0540_ML_Tasks_Image_SHR)
     - [Motion Detection 运动侦测](/0243_ML_Tasks_MD)
-    - [MetricLearning](/0157_ML_Tasks_MetricLearning)
+    - [Metric Learning](/0157_ML_Tasks_MetricLearning)
     - [时间序列模型](/0603_ML_Tasks_TimeSeries)
       - [时间序列-异常检测](/0609_ML_Tasks_TimeSeries_Anomaly)
         - [Anomaly Transformer](/0648_ML_Tasks_TimeSeries_Anomaly_AnomalyTransformer)
@@ -504,7 +504,7 @@
     - [PatchCore 持续学习](/0537_ML_IL_PatchCore)
   - [Nearest Neighbor Search 最近邻搜索](/0102_ML_NNS)
     - [Approximate Nearest Neighbor 近似最近邻](/0103_ML_NNS_ANN)
-      - [Approximate Nearest Neighbors Oh Yeah](/0333_ML_NNS_ANN_Annoy)
+      - [Annoy](/0333_ML_NNS_ANN_Annoy)
       - [Hierarchical Navigable Small World](/0334_ML_NNS_ANN_HNSW)
     - [BSTree 二叉排序树](/0332_ML_NNS_BSTree)
     - [KDTree](/0104_ML_NNS_KDTree)
@@ -781,4 +781,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1717421126</sub></kbd>
+<kbd><sub>@1729271126</sub></kbd>

@@ -1965,7 +1965,7 @@
     {
       "id": "aiwiki ML Tasks MetricLearning",
       "group": 3,
-      "title": "MetricLearning",
+      "title": "Metric Learning",
       "url": "https://junxnone.github.io/aiwiki/#/0157_ML_Tasks_MetricLearning",
       "visible": true,
       "expand": true,
@@ -4692,7 +4692,7 @@
     {
       "id": "aiwiki ML NNS ANN Annoy",
       "group": 4,
-      "title": "Approximate Nearest Neighbors Oh Yeah",
+      "title": "Annoy",
       "url": "https://junxnone.github.io/aiwiki/#/0333_ML_NNS_ANN_Annoy",
       "visible": true,
       "expand": true,
