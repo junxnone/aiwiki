@@ -4132,6 +4132,42 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki LM Infer Basics",
+      "group": 3,
+      "title": "Basics",
+      "url": "https://junxnone.github.io/aiwiki/#/0834_LM_Infer_Basics",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki LM Infer Optimization",
+      "group": 3,
+      "title": "Optimization",
+      "url": "https://junxnone.github.io/aiwiki/#/0835_LM_Infer_Optimization",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki LM Infer Parallel",
+      "group": 3,
+      "title": "Parallel",
+      "url": "https://junxnone.github.io/aiwiki/#/0836_LM_Infer_Parallel",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki LM Infer Speculative",
+      "group": 3,
+      "title": "Speculative",
+      "url": "https://junxnone.github.io/aiwiki/#/0837_LM_Infer_Speculative",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Op Convolution Math",
       "group": 4,
       "title": "卷积 数学定义",
@@ -10379,6 +10415,34 @@
     {
       "source": "aiwiki LM Train",
       "target": "aiwiki LM Train Cluster",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki LM Infer",
+      "target": "aiwiki LM Infer Basics",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki LM Infer",
+      "target": "aiwiki LM Infer Optimization",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki LM Infer",
+      "target": "aiwiki LM Infer Parallel",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki LM Infer",
+      "target": "aiwiki LM Infer Speculative",
       "value": 3,
       "visible": true,
       "expand": true

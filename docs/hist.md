@@ -4,6 +4,10 @@
 
 #### **Created**
 
+- 2026-11-26 23:37&nbsp;&nbsp; [Speculative](/0837_LM_Infer_Speculative)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:Speculative
+- 2026-11-26 23:37&nbsp;&nbsp; [Parallel](/0836_LM_Infer_Parallel)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:Parallel
+- 2026-11-26 23:36&nbsp;&nbsp; [Optimization](/0835_LM_Infer_Optimization)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:Optimization
+- 2026-11-26 23:36&nbsp;&nbsp; [Basics](/0834_LM_Infer_Basics)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:Basics
 - 2026-11-26 23:36&nbsp;&nbsp; [Reasoning](/0833_LM_FT_Reasoning)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:Reasoning
 - 2026-11-26 23:36&nbsp;&nbsp; [Cluster](/0832_LM_Train_Cluster)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Cluster
 - 2026-11-26 23:35&nbsp;&nbsp; [Stability](/0831_LM_Train_Stability)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Stability
@@ -804,6 +808,10 @@
 
 #### **Updated**
 
+- 2026-11-26 23:37&nbsp;&nbsp; [Speculative](/0837_LM_Infer_Speculative)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:Speculative
+- 2026-11-26 23:37&nbsp;&nbsp; [Parallel](/0836_LM_Infer_Parallel)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:Parallel
+- 2026-11-26 23:36&nbsp;&nbsp; [Optimization](/0835_LM_Infer_Optimization)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:Optimization
+- 2026-11-26 23:36&nbsp;&nbsp; [Basics](/0834_LM_Infer_Basics)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:Basics
 - 2026-11-26 23:36&nbsp;&nbsp; [Reasoning](/0833_LM_FT_Reasoning)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:Reasoning
 - 2026-11-26 23:36&nbsp;&nbsp; [Cluster](/0832_LM_Train_Cluster)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Cluster
 - 2026-11-26 23:35&nbsp;&nbsp; [Stability](/0831_LM_Train_Stability)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Stability
