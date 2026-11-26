@@ -2,7 +2,7 @@
 Title | LM Infer StructuredOutput
 -- | --
 Created @ | `2026-11-26T15:37:59Z`
-Updated @| `2026-11-26T15:37:59Z`
+Updated @| `2026-11-26T15:42:40Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/840)
 
@@ -77,7 +77,7 @@ vLLM | 上面的接口，或 `guided_json`、`guided_regex`、`guided_grammar` �
 llama.cpp | GBNF 语法文件或 JSON schema
 工具库 | outlines、xgrammar、lm-format-enforcer、guidance
 
-表中：主流推理框架都内置了约束解码后端，只需在请求中传 schema；工具调用的参数生成通常也基于同一机制，见 [Service](@@DSVC@@) 和 [ToolCalling](@@DTOOL@@)。
+表中：主流推理框架都内置了约束解码后端，只需在请求中传 schema；工具调用的参数生成通常也基于同一机制，见 [Service](/0845_LM_Deploy_Service) 和 [ToolCalling](/0852_LM_Deploy_ToolCalling)。
 
 ## Reference
 - [XGrammar: Flexible and Efficient Structured Generation Engine for Large Language Models](https://arxiv.org/abs/2411.15100)

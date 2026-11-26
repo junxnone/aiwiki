@@ -3,7 +3,7 @@
 | Title     | LM Infer StructuredOutput                             |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-26T15:37:59Z`                                |
-| Updated @ | `2026-11-26T15:37:59Z`                                |
+| Updated @ | `2026-11-26T15:42:40Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/840) |
 
@@ -85,7 +85,8 @@ flowchart LR
 | 工具库           | outlines、xgrammar、lm-format-enforcer、guidance                     |
 
 表中：主流推理框架都内置了约束解码后端，只需在请求中传 schema；工具调用的参数生成通常也基于同一机制，见
-[Service](@@DSVC@@) 和 [ToolCalling](@@DTOOL@@)。
+[Service](/0845_LM_Deploy_Service) 和
+[ToolCalling](/0852_LM_Deploy_ToolCalling)。
 
 ## Reference
 
