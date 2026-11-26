@@ -3,7 +3,7 @@
 | Title     | LM Infer Optimization                                 |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-26T15:36:47Z`                                |
-| Updated @ | `2026-11-26T15:36:47Z`                                |
+| Updated @ | `2026-11-26T15:42:29Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/835) |
 
@@ -93,12 +93,14 @@ $$ \\mathbb E\[\\text{每轮接受 token
 
   - FlashDecoding：decode 阶段 query 只有一个 token，并行度低；它沿 KV
     的长度方向切分并行，再合并结果，对长上下文加速明显
-  - GQA/MQA：模型结构上减少 $n\_{kv}$，见 [Architecture](@@TARCH@@)
+  - GQA/MQA：模型结构上减少 $n\_{kv}$，见
+    [Architecture](/0823_LM_Train_Architecture)
   - KV 量化：把 KV Cache 量化到 INT8/INT4/FP8，显存减半或更多，见
     [KVCache](/0708_MO_Quantization_KVCache)
   - KV 淘汰/稀疏：只保留重要 token (如 H2O、StreamingLLM 的注意力 sink)，在极长上下文下使用，有精度风险
-  - KV 的分页、offload 和跨实例共享等系统层面的管理见 [KVCache 管理](@@IKV@@)；attention
-    kernel 的细节见 [Attention](@@IATT@@)
+  - KV 的分页、offload 和跨实例共享等系统层面的管理见 [KVCache
+    管理](/0838_LM_Infer_KVCache)；attention kernel 的细节见
+    [Attention](/0839_LM_Infer_Attention)
 
 ## CUDA Graph 与 kernel 启动开销
 
@@ -123,7 +125,7 @@ t\_{launch}\\bigr) $$
     录制成一张图，之后一次提交、整体回放，几乎消除发射开销；因为图的形状固定，框架会按若干个
     batch 大小分别录制 (vLLM 默认开启，`--enforce-eager` 可关闭以便调试)
   - 算子融合：把 RMSNorm、RoPE、激活函数等小算子融合进相邻的矩阵乘法或注意力 kernel，减少 kernel 数和访存
-  - 对 CPU 推理而言，对应的是减少框架调度开销、绑定线程，见 [CPU](@@ICPU@@)
+  - 对 CPU 推理而言，对应的是减少框架调度开销、绑定线程，见 [CPU](/0841_LM_Infer_CPU)
 
 ## 量化 kernel
 
@@ -148,7 +150,7 @@ WA](/0707_MO_Quantization_LLM_WA)。
   - 朴素做法每步遍历整个词表 ($10^5$ 量级) 检查每个 token 是否合法，开销可以与模型前向相当
   - 优化：把语法编译成自动机，预先计算与上下文无关的 token 掩码并缓存，只对少数依赖上下文的 token 做运行时检查
     (xgrammar 等)，并与 GPU 计算重叠，使额外开销降到很小
-  - 原理、工具与对吞吐的影响见 [StructuredOutput](@@ISTR@@)
+  - 原理、工具与对吞吐的影响见 [StructuredOutput](/0840_LM_Infer_StructuredOutput)
 
 ## 技术对比
 
@@ -165,12 +167,14 @@ WA](/0707_MO_Quantization_LLM_WA)。
 | KV 量化/淘汰            | 并发数、长上下文       | 略有损失        | 精度风险                          |
 
 表中：前六项是不改变输出的系统优化，应优先使用；结构化输出改变的是「允许生成什么」，用于格式要求严格的场景；最后两项有精度代价，需要用评测回归确认，见
-[Eval](@@TEVAL@@)。投机解码的细节见 [Speculative](@@ISPEC@@)。
+[Eval](/0827_LM_Train_Eval)。投机解码的细节见
+[Speculative](/0837_LM_Infer_Speculative)。
 
 ## 使用
 
-  - 这些优化大多已内置于推理框架，开启即可，见 [Frameworks](@@DFW@@)
-  - 基础概念见 [Basics](@@IBAS@@)；多卡并行见 [Parallel](@@IPAR@@)
+  - 这些优化大多已内置于推理框架，开启即可，见 [Frameworks](/0842_LM_Deploy_Frameworks)
+  - 基础概念见 [Basics](/0834_LM_Infer_Basics)；多卡并行见
+    [Parallel](/0836_LM_Infer_Parallel)
 
 ## Reference
 
