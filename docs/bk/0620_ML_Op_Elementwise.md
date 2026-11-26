@@ -3,7 +3,7 @@
 | Title     | ML Op Elementwise                                     |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-10T09:50:25Z`                                |
-| Updated @ | `2026-11-10T09:50:25Z`                                |
+| Updated @ | `2026-11-26T08:19:39Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/620) |
 
@@ -161,7 +161,7 @@ def softmax(x, dim=-1):
 
 ### memory-bound 特性
 
-以 FP32 `c = a + b` 为例，每个元素读 8 B、写 4 B，只做 1 次加法，算术强度约 $1/12$
+以 FP32 $c = a + b$ 为例，每个元素读 8 B、写 4 B，只做 1 次加法，算术强度约 $1/12$
 FLOP/Byte，远低于现代 CPU/GPU 的 roofline 拐点，性能上限由内存带宽决定。因此：
 
   - 单个 elementwise OP 再怎么优化指令也快不过带宽；真正能省的是"访存次数"。
@@ -183,7 +183,9 @@ b = torch.randn(3, 1).expand(3, 4)
 b.stride()      # (1, 0)  —— 第二维 stride 为 0，零拷贝
 ```
 
-kernel 内按 stride 计算偏移 `offset = Σ idx[d] * stride[d]`。工程上常见优化：
+kernel 内按 stride 计算偏移 $\\text{offset} = \\sum\_{d} \\text{idx}\_d \\cdot
+\\text{stride}\_d$（$\\text{idx}\_d$ 为第 $d$ 维下标，$\\text{stride}\_d$ 为第
+$d$ 维步长）。工程上常见优化：
 
 1.  合并相邻且可合并的维度（两者 stride 满足连续关系）以减少循环层数。
 2.  对常见模式做特化：标量广播、`(N,C,H,W) + (1,C,1,1)`（per-channel
