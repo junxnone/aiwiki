@@ -2,23 +2,11 @@
 Title | ML Tasks Image OCR Calamari
 -- | --
 Created @ | `2020-06-01T09:43:32Z`
-Updated @| `2026-11-25T16:56:23Z`
+Updated @| `2026-11-26T01:27:42Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/201)
 
 ---
-## Reference
-
-- [paper - 2018 Calamari A High-Performance Tensorflow-based Deep Learning Package for Optical Character Recognition](https://arxiv.org/ftp/arxiv/papers/1807/1807.02004.pdf)
-- [paper - 2018 - State of the Art Optical Character Recognition of 19th Century Fraktur Scripts using Open Source Engines](https://arxiv.org/ftp/arxiv/papers/1810/1810.03436.pdf)
-- [paper - 2017 - Improving OCR Accuracy on Early Printed Books by utilizing Cross Fold Training and Voting](https://arxiv.org/pdf/1711.09670.pdf)
-- [Github - Calamari-OCR/calamari](https://github.com/Calamari-OCR/calamari)
-- [字符识别引擎Calamari总结](https://blog.csdn.net/qq_14845119/article/details/81103207)
-- [ocreval](https://github.com/eddieantonio/ocreval)
-- [The ISRI analytic tools for OCR evaluation.pdf](https://github.com/junxnone/tech-io/files/4744176/The.ISRI.analytic.tools.for.OCR.evaluation.pdf)
-- [OCR-Workshop - CIS OCR Group](https://github.com/cisocrgroup/OCR-Workshop)
-- [Calamari-OCR Voting](https://github.com/Calamari-OCR/calamari/tree/master/calamari_ocr/ocr/voting)
-
 ## Brief
 
 ## Calamari-OCR Voting
@@ -106,4 +94,16 @@ flowchart LR
 - `confidence_voter_default_ctc`：默认的置信度投票，处理 CTC 输出，对应上文的 Adding 规则 (逐位置累加置信度)
 - `confidence_voter_fuzzy_ctc`：模糊版本的 CTC 置信度投票，用于对齐不完全相同的预测序列；默认没有使用，具体行为请阅读源码 `[待核实]`
 - 更详细的投票长度 (voting length) 与对齐方式见 [Calamari Voting](/0202_ML_Tasks_Image_OCR_Calamari_Voting)
+
+## Reference
+
+- [paper - 2018 Calamari A High-Performance Tensorflow-based Deep Learning Package for Optical Character Recognition](https://arxiv.org/ftp/arxiv/papers/1807/1807.02004.pdf)
+- [paper - 2018 - State of the Art Optical Character Recognition of 19th Century Fraktur Scripts using Open Source Engines](https://arxiv.org/ftp/arxiv/papers/1810/1810.03436.pdf)
+- [paper - 2017 - Improving OCR Accuracy on Early Printed Books by utilizing Cross Fold Training and Voting](https://arxiv.org/pdf/1711.09670.pdf)
+- [Github - Calamari-OCR/calamari](https://github.com/Calamari-OCR/calamari)
+- [字符识别引擎Calamari总结](https://blog.csdn.net/qq_14845119/article/details/81103207)
+- [ocreval](https://github.com/eddieantonio/ocreval)
+- [The ISRI analytic tools for OCR evaluation.pdf](https://github.com/junxnone/tech-io/files/4744176/The.ISRI.analytic.tools.for.OCR.evaluation.pdf)
+- [OCR-Workshop - CIS OCR Group](https://github.com/cisocrgroup/OCR-Workshop)
+- [Calamari-OCR Voting](https://github.com/Calamari-OCR/calamari/tree/master/calamari_ocr/ocr/voting)
 
