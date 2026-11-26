@@ -3,7 +3,7 @@
 | Title     | ML Tasks Image Detection FPN                          |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-26T01:28:59Z`                                |
-| Updated @ | `2026-11-26T01:28:59Z`                                |
+| Updated @ | `2026-11-26T01:30:14Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/803) |
 
@@ -19,7 +19,7 @@ FPN (Feature Pyramid Networks，CVPR
   - 浅层特征分辨率高、细节好，但语义弱；深层特征语义强，但分辨率低，小目标几乎消失
   - 常见方案：对图像做多尺度缩放 (图像金字塔，慢)；只用最深层 ([Faster
     R-CNN](/0059_ML_Tasks_Image_Detection_FasterRCNN)，小目标差)；直接用各层特征
-    ([SSD](@@SSD@@)，浅层语义弱)
+    ([SSD](/0802_ML_Tasks_Image_Detection_SSD)，浅层语义弱)
   - FPN：把深层的强语义「传」回浅层，且几乎不增加计算量
 
 ## 结构
