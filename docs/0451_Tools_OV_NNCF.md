@@ -2,7 +2,7 @@
 Title | Tools OV NNCF
 -- | --
 Created @ | `2023-10-30T07:57:51Z`
-Updated @| `2026-10-20T02:00:41Z`
+Updated @| `2026-11-26T08:14:47Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/451)
 
@@ -19,7 +19,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/451)
 
 不管具体用哪个算法，NNCF 的各类压缩方法本质上都是在"模型体积/推理速度"和"精度"之间做权衡，但压缩的**作用对象**和**手段**不同：
 
-- **量化（Quantization）在做什么**：把原本用浮点数（FP32/FP16）表示的数值，映射到一个更小位宽的整数网格上。核心公式是 `q = round(x / scale) + zero_point`，反过来用 `x ≈ scale * (q - zero_point)` 还原近似值——`scale` 决定了整数网格的"刻度"有多粗，`zero_point` 决定浮点 0 对应哪个整数（对称量化里 `zero_point` 固定为 0，非对称量化允许它偏移，能更好适应本身分布不对称的数值，比如 ReLU 之后的激活值全是非负数）。量化精度损失的根源就是这个"取整"操作本身不可逆，位宽越小（INT8→INT4）网格越粗、损失越大；量化粒度（per-tensor 整个张量共用一套 scale、还是 per-channel/per-group 更细粒度地各自算 scale）则决定了这个网格能多大程度上贴合权重/激活的真实分布，粒度越细精度越好但计算和存储 scale 本身的开销也越大；
+- **量化（Quantization）在做什么**：把原本用浮点数（FP32/FP16）表示的数值，映射到一个更小位宽的整数网格上。核心公式是 $q = \mathrm{round}(x / s) + z$，反过来用 $x \approx s\,(q - z)$ 还原近似值，其中 $x$ 是浮点值，$q$ 是量化后的整数，$\mathrm{round}$ 为取整——$s$（scale）决定了整数网格的"刻度"有多粗，$z$（zero_point）决定浮点 0 对应哪个整数（对称量化里 $z$ 固定为 0，非对称量化允许它偏移，能更好适应本身分布不对称的数值，比如 ReLU 之后的激活值全是非负数）。量化精度损失的根源就是这个"取整"操作本身不可逆，位宽越小（INT8→INT4）网格越粗、损失越大；量化粒度（per-tensor 整个张量共用一套 scale、还是 per-channel/per-group 更细粒度地各自算 scale）则决定了这个网格能多大程度上贴合权重/激活的真实分布，粒度越细精度越好但计算和存储 scale 本身的开销也越大；
 - **权重压缩在做什么**：和量化用的是同一套数学（取整到整数网格），区别只是**只对权重做，不对激活值做**，所以推理时计算仍然用浮点，省下的是存储权重和把权重从内存/显存搬到计算单元的带宽，而不是省计算量本身；
 - **剪枝（Pruning）在做什么**：和量化是完全不同的手段——不改变保留下来的数值的精度，而是直接判断哪些参数"不重要"（比如绝对值很小、对输出影响可忽略），把它们置零甚至物理删除，从根本上减少需要存储和参与计算的参数数量；它的加速效果能不能兑现，高度依赖目标硬件/推理引擎**是否支持稀疏张量的专门计算路径**——如果只是把权重置零但硬件仍按稠密矩阵计算，体积会变小，但推理速度不会提升。
 
@@ -155,5 +155,6 @@ optimum-cli export openvino --model microsoft/Phi-3.5-mini-instruct \
 - [Optimum Intel](https://github.com/huggingface/optimum-intel)
 - [POT（已弃用，功能并入 NNCF）](0177_Tools_OV_POT)、[OpenVINO INT8 Model](0182_Tools_OV_INT8Model)、[OpenVINO 总览](0185_Tools_OV)
 - 深入篇：[NNCF Weight Compression](0560_Tools_OV_NNCF_WC)、[NNCF Post-training Quantization](0561_Tools_OV_NNCF_PTQ)、[NNCF Training-time Optimization](0562_Tools_OV_NNCF_TTOP)
+
 
 
