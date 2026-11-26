@@ -2,7 +2,7 @@
 Title | LM FT DreamBooth
 -- | --
 Created @ | `2023-06-02T06:52:09Z`
-Updated @| `2026-10-20T07:14:57Z`
+Updated @| `2026-11-26T08:14:58Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/405)
 
@@ -27,11 +27,13 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/405)
 - 类先验保留损失（PPL，Prior Preservation Loss）
   - 避免语言漂移(让模型误以为 “狗” 这个词只能指代特定个体，导致生成其他狗的能力丧失。)
   - 避免过拟合(模型只记住输入图片的背景或姿态（如狗总是站在草地），生成新场景时缺乏多样性。)
-  - 具体做法：除了用 3~5 张目标主体照片算标准扩散重建损失 `L_instance`，额外用**底座模型自己生成**的约 100 张同类别图片（如 prompt 为"a photo of a dog"）再算一份重建损失 `L_prior`，两者加权相加：
-    ```
-    L = L_instance + λ · L_prior
-    ```
-    `λ` 通常取 1。`L_prior` 是用模型自己生成的样本当作监督信号，让模型在学习新主体的同时，不忘记这个类别原本的多样性——相当于一边学新知识、一边用模型自己的旧知识给自己"复习"，防止遗忘。
+  - 具体做法：除了用 3~5 张目标主体照片算标准扩散重建损失 $L_{instance}$，额外用**底座模型自己生成**的约 100 张同类别图片（如 prompt 为"a photo of a dog"）再算一份重建损失 $L_{prior}$，两者加权相加：
+
+    $$
+    L = L_{instance} + \lambda\, L_{prior}
+    $$
+
+    其中：$L_{instance}$ 为目标主体照片上的标准扩散重建损失；$L_{prior}$ 为模型自己生成的同类图片上的重建损失；$\lambda$ 为类先验损失的权重，通常取 1。$L_{prior}$ 是用模型自己生成的样本当作监督信号，让模型在学习新主体的同时，不忘记这个类别原本的多样性——相当于一边学新知识、一边用模型自己的旧知识给自己"复习"，防止遗忘。
 
 ![image](https://github.com/junxnone/aiwiki/assets/2216970/7ba2669b-c52a-4ac7-b1d2-6f6818f32fae)
 
@@ -64,4 +66,5 @@ accelerate launch train_dreambooth_lora.py \
 - Gal, R. et al. (2022). An Image is Worth One Word: Personalizing Text-to-Image Generation using Textual Inversion. [arXiv:2208.01618](https://arxiv.org/abs/2208.01618)
 - [Hugging Face DreamBooth + LoRA 训练脚本](https://github.com/huggingface/diffusers/tree/main/examples/dreambooth)
 - [大模型微调总览](0410_LM_FT)
+
 
