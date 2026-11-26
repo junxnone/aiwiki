@@ -2,27 +2,11 @@
 Title | ML Tasks Image Segmentation UNet
 -- | --
 Created @ | `2018-12-26T18:37:24Z`
-Updated @| `2026-11-25T16:51:53Z`
+Updated @| `2026-11-26T01:27:10Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/161)
 
 ---
-## Reference
-
-- [官方实现Github - caffe](https://github.com/lmb-freiburg/Unet-Segmentation)
-- [Github repo - keras - zhixuhao](https://github.com/zhixuhao/unet)
-- [image-segmentation-keras](https://github.com/divamgupta/image-segmentation-keras)
-- [U-Net: Convolutional Networks for Biomedical Image Segmentation](https://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/)
-- [isbi_challenge](http://brainiac2.mit.edu/isbi_challenge/)
-- [Intel unet](https://github.com/IntelAI/unet/tree/master/single-node)
-- [paper -U-Net: Convolutional Networks for Biomedical Image Segmentation ](https://arxiv.org/pdf/1505.04597.pdf) - - [**Download**](https://github.com/junxnone/tech-io/files/3895234/U-Net.Convolutional.Networks.for.Biomedical.Image.Segmentation.pdf)
-- [unet网络结构说明及keras实现详解](https://blog.csdn.net/weixin_38193906/article/details/83787569)
-- [unet - keras - intelAI](https://github.com/IntelAI/unet)
-- [U-Net - Convolutional Networks for Biomedical Image Segmentation论文翻译——中英文对照](http://noahsnail.com/2019/05/13/2019-05-13-U-Net-Convolutional%20Networks%20for%20Biomedical%20Image%20Segmentation%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91%E2%80%94%E2%80%94%E4%B8%AD%E8%8B%B1%E6%96%87%E5%AF%B9%E7%85%A7/)
-- [Implementation of U-Net architecture using Pytorch.](https://github.com/jakeoung/Unet_pytorch)
-- [用U-Net做Auto-Encoder图像重建](https://zhuanlan.zhihu.com/p/47125912)
-- [UNet-family](https://github.com/ShawnBIT/UNet-family)
-
 ## Brief
 - unet 网络用于图像分割任务
 - 基于 FCN , 扩大了网络框架，使其能够使用很少的训练图像就得到很 精确的分割结果。
@@ -137,4 +121,20 @@ $$
 
 - MobileNet-UNet：用 [MobileNet](/0045_ML_Tasks_Image_Classification_MobileNet) 作编码器，减少计算量，适合边缘设备
 - UNet++、Attention U-Net、3D U-Net、nnU-Net：增加嵌套跳连、注意力、三维卷积，以及自动配置训练流程，后者是医学图像分割的强基线
+
+## Reference
+
+- [官方实现Github - caffe](https://github.com/lmb-freiburg/Unet-Segmentation)
+- [Github repo - keras - zhixuhao](https://github.com/zhixuhao/unet)
+- [image-segmentation-keras](https://github.com/divamgupta/image-segmentation-keras)
+- [U-Net: Convolutional Networks for Biomedical Image Segmentation](https://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/)
+- [isbi_challenge](http://brainiac2.mit.edu/isbi_challenge/)
+- [Intel unet](https://github.com/IntelAI/unet/tree/master/single-node)
+- [paper -U-Net: Convolutional Networks for Biomedical Image Segmentation ](https://arxiv.org/pdf/1505.04597.pdf) - - [**Download**](https://github.com/junxnone/tech-io/files/3895234/U-Net.Convolutional.Networks.for.Biomedical.Image.Segmentation.pdf)
+- [unet网络结构说明及keras实现详解](https://blog.csdn.net/weixin_38193906/article/details/83787569)
+- [unet - keras - intelAI](https://github.com/IntelAI/unet)
+- [U-Net - Convolutional Networks for Biomedical Image Segmentation论文翻译——中英文对照](http://noahsnail.com/2019/05/13/2019-05-13-U-Net-Convolutional%20Networks%20for%20Biomedical%20Image%20Segmentation%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91%E2%80%94%E2%80%94%E4%B8%AD%E8%8B%B1%E6%96%87%E5%AF%B9%E7%85%A7/)
+- [Implementation of U-Net architecture using Pytorch.](https://github.com/jakeoung/Unet_pytorch)
+- [用U-Net做Auto-Encoder图像重建](https://zhuanlan.zhihu.com/p/47125912)
+- [UNet-family](https://github.com/ShawnBIT/UNet-family)
 
