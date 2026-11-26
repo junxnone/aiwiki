@@ -2,7 +2,7 @@
 Title | LM Train Efficiency
 -- | --
 Created @ | `2026-11-26T15:34:52Z`
-Updated @| `2026-11-26T15:34:52Z`
+Updated @| `2026-11-26T15:42:10Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/826)
 
@@ -29,13 +29,13 @@ flowchart LR
 图中：
 
 - 先判断瓶颈：算力没吃满 (MFU 低)、显存放不下，还是在等通信，再选择对应手段
-- 并行相关的显存和通信问题见 [Distributed](@@TDIST@@)，本文集中讲单卡层面的优化和效率度量
+- 并行相关的显存和通信问题见 [Distributed](/0825_LM_Train_Distributed)，本文集中讲单卡层面的优化和效率度量
 
 ## 混合精度
 
 - BF16：8 位指数、7 位尾数，动态范围与 FP32 相同，不需要像 FP16 那样做 loss scaling，是目前大模型训练的主流；FP16 的指数只有 5 位，容易溢出，需要 loss scaling
 - FP8：E4M3 (精度高，用于前向权重和激活) 和 E5M2 (范围大，用于梯度)，算力约为 BF16 的 $2\times$；需要逐张量的缩放因子，位布局见 [DataType](/0700_MO_Quantization_DataType)
-- 做法：前向反向用低精度，参数主副本和优化器状态保持 FP32，更新精度不丢失；显存见 [Distributed](@@TDIST@@) 的 $16$ 字节/参数
+- 做法：前向反向用低精度，参数主副本和优化器状态保持 FP32，更新精度不丢失；显存见 [Distributed](/0825_LM_Train_Distributed) 的 $16$ 字节/参数
 
 ## 激活重计算
 
@@ -77,7 +77,7 @@ $$
 - $S$：序列长度；$d$：头维度；$M$：片上 SRAM 大小 (每个 SM 约百 KB 量级)
 - 标准实现要把 $S\times S$ 的得分矩阵和 softmax 结果写回显存 (HBM) 再读出，访存是 $O(S^2)$；FlashAttention 分块后只在 SRAM 里保存一个块，用在线 softmax (逐块更新最大值和归一化分母) 得到正确结果
 - 结果与标准注意力数学上完全等价 (精确注意力，不是近似)，速度快 $2\sim4$ 倍并节省大量显存，使长序列训练成为可能；FlashAttention-2/3 进一步优化了并行度和对新硬件的利用
-- 推理中的使用见 [Infer Optimization](@@IOPT@@) 和 [Attention](@@IATT@@)
+- 推理中的使用见 [Infer Optimization](/0835_LM_Infer_Optimization) 和 [Attention](/0839_LM_Infer_Attention)
 
 ## 梯度累积
 
