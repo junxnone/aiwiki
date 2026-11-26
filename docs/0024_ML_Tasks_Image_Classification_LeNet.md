@@ -2,17 +2,11 @@
 Title | ML Tasks Image Classification LeNet
 -- | --
 Created @ | `2019-06-11T12:59:17Z`
-Updated @| `2026-11-25T16:50:42Z`
+Updated @| `2026-11-26T01:26:13Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/24)
 
 ---
-## Reference
-- 1998 **LeNet** Gradient-Based Learning Applied to Document Recognition [[paper](http://yann.lecun.com/exdb/publis/pdf/lecun-01a.pdf)] [[code](https://github.com/junxnone/LeNet-5/blob/master/lenet.py#L5-L74)]
-- [卷积神经网络之LeNet](https://www.cnblogs.com/wangguchangqing/p/10329402.html)
-- [卷积神经网络-进化史-从LeNet到AlexNet](https://zhuanlan.zhihu.com/p/21562756)
-- [神经网络的发展历史](https://blog.csdn.net/qq_30460949/article/details/100101983)
-
 ## Brief
 - LeNet诞生于1998年, 第一个卷积神经网络
 - 包含卷积/池化/全连接等Layers
@@ -169,4 +163,10 @@ lenet = nn.Sequential(
 
 - 原论文使用 tanh/sigmoid 激活和平均池化，现代实现多用 ReLU 和最大池化，结构不变
 - 总参数 $61{,}706$，约 $0.24\text{ MB}$ (float32)，在 MNIST 上可达到约 99% 的准确率 `[经验]`
+
+## Reference
+- 1998 **LeNet** Gradient-Based Learning Applied to Document Recognition [[paper](http://yann.lecun.com/exdb/publis/pdf/lecun-01a.pdf)] [[code](https://github.com/junxnone/LeNet-5/blob/master/lenet.py#L5-L74)]
+- [卷积神经网络之LeNet](https://www.cnblogs.com/wangguchangqing/p/10329402.html)
+- [卷积神经网络-进化史-从LeNet到AlexNet](https://zhuanlan.zhihu.com/p/21562756)
+- [神经网络的发展历史](https://blog.csdn.net/qq_30460949/article/details/100101983)
 
