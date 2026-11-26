@@ -3,7 +3,7 @@
 | Title     | ML Op Norm LayerNorm                                  |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-10T09:50:15Z`                                |
-| Updated @ | `2026-11-10T09:50:15Z`                                |
+| Updated @ | `2026-11-26T08:19:37Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/615) |
 
@@ -127,8 +127,12 @@ eps)`。ONNX 中对应算子为 `LayerNormalization`（opset 17
 
 ## pre-LN 与 post-LN
 
-    post-LN (原始 Transformer):  x = LN(x + Sublayer(x))
-    pre-LN  (GPT-2 / LLaMA 等):  x = x + Sublayer(LN(x))
+$$ \\text{post-LN（原始 Transformer）: } x \\leftarrow \\mathrm{LN}\\big(x +
+\\mathrm{Sublayer}(x)\\big),\\qquad \\text{pre-LN（GPT-2 / LLaMA 等）: } x
+\\leftarrow x + \\mathrm{Sublayer}\\big(\\mathrm{LN}(x)\\big) $$
+
+其中：$x$ 为子层输入（残差主干上的激活）；$\\mathrm{Sublayer}(\\cdot)$ 为 Attention 或 FFN
+子层；$\\mathrm{LN}$ 为 LayerNorm；$\\leftarrow$ 为赋值更新。
 
   - post-LN：残差分支输出再归一化，浅层效果好，但深层时输出层附近梯度较大，训练需要 learning rate
     warmup，层数很深时容易不稳定。
@@ -153,7 +157,8 @@ eps)`。ONNX 中对应算子为 `LayerNormalization`（opset 17
     $|\\mu|\\gg\\sigma$ 时有灾难性抵消的风险，需用 FP32 累加或 Welford）。
   - **Apex FusedLayerNorm / FlashAttention 仓库中的 fused 实现风格**：把 LN 与前后的
     elementwise 融合，典型是 `residual add + dropout + LayerNorm`（"fused add &
-    norm"），即 `y = LN(x + residual)`，同时输出新的残差流，省掉一次完整的读写。具体 kernel
+    norm"），即 $y = \\mathrm{LN}(x + r)$（$x$ 为子层输出，$r$ 为残差输入，$y$
+    为归一化后的输出），同时输出新的残差流，省掉一次完整的读写。具体 kernel
     名称与接口以对应仓库为准，本文不展开。
   - **向量化访存**：按 128-bit 加载（FP16 一次 8 个元素），`H` 为 8 的倍数时效率最高。
   - **反向**：需要保存 `mean` 与 `rstd`（每行 2 个标量），反向时重算

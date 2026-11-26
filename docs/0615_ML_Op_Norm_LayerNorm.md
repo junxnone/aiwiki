@@ -2,7 +2,7 @@
 Title | ML Op Norm LayerNorm
 -- | --
 Created @ | `2026-11-10T09:50:15Z`
-Updated @| `2026-11-10T09:50:15Z`
+Updated @| `2026-11-26T08:19:37Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/615)
 
@@ -105,10 +105,11 @@ inn = nn.InstanceNorm2d(64)
 
 ## pre-LN 与 post-LN
 
-```
-post-LN (原始 Transformer):  x = LN(x + Sublayer(x))
-pre-LN  (GPT-2 / LLaMA 等):  x = x + Sublayer(LN(x))
-```
+$$
+\text{post-LN（原始 Transformer）: } x \leftarrow \mathrm{LN}\big(x + \mathrm{Sublayer}(x)\big),\qquad \text{pre-LN（GPT-2 / LLaMA 等）: } x \leftarrow x + \mathrm{Sublayer}\big(\mathrm{LN}(x)\big)
+$$
+
+其中：$x$ 为子层输入（残差主干上的激活）；$\mathrm{Sublayer}(\cdot)$ 为 Attention 或 FFN 子层；$\mathrm{LN}$ 为 LayerNorm；$\leftarrow$ 为赋值更新。
 
 - post-LN：残差分支输出再归一化，浅层效果好，但深层时输出层附近梯度较大，训练需要 learning rate warmup，层数很深时容易不稳定。
 - pre-LN：归一化放在子层输入，残差主干保持恒等通路，梯度更平稳，通常可不用或少用 warmup，是大模型的主流选择；代价是主干上激活范数随层数增长，最终需要一个 final LN，且在某些任务上最终精度略逊于调优良好的 post-LN（经验观点）。
@@ -124,7 +125,7 @@ pre-LN  (GPT-2 / LLaMA 等):  x = x + Sublayer(LN(x))
 
 - **fused LN**：一个 kernel 内每个 block/warp 负责一行（或若干行），把该行读入寄存器/共享内存，一次完成求和、方差、归一化、仿射并写回，全局内存只读一次、写一次。
 - **单 pass 方差**：用 Welford 算法或同时累加 $\sum x$ 与 $\sum x^2$（后者在 $|\mu|\gg\sigma$ 时有灾难性抵消的风险，需用 FP32 累加或 Welford）。
-- **Apex FusedLayerNorm / FlashAttention 仓库中的 fused 实现风格**：把 LN 与前后的 elementwise 融合，典型是 `residual add + dropout + LayerNorm`（"fused add & norm"），即 `y = LN(x + residual)`，同时输出新的残差流，省掉一次完整的读写。具体 kernel 名称与接口以对应仓库为准，本文不展开。
+- **Apex FusedLayerNorm / FlashAttention 仓库中的 fused 实现风格**：把 LN 与前后的 elementwise 融合，典型是 `residual add + dropout + LayerNorm`（"fused add & norm"），即 $y = \mathrm{LN}(x + r)$（$x$ 为子层输出，$r$ 为残差输入，$y$ 为归一化后的输出），同时输出新的残差流，省掉一次完整的读写。具体 kernel 名称与接口以对应仓库为准，本文不展开。
 - **向量化访存**：按 128-bit 加载（FP16 一次 8 个元素），`H` 为 8 的倍数时效率最高。
 - **反向**：需要保存 `mean` 与 `rstd`（每行 2 个标量），反向时重算 $\hat{x}$；$\gamma,\beta$ 的梯度需要跨行归约，通常分两级 reduce。
 - 编译器路径：`torch.compile`（Inductor）可把分解后的 LN 自动融合为单个 Triton kernel。
@@ -179,4 +180,5 @@ RMSNorm 的分解则是 `Pow(2) -> ReduceMean -> Add(eps) -> Sqrt -> Div(或 Rec
 - ONNX LayerNormalization: https://onnx.ai/onnx/operators/onnx__LayerNormalization.html
 - ONNX GroupNormalization: https://onnx.ai/onnx/operators/onnx__GroupNormalization.html
 - NVIDIA Apex: https://github.com/NVIDIA/apex
+
 
