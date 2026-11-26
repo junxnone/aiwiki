@@ -2,15 +2,11 @@
 Title | ML Tasks Image OCR Tools TextRecognitionDataGenerator
 -- | --
 Created @ | `2020-05-08T05:53:53Z`
-Updated @| `2026-11-25T16:56:09Z`
+Updated @| `2026-11-26T01:27:36Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/187)
 
 ---
-## Reference
-- [TextRecognitionDataGenerator Github](https://github.com/Belval/TextRecognitionDataGenerator/)
-- [Docs](https://textrecognitiondatagenerator.readthedocs.io/en/latest/index.html)
-
 ## Brief
 - `Now supporting non-latin text! @20200508`
 - handwritten 
@@ -112,4 +108,8 @@ for img, label in gen:          # img 是 PIL.Image, label 是字符串
 - 合成数据与真实数据存在差异：真实图像有复杂的光照、反光、污渍，纯合成训练的模型泛化有限
 - 中文生成需要提供包含对应字符的字体文件，否则会出现方块
 - 与更复杂的场景文字合成 (SynthText 等) 相比，TRDG 只生成单行文字的裁剪图，适合识别模型，不适合检测模型的训练
+
+## Reference
+- [TextRecognitionDataGenerator Github](https://github.com/Belval/TextRecognitionDataGenerator/)
+- [Docs](https://textrecognitiondatagenerator.readthedocs.io/en/latest/index.html)
 
