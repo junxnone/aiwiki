@@ -3,15 +3,13 @@
 | Title     | Media Image Camera PixelFormat                        |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2021-10-21T17:44:24Z`                                |
-| Updated @ | `2026-11-26T01:26:01Z`                                |
+| Updated @ | `2026-11-26T15:16:06Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/119) |
 
 -----
 
 # 像素格式
-
-## Brief
 
   - Pixel Format - Camera 输出图像的格式
       - Packed(Pixel-Order)/Planar
