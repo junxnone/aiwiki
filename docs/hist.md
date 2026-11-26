@@ -826,6 +826,31 @@
 
 #### **Updated**
 
+- 2026-11-26 23:42&nbsp;&nbsp; [CPU](/0841_LM_Infer_CPU)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:CPU
+- 2026-11-26 23:42&nbsp;&nbsp; [StructuredOutput](/0840_LM_Infer_StructuredOutput)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:StructuredOutput
+- 2026-11-26 23:42&nbsp;&nbsp; [Attention](/0839_LM_Infer_Attention)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:Attention
+- 2026-11-26 23:42&nbsp;&nbsp; [KVCache](/0838_LM_Infer_KVCache)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:KVCache
+- 2026-11-26 23:42&nbsp;&nbsp; [Speculative](/0837_LM_Infer_Speculative)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:Speculative
+- 2026-11-26 23:42&nbsp;&nbsp; [Parallel](/0836_LM_Infer_Parallel)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:Parallel
+- 2026-11-26 23:42&nbsp;&nbsp; [Optimization](/0835_LM_Infer_Optimization)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:Optimization
+- 2026-11-26 23:42&nbsp;&nbsp; [Basics](/0834_LM_Infer_Basics)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:Basics
+- 2026-11-26 23:42&nbsp;&nbsp; [Reasoning](/0833_LM_FT_Reasoning)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:Reasoning
+- 2026-11-26 23:42&nbsp;&nbsp; [Cluster](/0832_LM_Train_Cluster)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Cluster
+- 2026-11-26 23:42&nbsp;&nbsp; [Stability](/0831_LM_Train_Stability)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Stability
+- 2026-11-26 23:42&nbsp;&nbsp; [Optimizer](/0830_LM_Train_Optimizer)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Optimizer
+- 2026-11-26 23:42&nbsp;&nbsp; [LongContext](/0829_LM_Train_LongContext)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:LongContext
+- 2026-11-26 23:42&nbsp;&nbsp; [MoE](/0828_LM_Train_MoE)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:MoE
+- 2026-11-26 23:42&nbsp;&nbsp; [Eval](/0827_LM_Train_Eval)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Eval
+- 2026-11-26 23:42&nbsp;&nbsp; [Efficiency](/0826_LM_Train_Efficiency)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Efficiency
+- 2026-11-26 23:42&nbsp;&nbsp; [Distributed](/0825_LM_Train_Distributed)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Distributed
+- 2026-11-26 23:42&nbsp;&nbsp; [Pretrain](/0824_LM_Train_Pretrain)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Pretrain
+- 2026-11-26 23:42&nbsp;&nbsp; [Architecture](/0823_LM_Train_Architecture)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Architecture
+- 2026-11-26 23:42&nbsp;&nbsp; [Tokenizer](/0822_LM_Train_Tokenizer)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Tokenizer
+- 2026-11-26 23:41&nbsp;&nbsp; [Data](/0821_LM_Train_Data)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Data
+- 2026-11-26 23:41&nbsp;&nbsp; [Deploy](/0820_LM_Deploy)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy
+- 2026-11-26 23:41&nbsp;&nbsp; [Infer](/0819_LM_Infer)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer
+- 2026-11-26 23:41&nbsp;&nbsp; [Train](/0818_LM_Train)&nbsp;&nbsp; :bookmark:LM :bookmark:Train
+- 2026-11-26 23:41&nbsp;&nbsp; [Lifecycle](/0817_LM_Lifecycle)&nbsp;&nbsp; :bookmark:LM :bookmark:Lifecycle
 - 2026-11-26 23:40&nbsp;&nbsp; [Edge](/0854_LM_Deploy_Edge)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Edge
 - 2026-11-26 23:40&nbsp;&nbsp; [MultiModal](/0853_LM_Deploy_MultiModal)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:MultiModal
 - 2026-11-26 23:40&nbsp;&nbsp; [ToolCalling](/0852_LM_Deploy_ToolCalling)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:ToolCalling
@@ -839,31 +864,6 @@
 - 2026-11-26 23:38&nbsp;&nbsp; [Sizing](/0844_LM_Deploy_Sizing)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Sizing
 - 2026-11-26 23:38&nbsp;&nbsp; [Format](/0843_LM_Deploy_Format)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Format
 - 2026-11-26 23:38&nbsp;&nbsp; [Frameworks](/0842_LM_Deploy_Frameworks)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Frameworks
-- 2026-11-26 23:38&nbsp;&nbsp; [CPU](/0841_LM_Infer_CPU)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:CPU
-- 2026-11-26 23:37&nbsp;&nbsp; [StructuredOutput](/0840_LM_Infer_StructuredOutput)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:StructuredOutput
-- 2026-11-26 23:37&nbsp;&nbsp; [Attention](/0839_LM_Infer_Attention)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:Attention
-- 2026-11-26 23:37&nbsp;&nbsp; [KVCache](/0838_LM_Infer_KVCache)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:KVCache
-- 2026-11-26 23:37&nbsp;&nbsp; [Speculative](/0837_LM_Infer_Speculative)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:Speculative
-- 2026-11-26 23:37&nbsp;&nbsp; [Parallel](/0836_LM_Infer_Parallel)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:Parallel
-- 2026-11-26 23:36&nbsp;&nbsp; [Optimization](/0835_LM_Infer_Optimization)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:Optimization
-- 2026-11-26 23:36&nbsp;&nbsp; [Basics](/0834_LM_Infer_Basics)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:Basics
-- 2026-11-26 23:36&nbsp;&nbsp; [Reasoning](/0833_LM_FT_Reasoning)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:Reasoning
-- 2026-11-26 23:36&nbsp;&nbsp; [Cluster](/0832_LM_Train_Cluster)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Cluster
-- 2026-11-26 23:35&nbsp;&nbsp; [Stability](/0831_LM_Train_Stability)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Stability
-- 2026-11-26 23:35&nbsp;&nbsp; [Optimizer](/0830_LM_Train_Optimizer)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Optimizer
-- 2026-11-26 23:35&nbsp;&nbsp; [LongContext](/0829_LM_Train_LongContext)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:LongContext
-- 2026-11-26 23:35&nbsp;&nbsp; [MoE](/0828_LM_Train_MoE)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:MoE
-- 2026-11-26 23:35&nbsp;&nbsp; [Eval](/0827_LM_Train_Eval)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Eval
-- 2026-11-26 23:34&nbsp;&nbsp; [Efficiency](/0826_LM_Train_Efficiency)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Efficiency
-- 2026-11-26 23:34&nbsp;&nbsp; [Distributed](/0825_LM_Train_Distributed)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Distributed
-- 2026-11-26 23:34&nbsp;&nbsp; [Pretrain](/0824_LM_Train_Pretrain)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Pretrain
-- 2026-11-26 23:34&nbsp;&nbsp; [Architecture](/0823_LM_Train_Architecture)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Architecture
-- 2026-11-26 23:33&nbsp;&nbsp; [Tokenizer](/0822_LM_Train_Tokenizer)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Tokenizer
-- 2026-11-26 23:33&nbsp;&nbsp; [Data](/0821_LM_Train_Data)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Data
-- 2026-11-26 23:33&nbsp;&nbsp; [Deploy](/0820_LM_Deploy)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy
-- 2026-11-26 23:33&nbsp;&nbsp; [Infer](/0819_LM_Infer)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer
-- 2026-11-26 23:33&nbsp;&nbsp; [Train](/0818_LM_Train)&nbsp;&nbsp; :bookmark:LM :bookmark:Train
-- 2026-11-26 23:32&nbsp;&nbsp; [Lifecycle](/0817_LM_Lifecycle)&nbsp;&nbsp; :bookmark:LM :bookmark:Lifecycle
 - 2026-11-26 23:16&nbsp;&nbsp; [像素格式](/0119_Media_Image_Camera_PixelFormat)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera :bookmark:PixelFormat
 - 2026-11-26 22:41&nbsp;&nbsp; [模型性能优化技术](/0471_MO)&nbsp;&nbsp; :bookmark:MO
 - 2026-11-26 22:41&nbsp;&nbsp; [剪枝](/0808_MO_Pruning)&nbsp;&nbsp; :bookmark:MO :bookmark:Pruning
