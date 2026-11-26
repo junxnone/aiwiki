@@ -2,7 +2,7 @@
 Title | LM Train LongContext
 -- | --
 Created @ | `2026-11-26T15:35:31Z`
-Updated @| `2026-11-26T15:35:31Z`
+Updated @| `2026-11-26T15:42:16Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/829)
 
@@ -21,11 +21,11 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/829)
 数据 | 真正需要长距离依赖的高质量长文本稀少 | 拼接长文档、合成长依赖任务
 有效利用 | 模型能「装下」不等于能「用好」，中间部分的信息常被忽略 | 长上下文训练数据配比、评测
 
-表中：前三项是工程问题，后两项是能力问题；计算量估算见 [Architecture](@@TARCH@@) 的每 token 计算量一节，$S=128$K 时注意力的计算约是参数部分的 $2.6$ 倍 (8B 模型)。
+表中：前三项是工程问题，后两项是能力问题；计算量估算见 [Architecture](/0823_LM_Train_Architecture) 的每 token 计算量一节，$S=128$K 时注意力的计算约是参数部分的 $2.6$ 倍 (8B 模型)。
 
 ## RoPE 外推
 
-RoPE 第 $i$ 组维度的旋转角为 $\theta_{m,i}=m\,\omega_i$，$\omega_i=b^{-2i/d_h}$ ($b$ 为基频，通常 $10000$)，定义见 [Architecture](@@TARCH@@)。设训练长度为 $L_{train}$，目标长度为 $L'=sL_{train}$ ($s$ 为扩展倍数)：
+RoPE 第 $i$ 组维度的旋转角为 $\theta_{m,i}=m\,\omega_i$，$\omega_i=b^{-2i/d_h}$ ($b$ 为基频，通常 $10000$)，定义见 [Architecture](/0823_LM_Train_Architecture)。设训练长度为 $L_{train}$，目标长度为 $L'=sL_{train}$ ($s$ 为扩展倍数)：
 
 方法 | 做法 | 公式
 -- | -- | --
@@ -65,7 +65,7 @@ flowchart LR
 - 继续训练的数据要混入原来的短文本，防止短上下文能力退化；长文本来源有书籍、代码仓库、拼接的相关文档
 - 最后做长上下文的指令微调，并用专门的评测检查；Llama 3.1 就是在预训练的最后阶段逐级把上下文扩到 $128$K `[待核实]`
 
-工程上：长序列的激活显存用上下文并行 (把序列切到多卡，ring attention) 和重计算解决，见 [Distributed](@@TDIST@@) 与 [Efficiency](@@TEFF@@)。
+工程上：长序列的激活显存用上下文并行 (把序列切到多卡，ring attention) 和重计算解决，见 [Distributed](/0825_LM_Train_Distributed) 与 [Efficiency](/0826_LM_Train_Efficiency)。
 
 ## 评测
 
@@ -75,12 +75,12 @@ flowchart LR
 RULER | 多针、多跳追踪、聚合等合成任务 | 比单针更难的长距离推理，给出「有效上下文长度」
 LongBench 等 | 真实的长文档问答、摘要、代码任务 | 实际任务效果
 
-表中：只通过单针测试不代表能用好长上下文，许多模型宣称的长度远大于 RULER 测出的有效长度；部署前应该用自己的任务验证，见 [Eval](@@TEVAL@@)。
+表中：只通过单针测试不代表能用好长上下文，许多模型宣称的长度远大于 RULER 测出的有效长度；部署前应该用自己的任务验证，见 [Eval](/0827_LM_Train_Eval)。
 
 ## 推理侧
 
-- KV Cache 随长度线性增长，长上下文推理受带宽和显存限制更严重，见 [Infer Basics](@@IBAS@@) 与 [KVCache 管理](@@IKV@@)
-- 前缀缓存对重复使用同一份长文档 (如同一份合同多次提问) 收益很大，见 [Optimization](@@IOPT@@)
+- KV Cache 随长度线性增长，长上下文推理受带宽和显存限制更严重，见 [Infer Basics](/0834_LM_Infer_Basics) 与 [KVCache 管理](/0838_LM_Infer_KVCache)
+- 前缀缓存对重复使用同一份长文档 (如同一份合同多次提问) 收益很大，见 [Optimization](/0835_LM_Infer_Optimization)
 - 很多场景用 [RAG](/0461_LM_RAG) 只取相关片段，比把整份资料塞进上下文更便宜
 
 ## Reference
