@@ -2,14 +2,14 @@
 Title | LM Infer Attention
 -- | --
 Created @ | `2026-11-26T15:37:47Z`
-Updated @| `2026-11-26T15:37:47Z`
+Updated @| `2026-11-26T15:42:38Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/839)
 
 ---
 # Attention
 
-推理中的注意力计算：prefill 与 decode 阶段的注意力有什么不同，FlashAttention、FlashDecoding、分页注意力 kernel 怎样优化它，以及 GQA、MLA 对推理的影响。训练侧的 FlashAttention 原理见 [Efficiency](@@TEFF@@)。
+推理中的注意力计算：prefill 与 decode 阶段的注意力有什么不同，FlashAttention、FlashDecoding、分页注意力 kernel 怎样优化它，以及 GQA、MLA 对推理的影响。训练侧的 FlashAttention 原理见 [Efficiency](/0826_LM_Train_Efficiency)。
 
 ## 两个阶段的差别
 
@@ -75,12 +75,12 @@ MHA | $2n_{head}d_h$ / token / 层 | 每个头读自己的 KV
 GQA | $2n_{kv}d_h$ | 一组 query 头共享一份 KV，kernel 应一次读入、多头复用
 MLA | $d_c+d_h^R$ (压缩潜在向量) | 可以把升维矩阵吸收进 query 和输出投影，直接在压缩空间里算注意力，需要专门的 kernel
 
-表中：参数与例子见 [Architecture](@@TARCH@@)。MLA 把 KV 压得最小，但计算方式与普通注意力不同，推理框架需要专门实现才能拿到收益。
+表中：参数与例子见 [Architecture](/0823_LM_Train_Architecture)。MLA 把 KV 压得最小，但计算方式与普通注意力不同，推理框架需要专门实现才能拿到收益。
 
 ## 长上下文
 
 - 上下文越长，decode 时注意力读取的 KV 越多，在 TPOT 中的占比越大；$S$ 达到数万时，注意力可能超过读权重的时间
-- 应对：GQA/MLA、KV 量化、FlashDecoding，以及在多卡之间按序列切分 KV，见 [KVCache 管理](@@IKV@@) 与 [Parallel](@@IPAR@@)
+- 应对：GQA/MLA、KV 量化、FlashDecoding，以及在多卡之间按序列切分 KV，见 [KVCache 管理](/0838_LM_Infer_KVCache) 与 [Parallel](/0836_LM_Infer_Parallel)
 - 稀疏注意力 (滑动窗口、局部 + 全局) 从结构上限制每个 token 关注的范围，需要模型训练时就采用
 
 ## Reference
