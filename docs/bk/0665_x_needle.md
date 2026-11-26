@@ -3,7 +3,7 @@
 | Title     | x needle                                              |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-19T09:35:22Z`                                |
-| Updated @ | `2026-11-19T09:35:22Z`                                |
+| Updated @ | `2026-11-26T08:19:54Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/665) |
 
@@ -158,11 +158,10 @@ DeepSeek V4 Flash。
 
 官方页面只给出了结构图里的公式，没有逐项定义符号。下面的解释分两类：来自原论文或标准定义的，直接陈述；根据公式形状和上下文做的推断，会明确标注「推断」。
 
-**符号约定**：隐层维度 $`d=768`$` ；每个 token 在 4 条残差 lane 上各有一个
- `$`d`$`维向量，第`$`n`$`条 lane 记为`$`X_n \in \mathbb{R}^{d}`$` ，把 4
-条 lane 堆叠起来得到  `$`X \in \mathbb{R}^{4 \times d}`$`；`$`\sigma`$`是
-sigmoid，值域`$`(0,1)`$`；`$`\odot`$`是逐元素相乘；帽子`$`\hat{\cdot}`$ 表示做过
-RMSNorm 的向量。
+**符号约定**：隐层维度 $`d=768`$；每个 token 在 4 条残差 lane 上各有一个 $`d`$ 维向量，第 $`n`$ 条
+lane 记为 $`X_n \in \mathbb{R}^{d}`$，把 4 条 lane 堆叠起来得到 $`X \in
+\mathbb{R}^{4 \times d}`$；$`\sigma`$ 是 sigmoid，值域 $`(0,1)`$；$`\odot`$
+是逐元素相乘；帽子 $`\hat{\cdot}`$ 表示做过 RMSNorm 的向量。
 
 #### 1\. 带门控的 Attention
 
@@ -178,9 +177,10 @@ K^\\top}{\\sqrt{d}}\\right) V $$
   - $`d`$：这里指每个 head 内 query/key 的维度。按结构图写的「48 qk / 64 v」，应为 48，而不是
     768（推断）。
   - $`\mathrm{softmax}(\cdot)V`$：标准 Attention 输出，即按相关度对 value 加权平均。
-  - $`\sigma(g)`$`：**输出门控**。`$`g`$`  与 Attention 输出同形状，由当前 token
-    的隐状态线性投影得到（推断，页面未写明）； `$`\sigma(g)`$`逐元素落在`$`(0,1)`$，相当于给每个通道配一个「音量旋钮」。当没有相关内容可取时，门可以压到接近
-    0，让这个 head 的输出静默，而不是被迫输出一个加权平均值。
+  - $`\sigma(g)`$：**输出门控**。$`g`$ 与 Attention 输出同形状，由当前 token
+    的隐状态线性投影得到（推断，页面未写明）；$`\sigma(g)`$ 逐元素落在
+    $`(0,1)`$，相当于给每个通道配一个「音量旋钮」。当没有相关内容可取时，门可以压到接近 0，让这个 head
+    的输出静默，而不是被迫输出一个加权平均值。
   - 这一类「softmax 后再乘 sigmoid 门」的设计也出现在其他近期模型中，例如前文 Qwen3.5 的 Gated
     Attention 层。
 
@@ -188,7 +188,7 @@ K^\\top}{\\sqrt{d}}\\right) V $$
 
 $$ q\_t = \\sum\_{j=0}^{2} w\_j \\odot q\_{t-j} $$
 
-  - $`q_t`$`是第`$`t`$`  个 token 的 query， `$`w_0, w_1, w_2`$ 是每个通道各自的 3
+  - $`q_t`$ 是第 $`t`$ 个 token 的 query，$`w_0, w_1, w_2`$ 是每个通道各自的 3
     个可学习权重（深度卷积，即通道之间不混合）。
   - 含义：每个 token 的 query 混入自己和前两个 token 的信息，用极少的参数（每通道 3
     个）提供局部上下文和位置感。它是因果的，只看过去，不看未来。K、V
@@ -206,24 +206,23 @@ b\\right) X\_n,\\qquad \\hat x = \\mathrm{rms}(\\text{lanes}) $$
 
   - $`\hat x`$：对 lane 做 RMSNorm 后得到的归一化状态，作为「当前内容」的摘要（具体怎么聚合 4 条
     lane，页面未写明）。
-  - $`\phi_n`$` ：第  `$`n`$`  条 lane 的可学习向量； `$`a, b`$ 是可学习的标量（缩放和偏置）。
-  - $`\sigma(a\,\phi_n^\top \hat x + b)`$` ：第  `$`n`$`条 lane
-    在本次读取中的权重，取值`$`(0,1)`$。它依赖当前内容，所以每个 token
-    会按需要从不同 lane 读取，而不是固定求和。
+  - $`\phi_n`$：第 $`n`$ 条 lane 的可学习向量；$`a, b`$ 是可学习的标量（缩放和偏置）。
+  - $`\sigma(a\,\phi_n^\top \hat x + b)`$：第 $`n`$ 条 lane 在本次读取中的权重，取值
+    $`(0,1)`$。它依赖当前内容，所以每个 token 会按需要从不同 lane 读取，而不是固定求和。
 
 **写**：子层输出 $`y \in \mathbb{R}^d`$ 回写进 lane，并让 lane 之间互相混合。
 
 $$ X' = P,X + 2,\\sigma(h) \\otimes y,\\qquad P = \\mathrm{Sinkhorn}(A)
 $$
 
-  - $`PX`$`：`$`P`$`是`$`4 \times 4`$ 的矩阵，把 4 条 lane 重新线性混合。
-  - $`2\sigma(h) \otimes y`$`：`$`h \in \mathbb{R}^4`$`给每条 lane
-    一个写入强度`$`2\sigma(h_n) \in
-    (0,2)`$`，`$`\otimes`$`是外积，得到`$`4 \times
-    d`$`的矩阵，即把同一个`$`y`$`按不同强度写入各 lane。系数 2 使`$`h=0`$
-    时强度恰为 1，即初始时等价于普通残差相加（推断）。
-  - $`P = \mathrm{Sinkhorn}(A)`$` ：**Sinkhorn-Knopp** 把任意实矩阵  `$`A`$
-    变成**双随机矩阵**，即所有元素非负，且每行、每列之和都为 1。做法是先取指数保证为正，再反复交替做「行归一化、列归一化」：
+  - $`PX`$：$`P`$ 是 $`4 \times 4`$ 的矩阵，把 4 条 lane 重新线性混合。
+  - $`2\sigma(h) \otimes y`$：$`h \in \mathbb{R}^4`$ 给每条 lane 一个写入强度
+    $`2\sigma(h_n) \in (0,2)`$，$`\otimes`$ 是外积，得到 $`4 \times d`$
+    的矩阵，即把同一个 $`y`$ 按不同强度写入各 lane。系数 2 使 $`h=0`$ 时强度恰为
+    1，即初始时等价于普通残差相加（推断）。
+  - $`P = \mathrm{Sinkhorn}(A)`$：**Sinkhorn-Knopp** 把任意实矩阵 $`A`$
+    变成**双随机矩阵**，即所有元素非负，且每行、每列之和都为
+    1。做法是先取指数保证为正，再反复交替做「行归一化、列归一化」：
 
 $$ P^{(0)}*{ij} = e^{A*{ij}},\\qquad P \\leftarrow \\mathrm{RowNorm}(P)
 ;\\to; P \\leftarrow \\mathrm{ColNorm}(P);\\to; \\cdots $$
@@ -231,8 +230,8 @@ $$ P^{(0)}*{ij} = e^{A*{ij}},\\qquad P \\leftarrow \\mathrm{RowNorm}(P)
 mHC 论文用 20 次迭代；Needle 的迭代次数页面未说明。
 
 **为什么要约束成双随机矩阵**：一个 2 条 lane 的例子。取 $`A = \begin{pmatrix} 0 & -1 \\ -1
-& 0 \end{pmatrix}`$` ，则  `$`e^{A} \approx \begin{pmatrix} 1 & 0.368
-\\ 0.368 & 1 \end{pmatrix}`$，归一化后
+& 0 \end{pmatrix}`$，则 $`e^{A} \approx \begin{pmatrix} 1 & 0.368 \\ 0.368
+& 1 \end{pmatrix}`$，归一化后
 
 $$ P \\approx \\begin{pmatrix} 0.731 & 0.269 \\ 0.269 & 0.731
 \\end{pmatrix} $$
@@ -256,12 +255,10 @@ $$ x \\leftarrow x + \\sigma\\left(\\frac{\\langle \\hat x, \\hat k
 $$ \\mathrm{idx} = \\mathrm{hash}(t\_{i-m+1}, \\ldots, t\_i) \\bmod
 18432,\\qquad m \\in {2,3} $$
 
-2.  **取出 key 和 value**：从表里取出该 slot 的可学习向量 $`e`$` ，再投影成 key  `$`k`$`和
-    value`$`v`$。这一步只是 gather（按下标取行），没有矩阵乘，所以不增加每个 token 的 FLOPs。
-3.  **门控融合**：用当前隐状态 $`\hat x`$` （作 query）和  `$`\hat
-    k`$`做点积，除以`$`\sqrt{d}`$`后过
-    sigmoid，得到一个`$`(0,1)`$`的标量门，再用它决定`$`v`$`写进隐状态`$`x`$
-    的比例。
+2.  **取出 key 和 value**：从表里取出该 slot 的可学习向量 $`e`$，再投影成 key $`k`$ 和 value
+    $`v`$。这一步只是 gather（按下标取行），没有矩阵乘，所以不增加每个 token 的 FLOPs。
+3.  **门控融合**：用当前隐状态 $`\hat x`$（作 query）和 $`\hat k`$ 做点积，除以 $`\sqrt{d}`$
+    后过 sigmoid，得到一个 $`(0,1)`$ 的标量门，再用它决定 $`v`$ 写进隐状态 $`x`$ 的比例。
 
 门的作用有两个：当取出的记忆和当前上下文无关时（例如不同 n-gram 哈希到同一个 slot 的冲突），点积很小，门接近
 0，噪声记忆被压掉；相关时门接近 1，记忆被完整写入。
@@ -277,20 +274,18 @@ $$ y = D\_4 M\_3 D\_3 M\_2, \\mathrm{silu}\\left(D\_2, c(x), M\_1 D\_1 x
 + b\\right),\\qquad M\_i = A\_i \\otimes B\_i $$
 
   - $`D_1, \ldots, D_4`$：对角矩阵，即对每个通道做一个可学习的缩放（Hadamard 乘积）。
-  - $`M_i = A_i \otimes B_i`$`：`$`A_i`$`与`$`B_i`$`是两个`$`32 \times 32`$` 
-    的小矩阵， `$`\otimes`$`是 Kronecker 积，得到一个`$`1024 \times 1024`$` 
-    的结构化矩阵（把「 `$`32 \times 32`$」理解为因子大小，是推断）。
+  - $`M_i = A_i \otimes B_i`$：$`A_i`$ 与 $`B_i`$ 是两个 $`32 \times 32`$
+    的小矩阵，$`\otimes`$ 是 Kronecker 积，得到一个 $`1024 \times 1024`$
+    的结构化矩阵（把「$`32 \times 32`$」理解为因子大小，是推断）。
   - $`\mathrm{silu}(z) = z\,\sigma(z)`$：激活函数，整个结构的位置相当于普通 FFN 中间的非线性。
   - $`b`$：偏置。
   - $`c(x)`$：页面没有定义，这里不展开解释。
 
-**为什么省**：稠密的 $`1024
-\times 1024`$`矩阵有约`$`10^6`$`个参数，一次矩阵向量乘需要约`$`10^6`$`次乘法。而
-Kronecker 积有恒等式`$`(A \otimes B)\,\mathrm{vec}(X) = \mathrm{vec}(B X
-A^\top)`$` ，把向量重排成  `$`32 \times 32`$`的矩阵后，只需要两次`$`32
-\times 32`$`的矩阵乘，约`$`2 \times 32^3
-= 65{,}536`$`次乘法，参数也只需`$`2 \times 32^2`$ 个，大约少 16
-倍的计算量，同时参数极少，适合几十 MB 的体积预算。
+**为什么省**：稠密的 $`1024 \times 1024`$ 矩阵有约 $`10^6`$ 个参数，一次矩阵向量乘需要约 $`10^6`$
+次乘法。而 Kronecker 积有恒等式 $`(A \otimes B)\,\mathrm{vec}(X) =
+\mathrm{vec}(B X A^\top)`$，把向量重排成 $`32 \times 32`$ 的矩阵后，只需要两次 $`32
+\times 32`$ 的矩阵乘，约 $`2 \times 32^3 = 65{,}536`$ 次乘法，参数也只需 $`2
+\times 32^2`$ 个，大约少 16 倍的计算量，同时参数极少，适合几十 MB 的体积预算。
 
 #### 小结
 
