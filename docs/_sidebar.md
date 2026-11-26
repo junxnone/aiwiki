@@ -742,7 +742,7 @@
     - [CVAT](/0073_Tools_Label_CVAT)
     - [LabelImg](/0250_Tools_Label_LabelImg)
     - [Labelme](/0074_Tools_Label_Labelme)
-    - [VIA VGG Image Annotator](/0075_Tools_Label_VGG)
+    - [VIA - VGG Image Annotator](/0075_Tools_Label_VGG)
   - [Eigen](/0303_Tools_Eigen)
   - [FLOPs Parameters 计算](/0026_Tools_FPCalculate)
   - [Gym -> Gymnasium](/0453_Tools_Gym)
@@ -781,4 +781,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1729271126</sub></kbd>
+<kbd><sub>@1755501126</sub></kbd>
