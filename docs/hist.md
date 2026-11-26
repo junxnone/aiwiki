@@ -826,6 +826,23 @@
 
 #### **Updated**
 
+- 2026-11-26 23:43&nbsp;&nbsp; [微调效果评估](/0574_LM_FT_Evaluation)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:Evaluation
+- 2026-11-26 23:43&nbsp;&nbsp; [大模型微调](/0410_LM_FT)&nbsp;&nbsp; :bookmark:LM :bookmark:FT
+- 2026-11-26 23:43&nbsp;&nbsp; [LLMs Metrics](/0503_LM_LLMs_Metrics)&nbsp;&nbsp; :bookmark:LM :bookmark:LLMs :bookmark:Metrics
+- 2026-11-26 23:43&nbsp;&nbsp; [大模型相关工具](/0497_LM_Tools)&nbsp;&nbsp; :bookmark:LM :bookmark:Tools
+- 2026-11-26 23:43&nbsp;&nbsp; [Large Language Models](/0446_LM_LLMs)&nbsp;&nbsp; :bookmark:LM :bookmark:LLMs
+- 2026-11-26 23:43&nbsp;&nbsp; [大模型](/0408_LM)&nbsp;&nbsp; :bookmark:LM
+- 2026-11-26 23:43&nbsp;&nbsp; [Edge](/0854_LM_Deploy_Edge)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Edge
+- 2026-11-26 23:43&nbsp;&nbsp; [MultiModal](/0853_LM_Deploy_MultiModal)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:MultiModal
+- 2026-11-26 23:43&nbsp;&nbsp; [ToolCalling](/0852_LM_Deploy_ToolCalling)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:ToolCalling
+- 2026-11-26 23:43&nbsp;&nbsp; [Gateway](/0851_LM_Deploy_Gateway)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Gateway
+- 2026-11-26 23:43&nbsp;&nbsp; [Kubernetes](/0850_LM_Deploy_Kubernetes)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Kubernetes
+- 2026-11-26 23:43&nbsp;&nbsp; [Benchmark](/0849_LM_Deploy_Benchmark)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Benchmark
+- 2026-11-26 23:43&nbsp;&nbsp; [OpenVINO](/0848_LM_Deploy_OpenVINO)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:OpenVINO
+- 2026-11-26 23:43&nbsp;&nbsp; [Safety](/0847_LM_Deploy_Safety)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Safety
+- 2026-11-26 23:43&nbsp;&nbsp; [Ops](/0846_LM_Deploy_Ops)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Ops
+- 2026-11-26 23:43&nbsp;&nbsp; [Service](/0845_LM_Deploy_Service)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Service
+- 2026-11-26 23:43&nbsp;&nbsp; [Sizing](/0844_LM_Deploy_Sizing)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Sizing
 - 2026-11-26 23:43&nbsp;&nbsp; [Format](/0843_LM_Deploy_Format)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Format
 - 2026-11-26 23:43&nbsp;&nbsp; [Frameworks](/0842_LM_Deploy_Frameworks)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Frameworks
 - 2026-11-26 23:42&nbsp;&nbsp; [CPU](/0841_LM_Infer_CPU)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:CPU
@@ -853,17 +870,6 @@
 - 2026-11-26 23:41&nbsp;&nbsp; [Infer](/0819_LM_Infer)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer
 - 2026-11-26 23:41&nbsp;&nbsp; [Train](/0818_LM_Train)&nbsp;&nbsp; :bookmark:LM :bookmark:Train
 - 2026-11-26 23:41&nbsp;&nbsp; [Lifecycle](/0817_LM_Lifecycle)&nbsp;&nbsp; :bookmark:LM :bookmark:Lifecycle
-- 2026-11-26 23:40&nbsp;&nbsp; [Edge](/0854_LM_Deploy_Edge)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Edge
-- 2026-11-26 23:40&nbsp;&nbsp; [MultiModal](/0853_LM_Deploy_MultiModal)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:MultiModal
-- 2026-11-26 23:40&nbsp;&nbsp; [ToolCalling](/0852_LM_Deploy_ToolCalling)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:ToolCalling
-- 2026-11-26 23:40&nbsp;&nbsp; [Gateway](/0851_LM_Deploy_Gateway)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Gateway
-- 2026-11-26 23:40&nbsp;&nbsp; [Kubernetes](/0850_LM_Deploy_Kubernetes)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Kubernetes
-- 2026-11-26 23:39&nbsp;&nbsp; [Benchmark](/0849_LM_Deploy_Benchmark)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Benchmark
-- 2026-11-26 23:39&nbsp;&nbsp; [OpenVINO](/0848_LM_Deploy_OpenVINO)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:OpenVINO
-- 2026-11-26 23:39&nbsp;&nbsp; [Safety](/0847_LM_Deploy_Safety)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Safety
-- 2026-11-26 23:39&nbsp;&nbsp; [Ops](/0846_LM_Deploy_Ops)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Ops
-- 2026-11-26 23:39&nbsp;&nbsp; [Service](/0845_LM_Deploy_Service)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Service
-- 2026-11-26 23:38&nbsp;&nbsp; [Sizing](/0844_LM_Deploy_Sizing)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Sizing
 - 2026-11-26 23:16&nbsp;&nbsp; [像素格式](/0119_Media_Image_Camera_PixelFormat)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera :bookmark:PixelFormat
 - 2026-11-26 22:41&nbsp;&nbsp; [模型性能优化技术](/0471_MO)&nbsp;&nbsp; :bookmark:MO
 - 2026-11-26 22:41&nbsp;&nbsp; [剪枝](/0808_MO_Pruning)&nbsp;&nbsp; :bookmark:MO :bookmark:Pruning
@@ -1015,8 +1021,6 @@
 - 2026-11-26 16:33&nbsp;&nbsp; [Loss/Cost/ Object Function - 损失代价目标函数](/0378_ML_Arch_Func)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:Func
 - 2026-11-26 16:33&nbsp;&nbsp; [Hyperparameter 超参数](/0368_ML_Arch_HP)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:HP
 - 2026-11-26 16:28&nbsp;&nbsp; [ChatGPT](/0373_Hot_AIGC_ChatGPT)&nbsp;&nbsp; :bookmark:Hot :bookmark:AIGC :bookmark:ChatGPT
-- 2026-11-26 16:28&nbsp;&nbsp; [大模型相关工具](/0497_LM_Tools)&nbsp;&nbsp; :bookmark:LM :bookmark:Tools
-- 2026-11-26 16:28&nbsp;&nbsp; [LLMs Metrics](/0503_LM_LLMs_Metrics)&nbsp;&nbsp; :bookmark:LM :bookmark:LLMs :bookmark:Metrics
 - 2026-11-26 16:28&nbsp;&nbsp; [多模态大模型](/0505_LM_LMMs)&nbsp;&nbsp; :bookmark:LM :bookmark:LMMs
 - 2026-11-26 16:28&nbsp;&nbsp; [LLaMA](/0504_LM_LLMs_LLaMA)&nbsp;&nbsp; :bookmark:LM :bookmark:LLMs :bookmark:LLaMA
 - 2026-11-26 16:28&nbsp;&nbsp; [SAM](/0414_LM_VLM_SAM)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:SAM
@@ -1474,8 +1478,6 @@
 - 2026-10-21 09:14&nbsp;&nbsp; [LPT（Low Precision Transformations，低精度转换）](/0579_Tools_OV_LPT)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:LPT
 - 2026-10-21 09:08&nbsp;&nbsp; [Snippets（CPU 子图 JIT 编译器）](/0576_Tools_OV_OPs_CPUImpl_Snippets)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:OPs :bookmark:CPUImpl :bookmark:Snippets
 - 2026-10-20 16:15&nbsp;&nbsp; [LoRA](/0406_LM_FT_LoRA)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:LoRA
-- 2026-10-20 16:13&nbsp;&nbsp; [大模型微调](/0410_LM_FT)&nbsp;&nbsp; :bookmark:LM :bookmark:FT
-- 2026-10-20 16:08&nbsp;&nbsp; [微调效果评估](/0574_LM_FT_Evaluation)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:Evaluation
 - 2026-10-20 16:03&nbsp;&nbsp; [AdapterFusion](/0571_LM_FT_AdapterFusion)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:AdapterFusion
 - 2026-10-20 16:01&nbsp;&nbsp; [Textual Inversion](/0570_LM_FT_TextualInversion)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:TextualInversion
 - 2026-10-20 15:28&nbsp;&nbsp; [OFT/BOFT](/0495_LM_FT_OFT)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:OFT
@@ -1559,8 +1561,6 @@
 - 2025-02-05 10:19&nbsp;&nbsp; [AIGC](/0374_Hot_AIGC)&nbsp;&nbsp; :bookmark:Hot :bookmark:AIGC
 - 2025-01-24 11:11&nbsp;&nbsp; [Latent Space 潜在空间](/0455_LM_VLM_LatentSpace)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:LatentSpace
 - 2025-01-24 11:10&nbsp;&nbsp; [Stable Diffusion 原理](/0445_LM_VLM_StableDiffusion_Algos)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:StableDiffusion :bookmark:Algos
-- 2025-01-24 11:06&nbsp;&nbsp; [Large Language Models](/0446_LM_LLMs)&nbsp;&nbsp; :bookmark:LM :bookmark:LLMs
-- 2025-01-24 10:51&nbsp;&nbsp; [大模型](/0408_LM)&nbsp;&nbsp; :bookmark:LM
 - 2024-12-27 14:50&nbsp;&nbsp; [Contours 轮廓](/0343_OpenCV_IP_shape_Contours)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:shape :bookmark:Contours
 - 2024-10-17 10:35&nbsp;&nbsp; [Optuna](/0486_x_Optuna)&nbsp;&nbsp; :bookmark:x :bookmark:Optuna
 - 2024-10-16 17:21&nbsp;&nbsp; [LFA](/0480_paper_LFA)&nbsp;&nbsp; :bookmark:paper :bookmark:LFA
