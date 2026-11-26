@@ -3,7 +3,7 @@
 | Title     | LM FT Reasoning                                       |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-26T15:36:22Z`                                |
-| Updated @ | `2026-11-26T15:36:22Z`                                |
+| Updated @ | `2026-11-26T15:42:24Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/833) |
 
@@ -95,13 +95,14 @@ q)}{\\pi\_{\\theta\_{old}}(o\_i\\mid q)} $$
 | 树搜索                     | 对中间步骤展开搜索       | 计算量最大                       |
 
 表中：这些方法让「推理时的计算量」成为与模型大小并列的扩展维度；部署推理模型时要按更长的输出估算资源，输出长度从几百 token
-增加到数千甚至上万 token，见 [Sizing](@@DSIZ@@)。投机解码对这类长输出的场景收益明显，见
-[Speculative](@@ISPEC@@)。
+增加到数千甚至上万 token，见
+[Sizing](/0844_LM_Deploy_Sizing)。投机解码对这类长输出的场景收益明显，见
+[Speculative](/0837_LM_Infer_Speculative)。
 
 ## 实践
 
   - 工具：TRL 提供 `GRPOTrainer`；veRL、OpenRLHF 支持大规模分布式的 RL 训练，其中采样 (rollout)
-    阶段通常用 vLLM/SGLang 加速，见 [Frameworks](@@DFW@@)
+    阶段通常用 vLLM/SGLang 加速，见 [Frameworks](/0842_LM_Deploy_Frameworks)
   - RL 训练的大部分时间花在采样上，推理效率直接决定训练速度
   - 小模型直接做 RL 的效果往往不如从大推理模型蒸馏 (DeepSeek-R1 论文的结论)，资源有限时优先考虑蒸馏
 
