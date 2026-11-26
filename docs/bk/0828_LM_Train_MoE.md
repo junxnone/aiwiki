@@ -3,7 +3,7 @@
 | Title     | LM Train MoE                                          |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-26T15:35:18Z`                                |
-| Updated @ | `2026-11-26T15:35:18Z`                                |
+| Updated @ | `2026-11-26T15:42:14Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/828) |
 
@@ -38,7 +38,7 @@ flowchart LR
   - 被选中的专家各自对 $x$ 做一次 FFN 运算，输出按路由权重 $g$ 加权求和；未被选中的专家不计算
   - 共享专家 (DeepSeek 风格) 对所有 token 都计算，负责通用知识，使路由专家可以更专精
   - MoE 层只替换 Transformer block 里的 FFN，注意力部分不变，见
-    [Architecture](@@TARCH@@)
+    [Architecture](/0823_LM_Train_Architecture)
 
 $$ \\mathbf y=\\sum\_{i\\in\\mathcal T\_k(\\mathbf x)}g\_i(\\mathbf
 x),\\mathrm{FFN}\_i(\\mathbf x),\\qquad g(\\mathbf
@@ -51,7 +51,8 @@ x)=\\mathrm{softmax}\\bigl(\\mathrm{TopK}(W\_r\\mathbf x)\\bigr) $$
   - $\\mathcal T\_k(\\mathbf x)$：得分最高的 $k$ 个专家的编号集合；$\\mathrm{TopK}$
     把其余专家的得分置为 $-\\infty$，使 softmax 后它们的权重为 $0$
   - $g\_i(\\mathbf x)$：第 $i$ 个专家的权重，被选中专家的权重之和为 $1$；$\\mathrm{FFN}\_i$：第
-    $i$ 个专家 (结构与普通 FFN 相同，见 [Architecture](@@TARCH@@) 中的 SwiGLU)
+    $i$ 个专家 (结构与普通 FFN 相同，见 [Architecture](/0823_LM_Train_Architecture)
+    中的 SwiGLU)
   - 不同实现的细节不同：有的先 softmax 再取 top-$k$ 并重新归一化，DeepSeek-V3 用 sigmoid 打分
     `[待核实]`
 
@@ -80,7 +81,7 @@ N\_{active}=N\_{dense}+k\\cdot N\_{expert}\\cdot L\_{moe} $$
 ## 负载均衡
 
 路由器如果总把 token 送给少数几个专家，这些专家过载，其余专家学不到东西 (路由坍缩)，并行计算时还会因为最忙的卡拖慢全局，见
-[Parallel](@@IPAR@@)。常用的辅助损失 (Switch Transformer)：
+[Parallel](/0836_LM_Infer_Parallel)。常用的辅助损失 (Switch Transformer)：
 
 $$ \\mathcal L\_{aux}=\\alpha,E\\sum\_{i=1}^{E}f\_i,P\_i,\\qquad
 f\_i=\\frac1T\\sum\_{t=1}^{T}\\mathbb 1\[i\\in\\mathcal T\_k(\\mathbf
@@ -114,8 +115,8 @@ x\_t)\],\\quad P\_i=\\frac1T\\sum\_{t=1}^{T}p\_i(\\mathbf x\_t) $$
 | 推理速度 | 每 token 计算量小，但 batch 小时每步仍要读很多专家的权重 | 增大 batch 使每个专家处理的 token 变多；小 batch 时 MoE 的带宽优势不如参数量看起来那么大 |
 
 表中：MoE 用显存换计算——训练和大 batch 推理时很划算，但单用户、小 batch 的本地推理中，读取的专家权重随 batch 中
-token 的路由分散而增多，优势会打折扣。并行与通信量的估算见 [Parallel](@@IPAR@@) 和
-[Distributed](@@TDIST@@)。
+token 的路由分散而增多，优势会打折扣。并行与通信量的估算见 [Parallel](/0836_LM_Infer_Parallel) 和
+[Distributed](/0825_LM_Train_Distributed)。
 
 ## Reference
 
