@@ -3,7 +3,7 @@
 | Title     | ML Tasks Image Anomaly                                |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2019-04-08T07:06:13Z`                                |
-| Updated @ | `2026-11-25T16:56:27Z`                                |
+| Updated @ | `2026-11-26T01:27:46Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/277) |
 
@@ -113,31 +113,6 @@ ImageNet）上预训练好的教师网络和一个学生网络，只用正常样
     开源的异常检测算法库，PaDiM/STFPM/DFM/DFKDE/DRAEM/PatchCore/Dinomaly
     等本页提到的大部分方法都已集成
 
-## Reference
-
-  - [awesome anomaly
-    detection](https://github.com/hoya012/awesome-anomaly-detection)
-  - [斯坦福NG机器学习课程：Anomaly
-    Detection笔记](https://www.cnblogs.com/mfrbuaa/p/5219885.html)
-  - [anomaly-detection-resources](https://github.com/yzhao062/anomaly-detection-resources)
-  - [基于异常检测算法的图片异常检测](https://zhuanlan.zhihu.com/p/45266398)
-  - [异常检测概览——孤立森林
-    效果是最好的](https://www.cnblogs.com/bonelee/p/7776711.html)
-  - [iForest （Isolation Forest）孤立森林 异常检测
-    入门篇](https://www.jianshu.com/p/5af3c66e0410)
-  - [半监督”异常检测方法GANomaly](https://zhuanlan.zhihu.com/p/47832951)
-  - [IM-IAD：工业制造中的工业图像异常检测基准](https://blog.csdn.net/m0_63828250/article/details/136891730)
-  - [awesome-industrial-anomaly-detection](https://github.com/M-3LAB/awesome-industrial-anomaly-detection)
-  - [Deep Industrial Image Anomaly Detection: A
-    Survey](https://link.springer.com/article/10.1007/s11633-023-1459-z)
-  - [A survey on industrial image anomaly detection: methods, benchmarks
-    and rethinks
-    (2025-12)](https://www.sciencedirect.com/science/article/abs/pii/S0263224125017361)
-  - [PatchCore: Towards Total Recall in Industrial Anomaly
-    Detection](https://arxiv.org/abs/2106.08265)
-  - [MuSc: Zero-Shot Industrial Anomaly Classification and Segmentation
-    with Mutual Scoring](https://github.com/xrli-U/MuSc)
-
 ## 异常分数的计算
 
 各类方法最终都要给出一个异常分数 (图像级) 和一张异常图 (像素级)，下表和公式给出主要的计算方式：
@@ -221,3 +196,28 @@ p\_\\theta$ 越大越异常。
   - 完全没有目标数据：零样本方法 (AnomalyCLIP、MuSc)
   - 有少量异常样本：可结合 [异常缺陷生成](/0517_ML_Tasks_Image_Anomaly_Synthesis) 或
     DRAEM、SuperSimpleNet 等半监督方法
+
+## Reference
+
+  - [awesome anomaly
+    detection](https://github.com/hoya012/awesome-anomaly-detection)
+  - [斯坦福NG机器学习课程：Anomaly
+    Detection笔记](https://www.cnblogs.com/mfrbuaa/p/5219885.html)
+  - [anomaly-detection-resources](https://github.com/yzhao062/anomaly-detection-resources)
+  - [基于异常检测算法的图片异常检测](https://zhuanlan.zhihu.com/p/45266398)
+  - [异常检测概览——孤立森林
+    效果是最好的](https://www.cnblogs.com/bonelee/p/7776711.html)
+  - [iForest （Isolation Forest）孤立森林 异常检测
+    入门篇](https://www.jianshu.com/p/5af3c66e0410)
+  - [半监督”异常检测方法GANomaly](https://zhuanlan.zhihu.com/p/47832951)
+  - [IM-IAD：工业制造中的工业图像异常检测基准](https://blog.csdn.net/m0_63828250/article/details/136891730)
+  - [awesome-industrial-anomaly-detection](https://github.com/M-3LAB/awesome-industrial-anomaly-detection)
+  - [Deep Industrial Image Anomaly Detection: A
+    Survey](https://link.springer.com/article/10.1007/s11633-023-1459-z)
+  - [A survey on industrial image anomaly detection: methods, benchmarks
+    and rethinks
+    (2025-12)](https://www.sciencedirect.com/science/article/abs/pii/S0263224125017361)
+  - [PatchCore: Towards Total Recall in Industrial Anomaly
+    Detection](https://arxiv.org/abs/2106.08265)
+  - [MuSc: Zero-Shot Industrial Anomaly Classification and Segmentation
+    with Mutual Scoring](https://github.com/xrli-U/MuSc)
