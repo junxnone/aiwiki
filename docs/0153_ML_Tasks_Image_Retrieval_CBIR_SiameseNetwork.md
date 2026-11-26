@@ -2,23 +2,12 @@
 Title | ML Tasks Image Retrieval CBIR SiameseNetwork
 -- | --
 Created @ | `2019-02-20T09:20:21Z`
-Updated @| `2026-11-25T16:52:06Z`
+Updated @| `2026-11-26T01:27:23Z`
 Labels | `index`
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/153)
 
 ---
 # Siamese Network
-## Reference
-
-- [PySOT](https://github.com/STVIR/pysot)
-- [Siamese Network （原理篇）](https://blog.csdn.net/shenziheng1/article/details/81213668)
-- [孪生网络Siamese Network发展历程](https://blog.csdn.net/donkey_1993/article/details/82220765)
-- [Siamese network 孪生神经网络--一个简单神奇的结构](https://zhuanlan.zhihu.com/p/35040994)
-- [精读深度学习论文(25) Siamese Network](https://zhuanlan.zhihu.com/p/39688993)
-- [Siamese Network理解（附代码）](https://blog.csdn.net/sxf1061926959/article/details/54836696)
-- [Siamese Neural Networks for One-shot Image Recognition](https://www.jianshu.com/p/152dae3a5563)
-
-
 ## Brief
 
 - Siamese网络是一种**相似性度量方法**
@@ -114,4 +103,14 @@ Siamese | 一对样本 | 对比损失 | 需要样本对，标签是「是否同�
 分类网络 | 单个样本 | 交叉熵 | 类别固定，无法直接处理新类别
 
 表中：Siamese 和 Triplet 都属于度量学习，区别是约束的形式：Siamese 约束绝对距离 (正对趋近 $0$，负对大于 $m$)，Triplet 约束相对距离 ($d(a,p)+\alpha<d(a,n)$)。
+
+## Reference
+
+- [PySOT](https://github.com/STVIR/pysot)
+- [Siamese Network （原理篇）](https://blog.csdn.net/shenziheng1/article/details/81213668)
+- [孪生网络Siamese Network发展历程](https://blog.csdn.net/donkey_1993/article/details/82220765)
+- [Siamese network 孪生神经网络--一个简单神奇的结构](https://zhuanlan.zhihu.com/p/35040994)
+- [精读深度学习论文(25) Siamese Network](https://zhuanlan.zhihu.com/p/39688993)
+- [Siamese Network理解（附代码）](https://blog.csdn.net/sxf1061926959/article/details/54836696)
+- [Siamese Neural Networks for One-shot Image Recognition](https://www.jianshu.com/p/152dae3a5563)
 
