@@ -3,26 +3,13 @@
 | Title     | ML Tasks Image Segmentation MSRCNN                    |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2019-06-22T08:30:59Z`                                |
-| Updated @ | `2026-11-25T16:51:59Z`                                |
+| Updated @ | `2026-11-26T01:27:16Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/164) |
 
 -----
 
 # Mask Scoring RCNN
-
-## Reference
-
-  - [paper - 2019 - Mask Scoring
-    R-CNN](https://arxiv.org/pdf/1903.00241.pdf)
-  - [Code - Mask Scoring
-    R-CNN](https://github.com/zjhuang22/maskscoring_rcnn)
-  - [2019CVPR《Mask Scoring
-    R-CNN》](https://www.cnblogs.com/wemo/p/10505970.html)
-  - [性能超越何恺明Mask
-    R-CNN！华科大开源图像分割新方法](https://www.jiqizhixin.com/articles/2019-05-15-4)
-  - [CVPR2019 | Mask Scoring R-CNN
-    论文解读](https://www.cnblogs.com/ManWingloeng/p/10717578.html)
 
 ## Brief
 
@@ -119,3 +106,16 @@ backbone 的数值不同 `[待核实]`。
   - 基于 [Mask R-CNN](/0163_ML_Tasks_Image_Segmentation_MaskRCNN)，只增加一个
     MaskIoU Head，其余不变，因此可以插入到其他两阶段实例分割方法中
   - 思想与检测里的 IoU-aware 分类 (如 IoU-Net) 类似：让置信度反映定位或掩码的质量，而不仅是分类的把握
+
+## Reference
+
+  - [paper - 2019 - Mask Scoring
+    R-CNN](https://arxiv.org/pdf/1903.00241.pdf)
+  - [Code - Mask Scoring
+    R-CNN](https://github.com/zjhuang22/maskscoring_rcnn)
+  - [2019CVPR《Mask Scoring
+    R-CNN》](https://www.cnblogs.com/wemo/p/10505970.html)
+  - [性能超越何恺明Mask
+    R-CNN！华科大开源图像分割新方法](https://www.jiqizhixin.com/articles/2019-05-15-4)
+  - [CVPR2019 | Mask Scoring R-CNN
+    论文解读](https://www.cnblogs.com/ManWingloeng/p/10717578.html)
