@@ -4,6 +4,7 @@
 
 #### **Created**
 
+- 2026-11-26 23:37&nbsp;&nbsp; [KVCache](/0838_LM_Infer_KVCache)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:KVCache
 - 2026-11-26 23:37&nbsp;&nbsp; [Speculative](/0837_LM_Infer_Speculative)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:Speculative
 - 2026-11-26 23:37&nbsp;&nbsp; [Parallel](/0836_LM_Infer_Parallel)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:Parallel
 - 2026-11-26 23:36&nbsp;&nbsp; [Optimization](/0835_LM_Infer_Optimization)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:Optimization
@@ -808,6 +809,7 @@
 
 #### **Updated**
 
+- 2026-11-26 23:37&nbsp;&nbsp; [KVCache](/0838_LM_Infer_KVCache)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:KVCache
 - 2026-11-26 23:37&nbsp;&nbsp; [Speculative](/0837_LM_Infer_Speculative)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:Speculative
 - 2026-11-26 23:37&nbsp;&nbsp; [Parallel](/0836_LM_Infer_Parallel)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:Parallel
 - 2026-11-26 23:36&nbsp;&nbsp; [Optimization](/0835_LM_Infer_Optimization)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:Optimization

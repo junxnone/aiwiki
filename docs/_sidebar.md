@@ -537,6 +537,7 @@
     - [Textual Inversion](/0570_LM_FT_TextualInversion)
   - [Infer](/0819_LM_Infer)
     - [Basics](/0834_LM_Infer_Basics)
+    - [KVCache](/0838_LM_Infer_KVCache)
     - [Optimization](/0835_LM_Infer_Optimization)
     - [Parallel](/0836_LM_Infer_Parallel)
     - [Speculative](/0837_LM_Infer_Speculative)
@@ -810,4 +811,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@2337511126</sub></kbd>
+<kbd><sub>@2338061126</sub></kbd>

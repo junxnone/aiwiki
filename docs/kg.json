@@ -4168,6 +4168,15 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki LM Infer KVCache",
+      "group": 3,
+      "title": "KVCache",
+      "url": "https://junxnone.github.io/aiwiki/#/0838_LM_Infer_KVCache",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Op Convolution Math",
       "group": 4,
       "title": "卷积 数学定义",
@@ -10443,6 +10452,13 @@
     {
       "source": "aiwiki LM Infer",
       "target": "aiwiki LM Infer Speculative",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki LM Infer",
+      "target": "aiwiki LM Infer KVCache",
       "value": 3,
       "visible": true,
       "expand": true
