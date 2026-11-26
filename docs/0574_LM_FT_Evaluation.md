@@ -2,7 +2,7 @@
 Title | LM FT Evaluation
 -- | --
 Created @ | `2026-10-20T08:08:48Z`
-Updated @| `2026-10-20T08:08:48Z`
+Updated @| `2026-11-26T15:43:46Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/574)
 
@@ -38,10 +38,16 @@ MT-Bench（Zheng et al. 2023）用 80 道覆盖写作、角色扮演、信息抽
 - **测试集污染风险**：如果训练数据里混入了和评测集高度相似的内容，分数会虚高，不能完全反映真实能力；
 - **这些基准主要衡量"指令跟随/综合对话质量"**，不能替代针对具体下游任务（如专业领域问答、代码生成通过率）的专项评测——微调完一个专业领域模型，最终还是要在真实业务数据上验证效果，通用基准的分数只能作为一个参考信号。
 
+## 相关
+
+- 预训练模型的评测 (困惑度、能力基准、pass@k、评测污染)：[Train Eval](/0827_LM_Train_Eval)
+- 上线后的评估回归、灰度与 A/B：[Ops](/0846_LM_Deploy_Ops)
+
 ## Reference
 - Li, X. et al. (2023). AlpacaEval: An Automatic Evaluator of Instruction-following Models. [GitHub](https://github.com/tatsu-lab/alpaca_eval)
 - Dubois, Y. et al. (2024). Length-Controlled AlpacaEval: A Simple Way to Debias Automatic Evaluators. [arXiv:2404.04475](https://arxiv.org/abs/2404.04475)
 - Zheng, L. et al. (2023). Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena. [arXiv:2306.05685](https://arxiv.org/abs/2306.05685)
 - [大模型微调总览](0410_LM_FT)
 - [大模型对齐训练：SFT/RLHF/DPO](0568_LM_FT_Alignment)
+
 
