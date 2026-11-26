@@ -3,7 +3,7 @@
 | Title     | LM Deploy Kubernetes                                  |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-26T15:40:05Z`                                |
-| Updated @ | `2026-11-26T15:40:05Z`                                |
+| Updated @ | `2026-11-26T15:43:22Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/850) |
 
@@ -12,7 +12,8 @@
 # Kubernetes
 
 在 Kubernetes 上运行大模型推理：GPU 调度、模型权重的加载与缓存、扩缩容、按前缀的路由，以及 KServe、vLLM
-production stack、llm-d 等方案。服务架构的通用部分见 [Service](@@DSVC@@)。
+production stack、llm-d 等方案。服务架构的通用部分见
+[Service](/0845_LM_Deploy_Service)。
 
 ## 为什么不同于普通服务
 
@@ -58,7 +59,7 @@ resources:
   - 需要在节点上安装设备插件 (NVIDIA device plugin / Intel GPU device plugin)，GPU
     才会作为可调度资源出现 `[待核实]` Intel 资源名以所用插件版本为准
   - 多卡张量并行的 Pod 要申请同一节点上的多张卡，并确认它们之间有 NVLink 等高速互联，否则 TP 性能会很差，见
-    [Parallel](@@IPAR@@)
+    [Parallel](/0836_LM_Infer_Parallel)
   - 共享 GPU：MIG (把一张卡切成多个实例) 或时间片共享，适合多个小模型共用一张卡
   - 跨节点的大模型 (TP × PP 跨多个节点) 需要能把一组 Pod 作为一个整体调度的机制 (如 LeaderWorkerSet)
 
@@ -79,27 +80,28 @@ GB/s) 读约 $28$ s。
 降低启动时间的做法：
 
   - 把权重预先缓存在节点本地盘，或用共享的高速文件系统挂载，避免每次都从远端下载
-  - 使用已量化的权重 (体积小几倍)，见 [Format](@@DFMT@@)
+  - 使用已量化的权重 (体积小几倍)，见 [Format](/0843_LM_Deploy_Format)
   - 镜像只包含运行时，不打包权重
   - 保留最小副本数，不要缩到 $0$ (除非能接受冷启动)
 
 ## 扩缩容
 
   - 指标：等待中的请求数、正在运行的请求数、KV Cache 使用率、TTFT 的 p95；可以用 Prometheus Adapter
-    接入 HPA，或用 KEDA 基于 Prometheus 查询扩缩容，指标名见 [Ops](@@DOPS@@)
+    接入 HPA，或用 KEDA 基于 Prometheus 查询扩缩容，指标名见
+    [Ops](/0846_LM_Deploy_Ops)
   - 扩容要提前：因为启动慢，扩容阈值要留余量，或按时间规律做预测扩容
   - 缩容要平滑：先摘掉流量，等进行中的流式请求结束再终止 Pod (设置足够长的
     `terminationGracePeriodSeconds`)
 
 ## 方案
 
-| 方案                    | 定位                                               |
-| --------------------- | ------------------------------------------------ |
-| KServe                | 通用的模型服务平台，支持 vLLM 等运行时、自动扩缩、金丝雀发布                |
-| vLLM production stack | vLLM 官方的 Helm 部署方案，带前缀感知路由、KV 缓存共享 (LMCache) 和监控 |
-| llm-d                 | 面向 Kubernetes 的分布式推理方案，支持 PD 分离和缓存感知的调度          |
-| AIBrix 等              | 其他的 LLM 专用控制平面                                   |
-| OpenVINO Model Server | 提供容器镜像，可按普通 Deployment 部署，见 [OpenVINO](@@DOV@@)  |
+| 方案                    | 定位                                                               |
+| --------------------- | ---------------------------------------------------------------- |
+| KServe                | 通用的模型服务平台，支持 vLLM 等运行时、自动扩缩、金丝雀发布                                |
+| vLLM production stack | vLLM 官方的 Helm 部署方案，带前缀感知路由、KV 缓存共享 (LMCache) 和监控                 |
+| llm-d                 | 面向 Kubernetes 的分布式推理方案，支持 PD 分离和缓存感知的调度                          |
+| AIBrix 等              | 其他的 LLM 专用控制平面                                                   |
+| OpenVINO Model Server | 提供容器镜像，可按普通 Deployment 部署，见 [OpenVINO](/0848_LM_Deploy_OpenVINO) |
 
 表中：这些方案都在解决同样的几个问题：GPU 调度、冷启动、缓存感知路由和基于推理指标的扩缩容；功能与成熟度变化很快，选型前查看最新版本
 `[待核实]`。
