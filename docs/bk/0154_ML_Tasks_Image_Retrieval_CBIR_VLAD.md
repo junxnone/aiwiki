@@ -3,28 +3,11 @@
 | Title     | ML Tasks Image Retrieval CBIR VLAD                    |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2019-02-19T15:23:32Z`                                |
-| Updated @ | `2026-11-25T16:52:09Z`                                |
+| Updated @ | `2026-11-26T01:27:25Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/154) |
 
 -----
-
-## Reference
-
-  - [VLAD算法简介](https://blog.csdn.net/o3279/article/details/81221881)
-  - [论文笔记 - NetVLAD: CNN architecture for weakly supervised place
-    recognition](https://blog.csdn.net/qq_32417287/article/details/80102466#netvlad-a-generalized-vlad-layer-fvlad)
-  - [NetVLAD: CNN architecture for weakly supervised place
-    recognition](https://arxiv.org/abs/1511.07247)
-  - [图像检索与降维（一）：VLAD](https://blog.csdn.net/LiGuang923/article/details/85416407)
-  - [图像检索与降维（二）：NetVLAD](https://blog.csdn.net/LiGuang923/article/details/85470289)
-  - [图像检索——VLAD](http://www.cnblogs.com/mafuqiang/p/6909556.html)
-  - [BoW用于图像检索的一般化流程](https://blog.csdn.net/polly_yang/article/details/8241471)
-  - [Bow模型](https://www.cnblogs.com/scnucs/p/3161961.html)
-  - [视觉词典BOW小结](https://blog.csdn.net/darlingqiang/article/details/81358531)
-  - [Fisher
-    Vector（FV）原理](https://blog.csdn.net/u011501388/article/details/78410705)
-  - [Fisher Vector](https://zhuanlan.zhihu.com/p/23002901)
 
 ## Brief
 
@@ -168,3 +151,20 @@ $$
 表中：编码内容越丰富，向量越长、精度越高，后续用 PCA 或 [量化](/0312_MO_Quantization) 压缩；BoW 到 VLAD
 再到 NetVLAD 的趋势是「用更少的词典、更多的信息」，并最终变为可学习的。检索整体流程见
 [Retrieval](/0278_ML_Tasks_Image_Retrieval)。
+
+## Reference
+
+  - [VLAD算法简介](https://blog.csdn.net/o3279/article/details/81221881)
+  - [论文笔记 - NetVLAD: CNN architecture for weakly supervised place
+    recognition](https://blog.csdn.net/qq_32417287/article/details/80102466#netvlad-a-generalized-vlad-layer-fvlad)
+  - [NetVLAD: CNN architecture for weakly supervised place
+    recognition](https://arxiv.org/abs/1511.07247)
+  - [图像检索与降维（一）：VLAD](https://blog.csdn.net/LiGuang923/article/details/85416407)
+  - [图像检索与降维（二）：NetVLAD](https://blog.csdn.net/LiGuang923/article/details/85470289)
+  - [图像检索——VLAD](http://www.cnblogs.com/mafuqiang/p/6909556.html)
+  - [BoW用于图像检索的一般化流程](https://blog.csdn.net/polly_yang/article/details/8241471)
+  - [Bow模型](https://www.cnblogs.com/scnucs/p/3161961.html)
+  - [视觉词典BOW小结](https://blog.csdn.net/darlingqiang/article/details/81358531)
+  - [Fisher
+    Vector（FV）原理](https://blog.csdn.net/u011501388/article/details/78410705)
+  - [Fisher Vector](https://zhuanlan.zhihu.com/p/23002901)
