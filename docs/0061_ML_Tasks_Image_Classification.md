@@ -2,15 +2,11 @@
 Title | ML Tasks Image Classification
 -- | --
 Created @ | `2019-05-12T14:38:40Z`
-Updated @| `2026-11-25T16:51:22Z`
+Updated @| `2026-11-26T01:26:43Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/61)
 
 ---
-##  Reference
-
-- [Multitask-Learning](https://github.com/mbs0221/Multitask-Learning)
-
 ## Brief
 
 - 图像分类任务
@@ -139,4 +135,8 @@ flowchart LR
 
 - 检测见 [Detection](/0152_ML_Tasks_Image_Detection)，分割见 [Segmentation](/0159_ML_Tasks_Image_Segmentation)
 - 轻量化与部署：[Quantization](/0312_MO_Quantization)、[KD](/0207_MO_KD)
+
+##  Reference
+
+- [Multitask-Learning](https://github.com/mbs0221/Multitask-Learning)
 
