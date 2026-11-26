@@ -3,20 +3,13 @@
 | Title     | ML PreP DataAug Cutout                                |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2020-07-21T11:52:15Z`                                |
-| Updated @ | `2023-02-02T09:15:11Z`                                |
+| Updated @ | `2026-11-26T08:33:54Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/257) |
 
 -----
 
 # Cutout
-
-## Reference
-
-  - [paper - 2017 - Improved Regularization of Convolutional Neural
-    Networks with Cutout](https://arxiv.org/abs/1708.04552)
-
-## Brief
 
   - 正则化手段，减少过拟合，提高网络的泛化能力
   - 相当于连续的dropout
@@ -25,3 +18,53 @@
   - 在图像上进行随机位置和一定大小的patch进行0-mask裁剪
   - 复杂轮廓 patch --\> 简单固定像素(正方形patch)
   - 在分类数据集CIFAR-10/100上测试的
+
+## 做法
+
+``` mermaid
+flowchart LR
+    X[输入图像 x] --> C[随机选中心点 c]
+    C --> M[生成方形掩码 M 边长为 L]
+    M --> O[把掩码区域置 0]
+    O --> Y[增强后的图像]
+```
+
+图中：
+
+  - 每次训练时，对每张图像随机选一个位置，把以它为中心的一块方形区域置为 0（或均值）
+  - 掩码可以部分落在图像外，因此靠近边缘时遮住的面积更小
+  - 每个 epoch 遮挡位置不同，网络不能依赖某一局部特征
+
+$$ \\tilde{x}=x\\odot(1-M) $$
+
+其中：
+
+  - $x$：输入图像；$\\tilde{x}$：增强后的图像
+  - $M$：与 $x$ 同尺寸的二值掩码，被遮挡的区域为 1，其余为 0
+  - $\\odot$：逐元素相乘
+  - 掩码边长 $L$ 是主要超参数（论文在 CIFAR-10 上用 $16\\times16$，CIFAR-100 上用
+    $8\\times8$）
+
+## 与相关方法对比
+
+| 方法             | 遮挡对象           | 说明                  |
+| -------------- | -------------- | ------------------- |
+| Dropout        | 随机神经元（离散）      | 作用于特征，不连续           |
+| Cutout         | 图像里的一块连续区域     | 作用于输入像素，要求网络利用全局上下文 |
+| Random Erasing | 随机大小和长宽比的区域    | 与 Cutout 相近，形状更随机   |
+| CutMix         | 用另一张图的块填充并混合标签 | 不丢失信息，同时混合标签        |
+
+表中：
+
+  - 对比结论：Cutout 简单、不改标签，适合分类；CutMix 利用率更高，常在更强基线上使用
+
+## 注意
+
+  - 遮挡太大会把目标整体遮掉，反而伤害性能；L 需结合目标大小调整
+  - 一般只在训练时使用，验证和测试时不使用
+  - 与其他增强（翻转、裁剪）可叠加
+
+## Reference
+
+  - [paper - 2017 - Improved Regularization of Convolutional Neural
+    Networks with Cutout](https://arxiv.org/abs/1708.04552)
