@@ -2,7 +2,7 @@
 Title | CV OpticalFlow
 -- | --
 Created @ | `2026-10-19T07:31:44Z`
-Updated @| `2026-10-20T02:09:41Z`
+Updated @| `2026-11-26T08:19:35Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/559)
 
@@ -16,24 +16,45 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/559)
 
 光流估计的出发点是一个假设：同一个物理点在相邻两帧之间，**亮度值不变**，只是位置发生了移动：
 
-`I(x, y, t) = I(x + u, y + v, t + 1)`
+$$
+I(x, y, t) = I(x + u,\ y + v,\ t + 1)
+$$
+
+其中：
+
+- $I(x,y,t)$：$t$ 时刻位置 $(x,y)$ 处的灰度值
+- $u$、$v$：该点在 x、y 方向上的位移（即光流分量）
+- $t+1$：相邻的下一帧
 
 对右边按泰勒展开并保留一阶项，可以得到**光流约束方程**：
 
-`Ix * u + Iy * v + It = 0`
+$$
+I_x u + I_y v + I_t = 0
+$$
 
-其中 `Ix`、`Iy` 是图像在 x/y 方向的空间梯度（和 [边缘](0065_CV_Edge) 里 Sobel 等算子计算的是同一个量），`It` 是时间方向的梯度（相邻两帧对应像素的灰度差）。
+其中：
 
-这个方程只有一个，却有 `u`、`v` 两个未知数——这就是光流估计里著名的**孔径问题（Aperture Problem）**：单凭一个像素局部的灰度变化，只能确定运动在梯度方向上的分量，无法确定垂直于梯度方向（即沿着边缘方向）的分量到底是多少。所有光流算法的核心差异，本质上都是用了什么样的**额外约束**去补足这缺失的一个方程。
+- $I_x$、$I_y$：图像在 x/y 方向的空间梯度（和 [边缘](0065_CV_Edge) 里 Sobel 等算子计算的是同一个量）
+- $I_t$：时间方向的梯度（相邻两帧对应像素的灰度差）
+- $u$、$v$：待求的光流分量
+
+这个方程只有一个，却有 $u$、$v$ 两个未知数——这就是光流估计里著名的**孔径问题（Aperture Problem）**：单凭一个像素局部的灰度变化，只能确定运动在梯度方向上的分量，无法确定垂直于梯度方向（即沿着边缘方向）的分量到底是多少。所有光流算法的核心差异，本质上都是用了什么样的**额外约束**去补足这缺失的一个方程。
 
 ## Lucas-Kanade 光流法
 
-Lucas-Kanade（LK）给出的额外约束是：**假设一个局部小窗口内所有像素的运动向量相同**。这样一来，一个 `N` 像素的窗口就能提供 `N` 个形如 `Ix*u + Iy*v = -It` 的方程，用最小二乘求解这个超定方程组，对误差平方和求导置零，得到正规方程：
+Lucas-Kanade（LK）给出的额外约束是：**假设一个局部小窗口内所有像素的运动向量相同**。这样一来，一个 $N$ 像素的窗口就能提供 $N$ 个形如 $I_x u + I_y v = -I_t$ 的方程，用最小二乘求解这个超定方程组，对误差平方和求导置零，得到正规方程：
 
-```
-| ΣIx²    ΣIxIy | | u |   | -ΣIxIt |
-| ΣIxIy   ΣIy²  | | v | = | -ΣIyIt |
-```
+$$
+\begin{bmatrix} \sum I_x^2 & \sum I_x I_y \ \sum I_x I_y & \sum I_y^2 \end{bmatrix}
+\begin{bmatrix} u \ v \end{bmatrix}
+= \begin{bmatrix} -\sum I_x I_t \ -\sum I_y I_t \end{bmatrix}
+$$
+
+其中：
+
+- $\sum$：对窗口内所有 $N$ 个像素求和
+- 左侧 $2\times2$ 矩阵：窗口内梯度构成的结构张量（见 [CV StructureTensor](0070_CV_StructureTensor)）
+- $[u\ v]^\top$：窗口内共同的光流向量；右侧为空间-时间梯度的相关项
 
 左边这个 2×2 系数矩阵，正是 [结构张量](0070_CV_StructureTensor) `E`——这不是巧合，而是同一个"局部窗口梯度二阶矩"在两个不同问题里的复用。要让这个最小二乘问题有稳定解（矩阵可逆、不病态），需要 `E` 的两个特征值 `λ1`、`λ2` 都足够大，这正好对应结构张量里"角点区域"的判定条件。所以实践中 LK 光流通常只在角点/强纹理区域上跟踪（先用 [Harris](0067_CV_Feature_Harris) 或 Shi-Tomasi 选出一批"好的特征点"，再对这些点分别求光流），在平坦区域或只有单一方向边缘的区域，`E` 接近奇异，孔径问题无法被这个局部窗口假设解决，跟踪会失败或很不稳定。
 
@@ -78,4 +99,5 @@ cv::calcOpticalFlowFarneback(prevGray, nextGray, flow, 0.5, 3, 15, 3, 5, 1.2, 0)
 - [OpenCV Optical Flow 官方教程](https://docs.opencv.org/4.x/d4/dee/tutorial_optical_flow.html)
 - [Optical flow - wikipedia](https://en.wikipedia.org/wiki/Optical_flow)
 - [结构张量](0070_CV_StructureTensor)、[边缘](0065_CV_Edge)、[Harris Corner](0067_CV_Feature_Harris)
+
 
