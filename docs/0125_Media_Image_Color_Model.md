@@ -2,16 +2,12 @@
 Title | Media Image Color Model
 -- | --
 Created @ | `2021-10-25T03:08:34Z`
-Updated @| `2026-11-25T16:21:34Z`
+Updated @| `2026-11-26T01:25:47Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/125)
 
 ---
 # Color Model 色彩模型
-
-## Reference
-- [Color model - wikipedia](https://en.wikipedia.org/wiki/Color_model)
-- [Color Models - Intel IPP](https://www.intel.com/content/www/us/en/develop/documentation/ipp-dev-reference/top/volume-2-image-processing/image-color-conversion/color-models.html)
 
 ## Brief
 
@@ -71,5 +67,7 @@ HSV | HSL
 -- | --
 ![image](https://user-images.githubusercontent.com/2216970/138561823-d64682b6-58f6-4a7e-a345-c29693f42d47.png) | ![image](https://user-images.githubusercontent.com/2216970/138561831-2e5fa871-76e0-43a2-a2a9-c2eec1e1ac06.png)
 
-
+## Reference
+- [Color model - wikipedia](https://en.wikipedia.org/wiki/Color_model)
+- [Color Models - Intel IPP](https://www.intel.com/content/www/us/en/develop/documentation/ipp-dev-reference/top/volume-2-image-processing/image-color-conversion/color-models.html)
 
