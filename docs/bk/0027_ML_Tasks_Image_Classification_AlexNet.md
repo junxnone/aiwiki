@@ -3,21 +3,11 @@
 | Title     | ML Tasks Image Classification AlexNet                |
 | --------- | ---------------------------------------------------- |
 | Created @ | `2019-06-20T02:42:36Z`                               |
-| Updated @ | `2026-11-25T16:50:45Z`                               |
+| Updated @ | `2026-11-26T01:26:16Z`                               |
 | Labels    | \`\`                                                 |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/27) |
 
 -----
-
-## Reference
-
-  - 2012 **AlexNet** ImageNet Classification with Deep Convolutional
-    Neural Networks
-    \[[paper](http://www.cs.toronto.edu/~fritz/absps/imagenet.pdf)\]
-  - [5.6. 深度卷积神经网络AlexNet -
-    动手学深度学习](https://zh.d2l.ai/chapter_convolutional-neural-networks/alexnet.html)
-  - [深入理解AlexNet网络](https://blog.csdn.net/luoluonuoyasuolong/article/details/81750190)
-  - [卷积神经网络之AlexNet](https://www.cnblogs.com/wangguchangqing/p/10333370.html)
 
 ## Brief
 
@@ -122,3 +112,13 @@ $58.6\\text{M}$，占总参数的 96%，这也是后来网络（如
 
 表中：两者结构思路相同 (卷积 + 池化 + 全连接)，AlexNet 靠更大的数据 (ImageNet)、GPU 算力和
 ReLU/Dropout 把深度学习带入主流视野。
+
+## Reference
+
+  - 2012 **AlexNet** ImageNet Classification with Deep Convolutional
+    Neural Networks
+    \[[paper](http://www.cs.toronto.edu/~fritz/absps/imagenet.pdf)\]
+  - [5.6. 深度卷积神经网络AlexNet -
+    动手学深度学习](https://zh.d2l.ai/chapter_convolutional-neural-networks/alexnet.html)
+  - [深入理解AlexNet网络](https://blog.csdn.net/luoluonuoyasuolong/article/details/81750190)
+  - [卷积神经网络之AlexNet](https://www.cnblogs.com/wangguchangqing/p/10333370.html)
