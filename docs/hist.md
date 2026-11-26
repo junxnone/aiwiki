@@ -4,6 +4,7 @@
 
 #### **Created**
 
+- 2026-11-26 22:40&nbsp;&nbsp; [剪枝发展历史](/0816_MO_Pruning_History)&nbsp;&nbsp; :bookmark:MO :bookmark:Pruning :bookmark:History
 - 2026-11-26 22:35&nbsp;&nbsp; [工具](/0815_MO_Pruning_Tools)&nbsp;&nbsp; :bookmark:MO :bookmark:Pruning :bookmark:Tools
 - 2026-11-26 22:35&nbsp;&nbsp; [LLM 剪枝](/0814_MO_Pruning_LLM)&nbsp;&nbsp; :bookmark:MO :bookmark:Pruning :bookmark:LLM
 - 2026-11-26 22:35&nbsp;&nbsp; [N:M 半结构化稀疏](/0813_MO_Pruning_Sparse24)&nbsp;&nbsp; :bookmark:MO :bookmark:Pruning :bookmark:Sparse24
@@ -787,7 +788,9 @@
 
 #### **Updated**
 
-- 2026-11-26 22:36&nbsp;&nbsp; [模型性能优化技术](/0471_MO)&nbsp;&nbsp; :bookmark:MO
+- 2026-11-26 22:41&nbsp;&nbsp; [模型性能优化技术](/0471_MO)&nbsp;&nbsp; :bookmark:MO
+- 2026-11-26 22:41&nbsp;&nbsp; [剪枝](/0808_MO_Pruning)&nbsp;&nbsp; :bookmark:MO :bookmark:Pruning
+- 2026-11-26 22:40&nbsp;&nbsp; [剪枝发展历史](/0816_MO_Pruning_History)&nbsp;&nbsp; :bookmark:MO :bookmark:Pruning :bookmark:History
 - 2026-11-26 22:36&nbsp;&nbsp; [工具](/0815_MO_Pruning_Tools)&nbsp;&nbsp; :bookmark:MO :bookmark:Pruning :bookmark:Tools
 - 2026-11-26 22:36&nbsp;&nbsp; [LLM 剪枝](/0814_MO_Pruning_LLM)&nbsp;&nbsp; :bookmark:MO :bookmark:Pruning :bookmark:LLM
 - 2026-11-26 22:36&nbsp;&nbsp; [N:M 半结构化稀疏](/0813_MO_Pruning_Sparse24)&nbsp;&nbsp; :bookmark:MO :bookmark:Pruning :bookmark:Sparse24
@@ -795,7 +798,6 @@
 - 2026-11-26 22:35&nbsp;&nbsp; [剪枝流程与时机](/0811_MO_Pruning_Schedule)&nbsp;&nbsp; :bookmark:MO :bookmark:Pruning :bookmark:Schedule
 - 2026-11-26 22:35&nbsp;&nbsp; [重要性准则](/0810_MO_Pruning_Criteria)&nbsp;&nbsp; :bookmark:MO :bookmark:Pruning :bookmark:Criteria
 - 2026-11-26 22:35&nbsp;&nbsp; [基础原理](/0809_MO_Pruning_Basics)&nbsp;&nbsp; :bookmark:MO :bookmark:Pruning :bookmark:Basics
-- 2026-11-26 22:35&nbsp;&nbsp; [剪枝](/0808_MO_Pruning)&nbsp;&nbsp; :bookmark:MO :bookmark:Pruning
 - 2026-11-26 18:24&nbsp;&nbsp; [OpenVINO 优化](/0509_Tools_OV_Optimizations)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:Optimizations
 - 2026-11-26 18:24&nbsp;&nbsp; [定拍 vs 飞拍](/0038_Media_Image_Camera_定拍飞拍)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera :bookmark:定拍飞拍
 - 2026-11-26 18:24&nbsp;&nbsp; [Nearest Neighbor Search 最近邻搜索](/0102_ML_NNS)&nbsp;&nbsp; :bookmark:ML :bookmark:NNS

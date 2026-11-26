@@ -570,6 +570,7 @@
   - [剪枝](/0808_MO_Pruning)
     - [基础原理](/0809_MO_Pruning_Basics)
     - [重要性准则](/0810_MO_Pruning_Criteria)
+    - [剪枝发展历史](/0816_MO_Pruning_History)
     - [LLM 剪枝](/0814_MO_Pruning_LLM)
     - [剪枝流程与时机](/0811_MO_Pruning_Schedule)
     - [N:M 半结构化稀疏](/0813_MO_Pruning_Sparse24)
@@ -789,4 +790,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@2237151126</sub></kbd>
+<kbd><sub>@2242171126</sub></kbd>
