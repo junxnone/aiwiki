@@ -3,7 +3,7 @@
 | Title     | Tools OV MO Fusion                                    |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-10-20T01:38:37Z`                                |
-| Updated @ | `2026-10-21T05:47:28Z`                                |
+| Updated @ | `2026-11-26T08:14:40Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/563) |
 
@@ -59,32 +59,55 @@ A（直接改写权重、删除节点）还是机制 B（给上游节点打上 p
 
 卷积本身就是一次乘加：
 
-    y = W * x
+$$ y = W \* x $$
+
+其中：
+
+  - $x$：卷积的输入特征图；$y$：输出
+  - $W$：卷积核权重；$\*$：卷积运算（乘加）
 
 如果来源框架把 bias 表示成卷积后面一个独立的 Add：
 
-    z = y + b = (W * x) + b
+$$ z = y + b = (W \* x) + b $$
+
+其中：
+
+  - $b$：偏置（常量）；$z$：Add 之后的输出
 
 融合时不需要任何近似或推导——`Convolution` 算子的定义里本来就有一个可选的 bias 输入槽位，`MatcherPass` 匹配到
-`Conv → Add(常量)` 这个模式后，直接把 `b` 搬进 Conv 节点自己的 bias 输入，Add
-节点整个删掉。融合后的计算仍然是 `z = W*x +
-b`，只是现在这一步只用一次算子调用完成。
+`Conv → Add(常量)` 这个模式后，直接把 $b$ 搬进 Conv 节点自己的 bias 输入，Add
+节点整个删掉。融合后的计算仍然是 $z = W \* x +
+b$，只是现在这一步只用一次算子调用完成。
 
 ### Conv + BatchNorm + Activation（先 A 后 B）
 
 第一步，[OpenVINO BatchNorm 折叠](0564_Tools_OV_MO_BNFolding) 的代数把
-`BN(Conv(x))` 改写成一个新的卷积：
+$\\mathrm{BN}(\\mathrm{Conv}(x))$ 改写成一个新的卷积：
 
-    BN(Conv(x)) = BN(W*x + b)
-                = γ * ((W*x + b) - μ) / sqrt(σ² + ε) + β
-                = W' * x + b'          （W' = W·γ/sqrt(σ²+ε)，b' 见 BN 折叠一文的推导）
+$$ \\begin{aligned} \\mathrm{BN}(\\mathrm{Conv}(x)) &= \\mathrm{BN}(W*x
++ b)  
+&= \\gamma\\cdot\\frac{(W*x + b) - \\mu}{\\sqrt{\\sigma^2 + \\epsilon}}
++ \\beta  
+&= W' \* x + b' \\end{aligned} $$
+
+其中：
+
+  - $\\gamma,\\beta,\\mu,\\sigma^2,\\epsilon$：BN 的缩放、偏移、滑动均值、滑动方差与防除零小常数
+  - $W' =
+    W\\cdot\\gamma/\\sqrt{\\sigma^2+\\epsilon}$：折叠后的卷积核；$b'$：折叠后的偏置，推导见
+    BN 折叠一文
 
 这一步之后，图里只剩 `Conv'(x) → Activation`。第二步不能再用代数合并——假设激活函数是 ReLU：
 
-    output = ReLU(Conv'(x)) = max(0, W'*x + b')
+$$ \\text{output} = \\mathrm{ReLU}(\\mathrm{Conv}'(x)) =
+\\max\\left(0,\\ W'\*x + b'\\right) $$
 
-`max(0, ·)` 是非线性的，没法把它"吸收"进 `W'`/`b'`，所以机制 A 在这一步失效。但 `max(0, ·)`
-只是对标量结果做一次比较置零，完全可以在 Conv 的 kernel 算出 `W'*x + b'`
+其中：
+
+  - $\\max(0,\\cdot)$：ReLU，小于 0 的值置 0；$W',b'$：折叠后的权重与偏置
+
+$\\max(0,\\cdot)$ 是非线性的，没法把它"吸收"进 $W'$/$b'$，所以机制 A 在这一步失效。但
+$\\max(0,\\cdot)$ 只是对标量结果做一次比较置零，完全可以在 Conv 的 kernel 算出 $W'\*x + b'$
 的那一刻、还没把结果写回内存之前，顺手在寄存器里做掉：
 
     对每个输出元素:
@@ -99,11 +122,15 @@ Convolution primitive 在写出结果前顺带执行的一个 post-op。
 
 一条 `Add → Mul → ReLU` 的逐元素算子链，数学上是：
 
-    output = ReLU( (x + c1) * c2 )
-           = max(0, c2*x + c1*c2)
+$$ \\text{output} = \\mathrm{ReLU}\\big((x + c\_1), c\_2\\big) =
+\\max\\left(0,\\ c\_2 x + c\_1 c\_2\\right) $$
 
-注意：如果链条里全是线性运算（Add、Mul），它们之间其实也可以先用机制 A 合并成一个 `a*x + b` 的形式（这里 `a =
-c2`，`b = c1*c2`），只有链条末尾的非线性函数（ReLU）必须留到最后用机制 B
+其中：
+
+  - $x$：输入；$c\_1$：Add 的常量；$c\_2$：Mul 的常量
+
+注意：如果链条里全是线性运算（Add、Mul），它们之间其实也可以先用机制 A 合并成一个 $a x + b$ 的形式（这里 $a =
+c\_2$，$b = c\_1 c\_2$），只有链条末尾的非线性函数（ReLU）必须留到最后用机制 B
 处理。所以这条链实际的融合顺序是"先代数合并掉所有线性步骤，再把最后的非线性函数变成
 post-op"——和上面 Conv+BN+Activation 是同一套"先 A 后
 B"的逻辑，只是这里合并的是纯逐元素的线性步骤，而不是卷积权重。GPU
@@ -114,17 +141,25 @@ predecessor, too"，说的就是把 Add 这类逐元素算子作为 post-op 挂�
 
 任意一个形如下式的逐通道线性层（Scale/Shift）：
 
-    y = a * x + b
+$$ y = a x + b $$
 
-只要它紧跟在一个卷积 `Conv(x) = W*x + b_conv` 后面，复合后仍然是线性的：
+其中：$a$ 为逐通道缩放系数，$b$ 为逐通道偏置。
 
-    y = a * (W*x + b_conv) + b = (a·W)*x + (a*b_conv + b)
+只要它紧跟在一个卷积 $\\mathrm{Conv}(x) = W\*x + b\_{conv}$ 后面，复合后仍然是线性的：
 
-所以可以直接算出新的 `W' = a·W`、`b' = a*b_conv + b`，把 Scale/Shift 节点整个删掉——这和
-BatchNorm 折叠是**完全相同的代数操作**，只是 BN 折叠里的 `a = γ/sqrt(σ²+ε)`、`b = β -
-γμ/sqrt(σ²+ε)` 这两个系数恰好是由 BN 的四个训练参数算出来的，而这里 `a`、`b` 可以是任意来源的线性变换系数。旧版
-Model Optimizer 文档里专门有 `--disable_fusing` 开关可以关掉这整类融合，说明这是一个独立于 BN
-折叠、但数学原理完全相同的通用优化。
+$$ y = a (W\*x + b\_{conv}) + b = (aW)\*x + (a, b\_{conv} + b) $$
+
+其中：
+
+  - $W$、$b\_{conv}$：卷积核与卷积偏置
+  - 右侧：整体仍是"卷积核 $\\times$ 输入 $+$ 偏置"的形式
+
+所以可以直接算出新的 $W' = aW$、$b' = a, b\_{conv} + b$，把 Scale/Shift 节点整个删掉——这和
+BatchNorm 折叠是**完全相同的代数操作**，只是 BN 折叠里的 $a =
+\\gamma/\\sqrt{\\sigma^2+\\epsilon}$、$b = \\beta -
+\\gamma\\mu/\\sqrt{\\sigma^2+\\epsilon}$ 这两个系数恰好是由 BN 的四个训练参数算出来的，而这里
+$a$、$b$ 可以是任意来源的线性变换系数。旧版 Model Optimizer 文档里专门有 `--disable_fusing`
+开关可以关掉这整类融合，说明这是一个独立于 BN 折叠、但数学原理完全相同的通用优化。
 
 ## 融合发生在哪个阶段
 
