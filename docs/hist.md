@@ -10,7 +10,7 @@
 - 2026-11-26 22:35&nbsp;&nbsp; [结构化剪枝](/0812_MO_Pruning_Structured)&nbsp;&nbsp; :bookmark:MO :bookmark:Pruning :bookmark:Structured
 - 2026-11-26 22:35&nbsp;&nbsp; [剪枝流程与时机](/0811_MO_Pruning_Schedule)&nbsp;&nbsp; :bookmark:MO :bookmark:Pruning :bookmark:Schedule
 - 2026-11-26 22:35&nbsp;&nbsp; [重要性准则](/0810_MO_Pruning_Criteria)&nbsp;&nbsp; :bookmark:MO :bookmark:Pruning :bookmark:Criteria
-- 2026-11-26 22:35&nbsp;&nbsp; [MO Pruning Basics](/0809_MO_Pruning_Basics)&nbsp;&nbsp; :bookmark:MO :bookmark:Pruning :bookmark:Basics
+- 2026-11-26 22:35&nbsp;&nbsp; [基础原理](/0809_MO_Pruning_Basics)&nbsp;&nbsp; :bookmark:MO :bookmark:Pruning :bookmark:Basics
 - 2026-11-26 22:35&nbsp;&nbsp; [剪枝](/0808_MO_Pruning)&nbsp;&nbsp; :bookmark:MO :bookmark:Pruning
 - 2026-11-26 09:29&nbsp;&nbsp; [ArcFace](/0807_ML_Tasks_Image_Retrieval_ArcFace)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Retrieval :bookmark:ArcFace
 - 2026-11-26 09:29&nbsp;&nbsp; [PSPNet](/0806_ML_Tasks_Image_Segmentation_PSPNet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Segmentation :bookmark:PSPNet
@@ -787,14 +787,15 @@
 
 #### **Updated**
 
+- 2026-11-26 22:36&nbsp;&nbsp; [模型性能优化技术](/0471_MO)&nbsp;&nbsp; :bookmark:MO
 - 2026-11-26 22:36&nbsp;&nbsp; [工具](/0815_MO_Pruning_Tools)&nbsp;&nbsp; :bookmark:MO :bookmark:Pruning :bookmark:Tools
 - 2026-11-26 22:36&nbsp;&nbsp; [LLM 剪枝](/0814_MO_Pruning_LLM)&nbsp;&nbsp; :bookmark:MO :bookmark:Pruning :bookmark:LLM
 - 2026-11-26 22:36&nbsp;&nbsp; [N:M 半结构化稀疏](/0813_MO_Pruning_Sparse24)&nbsp;&nbsp; :bookmark:MO :bookmark:Pruning :bookmark:Sparse24
 - 2026-11-26 22:35&nbsp;&nbsp; [结构化剪枝](/0812_MO_Pruning_Structured)&nbsp;&nbsp; :bookmark:MO :bookmark:Pruning :bookmark:Structured
 - 2026-11-26 22:35&nbsp;&nbsp; [剪枝流程与时机](/0811_MO_Pruning_Schedule)&nbsp;&nbsp; :bookmark:MO :bookmark:Pruning :bookmark:Schedule
 - 2026-11-26 22:35&nbsp;&nbsp; [重要性准则](/0810_MO_Pruning_Criteria)&nbsp;&nbsp; :bookmark:MO :bookmark:Pruning :bookmark:Criteria
+- 2026-11-26 22:35&nbsp;&nbsp; [基础原理](/0809_MO_Pruning_Basics)&nbsp;&nbsp; :bookmark:MO :bookmark:Pruning :bookmark:Basics
 - 2026-11-26 22:35&nbsp;&nbsp; [剪枝](/0808_MO_Pruning)&nbsp;&nbsp; :bookmark:MO :bookmark:Pruning
-- 2026-11-26 22:35&nbsp;&nbsp; [MO Pruning Basics](/0809_MO_Pruning_Basics)&nbsp;&nbsp; :bookmark:MO :bookmark:Pruning :bookmark:Basics
 - 2026-11-26 18:24&nbsp;&nbsp; [OpenVINO 优化](/0509_Tools_OV_Optimizations)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:Optimizations
 - 2026-11-26 18:24&nbsp;&nbsp; [定拍 vs 飞拍](/0038_Media_Image_Camera_定拍飞拍)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera :bookmark:定拍飞拍
 - 2026-11-26 18:24&nbsp;&nbsp; [Nearest Neighbor Search 最近邻搜索](/0102_ML_NNS)&nbsp;&nbsp; :bookmark:ML :bookmark:NNS
@@ -1202,7 +1203,6 @@
 - 2026-11-23 10:42&nbsp;&nbsp; [关系蒸馏（Relation-based KD）](/0691_MO_KD_Relation)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Relation
 - 2026-11-23 10:42&nbsp;&nbsp; [特征蒸馏（Feature-based KD）](/0690_MO_KD_Feature)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Feature
 - 2026-11-23 10:42&nbsp;&nbsp; [响应蒸馏（Response-based KD）](/0689_MO_KD_Response)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:Response
-- 2026-11-23 10:27&nbsp;&nbsp; [模型性能优化技术](/0471_MO)&nbsp;&nbsp; :bookmark:MO
 - 2026-11-23 10:25&nbsp;&nbsp; [量化发展历史](/0688_MO_Quantization_History)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization :bookmark:History
 - 2026-11-23 10:01&nbsp;&nbsp; [Distilling the Knowledge in a Neural Network](/0208_MO_KD_s)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:s
 - 2026-11-23 09:59&nbsp;&nbsp; [知识蒸馏发展历史](/0336_MO_KD_History)&nbsp;&nbsp; :bookmark:MO :bookmark:KD :bookmark:History

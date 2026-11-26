@@ -568,7 +568,7 @@
     - [蒸馏理论与实践](/0698_MO_KD_Theory)
     - [Distilling the Knowledge in a Neural Network](/0208_MO_KD_s)
   - [剪枝](/0808_MO_Pruning)
-    - [MO Pruning Basics](/0809_MO_Pruning_Basics)
+    - [基础原理](/0809_MO_Pruning_Basics)
     - [重要性准则](/0810_MO_Pruning_Criteria)
     - [LLM 剪枝](/0814_MO_Pruning_LLM)
     - [剪枝流程与时机](/0811_MO_Pruning_Schedule)
@@ -789,4 +789,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@2236481126</sub></kbd>
+<kbd><sub>@2237151126</sub></kbd>
