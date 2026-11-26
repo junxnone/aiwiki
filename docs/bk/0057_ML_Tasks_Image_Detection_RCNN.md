@@ -3,19 +3,11 @@
 | Title     | ML Tasks Image Detection RCNN                        |
 | --------- | ---------------------------------------------------- |
 | Created @ | `2019-12-11T05:17:38Z`                               |
-| Updated @ | `2026-11-25T16:51:41Z`                               |
+| Updated @ | `2026-11-26T01:26:57Z`                               |
 | Labels    | \`\`                                                 |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/57) |
 
 -----
-
-## Reference
-
-  - 2014 **R-CNN** Rich feature hierarchies for accurate object
-    detection and semantic segmentation
-    \[[paper](https://arxiv.org/pdf/1311.2524.pdf)\]
-    \[[Code](https://github.com/rbgirshick/rcnn)\]
-  - [Ross Girshick blog - 一作](http://www.rossgirshick.info/)
 
 ## Brief
 
@@ -136,3 +128,11 @@ G\_h=P\_h\\exp\\bigl(d\_h(P)\\bigr) $$
     R-CNN](/0058_ML_Tasks_Image_Detection_FastRCNN)、[Faster
     R-CNN](/0059_ML_Tasks_Image_Detection_FasterRCNN) 解决，三者对比见
     [RCNNs](/0060_ML_Tasks_Image_Detection_RCNNs)
+
+## Reference
+
+  - 2014 **R-CNN** Rich feature hierarchies for accurate object
+    detection and semantic segmentation
+    \[[paper](https://arxiv.org/pdf/1311.2524.pdf)\]
+    \[[Code](https://github.com/rbgirshick/rcnn)\]
+  - [Ross Girshick blog - 一作](http://www.rossgirshick.info/)
