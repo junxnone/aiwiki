@@ -4,6 +4,8 @@
 
 #### **Created**
 
+- 2026-11-26 23:40&nbsp;&nbsp; [Gateway](/0851_LM_Deploy_Gateway)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Gateway
+- 2026-11-26 23:40&nbsp;&nbsp; [Kubernetes](/0850_LM_Deploy_Kubernetes)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Kubernetes
 - 2026-11-26 23:39&nbsp;&nbsp; [Benchmark](/0849_LM_Deploy_Benchmark)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Benchmark
 - 2026-11-26 23:39&nbsp;&nbsp; [OpenVINO](/0848_LM_Deploy_OpenVINO)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:OpenVINO
 - 2026-11-26 23:39&nbsp;&nbsp; [Safety](/0847_LM_Deploy_Safety)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Safety
@@ -821,6 +823,8 @@
 
 #### **Updated**
 
+- 2026-11-26 23:40&nbsp;&nbsp; [Gateway](/0851_LM_Deploy_Gateway)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Gateway
+- 2026-11-26 23:40&nbsp;&nbsp; [Kubernetes](/0850_LM_Deploy_Kubernetes)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Kubernetes
 - 2026-11-26 23:39&nbsp;&nbsp; [Benchmark](/0849_LM_Deploy_Benchmark)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Benchmark
 - 2026-11-26 23:39&nbsp;&nbsp; [OpenVINO](/0848_LM_Deploy_OpenVINO)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:OpenVINO
 - 2026-11-26 23:39&nbsp;&nbsp; [Safety](/0847_LM_Deploy_Safety)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Safety

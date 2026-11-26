@@ -4285,6 +4285,24 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki LM Deploy Kubernetes",
+      "group": 3,
+      "title": "Kubernetes",
+      "url": "https://junxnone.github.io/aiwiki/#/0850_LM_Deploy_Kubernetes",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki LM Deploy Gateway",
+      "group": 3,
+      "title": "Gateway",
+      "url": "https://junxnone.github.io/aiwiki/#/0851_LM_Deploy_Gateway",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Op Convolution Math",
       "group": 4,
       "title": "卷积 数学定义",
@@ -10651,6 +10669,20 @@
     {
       "source": "aiwiki LM Deploy",
       "target": "aiwiki LM Deploy Benchmark",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki LM Deploy",
+      "target": "aiwiki LM Deploy Kubernetes",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki LM Deploy",
+      "target": "aiwiki LM Deploy Gateway",
       "value": 3,
       "visible": true,
       "expand": true

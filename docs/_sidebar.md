@@ -519,6 +519,8 @@
     - [Benchmark](/0849_LM_Deploy_Benchmark)
     - [Format](/0843_LM_Deploy_Format)
     - [Frameworks](/0842_LM_Deploy_Frameworks)
+    - [Gateway](/0851_LM_Deploy_Gateway)
+    - [Kubernetes](/0850_LM_Deploy_Kubernetes)
     - [OpenVINO](/0848_LM_Deploy_OpenVINO)
     - [Ops](/0846_LM_Deploy_Ops)
     - [Safety](/0847_LM_Deploy_Safety)
@@ -823,4 +825,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@2340311126</sub></kbd>
+<kbd><sub>@2340561126</sub></kbd>
