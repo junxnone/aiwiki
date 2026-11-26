@@ -3,7 +3,7 @@
 | Title     | paper FoundationStereo FFDS                           |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-05-22T03:26:00Z`                                |
-| Updated @ | `2026-05-22T03:26:00Z`                                |
+| Updated @ | `2026-11-26T08:19:51Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/543) |
 
@@ -91,10 +91,14 @@ graph TB
 
 **创新点:** 指数级降低搜索复杂度
 
-传统NAS问题：
+传统NAS问题： $$ |\\mathcal{S}| = n\_{cand}^{,n\_{block}} $$
 
-    搜索空间 = (候选块数量)^(总块数)
-    例如: 10个候选 × 3个位置 = 10³ = 1000种组合
+其中：
+
+  - $|\\mathcal{S}|$：搜索空间大小（可能的网络组合总数）
+  - $n\_{cand}$：每个块位置的候选数量
+  - $n\_{block}$：块的总个数（位置数）
+  - 例如：$n\_{cand}=10$、$n\_{block}=3$ 时，$10^3 = 1000$ 种组合
 
 本文方案：
 
@@ -297,14 +301,17 @@ for iter in range(num_iters):
 
 **多尺度监督:**
 
-``` python
-Loss = Σ γⁱ · L_smooth_l1(disp_pred_i, disp_gt)
-       i=0..N
+$$ \\mathcal{L} = \\sum\_{i=0}^{N} \\gamma^{i},
+\\mathcal{L}\_{\\text{smooth-}L\_1}\\left(d\_i^{pred},\\ d^{gt}\\right)
+$$
 
-# N = 迭代次数 (训练时12次)
-# γ = 0.9 (指数衰减权重)
-# L_smooth_l1: Huber损失（鲁棒性）
-```
+其中：
+
+  - $\\mathcal{L}$：多尺度（多迭代）监督的总损失
+  - $N$：迭代次数（训练时为 12 次）
+  - $\\gamma$：指数衰减权重，取 0.9，使不同迭代的预测按 $\\gamma^i$ 加权
+  - $d\_i^{pred}$：第 $i$ 次迭代的预测视差；$d^{gt}$：真值视差
+  - $\\mathcal{L}\_{\\text{smooth-}L\_1}$：Smooth $L\_1$（Huber）损失，对异常值更鲁棒
 
 **蒸馏损失:**
 
