@@ -3,7 +3,7 @@
 | Title     | LM Deploy Sizing                                      |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-26T15:38:49Z`                                |
-| Updated @ | `2026-11-26T15:38:49Z`                                |
+| Updated @ | `2026-11-26T15:43:07Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/844) |
 
@@ -27,7 +27,7 @@ Cache}}+\\underbrace{M*{act}+M\_{buf}}\_{\\text{激活与缓冲}} $$
   - $N$：参数量；$b\_w$：每个权重的字节数：BF16/FP16 为 $2$，FP8/INT8 为 $1$，INT4 约 $0.5$
     (含缩放因子实际约 $0.55\\sim0.6$)
   - $B$：同时服务的序列数 (并发)；$S$：序列的平均最大长度 (提示词 + 输出)；$\\text{KV}\_{token}$：每
-    token 的 KV 字节数，公式见 [Basics](@@IBAS@@)
+    token 的 KV 字节数，公式见 [Basics](/0834_LM_Infer_Basics)
   - $M\_{act}+M\_{buf}$：激活、CUDA 上下文、框架缓冲，推理时占比较小，保守按总量的 $10%\\sim20%$ 预留
   - 框架会预先划出一定比例的显存 (如 vLLM 的 `--gpu-memory-utilization 0.9`) 作为 KV Cache
     池，剩余的才是可用于并发的空间
@@ -38,8 +38,9 @@ Cache}}+\\underbrace{M*{act}+M\_{buf}}\_{\\text{激活与缓冲}} $$
 
   - 权重：$8.03\\times10^9\\times2\\approx16.1$ GB
   - 可用于 KV 的显存：$24\\times0.9-16.1-\\text{开销}\\approx4$ GB (保守)
-  - $\\text{KV}\_{token}=128$ KB (GQA，见 [Basics](@@IBAS@@))，所以可容纳 token
-    总数 $\\approx4\\times10^9/131072\\approx30{,}000$
+  - $\\text{KV}\_{token}=128$ KB (GQA，见
+    [Basics](/0834_LM_Infer_Basics))，所以可容纳 token 总数
+    $\\approx4\\times10^9/131072\\approx30{,}000$
   - 平均每个请求 $2000$ token (提示 + 输出) 时，最多约 $15$ 个并发；若改 INT4 权重 (约 $4.7$
     GB)，KV 可用显存增加到约 $15$ GB，并发约 $55$
 
@@ -115,8 +116,9 @@ KB) 部署在 80 GB、带宽 $2$ TB/s 的 GPU 上，每个请求平均 $2000$ to
 表中：`KV 可用空间` = 卡数 × $80\\times0.9$ GB − 权重 − 开销；`可容纳 token` = 空间 $/320$
 KB；`并发` = token 数 $/2000$；`TPOT 下界` 只计权重读取：每卡要读的权重字节数除以 $2\\
 \\text{TB/s}\\times0.7$ 的有效带宽，未计 KV 读取和张量并行的通信 (通信估算见
-[Parallel](@@IPAR@@))。BF16 用 2 卡时权重占满显存，KV 没有空间，所以 70B BF16 至少要 4 卡；INT4
-单卡就能跑，但并发和速度都受限。具体选哪种要结合精度要求：INT4 是否满足质量要用评测回归确认，见 [Eval](@@TEVAL@@)。
+[Parallel](/0836_LM_Infer_Parallel))。BF16 用 2 卡时权重占满显存，KV 没有空间，所以 70B
+BF16 至少要 4 卡；INT4 单卡就能跑，但并发和速度都受限。具体选哪种要结合精度要求：INT4 是否满足质量要用评测回归确认，见
+[Eval](/0827_LM_Train_Eval)。
 
 ## 示例：CPU 部署
 
@@ -140,17 +142,18 @@ $$
 表中：tokens/s 是单请求 decode 的上限，按 $\\eta=0.7$ 计算；作为对比，同样的 8B INT4 在 $2$ TB/s
 的 GPU 上上限约 $300$ tokens/s。CPU 的优势是内存容量 (数百 GB 到 TB)
 和成本，适合小并发、低成本或数据不能出机房的场景；prefill
-依赖 AMX 等矩阵加速指令，长提示词的 TTFT 会明显高于 GPU。CPU 调优见 [CPU](@@ICPU@@)，Intel 平台的部署见
-[OpenVINO](@@DOV@@)。
+依赖 AMX 等矩阵加速指令，长提示词的 TTFT 会明显高于 GPU。CPU 调优见
+[CPU](/0841_LM_Infer_CPU)，Intel 平台的部署见
+[OpenVINO](/0848_LM_Deploy_OpenVINO)。
 
 ## 硬件选型
 
-| 硬件类型                   | 显存/带宽特点                                      | 适合                    |
-| ---------------------- | -------------------------------------------- | --------------------- |
-| 数据中心 GPU (A100/H100 等) | 40~~80 GB HBM，带宽 2~~3+ TB/s                  | 大模型、高并发               |
-| 消费级 GPU                | 16~~24 GB，带宽约 0.5~~1 TB/s                    | 7B\~14B 量化模型、开发测试     |
-| 服务器 CPU (Xeon)         | 内存容量大但带宽低 (单路约 $0.3\\sim0.6$ TB/s 理论峰值，见上一节) | 小批量、成本敏感、量化模型         |
-| Intel GPU / NPU        | 视型号                                          | 见 [OpenVINO](@@DOV@@) |
+| 硬件类型                   | 显存/带宽特点                                      | 适合                                     |
+| ---------------------- | -------------------------------------------- | -------------------------------------- |
+| 数据中心 GPU (A100/H100 等) | 40~~80 GB HBM，带宽 2~~3+ TB/s                  | 大模型、高并发                                |
+| 消费级 GPU                | 16~~24 GB，带宽约 0.5~~1 TB/s                    | 7B\~14B 量化模型、开发测试                      |
+| 服务器 CPU (Xeon)         | 内存容量大但带宽低 (单路约 $0.3\\sim0.6$ TB/s 理论峰值，见上一节) | 小批量、成本敏感、量化模型                          |
+| Intel GPU / NPU        | 视型号                                          | 见 [OpenVINO](/0848_LM_Deploy_OpenVINO) |
 
 表中：decode 速度主要由带宽决定，因此 CPU 的 tokens/s 上限远低于 HBM 显卡；但 CPU
 内存容量大，可以放下很大的模型和
@@ -173,7 +176,7 @@ n\_{gpu}}{\\text{吞吐}\\cdot3600\\cdot u}\\times10^6 $$
 
   - 提高吞吐 (更大 batch、量化、投机解码) 是降低成本最直接的手段
 
-  - 使用率：流量有峰谷，用自动扩缩容 (见 [Service](@@DSVC@@)) 避免长期闲置
+  - 使用率：流量有峰谷，用自动扩缩容 (见 [Service](/0845_LM_Deploy_Service)) 避免长期闲置
 
 ## Reference
 
