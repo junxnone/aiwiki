@@ -546,6 +546,9 @@
     - [OPEA](/0501_LM_Tools_OPEA)
   - [Train](/0818_LM_Train)
     - [Data](/0821_LM_Train_Data)
+    - [Distributed](/0825_LM_Train_Distributed)
+    - [Efficiency](/0826_LM_Train_Efficiency)
+    - [Pretrain](/0824_LM_Train_Pretrain)
     - [Tokenizer](/0822_LM_Train_Tokenizer)
   - [VLM](/0506_LM_VLM)
     - [DragGAN](/0429_LM_VLM_DragGAN)
@@ -796,4 +799,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@2334431126</sub></kbd>
+<kbd><sub>@2335351126</sub></kbd>

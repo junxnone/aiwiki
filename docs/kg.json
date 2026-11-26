@@ -4042,6 +4042,33 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki LM Train Pretrain",
+      "group": 3,
+      "title": "Pretrain",
+      "url": "https://junxnone.github.io/aiwiki/#/0824_LM_Train_Pretrain",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki LM Train Distributed",
+      "group": 3,
+      "title": "Distributed",
+      "url": "https://junxnone.github.io/aiwiki/#/0825_LM_Train_Distributed",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki LM Train Efficiency",
+      "group": 3,
+      "title": "Efficiency",
+      "url": "https://junxnone.github.io/aiwiki/#/0826_LM_Train_Efficiency",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Op Convolution Math",
       "group": 4,
       "title": "卷积 数学定义",
@@ -10219,6 +10246,27 @@
     {
       "source": "aiwiki LM Train",
       "target": "aiwiki LM Train Tokenizer",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki LM Train",
+      "target": "aiwiki LM Train Pretrain",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki LM Train",
+      "target": "aiwiki LM Train Distributed",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki LM Train",
+      "target": "aiwiki LM Train Efficiency",
       "value": 3,
       "visible": true,
       "expand": true

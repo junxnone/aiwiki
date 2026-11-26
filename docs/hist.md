@@ -4,6 +4,9 @@
 
 #### **Created**
 
+- 2026-11-26 23:34&nbsp;&nbsp; [Efficiency](/0826_LM_Train_Efficiency)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Efficiency
+- 2026-11-26 23:34&nbsp;&nbsp; [Distributed](/0825_LM_Train_Distributed)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Distributed
+- 2026-11-26 23:34&nbsp;&nbsp; [Pretrain](/0824_LM_Train_Pretrain)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Pretrain
 - 2026-11-26 23:33&nbsp;&nbsp; [Tokenizer](/0822_LM_Train_Tokenizer)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Tokenizer
 - 2026-11-26 23:33&nbsp;&nbsp; [Data](/0821_LM_Train_Data)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Data
 - 2026-11-26 23:33&nbsp;&nbsp; [Deploy](/0820_LM_Deploy)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy
@@ -794,6 +797,9 @@
 
 #### **Updated**
 
+- 2026-11-26 23:34&nbsp;&nbsp; [Efficiency](/0826_LM_Train_Efficiency)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Efficiency
+- 2026-11-26 23:34&nbsp;&nbsp; [Distributed](/0825_LM_Train_Distributed)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Distributed
+- 2026-11-26 23:34&nbsp;&nbsp; [Pretrain](/0824_LM_Train_Pretrain)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Pretrain
 - 2026-11-26 23:33&nbsp;&nbsp; [Tokenizer](/0822_LM_Train_Tokenizer)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Tokenizer
 - 2026-11-26 23:33&nbsp;&nbsp; [Data](/0821_LM_Train_Data)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Data
 - 2026-11-26 23:33&nbsp;&nbsp; [Deploy](/0820_LM_Deploy)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy
