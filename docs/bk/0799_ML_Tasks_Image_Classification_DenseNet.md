@@ -3,7 +3,7 @@
 | Title     | ML Tasks Image Classification DenseNet                |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-26T01:28:13Z`                                |
-| Updated @ | `2026-11-26T01:28:13Z`                                |
+| Updated @ | `2026-11-26T01:30:05Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/799) |
 
@@ -87,7 +87,7 @@ Transition 层数 ($1+(6+12+24+16)\\times2+3+1=121$)。参数量只有同精度
 
   - 特征复用的思路影响了后来的很多网络 (如检测里的 PAN、分割里的 UNet++)；稠密连接在医学分割等小数据任务上表现不错
   - 轻量化与效率更优的设计见
-    [MobileNet](/0045_ML_Tasks_Image_Classification_MobileNet)、[EfficientNet](@@EFF@@)
+    [MobileNet](/0045_ML_Tasks_Image_Classification_MobileNet)、[EfficientNet](/0801_ML_Tasks_Image_Classification_EfficientNet)
 
 ## Reference
 

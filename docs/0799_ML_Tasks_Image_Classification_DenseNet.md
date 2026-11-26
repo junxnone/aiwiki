@@ -2,7 +2,7 @@
 Title | ML Tasks Image Classification DenseNet
 -- | --
 Created @ | `2026-11-26T01:28:13Z`
-Updated @| `2026-11-26T01:28:13Z`
+Updated @| `2026-11-26T01:30:05Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/799)
 
@@ -74,7 +74,7 @@ DenseNet-201 | $[6,12,48,32]$ | 32 | 约 20.0 M | 约 76.9%
 ## 小结
 
 - 特征复用的思路影响了后来的很多网络 (如检测里的 PAN、分割里的 UNet++)；稠密连接在医学分割等小数据任务上表现不错
-- 轻量化与效率更优的设计见 [MobileNet](/0045_ML_Tasks_Image_Classification_MobileNet)、[EfficientNet](@@EFF@@)
+- 轻量化与效率更优的设计见 [MobileNet](/0045_ML_Tasks_Image_Classification_MobileNet)、[EfficientNet](/0801_ML_Tasks_Image_Classification_EfficientNet)
 
 ## Reference
 - [Densely Connected Convolutional Networks - Huang et al., CVPR 2017](https://arxiv.org/abs/1608.06993)
