@@ -2,7 +2,7 @@
 Title | LM Deploy Ops
 -- | --
 Created @ | `2026-11-26T15:39:15Z`
-Updated @| `2026-11-26T15:39:15Z`
+Updated @| `2026-11-26T15:43:11Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/846)
 
@@ -37,13 +37,13 @@ flowchart LR
 
 类别 | 指标 | 含义与用途
 -- | -- | --
-延迟 | TTFT、TPOT 的 p50/p95/p99 | 用户感知的响应速度，见 [Basics](@@IBAS@@)
+延迟 | TTFT、TPOT 的 p50/p95/p99 | 用户感知的响应速度，见 [Basics](/0834_LM_Infer_Basics)
 吞吐 | tokens/s、req/s | 系统容量
 排队 | 等待队列长度、排队时间 | 过载的早期信号，扩缩容依据
 资源 | GPU 利用率、显存使用、KV Cache 使用率 | KV 使用率接近 $100\%$ 时会触发请求抢占或排队
 前缀缓存 | 命中率 | 命中率下降说明流量分布变化或路由不佳
 错误 | 超时率、5xx、OOM、被拒绝 (429) 比例 | 可用性
-成本 | 每百万 token 的成本、GPU 小时 | 见 [Sizing](@@DSIZ@@)
+成本 | 每百万 token 的成本、GPU 小时 | 见 [Sizing](/0844_LM_Deploy_Sizing)
 质量 | 评测集得分、用户反馈 (点赞/重新生成率)、拒答率、幻觉率 | 回答质量
 
 表中：vLLM 等框架在 `/metrics` 端点以 Prometheus 格式暴露延迟、队列、KV Cache 使用率等指标，可直接接入 Prometheus + Grafana。SLO 示例：TTFT p95 $<1$ s，TPOT p95 $<50$ ms，可用性 $\ge99.9\%$。
@@ -72,7 +72,7 @@ histogram_quantile(0.95, sum by (le) (rate(vllm:time_to_first_token_seconds_buck
 ## 日志与追踪
 
 - 记录每个请求的：请求 ID、租户、模型版本、输入/输出 token 数、TTFT/TPOT、停止原因 (stop/length/error)、采样参数
-- 提示词和回答可能含隐私，需要脱敏、设置保留期限和访问权限，见 [Safety](@@DSAF@@)
+- 提示词和回答可能含隐私，需要脱敏、设置保留期限和访问权限，见 [Safety](/0847_LM_Deploy_Safety)
 - 分布式追踪 (OpenTelemetry)：把网关 → 检索 ([RAG](/0461_LM_RAG)) → 重排 → 推理 → 工具调用串成一条链，定位慢在哪一步
 
 ## 评估回归
@@ -80,7 +80,7 @@ histogram_quantile(0.95, sum by (le) (rate(vllm:time_to_first_token_seconds_buck
 任何会改变模型行为的变更都要先回归：
 
 - 变更来源：换基础模型、LoRA 版本、量化方式、推理框架升级、采样参数、系统提示词、chat template 修改
-- 做法：维护一份固定的业务测试集 (见 [Eval](@@TEVAL@@) 的业务评估)，每次变更都跑，对比关键指标，设置不退化的阈值；用于量化的最小检查还包括困惑度，见 [量化](/0312_MO_Quantization)
+- 做法：维护一份固定的业务测试集 (见 [Eval](/0827_LM_Train_Eval) 的业务评估)，每次变更都跑，对比关键指标，设置不退化的阈值；用于量化的最小检查还包括困惑度，见 [量化](/0312_MO_Quantization)
 - 线上抽样评估：按比例抽取真实请求，由规则、LLM-as-judge 或人工打分，绘成趋势图，发现悄悄退化
 
 ## 灰度与 A/B
@@ -103,8 +103,8 @@ A/B 测试 | 同时运行两个版本，随机分流，比较业务指标 (转�
 ## 容量与成本
 
 - 监控 GPU 利用率和闲置时间，使用率长期偏低说明副本过多，可缩容或合并小模型
-- 按租户或业务线统计 token 用量与成本，设置预算告警；成本公式见 [Sizing](@@DSIZ@@)
-- 容量预警：KV Cache 使用率、队列长度持续升高时提前扩容，扩缩容策略见 [Service](@@DSVC@@)
+- 按租户或业务线统计 token 用量与成本，设置预算告警；成本公式见 [Sizing](/0844_LM_Deploy_Sizing)
+- 容量预警：KV Cache 使用率、队列长度持续升高时提前扩容，扩缩容策略见 [Service](/0845_LM_Deploy_Service)
 
 ## 常见故障
 
