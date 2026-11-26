@@ -512,7 +512,7 @@
 - 2021-08-18&nbsp;&nbsp; [Approximate Nearest Neighbor 近似最近邻](/0103_ML_NNS_ANN)&nbsp;&nbsp; :bookmark:ML :bookmark:NNS :bookmark:ANN
 - 2021-08-10&nbsp;&nbsp; [Security](/0176_Tools_OV_Security)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:Security
 - 2021-08-05&nbsp;&nbsp; [nanoflann](/0123_ML_NNS_KDTree_nanoflann)&nbsp;&nbsp; :bookmark:ML :bookmark:NNS :bookmark:KDTree :bookmark:nanoflann
-- 2021-07-30&nbsp;&nbsp; [js](/0339_OpenCV_js)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:js
+- 2021-07-30&nbsp;&nbsp; [OpenCV js](/0339_OpenCV_js)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:js
 - 2021-07-30&nbsp;&nbsp; [3D 图像](/0039_Media_Image_3DImage)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:3DImage
 - 2021-07-27&nbsp;&nbsp; [3D 数据集](/0087_Datasets_3D)&nbsp;&nbsp; :bookmark:Datasets :bookmark:3D
 - 2021-07-27&nbsp;&nbsp; [3D Camera](/0040_3D_Camera)&nbsp;&nbsp; :bookmark:3D :bookmark:Camera
@@ -812,6 +812,7 @@
 - 2026-11-26&nbsp;&nbsp; [CaFo](/0476_paper_CaFo)&nbsp;&nbsp; :bookmark:paper :bookmark:CaFo
 - 2026-11-26&nbsp;&nbsp; [Tip-Adapter](/0475_paper_TipAdapter)&nbsp;&nbsp; :bookmark:paper :bookmark:TipAdapter
 - 2026-11-26&nbsp;&nbsp; [CoOP](/0474_paper_CoOP)&nbsp;&nbsp; :bookmark:paper :bookmark:CoOP
+- 2026-11-26&nbsp;&nbsp; [OpenCV Mat](/0473_OpenCV_IO_Mat)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IO :bookmark:Mat
 - 2026-11-26&nbsp;&nbsp; [Eureka](/0470_paper_Eureka)&nbsp;&nbsp; :bookmark:paper :bookmark:Eureka
 - 2026-11-26&nbsp;&nbsp; [GLIP](/0463_LM_VLM_GLIP)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:GLIP
 - 2026-11-26&nbsp;&nbsp; [RAG](/0461_LM_RAG)&nbsp;&nbsp; :bookmark:LM :bookmark:RAG
@@ -822,9 +823,14 @@
 - 2026-11-26&nbsp;&nbsp; [Gym -> Gymnasium](/0453_Tools_Gym)&nbsp;&nbsp; :bookmark:Tools :bookmark:Gym
 - 2026-11-26&nbsp;&nbsp; [NNCF - Neural Network Compression Framework](/0451_Tools_OV_NNCF)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:NNCF
 - 2026-11-26&nbsp;&nbsp; [CLIP](/0448_paper_CLIP)&nbsp;&nbsp; :bookmark:paper :bookmark:CLIP
+- 2026-11-26&nbsp;&nbsp; [bitwise_xxx](/0444_OpenCV_Core_bitwisexxx)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:Core :bookmark:bitwisexxx
+- 2026-11-26&nbsp;&nbsp; [用于边缘检测的线性滤波器 Sobel](/0443_OpenCV_IP_Filter_Sobel)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter :bookmark:Sobel
 - 2026-11-26&nbsp;&nbsp; [medianBlur 中值滤波](/0442_OpenCV_IP_Filter_medianBlur)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter :bookmark:medianBlur
 - 2026-11-26&nbsp;&nbsp; [blur 模糊处理](/0441_OpenCV_IP_Filter_blur)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter :bookmark:blur
+- 2026-11-26&nbsp;&nbsp; [OpenCV parallel_for_](/0437_OpenCV_ParallelFor)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:ParallelFor
 - 2026-11-26&nbsp;&nbsp; [HAL - Universal Intrinsics](/0435_OpenCV_HAL)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:HAL
+- 2026-11-26&nbsp;&nbsp; [OpenCV with OpenCL](/0432_OpenCV_OpenCL)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:OpenCL
+- 2026-11-26&nbsp;&nbsp; [OpenCV With IPP](/0430_OpenCV_IPP)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IPP
 - 2026-11-26&nbsp;&nbsp; [DragGAN](/0429_LM_VLM_DragGAN)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:DragGAN
 - 2026-11-26&nbsp;&nbsp; [Image 相关 Tasks](/0420_ML_Tasks_Image)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image
 - 2026-11-26&nbsp;&nbsp; [SAM](/0414_LM_VLM_SAM)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:SAM
@@ -843,8 +849,11 @@
 - 2026-11-26&nbsp;&nbsp; [AnnealingLR 退火学习率](/0372_ML_Arch_LR_AnnealingLR)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:LR :bookmark:AnnealingLR
 - 2026-11-26&nbsp;&nbsp; [Hyperparameter 超参数](/0368_ML_Arch_HP)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:HP
 - 2026-11-26&nbsp;&nbsp; [Reference](/0354_3D_Camera_激光测量)&nbsp;&nbsp; :bookmark:3D :bookmark:Camera :bookmark:激光测量
+- 2026-11-26&nbsp;&nbsp; [absdiff 检测物体运动](/0353_OpenCV_Core_absdiff)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:Core :bookmark:absdiff
 - 2026-11-26&nbsp;&nbsp; [Resize](/0347_Media_Image_Resize)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Resize
 - 2026-11-26&nbsp;&nbsp; [Perspective Transformation - 透视变换](/0345_Media_Image_PT)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:PT
+- 2026-11-26&nbsp;&nbsp; [Hough  Line Circle 霍夫线圆](/0340_OpenCV_IP_Feature_Hough)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Feature :bookmark:Hough
+- 2026-11-26&nbsp;&nbsp; [OpenCV js](/0339_OpenCV_js)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:js
 - 2026-11-26&nbsp;&nbsp; [Hierarchical Navigable Small World](/0334_ML_NNS_ANN_HNSW)&nbsp;&nbsp; :bookmark:ML :bookmark:NNS :bookmark:ANN :bookmark:HNSW
 - 2026-11-26&nbsp;&nbsp; [Annoy](/0333_ML_NNS_ANN_Annoy)&nbsp;&nbsp; :bookmark:ML :bookmark:NNS :bookmark:ANN :bookmark:Annoy
 - 2026-11-26&nbsp;&nbsp; [BSTree 二叉排序树](/0332_ML_NNS_BSTree)&nbsp;&nbsp; :bookmark:ML :bookmark:NNS :bookmark:BSTree
@@ -1410,7 +1419,6 @@
 - 2024-10-15&nbsp;&nbsp; [Grounding DINO 翻译](/0485_paper_GroundingDINO_cn)&nbsp;&nbsp; :bookmark:paper :bookmark:GroundingDINO :bookmark:cn
 - 2024-10-15&nbsp;&nbsp; [DINO](/0483_paper_DINO)&nbsp;&nbsp; :bookmark:paper :bookmark:DINO
 - 2024-10-15&nbsp;&nbsp; [DETR](/0165_paper_DETR)&nbsp;&nbsp; :bookmark:paper :bookmark:DETR
-- 2024-08-27&nbsp;&nbsp; [OpenCV Mat](/0473_OpenCV_IO_Mat)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IO :bookmark:Mat
 - 2024-08-19&nbsp;&nbsp; [FiLo](/0472_paper_FiLo)&nbsp;&nbsp; :bookmark:paper :bookmark:FiLo
 - 2024-08-05&nbsp;&nbsp; [模型可视化](/0133_Tools_VIS)&nbsp;&nbsp; :bookmark:Tools :bookmark:VIS
 - 2024-07-26&nbsp;&nbsp; [Grounding DINO](/0464_paper_GroundingDINO)&nbsp;&nbsp; :bookmark:paper :bookmark:GroundingDINO
@@ -1429,23 +1437,16 @@
 - 2023-10-30&nbsp;&nbsp; [OpenVINO INT8 Model](/0182_Tools_OV_INT8Model)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:INT8Model
 - 2023-10-13&nbsp;&nbsp; [Question](/0447_x_Q)&nbsp;&nbsp; :bookmark:x :bookmark:Q
 - 2023-10-10&nbsp;&nbsp; [Bilateral Filter 双边滤波](/0317_OpenCV_IP_Filter_bilateralFilter)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter :bookmark:bilateralFilter
-- 2023-09-20&nbsp;&nbsp; [bitwise_xxx](/0444_OpenCV_Core_bitwisexxx)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:Core :bookmark:bitwisexxx
-- 2023-09-20&nbsp;&nbsp; [用于边缘检测的线性滤波器 Sobel](/0443_OpenCV_IP_Filter_Sobel)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter :bookmark:Sobel
 - 2023-09-19&nbsp;&nbsp; [直方图均衡](/0341_OpenCV_CLAHE)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:CLAHE
 - 2023-09-19&nbsp;&nbsp; [OpenCV 二值化](/0330_OpenCV_IP_misc_BIN)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:misc :bookmark:BIN
-- 2023-08-10&nbsp;&nbsp; [OpenCV parallel_for_](/0437_OpenCV_ParallelFor)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:ParallelFor
-- 2023-08-07&nbsp;&nbsp; [OpenCV With IPP](/0430_OpenCV_IPP)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IPP
 - 2023-08-04&nbsp;&nbsp; [OpenCV Performance Test](/0431_OpenCV_PerfTest)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:PerfTest
 - 2023-08-03&nbsp;&nbsp; [OpenCV MatchTemplate 模板匹配](/0433_OpenCV_IP_MatchTemplate)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:MatchTemplate
-- 2023-08-02&nbsp;&nbsp; [OpenCV with OpenCL](/0432_OpenCV_OpenCL)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:OpenCL
 - 2023-07-29&nbsp;&nbsp; [资源参考](/0380_Reference)&nbsp;&nbsp; :bookmark:Reference
 - 2023-06-17&nbsp;&nbsp; [AutoML Tools](/0427_ML_AutoML_Tools)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:Tools
 - 2023-06-17&nbsp;&nbsp; [OpenCV 读写](/0426_OpenCV_IO)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IO
 - 2023-06-17&nbsp;&nbsp; [3D 算法](/0422_3D_Algos)&nbsp;&nbsp; :bookmark:3D :bookmark:Algos
 - 2023-06-17&nbsp;&nbsp; [AI Tools](/0415_Tools)&nbsp;&nbsp; :bookmark:Tools
-- 2023-06-17&nbsp;&nbsp; [absdiff 检测物体运动](/0353_OpenCV_Core_absdiff)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:Core :bookmark:absdiff
 - 2023-06-17&nbsp;&nbsp; [ColorMaps](/0349_OpenCV_IP_Colormaps)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Colormaps
-- 2023-06-17&nbsp;&nbsp; [Hough  Line Circle 霍夫线圆](/0340_OpenCV_IP_Feature_Hough)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Feature :bookmark:Hough
 - 2023-06-17&nbsp;&nbsp; [Options](/0142_ML_AutoML_Tools_SIGOPT_Options)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:Tools :bookmark:SIGOPT :bookmark:Options
 - 2023-06-17&nbsp;&nbsp; [UseCase](/0141_ML_AutoML_Tools_SIGOPT_UseCase)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:Tools :bookmark:SIGOPT :bookmark:UseCase
 - 2023-06-17&nbsp;&nbsp; [gst-inspect](/0112_Media_Tools_GStreamer_gstinspect)&nbsp;&nbsp; :bookmark:Media :bookmark:Tools :bookmark:GStreamer :bookmark:gstinspect
@@ -1506,7 +1507,6 @@
 - 2021-08-18&nbsp;&nbsp; [Approximate Nearest Neighbor 近似最近邻](/0103_ML_NNS_ANN)&nbsp;&nbsp; :bookmark:ML :bookmark:NNS :bookmark:ANN
 - 2021-08-10&nbsp;&nbsp; [Security](/0176_Tools_OV_Security)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:Security
 - 2021-08-05&nbsp;&nbsp; [nanoflann](/0123_ML_NNS_KDTree_nanoflann)&nbsp;&nbsp; :bookmark:ML :bookmark:NNS :bookmark:KDTree :bookmark:nanoflann
-- 2021-07-30&nbsp;&nbsp; [js](/0339_OpenCV_js)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:js
 - 2021-07-30&nbsp;&nbsp; [3D 图像](/0039_Media_Image_3DImage)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:3DImage
 - 2021-06-18&nbsp;&nbsp; [Build PCL with Linux](/0079_3D_Tools_PCL_Install_Linux)&nbsp;&nbsp; :bookmark:3D :bookmark:Tools :bookmark:PCL :bookmark:Install :bookmark:Linux
 - 2021-05-24&nbsp;&nbsp; [KDTree](/0104_ML_NNS_KDTree)&nbsp;&nbsp; :bookmark:ML :bookmark:NNS :bookmark:KDTree
