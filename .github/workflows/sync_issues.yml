@@ -42,4 +42,12 @@ jobs:
           docs_path: "docs"
           root_node: ${{ github.event.repository.name }}
           ref: ${{ needs.issue2md.outputs.commit_hash }}
-
+  notify_kg:
+    needs: [issue2md, update_sidebar]
+    if: ${{ !cancelled() && needs.issue2md.result == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger kg site rebuild
+        env:
+          GH_TOKEN: ${{ secrets.KG_TRIGGER_TOKEN }}
+        run: gh workflow run deploy.yml -R junxnone/kg --ref main
