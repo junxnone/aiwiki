@@ -2,16 +2,11 @@
 Title | Media Image Camera GenICam
 -- | --
 Created @ | `2021-10-09T06:38:46Z`
-Updated @| `2026-11-25T16:21:46Z`
+Updated @| `2026-11-26T01:26:07Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/106)
 
 ---
-## Reference
-- [GenICam - emva](https://www.emva.org/standards-technology/genicam/introduction-new/)
-- [GenICam History](https://www.emva.org/standards-technology/genicam/genicam-history/)
-- [Aravis](https://github.com/AravisProject/aravis)
-
 ## Brief
 - **GenICam** - `Generic Interface for Cameras`
   - 由 EMVA (European Machine Vision Association) 维护的工业相机通用编程接口标准
@@ -51,4 +46,9 @@ flowchart TB
 ## UseCase
 - 用 `arv-tool-0.8` 列出并读写相机特征, 或用 `arv-viewer` 预览图像, 见 [Aravis](/0108_Media_Image_Camera_GenICam_Aravis)
 - 用 Aravis 的 GStreamer 插件 `aravissrc` 把 GigE 相机接入 [GStreamer](/0109_Media_Tools_GStreamer) pipeline (`[待核实]` 具体版本和属性以 Aravis 文档为准)
+
+## Reference
+- [GenICam - emva](https://www.emva.org/standards-technology/genicam/introduction-new/)
+- [GenICam History](https://www.emva.org/standards-technology/genicam/genicam-history/)
+- [Aravis](https://github.com/AravisProject/aravis)
 
