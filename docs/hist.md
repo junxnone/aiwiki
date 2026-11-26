@@ -4,6 +4,12 @@
 
 #### **Created**
 
+- 2026-11-26&nbsp;&nbsp; [ArcFace](/0807_ML_Tasks_Image_Retrieval_ArcFace)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Retrieval :bookmark:ArcFace
+- 2026-11-26&nbsp;&nbsp; [PSPNet](/0806_ML_Tasks_Image_Segmentation_PSPNet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Segmentation :bookmark:PSPNet
+- 2026-11-26&nbsp;&nbsp; [Loss](/0805_ML_Tasks_Image_Detection_Loss)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Detection :bookmark:Loss
+- 2026-11-26&nbsp;&nbsp; [RetinaNet](/0804_ML_Tasks_Image_Detection_RetinaNet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Detection :bookmark:RetinaNet
+- 2026-11-26&nbsp;&nbsp; [FPN](/0803_ML_Tasks_Image_Detection_FPN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Detection :bookmark:FPN
+- 2026-11-26&nbsp;&nbsp; [SSD](/0802_ML_Tasks_Image_Detection_SSD)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Detection :bookmark:SSD
 - 2026-11-26&nbsp;&nbsp; [EfficientNet](/0801_ML_Tasks_Image_Classification_EfficientNet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Classification :bookmark:EfficientNet
 - 2026-11-26&nbsp;&nbsp; [SENet](/0800_ML_Tasks_Image_Classification_SENet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Classification :bookmark:SENet
 - 2026-11-26&nbsp;&nbsp; [DenseNet](/0799_ML_Tasks_Image_Classification_DenseNet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Classification :bookmark:DenseNet
@@ -773,6 +779,12 @@
 
 #### **Updated**
 
+- 2026-11-26&nbsp;&nbsp; [ArcFace](/0807_ML_Tasks_Image_Retrieval_ArcFace)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Retrieval :bookmark:ArcFace
+- 2026-11-26&nbsp;&nbsp; [PSPNet](/0806_ML_Tasks_Image_Segmentation_PSPNet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Segmentation :bookmark:PSPNet
+- 2026-11-26&nbsp;&nbsp; [Loss](/0805_ML_Tasks_Image_Detection_Loss)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Detection :bookmark:Loss
+- 2026-11-26&nbsp;&nbsp; [RetinaNet](/0804_ML_Tasks_Image_Detection_RetinaNet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Detection :bookmark:RetinaNet
+- 2026-11-26&nbsp;&nbsp; [FPN](/0803_ML_Tasks_Image_Detection_FPN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Detection :bookmark:FPN
+- 2026-11-26&nbsp;&nbsp; [SSD](/0802_ML_Tasks_Image_Detection_SSD)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Detection :bookmark:SSD
 - 2026-11-26&nbsp;&nbsp; [EfficientNet](/0801_ML_Tasks_Image_Classification_EfficientNet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Classification :bookmark:EfficientNet
 - 2026-11-26&nbsp;&nbsp; [SENet](/0800_ML_Tasks_Image_Classification_SENet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Classification :bookmark:SENet
 - 2026-11-26&nbsp;&nbsp; [DenseNet](/0799_ML_Tasks_Image_Classification_DenseNet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Classification :bookmark:DenseNet

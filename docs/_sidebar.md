@@ -259,10 +259,14 @@
         - [VGGNet](/0146_ML_Tasks_Image_Classification_VGGNet)
         - [Xception](/0050_ML_Tasks_Image_Classification_Xception)
       - [Detection](/0152_ML_Tasks_Image_Detection)
+        - [FPN](/0803_ML_Tasks_Image_Detection_FPN)
         - [FastRCNN](/0058_ML_Tasks_Image_Detection_FastRCNN)
         - [FasterRCNN](/0059_ML_Tasks_Image_Detection_FasterRCNN)
+        - [Loss](/0805_ML_Tasks_Image_Detection_Loss)
         - [RCNN](/0057_ML_Tasks_Image_Detection_RCNN)
         - [RCNN VS Fast RCNN VS Faster RCNN](/0060_ML_Tasks_Image_Detection_RCNNs)
+        - [RetinaNet](/0804_ML_Tasks_Image_Detection_RetinaNet)
+        - [SSD](/0802_ML_Tasks_Image_Detection_SSD)
         - [YOLO 系列](/0053_ML_Tasks_Image_Detection_YOLO)
           - [YOLO V1](/0054_ML_Tasks_Image_Detection_YOLO_V1)
           - [YOLO V2](/0055_ML_Tasks_Image_Detection_YOLO_V2)
@@ -275,8 +279,10 @@
         - [Instance Segmentation 实例分割](/0167_ML_Tasks_Image_Segmentation_Instance)
         - [Mask Scoring RCNN](/0164_ML_Tasks_Image_Segmentation_MSRCNN)
         - [MaskRCNN](/0163_ML_Tasks_Image_Segmentation_MaskRCNN)
+        - [PSPNet](/0806_ML_Tasks_Image_Segmentation_PSPNet)
         - [UNet](/0161_ML_Tasks_Image_Segmentation_UNet)
       - [Image Retrieval](/0278_ML_Tasks_Image_Retrieval)
+        - [ArcFace](/0807_ML_Tasks_Image_Retrieval_ArcFace)
         - [CBIR](/0155_ML_Tasks_Image_Retrieval_CBIR)
           - [Siamese Network](/0153_ML_Tasks_Image_Retrieval_CBIR_SiameseNetwork)
           - [Triplet Network](/0156_ML_Tasks_Image_Retrieval_CBIR_TripletNetwork)
@@ -775,4 +781,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@0930021126</sub></kbd>
+<kbd><sub>@0931431126</sub></kbd>

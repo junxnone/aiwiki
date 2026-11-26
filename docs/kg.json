@@ -6760,6 +6760,60 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki ML Tasks Image Detection SSD",
+      "group": 5,
+      "title": "SSD",
+      "url": "https://junxnone.github.io/aiwiki/#/0802_ML_Tasks_Image_Detection_SSD",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Tasks Image Detection FPN",
+      "group": 5,
+      "title": "FPN",
+      "url": "https://junxnone.github.io/aiwiki/#/0803_ML_Tasks_Image_Detection_FPN",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Tasks Image Detection RetinaNet",
+      "group": 5,
+      "title": "RetinaNet",
+      "url": "https://junxnone.github.io/aiwiki/#/0804_ML_Tasks_Image_Detection_RetinaNet",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Tasks Image Detection Loss",
+      "group": 5,
+      "title": "Loss",
+      "url": "https://junxnone.github.io/aiwiki/#/0805_ML_Tasks_Image_Detection_Loss",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Tasks Image Segmentation PSPNet",
+      "group": 5,
+      "title": "PSPNet",
+      "url": "https://junxnone.github.io/aiwiki/#/0806_ML_Tasks_Image_Segmentation_PSPNet",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki ML Tasks Image Retrieval ArcFace",
+      "group": 5,
+      "title": "ArcFace",
+      "url": "https://junxnone.github.io/aiwiki/#/0807_ML_Tasks_Image_Retrieval_ArcFace",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Tasks Image Classification MobileNet V1",
       "group": 6,
       "title": "MobileNet V1",
@@ -11358,6 +11412,34 @@
       "expand": true
     },
     {
+      "source": "aiwiki ML Tasks Image Detection",
+      "target": "aiwiki ML Tasks Image Detection SSD",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks Image Detection",
+      "target": "aiwiki ML Tasks Image Detection FPN",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks Image Detection",
+      "target": "aiwiki ML Tasks Image Detection RetinaNet",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks Image Detection",
+      "target": "aiwiki ML Tasks Image Detection Loss",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
       "source": "aiwiki ML Tasks Image Segmentation",
       "target": "aiwiki ML Tasks Image Segmentation FCN",
       "value": 5,
@@ -11395,6 +11477,13 @@
     {
       "source": "aiwiki ML Tasks Image Segmentation",
       "target": "aiwiki ML Tasks Image Segmentation Instance",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks Image Segmentation",
+      "target": "aiwiki ML Tasks Image Segmentation PSPNet",
       "value": 5,
       "visible": true,
       "expand": true
@@ -11577,6 +11666,13 @@
     {
       "source": "aiwiki ML Tasks Image Retrieval",
       "target": "aiwiki ML Tasks Image Retrieval CBIR",
+      "value": 5,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki ML Tasks Image Retrieval",
+      "target": "aiwiki ML Tasks Image Retrieval ArcFace",
       "value": 5,
       "visible": true,
       "expand": true
