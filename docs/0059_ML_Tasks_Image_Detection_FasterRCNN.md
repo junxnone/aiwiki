@@ -2,19 +2,11 @@
 Title | ML Tasks Image Detection FasterRCNN
 -- | --
 Created @ | `2019-06-22T08:56:17Z`
-Updated @| `2026-11-25T16:51:45Z`
+Updated @| `2026-11-26T01:27:02Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/59)
 
 ---
-## Reference
-- 2014 **R-CNN** Rich feature hierarchies for accurate object detection and semantic segmentation [[paper](https://arxiv.org/pdf/1311.2524.pdf)] [[Code](https://github.com/rbgirshick/rcnn)]
-- 2015 **Fast RCNN** [[paper](https://arxiv.org/pdf/1504.08083.pdf)]
-- 2016 **Faster R-CNN** Towards Real-Time Object Detection with Region Proposal Networks [[paper](https://arxiv.org/pdf/1506.01497.pdf)]
-- [Faster-rcnn实现目标检测](https://www.cnblogs.com/ywheunji/p/10375890.html)
-- [Fast R-CNN中的边框回归](https://www.cnblogs.com/wangguchangqing/p/10393934.html)
-
-
 ## Brief
 - faster-rcnn把获取feature map，候选区域选取，回归和分类等操作全部融合在一个深层网络当中，效率较前两种提升了很多。
 - **Pipeline**
@@ -116,4 +108,11 @@ flowchart LR
 Faster R-CNN (VGG16) | RPN (300 个) | 69.9 (仅 07 训练) / 73.2 (07+12) | 约 0.2 s/张 (5 fps)
 
 表中：数据来自三篇论文，运行环境不完全相同；Faster R-CNN 把候选框生成也放到 GPU 上，使检测首次接近实时 (约 5 fps)。三者逐项对比见 [RCNNs](/0060_ML_Tasks_Image_Detection_RCNNs)。
+
+## Reference
+- 2014 **R-CNN** Rich feature hierarchies for accurate object detection and semantic segmentation [[paper](https://arxiv.org/pdf/1311.2524.pdf)] [[Code](https://github.com/rbgirshick/rcnn)]
+- 2015 **Fast RCNN** [[paper](https://arxiv.org/pdf/1504.08083.pdf)]
+- 2016 **Faster R-CNN** Towards Real-Time Object Detection with Region Proposal Networks [[paper](https://arxiv.org/pdf/1506.01497.pdf)]
+- [Faster-rcnn实现目标检测](https://www.cnblogs.com/ywheunji/p/10375890.html)
+- [Fast R-CNN中的边框回归](https://www.cnblogs.com/wangguchangqing/p/10393934.html)
 
