@@ -712,7 +712,7 @@
 - 2019-04-01&nbsp;&nbsp; [Defect/Anomaly Dataset 缺陷与异常检测数据集](/0245_Datasets_Image2D_Defect)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Image2D :bookmark:Defect
 - 2019-03-28&nbsp;&nbsp; [Segmentation](/0159_ML_Tasks_Image_Segmentation)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Segmentation
 - 2019-03-21&nbsp;&nbsp; [Video 视频](/0036_Media_Video)&nbsp;&nbsp; :bookmark:Media :bookmark:Video
-- 2019-03-18&nbsp;&nbsp; [GridSearch](/0205_ML_AutoML_HPO_GridSearch)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:HPO :bookmark:GridSearch
+- 2019-03-18&nbsp;&nbsp; [Grid Search](/0205_ML_AutoML_HPO_GridSearch)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:HPO :bookmark:GridSearch
 - 2019-03-16&nbsp;&nbsp; [OpenCV MatchTemplate 模板匹配](/0433_OpenCV_IP_MatchTemplate)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:MatchTemplate
 - 2019-03-14&nbsp;&nbsp; [Focal Loss](/0284_ML_Arch_Func_LossFunction_FocalLoss)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:Func :bookmark:LossFunction :bookmark:FocalLoss
 - 2019-03-14&nbsp;&nbsp; [论文阅读相关](/0072_Tools_ReadPapers)&nbsp;&nbsp; :bookmark:Tools :bookmark:ReadPapers
@@ -800,8 +800,10 @@
 - 2026-11-26&nbsp;&nbsp; [NNCF Weight Compression](/0560_Tools_OV_NNCF_WC)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:NNCF :bookmark:WC
 - 2026-11-26&nbsp;&nbsp; [光流 Optical Flow](/0559_CV_OpticalFlow)&nbsp;&nbsp; :bookmark:CV :bookmark:OpticalFlow
 - 2026-11-26&nbsp;&nbsp; [Fast-FoundationStereo: Real-Time Zero-Shot Stereo Matching 读书笔记](/0543_paper_FoundationStereo_FFDS)&nbsp;&nbsp; :bookmark:paper :bookmark:FoundationStereo :bookmark:FFDS
+- 2026-11-26&nbsp;&nbsp; [AdaBLDM 环境设置](/0524_paper_AdaBLDM_envs)&nbsp;&nbsp; :bookmark:paper :bookmark:AdaBLDM :bookmark:envs
 - 2026-11-26&nbsp;&nbsp; [DualAnoDiff](/0522_paper_DualAnoDiff)&nbsp;&nbsp; :bookmark:paper :bookmark:DualAnoDiff
 - 2026-11-26&nbsp;&nbsp; [异常缺陷生成](/0517_ML_Tasks_Image_Anomaly_Synthesis)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Anomaly :bookmark:Synthesis
+- 2026-11-26&nbsp;&nbsp; [Inference Code 分析](/0516_paper_AdaBLDM_InferenceCode)&nbsp;&nbsp; :bookmark:paper :bookmark:AdaBLDM :bookmark:InferenceCode
 - 2026-11-26&nbsp;&nbsp; [AnomalyDiffusion](/0513_paper_AnomalyDiffusion)&nbsp;&nbsp; :bookmark:paper :bookmark:AnomalyDiffusion
 - 2026-11-26&nbsp;&nbsp; [多模态大模型](/0505_LM_LMMs)&nbsp;&nbsp; :bookmark:LM :bookmark:LMMs
 - 2026-11-26&nbsp;&nbsp; [LLaMA](/0504_LM_LLMs_LLaMA)&nbsp;&nbsp; :bookmark:LM :bookmark:LLMs :bookmark:LLaMA
@@ -837,6 +839,7 @@
 - 2026-11-26&nbsp;&nbsp; [Adapter FineTuning](/0412_LM_FT_Adapter)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:Adapter
 - 2026-11-26&nbsp;&nbsp; [DreamBooth](/0405_LM_FT_DreamBooth)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:DreamBooth
 - 2026-11-26&nbsp;&nbsp; [LaMa - Image Inpainting](/0404_LM_VLM_LaMa)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:LaMa
+- 2026-11-26&nbsp;&nbsp; [缺陷图片生成](/0403_x_DefectGen)&nbsp;&nbsp; :bookmark:x :bookmark:DefectGen
 - 2026-11-26&nbsp;&nbsp; [PLY Format](/0401_3D_Tools_PCL_IO_PLY)&nbsp;&nbsp; :bookmark:3D :bookmark:Tools :bookmark:PCL :bookmark:IO :bookmark:PLY
 - 2026-11-26&nbsp;&nbsp; [PCD Format](/0400_3D_Tools_PCL_IO_PCD)&nbsp;&nbsp; :bookmark:3D :bookmark:Tools :bookmark:PCL :bookmark:IO :bookmark:PCD
 - 2026-11-26&nbsp;&nbsp; [GreedyProjectionTriangulation](/0399_3D_Algos_triangulation)&nbsp;&nbsp; :bookmark:3D :bookmark:Algos :bookmark:triangulation
@@ -848,8 +851,11 @@
 - 2026-11-26&nbsp;&nbsp; [ChatGPT](/0373_Hot_AIGC_ChatGPT)&nbsp;&nbsp; :bookmark:Hot :bookmark:AIGC :bookmark:ChatGPT
 - 2026-11-26&nbsp;&nbsp; [AnnealingLR 退火学习率](/0372_ML_Arch_LR_AnnealingLR)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:LR :bookmark:AnnealingLR
 - 2026-11-26&nbsp;&nbsp; [Hyperparameter 超参数](/0368_ML_Arch_HP)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:HP
+- 2026-11-26&nbsp;&nbsp; [Image Filtering](/0363_OpenCV_IP_Filter)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter
+- 2026-11-26&nbsp;&nbsp; [OpenCV UseCase](/0362_OpenCV_UC)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:UC
 - 2026-11-26&nbsp;&nbsp; [Reference](/0354_3D_Camera_激光测量)&nbsp;&nbsp; :bookmark:3D :bookmark:Camera :bookmark:激光测量
 - 2026-11-26&nbsp;&nbsp; [absdiff 检测物体运动](/0353_OpenCV_Core_absdiff)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:Core :bookmark:absdiff
+- 2026-11-26&nbsp;&nbsp; [读取 RTSP Camera](/0351_OpenCV_IO_RTSPCamera)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IO :bookmark:RTSPCamera
 - 2026-11-26&nbsp;&nbsp; [ColorMaps](/0349_OpenCV_IP_Colormaps)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Colormaps
 - 2026-11-26&nbsp;&nbsp; [Resize](/0347_Media_Image_Resize)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Resize
 - 2026-11-26&nbsp;&nbsp; [distanceTransform 处理区域粘连](/0346_OpenCV_IP_misc_distanceTransform)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:misc :bookmark:distanceTransform
@@ -862,6 +868,7 @@
 - 2026-11-26&nbsp;&nbsp; [Numpy](/0328_Tools_Numpy)&nbsp;&nbsp; :bookmark:Tools :bookmark:Numpy
 - 2026-11-26&nbsp;&nbsp; [MVTec](/0323_ML_Tasks_Image_Anomaly_MVTec)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Anomaly :bookmark:MVTec
 - 2026-11-26&nbsp;&nbsp; [GaussianBlur 高斯滤波](/0320_OpenCV_IP_Filter_GaussianBlur)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter :bookmark:GaussianBlur
+- 2026-11-26&nbsp;&nbsp; [Image Processing](/0316_OpenCV_IP)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP
 - 2026-11-26&nbsp;&nbsp; [SAC](/0314_3D_Tools_PCL_SAC)&nbsp;&nbsp; :bookmark:3D :bookmark:Tools :bookmark:PCL :bookmark:SAC
 - 2026-11-26&nbsp;&nbsp; [Tensorflow Datasets](/0313_Tools_TF_Datasets)&nbsp;&nbsp; :bookmark:Tools :bookmark:TF :bookmark:Datasets
 - 2026-11-26&nbsp;&nbsp; [量化](/0312_MO_Quantization)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization
@@ -887,6 +894,7 @@
 - 2026-11-26&nbsp;&nbsp; [Linformer](/0224_ML_Transformer_Linformer)&nbsp;&nbsp; :bookmark:ML :bookmark:Transformer :bookmark:Linformer
 - 2026-11-26&nbsp;&nbsp; [SMAC](/0220_ML_AutoML_HPO_BO_SMAC)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:HPO :bookmark:BO :bookmark:SMAC
 - 2026-11-26&nbsp;&nbsp; [Position Encoding](/0213_ML_Attention_PE)&nbsp;&nbsp; :bookmark:ML :bookmark:Attention :bookmark:PE
+- 2026-11-26&nbsp;&nbsp; [Grid Search](/0205_ML_AutoML_HPO_GridSearch)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:HPO :bookmark:GridSearch
 - 2026-11-26&nbsp;&nbsp; [Random Search](/0204_ML_AutoML_HPO_RandomSearch)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:HPO :bookmark:RandomSearch
 - 2026-11-26&nbsp;&nbsp; [Calamari](/0201_ML_Tasks_Image_OCR_Calamari)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Calamari
 - 2026-11-26&nbsp;&nbsp; [TextScanner](/0192_ML_Tasks_Image_OCR_TextScanner)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:TextScanner
@@ -917,6 +925,7 @@
 - 2026-11-26&nbsp;&nbsp; [VGGNet](/0146_ML_Tasks_Image_Classification_VGGNet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Classification :bookmark:VGGNet
 - 2026-11-26&nbsp;&nbsp; [Concepts](/0144_Media_Tools_GStreamer_Concepts)&nbsp;&nbsp; :bookmark:Media :bookmark:Tools :bookmark:GStreamer :bookmark:Concepts
 - 2026-11-26&nbsp;&nbsp; [Plugins](/0143_Media_Tools_GStreamer_Plugins)&nbsp;&nbsp; :bookmark:Media :bookmark:Tools :bookmark:GStreamer :bookmark:Plugins
+- 2026-11-26&nbsp;&nbsp; [UseCase](/0141_ML_AutoML_Tools_SIGOPT_UseCase)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:Tools :bookmark:SIGOPT :bookmark:UseCase
 - 2026-11-26&nbsp;&nbsp; [Tensorflow](/0140_Tools_TF)&nbsp;&nbsp; :bookmark:Tools :bookmark:TF
 - 2026-11-26&nbsp;&nbsp; [模型结构可视化工具 netron](/0135_Tools_VIS_netron)&nbsp;&nbsp; :bookmark:Tools :bookmark:VIS :bookmark:netron
 - 2026-11-26&nbsp;&nbsp; [Flann Install](/0128_ML_NNS_KDTree_FLANN_Install)&nbsp;&nbsp; :bookmark:ML :bookmark:NNS :bookmark:KDTree :bookmark:FLANN :bookmark:Install
@@ -961,6 +970,7 @@
 - 2026-11-26&nbsp;&nbsp; [AlexNet](/0027_ML_Tasks_Image_Classification_AlexNet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Classification :bookmark:AlexNet
 - 2026-11-26&nbsp;&nbsp; [FLOPs Parameters 计算](/0026_Tools_FPCalculate)&nbsp;&nbsp; :bookmark:Tools :bookmark:FPCalculate
 - 2026-11-26&nbsp;&nbsp; [LeNet](/0024_ML_Tasks_Image_Classification_LeNet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Classification :bookmark:LeNet
+- 2026-11-26&nbsp;&nbsp; [NNI](/0016_ML_AutoML_Tools_NNI)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:Tools :bookmark:NNI
 - 2026-11-26&nbsp;&nbsp; [标注工具](/0006_Tools_Label)&nbsp;&nbsp; :bookmark:Tools :bookmark:Label
 - 2026-11-25&nbsp;&nbsp; [Sim2Real](/0798_RL_Robot_Sim2Real)&nbsp;&nbsp; :bookmark:RL :bookmark:Robot :bookmark:Sim2Real
 - 2026-11-25&nbsp;&nbsp; [Simulation](/0797_RL_Robot_Simulation)&nbsp;&nbsp; :bookmark:RL :bookmark:Robot :bookmark:Simulation
@@ -1383,20 +1393,17 @@
 - 2026-03-16&nbsp;&nbsp; [OpenVINO](/0185_Tools_OV)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV
 - 2026-03-02&nbsp;&nbsp; [OpenVINO Debug](/0527_Tools_OV_Debug)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:Debug
 - 2026-02-27&nbsp;&nbsp; [Deformable DETR](/0484_paper_DeformableDETR)&nbsp;&nbsp; :bookmark:paper :bookmark:DeformableDETR
-- 2025-08-22&nbsp;&nbsp; [AdaBLDM 环境设置](/0524_paper_AdaBLDM_envs)&nbsp;&nbsp; :bookmark:paper :bookmark:AdaBLDM :bookmark:envs
 - 2025-06-10&nbsp;&nbsp; [DualAnoDiff CN](/0523_paper_DualAnoDiff_cn)&nbsp;&nbsp; :bookmark:paper :bookmark:DualAnoDiff :bookmark:cn
 - 2025-06-10&nbsp;&nbsp; [Papers](/0386_paper)&nbsp;&nbsp; :bookmark:paper
 - 2025-06-05&nbsp;&nbsp; [AnomalyAny CN](/0520_paper_AnomalyAny_cn)&nbsp;&nbsp; :bookmark:paper :bookmark:AnomalyAny :bookmark:cn
 - 2025-06-05&nbsp;&nbsp; [AnomalyAny](/0519_paper_AnomalyAny)&nbsp;&nbsp; :bookmark:paper :bookmark:AnomalyAny
 - 2025-05-13&nbsp;&nbsp; [BLDM](/0514_x_DM_BLDM)&nbsp;&nbsp; :bookmark:x :bookmark:DM :bookmark:BLDM
-- 2025-05-12&nbsp;&nbsp; [Inference Code 分析](/0516_paper_AdaBLDM_InferenceCode)&nbsp;&nbsp; :bookmark:paper :bookmark:AdaBLDM :bookmark:InferenceCode
 - 2025-05-12&nbsp;&nbsp; [AdaBLDM 译文](/0515_paper_AdaBLDM_cn)&nbsp;&nbsp; :bookmark:paper :bookmark:AdaBLDM :bookmark:cn
 - 2025-04-30&nbsp;&nbsp; [AdaBLDM](/0510_paper_AdaBLDM)&nbsp;&nbsp; :bookmark:paper :bookmark:AdaBLDM
 - 2025-04-16&nbsp;&nbsp; [Diffusion Model](/0512_x_DM)&nbsp;&nbsp; :bookmark:x :bookmark:DM
 - 2025-04-16&nbsp;&nbsp; [A Survey on Industrial Anomalies Synthesis](/0511_paper_AnomaliesSynthesisSurvey)&nbsp;&nbsp; :bookmark:paper :bookmark:AnomaliesSynthesisSurvey
 - 2025-04-16&nbsp;&nbsp; [AutoEncoder](/0209_ML_AE)&nbsp;&nbsp; :bookmark:ML :bookmark:AE
 - 2025-04-15&nbsp;&nbsp; [ControlNet](/0407_paper_ControlNet)&nbsp;&nbsp; :bookmark:paper :bookmark:ControlNet
-- 2025-04-15&nbsp;&nbsp; [缺陷图片生成](/0403_x_DefectGen)&nbsp;&nbsp; :bookmark:x :bookmark:DefectGen
 - 2025-04-09&nbsp;&nbsp; [RDT-1B 一种用于双手操作的扩散基础模型](/0507_paper_RDT)&nbsp;&nbsp; :bookmark:paper :bookmark:RDT
 - 2025-04-08&nbsp;&nbsp; [Gradient Descent & Optimizer](/0147_ML_Arch_GD)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:GD
 - 2025-04-01&nbsp;&nbsp; [OpenVINO 优化](/0509_Tools_OV_Optimizations)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:Optimizations
@@ -1457,7 +1464,6 @@
 - 2023-06-17&nbsp;&nbsp; [3D 算法](/0422_3D_Algos)&nbsp;&nbsp; :bookmark:3D :bookmark:Algos
 - 2023-06-17&nbsp;&nbsp; [AI Tools](/0415_Tools)&nbsp;&nbsp; :bookmark:Tools
 - 2023-06-17&nbsp;&nbsp; [Options](/0142_ML_AutoML_Tools_SIGOPT_Options)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:Tools :bookmark:SIGOPT :bookmark:Options
-- 2023-06-17&nbsp;&nbsp; [UseCase](/0141_ML_AutoML_Tools_SIGOPT_UseCase)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:Tools :bookmark:SIGOPT :bookmark:UseCase
 - 2023-06-17&nbsp;&nbsp; [gst-inspect](/0112_Media_Tools_GStreamer_gstinspect)&nbsp;&nbsp; :bookmark:Media :bookmark:Tools :bookmark:GStreamer :bookmark:gstinspect
 - 2023-06-17&nbsp;&nbsp; [SIGOPT](/0015_ML_AutoML_Tools_SIGOPT)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:Tools :bookmark:SIGOPT
 - 2023-06-16&nbsp;&nbsp; [3D Tools](/0419_3D_Tools)&nbsp;&nbsp; :bookmark:3D :bookmark:Tools
@@ -1490,12 +1496,9 @@
 - 2023-02-02&nbsp;&nbsp; [Training & Inference Tools History](/0005_Tools_TIHistory)&nbsp;&nbsp; :bookmark:Tools :bookmark:TIHistory
 - 2023-01-31&nbsp;&nbsp; [Motion Detection 运动侦测](/0243_ML_Tasks_MD)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:MD
 - 2023-01-05&nbsp;&nbsp; [Image](/0361_OpenCV_IO_Image)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IO :bookmark:Image
-- 2022-12-27&nbsp;&nbsp; [Image Filtering](/0363_OpenCV_IP_Filter)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter
-- 2022-12-27&nbsp;&nbsp; [OpenCV UseCase](/0362_OpenCV_UC)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:UC
 - 2022-12-16&nbsp;&nbsp; [KnowledgeGraph](/0329_KnowledgeGraph)&nbsp;&nbsp; :bookmark:KnowledgeGraph
 - 2022-11-29&nbsp;&nbsp; [boxFilter](/0319_OpenCV_IP_Filter_boxFilter)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter :bookmark:boxFilter
 - 2022-11-28&nbsp;&nbsp; [Bilateral Filtering for Gray and Color Images](/0318_OpenCV_IP_Filter_bilateralFilter_BF)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter :bookmark:bilateralFilter :bookmark:BF
-- 2022-11-28&nbsp;&nbsp; [Image Processing](/0316_OpenCV_IP)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP
 - 2022-04-06&nbsp;&nbsp; [相移法重建](/0309_3D_Camera_结构光_相移法重建)&nbsp;&nbsp; :bookmark:3D :bookmark:Camera :bookmark:结构光 :bookmark:相移法重建
 - 2022-04-06&nbsp;&nbsp; [结构光3D Camera](/0308_3D_Camera_结构光)&nbsp;&nbsp; :bookmark:3D :bookmark:Camera :bookmark:结构光
 - 2022-04-06&nbsp;&nbsp; [双目](/0307_3D_Camera_双目)&nbsp;&nbsp; :bookmark:3D :bookmark:Camera :bookmark:双目
@@ -1541,14 +1544,11 @@
 - 2019-07-20&nbsp;&nbsp; [图像特征](/0064_CV_Feature)&nbsp;&nbsp; :bookmark:CV :bookmark:Feature
 - 2019-05-29&nbsp;&nbsp; [计算图片 average brightness](/0350_OpenCV_UC_brightness)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:UC :bookmark:brightness
 - 2019-05-18&nbsp;&nbsp; [SIFT 尺度不变特征变换](/0069_CV_Feature_SIFT)&nbsp;&nbsp; :bookmark:CV :bookmark:Feature :bookmark:SIFT
-- 2019-03-18&nbsp;&nbsp; [GridSearch](/0205_ML_AutoML_HPO_GridSearch)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:HPO :bookmark:GridSearch
-- 2019-03-10&nbsp;&nbsp; [NNI](/0016_ML_AutoML_Tools_NNI)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:Tools :bookmark:NNI
 - 2019-03-05&nbsp;&nbsp; [Tips](/0261_Tools_Darknet_AlexeyAB)&nbsp;&nbsp; :bookmark:Tools :bookmark:Darknet :bookmark:AlexeyAB
 - 2019-01-28&nbsp;&nbsp; [Semi-Supervised Learning 半监督学习](/0271_ML_SSL)&nbsp;&nbsp; :bookmark:ML :bookmark:SSL
 - 2018-12-20&nbsp;&nbsp; [膨胀腐蚀](/0344_OpenCV_IP_Filter_morphology)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter :bookmark:morphology
 - 2018-12-13&nbsp;&nbsp; [CVAT](/0073_Tools_Label_CVAT)&nbsp;&nbsp; :bookmark:Tools :bookmark:Label :bookmark:CVAT
 - 2018-12-12&nbsp;&nbsp; [Quiver](/0136_Tools_VIS_Quiver)&nbsp;&nbsp; :bookmark:Tools :bookmark:VIS :bookmark:Quiver
-- 2018-11-30&nbsp;&nbsp; [读取 RTSP Camera](/0351_OpenCV_IO_RTSPCamera)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IO :bookmark:RTSPCamera
 - 2018-11-11&nbsp;&nbsp; [Inference Engine](/0180_Tools_OV_IE)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:IE
 - 2018-10-21&nbsp;&nbsp; [Brisk  特征点匹配](/0348_OpenCV_Brisk)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:Brisk
 

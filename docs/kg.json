@@ -4359,7 +4359,7 @@
     {
       "id": "aiwiki ML AutoML HPO GridSearch",
       "group": 4,
-      "title": "GridSearch",
+      "title": "Grid Search",
       "url": "https://junxnone.github.io/aiwiki/#/0205_ML_AutoML_HPO_GridSearch",
       "visible": true,
       "expand": true,

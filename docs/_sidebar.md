@@ -475,7 +475,7 @@
         - [SMAC](/0220_ML_AutoML_HPO_BO_SMAC)
         - [SMBO](/0218_ML_AutoML_HPO_BO_SMBO)
         - [TPE](/0221_ML_AutoML_HPO_BO_TPE)
-      - [GridSearch](/0205_ML_AutoML_HPO_GridSearch)
+      - [Grid Search](/0205_ML_AutoML_HPO_GridSearch)
       - [Random Search](/0204_ML_AutoML_HPO_RandomSearch)
     - [NAS](/0014_ML_AutoML_NAS)
       - [DARTS](/0389_ML_AutoML_NAS_DARTS)
@@ -781,4 +781,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1810311126</sub></kbd>
+<kbd><sub>@1812231126</sub></kbd>
