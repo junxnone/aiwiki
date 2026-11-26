@@ -1,26 +1,33 @@
 -----
 
-| Title         | ML AutoML Tools NNI                                  |
-| ------------- | ---------------------------------------------------- |
-| Created @     | `2019-03-10T11:35:45Z`                               |
-| Last Modify @ | `2022-12-24T13:23:49Z`                               |
-| Labels        | \`\`                                                 |
-| Edit @        | [here](https://github.com/junxnone/aiwiki/issues/16) |
+| Title     | ML AutoML Tools NNI                                  |
+| --------- | ---------------------------------------------------- |
+| Created @ | `2019-03-10T11:35:45Z`                               |
+| Updated @ | `2026-11-26T10:11:36Z`                               |
+| Labels    | \`\`                                                 |
+| Edit @    | [here](https://github.com/junxnone/aiwiki/issues/16) |
 
 -----
 
-## Reference
+# NNI
 
-  - \[[Docs - zh](https://nni.readthedocs.io/zh/latest/)\] \[[Code -
-    Microsoft ](https://github.com/Microsoft/nni)\]
-
-## Brief
+NNI（Neural Network Intelligence）是 Microsoft
+开源的自动机器学习工具包，覆盖特征工程、超参数优化、神经网络结构搜索和模型压缩。
 
   - NNI - Neural Network Intelligence
       - FE
       - HPO
       - NAS
       - Model Compression
+
+| 功能                | 说明                                                  | 相关                                                                                                                         |
+| ----------------- | --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| FE                | Feature Engineering，特征工程                            |                                                                                                                            |
+| HPO               | Hyperparameter Optimization，超参数优化（TPE、SMAC 等 Tuner） | [SMAC](https://github.com/junxnone/aiwiki/issues/220)、[BO](https://github.com/junxnone/aiwiki/issues/22)                   |
+| NAS               | Neural Architecture Search，网络结构搜索                   | [Search Space](https://github.com/junxnone/aiwiki/issues/392)、[NAS Metrics](https://github.com/junxnone/aiwiki/issues/394) |
+| Model Compression | 模型压缩（剪枝、量化）                                         |                                                                                                                            |
+
+表中：对比结论：NNI 把「试验（trial）运行 + Tuner 搜索 + 实验管理」做成统一框架。
 
 -----
 
@@ -47,3 +54,11 @@
     8. nnictl --help                 get help information about nnictl
 
 ![image](media/7f925cfe21fb63a1faffa19ffe390028ba86439b.png)
+
+其中：`nnictl create` 按配置文件启动一个实验；命令行表中的 `nnictl experiment show`、`trial
+ls`、`stop` 用于查看和管理实验；Web 界面默认可在浏览器查看各 trial 的结果。
+
+## Reference
+
+  - \[[Docs - zh](https://nni.readthedocs.io/zh/latest/)\] \[[Code -
+    Microsoft ](https://github.com/Microsoft/nni)\]
