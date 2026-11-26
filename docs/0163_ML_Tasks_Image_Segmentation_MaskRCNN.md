@@ -2,24 +2,11 @@
 Title | ML Tasks Image Segmentation MaskRCNN
 -- | --
 Created @ | `2019-06-22T08:06:11Z`
-Updated @| `2026-11-25T16:51:57Z`
+Updated @| `2026-11-26T01:27:14Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/163)
 
 ---
-## Reference
-
-- [paper - Mask R-CNN](https://arxiv.org/abs/1703.06870)
-- [paper - R-CNN](https://arxiv.org/abs/1311.2524)
-- [paper - Fast R-CNN](https://arxiv.org/abs/1504.08083)
-- [paper - Faster R-CNN](https://arxiv.org/abs/1506.01497)
-- [基于 OpenCV 的 Mask RCNN 实现](https://www.aiuai.cn/aifarm1178.html)
-- [基于 Keras 的 Mask R-CNN 实现](https://www.aiuai.cn/aifarm1180.html)
-- [Mask R-CNN for object detection and instance segmentation on Keras and TensorFlow](https://github.com/matterport/Mask_RCNN)
-- [~~Detectron - Caffe2 - facebookresearch~~](https://github.com/facebookresearch/Detectron)
-- [Detectron2 - pytorch - facebookresearch](https://github.com/facebookresearch/detectron2)
-- [some other implementation](https://detectron2.readthedocs.io/notes/benchmarks.html)
-
 ## Brief
 - 基于 Faster R-CNN 结构构建
 - 使用 ROIAlign 模块替换 ROIPooling 模块
@@ -111,4 +98,17 @@ Head 结构 | 全连接 (ResNet 用 C5 作 head) | 掩码分支为全卷积；FP
 
 - 优点：结构简洁，易扩展 (同一框架还可做人体关键点)，精度高，是实例分割的标准基线
 - 缺点：先检测再分割，速度不快；掩码分辨率只有 $28\times28$，细长或复杂边界的物体不够精细；掩码质量与分类得分不一定相关，见 [MS R-CNN](/0164_ML_Tasks_Image_Segmentation_MSRCNN)
+
+## Reference
+
+- [paper - Mask R-CNN](https://arxiv.org/abs/1703.06870)
+- [paper - R-CNN](https://arxiv.org/abs/1311.2524)
+- [paper - Fast R-CNN](https://arxiv.org/abs/1504.08083)
+- [paper - Faster R-CNN](https://arxiv.org/abs/1506.01497)
+- [基于 OpenCV 的 Mask RCNN 实现](https://www.aiuai.cn/aifarm1178.html)
+- [基于 Keras 的 Mask R-CNN 实现](https://www.aiuai.cn/aifarm1180.html)
+- [Mask R-CNN for object detection and instance segmentation on Keras and TensorFlow](https://github.com/matterport/Mask_RCNN)
+- [~~Detectron - Caffe2 - facebookresearch~~](https://github.com/facebookresearch/Detectron)
+- [Detectron2 - pytorch - facebookresearch](https://github.com/facebookresearch/detectron2)
+- [some other implementation](https://detectron2.readthedocs.io/notes/benchmarks.html)
 
