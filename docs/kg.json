@@ -4258,6 +4258,15 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki LM Deploy Safety",
+      "group": 3,
+      "title": "Safety",
+      "url": "https://junxnone.github.io/aiwiki/#/0847_LM_Deploy_Safety",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Op Convolution Math",
       "group": 4,
       "title": "卷积 数学定义",
@@ -10603,6 +10612,13 @@
     {
       "source": "aiwiki LM Deploy",
       "target": "aiwiki LM Deploy Ops",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki LM Deploy",
+      "target": "aiwiki LM Deploy Safety",
       "value": 3,
       "visible": true,
       "expand": true
