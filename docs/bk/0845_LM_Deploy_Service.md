@@ -3,7 +3,7 @@
 | Title     | LM Deploy Service                                     |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-26T15:39:02Z`                                |
-| Updated @ | `2026-11-26T15:39:02Z`                                |
+| Updated @ | `2026-11-26T15:43:09Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/845) |
 
@@ -36,7 +36,8 @@ flowchart LR
   - 网关负责鉴权、限流和按 token 计费；路由把请求分发到合适的推理实例，可以按模型名、当前负载，也可以按提示词前缀亲和
     (使前缀缓存命中)
   - 多个实例共用同一份模型存储；每个实例暴露指标给监控系统，自动扩缩容根据指标增减实例数
-  - 推理实例内部的调度 (continuous batching 等) 见 [Optimization](@@IOPT@@)
+  - 推理实例内部的调度 (continuous batching 等) 见
+    [Optimization](/0835_LM_Infer_Optimization)
 
 ## OpenAI 兼容 API
 
@@ -59,7 +60,7 @@ flowchart LR
 `/v1`：OpenVINO Model Server 的 API 文档以 `/v3/chat/completions`
 为主路径，快速入门里也使用
 `/v1/chat/completions`，接入时以所用版本的文档为准，见
-[OpenVINO](@@DOV@@)。
+[OpenVINO](/0848_LM_Deploy_OpenVINO)。
 
 ## 工具调用与结构化输出
 
@@ -79,9 +80,11 @@ Agent 类应用依赖两项服务端能力：
     `--enable-auto-tool-choice` 和 `--tool-call-parser <parser>` (如 Llama
     3.1 用 `llama3_json`，不同模型系列的解析器不同)
   - 结构化输出：`response_format` 指定 `json_schema` 时，服务端用约束解码保证输出一定符合
-    schema，原理和开销见 [StructuredOutput](@@ISTR@@)
-  - 安全：工具调用把模型的输出变成真实操作，必须做参数校验和权限控制，见 [Safety](@@DSAF@@)；更多见
-    [ToolCalling](@@DTOOL@@)
+    schema，原理和开销见
+    [StructuredOutput](/0840_LM_Infer_StructuredOutput)
+  - 安全：工具调用把模型的输出变成真实操作，必须做参数校验和权限控制，见
+    [Safety](/0847_LM_Deploy_Safety)；更多见
+    [ToolCalling](/0852_LM_Deploy_ToolCalling)
 
 ## 流式输出
 
@@ -107,7 +110,7 @@ $$ T(t)=\\min\\bigl(C,\\ T(t\_0)+r,(t-t\_0)\\bigr),\\qquad
   - $n\_{in}$：请求的输入 token 数；$n\_{out}^{max}$：请求的
     `max_tokens`；先按上限预扣，请求结束后按实际输出数退还差额
   - 队列与准入控制：当队列过长 (等待时间超过 SLO) 时直接返回 429 或降级到较小的模型，比让所有请求都超时更好
-  - 多租户：按租户隔离配额，并统计输入/输出 token 数用于计费，见 [Ops](@@DOPS@@)
+  - 多租户：按租户隔离配额，并统计输入/输出 token 数用于计费，见 [Ops](/0846_LM_Deploy_Ops)
 
 ## 自动扩缩容
 
@@ -131,7 +134,7 @@ $$ T(t)=\\min\\bigl(C,\\ T(t\_0)+r,(t-t\_0)\\bigr),\\qquad
   - 健康检查：区分存活 (进程在) 与就绪 (模型已加载完)，就绪后才接入流量
   - 优雅下线：缩容或升级时先停止接收新请求，等待进行中的流式请求完成
   - 重试与幂等：客户端在连接断开时重试要注意不能重复计费；流式响应中途失败需要告知客户端
-  - 灰度发布：新模型/新量化版本先小流量，对比指标无退化再放量，见 [Ops](@@DOPS@@)
+  - 灰度发布：新模型/新量化版本先小流量，对比指标无退化再放量，见 [Ops](/0846_LM_Deploy_Ops)
 
 ## Reference
 
