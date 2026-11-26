@@ -4,6 +4,8 @@
 
 #### **Created**
 
+- 2026-11-26 23:39&nbsp;&nbsp; [Benchmark](/0849_LM_Deploy_Benchmark)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Benchmark
+- 2026-11-26 23:39&nbsp;&nbsp; [OpenVINO](/0848_LM_Deploy_OpenVINO)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:OpenVINO
 - 2026-11-26 23:39&nbsp;&nbsp; [Safety](/0847_LM_Deploy_Safety)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Safety
 - 2026-11-26 23:39&nbsp;&nbsp; [Ops](/0846_LM_Deploy_Ops)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Ops
 - 2026-11-26 23:39&nbsp;&nbsp; [Service](/0845_LM_Deploy_Service)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Service
@@ -819,6 +821,8 @@
 
 #### **Updated**
 
+- 2026-11-26 23:39&nbsp;&nbsp; [Benchmark](/0849_LM_Deploy_Benchmark)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Benchmark
+- 2026-11-26 23:39&nbsp;&nbsp; [OpenVINO](/0848_LM_Deploy_OpenVINO)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:OpenVINO
 - 2026-11-26 23:39&nbsp;&nbsp; [Safety](/0847_LM_Deploy_Safety)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Safety
 - 2026-11-26 23:39&nbsp;&nbsp; [Ops](/0846_LM_Deploy_Ops)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Ops
 - 2026-11-26 23:39&nbsp;&nbsp; [Service](/0845_LM_Deploy_Service)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Service

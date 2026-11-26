@@ -4267,6 +4267,24 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki LM Deploy OpenVINO",
+      "group": 3,
+      "title": "OpenVINO",
+      "url": "https://junxnone.github.io/aiwiki/#/0848_LM_Deploy_OpenVINO",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki LM Deploy Benchmark",
+      "group": 3,
+      "title": "Benchmark",
+      "url": "https://junxnone.github.io/aiwiki/#/0849_LM_Deploy_Benchmark",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Op Convolution Math",
       "group": 4,
       "title": "卷积 数学定义",
@@ -10619,6 +10637,20 @@
     {
       "source": "aiwiki LM Deploy",
       "target": "aiwiki LM Deploy Safety",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki LM Deploy",
+      "target": "aiwiki LM Deploy OpenVINO",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki LM Deploy",
+      "target": "aiwiki LM Deploy Benchmark",
       "value": 3,
       "visible": true,
       "expand": true
