@@ -2,7 +2,7 @@
 Title | LM FT Alignment
 -- | --
 Created @ | `2026-10-20T07:02:22Z`
-Updated @| `2026-10-20T08:19:14Z`
+Updated @| `2026-11-26T08:14:50Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/568)
 
@@ -25,9 +25,15 @@ SFT 解决"形式"问题（怎么像一个助手一样说话），RLHF/DPO 解�
 
 用"指令-回答"这样的数据对（人工撰写或更强模型生成），让预训练模型学会按指令格式组织回应——训练方式就是标准的语言模型下一词预测损失，只是训练数据从"互联网文本"换成了"指令-回答对"：
 
-```
-L_SFT = -E[log P(response | instruction)]
-```
+$$
+L_{SFT} = -\,\mathbb{E}\left[\log P(\text{response}\mid\text{instruction})\right]
+$$
+
+其中：
+
+- $L_{SFT}$：监督微调损失
+- $\mathbb{E}[\cdot]$：对训练样本取期望
+- $P(\text{response}\mid\text{instruction})$：模型在给定指令下生成标准回答的概率，损失即该回答的负对数似然
 
 SFT 本身只是一个训练目标/数据组织方式，可以用全参数微调实现，也可以用 [LoRA](0406_LM_FT_LoRA) 等任意 PEFT 方法实现——两者是正交的维度。SFT 是目前几乎所有对话类大模型训练流程里的标准第一步。
 
@@ -64,11 +70,19 @@ RLHF 最大的瓶颈之一是人工标注偏好数据的成本和速度。Consti
 
 DPO（Rafailov et al. 2023）的核心洞察是：RLHF 里"训练奖励模型 + PPO 强化学习"这整套流程，在数学上可以等价地化简成一个**直接在偏好数据对上做监督学习**的损失函数，完全不需要显式训练奖励模型，也不需要跑强化学习采样。给定一个 prompt `x`、一个更好的回答 `y_w` 和一个更差的回答 `y_l`，DPO 的损失函数是：
 
-```
-L_DPO = -E[log σ(β log(π_θ(y_w|x)/π_ref(y_w|x)) - β log(π_θ(y_l|x)/π_ref(y_l|x)))]
-```
+$$
+L_{DPO} = -\,\mathbb{E}\left[\log\sigma\left(\beta\log\frac{\pi_\theta(y_w\mid x)}{\pi_{ref}(y_w\mid x)}-\beta\log\frac{\pi_\theta(y_l\mid x)}{\pi_{ref}(y_l\mid x)}\right)\right]
+$$
 
-其中 `π_θ` 是正在训练的策略模型，`π_ref` 是训练开始前的参考模型（通常就是 SFT 之后的模型，训练中保持冻结），`σ` 是 sigmoid 函数，`β` 控制偏离参考模型的惩罚力度。直观理解：这个损失函数在直接拉大"模型给更好回答的相对概率"和"给更差回答的相对概率"之间的差距，不需要额外的奖励模型来告诉它"好"和"差"量化差多少，偏好数据本身的排序关系就是全部监督信号。
+其中：
+
+- $\pi_\theta$：正在训练的策略模型
+- $\pi_{ref}$：训练开始前的参考模型（通常就是 SFT 之后的模型，训练中保持冻结）
+- $x$：提示（prompt）；$y_w$、$y_l$：同一提示下偏好数据里更好（winner）与更差（loser）的回答
+- $\sigma$：sigmoid 函数；$\beta$：控制偏离参考模型的惩罚力度
+- $\mathbb{E}$：对偏好数据集取期望
+
+直观理解：这个损失函数在直接拉大"模型给更好回答的相对概率"和"给更差回答的相对概率"之间的差距，不需要额外的奖励模型来告诉它"好"和"差"量化差多少，偏好数据本身的排序关系就是全部监督信号。
 
 DPO 相比 RLHF 的优势：实现简单（本质是一个分类损失，用标准的监督学习训练流程就能跑）、训练更稳定、不需要额外维护奖励模型和价值模型、超参数更少更容易调——这也是 DPO 发布后迅速成为 RLHF 之外最主流对齐训练方法的原因。代价是 DPO 在数学推导上假设了偏好数据能被一个隐式的奖励模型完美解释，在数据噪声较大或者偏好标注不一致的场景下，RLHF 搭配一个显式训练、可以单独检验和调试的奖励模型有时仍然更有优势。
 
@@ -109,4 +123,5 @@ DPO 发布后，针对它的各种假设/局限，社区很快提出了一批后
 - Wei, J. et al. (2021). Finetuned Language Models Are Zero-Shot Learners (FLAN). [arXiv:2109.01652](https://arxiv.org/abs/2109.01652)
 - [TRL - Transformer Reinforcement Learning (Hugging Face)](https://github.com/huggingface/trl)
 - [大模型微调总览](0410_LM_FT)
+
 
