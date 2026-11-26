@@ -2,7 +2,7 @@
 Title | ML Tasks Image Classification SENet
 -- | --
 Created @ | `2026-11-26T01:28:25Z`
-Updated @| `2026-11-26T01:28:25Z`
+Updated @| `2026-11-26T01:30:07Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/800)
 
@@ -50,7 +50,7 @@ $$
 
 - 每个 SE 模块增加的参数量约 $2C^2/r$，整个网络增加约 $10\%$ 的参数，计算量几乎不变
 - 论文结果：SE-ResNet-50 的 top-1 错误率 $23.29\%$，低于 ResNet-50 的 $24.80\%$，接近 ResNet-101 的 $23.17\%$，而计算量约只有后者的一半 `[待核实]`
-- 通用性：对各种结构 (ResNet、Inception、ResNeXt、MobileNet) 都有效，因此成为后续很多网络的标准组件，如 [MobileNet V3](/0044_ML_Tasks_Image_Classification_MobileNet_V3)、[EfficientNet](@@EFF@@)
+- 通用性：对各种结构 (ResNet、Inception、ResNeXt、MobileNet) 都有效，因此成为后续很多网络的标准组件，如 [MobileNet V3](/0044_ML_Tasks_Image_Classification_MobileNet_V3)、[EfficientNet](/0801_ML_Tasks_Image_Classification_EfficientNet)
 
 ## 变体与后续
 

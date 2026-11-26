@@ -3,7 +3,7 @@
 | Title     | ML Tasks Image Classification SENet                   |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-26T01:28:25Z`                                |
-| Updated @ | `2026-11-26T01:28:25Z`                                |
+| Updated @ | `2026-11-26T01:30:07Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/800) |
 
@@ -61,7 +61,7 @@ $$ z\_c=\\frac1{HW}\\sum\_{i=1}^{H}\\sum\_{j=1}^{W}u\_c(i,j),\\qquad
     ResNet-101 的 $23.17%$，而计算量约只有后者的一半 `[待核实]`
   - 通用性：对各种结构 (ResNet、Inception、ResNeXt、MobileNet) 都有效，因此成为后续很多网络的标准组件，如
     [MobileNet
-    V3](/0044_ML_Tasks_Image_Classification_MobileNet_V3)、[EfficientNet](@@EFF@@)
+    V3](/0044_ML_Tasks_Image_Classification_MobileNet_V3)、[EfficientNet](/0801_ML_Tasks_Image_Classification_EfficientNet)
 
 ## 变体与后续
 
