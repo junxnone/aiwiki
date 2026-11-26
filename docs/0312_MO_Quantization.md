@@ -2,7 +2,7 @@
 Title | MO Quantization
 -- | --
 Created @ | `2018-10-16T02:57:36Z`
-Updated @| `2026-11-23T02:27:01Z`
+Updated @| `2026-11-26T01:48:46Z`
 Labels | `ML`
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/312)
 
@@ -159,7 +159,6 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/312)
 - 2026 年本地/消费级 GPU 部署 LLM 的实际默认是 **INT4**：AWQ 在指令微调模型上的质量通常略优于 GPTQ（GPTQ 有时在原始困惑度上更优），两者在 vLLM/TensorRT-LLM/SGLang 上都很成熟；本地 llama.cpp 部署社区默认是 GGUF 的 Q4_K_M；
 - 3-bit/2-bit 这类更激进的比特宽度通常需要 QAT 或专门的校准方法才能保持可用；新一代硬件原生格式（NVIDIA NVFP4、Microsoft MXFP4）正在 Blackwell 级 GPU 上成为 AWQ/GPTQ 的新竞争者。
 
-
 ## Reference 
 - [模型量化详解](https://blog.csdn.net/WZZ18191171661/article/details/103332338)
 - [Deep Compression](https://arxiv.org/abs/1510.00149)
@@ -167,5 +166,4 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/312)
 - [AWQ](https://arxiv.org/abs/2306.00978)
 - [Quantization and Training of Neural Networks for Integer-Only Inference (STE)](https://arxiv.org/abs/1712.05877)
 - [Quantization 2026 Guide: GGUF vs AWQ vs GPTQ vs bitsandbytes](https://www.premai.io/blog/llm-quantization-guide-gguf-vs-awq-vs-gptq-vs-bitsandbytes-compared-2026/)
-
 
