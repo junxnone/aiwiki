@@ -3,7 +3,7 @@
 | Title     | LM Train Tokenizer                                    |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-26T15:33:59Z`                                |
-| Updated @ | `2026-11-26T15:33:59Z`                                |
+| Updated @ | `2026-11-26T15:42:01Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/822) |
 
@@ -120,7 +120,7 @@ for name in ["meta-llama/Llama-2-7b-hf", "meta-llama/Llama-3.1-8B", "Qwen/Qwen2.
     渲染成模型训练时见过的格式化字符串；格式不一致会使效果明显下降
   - 使用 Hugging Face 时调用同一个模板：`tokenizer.apply_chat_template(messages,
     tokenize=False, add_generation_prompt=True)`
-  - 微调和部署必须使用相同的模板，这是常见的出错点，见 [Format](@@DFMT@@)
+  - 微调和部署必须使用相同的模板，这是常见的出错点，见 [Format](/0843_LM_Deploy_Format)
 
 ## 常见陷阱
 
