@@ -2,7 +2,7 @@
 Title | ML Tasks Image Detection YOLO V2
 -- | --
 Created @ | `2020-01-14T06:37:42Z`
-Updated @| `2026-11-25T16:51:33Z`
+Updated @| `2026-11-26T01:26:49Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/55)
 
@@ -95,27 +95,6 @@ Multi-Scale Training | 每 10 batches 更换 输入大小 [320, 352...608]
 
 
 
-## Reference
-- 2015 **YOLO V1** You Only Look Once: Unified, Real-Time Object Detection [[paper](https://arxiv.org/pdf/1506.02640.pdf)] [[netscope](http://ethereon.github.io/netscope/#/gist/96209c6940e02b17c34009f6c3fee75e)] [[Code](https://pjreddie.com/darknet/yolo/)] [[Code2 - AlexeyAB](https://github.com/AlexeyAB/darknet)]
-- 2016 **YOLO V2** YOLO9000: Better, Faster, Stronger [[paper](https://arxiv.org/pdf/1612.08242.pdf)] [[netscope](http://ethereon.github.io/netscope/#/gist/8826fef24ed0b5086affdb6e65db26b7)]  [[Code](https://pjreddie.com/darknet/yolo/)]  [[Code2 - AlexeyAB](https://github.com/AlexeyAB/darknet)]
-- [kmeans-anchor-boxes](https://github.com/lars76/kmeans-anchor-boxes) 
-- [Yolo9000](https://pjreddie.com/publications/yolo9000/)
--  [Yolo V2](https://pjreddie.com/darknet/yolov2/)
-- [目标检测（九）--YOLO v1,v2,v3](https://blog.csdn.net/App_12062011/article/details/77554288)
-- [Yolo9000算法分析](https://blog.csdn.net/small_munich/article/details/79548149)
-- [pjreddie Publications](https://pjreddie.com/publications/)
-- [YOLO v2算法详解+YOLO9000介绍](https://blog.csdn.net/Chunfengyanyulove/article/details/80860870)
-- [YOLOv2 YOLOv3 如何选择先验框（priors anchor）（自用）](https://blog.csdn.net/Pattorio/article/details/80095511)
-- [yoloV1，看过好多篇，这篇感觉讲的最通俗易懂](https://blog.csdn.net/m0_37192554/article/details/81092514)
-- [目标检测之YOLO V2 V3](http://www.cnblogs.com/wangguchangqing/p/10480995.html)
-- [从yolov1到yolov3](https://shartoo.github.io/2019/03/12/yolo-v123/)
-- [YOLOv1，YOLOv2，YOLOv3解读](https://blog.csdn.net/hancoder/article/details/87994678)
-- [YOLO900 Slides](https://docs.google.com/presentation/d/14qBAiyhMOFl_wZW4dA1CkixgXwf0zKGbpw_0oHK8yEM/edit#slide=id.p)
-
-
-
-
-
 ## 公式
 
 ### Anchor 聚类
@@ -183,4 +162,21 @@ $544\times544$ | 78.6 | 40
 - 19 个卷积层 + 5 个最大池化，主要使用 $3\times3$ 卷积，池化后通道数翻倍，并在 $3\times3$ 之间插入 $1\times1$ 压缩通道，思路来自 [VGG](/0146_ML_Tasks_Image_Classification_VGGNet) 和 NIN
 - 用全局平均池化代替全连接层，约 $5.58$ GFLOPs，ImageNet 上 top-1 $72.9\%$、top-5 $91.2\%$，计算量比 VGG-16 小得多
 - 检测时去掉最后的分类卷积，加 3 个 $3\times3\times1024$ 卷积和 $1\times1$ 输出层，并把 $26\times26\times512$ 的特征通过 passthrough (重排成 $13\times13\times2048$) 与深层特征拼接，即表中的 Fine-Grained Features
+
+## Reference
+- 2015 **YOLO V1** You Only Look Once: Unified, Real-Time Object Detection [[paper](https://arxiv.org/pdf/1506.02640.pdf)] [[netscope](http://ethereon.github.io/netscope/#/gist/96209c6940e02b17c34009f6c3fee75e)] [[Code](https://pjreddie.com/darknet/yolo/)] [[Code2 - AlexeyAB](https://github.com/AlexeyAB/darknet)]
+- 2016 **YOLO V2** YOLO9000: Better, Faster, Stronger [[paper](https://arxiv.org/pdf/1612.08242.pdf)] [[netscope](http://ethereon.github.io/netscope/#/gist/8826fef24ed0b5086affdb6e65db26b7)]  [[Code](https://pjreddie.com/darknet/yolo/)]  [[Code2 - AlexeyAB](https://github.com/AlexeyAB/darknet)]
+- [kmeans-anchor-boxes](https://github.com/lars76/kmeans-anchor-boxes) 
+- [Yolo9000](https://pjreddie.com/publications/yolo9000/)
+-  [Yolo V2](https://pjreddie.com/darknet/yolov2/)
+- [目标检测（九）--YOLO v1,v2,v3](https://blog.csdn.net/App_12062011/article/details/77554288)
+- [Yolo9000算法分析](https://blog.csdn.net/small_munich/article/details/79548149)
+- [pjreddie Publications](https://pjreddie.com/publications/)
+- [YOLO v2算法详解+YOLO9000介绍](https://blog.csdn.net/Chunfengyanyulove/article/details/80860870)
+- [YOLOv2 YOLOv3 如何选择先验框（priors anchor）（自用）](https://blog.csdn.net/Pattorio/article/details/80095511)
+- [yoloV1，看过好多篇，这篇感觉讲的最通俗易懂](https://blog.csdn.net/m0_37192554/article/details/81092514)
+- [目标检测之YOLO V2 V3](http://www.cnblogs.com/wangguchangqing/p/10480995.html)
+- [从yolov1到yolov3](https://shartoo.github.io/2019/03/12/yolo-v123/)
+- [YOLOv1，YOLOv2，YOLOv3解读](https://blog.csdn.net/hancoder/article/details/87994678)
+- [YOLO900 Slides](https://docs.google.com/presentation/d/14qBAiyhMOFl_wZW4dA1CkixgXwf0zKGbpw_0oHK8yEM/edit#slide=id.p)
 
