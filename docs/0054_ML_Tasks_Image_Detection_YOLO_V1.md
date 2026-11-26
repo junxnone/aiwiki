@@ -2,7 +2,7 @@
 Title | ML Tasks Image Detection YOLO V1
 -- | --
 Created @ | `2020-01-13T06:31:10Z`
-Updated @| `2026-11-25T16:51:30Z`
+Updated @| `2026-11-26T01:26:47Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/54)
 
@@ -95,21 +95,6 @@ Name | Weight | Comment
 
 
 
-## Reference
-- 2015 **YOLO V1** You Only Look Once: Unified, Real-Time Object Detection [[paper](https://arxiv.org/pdf/1506.02640.pdf)] [[netscope](http://ethereon.github.io/netscope/#/gist/96209c6940e02b17c34009f6c3fee75e)] [[Code](https://pjreddie.com/darknet/yolo/)] [[Code2 - AlexeyAB](https://github.com/AlexeyAB/darknet)]
-- [目标检测（九）--YOLO v1,v2,v3](https://blog.csdn.net/App_12062011/article/details/77554288)
-- [pjreddie Publications](https://pjreddie.com/publications/)
-- [yoloV1，看过好多篇，这篇感觉讲的最通俗易懂](https://blog.csdn.net/m0_37192554/article/details/81092514)
-- [目标检测之YOLO V2 V3](http://www.cnblogs.com/wangguchangqing/p/10480995.html)
-- [Yolo V1 - darknet - pjreddie ](https://pjreddie.com/darknet/yolov1/)
-- [【目标检测】YOLO](https://zhuanlan.zhihu.com/p/63507794)
-- [【目标检测】基础知识：IoU、NMS、Bounding box regression](https://zhuanlan.zhihu.com/p/60794316)
-- [YOLO - PPT - deepsystems.io](https://docs.google.com/presentation/d/14H2c8UuUN0L5l9cDeG-M96UPE6U0CrZN0ChAUr-gN7o/edit#slide=id.p)
-- [图解YOLO](https://zhuanlan.zhihu.com/p/24916786)
-
-
-
-
 ## 公式
 
 ### 置信度与类别得分
@@ -181,4 +166,16 @@ flowchart LR
   - 输出分辨率只有 $7\times7$，定位较粗
   - 对新的长宽比泛化差，因为框是直接回归而不是基于 anchor
   - 这些问题在 [YOLO V2](/0055_ML_Tasks_Image_Detection_YOLO_V2) 里通过 anchor、更高分辨率特征和多尺度训练缓解
+
+## Reference
+- 2015 **YOLO V1** You Only Look Once: Unified, Real-Time Object Detection [[paper](https://arxiv.org/pdf/1506.02640.pdf)] [[netscope](http://ethereon.github.io/netscope/#/gist/96209c6940e02b17c34009f6c3fee75e)] [[Code](https://pjreddie.com/darknet/yolo/)] [[Code2 - AlexeyAB](https://github.com/AlexeyAB/darknet)]
+- [目标检测（九）--YOLO v1,v2,v3](https://blog.csdn.net/App_12062011/article/details/77554288)
+- [pjreddie Publications](https://pjreddie.com/publications/)
+- [yoloV1，看过好多篇，这篇感觉讲的最通俗易懂](https://blog.csdn.net/m0_37192554/article/details/81092514)
+- [目标检测之YOLO V2 V3](http://www.cnblogs.com/wangguchangqing/p/10480995.html)
+- [Yolo V1 - darknet - pjreddie ](https://pjreddie.com/darknet/yolov1/)
+- [【目标检测】YOLO](https://zhuanlan.zhihu.com/p/63507794)
+- [【目标检测】基础知识：IoU、NMS、Bounding box regression](https://zhuanlan.zhihu.com/p/60794316)
+- [YOLO - PPT - deepsystems.io](https://docs.google.com/presentation/d/14H2c8UuUN0L5l9cDeG-M96UPE6U0CrZN0ChAUr-gN7o/edit#slide=id.p)
+- [图解YOLO](https://zhuanlan.zhihu.com/p/24916786)
 
