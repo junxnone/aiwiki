@@ -3,22 +3,13 @@
 | Title     | Media Image Camera PixelFormat                        |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2021-10-21T17:44:24Z`                                |
-| Updated @ | `2026-11-25T16:21:39Z`                                |
+| Updated @ | `2026-11-26T01:26:01Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/119) |
 
 -----
 
 # 像素格式
-
-## Reference
-
-  - [Pixel Format Naming Convention -
-    GenICam](https://www.emva.org/wp-content/uploads/GenICam_PFNC_2_1.pdf)
-  - [GenICam Pixel Format Names and
-    Values](https://www.emva.org/wp-content/uploads/GenICamPixelFormatValues.pdf)
-  - [Pixel and Planar Image
-    Formats](https://www.intel.com/content/www/us/en/develop/documentation/ipp-dev-reference/top/volume-2-image-processing/image-color-conversion/pixel-and-planar-image-formats.html)
 
 ## Brief
 
@@ -73,3 +64,12 @@
 附近, 使其可以用无符号整数存储, 因此数字场景里说的 `YUV` 绝大多数实际指 YCbCr (Pixel Format 名称如
 `YUY2`、`NV12` 也沿用 YUV 叫法)。公式和范围的细节见
 [YUV](/0121_Media_Image_Color_Model_YUV)。
+
+## Reference
+
+  - [Pixel Format Naming Convention -
+    GenICam](https://www.emva.org/wp-content/uploads/GenICam_PFNC_2_1.pdf)
+  - [GenICam Pixel Format Names and
+    Values](https://www.emva.org/wp-content/uploads/GenICamPixelFormatValues.pdf)
+  - [Pixel and Planar Image
+    Formats](https://www.intel.com/content/www/us/en/develop/documentation/ipp-dev-reference/top/volume-2-image-processing/image-color-conversion/pixel-and-planar-image-formats.html)
