@@ -811,6 +811,7 @@
 - 2026-11-26&nbsp;&nbsp; [量化](/0312_MO_Quantization)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization
 - 2026-11-26&nbsp;&nbsp; [Image Retrieval](/0278_ML_Tasks_Image_Retrieval)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Retrieval
 - 2026-11-26&nbsp;&nbsp; [Image Anomaly Detection](/0277_ML_Tasks_Image_Anomaly)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Anomaly
+- 2026-11-26&nbsp;&nbsp; [Linformer](/0224_ML_Transformer_Linformer)&nbsp;&nbsp; :bookmark:ML :bookmark:Transformer :bookmark:Linformer
 - 2026-11-26&nbsp;&nbsp; [Calamari](/0201_ML_Tasks_Image_OCR_Calamari)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Calamari
 - 2026-11-26&nbsp;&nbsp; [TextScanner](/0192_ML_Tasks_Image_OCR_TextScanner)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:TextScanner
 - 2026-11-26&nbsp;&nbsp; [Sliding Windows CNN CTC](/0188_ML_Tasks_Image_OCR_SW)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:SW
@@ -828,6 +829,7 @@
 - 2026-11-26&nbsp;&nbsp; [VLAD](/0154_ML_Tasks_Image_Retrieval_CBIR_VLAD)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Retrieval :bookmark:CBIR :bookmark:VLAD
 - 2026-11-26&nbsp;&nbsp; [Siamese Network](/0153_ML_Tasks_Image_Retrieval_CBIR_SiameseNetwork)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Retrieval :bookmark:CBIR :bookmark:SiameseNetwork
 - 2026-11-26&nbsp;&nbsp; [Detection](/0152_ML_Tasks_Image_Detection)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Detection
+- 2026-11-26&nbsp;&nbsp; [Momentum](/0150_ML_Arch_GD_Momentum)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:GD :bookmark:Momentum
 - 2026-11-26&nbsp;&nbsp; [VGGNet](/0146_ML_Tasks_Image_Classification_VGGNet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Classification :bookmark:VGGNet
 - 2026-11-26&nbsp;&nbsp; [Concepts](/0144_Media_Tools_GStreamer_Concepts)&nbsp;&nbsp; :bookmark:Media :bookmark:Tools :bookmark:GStreamer :bookmark:Concepts
 - 2026-11-26&nbsp;&nbsp; [Color Model 色彩模型](/0125_Media_Image_Color_Model)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Color :bookmark:Model
@@ -835,6 +837,9 @@
 - 2026-11-26&nbsp;&nbsp; [像素格式](/0119_Media_Image_Camera_PixelFormat)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera :bookmark:PixelFormat
 - 2026-11-26&nbsp;&nbsp; [GStreamer 流媒体应用框架](/0109_Media_Tools_GStreamer)&nbsp;&nbsp; :bookmark:Media :bookmark:Tools :bookmark:GStreamer
 - 2026-11-26&nbsp;&nbsp; [GenICam](/0106_Media_Image_Camera_GenICam)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera :bookmark:GenICam
+- 2026-11-26&nbsp;&nbsp; [Thresholding 二值化](/0099_CV_BIN)&nbsp;&nbsp; :bookmark:CV :bookmark:BIN
+- 2026-11-26&nbsp;&nbsp; [Hough Transform 霍夫变换](/0071_CV_HoughTransform)&nbsp;&nbsp; :bookmark:CV :bookmark:HoughTransform
+- 2026-11-26&nbsp;&nbsp; [Structure Tensor 结构张量](/0070_CV_StructureTensor)&nbsp;&nbsp; :bookmark:CV :bookmark:StructureTensor
 - 2026-11-26&nbsp;&nbsp; [Classification](/0061_ML_Tasks_Image_Classification)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Classification
 - 2026-11-26&nbsp;&nbsp; [RCNN VS Fast RCNN VS Faster RCNN](/0060_ML_Tasks_Image_Detection_RCNNs)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Detection :bookmark:RCNNs
 - 2026-11-26&nbsp;&nbsp; [FasterRCNN](/0059_ML_Tasks_Image_Detection_FasterRCNN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Detection :bookmark:FasterRCNN
@@ -854,7 +859,9 @@
 - 2026-11-26&nbsp;&nbsp; [MobileNet V3](/0044_ML_Tasks_Image_Classification_MobileNet_V3)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Classification :bookmark:MobileNet :bookmark:V3
 - 2026-11-26&nbsp;&nbsp; [MobileNet V2](/0043_ML_Tasks_Image_Classification_MobileNet_V2)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Classification :bookmark:MobileNet :bookmark:V2
 - 2026-11-26&nbsp;&nbsp; [MobileNet V1](/0042_ML_Tasks_Image_Classification_MobileNet_V1)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Classification :bookmark:MobileNet :bookmark:V1
+- 2026-11-26&nbsp;&nbsp; [低延迟](/0037_Media_Image_Camera_LowLatency)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera :bookmark:LowLatency
 - 2026-11-26&nbsp;&nbsp; [AlexNet](/0027_ML_Tasks_Image_Classification_AlexNet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Classification :bookmark:AlexNet
+- 2026-11-26&nbsp;&nbsp; [FLOPs Parameters 计算](/0026_Tools_FPCalculate)&nbsp;&nbsp; :bookmark:Tools :bookmark:FPCalculate
 - 2026-11-26&nbsp;&nbsp; [LeNet](/0024_ML_Tasks_Image_Classification_LeNet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Classification :bookmark:LeNet
 - 2026-11-25&nbsp;&nbsp; [Sim2Real](/0798_RL_Robot_Sim2Real)&nbsp;&nbsp; :bookmark:RL :bookmark:Robot :bookmark:Sim2Real
 - 2026-11-25&nbsp;&nbsp; [Simulation](/0797_RL_Robot_Simulation)&nbsp;&nbsp; :bookmark:RL :bookmark:Robot :bookmark:Simulation
@@ -1096,7 +1103,6 @@
 - 2026-11-19&nbsp;&nbsp; [T2T-ViT](/0227_ML_Transformer_T2TViT)&nbsp;&nbsp; :bookmark:ML :bookmark:Transformer :bookmark:T2TViT
 - 2026-11-19&nbsp;&nbsp; [Vision](/0226_ML_Transformer_Vision)&nbsp;&nbsp; :bookmark:ML :bookmark:Transformer :bookmark:Vision
 - 2026-11-19&nbsp;&nbsp; [Efficient Attention](/0225_ML_Transformer_EfficientAttention)&nbsp;&nbsp; :bookmark:ML :bookmark:Transformer :bookmark:EfficientAttention
-- 2026-11-19&nbsp;&nbsp; [Linformer](/0224_ML_Transformer_Linformer)&nbsp;&nbsp; :bookmark:ML :bookmark:Transformer :bookmark:Linformer
 - 2026-11-19&nbsp;&nbsp; [ViT](/0223_ML_Transformer_ViT)&nbsp;&nbsp; :bookmark:ML :bookmark:Transformer :bookmark:ViT
 - 2026-11-12&nbsp;&nbsp; [TimesNet](/0622_paper_TimesNet)&nbsp;&nbsp; :bookmark:paper :bookmark:TimesNet
 - 2026-11-12&nbsp;&nbsp; [梯度下降及其优化器的发展时间线](/0149_ML_Arch_GD_History)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:GD :bookmark:History
@@ -1251,8 +1257,6 @@
 - 2026-10-19&nbsp;&nbsp; [OpenCV](/0105_OpenCV)&nbsp;&nbsp; :bookmark:OpenCV
 - 2026-10-19&nbsp;&nbsp; [Canny 边缘检测](/0101_CV_Edge_Canny)&nbsp;&nbsp; :bookmark:CV :bookmark:Edge :bookmark:Canny
 - 2026-10-19&nbsp;&nbsp; [Histogram Equalization 直方图均衡](/0100_CV_HE)&nbsp;&nbsp; :bookmark:CV :bookmark:HE
-- 2026-10-19&nbsp;&nbsp; [Thresholding 二值化](/0099_CV_BIN)&nbsp;&nbsp; :bookmark:CV :bookmark:BIN
-- 2026-10-19&nbsp;&nbsp; [Structure Tensor 结构张量](/0070_CV_StructureTensor)&nbsp;&nbsp; :bookmark:CV :bookmark:StructureTensor
 - 2026-10-19&nbsp;&nbsp; [边缘](/0065_CV_Edge)&nbsp;&nbsp; :bookmark:CV :bookmark:Edge
 - 2026-10-16&nbsp;&nbsp; [模型可解释性前沿状态](/0558_Hot_Interpretability)&nbsp;&nbsp; :bookmark:Hot :bookmark:Interpretability
 - 2026-10-16&nbsp;&nbsp; [Model Precision](/0450_x_Model_Precision)&nbsp;&nbsp; :bookmark:x :bookmark:Model :bookmark:Precision
@@ -1266,7 +1270,6 @@
 - 2026-10-13&nbsp;&nbsp; [DeepSeek](/0496_Hot_DeepSeek)&nbsp;&nbsp; :bookmark:Hot :bookmark:DeepSeek
 - 2026-10-13&nbsp;&nbsp; [AI 热点](/0375_Hot)&nbsp;&nbsp; :bookmark:Hot
 - 2026-10-13&nbsp;&nbsp; [论文阅读相关](/0072_Tools_ReadPapers)&nbsp;&nbsp; :bookmark:Tools :bookmark:ReadPapers
-- 2026-10-13&nbsp;&nbsp; [FLOPs Parameters 计算](/0026_Tools_FPCalculate)&nbsp;&nbsp; :bookmark:Tools :bookmark:FPCalculate
 - 2026-08-12&nbsp;&nbsp; [3D Pin Picking 完整解析](/0550_应用_3DPinPicking)&nbsp;&nbsp; :bookmark:应用 :bookmark:3DPinPicking
 - 2026-07-27&nbsp;&nbsp; [FoundationPose](/0549_paper_FoundationPose)&nbsp;&nbsp; :bookmark:paper :bookmark:FoundationPose
 - 2026-07-10&nbsp;&nbsp; [相机坐标系](/0548_Media_Image_Camera_相机坐标系)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera :bookmark:相机坐标系
@@ -1447,7 +1450,6 @@
 - 2023-02-02&nbsp;&nbsp; [Data Augmentation 数据增强](/0255_ML_PreP_DataAug)&nbsp;&nbsp; :bookmark:ML :bookmark:PreP :bookmark:DataAug
 - 2023-02-02&nbsp;&nbsp; [Data Normalization 数据标准化](/0251_ML_PreP_DataNorm)&nbsp;&nbsp; :bookmark:ML :bookmark:PreP :bookmark:DataNorm
 - 2023-02-02&nbsp;&nbsp; [GD 原理推导](/0151_ML_Arch_GD_原理)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:GD :bookmark:原理
-- 2023-02-02&nbsp;&nbsp; [Momentum](/0150_ML_Arch_GD_Momentum)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:GD :bookmark:Momentum
 - 2023-02-02&nbsp;&nbsp; [BGD SGD MBGD](/0148_ML_Arch_GD_xGD)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:GD :bookmark:xGD
 - 2023-02-02&nbsp;&nbsp; [Training & Inference Tools History](/0005_Tools_TIHistory)&nbsp;&nbsp; :bookmark:Tools :bookmark:TIHistory
 - 2023-01-31&nbsp;&nbsp; [Motion Detection 运动侦测](/0243_ML_Tasks_MD)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:MD
@@ -1504,7 +1506,6 @@
 - 2021-05-11&nbsp;&nbsp; [Downsampling](/0082_3D_Tools_PCL_Downsampling)&nbsp;&nbsp; :bookmark:3D :bookmark:Tools :bookmark:PCL :bookmark:Downsampling
 - 2021-05-10&nbsp;&nbsp; [3D](/0076_3D)&nbsp;&nbsp; :bookmark:3D
 - 2021-04-26&nbsp;&nbsp; [定拍 vs 飞拍](/0038_Media_Image_Camera_定拍飞拍)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera :bookmark:定拍飞拍
-- 2021-04-26&nbsp;&nbsp; [低延迟](/0037_Media_Image_Camera_LowLatency)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera :bookmark:LowLatency
 - 2021-03-30&nbsp;&nbsp; [Acquisition Function](/0222_ML_AutoML_HPO_BO_AF)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:HPO :bookmark:BO :bookmark:AF
 - 2021-03-30&nbsp;&nbsp; [TPE](/0221_ML_AutoML_HPO_BO_TPE)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:HPO :bookmark:BO :bookmark:TPE
 - 2021-03-30&nbsp;&nbsp; [SMAC](/0220_ML_AutoML_HPO_BO_SMAC)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:HPO :bookmark:BO :bookmark:SMAC
@@ -1515,7 +1516,6 @@
 - 2020-12-09&nbsp;&nbsp; [DevCloud](/0179_Tools_OV_DevCloud)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:DevCloud
 - 2020-11-12&nbsp;&nbsp; [scikit-image 二值化](/0331_CV_BIN_ScikitImage)&nbsp;&nbsp; :bookmark:CV :bookmark:BIN :bookmark:ScikitImage
 - 2020-11-11&nbsp;&nbsp; [Color Space 色彩空间](/0041_Media_Image_Color_Space)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Color :bookmark:Space
-- 2020-11-10&nbsp;&nbsp; [Hough Transform 霍夫变换](/0071_CV_HoughTransform)&nbsp;&nbsp; :bookmark:CV :bookmark:HoughTransform
 - 2020-11-10&nbsp;&nbsp; [Blob Detection](/0068_CV_Blob)&nbsp;&nbsp; :bookmark:CV :bookmark:Blob
 - 2020-11-07&nbsp;&nbsp; [Moravec Corner](/0066_CV_Feature_Moravec)&nbsp;&nbsp; :bookmark:CV :bookmark:Feature :bookmark:Moravec
 - 2020-11-06&nbsp;&nbsp; [Harris Corner](/0067_CV_Feature_Harris)&nbsp;&nbsp; :bookmark:CV :bookmark:Feature :bookmark:Harris
