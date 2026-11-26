@@ -2,20 +2,12 @@
 Title | ML Tasks Image OCR CAFCN
 -- | --
 Created @ | `2020-05-07T06:08:32Z`
-Updated @| `2026-11-25T16:56:07Z`
+Updated @| `2026-11-26T01:27:33Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/186)
 
 ---
 # CA-FCN
-## Reference
-
-- [paper - 2018 - Scene Text Recognition from Two-Dimensional Perspective](https://arxiv.org/pdf/1809.06508.pdf)
-- [CVPR2019-Scene Text Spotting汇总](https://zhuanlan.zhihu.com/p/66719257)
-- [STR from Two-Dimensional Perspective](https://zhuanlan.zhihu.com/p/56998973)
-- [【text recognition算法】Scene Text Recognition from Two-Dimensional Perspective](https://blog.csdn.net/xuningli84019582/article/details/90478601)
-- [一作blog](https://mhliao.github.io/)
-
 ## Brief
 - CA-FCN - `Character Attention Fully Convolutional Network` - 基于 FCN
 - 一维 --> 二维空间问题
@@ -194,4 +186,12 @@ flowchart LR
 - 推理速度：$0.018+0.004=0.022$ s，约 $45$ FPS，与上文的 $45$ FPS 一致
 - 与基于 CTC/注意力解码的方法的区别：它把识别看作像素级分割，不需要序列解码，可以处理任意形状、弯曲的文字，但需要字符级的标注 (通常用合成数据预训练)；对比见 [TextScanner](/0192_ML_Tasks_Image_OCR_TextScanner)、[CRNN](/0196_ML_Tasks_Image_OCR_CRNN)
 - 总览见 [OCR](/0200_ML_Tasks_Image_OCR)
+
+## Reference
+
+- [paper - 2018 - Scene Text Recognition from Two-Dimensional Perspective](https://arxiv.org/pdf/1809.06508.pdf)
+- [CVPR2019-Scene Text Spotting汇总](https://zhuanlan.zhihu.com/p/66719257)
+- [STR from Two-Dimensional Perspective](https://zhuanlan.zhihu.com/p/56998973)
+- [【text recognition算法】Scene Text Recognition from Two-Dimensional Perspective](https://blog.csdn.net/xuningli84019582/article/details/90478601)
+- [一作blog](https://mhliao.github.io/)
 

@@ -3,25 +3,13 @@
 | Title     | ML Tasks Image OCR CAFCN                              |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2020-05-07T06:08:32Z`                                |
-| Updated @ | `2026-11-25T16:56:07Z`                                |
+| Updated @ | `2026-11-26T01:27:33Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/186) |
 
 -----
 
 # CA-FCN
-
-## Reference
-
-  - [paper - 2018 - Scene Text Recognition from Two-Dimensional
-    Perspective](https://arxiv.org/pdf/1809.06508.pdf)
-  - [CVPR2019-Scene Text
-    Spotting汇总](https://zhuanlan.zhihu.com/p/66719257)
-  - [STR from Two-Dimensional
-    Perspective](https://zhuanlan.zhihu.com/p/56998973)
-  - [【text recognition算法】Scene Text Recognition from Two-Dimensional
-    Perspective](https://blog.csdn.net/xuningli84019582/article/details/90478601)
-  - [一作blog](https://mhliao.github.io/)
 
 ## Brief
 
@@ -215,3 +203,15 @@ flowchart LR
     (通常用合成数据预训练)；对比见
     [TextScanner](/0192_ML_Tasks_Image_OCR_TextScanner)、[CRNN](/0196_ML_Tasks_Image_OCR_CRNN)
   - 总览见 [OCR](/0200_ML_Tasks_Image_OCR)
+
+## Reference
+
+  - [paper - 2018 - Scene Text Recognition from Two-Dimensional
+    Perspective](https://arxiv.org/pdf/1809.06508.pdf)
+  - [CVPR2019-Scene Text
+    Spotting汇总](https://zhuanlan.zhihu.com/p/66719257)
+  - [STR from Two-Dimensional
+    Perspective](https://zhuanlan.zhihu.com/p/56998973)
+  - [【text recognition算法】Scene Text Recognition from Two-Dimensional
+    Perspective](https://blog.csdn.net/xuningli84019582/article/details/90478601)
+  - [一作blog](https://mhliao.github.io/)
