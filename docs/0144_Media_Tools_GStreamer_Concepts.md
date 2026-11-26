@@ -2,14 +2,11 @@
 Title | Media Tools GStreamer Concepts
 -- | --
 Created @ | `2021-12-11T04:09:29Z`
-Updated @| `2026-11-25T16:21:48Z`
+Updated @| `2026-11-26T01:26:09Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/144)
 
 ---
-## Reference
-- [GStreamer concepts](https://gstreamer.freedesktop.org/documentation/tutorials/basic/concepts.html)
-
 ## Brief
 - elements - Gstreamer 结构块
 - pad - element 之间的连接口
@@ -64,4 +61,7 @@ gst-launch-1.0 videotestsrc ! video/x-raw,format=I420,width=640,height=480 ! vid
 ```
 
 - 两个 element 之间的 `video/x-raw,...` 是 caps filter, 用来限定这条连接上的数据格式
+
+## Reference
+- [GStreamer concepts](https://gstreamer.freedesktop.org/documentation/tutorials/basic/concepts.html)
 
