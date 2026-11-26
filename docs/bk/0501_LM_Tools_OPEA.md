@@ -3,7 +3,7 @@
 | Title     | LM Tools OPEA                                         |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2025-02-08T07:52:04Z`                                |
-| Updated @ | `2025-02-08T07:52:04Z`                                |
+| Updated @ | `2026-11-26T10:23:54Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/501) |
 
@@ -31,6 +31,30 @@
   - 部署方式: Docker Image Examples/Kubernetes
 
 ## 架构 & Pipeline
+
+``` mermaid
+flowchart LR
+    U[用户 请求] --> G[网关 / 编排 GenAIComps 微服务]
+    G --> E[Embedding]
+    E --> V[(VectorDB)]
+    V --> R[Retriever / Reranker]
+    R --> L[LLM 推理服务]
+    L --> A[回答]
+```
+
+图中：这是 OPEA 中典型 RAG（ChatQnA）流水线的示意：每个方框是一个独立的微服务，由编排层串联；问题经
+Embedding、向量库检索、重排后交给 LLM 生成回答。下面的三张图为原文档附带的官方架构与流程图。
+
+## 三大部分
+
+| 部分         | 作用                                        |
+| ---------- | ----------------------------------------- |
+| GenAIComps | 提供可组合的微服务（Embedding、LLM、向量库、Guardrails 等） |
+| GenAIInfra | 部署相关，如 Docker、Kubernetes 配置               |
+| GenAIEval  | 评估性能、准确性、安全性                              |
+
+表中：对比结论：GenAIComps 是积木，GenAIExamples 把积木拼成完整应用，GenAIInfra 负责部署，GenAIEval
+负责评估。RAG 的原理见 [RAG](https://github.com/junxnone/aiwiki/issues/461)。
 
 ![Image](media/b8ee4302e7d926ff498f17682d32d01b7aabf9da.png)
 
