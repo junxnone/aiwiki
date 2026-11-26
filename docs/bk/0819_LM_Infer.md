@@ -3,7 +3,7 @@
 | Title     | LM Infer                                              |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-26T15:33:22Z`                                |
-| Updated @ | `2026-11-26T15:33:22Z`                                |
+| Updated @ | `2026-11-26T15:41:51Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/819) |
 
@@ -38,29 +38,29 @@ flowchart LR
 
 ## 本系列文章
 
-| 文章                           | 回答的问题                                             |
-| ---------------------------- | ------------------------------------------------- |
-| [Basics](@@IBAS@@)           | prefill/decode 的性能特征、KV Cache 大小公式、延迟与吞吐指标        |
-| [Optimization](@@IOPT@@)     | continuous batching、PagedAttention、投机解码等优化技术      |
-| [Parallel](@@IPAR@@)         | 多卡/多机推理的并行方式，PD 分离                                |
-| [Speculative](@@ISPEC@@)     | 投机解码的无损性推导、加速比估算、各类猜测方法                           |
-| [KVCache](@@IKV@@)           | KV Cache 的分页、抢占、offload、跨实例共享与淘汰                  |
-| [Attention](@@IATT@@)        | prefill/decode 注意力的差别，FlashDecoding，GQA/MLA 的推理影响 |
-| [StructuredOutput](@@ISTR@@) | 约束解码的原理、开销与工具                                     |
-| [CPU](@@ICPU@@)              | CPU 推理：带宽、AMX、NUMA 与线程调优                          |
+| 文章                                                  | 回答的问题                                             |
+| --------------------------------------------------- | ------------------------------------------------- |
+| [Basics](/0834_LM_Infer_Basics)                     | prefill/decode 的性能特征、KV Cache 大小公式、延迟与吞吐指标        |
+| [Optimization](/0835_LM_Infer_Optimization)         | continuous batching、PagedAttention、投机解码等优化技术      |
+| [Parallel](/0836_LM_Infer_Parallel)                 | 多卡/多机推理的并行方式，PD 分离                                |
+| [Speculative](/0837_LM_Infer_Speculative)           | 投机解码的无损性推导、加速比估算、各类猜测方法                           |
+| [KVCache](/0838_LM_Infer_KVCache)                   | KV Cache 的分页、抢占、offload、跨实例共享与淘汰                  |
+| [Attention](/0839_LM_Infer_Attention)               | prefill/decode 注意力的差别，FlashDecoding，GQA/MLA 的推理影响 |
+| [StructuredOutput](/0840_LM_Infer_StructuredOutput) | 约束解码的原理、开销与工具                                     |
+| [CPU](/0841_LM_Infer_CPU)                           | CPU 推理：带宽、AMX、NUMA 与线程调优                          |
 
 表中：Basics 讲「为什么慢」，Optimization 讲「怎么变快」，Parallel
 讲「一张卡放不下或不够快怎么办」；后面五篇是对其中关键技术和特定硬件的深入展开。
 
 ## 瓶颈与对策
 
-| 瓶颈              | 表现              | 主要对策                      | 文章                                                                |
-| --------------- | --------------- | ------------------------- | ----------------------------------------------------------------- |
-| 权重读取带宽 (decode) | 单请求 token 速度低   | 量化、增大 batch、投机解码          | [量化](/0312_MO_Quantization)、[Optimization](@@IOPT@@)              |
-| KV Cache 显存     | 并发数上不去、长上下文 OOM | PagedAttention、GQA、KV 量化  | [Optimization](@@IOPT@@)、[KVCache](/0708_MO_Quantization_KVCache) |
-| Prefill 算力      | 长提示词 TTFT 高     | chunked prefill、前缀缓存、更强算力 | [Optimization](@@IOPT@@)                                          |
-| 单卡放不下           | 模型过大            | 张量并行、流水线并行                | [Parallel](@@IPAR@@)                                              |
-| 调度效率            | GPU 利用率低        | continuous batching       | [Optimization](@@IOPT@@)                                          |
+| 瓶颈              | 表现              | 主要对策                      | 文章                                                                                   |
+| --------------- | --------------- | ------------------------- | ------------------------------------------------------------------------------------ |
+| 权重读取带宽 (decode) | 单请求 token 速度低   | 量化、增大 batch、投机解码          | [量化](/0312_MO_Quantization)、[Optimization](/0835_LM_Infer_Optimization)              |
+| KV Cache 显存     | 并发数上不去、长上下文 OOM | PagedAttention、GQA、KV 量化  | [Optimization](/0835_LM_Infer_Optimization)、[KVCache](/0708_MO_Quantization_KVCache) |
+| Prefill 算力      | 长提示词 TTFT 高     | chunked prefill、前缀缓存、更强算力 | [Optimization](/0835_LM_Infer_Optimization)                                          |
+| 单卡放不下           | 模型过大            | 张量并行、流水线并行                | [Parallel](/0836_LM_Infer_Parallel)                                                  |
+| 调度效率            | GPU 利用率低        | continuous batching       | [Optimization](/0835_LM_Infer_Optimization)                                          |
 
 表中：这是排查推理性能问题的清单：先判断瓶颈在哪一类，再选择对应手段；多数情况下 decode 阶段的显存带宽是第一瓶颈。
 
@@ -70,7 +70,8 @@ flowchart LR
     Parameters](/0502_LM_LLMs_Parameters)；指标：[LLM
     Metrics](/0503_LM_LLMs_Metrics)
   - 模型压缩：[量化](/0312_MO_Quantization)、[蒸馏](/0207_MO_KD)
-  - 怎样把推理引擎变成服务：[Deploy](@@DEPLOY@@)；全流程见 [Lifecycle](@@LIFE@@)
+  - 怎样把推理引擎变成服务：[Deploy](/0820_LM_Deploy)；全流程见
+    [Lifecycle](/0817_LM_Lifecycle)
 
 ## Reference
 
