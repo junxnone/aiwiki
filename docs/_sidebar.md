@@ -533,6 +533,7 @@
     - [OFT/BOFT](/0495_LM_FT_OFT)
     - [Prefix Tuning](/0411_LM_FT_PrefixTuning)
     - [QLoRA](/0567_LM_FT_QLoRA)
+    - [Reasoning](/0833_LM_FT_Reasoning)
     - [Textual Inversion](/0570_LM_FT_TextualInversion)
   - [Infer](/0819_LM_Infer)
   - [Large Language Models](/0446_LM_LLMs)
@@ -545,6 +546,7 @@
   - [大模型相关工具](/0497_LM_Tools)
     - [OPEA](/0501_LM_Tools_OPEA)
   - [Train](/0818_LM_Train)
+    - [Cluster](/0832_LM_Train_Cluster)
     - [Data](/0821_LM_Train_Data)
     - [Distributed](/0825_LM_Train_Distributed)
     - [Efficiency](/0826_LM_Train_Efficiency)
@@ -553,6 +555,7 @@
     - [MoE](/0828_LM_Train_MoE)
     - [Optimizer](/0830_LM_Train_Optimizer)
     - [Pretrain](/0824_LM_Train_Pretrain)
+    - [Stability](/0831_LM_Train_Stability)
     - [Tokenizer](/0822_LM_Train_Tokenizer)
   - [VLM](/0506_LM_VLM)
     - [DragGAN](/0429_LM_VLM_DragGAN)
@@ -803,4 +806,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@2336231126</sub></kbd>
+<kbd><sub>@2337011126</sub></kbd>

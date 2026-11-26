@@ -4105,6 +4105,33 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki LM Train Stability",
+      "group": 3,
+      "title": "Stability",
+      "url": "https://junxnone.github.io/aiwiki/#/0831_LM_Train_Stability",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki LM Train Cluster",
+      "group": 3,
+      "title": "Cluster",
+      "url": "https://junxnone.github.io/aiwiki/#/0832_LM_Train_Cluster",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki LM FT Reasoning",
+      "group": 3,
+      "title": "Reasoning",
+      "url": "https://junxnone.github.io/aiwiki/#/0833_LM_FT_Reasoning",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Op Convolution Math",
       "group": 4,
       "title": "卷积 数学定义",
@@ -9825,6 +9852,13 @@
       "expand": true
     },
     {
+      "source": "aiwiki LM FT",
+      "target": "aiwiki LM FT Reasoning",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
       "source": "aiwiki 3D Tools",
       "target": "aiwiki 3D Tools PCL",
       "value": 3,
@@ -10331,6 +10365,20 @@
     {
       "source": "aiwiki LM Train",
       "target": "aiwiki LM Train Optimizer",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki LM Train",
+      "target": "aiwiki LM Train Stability",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki LM Train",
+      "target": "aiwiki LM Train Cluster",
       "value": 3,
       "visible": true,
       "expand": true
