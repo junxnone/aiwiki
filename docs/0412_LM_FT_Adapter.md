@@ -2,7 +2,7 @@
 Title | LM FT Adapter
 -- | --
 Created @ | `2023-06-05T03:55:55Z`
-Updated @| `2026-10-20T08:17:28Z`
+Updated @| `2026-11-26T08:14:56Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/412)
 
@@ -22,7 +22,7 @@ h' = h + f(h W_down) W_up
 
 其中 `W_down ∈ R^(d×m)`、`W_up ∈ R^(m×d)`，`f` 是非线性激活函数。每个 Transformer 层通常插入两个这样的 Adapter（分别接在多头注意力子层和前馈子层之后），训练时只更新这些新插入的 Adapter 参数，冻结原始 Transformer 的全部权重。
 
-和 LoRA 的核心区别：LoRA 把低秩更新**并联**在原始权重旁边（`h = W_0 x + BAx`，推理时可以把 `BA` 合并回 `W_0`，不增加推理延迟），Adapter 是**串联**插入到计算路径里的一个额外模块（`h' = h + f(hW_down)W_up`），推理时这个模块的计算没法合并消除，会带来额外的推理延迟——这也是后来 LoRA 类方法逐渐比经典 Adapter 更受欢迎的一个重要原因。为了保证训练刚开始时不扰乱预训练模型的行为，`W_up` 通常会被初始化成接近零，让 Adapter 刚开始约等于一个恒等变换，这个思路和 LoRA 把矩阵 B 初始化为零是同样的动机。
+和 LoRA 的核心区别：LoRA 把低秩更新**并联**在原始权重旁边（$h = W_0 x + BAx$，其中 $x$ 为输入，$W_0$ 为冻结的原始权重，$B$、$A$ 为低秩矩阵，$h$ 为输出；推理时可以把 $BA$ 合并回 $W_0$，不增加推理延迟），Adapter 是**串联**插入到计算路径里的一个额外模块（$h' = h + f(hW_{down})W_{up}$，其中 $h$ 为该层原输出，$W_{down}$ 先降维、$W_{up}$ 再升维，$f$ 为非线性激活，$h'$ 为加上 Adapter 后的输出），推理时这个模块的计算没法合并消除，会带来额外的推理延迟——这也是后来 LoRA 类方法逐渐比经典 Adapter 更受欢迎的一个重要原因。为了保证训练刚开始时不扰乱预训练模型的行为，$W_{up}$ 通常会被初始化成接近零，让 Adapter 刚开始约等于一个恒等变换，这个思路和 LoRA 把矩阵 B 初始化为零是同样的动机。
 
 ![image](https://github.com/junxnone/aiwiki/assets/2216970/fcfa3dae-2743-4227-b533-88b41122c943)
 
@@ -44,4 +44,5 @@ model.train_adapter("my_task")   # 冻结原模型参数，只训练新加入的
 ## Reference
 - paper 2019 [Parameter-Efficient Transfer Learning for NLP](https://arxiv.org/abs/1902.00751) [[Code](https://github.com/google-research/adapter-bert)]
 - [大模型微调总览](0410_LM_FT)
+
 
