@@ -3,13 +3,13 @@
 | Title     | ML Tasks Image Classification LeNet                  |
 | --------- | ---------------------------------------------------- |
 | Created @ | `2019-06-11T12:59:17Z`                               |
-| Updated @ | `2026-11-26T01:26:13Z`                               |
+| Updated @ | `2026-11-26T03:29:32Z`                               |
 | Labels    | \`\`                                                 |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/24) |
 
 -----
 
-## Brief
+# LeNet
 
   - LeNet诞生于1998年, 第一个卷积神经网络
   - 包含卷积/池化/全连接等Layers
