@@ -3,7 +3,7 @@
 | Title     | LM Infer Basics                                       |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-26T15:36:35Z`                                |
-| Updated @ | `2026-11-26T15:36:35Z`                                |
+| Updated @ | `2026-11-26T15:42:26Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/834) |
 
@@ -63,7 +63,7 @@ $$ I\_{decode}\\approx\\frac{2BN}{2N+B,S,\\text{KV}*{token}}\\
 8B、$S=8192$：$\\frac{2\\times8\\times10^9}{8192\\times131072}\\approx15$，即长上下文下
 decode 的强度最多约 $15$，无论 batch 多大都是
 memory-bound，这正是长上下文推理昂贵的原因。注意力部分本身的强度只有
-$O(1)$，见 [Attention](@@IATT@@)。
+$O(1)$，见 [Attention](/0839_LM_Infer_Attention)。
 
 ## 单请求速度上限
 
@@ -100,7 +100,7 @@ $$ \\text{KV}*{token}=2\\cdot L\\cdot n*{kv}\\cdot d\_h\\cdot b,\\qquad
     ($L=80,n\_{kv}=8$)：$320$ KB/token
   - 结论：并发和上下文一长，KV Cache 往往比权重还大，成为并发上限的主要因素；GQA、KV 量化 (见
     [KVCache](/0708_MO_Quantization_KVCache)) 和 PagedAttention (见
-    [Optimization](@@IOPT@@)) 都是为了缓解它
+    [Optimization](/0835_LM_Infer_Optimization)) 都是为了缓解它
 
 ## 延迟与吞吐指标
 
@@ -146,7 +146,8 @@ $$ \\text{端到端延迟}=\\text{TTFT}+(n\_{out}-1)\\cdot\\text{TPOT},\\qquad
   - Decode 受带宽限制 → 量化、增大 batch、投机解码有效
   - KV Cache 随并发和长度增长 → GQA、PagedAttention、KV 量化有效
   - Prefill 受算力限制 → chunked prefill、前缀缓存、更强算力有效
-  - 具体技术见 [Optimization](@@IOPT@@)，总览见 [Infer](@@INFER@@)
+  - 具体技术见 [Optimization](/0835_LM_Infer_Optimization)，总览见
+    [Infer](/0819_LM_Infer)
 
 ## Reference
 
