@@ -788,6 +788,9 @@
 - 2026-11-26&nbsp;&nbsp; [EfficientNet](/0801_ML_Tasks_Image_Classification_EfficientNet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Classification :bookmark:EfficientNet
 - 2026-11-26&nbsp;&nbsp; [SENet](/0800_ML_Tasks_Image_Classification_SENet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Classification :bookmark:SENet
 - 2026-11-26&nbsp;&nbsp; [DenseNet](/0799_ML_Tasks_Image_Classification_DenseNet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Classification :bookmark:DenseNet
+- 2026-11-26&nbsp;&nbsp; [Needle](/0665_x_needle)&nbsp;&nbsp; :bookmark:x :bookmark:needle
+- 2026-11-26&nbsp;&nbsp; [ML Op Elementwise 与 Reduce](/0620_ML_Op_Elementwise)&nbsp;&nbsp; :bookmark:ML :bookmark:Op :bookmark:Elementwise
+- 2026-11-26&nbsp;&nbsp; [ML Op Norm LayerNorm](/0615_ML_Op_Norm_LayerNorm)&nbsp;&nbsp; :bookmark:ML :bookmark:Op :bookmark:Norm :bookmark:LayerNorm
 - 2026-11-26&nbsp;&nbsp; [时间序列模型发展时间线](/0611_ML_Tasks_TimeSeries_Timeline)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Timeline
 - 2026-11-26&nbsp;&nbsp; [模型合并（Model Merging）](/0573_LM_FT_ModelMerging)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:ModelMerging
 - 2026-11-26&nbsp;&nbsp; [多 LoRA 生产部署（Multi-LoRA Serving）](/0572_LM_FT_MultiLoRAServing)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:MultiLoRAServing
@@ -795,6 +798,9 @@
 - 2026-11-26&nbsp;&nbsp; [OpenVINO BatchNorm 折叠（BN Folding）](/0564_Tools_OV_MO_BNFolding)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:MO :bookmark:BNFolding
 - 2026-11-26&nbsp;&nbsp; [OpenVINO 算子融合](/0563_Tools_OV_MO_Fusion)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:MO :bookmark:Fusion
 - 2026-11-26&nbsp;&nbsp; [NNCF Weight Compression](/0560_Tools_OV_NNCF_WC)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:NNCF :bookmark:WC
+- 2026-11-26&nbsp;&nbsp; [光流 Optical Flow](/0559_CV_OpticalFlow)&nbsp;&nbsp; :bookmark:CV :bookmark:OpticalFlow
+- 2026-11-26&nbsp;&nbsp; [Fast-FoundationStereo: Real-Time Zero-Shot Stereo Matching 读书笔记](/0543_paper_FoundationStereo_FFDS)&nbsp;&nbsp; :bookmark:paper :bookmark:FoundationStereo :bookmark:FFDS
+- 2026-11-26&nbsp;&nbsp; [异常缺陷生成](/0517_ML_Tasks_Image_Anomaly_Synthesis)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Anomaly :bookmark:Synthesis
 - 2026-11-26&nbsp;&nbsp; [Advantage Actor Critic](/0460_RL_A2C)&nbsp;&nbsp; :bookmark:RL :bookmark:A2C
 - 2026-11-26&nbsp;&nbsp; [Actor Critic](/0459_RL_AC)&nbsp;&nbsp; :bookmark:RL :bookmark:AC
 - 2026-11-26&nbsp;&nbsp; [RL Tasks](/0457_RL_Taks)&nbsp;&nbsp; :bookmark:RL :bookmark:Taks
@@ -805,12 +811,16 @@
 - 2026-11-26&nbsp;&nbsp; [Adapter FineTuning](/0412_LM_FT_Adapter)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:Adapter
 - 2026-11-26&nbsp;&nbsp; [DreamBooth](/0405_LM_FT_DreamBooth)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:DreamBooth
 - 2026-11-26&nbsp;&nbsp; [YOLO V5](/0379_ML_Tasks_Image_Detection_YOLO_V5)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Detection :bookmark:YOLO :bookmark:V5
+- 2026-11-26&nbsp;&nbsp; [Reference](/0354_3D_Camera_激光测量)&nbsp;&nbsp; :bookmark:3D :bookmark:Camera :bookmark:激光测量
 - 2026-11-26&nbsp;&nbsp; [Resize](/0347_Media_Image_Resize)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Resize
 - 2026-11-26&nbsp;&nbsp; [Perspective Transformation - 透视变换](/0345_Media_Image_PT)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:PT
 - 2026-11-26&nbsp;&nbsp; [MVTec](/0323_ML_Tasks_Image_Anomaly_MVTec)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Anomaly :bookmark:MVTec
 - 2026-11-26&nbsp;&nbsp; [量化](/0312_MO_Quantization)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization
+- 2026-11-26&nbsp;&nbsp; [Focal Loss](/0284_ML_Arch_Func_LossFunction_FocalLoss)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:Func :bookmark:LossFunction :bookmark:FocalLoss
 - 2026-11-26&nbsp;&nbsp; [Image Retrieval](/0278_ML_Tasks_Image_Retrieval)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Retrieval
 - 2026-11-26&nbsp;&nbsp; [Image Anomaly Detection](/0277_ML_Tasks_Image_Anomaly)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Anomaly
+- 2026-11-26&nbsp;&nbsp; [Config Files](/0262_Tools_Darknet_cfgFiles)&nbsp;&nbsp; :bookmark:Tools :bookmark:Darknet :bookmark:cfgFiles
+- 2026-11-26&nbsp;&nbsp; [Data Normalization 数据标准化](/0251_ML_PreP_DataNorm)&nbsp;&nbsp; :bookmark:ML :bookmark:PreP :bookmark:DataNorm
 - 2026-11-26&nbsp;&nbsp; [Linformer](/0224_ML_Transformer_Linformer)&nbsp;&nbsp; :bookmark:ML :bookmark:Transformer :bookmark:Linformer
 - 2026-11-26&nbsp;&nbsp; [Calamari](/0201_ML_Tasks_Image_OCR_Calamari)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:Calamari
 - 2026-11-26&nbsp;&nbsp; [TextScanner](/0192_ML_Tasks_Image_OCR_TextScanner)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:OCR :bookmark:TextScanner
@@ -1091,7 +1101,6 @@
 - 2026-11-20&nbsp;&nbsp; [N-HiTS](/0629_ML_Tasks_TimeSeries_Deep_NHiTS)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:NHiTS
 - 2026-11-20&nbsp;&nbsp; [N-BEATS](/0628_ML_Tasks_TimeSeries_Deep_NBEATS)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:NBEATS
 - 2026-11-20&nbsp;&nbsp; [ROCKET](/0627_ML_Tasks_TimeSeries_ML_ROCKET)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:ML :bookmark:ROCKET
-- 2026-11-19&nbsp;&nbsp; [Needle](/0665_x_needle)&nbsp;&nbsp; :bookmark:x :bookmark:needle
 - 2026-11-19&nbsp;&nbsp; [Transformer History](/0664_ML_Transformer_History)&nbsp;&nbsp; :bookmark:ML :bookmark:Transformer :bookmark:History
 - 2026-11-19&nbsp;&nbsp; [TCN](/0626_ML_Tasks_TimeSeries_Deep_TCN)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:TCN
 - 2026-11-19&nbsp;&nbsp; [DeepAR](/0625_ML_Tasks_TimeSeries_Deep_DeepAR)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:TimeSeries :bookmark:Deep :bookmark:DeepAR
@@ -1156,12 +1165,10 @@
 - 2026-11-11&nbsp;&nbsp; [卷积 数学定义](/0010_ML_Op_Convolution_Math)&nbsp;&nbsp; :bookmark:ML :bookmark:Op :bookmark:Convolution :bookmark:Math
 - 2026-11-11&nbsp;&nbsp; [ML Op Convolution](/0009_ML_Op_Convolution)&nbsp;&nbsp; :bookmark:ML :bookmark:Op :bookmark:Convolution
 - 2026-11-10&nbsp;&nbsp; [ML Op Shape 与数据搬运](/0621_ML_Op_Shape)&nbsp;&nbsp; :bookmark:ML :bookmark:Op :bookmark:Shape
-- 2026-11-10&nbsp;&nbsp; [ML Op Elementwise 与 Reduce](/0620_ML_Op_Elementwise)&nbsp;&nbsp; :bookmark:ML :bookmark:Op :bookmark:Elementwise
 - 2026-11-10&nbsp;&nbsp; [ML Op Resize 与上采样相关算子](/0619_ML_Op_Resize)&nbsp;&nbsp; :bookmark:ML :bookmark:Op :bookmark:Resize
 - 2026-11-10&nbsp;&nbsp; [ML Op Recurrent](/0618_ML_Op_Recurrent)&nbsp;&nbsp; :bookmark:ML :bookmark:Op :bookmark:Recurrent
 - 2026-11-10&nbsp;&nbsp; [ML Op Embedding](/0617_ML_Op_Embedding)&nbsp;&nbsp; :bookmark:ML :bookmark:Op :bookmark:Embedding
 - 2026-11-10&nbsp;&nbsp; [ML Op AF ReLU 系与现代激活函数](/0616_ML_Op_AF_ReLU)&nbsp;&nbsp; :bookmark:ML :bookmark:Op :bookmark:AF :bookmark:ReLU
-- 2026-11-10&nbsp;&nbsp; [ML Op Norm LayerNorm](/0615_ML_Op_Norm_LayerNorm)&nbsp;&nbsp; :bookmark:ML :bookmark:Op :bookmark:Norm :bookmark:LayerNorm
 - 2026-11-10&nbsp;&nbsp; [ML Op BatchNorm](/0614_ML_Op_Norm_BatchNorm)&nbsp;&nbsp; :bookmark:ML :bookmark:Op :bookmark:Norm :bookmark:BatchNorm
 - 2026-11-10&nbsp;&nbsp; [ML Op Normalization 总览](/0613_ML_Op_Norm)&nbsp;&nbsp; :bookmark:ML :bookmark:Op :bookmark:Norm
 - 2026-11-10&nbsp;&nbsp; [ML Op Linear](/0612_ML_Op_Linear)&nbsp;&nbsp; :bookmark:ML :bookmark:Op :bookmark:Linear
@@ -1234,7 +1241,6 @@
 - 2026-10-20&nbsp;&nbsp; [OpenVINO 布局重排（Layout Transformation）](/0565_Tools_OV_MO_Layout)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:MO :bookmark:Layout
 - 2026-10-20&nbsp;&nbsp; [NNCF Training-time Optimization](/0562_Tools_OV_NNCF_TTOP)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:NNCF :bookmark:TTOP
 - 2026-10-20&nbsp;&nbsp; [NNCF Post-training Quantization](/0561_Tools_OV_NNCF_PTQ)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:NNCF :bookmark:PTQ
-- 2026-10-20&nbsp;&nbsp; [光流 Optical Flow](/0559_CV_OpticalFlow)&nbsp;&nbsp; :bookmark:CV :bookmark:OpticalFlow
 - 2026-10-20&nbsp;&nbsp; [GPU Impl Reorder](/0529_Tools_OV_OPs_GPUImpl_Reorder)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:OPs :bookmark:GPUImpl :bookmark:Reorder
 - 2026-10-20&nbsp;&nbsp; [OFT/BOFT](/0495_LM_FT_OFT)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:OFT
 - 2026-10-20&nbsp;&nbsp; [IA3](/0494_LM_FT_IA3)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:IA3
@@ -1277,7 +1283,6 @@
 - 2026-07-10&nbsp;&nbsp; [dx、dy：单个像素物理宽/高 通俗解释](/0546_Media_Image_Camera_相机内参_dxdy)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera :bookmark:相机内参 :bookmark:dxdy
 - 2026-06-08&nbsp;&nbsp; [SAM-6D](/0545_paper_sam6d)&nbsp;&nbsp; :bookmark:paper :bookmark:sam6d
 - 2026-06-02&nbsp;&nbsp; [BOP](/0544_Datasets_BOP)&nbsp;&nbsp; :bookmark:Datasets :bookmark:BOP
-- 2026-05-22&nbsp;&nbsp; [Fast-FoundationStereo: Real-Time Zero-Shot Stereo Matching 读书笔记](/0543_paper_FoundationStereo_FFDS)&nbsp;&nbsp; :bookmark:paper :bookmark:FoundationStereo :bookmark:FFDS
 - 2026-05-19&nbsp;&nbsp; [FoundationStereo 系列](/0542_paper_FoundationStereo)&nbsp;&nbsp; :bookmark:paper :bookmark:FoundationStereo
 - 2026-05-08&nbsp;&nbsp; [PointNet++](/0541_paper_PointNet)&nbsp;&nbsp; :bookmark:paper :bookmark:PointNet
 - 2026-04-24&nbsp;&nbsp; [Uformer](/0539_paper_Uformer)&nbsp;&nbsp; :bookmark:paper :bookmark:Uformer
@@ -1297,7 +1302,6 @@
 - 2025-06-10&nbsp;&nbsp; [Papers](/0386_paper)&nbsp;&nbsp; :bookmark:paper
 - 2025-06-05&nbsp;&nbsp; [AnomalyAny CN](/0520_paper_AnomalyAny_cn)&nbsp;&nbsp; :bookmark:paper :bookmark:AnomalyAny :bookmark:cn
 - 2025-06-05&nbsp;&nbsp; [AnomalyAny](/0519_paper_AnomalyAny)&nbsp;&nbsp; :bookmark:paper :bookmark:AnomalyAny
-- 2025-05-29&nbsp;&nbsp; [异常缺陷生成](/0517_ML_Tasks_Image_Anomaly_Synthesis)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Anomaly :bookmark:Synthesis
 - 2025-05-13&nbsp;&nbsp; [BLDM](/0514_x_DM_BLDM)&nbsp;&nbsp; :bookmark:x :bookmark:DM :bookmark:BLDM
 - 2025-05-12&nbsp;&nbsp; [Inference Code 分析](/0516_paper_AdaBLDM_InferenceCode)&nbsp;&nbsp; :bookmark:paper :bookmark:AdaBLDM :bookmark:InferenceCode
 - 2025-05-12&nbsp;&nbsp; [AdaBLDM 译文](/0515_paper_AdaBLDM_cn)&nbsp;&nbsp; :bookmark:paper :bookmark:AdaBLDM :bookmark:cn
@@ -1432,7 +1436,6 @@
 - 2023-02-21&nbsp;&nbsp; [CSPNet](/0385_paper_CSPNet)&nbsp;&nbsp; :bookmark:paper :bookmark:CSPNet
 - 2023-02-14&nbsp;&nbsp; [ChatGPT](/0373_Hot_AIGC_ChatGPT)&nbsp;&nbsp; :bookmark:Hot :bookmark:AIGC :bookmark:ChatGPT
 - 2023-02-06&nbsp;&nbsp; [Loss/Cost/ Object Function - 损失代价目标函数](/0378_ML_Arch_Func)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:Func
-- 2023-02-06&nbsp;&nbsp; [Focal Loss](/0284_ML_Arch_Func_LossFunction_FocalLoss)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:Func :bookmark:LossFunction :bookmark:FocalLoss
 - 2023-02-06&nbsp;&nbsp; [Dice Loss](/0283_ML_Arch_Func_LossFunction_DiceLoss)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:Func :bookmark:LossFunction :bookmark:DiceLoss
 - 2023-02-06&nbsp;&nbsp; [Cost Function 代价函数](/0282_ML_Arch_Func_CostFunction)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:Func :bookmark:CostFunction
 - 2023-02-06&nbsp;&nbsp; [Loss Function 损失函数](/0281_ML_Arch_Func_LossFunction)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:Func :bookmark:LossFunction
@@ -1448,7 +1451,6 @@
 - 2023-02-02&nbsp;&nbsp; [Cutout](/0257_ML_PreP_DataAug_Cutout)&nbsp;&nbsp; :bookmark:ML :bookmark:PreP :bookmark:DataAug :bookmark:Cutout
 - 2023-02-02&nbsp;&nbsp; [AutoAugment](/0256_ML_PreP_DataAug_AutoAugment)&nbsp;&nbsp; :bookmark:ML :bookmark:PreP :bookmark:DataAug :bookmark:AutoAugment
 - 2023-02-02&nbsp;&nbsp; [Data Augmentation 数据增强](/0255_ML_PreP_DataAug)&nbsp;&nbsp; :bookmark:ML :bookmark:PreP :bookmark:DataAug
-- 2023-02-02&nbsp;&nbsp; [Data Normalization 数据标准化](/0251_ML_PreP_DataNorm)&nbsp;&nbsp; :bookmark:ML :bookmark:PreP :bookmark:DataNorm
 - 2023-02-02&nbsp;&nbsp; [GD 原理推导](/0151_ML_Arch_GD_原理)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:GD :bookmark:原理
 - 2023-02-02&nbsp;&nbsp; [BGD SGD MBGD](/0148_ML_Arch_GD_xGD)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:GD :bookmark:xGD
 - 2023-02-02&nbsp;&nbsp; [Training & Inference Tools History](/0005_Tools_TIHistory)&nbsp;&nbsp; :bookmark:Tools :bookmark:TIHistory
@@ -1477,7 +1479,6 @@
 - 2021-10-21&nbsp;&nbsp; [Color Space 转换](/0120_Media_Image_Color_Space_Transform)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Color :bookmark:Space :bookmark:Transform
 - 2021-10-21&nbsp;&nbsp; [Install](/0117_Media_Tools_GStreamer_Install)&nbsp;&nbsp; :bookmark:Media :bookmark:Tools :bookmark:GStreamer :bookmark:Install
 - 2021-10-11&nbsp;&nbsp; [Tools](/0063_CV_Tools)&nbsp;&nbsp; :bookmark:CV :bookmark:Tools
-- 2021-09-14&nbsp;&nbsp; [Reference](/0354_3D_Camera_激光测量)&nbsp;&nbsp; :bookmark:3D :bookmark:Camera :bookmark:激光测量
 - 2021-09-08&nbsp;&nbsp; [NLP](/0021_Datasets_NLP)&nbsp;&nbsp; :bookmark:Datasets :bookmark:NLP
 - 2021-09-08&nbsp;&nbsp; [Audio](/0020_Datasets_Audio)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Audio
 - 2021-09-08&nbsp;&nbsp; [Video](/0019_Datasets_Video)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Video
@@ -1530,7 +1531,6 @@
 - 2020-04-15&nbsp;&nbsp; [Labelme](/0074_Tools_Label_Labelme)&nbsp;&nbsp; :bookmark:Tools :bookmark:Label :bookmark:Labelme
 - 2020-02-12&nbsp;&nbsp; [RGB 色表](/0127_Media_Image_Color_RGB)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Color :bookmark:RGB
 - 2020-02-03&nbsp;&nbsp; [Workbench](/0178_Tools_OV_Workbench)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:Workbench
-- 2020-01-29&nbsp;&nbsp; [Config Files](/0262_Tools_Darknet_cfgFiles)&nbsp;&nbsp; :bookmark:Tools :bookmark:Darknet :bookmark:cfgFiles
 - 2020-01-06&nbsp;&nbsp; [Visualization 可视化](/0171_Tools_Pytorch_VIS)&nbsp;&nbsp; :bookmark:Tools :bookmark:Pytorch :bookmark:VIS
 - 2019-12-10&nbsp;&nbsp; [MetricLearning](/0157_ML_Tasks_MetricLearning)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:MetricLearning
 - 2019-08-09&nbsp;&nbsp; [Video](/0352_OpenCV_IO_Video)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IO :bookmark:Video
