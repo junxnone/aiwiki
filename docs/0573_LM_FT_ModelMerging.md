@@ -2,7 +2,7 @@
 Title | LM FT ModelMerging
 -- | --
 Created @ | `2026-10-20T08:06:55Z`
-Updated @| `2026-10-20T08:21:08Z`
+Updated @| `2026-11-26T08:14:54Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/573)
 
@@ -19,7 +19,13 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/573)
 
 ### SLERP（球面线性插值）
 
-最朴素的合并方式是直接对两个模型的权重做线性插值（LERP）：`W = (1-t)·W_1 + t·W_2`。SLERP（Shoemake 1985，原本是计算机图形学里插值旋转/姿态的经典方法）发现：在高维权重空间里，沿着球面的路径插值，往往比直接走直线路径的损失更低——两个模型的权重向量被看作球面上的两个点，SLERP 沿着连接它们的大圆弧插值，而不是直接连一条直线。缺点是 SLERP 每次只能合并两个模型。
+最朴素的合并方式是直接对两个模型的权重做线性插值（LERP）：
+
+$$
+W = (1-t)\,W_1 + t\,W_2
+$$
+
+其中：$W_1$、$W_2$ 为两个待合并模型的权重，$t\in[0,1]$ 为插值系数（$t=0$ 取 $W_1$，$t=1$ 取 $W_2$），$W$ 为合并后的权重。SLERP（Shoemake 1985，原本是计算机图形学里插值旋转/姿态的经典方法）发现：在高维权重空间里，沿着球面的路径插值，往往比直接走直线路径的损失更低——两个模型的权重向量被看作球面上的两个点，SLERP 沿着连接它们的大圆弧插值，而不是直接连一条直线。缺点是 SLERP 每次只能合并两个模型。
 
 ### TIES-Merging：消解参数冲突
 
@@ -46,7 +52,7 @@ DARE（Drop And REscale，Yu et al. 2023，论文标题"Language Models are Supe
 
 ## 和 LoRA/PEFT 的关系
 
-模型合并既可以合并全参数微调出的完整模型，也可以合并多个 [LoRA](0406_LM_FT_LoRA) adapter（先把每个 LoRA 的 `ΔW=BA` 当作一个独立的"任务向量"，再用上述方法合并这些 `ΔW`，合并完再统一加回底座权重）——这和 [多 LoRA 生产部署](0572_LM_FT_MultiLoRAServing) 里"运行时动态挂载多个独立 adapter"是两种不同的思路：模型合并是离线把多个能力"焊死"进一份权重里，多 LoRA 服务是运行时保持多个 adapter 独立、按需切换，各有适用场景。
+模型合并既可以合并全参数微调出的完整模型，也可以合并多个 [LoRA](0406_LM_FT_LoRA) adapter（先把每个 LoRA 的 $\Delta W=BA$（$\Delta W$ 为 LoRA 产生的权重增量，$B$、$A$ 为两个低秩矩阵） 当作一个独立的"任务向量"，再用上述方法合并这些 `ΔW`，合并完再统一加回底座权重）——这和 [多 LoRA 生产部署](0572_LM_FT_MultiLoRAServing) 里"运行时动态挂载多个独立 adapter"是两种不同的思路：模型合并是离线把多个能力"焊死"进一份权重里，多 LoRA 服务是运行时保持多个 adapter 独立、按需切换，各有适用场景。
 
 ## Reference
 - Yadav, P. et al. (2023). TIES-Merging: Resolving Interference When Merging Models. [arXiv:2306.01708](https://arxiv.org/abs/2306.01708)
@@ -55,4 +61,5 @@ DARE（Drop And REscale，Yu et al. 2023，论文标题"Language Models are Supe
 - [mergekit GitHub](https://github.com/arcee-ai/mergekit)
 - [LoRA](0406_LM_FT_LoRA)
 - [大模型微调总览](0410_LM_FT)
+
 
