@@ -3,7 +3,7 @@
 | Title     | LM Deploy MultiModal                                  |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-26T15:40:43Z`                                |
-| Updated @ | `2026-11-26T15:40:43Z`                                |
+| Updated @ | `2026-11-26T15:43:29Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/853) |
 
@@ -63,11 +63,12 @@ $$ n\_{img}=\\frac{H}{p}\\cdot\\frac{W}{p}\\cdot\\frac{1}{m^2} $$
 ## 资源估算
 
   - 显存：语言模型权重 + 视觉编码器权重 (通常几百 M 到几 B 参数) + KV Cache；图像 token 与文本 token
-    一样占 KV Cache，公式见 [Basics](@@IBAS@@)
+    一样占 KV Cache，公式见 [Basics](/0834_LM_Infer_Basics)
   - TTFT：$\\approx
     t\_{preprocess}+t\_{vision}+t\_{prefill}(n\_{img}+n\_{text})$；一张高分辨率图带来上千个
     token，TTFT 会明显高于纯文本请求
-  - 并发：每个请求的 token 数变多，同样的 KV 空间能服务的并发变少，估算方法见 [Sizing](@@DSIZ@@)
+  - 并发：每个请求的 token 数变多，同样的 KV 空间能服务的并发变少，估算方法见
+    [Sizing](/0844_LM_Deploy_Sizing)
   - 例：$1024$ 个图像 token 在 Llama 3 8B 规模的语言模型上，KV 约 $1024\\times128$ KB
     $=128$ MB，相当于一段 $1000$ 多 token 的文本
 
@@ -77,9 +78,9 @@ $$ n\_{img}=\\frac{H}{p}\\cdot\\frac{W}{p}\\cdot\\frac{1}{m^2} $$
   - 视觉编码的结果可以缓存：同一张图被多次提问时 (多轮对话) 不必重复编码，vLLM 等框架有多模态输入的缓存 `[待核实]`
   - 批处理：视觉编码器和语言模型的最佳 batch 不同，一些框架把视觉编码单独调度
   - 接口：OpenAI 兼容 API 中图像作为 `image_url` 类型的内容部分传入 (URL 或 base64)，见
-    [Service](@@DSVC@@)
+    [Service](/0845_LM_Deploy_Service)
   - 框架支持：vLLM、SGLang、llama.cpp (mtmd)、OpenVINO GenAI (VLMPipeline) 都支持主流
-    VLM，见 [Frameworks](@@DFW@@)
+    VLM，见 [Frameworks](/0842_LM_Deploy_Frameworks)
 
 ## Reference
 
