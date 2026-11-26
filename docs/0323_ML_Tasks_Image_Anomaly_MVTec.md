@@ -2,7 +2,7 @@
 Title | ML Tasks Image Anomaly MVTec
 -- | --
 Created @ | `2022-12-05T08:08:10Z`
-Updated @| `2026-11-25T16:56:25Z`
+Updated @| `2026-11-26T01:27:44Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/323)
 
@@ -23,15 +23,6 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/323)
 ![image](https://user-images.githubusercontent.com/2216970/205589876-dc4aabd8-8842-42aa-a9b2-f3fbcabe0a16.png)
 
 ![image](https://user-images.githubusercontent.com/2216970/205590065-093a52ae-cf60-4486-a5a6-dd410ae5f2a4.png)
-
-## Reference
-
-- [官网](https://www.mvtec.com/company/research/datasets/mvtec-ad/)
-- [paper - The MVTec Anomaly Detection Dataset: A Comprehensive Real-World Dataset for Unsupervised Anomaly Detection](https://link.springer.com/content/pdf/10.1007/s11263-020-01400-4.pdf)
-
-
-
-
 
 ## 数据集规模
 
@@ -72,4 +63,9 @@ $$
 - 数据集图像之间的位置和姿态相对稳定，方法在上面表现很好并不代表在复杂产线上也一样好，见 [算法落地实践](/0521_ML_Tasks_Image_Anomaly_Pipeline)
 - 少数类别的标注存在噪声，指标接近饱和后，小幅度的差别未必说明方法更好
 - 补充数据集 (VisA、MPDD、BTAD、Real-IAD) 见 [Anomaly](/0277_ML_Tasks_Image_Anomaly)
+
+## Reference
+
+- [官网](https://www.mvtec.com/company/research/datasets/mvtec-ad/)
+- [paper - The MVTec Anomaly Detection Dataset: A Comprehensive Real-World Dataset for Unsupervised Anomaly Detection](https://link.springer.com/content/pdf/10.1007/s11263-020-01400-4.pdf)
 

@@ -3,7 +3,7 @@
 | Title     | ML Tasks Image Anomaly MVTec                          |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2022-12-05T08:08:10Z`                                |
-| Updated @ | `2026-11-25T16:56:25Z`                                |
+| Updated @ | `2026-11-26T01:27:44Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/323) |
 
@@ -25,13 +25,6 @@
 ![image](media/4ef8d0f3b7bc4a604e901ebcaaa1c112422a78d6.png)
 
 ![image](media/02b4e6347d0be338ea4c6b885248228e3881d1b3.png)
-
-## Reference
-
-  - [官网](https://www.mvtec.com/company/research/datasets/mvtec-ad/)
-  - [paper - The MVTec Anomaly Detection Dataset: A Comprehensive
-    Real-World Dataset for Unsupervised Anomaly
-    Detection](https://link.springer.com/content/pdf/10.1007/s11263-020-01400-4.pdf)
 
 ## 数据集规模
 
@@ -79,3 +72,10 @@ $$
   - 少数类别的标注存在噪声，指标接近饱和后，小幅度的差别未必说明方法更好
   - 补充数据集 (VisA、MPDD、BTAD、Real-IAD) 见
     [Anomaly](/0277_ML_Tasks_Image_Anomaly)
+
+## Reference
+
+  - [官网](https://www.mvtec.com/company/research/datasets/mvtec-ad/)
+  - [paper - The MVTec Anomaly Detection Dataset: A Comprehensive
+    Real-World Dataset for Unsupervised Anomaly
+    Detection](https://link.springer.com/content/pdf/10.1007/s11263-020-01400-4.pdf)
