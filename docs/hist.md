@@ -441,7 +441,7 @@
 - 2022-12-05&nbsp;&nbsp; [MVTec](/0323_ML_Tasks_Image_Anomaly_MVTec)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Anomaly :bookmark:MVTec
 - 2022-12-05&nbsp;&nbsp; [PaDiM 补丁分布建模](/0322_paper_PaDiM)&nbsp;&nbsp; :bookmark:paper :bookmark:PaDiM
 - 2022-11-30&nbsp;&nbsp; [anomalib](/0321_Tools_anomalib)&nbsp;&nbsp; :bookmark:Tools :bookmark:anomalib
-- 2022-11-29&nbsp;&nbsp; [GaussianBlur](/0320_OpenCV_IP_Filter_GaussianBlur)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter :bookmark:GaussianBlur
+- 2022-11-29&nbsp;&nbsp; [GaussianBlur 高斯滤波](/0320_OpenCV_IP_Filter_GaussianBlur)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter :bookmark:GaussianBlur
 - 2022-11-29&nbsp;&nbsp; [boxFilter](/0319_OpenCV_IP_Filter_boxFilter)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter :bookmark:boxFilter
 - 2022-11-28&nbsp;&nbsp; [Bilateral Filtering for Gray and Color Images](/0318_OpenCV_IP_Filter_bilateralFilter_BF)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter :bookmark:bilateralFilter :bookmark:BF
 - 2022-11-28&nbsp;&nbsp; [Bilateral Filter 双边滤波](/0317_OpenCV_IP_Filter_bilateralFilter)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter :bookmark:bilateralFilter
@@ -822,6 +822,9 @@
 - 2026-11-26&nbsp;&nbsp; [Gym -> Gymnasium](/0453_Tools_Gym)&nbsp;&nbsp; :bookmark:Tools :bookmark:Gym
 - 2026-11-26&nbsp;&nbsp; [NNCF - Neural Network Compression Framework](/0451_Tools_OV_NNCF)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:NNCF
 - 2026-11-26&nbsp;&nbsp; [CLIP](/0448_paper_CLIP)&nbsp;&nbsp; :bookmark:paper :bookmark:CLIP
+- 2026-11-26&nbsp;&nbsp; [medianBlur 中值滤波](/0442_OpenCV_IP_Filter_medianBlur)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter :bookmark:medianBlur
+- 2026-11-26&nbsp;&nbsp; [blur 模糊处理](/0441_OpenCV_IP_Filter_blur)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter :bookmark:blur
+- 2026-11-26&nbsp;&nbsp; [HAL - Universal Intrinsics](/0435_OpenCV_HAL)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:HAL
 - 2026-11-26&nbsp;&nbsp; [DragGAN](/0429_LM_VLM_DragGAN)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:DragGAN
 - 2026-11-26&nbsp;&nbsp; [Image 相关 Tasks](/0420_ML_Tasks_Image)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image
 - 2026-11-26&nbsp;&nbsp; [SAM](/0414_LM_VLM_SAM)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:SAM
@@ -838,6 +841,8 @@
 - 2026-11-26&nbsp;&nbsp; [Resize](/0347_Media_Image_Resize)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Resize
 - 2026-11-26&nbsp;&nbsp; [Perspective Transformation - 透视变换](/0345_Media_Image_PT)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:PT
 - 2026-11-26&nbsp;&nbsp; [MVTec](/0323_ML_Tasks_Image_Anomaly_MVTec)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Anomaly :bookmark:MVTec
+- 2026-11-26&nbsp;&nbsp; [GaussianBlur 高斯滤波](/0320_OpenCV_IP_Filter_GaussianBlur)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter :bookmark:GaussianBlur
+- 2026-11-26&nbsp;&nbsp; [SAC](/0314_3D_Tools_PCL_SAC)&nbsp;&nbsp; :bookmark:3D :bookmark:Tools :bookmark:PCL :bookmark:SAC
 - 2026-11-26&nbsp;&nbsp; [量化](/0312_MO_Quantization)&nbsp;&nbsp; :bookmark:MO :bookmark:Quantization
 - 2026-11-26&nbsp;&nbsp; [Focal Loss](/0284_ML_Arch_Func_LossFunction_FocalLoss)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:Func :bookmark:LossFunction :bookmark:FocalLoss
 - 2026-11-26&nbsp;&nbsp; [Cost Function 代价函数](/0282_ML_Arch_Func_CostFunction)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:Func :bookmark:CostFunction
@@ -872,12 +877,17 @@
 - 2026-11-26&nbsp;&nbsp; [Momentum](/0150_ML_Arch_GD_Momentum)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:GD :bookmark:Momentum
 - 2026-11-26&nbsp;&nbsp; [VGGNet](/0146_ML_Tasks_Image_Classification_VGGNet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Classification :bookmark:VGGNet
 - 2026-11-26&nbsp;&nbsp; [Concepts](/0144_Media_Tools_GStreamer_Concepts)&nbsp;&nbsp; :bookmark:Media :bookmark:Tools :bookmark:GStreamer :bookmark:Concepts
+- 2026-11-26&nbsp;&nbsp; [Color](/0126_Media_Image_Color)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Color
 - 2026-11-26&nbsp;&nbsp; [Color Model 色彩模型](/0125_Media_Image_Color_Model)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Color :bookmark:Model
+- 2026-11-26&nbsp;&nbsp; [Gamut 色域](/0124_Media_Image_Color_Gamut)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Color :bookmark:Gamut
 - 2026-11-26&nbsp;&nbsp; [YUV Color Model](/0121_Media_Image_Color_Model_YUV)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Color :bookmark:Model :bookmark:YUV
+- 2026-11-26&nbsp;&nbsp; [Color Space 转换](/0120_Media_Image_Color_Space_Transform)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Color :bookmark:Space :bookmark:Transform
 - 2026-11-26&nbsp;&nbsp; [像素格式](/0119_Media_Image_Camera_PixelFormat)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera :bookmark:PixelFormat
 - 2026-11-26&nbsp;&nbsp; [GStreamer 流媒体应用框架](/0109_Media_Tools_GStreamer)&nbsp;&nbsp; :bookmark:Media :bookmark:Tools :bookmark:GStreamer
 - 2026-11-26&nbsp;&nbsp; [GenICam](/0106_Media_Image_Camera_GenICam)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera :bookmark:GenICam
 - 2026-11-26&nbsp;&nbsp; [Thresholding 二值化](/0099_CV_BIN)&nbsp;&nbsp; :bookmark:CV :bookmark:BIN
+- 2026-11-26&nbsp;&nbsp; [Range Image](/0084_3D_Tools_PCL_RangeImage)&nbsp;&nbsp; :bookmark:3D :bookmark:Tools :bookmark:PCL :bookmark:RangeImage
+- 2026-11-26&nbsp;&nbsp; [Downsampling](/0082_3D_Tools_PCL_Downsampling)&nbsp;&nbsp; :bookmark:3D :bookmark:Tools :bookmark:PCL :bookmark:Downsampling
 - 2026-11-26&nbsp;&nbsp; [Hough Transform 霍夫变换](/0071_CV_HoughTransform)&nbsp;&nbsp; :bookmark:CV :bookmark:HoughTransform
 - 2026-11-26&nbsp;&nbsp; [Structure Tensor 结构张量](/0070_CV_StructureTensor)&nbsp;&nbsp; :bookmark:CV :bookmark:StructureTensor
 - 2026-11-26&nbsp;&nbsp; [Classification](/0061_ML_Tasks_Image_Classification)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Classification
@@ -1394,11 +1404,8 @@
 - 2023-10-10&nbsp;&nbsp; [Bilateral Filter 双边滤波](/0317_OpenCV_IP_Filter_bilateralFilter)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter :bookmark:bilateralFilter
 - 2023-09-20&nbsp;&nbsp; [bitwise_xxx](/0444_OpenCV_Core_bitwisexxx)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:Core :bookmark:bitwisexxx
 - 2023-09-20&nbsp;&nbsp; [用于边缘检测的线性滤波器 Sobel](/0443_OpenCV_IP_Filter_Sobel)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter :bookmark:Sobel
-- 2023-09-20&nbsp;&nbsp; [medianBlur 中值滤波](/0442_OpenCV_IP_Filter_medianBlur)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter :bookmark:medianBlur
-- 2023-09-20&nbsp;&nbsp; [blur 模糊处理](/0441_OpenCV_IP_Filter_blur)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter :bookmark:blur
 - 2023-09-19&nbsp;&nbsp; [直方图均衡](/0341_OpenCV_CLAHE)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:CLAHE
 - 2023-09-19&nbsp;&nbsp; [OpenCV 二值化](/0330_OpenCV_IP_misc_BIN)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:misc :bookmark:BIN
-- 2023-08-12&nbsp;&nbsp; [HAL - Universal Intrinsics](/0435_OpenCV_HAL)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:HAL
 - 2023-08-10&nbsp;&nbsp; [OpenCV parallel_for_](/0437_OpenCV_ParallelFor)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:ParallelFor
 - 2023-08-07&nbsp;&nbsp; [OpenCV With IPP](/0430_OpenCV_IPP)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IPP
 - 2023-08-04&nbsp;&nbsp; [OpenCV Performance Test](/0431_OpenCV_PerfTest)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:PerfTest
@@ -1460,11 +1467,9 @@
 - 2022-12-27&nbsp;&nbsp; [Image Filtering](/0363_OpenCV_IP_Filter)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter
 - 2022-12-27&nbsp;&nbsp; [OpenCV UseCase](/0362_OpenCV_UC)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:UC
 - 2022-12-16&nbsp;&nbsp; [KnowledgeGraph](/0329_KnowledgeGraph)&nbsp;&nbsp; :bookmark:KnowledgeGraph
-- 2022-11-29&nbsp;&nbsp; [GaussianBlur](/0320_OpenCV_IP_Filter_GaussianBlur)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter :bookmark:GaussianBlur
 - 2022-11-29&nbsp;&nbsp; [boxFilter](/0319_OpenCV_IP_Filter_boxFilter)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter :bookmark:boxFilter
 - 2022-11-28&nbsp;&nbsp; [Bilateral Filtering for Gray and Color Images](/0318_OpenCV_IP_Filter_bilateralFilter_BF)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Filter :bookmark:bilateralFilter :bookmark:BF
 - 2022-11-28&nbsp;&nbsp; [Image Processing](/0316_OpenCV_IP)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP
-- 2022-09-19&nbsp;&nbsp; [SAC](/0314_3D_Tools_PCL_SAC)&nbsp;&nbsp; :bookmark:3D :bookmark:Tools :bookmark:PCL :bookmark:SAC
 - 2022-07-16&nbsp;&nbsp; [Datasets](/0313_Tools_TF_Datasets)&nbsp;&nbsp; :bookmark:Tools :bookmark:TF :bookmark:Datasets
 - 2022-04-06&nbsp;&nbsp; [相移法重建](/0309_3D_Camera_结构光_相移法重建)&nbsp;&nbsp; :bookmark:3D :bookmark:Camera :bookmark:结构光 :bookmark:相移法重建
 - 2022-04-06&nbsp;&nbsp; [结构光3D Camera](/0308_3D_Camera_结构光)&nbsp;&nbsp; :bookmark:3D :bookmark:Camera :bookmark:结构光
@@ -1474,9 +1479,6 @@
 - 2021-10-27&nbsp;&nbsp; [UseCase](/0130_ML_NNS_KDTree_FLANN_UseCase)&nbsp;&nbsp; :bookmark:ML :bookmark:NNS :bookmark:KDTree :bookmark:FLANN :bookmark:UseCase
 - 2021-10-27&nbsp;&nbsp; [Source Code Structure](/0129_ML_NNS_KDTree_FLANN_SourceCode)&nbsp;&nbsp; :bookmark:ML :bookmark:NNS :bookmark:KDTree :bookmark:FLANN :bookmark:SourceCode
 - 2021-10-27&nbsp;&nbsp; [Flann Install](/0128_ML_NNS_KDTree_FLANN_Install)&nbsp;&nbsp; :bookmark:ML :bookmark:NNS :bookmark:KDTree :bookmark:FLANN :bookmark:Install
-- 2021-10-25&nbsp;&nbsp; [Color](/0126_Media_Image_Color)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Color
-- 2021-10-25&nbsp;&nbsp; [Gamut 色域](/0124_Media_Image_Color_Gamut)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Color :bookmark:Gamut
-- 2021-10-21&nbsp;&nbsp; [Color Space 转换](/0120_Media_Image_Color_Space_Transform)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Color :bookmark:Space :bookmark:Transform
 - 2021-10-21&nbsp;&nbsp; [Install](/0117_Media_Tools_GStreamer_Install)&nbsp;&nbsp; :bookmark:Media :bookmark:Tools :bookmark:GStreamer :bookmark:Install
 - 2021-10-11&nbsp;&nbsp; [Tools](/0063_CV_Tools)&nbsp;&nbsp; :bookmark:CV :bookmark:Tools
 - 2021-09-08&nbsp;&nbsp; [NLP](/0021_Datasets_NLP)&nbsp;&nbsp; :bookmark:Datasets :bookmark:NLP
@@ -1500,11 +1502,9 @@
 - 2021-05-25&nbsp;&nbsp; [FLANN](/0122_ML_NNS_KDTree_FLANN)&nbsp;&nbsp; :bookmark:ML :bookmark:NNS :bookmark:KDTree :bookmark:FLANN
 - 2021-05-24&nbsp;&nbsp; [BSTree 二叉排序树](/0332_ML_NNS_BSTree)&nbsp;&nbsp; :bookmark:ML :bookmark:NNS :bookmark:BSTree
 - 2021-05-24&nbsp;&nbsp; [KDTree](/0104_ML_NNS_KDTree)&nbsp;&nbsp; :bookmark:ML :bookmark:NNS :bookmark:KDTree
-- 2021-05-24&nbsp;&nbsp; [Range Image](/0084_3D_Tools_PCL_RangeImage)&nbsp;&nbsp; :bookmark:3D :bookmark:Tools :bookmark:PCL :bookmark:RangeImage
 - 2021-05-19&nbsp;&nbsp; [Build PCL with Windows](/0078_3D_Tools_PCL_Install_Windows)&nbsp;&nbsp; :bookmark:3D :bookmark:Tools :bookmark:PCL :bookmark:Install :bookmark:Windows
 - 2021-05-11&nbsp;&nbsp; [Install PCL](/0337_3D_Tools_PCL_Install)&nbsp;&nbsp; :bookmark:3D :bookmark:Tools :bookmark:PCL :bookmark:Install
 - 2021-05-11&nbsp;&nbsp; [PPF](/0083_3D_Tools_PCL_PPF)&nbsp;&nbsp; :bookmark:3D :bookmark:Tools :bookmark:PCL :bookmark:PPF
-- 2021-05-11&nbsp;&nbsp; [Downsampling](/0082_3D_Tools_PCL_Downsampling)&nbsp;&nbsp; :bookmark:3D :bookmark:Tools :bookmark:PCL :bookmark:Downsampling
 - 2021-05-10&nbsp;&nbsp; [3D](/0076_3D)&nbsp;&nbsp; :bookmark:3D
 - 2021-04-26&nbsp;&nbsp; [定拍 vs 飞拍](/0038_Media_Image_Camera_定拍飞拍)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera :bookmark:定拍飞拍
 - 2021-03-30&nbsp;&nbsp; [Acquisition Function](/0222_ML_AutoML_HPO_BO_AF)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:HPO :bookmark:BO :bookmark:AF

@@ -4674,7 +4674,7 @@
     {
       "id": "aiwiki OpenCV IP Filter GaussianBlur",
       "group": 4,
-      "title": "GaussianBlur",
+      "title": "GaussianBlur 高斯滤波",
       "url": "https://junxnone.github.io/aiwiki/#/0320_OpenCV_IP_Filter_GaussianBlur",
       "visible": true,
       "expand": true,
