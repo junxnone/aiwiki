@@ -3,7 +3,7 @@
 | Title     | ML Transformer Linformer                              |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2021-02-20T03:04:14Z`                                |
-| Updated @ | `2026-11-19T09:38:46Z`                                |
+| Updated @ | `2026-11-26T08:17:14Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/224) |
 
@@ -85,11 +85,11 @@ n/\epsilon^2)`$ 维，向量间距离/内积的误差不超过 $`\epsilon`$。�
 
 ### Projections Parameter Sharing
 
-| Level     | Description                                             | Matrices Number (example: `layer=12/head=12`) |
-| --------- | ------------------------------------------------------- | --------------------------------------------- |
-| Headwise  | 同一 Layer 中 所有 Head 中 Projection matrices `Ei = E /Fi=F` | 24                                            |
-| Key-Value | `Headwise Sharing`+ `Ei=Fi=E`                           | 12                                            |
-| Layerwise | 所有 Layer/Head/Key-Value - `Ei = Fi=F`                   | 1                                             |
+| Level     | Description                                                     | Matrices Number (example: $\\text{layer}=12$、$\\text{head}=12$) |
+| --------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| Headwise  | 同一 Layer 中 所有 Head 中 Projection matrices $E\_i = E,\\ F\_i = F$ | 24                                                              |
+| Key-Value | `Headwise Sharing`+ $E\_i=F\_i=E$                               | 12                                                              |
+| Layerwise | 所有 Layer/Head/Key-Value - $E\_i = F\_i = F$                     | 1                                                               |
 
 ### 相关优化比较
 
