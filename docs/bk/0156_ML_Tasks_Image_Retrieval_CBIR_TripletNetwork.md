@@ -3,23 +3,13 @@
 | Title     | ML Tasks Image Retrieval CBIR TripletNetwork          |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2019-02-20T09:43:34Z`                                |
-| Updated @ | `2026-11-25T16:52:13Z`                                |
+| Updated @ | `2026-11-26T01:27:30Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/156) |
 
 -----
 
 # Triplet Network
-
-## Reference
-
-  - [论文笔记：Triplet
-    Network](https://blog.csdn.net/hongbin_xu/article/details/83064290)
-  - [Triplet-Loss原理及其实现、应用](https://blog.csdn.net/u013082989/article/details/83537370)
-  - [How to Train Triplet Networks with 100K
-    Identities?](https://arxiv.org/abs/1709.02940)
-  - [论文水记|How to Train Triplet Networks with 100K
-    Identities?](https://blog.csdn.net/bea_tree/article/details/78106497)
 
 ## Brief
 
@@ -128,3 +118,13 @@ flowchart LR
     上达到约 $99.63%$ 准确率 `[待核实]`
   - 缺点：收敛慢；对采样和难例挖掘敏感，有时不收敛或坍缩 (所有样本映射到同一点)；每个 batch 的有效三元组很少
   - 改进：分类型损失 (ArcFace、CosFace)、Circle Loss、Proxy 方法，训练更稳定，已成为主流
+
+## Reference
+
+  - [论文笔记：Triplet
+    Network](https://blog.csdn.net/hongbin_xu/article/details/83064290)
+  - [Triplet-Loss原理及其实现、应用](https://blog.csdn.net/u013082989/article/details/83537370)
+  - [How to Train Triplet Networks with 100K
+    Identities?](https://arxiv.org/abs/1709.02940)
+  - [论文水记|How to Train Triplet Networks with 100K
+    Identities?](https://blog.csdn.net/bea_tree/article/details/78106497)
