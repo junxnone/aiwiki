@@ -4069,6 +4069,42 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki LM Train Eval",
+      "group": 3,
+      "title": "Eval",
+      "url": "https://junxnone.github.io/aiwiki/#/0827_LM_Train_Eval",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki LM Train MoE",
+      "group": 3,
+      "title": "MoE",
+      "url": "https://junxnone.github.io/aiwiki/#/0828_LM_Train_MoE",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki LM Train LongContext",
+      "group": 3,
+      "title": "LongContext",
+      "url": "https://junxnone.github.io/aiwiki/#/0829_LM_Train_LongContext",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki LM Train Optimizer",
+      "group": 3,
+      "title": "Optimizer",
+      "url": "https://junxnone.github.io/aiwiki/#/0830_LM_Train_Optimizer",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Op Convolution Math",
       "group": 4,
       "title": "卷积 数学定义",
@@ -10267,6 +10303,34 @@
     {
       "source": "aiwiki LM Train",
       "target": "aiwiki LM Train Efficiency",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki LM Train",
+      "target": "aiwiki LM Train Eval",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki LM Train",
+      "target": "aiwiki LM Train MoE",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki LM Train",
+      "target": "aiwiki LM Train LongContext",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki LM Train",
+      "target": "aiwiki LM Train Optimizer",
       "value": 3,
       "visible": true,
       "expand": true

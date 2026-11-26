@@ -4,6 +4,10 @@
 
 #### **Created**
 
+- 2026-11-26 23:35&nbsp;&nbsp; [Optimizer](/0830_LM_Train_Optimizer)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Optimizer
+- 2026-11-26 23:35&nbsp;&nbsp; [LongContext](/0829_LM_Train_LongContext)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:LongContext
+- 2026-11-26 23:35&nbsp;&nbsp; [MoE](/0828_LM_Train_MoE)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:MoE
+- 2026-11-26 23:35&nbsp;&nbsp; [Eval](/0827_LM_Train_Eval)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Eval
 - 2026-11-26 23:34&nbsp;&nbsp; [Efficiency](/0826_LM_Train_Efficiency)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Efficiency
 - 2026-11-26 23:34&nbsp;&nbsp; [Distributed](/0825_LM_Train_Distributed)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Distributed
 - 2026-11-26 23:34&nbsp;&nbsp; [Pretrain](/0824_LM_Train_Pretrain)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Pretrain
@@ -797,6 +801,10 @@
 
 #### **Updated**
 
+- 2026-11-26 23:35&nbsp;&nbsp; [Optimizer](/0830_LM_Train_Optimizer)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Optimizer
+- 2026-11-26 23:35&nbsp;&nbsp; [LongContext](/0829_LM_Train_LongContext)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:LongContext
+- 2026-11-26 23:35&nbsp;&nbsp; [MoE](/0828_LM_Train_MoE)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:MoE
+- 2026-11-26 23:35&nbsp;&nbsp; [Eval](/0827_LM_Train_Eval)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Eval
 - 2026-11-26 23:34&nbsp;&nbsp; [Efficiency](/0826_LM_Train_Efficiency)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Efficiency
 - 2026-11-26 23:34&nbsp;&nbsp; [Distributed](/0825_LM_Train_Distributed)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Distributed
 - 2026-11-26 23:34&nbsp;&nbsp; [Pretrain](/0824_LM_Train_Pretrain)&nbsp;&nbsp; :bookmark:LM :bookmark:Train :bookmark:Pretrain

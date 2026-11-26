@@ -548,6 +548,10 @@
     - [Data](/0821_LM_Train_Data)
     - [Distributed](/0825_LM_Train_Distributed)
     - [Efficiency](/0826_LM_Train_Efficiency)
+    - [Eval](/0827_LM_Train_Eval)
+    - [LongContext](/0829_LM_Train_LongContext)
+    - [MoE](/0828_LM_Train_MoE)
+    - [Optimizer](/0830_LM_Train_Optimizer)
     - [Pretrain](/0824_LM_Train_Pretrain)
     - [Tokenizer](/0822_LM_Train_Tokenizer)
   - [VLM](/0506_LM_VLM)
@@ -799,4 +803,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@2335351126</sub></kbd>
+<kbd><sub>@2336231126</sub></kbd>
