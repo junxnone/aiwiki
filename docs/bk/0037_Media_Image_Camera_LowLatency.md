@@ -1,11 +1,11 @@
 -----
 
-| Title         | Media Image Camera LowLatency                        |
-| ------------- | ---------------------------------------------------- |
-| Created @     | `2021-04-26T07:54:06Z`                               |
-| Last Modify @ | `2022-12-25T04:34:31Z`                               |
-| Labels        | \`\`                                                 |
-| Edit @        | [here](https://github.com/junxnone/aiwiki/issues/37) |
+| Title     | Media Image Camera LowLatency                        |
+| --------- | ---------------------------------------------------- |
+| Created @ | `2021-04-26T07:54:06Z`                               |
+| Updated @ | `2026-11-26T08:16:56Z`                               |
+| Labels    | \`\`                                                 |
+| Edit @    | [here](https://github.com/junxnone/aiwiki/issues/37) |
 
 -----
 
@@ -27,9 +27,17 @@
   - Rendering latency
   - Screen latency
 
-<!-- end list -->
+$$ \\text{Latency} = T\_{camera} + T\_{network} + T\_{decoding} +
+T\_{rendering} + T\_{screen} $$
 
-    Latency = Camera + Network + Decoding + Rendering + Screen
+其中：
+
+  - $T\_{camera}$：相机采集与编码耗时
+  - $T\_{network}$：网络传输耗时
+  - $T\_{decoding}$：客户端解码耗时
+  - $T\_{rendering}$：渲染耗时
+  - $T\_{screen}$：显示器刷新、显示耗时
+  - $\\text{Latency}$：端到端总延迟，为各环节之和
 
 # UseCase
 
