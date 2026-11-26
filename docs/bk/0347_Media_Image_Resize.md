@@ -3,34 +3,11 @@
 | Title     | Media Image Resize                                    |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2019-06-13T02:44:22Z`                                |
-| Updated @ | `2026-11-25T16:21:41Z`                                |
+| Updated @ | `2026-11-26T01:26:03Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/347) |
 
 -----
-
-## Reference
-
-  - [Image scaling -
-    wikipedia](https://en.wikipedia.org/wiki/Image_scaling)
-  - [数字图像处理笔记二 - 图片缩放(最近邻插值(Nearest Neighbor
-    interpolation))](https://blog.csdn.net/haluoluo211/article/details/80918147)
-  - [Nearest Neighbor Image
-    Scaling](http://tech-algorithm.com/articles/nearest-neighbor-image-scaling/)
-  - [Nearest-neighbor interpolation -
-    wikipedia](https://en.wikipedia.org/wiki/Nearest-neighbor_interpolation)
-  - [Bilinear Image
-    Scaling](http://tech-algorithm.com/articles/bilinear-image-scaling/)
-  - [双三次插值算法(bicubic
-    interpolation)与图形学和计算方法的关系](https://blog.csdn.net/nandina179/article/details/85330552)
-  - [Bicubic interpolation -
-    wikipedia](https://en.wikipedia.org/wiki/Bicubic_interpolation)
-  - [paper - Cubic convolution interpolation for digital image
-    processing](http://www.ncorr.com/download/publications/keysbicubic.pdf)
-    ----
-    [Download](https://github.com/junxnone/tech-io/files/3949833/keysbicubic.pdf)
-  - [图像处理: 五种
-    插值法](https://blog.csdn.net/jningwei/article/details/78822026)
 
 ## Brief
 
@@ -147,3 +124,26 @@ Bilinear/Bicubic, 缩小用 Area, 离散标签用 Nearest。缩小倍数较大�
   - image.shape = (h, w, c)
   - resize 使用的是 (w, h)
   - numpy empty image - `np.zeros((h, w, c), dtype=np.uint8)`
+
+## Reference
+
+  - [Image scaling -
+    wikipedia](https://en.wikipedia.org/wiki/Image_scaling)
+  - [数字图像处理笔记二 - 图片缩放(最近邻插值(Nearest Neighbor
+    interpolation))](https://blog.csdn.net/haluoluo211/article/details/80918147)
+  - [Nearest Neighbor Image
+    Scaling](http://tech-algorithm.com/articles/nearest-neighbor-image-scaling/)
+  - [Nearest-neighbor interpolation -
+    wikipedia](https://en.wikipedia.org/wiki/Nearest-neighbor_interpolation)
+  - [Bilinear Image
+    Scaling](http://tech-algorithm.com/articles/bilinear-image-scaling/)
+  - [双三次插值算法(bicubic
+    interpolation)与图形学和计算方法的关系](https://blog.csdn.net/nandina179/article/details/85330552)
+  - [Bicubic interpolation -
+    wikipedia](https://en.wikipedia.org/wiki/Bicubic_interpolation)
+  - [paper - Cubic convolution interpolation for digital image
+    processing](http://www.ncorr.com/download/publications/keysbicubic.pdf)
+    ----
+    [Download](https://github.com/junxnone/tech-io/files/3949833/keysbicubic.pdf)
+  - [图像处理: 五种
+    插值法](https://blog.csdn.net/jningwei/article/details/78822026)
