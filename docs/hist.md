@@ -850,6 +850,7 @@
 - 2026-11-26&nbsp;&nbsp; [Hyperparameter 超参数](/0368_ML_Arch_HP)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:HP
 - 2026-11-26&nbsp;&nbsp; [Reference](/0354_3D_Camera_激光测量)&nbsp;&nbsp; :bookmark:3D :bookmark:Camera :bookmark:激光测量
 - 2026-11-26&nbsp;&nbsp; [absdiff 检测物体运动](/0353_OpenCV_Core_absdiff)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:Core :bookmark:absdiff
+- 2026-11-26&nbsp;&nbsp; [ColorMaps](/0349_OpenCV_IP_Colormaps)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Colormaps
 - 2026-11-26&nbsp;&nbsp; [Resize](/0347_Media_Image_Resize)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Resize
 - 2026-11-26&nbsp;&nbsp; [Perspective Transformation - 透视变换](/0345_Media_Image_PT)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:PT
 - 2026-11-26&nbsp;&nbsp; [Hough  Line Circle 霍夫线圆](/0340_OpenCV_IP_Feature_Hough)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Feature :bookmark:Hough
@@ -1446,7 +1447,6 @@
 - 2023-06-17&nbsp;&nbsp; [OpenCV 读写](/0426_OpenCV_IO)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IO
 - 2023-06-17&nbsp;&nbsp; [3D 算法](/0422_3D_Algos)&nbsp;&nbsp; :bookmark:3D :bookmark:Algos
 - 2023-06-17&nbsp;&nbsp; [AI Tools](/0415_Tools)&nbsp;&nbsp; :bookmark:Tools
-- 2023-06-17&nbsp;&nbsp; [ColorMaps](/0349_OpenCV_IP_Colormaps)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IP :bookmark:Colormaps
 - 2023-06-17&nbsp;&nbsp; [Options](/0142_ML_AutoML_Tools_SIGOPT_Options)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:Tools :bookmark:SIGOPT :bookmark:Options
 - 2023-06-17&nbsp;&nbsp; [UseCase](/0141_ML_AutoML_Tools_SIGOPT_UseCase)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:Tools :bookmark:SIGOPT :bookmark:UseCase
 - 2023-06-17&nbsp;&nbsp; [gst-inspect](/0112_Media_Tools_GStreamer_gstinspect)&nbsp;&nbsp; :bookmark:Media :bookmark:Tools :bookmark:GStreamer :bookmark:gstinspect
