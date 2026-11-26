@@ -3,7 +3,7 @@
 | Title     | LM Train Distributed                                  |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-26T15:34:39Z`                                |
-| Updated @ | `2026-11-26T15:34:39Z`                                |
+| Updated @ | `2026-11-26T15:42:08Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/825) |
 
@@ -157,8 +157,8 @@ $B=1$，GPU 为 80 GB，取 $N\_t=8$、$N\_p=4$、$N\_d=2$ 共 $64$ 卡，逐项
 | 激活合计                      | $143\\text{ MB}\\times20\\times4$           | 约 $11.4$ GB          |
 | 合计 (不含通信缓冲和碎片)            |                                             | 约 $33$ GB，80 GB 卡放得下 |
 
-表中：激活公式见 [Efficiency](@@TEFF@@)；张量并行配合序列并行时，每层激活按 $N\_t$ 均分。模型状态如果不用
-ZeRO (每参数 $16$ 字节) 是约 $35$ GB，也放得下，但余量更少。
+表中：激活公式见 [Efficiency](/0826_LM_Train_Efficiency)；张量并行配合序列并行时，每层激活按
+$N\_t$ 均分。模型状态如果不用 ZeRO (每参数 $16$ 字节) 是约 $35$ GB，也放得下，但余量更少。
 
 再核算流水线气泡和训练时间：
 
@@ -174,10 +174,11 @@ ZeRO (每参数 $16$ 字节) 是约 $35$ GB，也放得下，但余量更少。
 ## 实践
 
   - 框架：Megatron-LM (3D 并行)、DeepSpeed (ZeRO)、PyTorch
-    FSDP、torchtitan；训练效率相关见 [Efficiency](@@TEFF@@)
+    FSDP、torchtitan；训练效率相关见
+    [Efficiency](/0826_LM_Train_Efficiency)
   - 通信库：NCCL (NVIDIA)、oneCCL (Intel)；网络：节点内 NVLink，节点间 InfiniBand/RoCE
   - 微调场景用 FSDP + LoRA 即可在少量卡上训练大模型，见 [微调](/0410_LM_FT)
-  - 推理时的并行方式见 [Infer Parallel](@@IPAR@@)
+  - 推理时的并行方式见 [Infer Parallel](/0836_LM_Infer_Parallel)
 
 ## Reference
 
