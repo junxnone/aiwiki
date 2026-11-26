@@ -1,11 +1,11 @@
 -----
 
-| Title         | CV HoughTransform                                    |
-| ------------- | ---------------------------------------------------- |
-| Created @     | `2020-11-10T06:34:44Z`                               |
-| Last Modify @ | `2022-12-27T02:37:29Z`                               |
-| Labels        | \`\`                                                 |
-| Edit @        | [here](https://github.com/junxnone/aiwiki/issues/71) |
+| Title     | CV HoughTransform                                    |
+| --------- | ---------------------------------------------------- |
+| Created @ | `2020-11-10T06:34:44Z`                               |
+| Updated @ | `2026-11-26T08:17:00Z`                               |
+| Labels    | \`\`                                                 |
+| Edit @    | [here](https://github.com/junxnone/aiwiki/issues/71) |
 
 -----
 
@@ -39,7 +39,7 @@
 
 | Name  | 笛卡尔坐标                                                        | 霍夫空间                                                         |
 | ----- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 公式    | `y = kx + q`                                                 | ![image](media/9c5239f3d7c6def0b7ed5ccadff30c79fc99fd9a.png) |
+| 公式    | $y = kx + q$（$k$：斜率；$q$：截距）                                  | ![image](media/9c5239f3d7c6def0b7ed5ccadff30c79fc99fd9a.png) |
 | 相应线点  | ![image](media/cf536d4c50f25197b331d3b729a54c7e300f79cd.png) | ![image](media/faac684535417089a7f9937f3f91f7e01b378112.png) |
 | 两个点   | ![image](media/e652f5391ded5cf7402a6dde9a6d740b950548da.png) | ![image](media/3db7561daa61d1d29187c4237df1560b172806e5.png) |
 | k = ∞ | ![image](media/f9f31a36c0a583c223afc560eff2d1650971ce76.png) | :? ==\> 使用极坐标系                                               |

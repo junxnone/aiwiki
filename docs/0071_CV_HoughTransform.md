@@ -2,7 +2,7 @@
 Title | CV HoughTransform
 -- | --
 Created @ | `2020-11-10T06:34:44Z`
-Last Modify @| `2022-12-27T02:37:29Z`
+Updated @| `2026-11-26T08:17:00Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/71)
 
@@ -34,7 +34,7 @@ Line Detection | Circle Detection
 
 Name | 笛卡尔坐标 | 霍夫空间
 -- | -- | --
-公式 | `y = kx + q` | ![image](https://user-images.githubusercontent.com/2216970/98332990-c0d04a00-203a-11eb-8bde-55cef37f16fd.png)
+公式 | $y = kx + q$（$k$：斜率；$q$：截距） | ![image](https://user-images.githubusercontent.com/2216970/98332990-c0d04a00-203a-11eb-8bde-55cef37f16fd.png)
 相应线点 | ![image](https://user-images.githubusercontent.com/2216970/98332924-a1d1b800-203a-11eb-963d-8fbb45f2adc5.png) | ![image](https://user-images.githubusercontent.com/2216970/98332945-aac28980-203a-11eb-9ed9-ae3e0c6ec764.png)
 两个点 | ![image](https://user-images.githubusercontent.com/2216970/98333134-0ab93000-203b-11eb-8279-f53343de2539.png) | ![image](https://user-images.githubusercontent.com/2216970/98333146-10af1100-203b-11eb-8a83-b27a29706314.png)
 k = ∞ | ![image](https://user-images.githubusercontent.com/2216970/98333415-a5197380-203b-11eb-811a-819c3173d0ec.png) | :? ==> 使用极坐标系
@@ -48,3 +48,4 @@ k = ∞ | ![image](https://user-images.githubusercontent.com/2216970/98333415-a5
 
 ---
 - [ OpenCV Examples](https://github.com/junxnone/aiwiki/issues/340)
+
