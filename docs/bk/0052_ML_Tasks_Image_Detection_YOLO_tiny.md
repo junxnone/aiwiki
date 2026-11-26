@@ -3,7 +3,7 @@
 | Title     | ML Tasks Image Detection YOLO tiny                   |
 | --------- | ---------------------------------------------------- |
 | Created @ | `2020-02-20T06:02:54Z`                               |
-| Updated @ | `2026-11-25T16:51:37Z`                               |
+| Updated @ | `2026-11-26T01:26:53Z`                               |
 | Labels    | \`\`                                                 |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/52) |
 
@@ -41,12 +41,6 @@
   22 conv     39       1 x 1/ 1     38 x  38 x 256 ->   38 x  38 x  39 0.029 BF
   23 yolo
 ```
-
-## Reference
-
-  - [tiny darknet](https://pjreddie.com/darknet/tiny-darknet/)
-  - [YOLOv3-tiny
-    cfg](https://github.com/AlexeyAB/darknet/blob/master/cfg/yolov3-tiny.cfg)
 
 ## 结构说明
 
@@ -102,3 +96,9 @@ $$
 
 表中：tiny 版本的取舍是用精度换速度和体积 (权重文件约 $34\\text{MB}$ vs $237\\text{MB}$
 `[待核实]`)，比较适合在 CPU 或边缘设备上做实时的简单检测任务。
+
+## Reference
+
+  - [tiny darknet](https://pjreddie.com/darknet/tiny-darknet/)
+  - [YOLOv3-tiny
+    cfg](https://github.com/AlexeyAB/darknet/blob/master/cfg/yolov3-tiny.cfg)
