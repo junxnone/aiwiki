@@ -3,54 +3,11 @@
 | Title     | ML Tasks Image Segmentation Deeplab                   |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2019-11-29T08:03:58Z`                                |
-| Updated @ | `2026-11-25T16:51:55Z`                                |
+| Updated @ | `2026-11-26T01:27:12Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/162) |
 
 -----
-
-## Reference
-
-  - [Github
-    repo](https://github.com/tensorflow/models/tree/master/research/deeplab)
-  - [Project - DeepLab](http://liangchiehchen.com/projects/DeepLab.html)
-  - [DeepLab:
-    Models](http://liangchiehchen.com/projects/DeepLab_Models.html)
-  - [Blog - 一作 - Liang-Chieh (Jay) Chen](http://liangchiehchen.com/)
-  - [Semantic Segmentation
-    --DeepLab(1,2,3)系列总结](https://blog.csdn.net/u011974639/article/details/79148719)
-  - **DeepLab V1**
-      - [paper - semantic image segmentation with deep convolutional
-        nets and fully connected
-        CRFs](https://arxiv.org/pdf/1412.7062v3.pdf)
-      - [【论文阅读】semantic image segmentation with deep convolutional nets
-        and fully connected
-        CRFs](https://blog.csdn.net/u011582187/article/details/80345431)
-      - [Rethinking-Atrous-Convolution-for-Semantic-Image-Segmentation-1.pdf](http://web.eng.tau.ac.il/deep_learn/wp-content/uploads/2017/12/Rethinking-Atrous-Convolution-for-Semantic-Image-Segmentation-1.pdf)
-      - [Code](https://bitbucket.org/deeplab/deeplab-public/src/master/)
-      - [netscope - deeplab
-        v1](http://ethereon.github.io/netscope/#/gist/7c54e9d23a2e84d094496bb190592fc5)
-      - [netscope - Deeplab v1
-        MSc](http://ethereon.github.io/netscope/#/gist/3f1050c1f12575b768ac7633986dbc8e)
-      - [netscope - DeepLab v1
-        LargeFOV](http://ethereon.github.io/netscope/#/gist/51dca179ed7c2b5045d45a89ce4e00f5)
-  - **DeepLab V2**
-      - [paper - 2017 - DeepLab: Semantic Image Segmentation with Deep
-        Convolutional Nets, Atrous Convolution, and Fully Connected CRFs
-        ](https://arxiv.org/pdf/1606.00915.pdf)
-      - [论文阅读：《DeepLab-v2: Semantic Image Segmentation
-        》](https://blog.csdn.net/qq_36165459/article/details/78340094)
-      - [Code](https://bitbucket.org/aquariusjay/deeplab-public-ver2/src/master/)
-      - [netscope - Deeplab v2
-        VGG16](http://ethereon.github.io/netscope/#/gist/d1f1c884572ae15d7394dc37232c6216)
-      - [netscope - Deeplab v2
-        resnet101](http://ethereon.github.io/netscope/#/gist/231825df213d3af8c668c2870b394f4d)
-  - **DeepLab V3**
-      - [Rethinking Atrous Convolution for Semantic Image
-        Segmentation](https://arxiv.org/pdf/1706.05587.pdf)
-  - **DeepLab V3+**
-      - [Encoder-Decoder with Atrous Separable Convolution for Semantic
-        Image Segmentation](https://arxiv.org/pdf/1802.02611.pdf)
 
 ## Brief
 
@@ -258,3 +215,46 @@ flowchart LR
     相比：DeepLab 主要靠空洞卷积保持高分辨率特征 (不是靠跳连恢复)，所以不需要很深的解码器
   - 计算量：保持 $1/8$ 或 $1/16$ 分辨率的特征图，比标准 $1/32$ 的网络计算量大很多，部署时 output stride
     取 $16$ 是常见折中
+
+## Reference
+
+  - [Github
+    repo](https://github.com/tensorflow/models/tree/master/research/deeplab)
+  - [Project - DeepLab](http://liangchiehchen.com/projects/DeepLab.html)
+  - [DeepLab:
+    Models](http://liangchiehchen.com/projects/DeepLab_Models.html)
+  - [Blog - 一作 - Liang-Chieh (Jay) Chen](http://liangchiehchen.com/)
+  - [Semantic Segmentation
+    --DeepLab(1,2,3)系列总结](https://blog.csdn.net/u011974639/article/details/79148719)
+  - **DeepLab V1**
+      - [paper - semantic image segmentation with deep convolutional
+        nets and fully connected
+        CRFs](https://arxiv.org/pdf/1412.7062v3.pdf)
+      - [【论文阅读】semantic image segmentation with deep convolutional nets
+        and fully connected
+        CRFs](https://blog.csdn.net/u011582187/article/details/80345431)
+      - [Rethinking-Atrous-Convolution-for-Semantic-Image-Segmentation-1.pdf](http://web.eng.tau.ac.il/deep_learn/wp-content/uploads/2017/12/Rethinking-Atrous-Convolution-for-Semantic-Image-Segmentation-1.pdf)
+      - [Code](https://bitbucket.org/deeplab/deeplab-public/src/master/)
+      - [netscope - deeplab
+        v1](http://ethereon.github.io/netscope/#/gist/7c54e9d23a2e84d094496bb190592fc5)
+      - [netscope - Deeplab v1
+        MSc](http://ethereon.github.io/netscope/#/gist/3f1050c1f12575b768ac7633986dbc8e)
+      - [netscope - DeepLab v1
+        LargeFOV](http://ethereon.github.io/netscope/#/gist/51dca179ed7c2b5045d45a89ce4e00f5)
+  - **DeepLab V2**
+      - [paper - 2017 - DeepLab: Semantic Image Segmentation with Deep
+        Convolutional Nets, Atrous Convolution, and Fully Connected CRFs
+        ](https://arxiv.org/pdf/1606.00915.pdf)
+      - [论文阅读：《DeepLab-v2: Semantic Image Segmentation
+        》](https://blog.csdn.net/qq_36165459/article/details/78340094)
+      - [Code](https://bitbucket.org/aquariusjay/deeplab-public-ver2/src/master/)
+      - [netscope - Deeplab v2
+        VGG16](http://ethereon.github.io/netscope/#/gist/d1f1c884572ae15d7394dc37232c6216)
+      - [netscope - Deeplab v2
+        resnet101](http://ethereon.github.io/netscope/#/gist/231825df213d3af8c668c2870b394f4d)
+  - **DeepLab V3**
+      - [Rethinking Atrous Convolution for Semantic Image
+        Segmentation](https://arxiv.org/pdf/1706.05587.pdf)
+  - **DeepLab V3+**
+      - [Encoder-Decoder with Atrous Separable Convolution for Semantic
+        Image Segmentation](https://arxiv.org/pdf/1802.02611.pdf)
