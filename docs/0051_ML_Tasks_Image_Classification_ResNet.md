@@ -2,24 +2,11 @@
 Title | ML Tasks Image Classification ResNet
 -- | --
 Created @ | `2019-02-12T01:59:44Z`
-Updated @| `2026-11-25T16:51:03Z`
+Updated @| `2026-11-26T01:26:31Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/51)
 
 ---
-## Reference
-- 2015 **ResNet** Deep Residual Learning for Image Recognition [[paper](https://arxiv.org/abs/1512.03385)]
-- 2016 Identity Mappings in Deep Residual Networks [[paper](https://arxiv.org/pdf/1603.05027.pdf)]
-- [ResNet 解析](https://blog.csdn.net/lanran2/article/details/79057994)
-- [paper - Wide Residual Networks](https://arxiv.org/pdf/1605.07146.pdf)
-- [ResNet详解](https://www.jianshu.com/p/23c73b90657f)
-- [大话深度残差网络（DRN）ResNet网络原理](https://my.oschina.net/u/876354/blog/1622896)
-- [ResNet 分析](https://www.jianshu.com/p/d63ac154c8fc)
-- [深度学习网络篇——ResNet](https://blog.csdn.net/weixin_43624538/article/details/85049699)
-- [一文简述ResNet及其多种变体](http://baijiahao.baidu.com/s?id=1598536455758606033&wfr=spider&for=pc)
-- [极深网络（ResNet/DenseNet）: Skip Connection为何有效及其它](https://blog.csdn.net/malefactor/article/details/67637785)
-- [netscope - ResNet-50](http://ethereon.github.io/netscope/#/gist/8a6783850bd61e657234afce5196d772)
-
 ## Brief
 - ResNet - Residual Network - 残差网络
 - ResNet 提出于 2015 年，在 ImageNet 比赛 Classification 任务上获得第一名
@@ -185,4 +172,17 @@ $$
 - ResNeXt：用分组卷积的 bottleneck；DenseNet：把相加改成拼接，每层连接所有之前的层
 - SENet：在块内加入通道注意力 (Squeeze-and-Excitation)，见 [历史](/0166_ML_Tasks_Image_Classification_History)
 - 残差思想被 [MobileNet V2](/0043_ML_Tasks_Image_Classification_MobileNet_V2)、[Inception-ResNet](/0047_ML_Tasks_Image_Classification_Inception_V4)、[UNet](/0161_ML_Tasks_Image_Segmentation_UNet)、Transformer 等广泛借鉴
+
+## Reference
+- 2015 **ResNet** Deep Residual Learning for Image Recognition [[paper](https://arxiv.org/abs/1512.03385)]
+- 2016 Identity Mappings in Deep Residual Networks [[paper](https://arxiv.org/pdf/1603.05027.pdf)]
+- [ResNet 解析](https://blog.csdn.net/lanran2/article/details/79057994)
+- [paper - Wide Residual Networks](https://arxiv.org/pdf/1605.07146.pdf)
+- [ResNet详解](https://www.jianshu.com/p/23c73b90657f)
+- [大话深度残差网络（DRN）ResNet网络原理](https://my.oschina.net/u/876354/blog/1622896)
+- [ResNet 分析](https://www.jianshu.com/p/d63ac154c8fc)
+- [深度学习网络篇——ResNet](https://blog.csdn.net/weixin_43624538/article/details/85049699)
+- [一文简述ResNet及其多种变体](http://baijiahao.baidu.com/s?id=1598536455758606033&wfr=spider&for=pc)
+- [极深网络（ResNet/DenseNet）: Skip Connection为何有效及其它](https://blog.csdn.net/malefactor/article/details/67637785)
+- [netscope - ResNet-50](http://ethereon.github.io/netscope/#/gist/8a6783850bd61e657234afce5196d772)
 
