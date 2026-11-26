@@ -2,32 +2,11 @@
 Title | ML Tasks Image Segmentation
 -- | --
 Created @ | `2019-03-28T03:26:31Z`
-Updated @| `2026-11-25T16:51:49Z`
+Updated @| `2026-11-26T01:27:06Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/159)
 
 ---
-## Reference
-
-- [paper - Panoptic Segmentation](https://arxiv.org/pdf/1801.00868.pdf)
-- [论文阅读理解 - Panoptic Segmentation 全景分割](https://blog.csdn.net/zziahgf/article/details/79063398)
-- [语义分割和实例分割概念](https://blog.csdn.net/yql_617540298/article/details/83143182)
-- [Image Segmentation](https://blog.csdn.net/weixin_38208741/article/details/80474813)
-- [深度学习---之全卷积神经网络取代全连接层--用于图像分割](https://blog.csdn.net/zxyhhjs2017/article/details/78603332)
-- [SemanticSegmentation_DL](https://github.com/tangzhenyu/SemanticSegmentation_DL)
-- [A Beginner's guide to Deep Learning based Semantic Segmentation using Keras](https://divamgupta.com/image-segmentation/2019/06/06/deep-learning-semantic-segmentation-keras.html)
-- [从loss处理图像分割中类别极度不均衡的状况---keras](https://blog.csdn.net/m0_37477175/article/details/83004746)
-- [图像语义分割准确率度量方法总结](https://zhuanlan.zhihu.com/p/38236530)
-- [Segmentation综述](https://www.cnblogs.com/kk17/p/10017224.html)
-- [语义分割 | 发展综述](https://zhuanlan.zhihu.com/p/37618829)
-- [图像语义分割入门+FCN/U-Net网络解析](https://zhuanlan.zhihu.com/p/31428783)
-- [第九章 图像分割 - DeepLearning-500-questions](https://github.com/scutan90/DeepLearning-500-questions/blob/master/ch09_%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2/%E7%AC%AC%E4%B9%9D%E7%AB%A0_%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2.md)
-- [awesome-semantic-segmentation](https://github.com/mrgloom/awesome-semantic-segmentation)
-- [A Review on Deep Learning Techniques Applied to Semantic Segmentation](https://arxiv.org/pdf/1704.06857.pdf)
-- [Evaluating image segmentation models. - Jeremy Jordan](https://www.jeremyjordan.me/evaluating-image-segmentation-models/)
-- [深度学习语义分割理论与实战指南](https://github.com/luwill/Semantic-Segmentation-Guide)
-
-
 ## Brief
 - [Traditional Segmentation](/Traditional_Image_Segmentation)
 - [Instance Segmentation](/Instance_Segmentation)
@@ -145,4 +124,24 @@ flowchart LR
 - Transformer 时代：SegFormer、Mask2Former，把分割统一成掩码分类
 - 通用分割模型：SAM (Segment Anything)，提示式分割
 - 工业应用：缺陷分割，见 [Anomaly](/0277_ML_Tasks_Image_Anomaly)
+
+## Reference
+
+- [paper - Panoptic Segmentation](https://arxiv.org/pdf/1801.00868.pdf)
+- [论文阅读理解 - Panoptic Segmentation 全景分割](https://blog.csdn.net/zziahgf/article/details/79063398)
+- [语义分割和实例分割概念](https://blog.csdn.net/yql_617540298/article/details/83143182)
+- [Image Segmentation](https://blog.csdn.net/weixin_38208741/article/details/80474813)
+- [深度学习---之全卷积神经网络取代全连接层--用于图像分割](https://blog.csdn.net/zxyhhjs2017/article/details/78603332)
+- [SemanticSegmentation_DL](https://github.com/tangzhenyu/SemanticSegmentation_DL)
+- [A Beginner's guide to Deep Learning based Semantic Segmentation using Keras](https://divamgupta.com/image-segmentation/2019/06/06/deep-learning-semantic-segmentation-keras.html)
+- [从loss处理图像分割中类别极度不均衡的状况---keras](https://blog.csdn.net/m0_37477175/article/details/83004746)
+- [图像语义分割准确率度量方法总结](https://zhuanlan.zhihu.com/p/38236530)
+- [Segmentation综述](https://www.cnblogs.com/kk17/p/10017224.html)
+- [语义分割 | 发展综述](https://zhuanlan.zhihu.com/p/37618829)
+- [图像语义分割入门+FCN/U-Net网络解析](https://zhuanlan.zhihu.com/p/31428783)
+- [第九章 图像分割 - DeepLearning-500-questions](https://github.com/scutan90/DeepLearning-500-questions/blob/master/ch09_%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2/%E7%AC%AC%E4%B9%9D%E7%AB%A0_%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2.md)
+- [awesome-semantic-segmentation](https://github.com/mrgloom/awesome-semantic-segmentation)
+- [A Review on Deep Learning Techniques Applied to Semantic Segmentation](https://arxiv.org/pdf/1704.06857.pdf)
+- [Evaluating image segmentation models. - Jeremy Jordan](https://www.jeremyjordan.me/evaluating-image-segmentation-models/)
+- [深度学习语义分割理论与实战指南](https://github.com/luwill/Semantic-Segmentation-Guide)
 
