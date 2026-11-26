@@ -2,7 +2,7 @@
 Title | CV BIN
 -- | --
 Created @ | `2020-11-11T04:02:36Z`
-Updated @| `2026-10-19T06:32:09Z`
+Updated @| `2026-11-26T08:17:03Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/99)
 
@@ -24,7 +24,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/99)
 Global thresholding | Description | 适用场景
 -- | -- | --
 **Otsu** | 取 `前景/背景` 最大类间方差作为阈值 | **最常用、最经典的方法，几乎是二值化的默认首选**；前景/背景比例接近、直方图双峰明显时效果最好
-ISODATA | `threshold = (average background + average objects)/2`，用当前阈值把像素分两类、算两类均值、取均值的均值作为新阈值，反复迭代到收敛；是 Ridler & Calvard（1978）迭代选择法的实现，和 Otsu 关系很近（IS 方法可以看作 Otsu 的迭代版本） | 效果和 Otsu 接近，一般直接用 Otsu 即可，知道两者是近亲关系就够了
+ISODATA | $T = (\mu_{bg} + \mu_{obj})/2$（$T$ 为新阈值，$\mu_{bg}$、$\mu_{obj}$ 为背景、目标两类像素的平均灰度），用当前阈值把像素分两类、算两类均值、取均值的均值作为新阈值，反复迭代到收敛；是 Ridler & Calvard（1978）迭代选择法的实现，和 Otsu 关系很近（IS 方法可以看作 Otsu 的迭代版本） | 效果和 Otsu 接近，一般直接用 Otsu 即可，知道两者是近亲关系就够了
 Mean | mean(image)，直接用全图灰度均值当阈值 | 最简单粗暴，只适合快速原型/粗筛，对光照不均的图效果差，正式场景不建议用
 **Triangle** | 在直方图上把峰值点和远端零值点连一条直线，找直方图曲线上离这条直线垂直距离最大的点作为阈值 | **直方图单峰且明显偏向一侧**（前景像素远少于背景，如荧光显微图像、暗场下的小亮点）时效果好，Otsu 在这种场景反而容易失准；对图像缩放敏感，8 位和 16 位缩放后结果可能不同
 Minimum | 和 Intermodes 思路一样先反复平滑直方图到只剩两个峰，但取两峰之间的**谷底（最小值点）**而不是中点作为阈值 | 和 Intermodes 同样要求明显双峰直方图，二者选一即可，不常同时使用
@@ -41,8 +41,8 @@ Shanbhag | 基于模糊集合的信息测度方法，是 Kapur 最大熵思路�
 
 Local thresholding | Description | 适用场景
 -- | -- | --
-Niblack | 阈值按局部窗口统计量动态计算：`T(x,y) = mean + k × std`，`mean`/`std` 是以 (x,y) 为中心的局部窗口内的均值/标准差，`k` 通常取负值（如 -0.2） | 光照不均场景的基础方法；背景平坦区域（如大片纯色墙面）容易因为 std 很小而引入噪声，是 Sauvola 要解决的问题
-**Sauvola** | 在 Niblack 基础上改进，专门针对文档/文字图像优化：`T(x,y) = mean × (1 + k × (std/R - 1))`，`R` 是标准差的动态范围（常取 128），多了这个归一化项后在背景平坦区域不容易产生 Niblack 那种噪声 | **局部阈值法里最常用的**，尤其是**文档扫描件/拍照文字**（背景有阴影、折痕、污渍）场景的首选
+Niblack | 阈值按局部窗口统计量动态计算：$T(x,y) = m(x,y) + k\, s(x,y)$，其中 $m(x,y)$、$s(x,y)$ 是以 $(x,y)$ 为中心的局部窗口内的均值/标准差，$k$ 通常取负值（如 -0.2） | 光照不均场景的基础方法；背景平坦区域（如大片纯色墙面）容易因为 std 很小而引入噪声，是 Sauvola 要解决的问题
+**Sauvola** | 在 Niblack 基础上改进，专门针对文档/文字图像优化：$T(x,y) = m(x,y)\left(1 + k\left(\frac{s(x,y)}{R} - 1\right)\right)$，其中 $m$、$s$ 同上，$k$ 为调节系数，$R$ 是标准差的动态范围（常取 128），多了这个归一化项后在背景平坦区域不容易产生 Niblack 那种噪声 | **局部阈值法里最常用的**，尤其是**文档扫描件/拍照文字**（背景有阴影、折痕、污渍）场景的首选
 
 
 ## OTSU
@@ -115,4 +115,5 @@ cv::adaptiveThreshold(src, dst, 255, cv::ADAPTIVE_THRESH_GAUSSIAN_C,
   - [A Threshold Selection Method from Gray-Level Histograms](http://raw.githubusercontent.com/jinglou/p2016-rss-small-target/master/refs/Otsu.pdf)
 - [Otsu Thresholding](http://www.labbookpages.co.uk/software/imgProc/otsuThreshold.html)  -- [CN](https://blog.csdn.net/felix86/article/details/38684465)
 - [图像二值化方法介绍](https://blog.csdn.net/JJBOOM425/article/details/100645594)
+
 
