@@ -2,7 +2,7 @@
 Title | LM LLMs
 -- | --
 Created @ | `2023-10-12T09:01:24Z`
-Updated @| `2025-01-24T03:06:10Z`
+Updated @| `2026-11-26T15:43:36Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/446)
 
@@ -75,14 +75,14 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/446)
 
 
 ## 训练方式
-- ???
 - `pre-training` + `fine-tuning`
-- **pre-training** 从较大的语料库数据集中学习
-- **fine-tuning**  在目标任务或领域相关的小数据集上训练微调
-
+- **pre-training** 从较大的语料库数据集中学习，见 [Pretrain](/0824_LM_Train_Pretrain)
+- **fine-tuning**  在目标任务或领域相关的小数据集上训练微调，见 [微调](/0410_LM_FT)；让模型听指令、符合偏好的对齐训练见 [对齐](/0568_LM_FT_Alignment)，推理能力的强化学习见 [Reasoning](/0833_LM_FT_Reasoning)
+- 从数据、预训练到部署的完整流程见 [Lifecycle](/0817_LM_Lifecycle)，训练系列入口见 [Train](/0818_LM_Train)
 
 ## Reference
 - [Awesome-LLM](https://github.com/Hannibal046/Awesome-LLM)
 - `paper@2023` [Harnessing the Power of LLMs in Practice: A Survey on ChatGPT and Beyond](https://arxiv.org/pdf/2304.13712.pdf) [[github](https://github.com/Mooler0410/LLMsPracticalGuide)]  [[中译](https://zhuanlan.zhihu.com/p/630216305)]
 - [LLMs LIsts - Wikipedia](https://en.wikipedia.org/wiki/Large_language_model#List)
 - [Open LLM Leaderboard](https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard)
+
