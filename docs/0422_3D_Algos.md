@@ -2,7 +2,7 @@
 Title | 3D Algos
 -- | --
 Created @ | `2023-06-17T15:33:41Z`
-Updated @| `2026-11-26T10:15:13Z`
+Updated @| `2026-11-26T10:15:50Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/422)
 
@@ -14,7 +14,7 @@ Edit @| [here](https://github.com/junxnone/aiwiki/issues/422)
 
 ## 配准（Registration）
 
-把不同视角或时刻得到的点云对齐到同一坐标系，求刚体变换 =(R,t)$：
+把不同视角或时刻得到的点云对齐到同一坐标系，求刚体变换 $T=(R,t)$：
 
 $$
 \hat{T}=\arg\min_{R,t}\sum_{i}\big\lVert R\,p_i+t-q_i\big\rVert^2
@@ -42,4 +42,5 @@ $$
 - 总览：[3D 重建](https://github.com/junxnone/aiwiki/issues/305)
 - 实时稠密重建：[KinectFusion](https://github.com/junxnone/aiwiki/issues/306)
 - 表面网格化：[GreedyProjectionTriangulation](https://github.com/junxnone/aiwiki/issues/399)
+
 
