@@ -2,7 +2,7 @@
 Title | LM Train Pretrain
 -- | --
 Created @ | `2026-11-26T15:34:26Z`
-Updated @| `2026-11-26T15:34:26Z`
+Updated @| `2026-11-26T15:42:06Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/824)
 
@@ -52,9 +52,9 @@ flowchart LR
 学习率调度 | 线性 warmup (约 $2000$ 步) + cosine 衰减到峰值的 $10\%$ | warmup 避免训练初期发散
 batch size | 约 $4$M token | 大模型用更大的 batch
 梯度裁剪 | 全局范数 $1.0$ | 抑制 loss spike
-精度 | BF16 前向反向，FP32 主权重与优化器状态 | 见 [Efficiency](@@TEFF@@)
+精度 | BF16 前向反向，FP32 主权重与优化器状态 | 见 [Efficiency](/0826_LM_Train_Efficiency)
 
-表中：这是 Llama 2 一类模型公开的典型设置；具体数值需要根据模型规模调整，更大模型通常用更小的学习率和更大的 batch。优化器的选择与超参迁移见 [Optimizer](@@TOPT@@)。
+表中：这是 Llama 2 一类模型公开的典型设置；具体数值需要根据模型规模调整，更大模型通常用更小的学习率和更大的 batch。优化器的选择与超参迁移见 [Optimizer](/0830_LM_Train_Optimizer)。
 
 ### 学习率调度：cosine 与 WSD
 
@@ -130,7 +130,7 @@ $$
 
 - $6ND$：训练的总计算量 (FLOPs)，见上文
 - $\text{FLOPs}_{peak}$：单卡的峰值算力 (BF16 稠密)
-- $\text{MFU}$：实际达到的算力占峰值的比例，定义见 [Efficiency](@@TEFF@@)
+- $\text{MFU}$：实际达到的算力占峰值的比例，定义见 [Efficiency](/0826_LM_Train_Efficiency)
 - 除以 $3600$ 把秒换算为小时，结果是单卡等效的 GPU 小时数
 
 以 7B 模型、$2\text{T}$ token、A100 (BF16 峰值 $312\text{ TFLOPs}$)、MFU $40\%$ 为例：
@@ -145,12 +145,12 @@ $$
 - loss spike：训练中 loss 突然飙升，常见原因是学习率过大、异常数据 batch、数值溢出；应对：降低峰值学习率、跳过问题 batch、梯度裁剪、QK-Norm、z-loss (约束 logit 过大)，并在 spike 前的 checkpoint 重启
 - 监控指标：loss、梯度范数、各层激活的最大值、学习率、吞吐，异常时及时报警
 - checkpoint：定期保存模型、优化器状态、数据读取位置和随机数种子，保证可以精确恢复；大模型使用分片 checkpoint 并异步写盘
-- 故障：万卡集群上硬件故障频繁，需要自动检测、替换节点和恢复；这也是训练框架和运维的重点，见 [Distributed](@@TDIST@@)
+- 故障：万卡集群上硬件故障频繁，需要自动检测、替换节点和恢复；这也是训练框架和运维的重点，见 [Distributed](/0825_LM_Train_Distributed)
 
 ## 预训练之后
 
 - 基础模型不会听指令，需要 SFT、RLHF/DPO，见 [对齐](/0568_LM_FT_Alignment)；领域适配见 [微调](/0410_LM_FT)
-- 评价预训练模型的方法见 [Eval](@@TEVAL@@)
+- 评价预训练模型的方法见 [Eval](/0827_LM_Train_Eval)
 
 ## Reference
 - [Scaling Laws for Neural Language Models](https://arxiv.org/abs/2001.08361)
