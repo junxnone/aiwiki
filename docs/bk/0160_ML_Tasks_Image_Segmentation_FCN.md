@@ -3,7 +3,7 @@
 | Title     | ML Tasks Image Segmentation FCN                       |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2019-11-27T07:41:13Z`                                |
-| Updated @ | `2026-11-25T16:51:51Z`                                |
+| Updated @ | `2026-11-26T01:27:08Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/160) |
 
@@ -104,22 +104,6 @@ com-gif-maker](media/6643aa843919594ca598bd3d4f9945c7d0207530.gif)
 
   - DeepLab - Fully Connected CRF - conditional random fields
 
-## Reference
-
-  - [FCN的学习及理解（Fully Convolutional Networks for Semantic
-    Segmentation）](https://blog.csdn.net/qq_36269513/article/details/80420363)
-  - [paper - Fully Convolutional Networks for Semantic
-    Segmentation](https://www.cv-foundation.org/openaccess/content_cvpr_2015/html/Long_Fully_Convolutional_Networks_2015_CVPR_paper.html)
-  - [paper - CVPR 2015 - Fully Convolutional Networks for Semantic
-    Segmentation - arxiv](https://arxiv.org/abs/1411.4038)
-  - [paper - PAMI 2016 - Fully Convolutional Networks for Semantic
-    Segmentation - arxiv](https://arxiv.org/abs/1605.06211)
-  - [Github repo](https://github.com/shelhamer/fcn.berkeleyvision.org)
-  - [全卷积网络 FCN 详解](https://zhuanlan.zhihu.com/p/30195134)
-  - [网络结构 FCN-8S-PASCAL -
-    Netscope](http://ethereon.github.io/netscope/#/preset/fcn-8s-pascal)
-  - [计算机视觉中upsampling(上采样)的三种方式](https://blog.csdn.net/u014451076/article/details/79156967)
-
 ## 全连接转卷积
 
 分类网络的全连接层可以看作覆盖整张特征图的卷积：
@@ -205,3 +189,19 @@ flowchart LR
   - 缺点中提到的「缺乏空间一致性」由 DeepLab 的 CRF 后处理缓解，见
     [DeepLab](/0162_ML_Tasks_Image_Segmentation_Deeplab)
   - 编码器-解码器与 Concat 融合，见 [UNet](/0161_ML_Tasks_Image_Segmentation_UNet)
+
+## Reference
+
+  - [FCN的学习及理解（Fully Convolutional Networks for Semantic
+    Segmentation）](https://blog.csdn.net/qq_36269513/article/details/80420363)
+  - [paper - Fully Convolutional Networks for Semantic
+    Segmentation](https://www.cv-foundation.org/openaccess/content_cvpr_2015/html/Long_Fully_Convolutional_Networks_2015_CVPR_paper.html)
+  - [paper - CVPR 2015 - Fully Convolutional Networks for Semantic
+    Segmentation - arxiv](https://arxiv.org/abs/1411.4038)
+  - [paper - PAMI 2016 - Fully Convolutional Networks for Semantic
+    Segmentation - arxiv](https://arxiv.org/abs/1605.06211)
+  - [Github repo](https://github.com/shelhamer/fcn.berkeleyvision.org)
+  - [全卷积网络 FCN 详解](https://zhuanlan.zhihu.com/p/30195134)
+  - [网络结构 FCN-8S-PASCAL -
+    Netscope](http://ethereon.github.io/netscope/#/preset/fcn-8s-pascal)
+  - [计算机视觉中upsampling(上采样)的三种方式](https://blog.csdn.net/u014451076/article/details/79156967)
