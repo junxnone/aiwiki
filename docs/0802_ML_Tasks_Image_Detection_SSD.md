@@ -2,7 +2,7 @@
 Title | ML Tasks Image Detection SSD
 -- | --
 Created @ | `2026-11-26T01:28:48Z`
-Updated @| `2026-11-26T01:28:48Z`
+Updated @| `2026-11-26T01:30:11Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/802)
 
@@ -68,7 +68,7 @@ $$
 - $N$：匹配上真实框的默认框数 (正样本数)，为 $0$ 时损失取 $0$；$\alpha$：权重，取 $1$
 - $L_{conf}$：softmax 交叉熵 (含背景类)；$L_{loc}$：只对正样本计算的 Smooth $L_1$ 损失，回归目标是相对默认框的偏移，编码方式见 [Detection](/0152_ML_Tasks_Image_Detection)
 - 匹配规则：每个真实框先匹配到 IoU 最大的默认框，再把所有与真实框 $\mathrm{IoU}>0.5$ 的默认框也作为正样本
-- 难负样本挖掘：负样本远多于正样本 (几千比几个)，按置信度损失把负样本从高到低排序，只取最难的一部分，使负:正约 $3:1$；[RetinaNet](@@RET@@) 的 Focal Loss 是解决同一问题的另一种方式
+- 难负样本挖掘：负样本远多于正样本 (几千比几个)，按置信度损失把负样本从高到低排序，只取最难的一部分，使负:正约 $3:1$；[RetinaNet](/0804_ML_Tasks_Image_Detection_RetinaNet) 的 Focal Loss 是解决同一问题的另一种方式
 
 ## 速度与精度
 
@@ -79,7 +79,7 @@ SSD512 | 76.8 | 19
 [Faster R-CNN](/0059_ML_Tasks_Image_Detection_FasterRCNN) | 73.2 | 7
 [YOLO V1](/0054_ML_Tasks_Image_Detection_YOLO_V1) | 63.4 | 45
 
-表中：数据来自 SSD 论文，在同一时期比较；SSD300 的速度与 YOLO V1 相当而精度明显更高，精度与 Faster R-CNN 相当而速度快约 $6$ 倍。多尺度特征图是它比 YOLO V1 更好的主要原因，这一思想后来被 [FPN](@@FPN@@) 进一步发展。
+表中：数据来自 SSD 论文，在同一时期比较；SSD300 的速度与 YOLO V1 相当而精度明显更高，精度与 Faster R-CNN 相当而速度快约 $6$ 倍。多尺度特征图是它比 YOLO V1 更好的主要原因，这一思想后来被 [FPN](/0803_ML_Tasks_Image_Detection_FPN) 进一步发展。
 
 ## 局限
 
