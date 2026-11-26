@@ -2,16 +2,11 @@
 Title | ML Tasks Image Detection FastRCNN
 -- | --
 Created @ | `2019-12-11T05:18:12Z`
-Updated @| `2026-11-25T16:51:43Z`
+Updated @| `2026-11-26T01:27:00Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/58)
 
 ---
-## Reference
-- 2014 **R-CNN** Rich feature hierarchies for accurate object detection and semantic segmentation [[paper](https://arxiv.org/pdf/1311.2524.pdf)] [[Code](https://github.com/rbgirshick/rcnn)]
-- 2015 **Fast RCNN** [[paper](https://arxiv.org/pdf/1504.08083.pdf)]
-
-
 ## Brief
 - 共享卷积层
   - 提取候选框 --> CNN --> 每个候选框的特征 --> 分类+回归
@@ -112,4 +107,8 @@ $$
 表中：Fast R-CNN 的关键改进是「共享卷积」与「RoI Pooling」，使整个检测网络可以一次前向、一次训练。
 
 > 修正：上面步骤中提到的 `SPP layer`，在 Fast R-CNN 里实际使用的是单层金字塔的 RoI Pooling，可以看作 SPP-net 只用一级金字塔的特例。
+
+## Reference
+- 2014 **R-CNN** Rich feature hierarchies for accurate object detection and semantic segmentation [[paper](https://arxiv.org/pdf/1311.2524.pdf)] [[Code](https://github.com/rbgirshick/rcnn)]
+- 2015 **Fast RCNN** [[paper](https://arxiv.org/pdf/1504.08083.pdf)]
 
