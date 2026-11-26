@@ -526,6 +526,7 @@
     - [Safety](/0847_LM_Deploy_Safety)
     - [Service](/0845_LM_Deploy_Service)
     - [Sizing](/0844_LM_Deploy_Sizing)
+    - [ToolCalling](/0852_LM_Deploy_ToolCalling)
   - [大模型微调](/0410_LM_FT)
     - [AdaLoRA](/0491_LM_FT_AdaLoRA)
     - [Adapter FineTuning](/0412_LM_FT_Adapter)
@@ -825,4 +826,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@2340561126</sub></kbd>
+<kbd><sub>@2341111126</sub></kbd>

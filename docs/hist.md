@@ -4,6 +4,7 @@
 
 #### **Created**
 
+- 2026-11-26 23:40&nbsp;&nbsp; [ToolCalling](/0852_LM_Deploy_ToolCalling)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:ToolCalling
 - 2026-11-26 23:40&nbsp;&nbsp; [Gateway](/0851_LM_Deploy_Gateway)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Gateway
 - 2026-11-26 23:40&nbsp;&nbsp; [Kubernetes](/0850_LM_Deploy_Kubernetes)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Kubernetes
 - 2026-11-26 23:39&nbsp;&nbsp; [Benchmark](/0849_LM_Deploy_Benchmark)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Benchmark
@@ -823,6 +824,7 @@
 
 #### **Updated**
 
+- 2026-11-26 23:40&nbsp;&nbsp; [ToolCalling](/0852_LM_Deploy_ToolCalling)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:ToolCalling
 - 2026-11-26 23:40&nbsp;&nbsp; [Gateway](/0851_LM_Deploy_Gateway)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Gateway
 - 2026-11-26 23:40&nbsp;&nbsp; [Kubernetes](/0850_LM_Deploy_Kubernetes)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Kubernetes
 - 2026-11-26 23:39&nbsp;&nbsp; [Benchmark](/0849_LM_Deploy_Benchmark)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Benchmark
