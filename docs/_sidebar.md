@@ -536,11 +536,13 @@
     - [Reasoning](/0833_LM_FT_Reasoning)
     - [Textual Inversion](/0570_LM_FT_TextualInversion)
   - [Infer](/0819_LM_Infer)
+    - [Attention](/0839_LM_Infer_Attention)
     - [Basics](/0834_LM_Infer_Basics)
     - [KVCache](/0838_LM_Infer_KVCache)
     - [Optimization](/0835_LM_Infer_Optimization)
     - [Parallel](/0836_LM_Infer_Parallel)
     - [Speculative](/0837_LM_Infer_Speculative)
+    - [StructuredOutput](/0840_LM_Infer_StructuredOutput)
   - [Large Language Models](/0446_LM_LLMs)
     - [LLaMA](/0504_LM_LLMs_LLaMA)
     - [LLMs Metrics](/0503_LM_LLMs_Metrics)
@@ -811,4 +813,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@2338061126</sub></kbd>
+<kbd><sub>@2338371126</sub></kbd>

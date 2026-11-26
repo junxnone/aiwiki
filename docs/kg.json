@@ -4177,6 +4177,24 @@
       "childLinks": []
     },
     {
+      "id": "aiwiki LM Infer Attention",
+      "group": 3,
+      "title": "Attention",
+      "url": "https://junxnone.github.io/aiwiki/#/0839_LM_Infer_Attention",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
+      "id": "aiwiki LM Infer StructuredOutput",
+      "group": 3,
+      "title": "StructuredOutput",
+      "url": "https://junxnone.github.io/aiwiki/#/0840_LM_Infer_StructuredOutput",
+      "visible": true,
+      "expand": true,
+      "childLinks": []
+    },
+    {
       "id": "aiwiki ML Op Convolution Math",
       "group": 4,
       "title": "卷积 数学定义",
@@ -10459,6 +10477,20 @@
     {
       "source": "aiwiki LM Infer",
       "target": "aiwiki LM Infer KVCache",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki LM Infer",
+      "target": "aiwiki LM Infer Attention",
+      "value": 3,
+      "visible": true,
+      "expand": true
+    },
+    {
+      "source": "aiwiki LM Infer",
+      "target": "aiwiki LM Infer StructuredOutput",
       "value": 3,
       "visible": true,
       "expand": true
