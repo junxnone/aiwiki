@@ -3,7 +3,7 @@
 | Title     | ML Tasks Image Detection YOLO V5                      |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2023-02-14T13:27:32Z`                                |
-| Updated @ | `2026-11-25T16:51:39Z`                                |
+| Updated @ | `2026-11-26T01:26:55Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/379) |
 
@@ -37,16 +37,6 @@
   - EMA(Exponential Moving Average)
   - Mixed precision
   - Evolve hyper-parameters
-
-## Reference
-
-  - [YOLOv5 (6.0/6.1) brief
-    summary](https://github.com/ultralytics/yolov5/issues/6998)
-  - [Github Code](https://github.com/ultralytics/yolov5)
-  - [Docs Wiki](https://github.com/ultralytics/yolov5/wiki)
-  - **Ultralytics 提供了个 [ 数据集管理模型管理的工具 -
-    hub](https://hub.ultralytics.com/)** \[[Trained Model
-    Preview](https://hub.ultralytics.com/models/7lyorIyBxUuJ6xjOSSlt)\]
 
 ## 结构细节
 
@@ -133,3 +123,13 @@ wh\\right)^2,\\qquad \\alpha=\\frac{v}{(1-\\mathrm{IoU})+v} $$
   - Warmup + 余弦学习率：训练初期线性升高学习率避免发散，之后按余弦曲线衰减
 
 总览见 [YOLO 系列](/0053_ML_Tasks_Image_Detection_YOLO)。
+
+## Reference
+
+  - [YOLOv5 (6.0/6.1) brief
+    summary](https://github.com/ultralytics/yolov5/issues/6998)
+  - [Github Code](https://github.com/ultralytics/yolov5)
+  - [Docs Wiki](https://github.com/ultralytics/yolov5/wiki)
+  - **Ultralytics 提供了个 [ 数据集管理模型管理的工具 -
+    hub](https://hub.ultralytics.com/)** \[[Trained Model
+    Preview](https://hub.ultralytics.com/models/7lyorIyBxUuJ6xjOSSlt)\]
