@@ -3,7 +3,7 @@
 | Title     | ML Tasks Image Retrieval CBIR TripletNetwork          |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2019-02-20T09:43:34Z`                                |
-| Updated @ | `2026-11-26T01:27:30Z`                                |
+| Updated @ | `2026-11-26T08:17:10Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/156) |
 
@@ -40,14 +40,28 @@ loss的缺点在于其收敛速度慢，有时不收敛。
 
 <img src="https://user-images.githubusercontent.com/2216970/53111569-4155cb00-3578-11e9-8f62-0901eb3188da.png" alt="alt text" width="50%" height="50%">
 
-`L=max(d(a,p)−d(a,n)+margin,0)`
+$$ L = \\max\\left(d(a,p) - d(a,n) + \\text{margin},\\ 0\\right) $$
 
-  - 最终的优化目标是拉近 a, p 的距离， 拉远 a, n 的距离
-  - easy triplets: L=0 即 d(a,p)+margin\<d(a,n)，这种情况不需要优化，天然a, p的距离很近， a,
-    n的距离远
-  - hard triplets: d(a,n)\<d(a,p), 即a, p的距离远
-  - semi-hard triplets: d(a,p)\<d(a,n)\<d(a,p)+margin, 即a,
-    n的距离靠的很近，但是有一个margin
+其中：
+
+  - $a$：锚点（anchor）样本；$p$：与 $a$ 同类的正样本（positive）；$n$：与 $a$
+    不同类的负样本（negative）
+
+  - $d(\\cdot,\\cdot)$：两个样本特征向量之间的距离（如欧氏距离）
+
+  - $\\text{margin}$：间隔超参数，要求负样本比正样本至少远 margin
+
+  - $L$：三元组损失；$\\max(\\cdot,0)$ 保证已满足间隔的样本损失为 0
+
+  - 最终的优化目标是拉近 $a, p$ 的距离， 拉远 $a, n$ 的距离
+
+  - easy triplets: $L=0$ 即 $d(a,p)+\\text{margin}\<d(a,n)$，这种情况不需要优化，天然
+    $a, p$ 的距离很近， $a, n$ 的距离远
+
+  - hard triplets: $d(a,n)\<d(a,p)$, 即 $a, p$ 的距离远
+
+  - semi-hard triplets: $d(a,p)\<d(a,n)\<d(a,p)+\\text{margin}$, 即 $a,
+    n$ 的距离靠的很近，但是有一个 margin
 
 <img src="https://user-images.githubusercontent.com/2216970/53113186-f473f380-357b-11e9-8903-9691177e642a.png" alt="alt text" width="50%" height="50%">
 
