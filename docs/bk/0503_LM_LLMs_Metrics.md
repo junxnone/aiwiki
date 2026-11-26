@@ -3,7 +3,7 @@
 | Title     | LM LLMs Metrics                                       |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2025-02-08T07:57:07Z`                                |
-| Updated @ | `2026-11-26T08:28:53Z`                                |
+| Updated @ | `2026-11-26T15:43:41Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/503) |
 
@@ -35,6 +35,11 @@ flowchart LR
   - **KV Cache**：缓存每层历史 token 的 Key 和 Value，避免重复计算
   - 循环箭头表示解码逐 token 自回归，直到结束
   - 关键结论：两个阶段的瓶颈不同，所以指标和优化手段也不同
+
+更系统的推导 (Roofline、KV Cache 公式、临界 batch) 见 [Infer
+Basics](/0834_LM_Infer_Basics)，压测方法见
+[Benchmark](/0849_LM_Deploy_Benchmark)，线上监控的指标名见
+[Ops](/0846_LM_Deploy_Ops)。
 
 ## 推理速度
 
