@@ -64,7 +64,7 @@
   - [Structure Tensor 结构张量](/0070_CV_StructureTensor)
   - [Traditional Image Segmentation 传统图像分割](/0158_CV_TIS)
   - [Traditional OCR 传统字符识别](/0199_CV_TOCR)
-  - [Tools](/0063_CV_Tools)
+  - [CV Tools](/0063_CV_Tools)
 - [OpenCV](/0105_OpenCV)
   - [OpenCV 读写](/0426_OpenCV_IO)
     - [Image](/0361_OpenCV_IO_Image)
@@ -763,7 +763,7 @@
     - [Harness Skills](/0553_Hot_Harness_Skills)
   - [模型可解释性前沿状态](/0558_Hot_Interpretability)
   - [世界模型（World Model）](/0566_Hot_WorldModel)
-- [KnowledgeGraph](/0329_KnowledgeGraph)
+- [Knowledge Graph](/0329_KnowledgeGraph)
 - [资源参考](/0380_Reference)
 - [x](/0418_x)
   - [Diffusion Model](/0512_x_DM)
@@ -781,4 +781,4 @@
 - [Wiki History](/hist)
 
 ---
-<kbd><sub>@1816191126</sub></kbd>
+<kbd><sub>@1819121126</sub></kbd>

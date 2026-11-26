@@ -48,7 +48,7 @@
     {
       "id": "aiwiki KnowledgeGraph",
       "group": 1,
-      "title": "KnowledgeGraph",
+      "title": "Knowledge Graph",
       "url": "https://junxnone.github.io/aiwiki/#/0329_KnowledgeGraph",
       "visible": true,
       "expand": true,
@@ -264,7 +264,7 @@
     {
       "id": "aiwiki CV Tools",
       "group": 2,
-      "title": "Tools",
+      "title": "CV Tools",
       "url": "https://junxnone.github.io/aiwiki/#/0063_CV_Tools",
       "visible": true,
       "expand": true,
