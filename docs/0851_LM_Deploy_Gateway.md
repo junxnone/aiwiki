@@ -2,7 +2,7 @@
 Title | LM Deploy Gateway
 -- | --
 Created @ | `2026-11-26T15:40:17Z`
-Updated @| `2026-11-26T15:40:17Z`
+Updated @| `2026-11-26T15:43:25Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/851)
 
@@ -38,9 +38,9 @@ flowchart LR
 路由 | 按模型名、租户、请求特征或负载分发
 级联 / 降级 | 先用便宜的模型，不满足要求再升级到更强的模型；过载时降级到小模型
 缓存 | 精确缓存 (完全相同的请求) 和语义缓存 (意思相近的请求)
-限流与配额 | 按租户的 RPM/TPM，见 [Service](@@DSVC@@)
+限流与配额 | 按租户的 RPM/TPM，见 [Service](/0845_LM_Deploy_Service)
 重试与容灾 | 某个后端失败或超时时切换到备用后端
-安全 | 统一做输入输出护栏和敏感信息脱敏，见 [Safety](@@DSAF@@)
+安全 | 统一做输入输出护栏和敏感信息脱敏，见 [Safety](/0847_LM_Deploy_Safety)
 
 表中：这些功能大多与模型无关，放在网关里统一实现，避免每个业务重复开发。代表工具有 LiteLLM、各类 API 网关的 AI 插件等。
 
@@ -70,8 +70,8 @@ $$
 ## 部署建议
 
 - 网关本身要高可用 (多副本)，并尽量轻量，避免成为延迟瓶颈；流式响应要透传，不能缓冲
-- 自建推理集群内部的负载均衡 (按 KV 使用率、前缀亲和) 由推理侧的路由层负责，见 [Kubernetes](@@DK8S@@)；网关负责的是跨模型、跨供应商这一层
-- 计量数据接入成本监控，见 [Ops](@@DOPS@@)
+- 自建推理集群内部的负载均衡 (按 KV 使用率、前缀亲和) 由推理侧的路由层负责，见 [Kubernetes](/0850_LM_Deploy_Kubernetes)；网关负责的是跨模型、跨供应商这一层
+- 计量数据接入成本监控，见 [Ops](/0846_LM_Deploy_Ops)
 
 ## Reference
 - [LiteLLM](https://github.com/BerriAI/litellm)
