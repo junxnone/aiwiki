@@ -3,22 +3,13 @@
 | Title     | ML Tasks Image Classification Inception V2V3         |
 | --------- | ---------------------------------------------------- |
 | Created @ | `2019-12-04T09:37:22Z`                               |
-| Updated @ | `2026-11-25T16:50:53Z`                               |
+| Updated @ | `2026-11-26T01:26:23Z`                               |
 | Labels    | \`\`                                                 |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/46) |
 
 -----
 
 # Inception V2V3
-
-## Reference
-
-  - 2015 **Inception V2 & V3** Rethinking the Inception Architecture for
-    Computer Vision \[[paper](https://arxiv.org/pdf/1512.00567.pdf)\]
-  - [Inception结构](https://baike.baidu.com/item/Inception%E7%BB%93%E6%9E%84/22761220?fr=aladdin)
-  - [一文概览Inception家族的「奋斗史」](https://www.chainnews.com/articles/727946354364.htm)
-  - [深入浅出——网络模型中Inception的作用与结构全解析](https://blog.csdn.net/u010402786/article/details/52433324)
-  - [图像分类丨Inception家族进化史「GoogleNet、Inception、Xception」](https://www.cnblogs.com/vincent1997/p/10920036.html)
 
 ## Brief
 
@@ -144,3 +135,12 @@ L=-\\sum\_{k=1}^{K}q'(k)\\log p(k) $$
 | 输入尺寸            | $224\\times224$                                                  | $299\\times299$                  |
 
 表中：V3 是 V2 的最终版，在 V2 基础上给辅助分类器加了 BN 并用 RMSProp、Label Smoothing 等训练技巧。
+
+## Reference
+
+  - 2015 **Inception V2 & V3** Rethinking the Inception Architecture for
+    Computer Vision \[[paper](https://arxiv.org/pdf/1512.00567.pdf)\]
+  - [Inception结构](https://baike.baidu.com/item/Inception%E7%BB%93%E6%9E%84/22761220?fr=aladdin)
+  - [一文概览Inception家族的「奋斗史」](https://www.chainnews.com/articles/727946354364.htm)
+  - [深入浅出——网络模型中Inception的作用与结构全解析](https://blog.csdn.net/u010402786/article/details/52433324)
+  - [图像分类丨Inception家族进化史「GoogleNet、Inception、Xception」](https://www.cnblogs.com/vincent1997/p/10920036.html)
