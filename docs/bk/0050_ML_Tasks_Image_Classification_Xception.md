@@ -3,19 +3,13 @@
 | Title     | ML Tasks Image Classification Xception               |
 | --------- | ---------------------------------------------------- |
 | Created @ | `2019-12-04T05:29:11Z`                               |
-| Updated @ | `2026-11-25T16:51:00Z`                               |
+| Updated @ | `2026-11-26T01:26:29Z`                               |
 | Labels    | \`\`                                                 |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/50) |
 
 -----
 
 # Xception
-
-## Reference
-
-  - 2016 **Xception** Xception: Deep Learning with Depthwise Separable
-    Convolutions \[[paper](https://arxiv.org/abs/1610.02357)\]
-  - [Xception 分析](https://blog.csdn.net/lk3030/article/details/84847879)
 
 ## Brief
 
@@ -100,3 +94,9 @@ flowchart LR
     精度略高于 V3
   - 深度可分离卷积后来成为轻量化网络的基础，见
     [MobileNet](/0045_ML_Tasks_Image_Classification_MobileNet)
+
+## Reference
+
+  - 2016 **Xception** Xception: Deep Learning with Depthwise Separable
+    Convolutions \[[paper](https://arxiv.org/abs/1610.02357)\]
+  - [Xception 分析](https://blog.csdn.net/lk3030/article/details/84847879)
