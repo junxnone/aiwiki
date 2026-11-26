@@ -2,17 +2,12 @@
 Title | ML Tasks Image OCR SW
 -- | --
 Created @ | `2020-05-08T06:06:40Z`
-Updated @| `2026-11-25T16:56:11Z`
+Updated @| `2026-11-26T01:27:38Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/188)
 
 ---
 # Sliding Windows CNN CTC
-
-## Reference
-- [paper - 2017 - Scene Text Recognition with Sliding Convolutional Character Models](https://arxiv.org/pdf/1709.01727.pdf)
-- [场景文字识别Sliding Convolution笔记](https://blog.csdn.net/qq_14845119/article/details/79312860)
-- [Sequence Modeling With CTC](https://distill.pub/2017/ctc/)
 
 ## Brief
 - Sliding windows + CNN + [CTC](/0189_ML_Tasks_Image_OCR_CTC)
@@ -109,4 +104,9 @@ $$
 - 优点：不需要字符级切分标注，用 CTC 解决了对齐，结构简单
 - 缺点：滑动窗口重复计算多，速度慢；窗口大小固定，难以适应宽度差异大的字符；没有利用序列上下文，需要靠 CTC 和语言模型补偿
 - 改进：卷积特征共享 + 循环网络的 [CRNN](/0196_ML_Tasks_Image_OCR_CRNN)；总览见 [OCR](/0200_ML_Tasks_Image_OCR)
+
+## Reference
+- [paper - 2017 - Scene Text Recognition with Sliding Convolutional Character Models](https://arxiv.org/pdf/1709.01727.pdf)
+- [场景文字识别Sliding Convolution笔记](https://blog.csdn.net/qq_14845119/article/details/79312860)
+- [Sequence Modeling With CTC](https://distill.pub/2017/ctc/)
 
