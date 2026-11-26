@@ -2,7 +2,7 @@
 Title | ML Tasks Image Anomaly Synthesis
 -- | --
 Created @ | `2025-05-19T01:22:49Z`
-Updated @| `2025-05-29T03:30:01Z`
+Updated @| `2026-11-26T08:19:33Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/517)
 
@@ -399,7 +399,7 @@ U - Net 作为核心可学习模型：
 
 > [!NOTE]
 >   - **输入与初始处理**
->   - 1 **原始图像及相关处理**：原始图像 $I$ 输入模型，通过 $U^{2}$ -Net分割得到对象掩码 $M_{f}$  ，进而得到背景图像 $`I_{b}= $1 - M_{f}$ ×I`$  。这里 $U^{2}$ -Net用于图像分割，帮助分离出图像中的对象和背景部分，为后续处理做准备。
+>   - 1 **原始图像及相关处理**：原始图像 $I$ 输入模型，通过 $U^{2}$ -Net分割得到对象掩码 $M_{f}$  ，进而得到背景图像 $`I_{b}= (1 - M_{f}) \times I`$（其中 $I_b$ 为背景图像，$M_f$ 为前景对象掩码，$\times$ 为逐像素相乘）。这里 $U^{2}$ -Net用于图像分割，帮助分离出图像中的对象和背景部分，为后续处理做准备。
 >   - 2 **真实值（GT）与异常掩码**：输入的真实值（GT）用来确定异常掩码 $M_{a}$ ，进而得到异常部分图像 $I_{a}$  。这一步明确了图像中异常的具体位置和范围。
 > - **双扩散模型处理**
 >   - 1 **整体异常图像生成（SD）**：
@@ -488,3 +488,4 @@ U - Net 作为核心可学习模型：
 
 - [awesome-anomaly-synthesis](https://github.com/M-3LAB/awesome-anomaly-synthesis) 
 - [[A Survey on Industrial Anomalies Synthesis](https://arxiv.org/abs/2502.16412)]
+
