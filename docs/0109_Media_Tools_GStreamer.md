@@ -2,7 +2,7 @@
 Title | Media Tools GStreamer
 -- | --
 Created @ | `2018-11-27T15:44:49Z`
-Updated @| `2026-11-25T16:21:50Z`
+Updated @| `2026-11-26T01:26:11Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/109)
 
@@ -64,17 +64,9 @@ flowchart LR
 
 ![image](https://user-images.githubusercontent.com/2216970/138203169-3e1ebef5-fb7f-4c08-a5d8-5a41159f3be9.png)
 
-
 ## Reference
 - [gstreamer blog](https://blog.csdn.net/knowledgebao/article/category/8053683)
 - [Gstreamer的安装](https://blog.csdn.net/knowledgebao/article/details/83993255)
 - [Docs](https://thiblahute.github.io/GStreamer-doc/index.html?gi-language=c)
 - [wiki - wdv4758h](https://wdv4758h.github.io/notes/multimedia/gstreamer.html#)
-
-
-
-
-
-
-
 
