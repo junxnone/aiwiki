@@ -835,8 +835,13 @@
 - 2026-11-26&nbsp;&nbsp; [OpenCV With IPP](/0430_OpenCV_IPP)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IPP
 - 2026-11-26&nbsp;&nbsp; [DragGAN](/0429_LM_VLM_DragGAN)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:DragGAN
 - 2026-11-26&nbsp;&nbsp; [Image 相关 Tasks](/0420_ML_Tasks_Image)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image
+- 2026-11-26&nbsp;&nbsp; [3D Tools](/0419_3D_Tools)&nbsp;&nbsp; :bookmark:3D :bookmark:Tools
+- 2026-11-26&nbsp;&nbsp; [x](/0418_x)&nbsp;&nbsp; :bookmark:x
+- 2026-11-26&nbsp;&nbsp; [机器学习/深度学习](/0416_ML)&nbsp;&nbsp; :bookmark:ML
+- 2026-11-26&nbsp;&nbsp; [AI Tools](/0415_Tools)&nbsp;&nbsp; :bookmark:Tools
 - 2026-11-26&nbsp;&nbsp; [SAM](/0414_LM_VLM_SAM)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:SAM
 - 2026-11-26&nbsp;&nbsp; [Adapter FineTuning](/0412_LM_FT_Adapter)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:Adapter
+- 2026-11-26&nbsp;&nbsp; [Cool Demo](/0409_x_Demo)&nbsp;&nbsp; :bookmark:x :bookmark:Demo
 - 2026-11-26&nbsp;&nbsp; [DreamBooth](/0405_LM_FT_DreamBooth)&nbsp;&nbsp; :bookmark:LM :bookmark:FT :bookmark:DreamBooth
 - 2026-11-26&nbsp;&nbsp; [LaMa - Image Inpainting](/0404_LM_VLM_LaMa)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:LaMa
 - 2026-11-26&nbsp;&nbsp; [缺陷图片生成](/0403_x_DefectGen)&nbsp;&nbsp; :bookmark:x :bookmark:DefectGen
@@ -845,6 +850,7 @@
 - 2026-11-26&nbsp;&nbsp; [GreedyProjectionTriangulation](/0399_3D_Algos_triangulation)&nbsp;&nbsp; :bookmark:3D :bookmark:Algos :bookmark:triangulation
 - 2026-11-26&nbsp;&nbsp; [NAS Metrics](/0394_ML_AutoML_NAS_Metrics)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:NAS :bookmark:Metrics
 - 2026-11-26&nbsp;&nbsp; [Search Space](/0392_ML_AutoML_NAS_SearchSpace)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:NAS :bookmark:SearchSpace
+- 2026-11-26&nbsp;&nbsp; [Papers](/0386_paper)&nbsp;&nbsp; :bookmark:paper
 - 2026-11-26&nbsp;&nbsp; [CSPNet](/0385_paper_CSPNet)&nbsp;&nbsp; :bookmark:paper :bookmark:CSPNet
 - 2026-11-26&nbsp;&nbsp; [YOLO V5](/0379_ML_Tasks_Image_Detection_YOLO_V5)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Detection :bookmark:YOLO :bookmark:V5
 - 2026-11-26&nbsp;&nbsp; [Loss/Cost/ Object Function - 损失代价目标函数](/0378_ML_Arch_Func)&nbsp;&nbsp; :bookmark:ML :bookmark:Arch :bookmark:Func
@@ -970,6 +976,10 @@
 - 2026-11-26&nbsp;&nbsp; [AlexNet](/0027_ML_Tasks_Image_Classification_AlexNet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Classification :bookmark:AlexNet
 - 2026-11-26&nbsp;&nbsp; [FLOPs Parameters 计算](/0026_Tools_FPCalculate)&nbsp;&nbsp; :bookmark:Tools :bookmark:FPCalculate
 - 2026-11-26&nbsp;&nbsp; [LeNet](/0024_ML_Tasks_Image_Classification_LeNet)&nbsp;&nbsp; :bookmark:ML :bookmark:Tasks :bookmark:Image :bookmark:Classification :bookmark:LeNet
+- 2026-11-26&nbsp;&nbsp; [NLP](/0021_Datasets_NLP)&nbsp;&nbsp; :bookmark:Datasets :bookmark:NLP
+- 2026-11-26&nbsp;&nbsp; [Audio](/0020_Datasets_Audio)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Audio
+- 2026-11-26&nbsp;&nbsp; [Video](/0019_Datasets_Video)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Video
+- 2026-11-26&nbsp;&nbsp; [Datasets 数据集](/0017_Datasets)&nbsp;&nbsp; :bookmark:Datasets
 - 2026-11-26&nbsp;&nbsp; [NNI](/0016_ML_AutoML_Tools_NNI)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:Tools :bookmark:NNI
 - 2026-11-26&nbsp;&nbsp; [标注工具](/0006_Tools_Label)&nbsp;&nbsp; :bookmark:Tools :bookmark:Label
 - 2026-11-25&nbsp;&nbsp; [Sim2Real](/0798_RL_Robot_Sim2Real)&nbsp;&nbsp; :bookmark:RL :bookmark:Robot :bookmark:Sim2Real
@@ -1394,7 +1404,6 @@
 - 2026-03-02&nbsp;&nbsp; [OpenVINO Debug](/0527_Tools_OV_Debug)&nbsp;&nbsp; :bookmark:Tools :bookmark:OV :bookmark:Debug
 - 2026-02-27&nbsp;&nbsp; [Deformable DETR](/0484_paper_DeformableDETR)&nbsp;&nbsp; :bookmark:paper :bookmark:DeformableDETR
 - 2025-06-10&nbsp;&nbsp; [DualAnoDiff CN](/0523_paper_DualAnoDiff_cn)&nbsp;&nbsp; :bookmark:paper :bookmark:DualAnoDiff :bookmark:cn
-- 2025-06-10&nbsp;&nbsp; [Papers](/0386_paper)&nbsp;&nbsp; :bookmark:paper
 - 2025-06-05&nbsp;&nbsp; [AnomalyAny CN](/0520_paper_AnomalyAny_cn)&nbsp;&nbsp; :bookmark:paper :bookmark:AnomalyAny :bookmark:cn
 - 2025-06-05&nbsp;&nbsp; [AnomalyAny](/0519_paper_AnomalyAny)&nbsp;&nbsp; :bookmark:paper :bookmark:AnomalyAny
 - 2025-05-13&nbsp;&nbsp; [BLDM](/0514_x_DM_BLDM)&nbsp;&nbsp; :bookmark:x :bookmark:DM :bookmark:BLDM
@@ -1424,7 +1433,6 @@
 - 2025-01-24&nbsp;&nbsp; [Latent Space 潜在空间](/0455_LM_VLM_LatentSpace)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:LatentSpace
 - 2025-01-24&nbsp;&nbsp; [Large Language Models](/0446_LM_LLMs)&nbsp;&nbsp; :bookmark:LM :bookmark:LLMs
 - 2025-01-24&nbsp;&nbsp; [Stable Diffusion 原理](/0445_LM_VLM_StableDiffusion_Algos)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:StableDiffusion :bookmark:Algos
-- 2025-01-24&nbsp;&nbsp; [机器学习/深度学习](/0416_ML)&nbsp;&nbsp; :bookmark:ML
 - 2025-01-24&nbsp;&nbsp; [Imagen](/0413_LM_VLM_Imagen)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:Imagen
 - 2025-01-24&nbsp;&nbsp; [大模型](/0408_LM)&nbsp;&nbsp; :bookmark:LM
 - 2025-01-24&nbsp;&nbsp; [Stable Diffusion](/0402_LM_VLM_StableDiffusion)&nbsp;&nbsp; :bookmark:LM :bookmark:VLM :bookmark:StableDiffusion
@@ -1445,7 +1453,6 @@
 - 2024-05-15&nbsp;&nbsp; [MuSC](/0467_paper_MuSC)&nbsp;&nbsp; :bookmark:paper :bookmark:MuSC
 - 2024-05-15&nbsp;&nbsp; [ONNX 可视化工具](/0134_Tools_VIS_ONNX)&nbsp;&nbsp; :bookmark:Tools :bookmark:VIS :bookmark:ONNX
 - 2024-04-26&nbsp;&nbsp; [YOLO-World](/0465_paper_YOLOWorld)&nbsp;&nbsp; :bookmark:paper :bookmark:YOLOWorld
-- 2024-04-17&nbsp;&nbsp; [Datasets 数据集](/0017_Datasets)&nbsp;&nbsp; :bookmark:Datasets
 - 2024-02-23&nbsp;&nbsp; [应用](/0428_应用)&nbsp;&nbsp; :bookmark:应用
 - 2024-02-22&nbsp;&nbsp; [有趣的工具](/0462_有趣的工具)&nbsp;&nbsp; :bookmark:有趣的工具
 - 2024-01-15&nbsp;&nbsp; [Histogram 图像直方图](/0342_Media_Image_Histogram)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Histogram
@@ -1462,14 +1469,10 @@
 - 2023-06-17&nbsp;&nbsp; [AutoML Tools](/0427_ML_AutoML_Tools)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:Tools
 - 2023-06-17&nbsp;&nbsp; [OpenCV 读写](/0426_OpenCV_IO)&nbsp;&nbsp; :bookmark:OpenCV :bookmark:IO
 - 2023-06-17&nbsp;&nbsp; [3D 算法](/0422_3D_Algos)&nbsp;&nbsp; :bookmark:3D :bookmark:Algos
-- 2023-06-17&nbsp;&nbsp; [AI Tools](/0415_Tools)&nbsp;&nbsp; :bookmark:Tools
 - 2023-06-17&nbsp;&nbsp; [Options](/0142_ML_AutoML_Tools_SIGOPT_Options)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:Tools :bookmark:SIGOPT :bookmark:Options
 - 2023-06-17&nbsp;&nbsp; [gst-inspect](/0112_Media_Tools_GStreamer_gstinspect)&nbsp;&nbsp; :bookmark:Media :bookmark:Tools :bookmark:GStreamer :bookmark:gstinspect
 - 2023-06-17&nbsp;&nbsp; [SIGOPT](/0015_ML_AutoML_Tools_SIGOPT)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:Tools :bookmark:SIGOPT
-- 2023-06-16&nbsp;&nbsp; [3D Tools](/0419_3D_Tools)&nbsp;&nbsp; :bookmark:3D :bookmark:Tools
-- 2023-06-16&nbsp;&nbsp; [x](/0418_x)&nbsp;&nbsp; :bookmark:x
 - 2023-06-16&nbsp;&nbsp; [Point Cloud Library](/0077_3D_Tools_PCL)&nbsp;&nbsp; :bookmark:3D :bookmark:Tools :bookmark:PCL
-- 2023-06-04&nbsp;&nbsp; [Cool Demo](/0409_x_Demo)&nbsp;&nbsp; :bookmark:x :bookmark:Demo
 - 2023-05-18&nbsp;&nbsp; [PCL Tools](/0081_3D_Tools_PCL_Tools)&nbsp;&nbsp; :bookmark:3D :bookmark:Tools :bookmark:PCL :bookmark:Tools
 - 2023-03-30&nbsp;&nbsp; [AABB OBB](/0315_3D_Tools_PCL_Bbox)&nbsp;&nbsp; :bookmark:3D :bookmark:Tools :bookmark:PCL :bookmark:Bbox
 - 2023-03-30&nbsp;&nbsp; [Read/Write](/0080_3D_Tools_PCL_IO)&nbsp;&nbsp; :bookmark:3D :bookmark:Tools :bookmark:PCL :bookmark:IO
@@ -1506,9 +1509,6 @@
 - 2021-10-27&nbsp;&nbsp; [Source Code Structure](/0129_ML_NNS_KDTree_FLANN_SourceCode)&nbsp;&nbsp; :bookmark:ML :bookmark:NNS :bookmark:KDTree :bookmark:FLANN :bookmark:SourceCode
 - 2021-10-21&nbsp;&nbsp; [Install](/0117_Media_Tools_GStreamer_Install)&nbsp;&nbsp; :bookmark:Media :bookmark:Tools :bookmark:GStreamer :bookmark:Install
 - 2021-10-11&nbsp;&nbsp; [Tools](/0063_CV_Tools)&nbsp;&nbsp; :bookmark:CV :bookmark:Tools
-- 2021-09-08&nbsp;&nbsp; [NLP](/0021_Datasets_NLP)&nbsp;&nbsp; :bookmark:Datasets :bookmark:NLP
-- 2021-09-08&nbsp;&nbsp; [Audio](/0020_Datasets_Audio)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Audio
-- 2021-09-08&nbsp;&nbsp; [Video](/0019_Datasets_Video)&nbsp;&nbsp; :bookmark:Datasets :bookmark:Video
 - 2021-09-06&nbsp;&nbsp; [NAS](/0014_ML_AutoML_NAS)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:NAS
 - 2021-09-06&nbsp;&nbsp; [HPO](/0013_ML_AutoML_HPO)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML :bookmark:HPO
 - 2021-09-06&nbsp;&nbsp; [AutoML](/0012_ML_AutoML)&nbsp;&nbsp; :bookmark:ML :bookmark:AutoML
