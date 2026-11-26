@@ -3,18 +3,13 @@
 | Title     | ML Tasks Image Classification MobileNet V3           |
 | --------- | ---------------------------------------------------- |
 | Created @ | `2020-02-25T10:17:32Z`                               |
-| Updated @ | `2026-11-25T16:51:19Z`                               |
+| Updated @ | `2026-11-26T01:26:38Z`                               |
 | Labels    | `index`                                              |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/44) |
 
 -----
 
 # MobileNet V3
-
-## Reference
-
-  - 2019 **MobileNet V3** Searching for MobileNetV3
-    \[[paper](https://arxiv.org/pdf/1905.02244.pdf)\]
 
 ## Brief
 
@@ -79,3 +74,8 @@ $27%$。`[待核实]` 表中延迟相关的具体毫秒数请查阅论文。
 
   - V1 解决「怎样算得便宜」(可分离卷积)，V2 解决「怎样结构更好」(倒残差 + 线性瓶颈)，V3 用搜索和注意力继续逼近硬件极限
   - 后续轻量网络 (EfficientNet、MobileOne 等) 沿用了 depthwise、SE 和 NAS 的思路
+
+## Reference
+
+  - 2019 **MobileNet V3** Searching for MobileNetV3
+    \[[paper](https://arxiv.org/pdf/1905.02244.pdf)\]
