@@ -2,23 +2,12 @@
 Title | ML Tasks Image Segmentation Instance
 -- | --
 Created @ | `2019-01-24T22:01:24Z`
-Updated @| `2026-11-25T16:52:01Z`
+Updated @| `2026-11-26T01:27:18Z`
 Labels | ``
 Edit @| [here](https://github.com/junxnone/aiwiki/issues/167)
 
 ---
 # Instance Segmentation 实例分割
-
-## Reference
-- [Instance Segmentation入门总结](https://www.cnblogs.com/Xiaoyan-Li/p/10156463.html)
-- [进展综述 - 单阶段实例分割（Single Shot Instance Segmentation）](https://zhuanlan.zhihu.com/p/102231853)
-- Training Oxford-IIIT Pets Dataset with tensorflow/models junxnone/tech-io#253
-- [Tensorflow/models - Run an Instance Segmentation Model](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/instance_segmentation.md)
-- [instance_segmentation - opencv/openvino_training_extensions](https://github.com/opencv/openvino_training_extensions/tree/develop/pytorch_toolkit/instance_segmentation)
-- [PaddleDetection](https://github.com/PaddlePaddle/PaddleDetection)
-- [detectron2 - facebookresearch](https://github.com/facebookresearch/detectron2) 
-  - [Tutorial.ipynb - colab](https://colab.research.google.com/drive/16jcaJoc6bCFAQ96jDe2HwtXj7BMD_-m5#scrollTo=hBXeH8UXFcqU)
-
 
 ## Brief
 
@@ -113,4 +102,14 @@ $$
 
 - 语义分割见 [Segmentation](/0159_ML_Tasks_Image_Segmentation)；检测基础概念 (IoU/NMS/AP) 见 [Detection](/0152_ML_Tasks_Image_Detection)
 - 掩码质量的改进见 [MS R-CNN](/0164_ML_Tasks_Image_Segmentation_MSRCNN)
+
+## Reference
+- [Instance Segmentation入门总结](https://www.cnblogs.com/Xiaoyan-Li/p/10156463.html)
+- [进展综述 - 单阶段实例分割（Single Shot Instance Segmentation）](https://zhuanlan.zhihu.com/p/102231853)
+- Training Oxford-IIIT Pets Dataset with tensorflow/models junxnone/tech-io#253
+- [Tensorflow/models - Run an Instance Segmentation Model](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/instance_segmentation.md)
+- [instance_segmentation - opencv/openvino_training_extensions](https://github.com/opencv/openvino_training_extensions/tree/develop/pytorch_toolkit/instance_segmentation)
+- [PaddleDetection](https://github.com/PaddlePaddle/PaddleDetection)
+- [detectron2 - facebookresearch](https://github.com/facebookresearch/detectron2) 
+  - [Tutorial.ipynb - colab](https://colab.research.google.com/drive/16jcaJoc6bCFAQ96jDe2HwtXj7BMD_-m5#scrollTo=hBXeH8UXFcqU)
 
