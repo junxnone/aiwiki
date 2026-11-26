@@ -3,7 +3,7 @@
 | Title     | LM Infer CPU                                          |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-26T15:38:12Z`                                |
-| Updated @ | `2026-11-26T15:38:12Z`                                |
+| Updated @ | `2026-11-26T15:42:42Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/841) |
 
@@ -12,7 +12,8 @@
 # CPU
 
 在 CPU 上运行大模型：速度由什么决定，AMX 等矩阵指令的作用，NUMA 与线程绑定，以及 llama.cpp 和 OpenVINO 在
-CPU 上的调优。资源估算见 [Sizing](@@DSIZ@@)，Intel 平台的完整部署见 [OpenVINO](@@DOV@@)。
+CPU 上的调优。资源估算见 [Sizing](/0844_LM_Deploy_Sizing)，Intel 平台的完整部署见
+[OpenVINO](/0848_LM_Deploy_OpenVINO)。
 
 ## 速度由什么决定
 
@@ -24,8 +25,9 @@ CPU 上的调优。资源估算见 [Sizing](@@DSIZ@@)，Intel 平台的完整部
 | decode  | 内存带宽 | 内存通道数、内存频率、NUMA 布局         |
 
 表中：CPU 的内存带宽 (单路约 $0.3\\sim0.6$ TB/s 理论值) 比 HBM 显卡低数倍，decode 的单请求速度上限按
-$\\eta,\\text{BW}/\\text{权重字节数}$ 估算，计算示例见 [Sizing](@@DSIZ@@)；prefill 比
-GPU 慢得更多，所以长提示词场景的 TTFT 是 CPU 部署的主要短板。
+$\\eta,\\text{BW}/\\text{权重字节数}$ 估算，计算示例见
+[Sizing](/0844_LM_Deploy_Sizing)；prefill 比 GPU 慢得更多，所以长提示词场景的 TTFT 是 CPU
+部署的主要短板。
 
 ## 矩阵加速指令
 
@@ -64,14 +66,15 @@ flowchart LR
 
 ## 框架与调优
 
-| 框架             | 适用                   | 调优要点                                                                         |
-| -------------- | -------------------- | ---------------------------------------------------------------------------- |
-| llama.cpp      | 通用，GGUF 量化格式丰富       | 选合适的量化 (Q4\_K\_M 等)，`-t` 线程数，NUMA 绑定，`--mlock` 防止权重被换出，见 [Format](@@DFMT@@)  |
-| OpenVINO GenAI | Intel CPU，利用 AMX     | INT4/INT8 权重压缩，`INFERENCE_NUM_THREADS`、性能模式 (延迟 vs 吞吐)，见 [OpenVINO](@@DOV@@) |
-| vLLM CPU 后端    | 需要 OpenAI 兼容服务和连续批处理 | 设置 KV Cache 空间大小与线程绑定 `[待核实]`                                                |
-| PyTorch + IPEX | 研究与定制                | IPEX 的大部分优化已合入 PyTorch 主线 `[待核实]`                                            |
+| 框架             | 适用                   | 调优要点                                                                                          |
+| -------------- | -------------------- | --------------------------------------------------------------------------------------------- |
+| llama.cpp      | 通用，GGUF 量化格式丰富       | 选合适的量化 (Q4\_K\_M 等)，`-t` 线程数，NUMA 绑定，`--mlock` 防止权重被换出，见 [Format](/0843_LM_Deploy_Format)     |
+| OpenVINO GenAI | Intel CPU，利用 AMX     | INT4/INT8 权重压缩，`INFERENCE_NUM_THREADS`、性能模式 (延迟 vs 吞吐)，见 [OpenVINO](/0848_LM_Deploy_OpenVINO) |
+| vLLM CPU 后端    | 需要 OpenAI 兼容服务和连续批处理 | 设置 KV Cache 空间大小与线程绑定 `[待核实]`                                                                 |
+| PyTorch + IPEX | 研究与定制                | IPEX 的大部分优化已合入 PyTorch 主线 `[待核实]`                                                             |
 
-表中：同一模型在不同框架上的速度可能差别很大，选型时用自己的模型和硬件测一下，方法见 [Benchmark](@@DBEN@@)。
+表中：同一模型在不同框架上的速度可能差别很大，选型时用自己的模型和硬件测一下，方法见
+[Benchmark](/0849_LM_Deploy_Benchmark)。
 
 ## 什么时候选 CPU
 
@@ -79,7 +82,8 @@ flowchart LR
     以下的量化模型)、需要大内存放下大模型或长上下文、数据不能出机房、已有
     CPU 服务器的闲置算力
   - 不适合：高并发在线服务、长提示词且对 TTFT 敏感的场景
-  - 混合：GPU 放不下的 MoE 专家或冷门 KV 可以 offload 到 CPU 内存，见 [KVCache 管理](@@IKV@@)
+  - 混合：GPU 放不下的 MoE 专家或冷门 KV 可以 offload 到 CPU 内存，见 [KVCache
+    管理](/0838_LM_Infer_KVCache)
 
 ## Reference
 
