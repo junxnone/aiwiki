@@ -1,11 +1,11 @@
 -----
 
-| Title         | Tools Darknet cfgFiles                                |
-| ------------- | ----------------------------------------------------- |
-| Created @     | `2020-01-29T11:56:37Z`                                |
-| Last Modify @ | `2022-12-25T04:05:19Z`                                |
-| Labels        | \`\`                                                  |
-| Edit @        | [here](https://github.com/junxnone/aiwiki/issues/262) |
+| Title     | Tools Darknet cfgFiles                                |
+| --------- | ----------------------------------------------------- |
+| Created @ | `2020-01-29T11:56:37Z`                                |
+| Updated @ | `2026-11-26T08:19:25Z`                                |
+| Labels    | \`\`                                                  |
+| Edit @    | [here](https://github.com/junxnone/aiwiki/issues/262) |
 
 -----
 
@@ -22,58 +22,58 @@
 
 ## Brief
 
-| Name                  | Description                                                                                |
-| --------------------- | ------------------------------------------------------------------------------------------ |
-| **\[net\]**           | model input, 参数等                                                                           |
-| **\[convolutional\]** | convolutional layer - 卷积层                                                                  |
-| **\[shortcut\]**      | 类似 `ResNet skip connection/residual connection` <br>两layer逐元素加, 前一层和 `from=` 指定的层          |
-| **\[upsample\]**      | 双线性插值增加上采样 `new_w = w*stride, new_h = h*stride`                                            |
-| **\[route\]**         | concatenation layer, 连接 (`concat` 方式) 指定 `layer`<br>`layer=` - 大于0 绝对 layer 小于0 - 相对 layer |
-| **\[yolo\]**          | detection layer for Yolo v3                                                                |
-| \[Gaussian\_yolo\]    | Gaussian yolo v3 中的 yolo layer                                                             |
-| \[connected\]         | fully connected layer                                                                      |
-| \[avgpool\]           | average pooling layer input `W x H x C` -\> output `1 x 1 x C`                             |
-| \[batchnorm\]         | separate Batch-normalization layer                                                         |
-| \[cost\]              | cost layer calculates (linear)Delta and (squared)Loss                                      |
-| \[crnn\]              | convolutional RNN-layer (recurrent)                                                        |
-| \[crop\]              | yolo v1                                                                                    |
-| \[detection\]         | yolo v1                                                                                    |
-| \[dropout\]           | dropout layer                                                                              |
-| \[gru\]               | fully connected GRU-layer (recurrent)                                                      |
-| \[local\]             | yolo v1 v2 中使用                                                                             |
-| \[lstm\]              | fully connected LSTM-layer (recurrent)                                                     |
-| \[maxpool\]           | max-pooling layer (the maximum value)                                                      |
-| \[region\]            | 在 yolo v1 v2 以及相关的 tiny 中类似 `yolo`                                                         |
-| \[reorg\]             | OLD reorg layer from Yolo v2                                                               |
-| \[reorg3d\]           | reorg layer (resize W x H x C)                                                             |
-| \[rnn\]               | fully connected RNN-layer (recurrent)                                                      |
-| \[scale\_channels\]   | scales channels (squeeze-and-excitation blocks)                                            |
-| \[softmax\]           | SoftMax CE (cross entropy) layer                                                           |
+| Name                  | Description                                                                                                      |
+| --------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| **\[net\]**           | model input, 参数等                                                                                                 |
+| **\[convolutional\]** | convolutional layer - 卷积层                                                                                        |
+| **\[shortcut\]**      | 类似 `ResNet skip connection/residual connection` <br>两layer逐元素加, 前一层和 `from=` 指定的层                                |
+| **\[upsample\]**      | 双线性插值增加上采样 $w\_{new} = w \\cdot \\text{stride},\\ h\_{new} = h \\cdot \\text{stride}$（$w,h$ 为输入宽高，stride 为上采样倍数） |
+| **\[route\]**         | concatenation layer, 连接 (`concat` 方式) 指定 `layer`<br>`layer=` - 大于0 绝对 layer 小于0 - 相对 layer                       |
+| **\[yolo\]**          | detection layer for Yolo v3                                                                                      |
+| \[Gaussian\_yolo\]    | Gaussian yolo v3 中的 yolo layer                                                                                   |
+| \[connected\]         | fully connected layer                                                                                            |
+| \[avgpool\]           | average pooling layer input `W x H x C` -\> output `1 x 1 x C`                                                   |
+| \[batchnorm\]         | separate Batch-normalization layer                                                                               |
+| \[cost\]              | cost layer calculates (linear)Delta and (squared)Loss                                                            |
+| \[crnn\]              | convolutional RNN-layer (recurrent)                                                                              |
+| \[crop\]              | yolo v1                                                                                                          |
+| \[detection\]         | yolo v1                                                                                                          |
+| \[dropout\]           | dropout layer                                                                                                    |
+| \[gru\]               | fully connected GRU-layer (recurrent)                                                                            |
+| \[local\]             | yolo v1 v2 中使用                                                                                                   |
+| \[lstm\]              | fully connected LSTM-layer (recurrent)                                                                           |
+| \[maxpool\]           | max-pooling layer (the maximum value)                                                                            |
+| \[region\]            | 在 yolo v1 v2 以及相关的 tiny 中类似 `yolo`                                                                               |
+| \[reorg\]             | OLD reorg layer from Yolo v2                                                                                     |
+| \[reorg3d\]           | reorg layer (resize W x H x C)                                                                                   |
+| \[rnn\]               | fully connected RNN-layer (recurrent)                                                                            |
+| \[scale\_channels\]   | scales channels (squeeze-and-excitation blocks)                                                                  |
+| \[softmax\]           | SoftMax CE (cross entropy) layer                                                                                 |
 
 ## `[net]`
 
 ### Input
 
-| Parameter       | Description                                                          |
-| --------------- | -------------------------------------------------------------------- |
-| batch=64        | 这儿batch与机器学习中的batch有少许差别，仅表示网络积累多少个样本后进行一次BP                         |
-| subdivisions=16 | 这个参数表示将一个batch的图片分sub次完成网络的前向传播<br>`mini_batch = batch/subdivisions` |
-| width=608       | 网络输入图片宽                                                              |
-| height=608      | 网络输入图片高                                                              |
-| channels=3      | 网络输入的通道数channels                                                     |
+| Parameter       | Description                                                                                             |
+| --------------- | ------------------------------------------------------------------------------------------------------- |
+| batch=64        | 这儿batch与机器学习中的batch有少许差别，仅表示网络积累多少个样本后进行一次BP                                                            |
+| subdivisions=16 | 这个参数表示将一个batch的图片分sub次完成网络的前向传播<br>$\\text{mini\_batch} = \\dfrac{\\text{batch}}{\\text{subdivisions}}$ |
+| width=608       | 网络输入图片宽                                                                                                 |
+| height=608      | 网络输入图片高                                                                                                 |
+| channels=3      | 网络输入的通道数channels                                                                                        |
 
 ### Learning
 
-| Parameter             | Description                                                                                                                          |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| momentum=0.9          | 动量参数, 类似滤波参数                                                                                                                         |
-| decay=0.0005          | 权重衰减正则项，防止过拟合                                                                                                                        |
-| learning\_rate=0.001  | 初始学习率                                                                                                                                |
-| burn\_in=1000         | 前 1000 iterations 使用特殊方式调整 lr <br>`current_lr = lr * pow(iterations / burn_in, power)` <br>`= 0.001 * pow(iterations/1000, 4)`       |
-| max\_batches = 500200 | 最大训练次数，达到此值后停止训练                                                                                                                     |
-| policy=steps          | 学习率改变的策略, 可选参数: <br>`constant (by default), sgdr, steps, step, sig, exp, poly, random`                                               |
-| steps=400000,450000   | 对应 `policy=steps` , 和 `scales` 值 相对应                                                                                                 |
-| scales=.1,.1          | `current_lr-n = lr * scales[0] * ... * scales[n]` <br> 若 `n=1, iterations = 450000`<br>则 `currnet_lr =  0.001 * 0.1 * 0.1 = 0.00001` |
+| Parameter             | Description                                                                                                                                                                                                                               |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| momentum=0.9          | 动量参数, 类似滤波参数                                                                                                                                                                                                                              |
+| decay=0.0005          | 权重衰减正则项，防止过拟合                                                                                                                                                                                                                             |
+| learning\_rate=0.001  | 初始学习率                                                                                                                                                                                                                                     |
+| burn\_in=1000         | 前 1000 iterations 使用特殊方式调整 lr <br>$lr\_{cur} = lr \\cdot \\left(\\dfrac{\\text{iter}}{\\text{burn\_in}}\\right)^{\\text{power}}$（$lr$ 为配置的基础学习率，iter 为当前迭代数，power 为指数）<br>$= 0.001 \\cdot \\left(\\dfrac{\\text{iter}}{1000}\\right)^{4}$ |
+| max\_batches = 500200 | 最大训练次数，达到此值后停止训练                                                                                                                                                                                                                          |
+| policy=steps          | 学习率改变的策略, 可选参数: <br>`constant (by default), sgdr, steps, step, sig, exp, poly, random`                                                                                                                                                    |
+| steps=400000,450000   | 对应 `policy=steps` , 和 `scales` 值 相对应                                                                                                                                                                                                      |
+| scales=.1,.1          | $lr\_{cur} = lr \\cdot s\_0 \\cdot s\_1 \\cdots s\_n$（$s\_i$ 为第 $i$ 个 scales 值，每经过一个 steps 点乘一次） <br> 若 $n=1$，iterations $=450000$<br>则 $lr\_{cur} = 0.001 \\times 0.1 \\times 0.1 = 0.00001$                                             |
 
 ### Augment
 
@@ -98,7 +98,7 @@
 | groups = 32        | number of groups for grouped-convolutional (depth-wise)                                                                                   | 1        |
 | stride=1           | stride (offset step) of kernel filter                                                                                                     | 1        |
 | padding=1          | size of padding                                                                                                                           | 0        |
-| pad=1              | 1 - `padding = size/2`<br> 0 - `padding=0`                                                                                                | 0        |
+| pad=1              | 1 - $\\text{padding} = \\lfloor \\text{size}/2 \\rfloor$<br> 0 - `padding=0`                                                              | 0        |
 | dilation=1         | size of dilation                                                                                                                          | 1        |
 | activation=leaky   | activation function after convolution <br>logistic, loggy, relu, elu, selu, relie, plse, hardtan, lhtan, linear, ramp, leaky, tanh, stair | logistic |
 
