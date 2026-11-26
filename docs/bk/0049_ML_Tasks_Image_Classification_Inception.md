@@ -3,25 +3,13 @@
 | Title     | ML Tasks Image Classification Inception              |
 | --------- | ---------------------------------------------------- |
 | Created @ | `2018-10-31T21:54:28Z`                               |
-| Updated @ | `2026-11-25T16:50:58Z`                               |
+| Updated @ | `2026-11-26T01:26:27Z`                               |
 | Labels    | \`\`                                                 |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/49) |
 
 -----
 
 # Inception
-
-## Reference
-
-  - 2014 **Inception V1 / GoogleNet** Going deeper with convolutions
-    \[[paper](https://arxiv.org/pdf/1409.4842.pdf)\]
-  - 2015 **Inception V2 & V3** Rethinking the Inception Architecture for
-    Computer Vision \[[paper](https://arxiv.org/pdf/1512.00567.pdf)\]
-  - 2016 **Inception V4 & Inception-ResNet** Inception-v4,
-    Inception-ResNet and the Impact of Residual Connections on Learning
-    \[[paper](https://arxiv.org/pdf/1602.07261.pdf)\]
-  - [一文概览Inception家族的「奋斗史」](https://www.chainnews.com/articles/727946354364.htm)
-  - [图像分类丨Inception家族进化史「GoogleNet、Inception、Xception」](https://www.cnblogs.com/vincent1997/p/10920036.html)
 
 ## Brief
 
@@ -87,3 +75,15 @@ $$
 
 其中：箭头表示每一步解决上一步引出的问题——并行多尺度计算量大，用 $1\\times1$
 降维；大卷积计算量大，用小卷积分解代替；网络变深后训练困难，引入残差连接。
+
+## Reference
+
+  - 2014 **Inception V1 / GoogleNet** Going deeper with convolutions
+    \[[paper](https://arxiv.org/pdf/1409.4842.pdf)\]
+  - 2015 **Inception V2 & V3** Rethinking the Inception Architecture for
+    Computer Vision \[[paper](https://arxiv.org/pdf/1512.00567.pdf)\]
+  - 2016 **Inception V4 & Inception-ResNet** Inception-v4,
+    Inception-ResNet and the Impact of Residual Connections on Learning
+    \[[paper](https://arxiv.org/pdf/1602.07261.pdf)\]
+  - [一文概览Inception家族的「奋斗史」](https://www.chainnews.com/articles/727946354364.htm)
+  - [图像分类丨Inception家族进化史「GoogleNet、Inception、Xception」](https://www.cnblogs.com/vincent1997/p/10920036.html)
