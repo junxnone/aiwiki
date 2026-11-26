@@ -826,6 +826,8 @@
 
 #### **Updated**
 
+- 2026-11-26 23:43&nbsp;&nbsp; [Format](/0843_LM_Deploy_Format)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Format
+- 2026-11-26 23:43&nbsp;&nbsp; [Frameworks](/0842_LM_Deploy_Frameworks)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Frameworks
 - 2026-11-26 23:42&nbsp;&nbsp; [CPU](/0841_LM_Infer_CPU)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:CPU
 - 2026-11-26 23:42&nbsp;&nbsp; [StructuredOutput](/0840_LM_Infer_StructuredOutput)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:StructuredOutput
 - 2026-11-26 23:42&nbsp;&nbsp; [Attention](/0839_LM_Infer_Attention)&nbsp;&nbsp; :bookmark:LM :bookmark:Infer :bookmark:Attention
@@ -862,8 +864,6 @@
 - 2026-11-26 23:39&nbsp;&nbsp; [Ops](/0846_LM_Deploy_Ops)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Ops
 - 2026-11-26 23:39&nbsp;&nbsp; [Service](/0845_LM_Deploy_Service)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Service
 - 2026-11-26 23:38&nbsp;&nbsp; [Sizing](/0844_LM_Deploy_Sizing)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Sizing
-- 2026-11-26 23:38&nbsp;&nbsp; [Format](/0843_LM_Deploy_Format)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Format
-- 2026-11-26 23:38&nbsp;&nbsp; [Frameworks](/0842_LM_Deploy_Frameworks)&nbsp;&nbsp; :bookmark:LM :bookmark:Deploy :bookmark:Frameworks
 - 2026-11-26 23:16&nbsp;&nbsp; [像素格式](/0119_Media_Image_Camera_PixelFormat)&nbsp;&nbsp; :bookmark:Media :bookmark:Image :bookmark:Camera :bookmark:PixelFormat
 - 2026-11-26 22:41&nbsp;&nbsp; [模型性能优化技术](/0471_MO)&nbsp;&nbsp; :bookmark:MO
 - 2026-11-26 22:41&nbsp;&nbsp; [剪枝](/0808_MO_Pruning)&nbsp;&nbsp; :bookmark:MO :bookmark:Pruning
