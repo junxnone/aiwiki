@@ -3,7 +3,7 @@
 | Title     | LM Infer KVCache                                      |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2026-11-26T15:37:25Z`                                |
-| Updated @ | `2026-11-26T15:37:25Z`                                |
+| Updated @ | `2026-11-26T15:42:35Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/838) |
 
@@ -12,7 +12,7 @@
 # KVCache
 
 KV Cache 的系统管理：分页分配、抢占与换出、offload 到 CPU/SSD、跨请求和跨实例共享、淘汰与压缩。KV Cache
-的大小公式见 [Basics](@@IBAS@@)，KV 的量化方法见 [KV
+的大小公式见 [Basics](/0834_LM_Infer_Basics)，KV 的量化方法见 [KV
 量化](/0708_MO_Quantization_KVCache)。
 
 ## 为什么要专门管理
@@ -39,13 +39,14 @@ flowchart TB
 
   - 正在参与计算的请求，其 KV 必须在 GPU 显存里；暂时不运行的请求 (被抢占的、多轮对话中等待用户下一句的) 可以换到 CPU
     内存或 SSD
-  - 远端存储或其他实例的 KV 可以通过网络取回，用于跨实例复用前缀或 PD 分离，见 [Parallel](@@IPAR@@)
+  - 远端存储或其他实例的 KV 可以通过网络取回，用于跨实例复用前缀或 PD 分离，见
+    [Parallel](/0836_LM_Infer_Parallel)
   - 是否值得换出，取决于「传回来的时间」与「重新计算 (prefill) 的时间」哪个短，见下文的估算
 
 ## 分页分配
 
   - 把 KV 显存划成固定大小的块 (如 $16$ 个 token 一块)，请求按需申请块，用块表记录逻辑位置到物理块的映射，这就是
-    PagedAttention，见 [Optimization](@@IOPT@@)
+    PagedAttention，见 [Optimization](/0835_LM_Infer_Optimization)
   - 块的引用计数：多个请求共享同一前缀时指向相同的物理块；某个请求要修改 (追加) 时才复制 (写时复制)
   - 块大小的权衡：块越小碎片越少，但块表越大、注意力 kernel 访问越分散
 
@@ -60,7 +61,7 @@ flowchart TB
 
 表中：两种方式的选择取决于下面的比较。vLLM 的 V1 引擎默认采用重计算
 `[待核实]`；被抢占的请求会出现明显的延迟抖动，所以监控里要关注抢占次数，见
-[Ops](@@DOPS@@)。
+[Ops](/0846_LM_Deploy_Ops)。
 
 $$
 t\_{swap}=\\frac{n\\cdot\\text{KV}*{token}}{\\text{BW}*{pcie}},\\qquad
@@ -80,24 +81,25 @@ t\_{recompute}\\approx\\frac{2N\\cdot n}{\\text{FLOPs}\_{eff}} $$
 ## Offload 与跨请求复用
 
   - 前缀缓存 (prefix caching)：把算过的前缀块保留下来，新请求命中时跳过对应的 prefill，见
-    [Optimization](@@IOPT@@)；显存不够放所有前缀时，按 LRU 淘汰
+    [Optimization](/0835_LM_Infer_Optimization)；显存不够放所有前缀时，按 LRU 淘汰
   - 分层缓存：把从 GPU 淘汰的前缀块落到 CPU 内存或 SSD，而不是直接丢掉；命中时再取回。对多轮对话、Agent
     (反复带着同一段长上下文调用) 和 RAG 中的热门文档收益很大
   - 跨实例共享：LMCache、Mooncake 等系统把 KV 存在独立的缓存层，多个推理实例共享，配合按前缀亲和的路由，见
-    [Service](@@DSVC@@) 与 [Gateway](@@DGW@@)
+    [Service](/0845_LM_Deploy_Service) 与
+    [Gateway](/0851_LM_Deploy_Gateway)
   - 判断是否值得：取回的时间 (按上面的 $t\_{swap}$ 公式，用对应介质的带宽) 要明显小于重新 prefill 的时间
 
 ## 压缩与淘汰
 
-| 方法                | 思路                          | 风险                                                |
-| ----------------- | --------------------------- | ------------------------------------------------- |
-| 结构层面：GQA、MQA、MLA  | 模型本身产生更少的 KV                | 需要训练时决定，见 [Architecture](@@TARCH@@)               |
-| 量化                | KV 存为 FP8/INT8/INT4         | 低比特时精度下降，见 [KV 量化](/0708_MO_Quantization_KVCache) |
-| 淘汰 (H2O、SnapKV 等) | 只保留注意力得分高的 token            | 被丢弃的信息无法找回，长文档问答可能出错                              |
-| StreamingLLM      | 只保留开头的若干「注意力汇聚」token 和最近的窗口 | 适合流式对话，不适合需要回看全部内容的任务                             |
+| 方法                | 思路                          | 风险                                                    |
+| ----------------- | --------------------------- | ----------------------------------------------------- |
+| 结构层面：GQA、MQA、MLA  | 模型本身产生更少的 KV                | 需要训练时决定，见 [Architecture](/0823_LM_Train_Architecture) |
+| 量化                | KV 存为 FP8/INT8/INT4         | 低比特时精度下降，见 [KV 量化](/0708_MO_Quantization_KVCache)     |
+| 淘汰 (H2O、SnapKV 等) | 只保留注意力得分高的 token            | 被丢弃的信息无法找回，长文档问答可能出错                                  |
+| StreamingLLM      | 只保留开头的若干「注意力汇聚」token 和最近的窗口 | 适合流式对话，不适合需要回看全部内容的任务                                 |
 
 表中：结构和量化是「每个 token 变小」，淘汰是「token 变少」；后者节省最多但风险最大，上线前要用长上下文评测验证，见
-[LongContext](@@TLONG@@)。
+[LongContext](/0829_LM_Train_LongContext)。
 
 ## Reference
 
