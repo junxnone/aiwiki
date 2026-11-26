@@ -3,46 +3,11 @@
 | Title     | ML Tasks Image Detection                              |
 | --------- | ----------------------------------------------------- |
 | Created @ | `2018-12-09T09:27:47Z`                                |
-| Updated @ | `2026-11-25T16:51:26Z`                                |
+| Updated @ | `2026-11-26T01:26:45Z`                                |
 | Labels    | \`\`                                                  |
 | Edit @    | [here](https://github.com/junxnone/aiwiki/issues/152) |
 
 -----
-
-## Reference
-
-  - [目标检测综述](http://www.cnblogs.com/fydeblog/p/10447875.html)
-  - [A paper list of object detection using deep
-    learning.](https://github.com/hoya012/deep_learning_object_detection)
-  - [awesome articles about object
-    detection.](https://github.com/amusi/awesome-object-detection)
-  - [opencv openvino model zoo - object detection -
-    yolov3](https://github.com/opencv/open_model_zoo/blob/2018/demos/python_demos/object_detection_demo_yolov3.py)
-  - [yoloV1，看过好多篇，这篇感觉讲的最通俗易懂](https://blog.csdn.net/m0_37192554/article/details/81092514)
-  - [deep\_learning\_object\_detection](https://github.com/hoya012/deep_learning_object_detection)
-  - [深入理解one-stage目标检测算法（上篇）](https://blog.csdn.net/Enjoy_endless/article/details/88724416)
-  - [深入理解one-stage目标检测算法（下篇）](https://blog.csdn.net/Enjoy_endless/article/details/88728201)
-  - [HistoryOfObjectRecognition](https://drive.google.com/file/d/1VLvaj2VWO2XVGeMRgbexWyjZ61i3Dojc/view?usp=sharing)
-  - [论文学习-深度学习目标检测2014至201901综述-Deep Learning for Generic Object
-    Detection A
-    Survey](https://www.cnblogs.com/shine-lee/p/10376324.html)
-  - [第二十八节、基于深度学习的目标检测算法的综述](https://www.cnblogs.com/zyly/p/9250195.html)
-  - [CVPR2019目标检测方法进展综述](https://zhuanlan.zhihu.com/p/59376548)
-  - 基于深度学习的目标检测算法综述 [一](https://zhuanlan.zhihu.com/p/40047760)
-    [二](https://zhuanlan.zhihu.com/p/40020809)
-    [三](https://zhuanlan.zhihu.com/p/40102001)
-  - [深度学习目标检测方法综述](https://blog.csdn.net/zong596568821xp/article/details/80091784)
-  - [Diagnosing Error in Object
-    Detectors](http://dhoiem.cs.illinois.edu/projects/detectionAnalysis/)
-  - Object Detection for Dummies
-      - [Object Detection for Dummies Part 1: Gradient Vector, HOG, and
-        SS](https://lilianweng.github.io/lil-log/2017/10/29/object-recognition-for-dummies-part-1.html)
-      - [Object Detection for Dummies Part 2: CNN, DPM and
-        Overfeat](https://lilianweng.github.io/lil-log/2017/12/15/object-recognition-for-dummies-part-2.html)
-      - [Object Detection for Dummies Part 3: R-CNN
-        Family](https://lilianweng.github.io/lil-log/2017/12/31/object-recognition-for-dummies-part-3.html)
-      - [Object Detection Part 4: Fast Detection
-        Models](https://lilianweng.github.io/lil-log/2018/12/27/object-detection-part-4.html)
 
 ## Brief
 
@@ -200,3 +165,38 @@ $$ \\mathrm{FL}(p\_t)=-\\alpha\_t(1-p\_t)^{\\gamma}\\log(p\_t) $$
   - 分类 backbone 见
     [Classification](/0061_ML_Tasks_Image_Classification)，实例分割在检测基础上加掩码，见
     [Segmentation](/0159_ML_Tasks_Image_Segmentation)
+
+## Reference
+
+  - [目标检测综述](http://www.cnblogs.com/fydeblog/p/10447875.html)
+  - [A paper list of object detection using deep
+    learning.](https://github.com/hoya012/deep_learning_object_detection)
+  - [awesome articles about object
+    detection.](https://github.com/amusi/awesome-object-detection)
+  - [opencv openvino model zoo - object detection -
+    yolov3](https://github.com/opencv/open_model_zoo/blob/2018/demos/python_demos/object_detection_demo_yolov3.py)
+  - [yoloV1，看过好多篇，这篇感觉讲的最通俗易懂](https://blog.csdn.net/m0_37192554/article/details/81092514)
+  - [deep\_learning\_object\_detection](https://github.com/hoya012/deep_learning_object_detection)
+  - [深入理解one-stage目标检测算法（上篇）](https://blog.csdn.net/Enjoy_endless/article/details/88724416)
+  - [深入理解one-stage目标检测算法（下篇）](https://blog.csdn.net/Enjoy_endless/article/details/88728201)
+  - [HistoryOfObjectRecognition](https://drive.google.com/file/d/1VLvaj2VWO2XVGeMRgbexWyjZ61i3Dojc/view?usp=sharing)
+  - [论文学习-深度学习目标检测2014至201901综述-Deep Learning for Generic Object
+    Detection A
+    Survey](https://www.cnblogs.com/shine-lee/p/10376324.html)
+  - [第二十八节、基于深度学习的目标检测算法的综述](https://www.cnblogs.com/zyly/p/9250195.html)
+  - [CVPR2019目标检测方法进展综述](https://zhuanlan.zhihu.com/p/59376548)
+  - 基于深度学习的目标检测算法综述 [一](https://zhuanlan.zhihu.com/p/40047760)
+    [二](https://zhuanlan.zhihu.com/p/40020809)
+    [三](https://zhuanlan.zhihu.com/p/40102001)
+  - [深度学习目标检测方法综述](https://blog.csdn.net/zong596568821xp/article/details/80091784)
+  - [Diagnosing Error in Object
+    Detectors](http://dhoiem.cs.illinois.edu/projects/detectionAnalysis/)
+  - Object Detection for Dummies
+      - [Object Detection for Dummies Part 1: Gradient Vector, HOG, and
+        SS](https://lilianweng.github.io/lil-log/2017/10/29/object-recognition-for-dummies-part-1.html)
+      - [Object Detection for Dummies Part 2: CNN, DPM and
+        Overfeat](https://lilianweng.github.io/lil-log/2017/12/15/object-recognition-for-dummies-part-2.html)
+      - [Object Detection for Dummies Part 3: R-CNN
+        Family](https://lilianweng.github.io/lil-log/2017/12/31/object-recognition-for-dummies-part-3.html)
+      - [Object Detection Part 4: Fast Detection
+        Models](https://lilianweng.github.io/lil-log/2018/12/27/object-detection-part-4.html)
